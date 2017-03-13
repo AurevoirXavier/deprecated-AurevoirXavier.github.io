@@ -1,8 +1,18 @@
-#!/bin/sh
+#!/usr/bin/env sh
+
+# Update post.
 sudo rm _posts/*iOS*
 sudo cp ~/Documents/Post/* _posts/
-sudo git add .
+
+# Build site.
+bundle exec jekyll build
+
+# Push to master.
+git add .
 currentTime=`date +%H:%M/%x`
-sudo git commit -m "$currentTime"
+git commit -m "$currentTime"
 git push origin master
-echo Update Done!
+
+echo Update Successfully!
+
+exit 0

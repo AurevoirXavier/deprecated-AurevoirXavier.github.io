@@ -1,9 +1,10 @@
 ---
 layout: post
 title: "iOS Apprentice 1 Getting Started v5.0 （译）"
-description: "译至23页"
-og_image: "documentation/test.jpg"
+date:   2017-03-13
+excerpt: "译至 23 页"
 tags: [program, iOS, translate]
+comments: true
 ---
 
 `Tips：专有名词我只会在它第一次出现时翻译，后续不再翻译。`

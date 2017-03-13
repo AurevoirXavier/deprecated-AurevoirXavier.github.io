@@ -27,7 +27,7 @@ comments: true
 
 嗨！我是 Matthijs Hollemans，一名全职iOS开发人员和 [www.raywenderlich.com](www.raywenderlich.com) 的辅导团队成员。
 
-接下来你将要读第一章导读部分来自我的书 iOS Apprentice: Beginning iOS Development with Swift, Fifth Edition 。
+接下来你将要读第一章导读部分来自我的书 *iOS Apprentice: Beginning iOS Development with Swift, Fifth Edition* 。
 
 在本书中，你将学习如何使用苹果的 Swift 3.0 编程语言，并通过这一系列的四个史诗级长度的动手教程来制作自己的 iPhone 和 iPad 应用程序。
 
@@ -85,7 +85,7 @@ comments: true
 
 最后但并不是最重要的，记得享受其中！一步一步建立起你的编程理解，同时开发出有趣的应用程序。在本系列的结尾，你会学到 Swift 和 iOS 开发包的基本要素。更重要的是，你应该有一个很好的想法关于如何将一切结合在一起，如何像一个程序员一样去思考问题。
 
-这是我的目标，在这些教程之后，你将学到能使你成为一个足以站得住脚的开发人员的知识。我相信，只要你把这些基础知识拿下，你将能够编写任何你想要的 iOS 应用程序。你还有很多东西要学习，但当你通过 iOS Apprentice 这本书，你便可以独立地放手去做。
+这是我的目标，在这些教程之后，你将学到能使你成为一个足以站得住脚的开发人员的知识。我相信，只要你把这些基础知识拿下，你将能够编写任何你想要的 iOS 应用程序。你还有很多东西要学习，但当你通过 *iOS Apprentice* 这本书，你便可以独立地放手去做。
 
 ## 本书写给哪些人
 
@@ -148,11 +148,11 @@ Xcode 将你编写的源代码转换为可执行的应用程序，并在模拟�
 
 ## 前景：概述
 
-iOS Apprentice 分为四个教程部分，从开始到其中的主题。在每个教程中，你将从头开始构建一个完整的应用程序！让我们先来看看将要做些什么。
+*iOS Apprentice* 分为四个教程部分，从开始到其中的主题。在每个教程中，你将从头开始构建一个完整的应用程序！让我们先来看看将要做些什么。
 
 #### 教程1：入门
 
-在第一个教程中，你将开始建立一个名为 Bull's Eye 的游戏。你将学习如何以一种轻松的方式使用 Xcode，Interface Builder（界面构造器） 和 Swift。
+在第一个教程中，你将开始建立一个名为 *Bull's Eye* 的游戏。你将学习如何以一种轻松的方式使用 Xcode，Interface Builder（界面构造器） 和 Swift。
 
 <div align="center"><img alt="" src="http://imgur.com/TolF1G2.png"/></div>
 
@@ -202,7 +202,7 @@ iPhone 可能假装它是一个电话，但它实际上是一个非常先进的�
 
 当然有可能用这种迷之语言来编写程序——这就是过去人们在计算机上花费几百万美元，一台计算机体积大到要占用整个房间的那年代所做的——但我宁愿编写看起来像是这样的程序：
 
-```c++
+```swift
 func handleMusicEvent(command: Int, noteNumber: Int, velocity: Int) {
   if command == NoteOn && velocity != 0 {
     playNote(noteNumber + transpose, velocityCurve[velocity] / 127)
@@ -210,11 +210,10 @@ func handleMusicEvent(command: Int, noteNumber: Int, velocity: Int) {
            (command == NoteOn && velocity == 0) {
     stopNote(noteNumber + transpose, velocityCurve[velocity] / 127)
   } else if command == ControlChange {
-    	if noteNumber == 64 {
-    	  damperPedal(velocity)
-		}
-	} 
-}
+    if noteNumber == 64 {
+      damperPedal(velocity)
+    }
+} }
 ```
 
 <center>上面的代码片段取自于一个声音合成器程序中</center>
@@ -245,7 +244,7 @@ C++ 是另一种由 C 衍生出来的面向对象编程语言。它非常强大�
 
 <br>
 
-目标是滑动图中这个看起来像牛眼一样的小滑块（范围 1 ～ 100），使其尽可能的贴近系统给出的随机值。在上面的截图中，目标是将 “牛眼” 滑动到 22 的地方，因为看不到滑块的当前值，所以全靠目测了。
+目标是滑动图中这个看起来像牛眼一样的 Slider（滑块）（范围 1 ～ 100），使其尽可能的贴近系统给出的随机值。在上面的截图中，目标是将 “牛眼” 滑动到 22 的地方，因为看不到滑块的当前值，所以全靠目测了。
 
 当你对你的估计有信心时，按下 “Hit Me!” 按钮，弹出的窗口（也称为 alert（提醒））会告诉你，你获得了多少分：
 
@@ -263,7 +262,7 @@ C++ 是另一种由 C 衍生出来的面向对象编程语言。它非常强大�
 
 接下来我将给你一个例子：
 
-应用程序需要在屏幕上放置 “Hit Me!” 按钮，并在用户按下时显示警告弹出窗口。
+*应用程序需要在屏幕上放置 “Hit Me!” 按钮，并在用户按下时显示警告弹出窗口。*
 
 尝试想想还需要做些什么——如果你实际上并不知道该如何完成这些任务。首先一点，你需要确定下来你要做什么，而不是怎么做。
 
@@ -279,11 +278,11 @@ C++ 是另一种由 C 衍生出来的面向对象编程语言。它非常强大�
 
 - 在屏幕上放置一个 Button（按钮），并将其标记为 ”Hit Me!”。
 - 当玩家按下 ”Hit Me!” 按钮的时候，应用程序必须弹出一个警告窗口，通知玩家他的表现如何。以某种方式（暂时还不知道该如何做）计算出得分，并将得分放入警报窗口中。
-- 在屏幕上放置文本，例如 “Score:” 和 “Round:” 标签。这些文本会变化，例如分数，当玩家的得分时点数应该相应增加。
-- 将滑块放在屏幕上，使其值在 1 到 100 之间。
-- 在用户按下 ”Hit Me!” 按钮后，读取滑块的值。
+- 在屏幕上放置文本，例如 “Score:” 和 “Round:” labels（标签）。这些文本会变化，例如分数，当玩家的得分时点数应该相应增加。
+- 将 Slider 放在屏幕上，使其值在 1 到 100 之间。
+- 在用户按下 ”Hit Me!” 按钮后，读取 Slider 的值。
 - 在每个回合开始时生成一个随机数，并将其显示在屏幕上，这是目标值。
-- 将滑块的值与随机数进行比较，并计算出得分。让得分在警报窗口中显示。
+- 将 Slider 的值与随机数进行比较，并计算出得分。让得分在警报窗口中显示。
 - 将 “开始” 按钮放在屏幕上。点击它会重置得分，并从第一轮重新开始。
 - 将应用程序以横屏显示。
 - 美化。 :-)
@@ -431,3 +430,127 @@ Xcode 窗口的左侧被命名为 **Navigator Area**（导航区域）。顶部�
 
 <br>
 
+按下这些在工具栏上的按钮将会改变 Xcode 的外观。特别是这一个，它会在 Xcode 窗口的右侧打开一个新窗格。
+
+你的 Xcode 现在看起来应该像是这样：
+
+<div align="center"><img alt="在 Interface Builder 中编辑 Main.storyboard" src="http://imgur.com/kTdCj6O.png"/></div><center>在 Interface Builder 中编辑 Main.storyboard</center>
+
+<br>
+
+这是你的应用程序的 storyboard（故事板）。storyboard 包含应用程序所有的屏幕设计，并显示应用程序是如何从一个屏幕到另一个屏幕，通过一个大箭头。
+
+目前，storyboard 只包含一个屏幕或场景，由 Interface Builder Canvas（画布）中间的一个矩形表示。
+
+<code class="highlighter-rouge"><strong>注意：</strong>如果你没有看到标记为 “View Controller”（视图控制器） 的矩形，眼前只有一个空白的 Canvas，则使用鼠标或触控板滚动 storyboard。相信我，它一定在某处！还要确保你的 Xcode 窗口足够大。因为 Interface Builder 占用了很多空间...</code>
+
+该 scene（场景）目前有一部 iPhone 6s 或 iPhone 7 的大小。为了保持清爽简洁，你会首先为 iPhone SE 设计一个稍小的屏幕的应用程序。稍后你将会让这款应用程序也是配更大的 iPhone 6s，7 和 Plus。
+
+➤ 在 Interface Builder 窗口底部，单击 **View as**（查看为）**：iPhone 6s** 以打开打开以下面板：
+
+<div align="center"><img alt="选择设备类型" src="http://imgur.com/tVGJKrP.png"/></div><center>选择设备类型</center>
+
+<br>
+
+选择 **iPhone SE**，第二小的 iPhone 。scene 的矩形现在变得有点小了。这对应于 iPhone 5，iPhone 5s 和 iPhone SE 机型的屏幕尺寸。
+
+➤ 在 Xcode 工具栏中，确保它说 **BullsEye > iPhone SE**（在 Stop 按钮旁边）。如果默认选项不是，那么单击它，并从列表中选择 iPhone SE：
+
+<div align="center"><img alt="将模拟器切换到iPhone SE" src="http://imgur.com/agi8Tbk.png"/></div><center>将模拟器切换到 iPhone SE</center>
+
+<br>
+
+现在当你运行应用程序，它将运行在 iPhone SE 模拟器（试试吧！）。
+
+我们接着谈 storyboard：
+
+➤ 在 Utilities pane 底部，将找到 **Object Library**（对象库）（确保选中了第三个看起来像圆形的按钮）：
+
+<div align="center"><img alt="Object Library" src="http://imgur.com/3liGfUb.png"/></div><center>Object Library</center>
+
+<br>
+
+滚动 Object Library 列表中的项目，直到看到 Button。
+
+➤ 将 Button 拖动到位于工作区域的 scene 的矩形的顶部。
+
+<div align="center"><img alt="拖动 Button 到 scene 顶部" src="http://imgur.com/lbNySmJ.png"/></div><center>拖动 Button 到 scene 顶部</center>
+
+<br>
+
+看，添加一个 Button 多么简单，只需要拖放。 这也适用于所有其他用户界面元素。你会做很多这样的事情，所以花一些时间来熟悉这个过程。
+
+➤ 拖放一些其他 controls（控件），如 labels，sliders 和 switches，只管拖动他们就对了。
+
+这应该会给你一些有关 UI controls 的想法，因为 iOS 支持使用它们。请注意，Interface Builder 会帮助您布局 controls，通过将 controls 对齐到 view 的边缘和其他对象。这是一个非常方便的工具！
+
+➤ 双击刚刚放置的 Button 以编辑其标题为 “Hit Me!”。
+
+<div align="center"><img alt="带有新标题的 Button" src="http://imgur.com/ycaJMiF.png"/></div><center>带有新标题的 Button</center>
+
+<br>
+
+你的按钮可能有一个边框：
+
+<div align="center"><img alt="带有边界矩形的 Button" src="http://imgur.com/1pBSWja.png"/></div><center>带有边界矩形的 Button</center>
+
+<br>
+
+这个边框不是 Button 的一部分，它只是在那里显示 Button 有多大。你可以使用 **Editor** **→ Canvas → Show Bounds Rectangles**（显示矩形边框）菜单选项打开或关闭这些矩形。
+
+当你完成与 Interface Builder 的互动后，按下 Xcode 工具栏上的 Run 按钮。应用程序现在应该出现在模拟器中，完成你的 “Hit Me!” 按钮。但是，当你点击按钮它不做任何事情。为此，你必须写一些 Swift 代码！
+
+## 源代码 Editor
+
+一个 Button，没有做任何事情，任何人按它都没有用，所以让我们让它显示一个 alert 弹出。 在完成的游戏中，alert 将显示玩家的分数，但现在我们将限制自己一个简单的文本消息（传统的“Hello, World!”）。（译者注：有这么一个故事：有一天，某程序员爱慕已久的女神主动和他打了招呼。女神：“Hello.”，程序员：“World!”，那么这个故事就到此打住了）
+
+➤ 在 **Project navigator**，单击 **ViewController.swift**。
+
+Interface Builder 将消失，Editor 区域现在展现出一堆明亮的彩色文本。这是你的应用程序的 Swift 源代码：
+
+<div align="center"><img alt="源代码 Editor" src="http://imgur.com/0XoNazy.png"/></div><center>源代码 Editor</center>
+
+<br>
+
+➤ 将以下行直接添加到文件中最后一个括号之上：
+
+```swift
+ @IBAction func showAlert() {
+}
+```
+
+**ViewController.swift** 的源代码现在应该如下所示：
+
+```swift
+//
+//  ViewController.swift
+//  BullsEye
+//
+//  Created by <you> on <date>.
+//  Copyright © <year> <you>. All rights reserved.
+//
+import UIKit
+class ViewController: UIViewController {
+  override func viewDidLoad() {
+    super.viewDidLoad()
+    // Do any additional setup after loading the view, typically
+from a nib. }
+  override func didReceiveMemoryWarning() {
+    super.didReceiveMemoryWarning()
+    // Dispose of any resources that can be recreated.
+}
+  @IBAction func showAlert() {
+} }
+```
+
+初尝 Swift 的感觉如何？合你口味吗？ 在我可以告诉你这是什么意思之前，我首先要介绍一个有关 view controller 的概念。
+
+<code class="highlighter-rouge"><strong>Xcode 会自动保存</strong></code>
+
+<code class="highlighter-rouge">你不必保存文件，在你对它们进行更改后，因为当你按下 Run 按钮后 Xcode 将自动保存任何修改的文件。然而，Xcode 不是最稳定的软件，有时候它可能会在保存你的更改之前崩溃，所以我仍然想按 <strong>⌘ + S</strong> 定期保存我的文件。</code>
+
+## View controllers
+
+你已经编辑 **Main.storyboard** 文件来构建应用程序的用户界面。它只是一个白色背景上的 Button，但它确实是一个实实在在的用户界面。你还向 **ViewController.swift** 添加了源代码。
+
+这两个文件——storyboard 和 Swift 文件——一起形成了 *view controller* 的设计和实现。 构建 iOS 应用程序的很多工作是创建 view controller。 view controller 的工作是在应用程序中管理单个屏幕。

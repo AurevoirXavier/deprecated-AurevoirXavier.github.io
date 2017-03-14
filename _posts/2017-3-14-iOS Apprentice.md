@@ -707,7 +707,7 @@ showAlert 中的代码创建一个标题为 “Hello，World” 的 alert，它�
 
 `在我看来，最好把所有 warnings 看作是 errors。在继续操作之前修复 warnings，并且只有在出现零个 errors 和零个 warnings 时才运行应用程序。这不保证应用程序不会有任何错误，但至少它不会是愚蠢的。`
 
-# 应用程序如何工作？
+## 应用程序如何工作？
 
 在这一点上，将会有一些体会关于应用程序的背后到底发生了什么。
 
@@ -739,3 +739,119 @@ showAlert 中的代码创建一个标题为 “Hello，World” 的 alert，它�
 
 你的应用程序执行的所有操作都是由某个事件触发而来的的。
 
+## 按照待办事项列表工作
+
+现在你已经完成了第一个任务，在屏幕上放置一个 button，并使其显示一个 alert，你只需下去列表，勾选其他项目。
+
+你不必真的要以某种特定的顺序去做，虽然一些事情在别的事情之前做有意义。 例如，如果你还没有 slider，则无法读取 slider 的位置。
+
+所以，让我们添加其余的 controls——slider 和 text labels，并将这个应用程序变成一个真正的游戏！
+
+当你完成后，应用程序将如下所示：
+
+<div align="center"><img alt="配有标准 UIKit（界面工具包）controls 的游戏屏幕" src="http://imgur.com/WfRn9F7.png"/></div><center>配有标准 UIKit（界面工具包）controls 的游戏屏幕</center>
+
+<br>
+
+嘿，等一下......这看起来并不像我答应你的那样，展示给你看的游戏那般漂亮！区别在于这都是些标准的 UIKit controls。他们看起来像是直接开箱的样子。
+
+你可能已经看过这个面板，因为它非常适合常规的应用程序。但是因为默认的死沉沉的样子对于一个游戏来说有点枯燥无聊，所以你会在后续课程给它加一些调味料。
+
+<code class="highlighter-rouge"><strong>UIKit 和其他 frameworks（框架）</strong></code>
+
+`iOS 提供了许多 frameworks 或 “kits” 形式的构建块。UIKit frameworks 提供了用户界面的 controls，如 buttons，labels 和 navigation bar。它管理 view controller，通常负责处理应用程序的用户界面。（ UI 代表：用户界面。）`
+
+`如果你不得不得从头开始写所有的东西，你或许要忙上一会儿。相反，你可以在系统提供的 frameworks 之上构建你的应用程序，并利用苹果工程师已经为你做完了的现成的东西。`
+
+`任何你看到的以 UI 开头的 object，例如 UIButton，都来自 UIKit。当你编写 iOS 应用程序时，UIKit framework 将是耗费你大部分时间的地方，但也有些人不会。`
+
+`其他 frameworks 的示例是 Foundation，它提供了构建应用程序的许多基本构建块; 用于在屏幕上绘制基本形状（如线条，渐变和图像）的核心图形; 播放声音和视频的 AVFoundation; 和许多其它的。`
+
+`iOS 的完整 frameworks 集合统称为 Cocoa Touch。`
+
+译者注：
+
+<center><strong>iPhone 技术层</strong></center>
+
+| Cocoa Touch |
+| :---------: |
+|   **多媒体**   |
+|  **核心服务**   |
+|  **核心 OS**  |
+
+<br>
+
+<center><strong>Cocoa 包含 Foundation 和 ApppKit framework，可用于开发 macOS 系统的应用程序。</strong></center>
+
+<center><strong>Cocoa Touch 包含 Foundation 和 UIKit framework，可用于开发 iOS 的开发环境。</strong></center>
+
+<br>
+
+## 竖屏（portrait） vs. 横屏（landscape）
+
+请注意，应用程序的尺寸已更改：iPhone 是倾斜的侧面，屏幕更宽，但不高。 这称为 *landscape* 方向。
+
+你毫无疑问在 iPhone 上看到了 landscape 应用程序。 对于游戏而言这是一个常见的显示方向，但通常来说，许多其他类型的应用程序，除了工作在常规的 “直立” *portrait* 方向之外也工作在 landscape 模式下。
+
+例如，许多人喜欢用他们的设备翻转写电子邮件，因为更宽的屏幕允许更大的键盘就使得打字更容易。（译者注：然而国人更青睐九宫格）
+
+在 portrait 方向，iPhone SE 屏幕包括水平 320 点和垂直 568 点。对于 landscape，这些尺寸对调。
+
+<div align="center"><img alt="portrait 和 landscape 下的屏幕尺寸" src="http://imgur.com/oaPAtRW.png"/></div><center>portrait 和 landscape 下的屏幕尺寸</center>
+
+<br>
+
+那么什么是点呢？
+
+对于较旧的设备——最高到 iPhone 3GS 和相应的 iPod touch 型号，以及第一代 iPad 而言一点对应一个像素。因此，这些低分辨率设备看起来不是很清晰，因为它们的大又粗糙的像素。
+
+我相信你知道一个像素是什么。如果你不知道的话：它是屏幕组成的最小的元素。你的 iPhone 显示的是一个大矩阵的像素，每个像素都可以有自己的颜色，就像一个电视屏幕。 改变这些像素的颜色值在显示器上产生可见图像。像素越多，图像看起来越好越细腻。
+
+在 iPhone 4 和更高版本的高分辨率 Retina 显示器上，一个点实际上对应于水平和垂直的两个像素，因此总共有四个像素。它在非常小的空间中包装了大量像素，使得显示更加清晰，这就是 Retina 设备普及的原因。
+
+在 Plus 上它甚至更疯狂：它有一个 3x 分辨率，每个点有九个像素。我的天！你需要老鹰的眼睛，才能分辨这个花哨的 Retina 高清显示器上的个别像素。几乎不可能弄清楚一个像素在哪里结束，下一个像素开始，这是多么的微小。
+
+它不仅是不同的 iPhone 模型之间不同的像素数量。多年来，他们已经拥有了不同的外形，从一开始的小的 3.5 英寸屏幕，到 iPhone 6s Plus 和 7 Plus 的5.5英寸。
+
+不同尺寸对应的宽和高的点数：
+
+<div align="center"><img alt="" src="http://imgur.com/WCRTKv6.png"/>
+
+<br>
+
+在 iOS 的早期时代，只有一个屏幕尺寸。 但是，“一刀切” 的时代已经过去了。现在我们有各种各样的屏幕尺寸要处理。
+
+请记住，UIKit 使用点而不是像素，因此你只需要担心以点为单位测量的屏幕尺寸之间的差异。实际的像素数量只对平面设计师很重要，因为图像仍然是以像素为单位测量的。
+
+开发人员在工作在点层次上，设计师工作在像素层次上。
+
+点和像素之间的差异可能有点混乱，但到现在为止如果这是唯一使你困惑的事情，那么我做的教程还不错。 ;-)
+
+在本教程中，你最初将只使用大小为 320×568 点的 iPhone SE 屏幕——只是为了简单。稍后在教程中，你还将使游戏适配其他尺寸的iPhone。
+
+## 将应用转换为 landscape
+
+要将应用程序从 portrait 转为 landscape，你必须做两件事：
+
+1. 在 **Main.storyboard** 将 view 设置为 landscape 而不是 portrait。
+2. 更改应用程序的 **Supported Device Orientations**（支持的设备方向）设置。
+
+➤ 在 Interface Builder 中打开 **Main.storyboard**。在 **View as：iPhone SE** 面板中，将 **Orientation** 更改为 lanscape：
+
+<div align="center"><img alt="在 Interface Builder 中更改 orientation" src="http://imgur.com/ronMSFi.png"/></div><center>在 Interface Builder 中更改 orientation</center>
+
+<br>
+
+这将更改 view controller 的尺寸。它会把按钮放在一个尴尬的地方。
+
+➤ 将按钮移回 view 的中心，因为有着不整洁的用户界面的程序在当下难以有一席之地。
+
+<div align="center"><img alt="在 landscape 下的 view<" src="http://imgur.com/70hdZxh.png"/></div><center>在 landscape 下的 view</center>
+
+<br>
+
+关心了一下 view 的布局。
+
+➤ 在 iPhone SE 模拟器上运行应用程序。屏幕不显示为 landscape，按钮也不再位于中心。
+
+但是，如果你将模拟器旋转为 landscape，那么一切都会看起来像预想的一样了。

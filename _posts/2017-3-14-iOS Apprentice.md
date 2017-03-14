@@ -2,7 +2,7 @@
 layout: post
 title: "iOS Apprentice 1 Getting Started v5.0 （译）"
 date:   2017-03-13
-excerpt: "译至 30 页"
+excerpt: "译至 37 页"
 tags: [program, iOS, translate]
 comments: true
 ---
@@ -232,7 +232,7 @@ C++ 是另一种由 C 衍生出来的面向对象编程语言。它非常强大�
 
 我可以在 iOS Apprentice 的一开始深入讨论 Swift 的功能，但那样你可能会睡着。所以，我们来慢慢的解释语言，非常简单，等你适应了，再做更深入的讲解。
 
-在一开始，一般概念——什么是变量，对象，如何调用方法等——远比详细信息重要。虽然缓慢但毫无疑问，我会将 Swift 语言所有的秘密都揭露给你。
+在一开始，一般概念——什么是变量，object（对象），如何调用方法等——远比详细信息重要。虽然缓慢但毫无疑问，我会将 Swift 语言所有的秘密都揭露给你。
 
 你准备好开始编写你生涯中的第一个 iOS 应用程序了吗？
 
@@ -246,7 +246,7 @@ C++ 是另一种由 C 衍生出来的面向对象编程语言。它非常强大�
 
 目标是滑动图中这个看起来像牛眼一样的 Slider（滑块）（范围 1 ～ 100），使其尽可能的贴近系统给出的随机值。在上面的截图中，目标是将 “牛眼” 滑动到 22 的地方，因为看不到滑块的当前值，所以全靠目测了。
 
-当你对你的估计有信心时，按下 “Hit Me!” 按钮，弹出的窗口（也称为 alert（提醒））会告诉你，你获得了多少分：
+当你对你的估计有信心时，按下 “Hit Me!” button，弹出的窗口（也称为 alert（提醒））会告诉你，你获得了多少分：
 
 <div align="center"><img alt="一个显示分数的 alert（弹出警报）" src="http://imgur.com/IGbMo3P.png"/></div><center>一个显示分数的 alert（弹出警报）</center>
 
@@ -262,7 +262,7 @@ C++ 是另一种由 C 衍生出来的面向对象编程语言。它非常强大�
 
 接下来我将给你一个例子：
 
-*应用程序需要在屏幕上放置 “Hit Me!”  Button，并在用户按下时显示警告弹出窗口。*
+*应用程序需要在屏幕上放置 “Hit Me!” button，并在用户按下时显示警告弹出窗口。*
 
 尝试想想还需要做些什么——如果你实际上并不知道该如何完成这些任务。首先一点，你需要确定下来你要做什么，而不是怎么做。
 
@@ -276,11 +276,11 @@ C++ 是另一种由 C 衍生出来的面向对象编程语言。它非常强大�
 
 这是我的想法。我只是根据游戏的描述，并把它分割成一块一块：
 
-- 在屏幕上放置一个 Button（按钮），并将其标记为 ”Hit Me!”。
-- 当玩家按下 ”Hit Me!” 按钮的时候，应用程序必须弹出一个警告窗口，通知玩家他的表现如何。以某种方式（暂时还不知道该如何做）计算出得分，并将得分放入警报窗口中。
+- 在屏幕上放置一个 button（按钮），并将其标记为 “Hit Me!”。
+- 当玩家按下 “Hit Me!” button 的时候，应用程序必须弹出一个警告窗口，通知玩家他的表现如何。以某种方式（暂时还不知道该如何做）计算出得分，并将得分放入警报窗口中。
 - 在屏幕上放置文本，例如 “Score:” 和 “Round:” labels（标签）。这些文本会变化，例如分数，当玩家的得分时点数应该相应增加。
 - 将 Slider 放在屏幕上，使其值在 1 到 100 之间。
-- 在用户按下 ”Hit Me!” 按钮后，读取 Slider 的值。
+- 在用户按下 “Hit Me!” button 后，读取 Slider 的值。
 - 在每个回合开始时生成一个随机数，并将其显示在屏幕上，这是目标值。
 - 将 Slider 的值与随机数进行比较，并计算出得分。让得分在警报窗口中显示。
 - 将 “开始” 按钮放在屏幕上。点击它会重置得分，并从第一轮重新开始。
@@ -291,7 +291,7 @@ C++ 是另一种由 C 衍生出来的面向对象编程语言。它非常强大�
 
 ## 只有一个 Button 的应用程序
 
-让我们从刚才列出的列表的最顶端开始，做一个很简单的 v1.0 版本，只显示一个 Button。当你按下它应用程序会弹出警报消息。这就是你现在要做的。一旦你完成了这个工作，你就可以在这个基础上继续构建游戏的其余部分。
+让我们从刚才列出的列表的最顶端开始，做一个很简单的 v1.0 版本，只显示一个 button。当你按下它应用程序会弹出警报消息。这就是你现在要做的。一旦你完成了这个工作，你就可以在这个基础上继续构建游戏的其余部分。
 
 应用程序将会看起来像这样：
 
@@ -410,7 +410,7 @@ Xcode 将工作一会儿，然后它在 iOS 模拟器启动您全新的应用程
 
 ## 添加 Button
 
-我相信你几乎没有印象，因为我有一个只是显示无聊白色屏幕应用程序，所以让我们添加一个 Button。
+我相信你几乎没有印象，因为我有一个只是显示无聊白色屏幕应用程序，所以让我们添加一个 button。
 
 Xcode 窗口的左侧被命名为 **Navigator Area**（导航区域）。顶部的图标行决定了哪个导航器是可见的。当前是 **Project Navigator**（项目导航器），它显示项目中的文件列表。
 
@@ -422,7 +422,7 @@ Xcode 窗口的左侧被命名为 **Navigator Area**（导航区域）。顶部�
 
 <br>
 
-像一个超级英雄在电话亭里改变他的衣服，主编辑窗格现在转换为界面生成器。这个工具允许你将用户界面组件（例如 Button）拖放到 **Interface Builder** 中。（OK，虽然这个比方打的不怎样，但是我只是想说 Interface Builder 是一个超级工具。）
+像一个超级英雄在电话亭里改变他的衣服，主编辑窗格现在转换为界面生成器。这个工具允许你将用户界面组件（例如 button）拖放到 **Interface Builder** 中。（OK，虽然这个比方打的不怎样，但是我只是想说 Interface Builder 是一个超级工具。）
 
 ➤ 如果它还不是蓝色，请单击 Xcode 工具栏中的 **Hide or show utilities** （隐藏或显示）实用程序按钮：
 
@@ -470,39 +470,39 @@ Xcode 窗口的左侧被命名为 **Navigator Area**（导航区域）。顶部�
 
 <br>
 
-滚动 Object Library 列表中的项目，直到看到 Button。
+滚动 Object Library 列表中的项目，直到看到 button。
 
-➤ 将 Button 拖动到位于工作区域的 scene 的矩形的顶部。
+➤ 将 button 拖动到位于工作区域的 scene 的矩形的顶部。
 
-<div align="center"><img alt="拖动 Button 到 scene 顶部" src="http://imgur.com/lbNySmJ.png"/></div><center>拖动 Button 到 scene 顶部</center>
+<div align="center"><img alt="拖动 button 到 scene 顶部" src="http://imgur.com/lbNySmJ.png"/></div><center>拖动 button 到 scene 顶部</center>
 
 <br>
 
-看，添加一个 Button 多么简单，只需要拖放。 这也适用于所有其他用户界面元素。你会做很多这样的事情，所以花一些时间来熟悉这个过程。
+看，添加一个 button 多么简单，只需要拖放。 这也适用于所有其他用户界面元素。你会做很多这样的事情，所以花一些时间来熟悉这个过程。
 
 ➤ 拖放一些其他 controls（控件），如 labels，sliders 和 switches，只管拖动他们就对了。
 
-这应该会给你一些有关 UI controls 的想法，因为 iOS 支持使用它们。请注意，Interface Builder 会帮助您布局 controls，通过将 controls 对齐到 view 的边缘和其他对象。这是一个非常方便的工具！
+这应该会给你一些有关 UI controls 的想法，因为 iOS 支持使用它们。请注意，Interface Builder 会帮助您布局 controls，通过将 controls 对齐到 view 的边缘和其他 object。这是一个非常方便的工具！
 
-➤ 双击刚刚放置的 Button 以编辑其标题为 “Hit Me!”。
+➤ 双击刚刚放置的 button 以编辑其标题为 “Hit Me!”。
 
-<div align="center"><img alt="带有新标题的 Button" src="http://imgur.com/ycaJMiF.png"/></div><center>带有新标题的 Button</center>
+<div align="center"><img alt="带有新标题的 button" src="http://imgur.com/ycaJMiF.png"/></div><center>带有新标题的 button</center>
 
 <br>
 
 你的按钮可能有一个边框：
 
-<div align="center"><img alt="带有边界矩形的 Button" src="http://imgur.com/1pBSWja.png"/></div><center>带有边界矩形的 Button</center>
+<div align="center"><img alt="带有边界矩形的 button" src="http://imgur.com/1pBSWja.png"/></div><center>带有边界矩形的 button</center>
 
 <br>
 
-这个边框不是 Button 的一部分，它只是在那里显示 Button 有多大。你可以使用 **Editor** **→ Canvas → Show Bounds Rectangles**（显示矩形边框）菜单选项打开或关闭这些矩形。
+这个边框不是 button 的一部分，它只是在那里显示 button 有多大。你可以使用 **Editor** **→ Canvas → Show Bounds Rectangles**（显示矩形边框）菜单选项打开或关闭这些矩形。
 
-当你完成与 Interface Builder 的互动后，按下 Xcode 工具栏上的 Run 按钮。应用程序现在应该出现在模拟器中，完成你的 “Hit Me!” Button。但是，当你点击 Button 它不做任何事情。为此，你必须写一些 Swift 代码！
+当你完成与 Interface Builder 的互动后，按下 Xcode 工具栏上的 Run 按钮。应用程序现在应该出现在模拟器中，完成你的 “Hit Me!” button。但是，当你点击 button 它不做任何事情。为此，你必须写一些 Swift 代码！
 
 ## 源代码 Editor
 
-一个 Button，没有做任何事情，任何人按它都没有用，所以让我们让它显示一个 alert 弹出。 在完成的游戏中，alert 将显示玩家的分数，但现在我们将限制自己一个简单的文本消息（传统的“Hello, World!”）。（译者注：有这么一个故事：有一天，某程序员爱慕已久的女神主动和他打了招呼。女神：“Hello.”，程序员：“World!”，那么这个故事就到此打住了）
+一个 button，没有做任何事情，任何人按它都没有用，所以让我们让它显示一个 alert 弹出。 在完成的游戏中，alert 将显示玩家的分数，但现在我们将限制自己一个简单的文本消息（传统的“Hello, World!”）。（译者注：有这么一个故事：有一天，某程序员爱慕已久的女神主动和他打了招呼。女神：“Hello.”，程序员：“World!”，那么这个故事就到此打住了）
 
 ➤ 在 **Project navigator**，单击 **ViewController.swift**。
 
@@ -555,7 +555,7 @@ from a nib. }
 
 ## View controllers
 
-你已经编辑 **Main.storyboard** 文件来构建应用程序的用户界面。它只是一个白色背景上的 Button，但它确实是一个实实在在的用户界面。你还向 **ViewController.swift** 添加了源代码。
+你已经编辑 **Main.storyboard** 文件来构建应用程序的用户界面。它只是一个白色背景上的 button，但它确实是一个实实在在的用户界面。你还向 **ViewController.swift** 添加了源代码。
 
 这两个文件——storyboard 和 Swift 文件——一起形成了 *view controller* 的设计和实现。 构建 iOS 应用程序的很多工作是创建 view controller。 view controller 的工作是在应用程序中管理单个屏幕。
 
@@ -569,7 +569,7 @@ from a nib. }
 
 这就是为什么你还需要两个 view controller：一个知道如何处理列表，另一个可以处理图像和烹饪说明。 iOS 的设计原则之一就是，应用程序中的每个屏幕都有自己的 view controller。
 
-目前 Bull's Eye 只有一个屏幕（顶部有一个白色 Button 的那个），因此只需要一个 view controller。该 view controller 简称为 “ViewController”（译者注：这里看起来比较怪，实际上后者只是一个命名，你可以随意修改。前者则为专有名词），storyboard 和 Swift 文件一起工作来实现它。
+目前 Bull's Eye 只有一个屏幕（顶部有一个白色 button 的那个），因此只需要一个 view controller。该 view controller 简称为 “ViewController”（译者注：这里看起来比较怪，实际上后者只是一个命名，你可以随意修改。前者则为专有名词），storyboard 和 Swift 文件一起工作来实现它。
 
 简单地说，Main.storyboard 文件包含 view controller 的用户界面的设计，而ViewController.swift 包含其功能——让用户界面按照设定来工作的逻辑，它是使用 Swift 语言来编写的。
 
@@ -577,7 +577,7 @@ from a nib. }
 
 ## 建立关联
 
-你刚刚所添加到 ViewController.swift 的源代码的作用是让 Interface Builder 知道 controller 有一个名字为 “showAlert” 的操作，它可能会显示一个 alter 弹出窗口。你现在将要做的就是将 Button 连接到该操作。
+你刚刚所添加到 ViewController.swift 的源代码的作用是让 Interface Builder 知道 controller 有一个名字为 “showAlert” 的操作，它可能会显示一个 alter 弹出窗口。你现在将要做的就是将 button 连接到该操作。
 
 ➤ 单击 **Main.storyboard** 返回到 Interface Builder。
 
@@ -587,13 +587,13 @@ from a nib. }
 
 <br>
 
-➤ 单击 **Hit Me** Button 将其选中。
+➤ 单击 **Hit Me** button 将其选中。
 
-选中 Hit Me Button 后，按住 Ctrl 键，单击 Button 并向上拖动到 Outline pane 中的 View Controller 项。你应该会看到 Button 和 View Controller 之间出现一条蓝线。
+选中 “Hit Me” button 后，按住 Ctrl 键，单击 button 并向上拖动到 Outline pane 中的 View Controller 项。你应该会看到 button 和 View Controller 之间出现一条蓝线。
 
 （如果你不想按住 Ctrl，你也可以右键单击和拖动，但在开始拖动之前，请不要放开鼠标按键。）
 
-<div align="center"><img alt="从 Button 开始按住 ctrl 并拖动到 View Controller" src="http://imgur.com/GXEDkR6.png"/></div><center>从 Button 开始按住 ctrl 并拖动到 View Controller</center>
+<div align="center"><img alt="从 button 开始按住 ctrl 并拖动到 View Controller" src="http://imgur.com/GXEDkR6.png"/></div><center>从 button 开始按住 ctrl 并拖动到 View Controller</center>
 
 <br>
 
@@ -603,15 +603,15 @@ from a nib. }
 
 <br>
 
-➤单击 show alert 以选择它。这表明 Interface Builder 在 Button 和 @IBAction func show Alert() 之间进行关联。
+➤单击 show alert 以选择它。这表明 Interface Builder 在 button 和 @IBAction func show Alert() 之间进行关联。
 
-从现在开始，每当 Button 被点击时，将执行 showAlert 操作。这就是如何使 Button 和其他controls 互动：你在 view controller 的 Swift 文件中定义一个动作，然后在Interface Builder中进行连接。
+从现在开始，每当 button 被点击时，将执行 showAlert 操作。这就是如何使 button 和其他controls 互动：你在 view controller 的 Swift 文件中定义一个动作，然后在Interface Builder中进行连接。
 
 你可以看到连接关系，通过 Xcode 窗口右侧的实用程序窗格中的 **Connections inspector**（连接检查器）。
 
 ➤ 单击 pane 顶部的小箭头形按钮以切换到 Connections inspector：
 
-<div align="center"><img alt="inspector 显示从Button 到任何其他对象的连接" src="http://imgur.com/8qKlFD2.png"/></div><center>inspector 显示从Button 到任何其他对象的连接</center>
+<div align="center"><img alt="inspector 显示从 button 到任何其他 object 的连接" src="http://imgur.com/8qKlFD2.png"/></div><center>inspector 显示从 button 到任何其他 object 的连接</center>
 
 <br>
 
@@ -627,7 +627,7 @@ from a nib. }
 
 ## Button 上的行为
 
-你现在有一个带有 Button 的屏幕。该 Button 被关联到名为 showAlert 的操作上，当用户点击该 Button 时将执行该操作。
+你现在有一个带有 button 的屏幕。该 button 被关联到名为 showAlert 的操作上，当用户点击该 button 时将执行该操作。
 
 然而，目前而言，操作是空的，什么也不会发生（不信试试）。你需要向应用程序提供更多说明。
 
@@ -651,11 +651,11 @@ from a nib. }
 
 {} 括号之间的命令告诉 iPhone 做什么，它们从上到下依次执行。
 
-showAlert 中的代码创建一个标题为 “Hello，World” 的 alert，它包含一条 “This is my first app!” 消息和一个 label 为 “Awesome” 的 Button。
+showAlert 中的代码创建一个标题为 “Hello，World” 的 alert，它包含一条 “This is my first app!” 消息和一个 label 为 “Awesome” 的 button。
 
 如果你不确定标题和消息之间的区别：都显示文本，但标题稍大，而且采用粗体。
 
-➤ 单击 Xcode 工具栏上的 Run 按钮。如果你没有任何的拼写错误，你的应用程序应该会在模拟器中启动，当你点击 Button，应该会看到 alert。
+➤ 单击 Xcode 工具栏上的 Run 按钮。如果你没有任何的拼写错误，你的应用程序应该会在模拟器中启动，当你点击 button，应该会看到 alert。
 
 <div align="center"><img alt="alert 弹出动作" src="http://imgur.com/suZqPl0.png"/></div><center>alert 弹出动作</center>
 
@@ -663,7 +663,7 @@ showAlert 中的代码创建一个标题为 “Hello，World” 的 alert，它�
 
 恭喜，你刚刚编写了属于你的第一个 iOS 应用程序！你刚刚做的事可能在你看来是莫名其妙的，但这不重要。 我们一次只走一小步。
 
-你可以从一开始列出的待办事项列表中删除前两个项目：在屏幕上放置一个 Button，并在用户点 Button 钮时显示 alert。
+你可以从一开始列出的待办事项列表中删除前两个项目：在屏幕上放置一个 button，并在用户点 button 钮时显示 alert。
 
 休息一下，让它沉淀下来，当你准备好学习更多的时候回来！你只不过是刚刚迈出一小步而已...
 
@@ -710,4 +710,32 @@ showAlert 中的代码创建一个标题为 “Hello，World” 的 alert，它�
 # 应用程序如何工作？
 
 在这一点上，将会有一些体会关于应用程序的背后到底发生了什么。
+
+应用程序本质上由可以向彼此发送消息的 **objects** 组成。你的应用程序中的许多 objects 由iOS提供，例如 button（UIButton对象）和 alert 弹出窗口（UIAlertController对象）。对于一些 object，你必须自己编程，如 view controller。
+
+这些 object 通过将消息传递给彼此进行通信。当用户点击应用程序中的 “Hit Me” button 时，例如，该 UIButton object 发送消息到你的 view controller。view controller 可以通知更多的 objects。
+
+在 iOS 上，应用程序是事件驱动，这意味着这些 objrcts 侦听某些事件并进行处理。
+
+听起来很奇怪，一个应用程序花大部分时间做...什么没有。它只是坐在那里等待某事件发生。当用户点击屏幕时，应用程序弹出几毫秒的动作，然后它再次回到睡眠，直到迎来下一个事件。
+
+在此方案中你所做的部分就是，由你编写的源代码将在对象接收到此类事件的消息时执行。
+
+在应用程序中，button 的 Touch Up Inside 事件连接到 view controller 的 showAlert 操作。 所以当 button 识别它已被轻敲时，它发送 showAlert 消息到你的 view controller。
+
+在 showAlert 内部，view controller 发送另一个消息，addAction 到 UIAlertController 的 object。为了显示警报，view controller 发送当前消息。
+
+你的整个应用程序将由以这种方式来通信的对象所组成。
+
+<div align="center"><img alt="应用中事件的一般流程" src="http://imgur.com/peQXMv5.png"/></div><center>应用中事件的一般流程</center>
+
+<br>
+
+也许你已经在你的网站上使用过 PHP 或 Ruby 脚本。这个基于事件的模型与 PHP 脚本的工作原理不同。PHP 脚本将从上到下运行，一个接一个地执行语句，直到它到达终点，然后退出。
+
+应用程序，另一方面，不退出，直到用户终止它们（或它们崩溃！）。它们花费大部分时间等待输入事件，然后处理这些事件并回到睡眠状态。
+
+来自用户的输入，大多数是触摸和敲击的形式，是你的应用程序中的最重要的事件源，但也有其他类型的事件。例如，当用户接收到来电时，当它必须重新绘制屏幕时，当定时器倒计时……操作系统就会通知你的应用程序。
+
+你的应用程序执行的所有操作都是由某个事件触发而来的的。
 

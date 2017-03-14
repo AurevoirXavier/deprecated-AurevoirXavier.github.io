@@ -771,7 +771,7 @@ showAlert 中的代码创建一个标题为 “Hello，World” 的 alert，它�
 
 ---
 
-译者注：
+**译者注：**
 
 <center><strong>iPhone 技术层</strong></center>
 
@@ -784,13 +784,13 @@ showAlert 中的代码创建一个标题为 “Hello，World” 的 alert，它�
 |    **⇩**    |
 |  **核心 OS**  |
 
----
-
 <br>
 
 <center><strong>Cocoa 包含 Foundation 和 ApppKit framework，可用于开发 macOS 系统的应用程序。</strong></center>
 
 <center><strong>Cocoa Touch 包含 Foundation 和 UIKit framework，可用于开发 iOS 的开发环境。</strong></center>
+
+---
 
 <br>
 

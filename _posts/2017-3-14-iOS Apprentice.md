@@ -817,6 +817,8 @@ showAlert 中的代码创建一个标题为 “Hello，World” 的 alert，它�
 
 <div align="center"><img alt="" src="http://imgur.com/WCRTKv6.png"/>
 
+</div>
+
 <br>
 
 在 iOS 的早期时代，只有一个屏幕尺寸。 但是，“一刀切” 的时代已经过去了。现在我们有各种各样的屏幕尺寸要处理。

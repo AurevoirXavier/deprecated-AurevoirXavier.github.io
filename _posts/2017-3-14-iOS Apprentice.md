@@ -648,3 +648,66 @@ from a nib. }
 <center>新加入的这几行提供了此操作的实际功能。</center>
 
 <br>
+
+{} 括号之间的命令告诉 iPhone 做什么，它们从上到下依次执行。
+
+showAlert 中的代码创建一个标题为 “Hello，World” 的 alert，它包含一条 “This is my first app!” 消息和一个 label 为 “Awesome” 的 Button。
+
+如果你不确定标题和消息之间的区别：都显示文本，但标题稍大，而且采用粗体。
+
+➤ 单击 Xcode 工具栏上的 Run 按钮。如果你没有任何的拼写错误，你的应用程序应该会在模拟器中启动，当你点击 Button，应该会看到 alert。
+
+<div align="center"><img alt="alert 弹出动作" src="http://imgur.com/suZqPl0.png"/></div><center>alert 弹出动作</center>
+
+<br>
+
+恭喜，你刚刚编写了属于你的第一个 iOS 应用程序！你刚刚做的事可能在你看来是莫名其妙的，但这不重要。 我们一次只走一小步。
+
+你可以从一开始列出的待办事项列表中删除前两个项目：在屏幕上放置一个 Button，并在用户点 Button 钮时显示 alert。
+
+休息一下，让它沉淀下来，当你准备好学习更多的时候回来！你只不过是刚刚迈出一小步而已...
+
+<code class="highlighter-rouge"><strong>注意：</strong>为了防止你卡住，我已经在本教程附带的源代码文件夹中为本教程中的几个检查点提供了完整的 Xcode 项目。这样，你可以拿你的应用程序的版本和我的做对比，或者——如果你真的弄乱了一些东西——可以从一个你拿的准的版本入手。</code>
+
+<code class="highlighter-rouge">你可以在 <strong>01 - One Button App</strong> 文件夹中找到你迄今为止所做的应用程序的项目文件。</code>
+
+## 问题？
+
+如果 Xcode 在按下 Run 后出现 “Build Failed” 错误消息，请确保输入的所有内容是正确的。即使是最小的错误也会把 Xcode 弄晕。它可以是相当压倒性的有意义的错误消息。源代码顶部的一个小错字可能会引起在该文件的其他位置产生多个错误。
+
+典型的错误是大小写不同。Swift 编程语言是区分大小写的，这意味着它看到 Alert 和 alert 作为两个不同的名称。Xcode 使用 “\<something> undeclared” 或 “Use of unresolved identifier”（使用未解析的标识符）来报出这个错误。
+
+当 Xcode 说 “Parse Issue” 或 “Expected \<something>” 的时候，你可能忘了一个花括号 } 或括号 ）。不匹配开括号和闭括号是一个常见的错误。
+
+（Tips：如果将文本光标移动到结束括号上，Xcode 将以高亮标记相应的开始括号）
+
+这样的小细节在你编程时非常重要。即使一个错位字符它也可以阻止 Swift 编译器构建你的应用程序。
+
+幸运的是，这种错误很容易找到。
+
+<div align="center"><img alt="Xcode 会确保你不会忽略掉错误" src="http://imgur.com/KWjPWMm.png"/></div><center>Xcode 会确保你不会忽略掉错误</center>
+
+<br>
+
+当 Xcode 检测到错误时，将左侧窗格切换到 **Issue navigator**（问题导航器），你的项目文件就是这样。此列表显示 Xcode 找到的所有错误和警告。（你可以回到项目文件，通过顶部的小按钮。）
+
+显然，我忘了某处的逗号。
+
+点击错误消息，Xcode 会带你到源代码中出现错误的行。它甚至建议你需要做什么来解决它：
+
+<div align="center"><img alt="Fix-it 对于这个问题建议的一条解决方案" src="http://imgur.com/tIWHKT2.png"/></div><center>Fix-it 对于这个问题建议的一条解决方案</center>
+
+<br>
+
+有时，当你构建失败，你很难找到你做错了什么，但幸运的是，Xcode 提供这样的助手。
+
+<code class="highlighter-rouge"><strong>Errors（错误）和 warnings（警告）</strong></code>
+
+`Xcode区分 errors（红色）和 warnings（黄色）。errors 是致命的。 如果你有一个，你不能运行应用程序。warnings 是信息。Xcode只是说，“你可能不是想这样做，但仍然继续。`
+
+`在我看来，最好把所有 warnings 看作是 errors。在继续操作之前修复 warnings，并且只有在出现零个 errors 和零个 warnings 时才运行应用程序。这不保证应用程序不会有任何错误，但至少它不会是愚蠢的。`
+
+# 应用程序如何工作？
+
+在这一点上，将会有一些体会关于应用程序的背后到底发生了什么。
+

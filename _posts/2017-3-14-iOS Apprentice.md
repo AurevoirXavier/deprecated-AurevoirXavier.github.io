@@ -2,7 +2,7 @@
 layout: post
 title: "iOS Apprentice 1 Getting Started v5.0 （译）"
 date:   2017-03-13
-excerpt: "译至 23 页"
+excerpt: "译至 30 页"
 tags: [program, iOS, translate]
 comments: true
 ---
@@ -262,7 +262,7 @@ C++ 是另一种由 C 衍生出来的面向对象编程语言。它非常强大�
 
 接下来我将给你一个例子：
 
-*应用程序需要在屏幕上放置 “Hit Me!” 按钮，并在用户按下时显示警告弹出窗口。*
+*应用程序需要在屏幕上放置 “Hit Me!”  Button，并在用户按下时显示警告弹出窗口。*
 
 尝试想想还需要做些什么——如果你实际上并不知道该如何完成这些任务。首先一点，你需要确定下来你要做什么，而不是怎么做。
 
@@ -498,7 +498,7 @@ Xcode 窗口的左侧被命名为 **Navigator Area**（导航区域）。顶部�
 
 这个边框不是 Button 的一部分，它只是在那里显示 Button 有多大。你可以使用 **Editor** **→ Canvas → Show Bounds Rectangles**（显示矩形边框）菜单选项打开或关闭这些矩形。
 
-当你完成与 Interface Builder 的互动后，按下 Xcode 工具栏上的 Run 按钮。应用程序现在应该出现在模拟器中，完成你的 “Hit Me!” 按钮。但是，当你点击按钮它不做任何事情。为此，你必须写一些 Swift 代码！
+当你完成与 Interface Builder 的互动后，按下 Xcode 工具栏上的 Run 按钮。应用程序现在应该出现在模拟器中，完成你的 “Hit Me!” Button。但是，当你点击 Button 它不做任何事情。为此，你必须写一些 Swift 代码！
 
 ## 源代码 Editor
 
@@ -518,6 +518,8 @@ Interface Builder 将消失，Editor 区域现在展现出一堆明亮的彩色�
  @IBAction func showAlert() {
 }
 ```
+
+<br>
 
 **ViewController.swift** 的源代码现在应该如下所示：
 
@@ -545,6 +547,8 @@ from a nib. }
 
 初尝 Swift 的感觉如何？合你口味吗？ 在我可以告诉你这是什么意思之前，我首先要介绍一个有关 view controller 的概念。
 
+<br>
+
 <code class="highlighter-rouge"><strong>Xcode 会自动保存</strong></code>
 
 <code class="highlighter-rouge">你不必保存文件，在你对它们进行更改后，因为当你按下 Run 按钮后 Xcode 将自动保存任何修改的文件。然而，Xcode 不是最稳定的软件，有时候它可能会在保存你的更改之前崩溃，所以我仍然想按 <strong>⌘ + S</strong> 定期保存我的文件。</code>
@@ -554,3 +558,93 @@ from a nib. }
 你已经编辑 **Main.storyboard** 文件来构建应用程序的用户界面。它只是一个白色背景上的 Button，但它确实是一个实实在在的用户界面。你还向 **ViewController.swift** 添加了源代码。
 
 这两个文件——storyboard 和 Swift 文件——一起形成了 *view controller* 的设计和实现。 构建 iOS 应用程序的很多工作是创建 view controller。 view controller 的工作是在应用程序中管理单个屏幕。
+
+以一个简单的食谱应用程序为例。当你启动它时，其主屏幕列出可用的食谱。点击一个食谱打开一个新的屏幕，显示食谱详细的一个美味的照片和烹饪说明。每个屏幕由其自己的 view controller 来管理。
+
+<div align="center"><img alt="view controller 在一个简单的食谱应用程序中的应用" src="http://imgur.com/dOpNhlP.png"/></div><center>view controller 在一个简单的食谱应用程序中的应用</center>
+
+<br>
+
+相比之下，这两个屏幕是非常不同的。一个是几个项目的列表；另一个呈现单个项目的详细视图。
+
+这就是为什么你还需要两个 view controller：一个知道如何处理列表，另一个可以处理图像和烹饪说明。 iOS 的设计原则之一就是，应用程序中的每个屏幕都有自己的 view controller。
+
+目前 Bull's Eye 只有一个屏幕（顶部有一个白色 Button 的那个），因此只需要一个 view controller。该 view controller 简称为 “ViewController”（译者注：这里看起来比较怪，实际上后者只是一个命名，你可以随意修改。前者则为专有名词），storyboard 和 Swift 文件一起工作来实现它。
+
+简单地说，Main.storyboard 文件包含 view controller 的用户界面的设计，而ViewController.swift 包含其功能——让用户界面按照设定来工作的逻辑，它是使用 Swift 语言来编写的。
+
+因为你使用 Single View Application 模板，Xcode 自动为你创建 view controller。 稍后，你将为游戏添加第二个屏幕，你将为此创建自己的 view controller。
+
+## 建立关联
+
+你刚刚所添加到 ViewController.swift 的源代码的作用是让 Interface Builder 知道 controller 有一个名字为 “showAlert” 的操作，它可能会显示一个 alter 弹出窗口。你现在将要做的就是将 Button 连接到该操作。
+
+➤ 单击 **Main.storyboard** 返回到 Interface Builder。
+
+左边应该有一个 pane，即 **Outline pane**，其中列出了所有项目你的 stpryboard。如果没有看到该 pane，请单击 Interface Builder canvas 左下角的小切换按钮以显示它。
+
+<div align="center"><img alt="用来显示 Outline pane 的按钮" src="http://imgur.com/uThAxbE.png"/></div><center>用来显示 Outline pane 的按钮</center>
+
+<br>
+
+➤ 单击 **Hit Me** Button 将其选中。
+
+选中 Hit Me Button 后，按住 Ctrl 键，单击 Button 并向上拖动到 Outline pane 中的 View Controller 项。你应该会看到 Button 和 View Controller 之间出现一条蓝线。
+
+（如果你不想按住 Ctrl，你也可以右键单击和拖动，但在开始拖动之前，请不要放开鼠标按键。）
+
+<div align="center"><img alt="从 Button 开始按住 ctrl 并拖动到 View Controller" src="http://imgur.com/GXEDkR6.png"/></div><center>从 Button 开始按住 ctrl 并拖动到 View Controller</center>
+
+<br>
+
+一旦你在 View Controller 上，放开鼠标按键，会出现一个小菜单。 它包含两个部分，  “Action Segue”（操作 Segue）和 “Sent Events”（发送事件”），每个下面有一个或多个选项。 你对 Sent Events 下的 **showAlert** 选项感兴趣。这是你先前在 ViewController.swift 的源代码中添加的操作的名称。
+
+<div align="center"><img alt="带有 showAlert 操作的弹出菜单" src="http://imgur.com/tbiY4J1.png"/></div><center>带有 showAlert 操作的弹出菜单</center>
+
+<br>
+
+➤单击 show alert 以选择它。这表明 Interface Builder 在 Button 和 @IBAction func show Alert() 之间进行关联。
+
+从现在开始，每当 Button 被点击时，将执行 showAlert 操作。这就是如何使 Button 和其他controls 互动：你在 view controller 的 Swift 文件中定义一个动作，然后在Interface Builder中进行连接。
+
+你可以看到连接关系，通过 Xcode 窗口右侧的实用程序窗格中的 **Connections inspector**（连接检查器）。
+
+➤ 单击 pane 顶部的小箭头形按钮以切换到 Connections inspector：
+
+<div align="center"><img alt="inspector 显示从Button 到任何其他对象的连接" src="http://imgur.com/8qKlFD2.png"/></div><center>inspector 显示从Button 到任何其他对象的连接</center>
+
+<br>
+
+在 Sent Events 部分中，“Touch Up Inside”（触摸内部）事件现在已连接到 showAlert 操作。你同样可以在 Swift 文件中查看连接。
+
+➤ 选择 ViewController.swift 以编辑它。
+
+注意在行 @IBAction func showAlert() 的左边，有一个实心圆？ 点击该圆以显示此操作（译者注：一般这种操作称之为，函数或者方法。原文为：action）所连接的内容。
+
+<div align="center"><img alt="实心圆表示动作连接到某物" src="http://imgur.com/079R0Yo.png"/></div><center>实心圆表示动作连接到某物</center>
+
+<br>
+
+## Button 上的行为
+
+你现在有一个带有 Button 的屏幕。该 Button 被关联到名为 showAlert 的操作上，当用户点击该 Button 时将执行该操作。
+
+然而，目前而言，操作是空的，什么也不会发生（不信试试）。你需要向应用程序提供更多说明。
+
+➤ 在 ViewController.swift 中，将以下行添加到 showAlert 中：
+
+```swift
+@IBAction func showAlert() {
+  let alert = UIAlertController(title: "Hello, World",
+                                message: "This is my first app!",
+                                preferredStyle: .alert)
+  let action = UIAlertAction(title: "Awesome", style: .default,
+                             handler: nil)
+  alert.addAction(action)
+  present(alert, animated: true, completion: nil)
+}
+```
+
+<center>新加入的这几行提供了此操作的实际功能。</center>
+
+<br>

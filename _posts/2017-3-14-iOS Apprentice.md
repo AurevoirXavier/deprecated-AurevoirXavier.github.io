@@ -769,6 +769,8 @@ showAlert 中的代码创建一个标题为 “Hello，World” 的 alert，它�
 
 `iOS 的完整 frameworks 集合统称为 Cocoa Touch。`
 
+---
+
 译者注：
 
 <center><strong>iPhone 技术层</strong></center>
@@ -781,6 +783,8 @@ showAlert 中的代码创建一个标题为 “Hello，World” 的 alert，它�
 |  **核心服务**   |
 |    **⇩**    |
 |  **核心 OS**  |
+
+---
 
 <br>
 

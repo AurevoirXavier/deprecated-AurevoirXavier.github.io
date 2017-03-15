@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "iOS Apprentice 1 Getting Started v5.0 （译）"
-date:   2017-03-14
+date:   2017-03-15
 excerpt: "译至 40 页"
 tags: [program, iOS, translate]
 comments: true
@@ -31,7 +31,7 @@ comments: true
 
 在本书中，你将学习如何使用苹果的 Swift 3.0 编程语言，并通过这一系列的四个史诗级长度的动手教程来制作自己的 iPhone 和 iPad 应用程序。
 
-<div align="center"><img alt="你将在 iOS Apprentice 中制作的应用程序" src="http://i.imgur.com/AwL2UfX.png"/></div><center>:yum:你将在 iOS Apprentice 中制作的应用程序:yum:</center>  
+<div align="center"><img alt="你将在 iOS Apprentice 中制作的应用程序" src="http://i.imgur.com/AwL2UfX.png"/></div><center>你将在 iOS Apprentice 中制作的应用程序</center>  
 
 <br>
 
@@ -222,13 +222,13 @@ func handleMusicEvent(command: Int, noteNumber: Int, velocity: Int) {
 
 它几乎看起来就像是某些有意义的东西。即使你以前从来没有编过程，你可以通过排序，弄清楚其中发生了什么。这几乎就是英语。（译者注：好好学习英语吧，也许我翻译本书是个错误）
 
-Swift 是一门新兴的同时又非常热门的语言，它将传统的面向对象编程与函数式编程的各方面相结合。幸运的是，Swift 有许多与其他流行编程语言相同的东西，所以如果你已经熟悉 C#，Python，Ruby 或 Javascript，你会在使用 Swift 过程中体会到宾至如归的感觉。
+Swift 是一门新兴的同时又非常热门的语言，它将传统的 object-oriented（面向对象）编程与函数式编程的各方面相结合。幸运的是，Swift 有许多与其他流行编程语言相同的东西，所以如果你已经熟悉 C#，Python，Ruby 或 Javascript，你会在使用 Swift 过程中体会到宾至如归的感觉。
 
-Swift 并不是制作应用程序的唯一选择。直到最近，iPhone 和 iPad 应用程序都是使用 Object-C 编写的（译者注：乔老大留下宝贵财富，还是很有分量的），Object-C 是一门由 C 语言在面向对象这一方面拓展而来的。由于是那个时代 C 语言的产物，Object-C 难免有着一些粗糙的棱角，并不真正符合现代开发商的需求。这就是为什么苹果创造了一种新的语言。
+Swift 并不是制作应用程序的唯一选择。直到最近，iPhone 和 iPad 应用程序都是使用 Object-C 编写的（译者注：乔老大留下宝贵财富，还是很有分量的），Object-C 是一门由 C 语言在 object-oriented 这一方面拓展而来的。由于是那个时代 C 语言的产物，Object-C 难免有着一些粗糙的棱角，并不真正符合现代开发商的需求。这就是为什么苹果创造了一种新的语言。
 
 Object-C 仍然会存在一段时间，但显然，iOS 开发的未来是属于 Swift。所有 cool 孩子都已经在使用它了。
 
-C++ 是另一种由 C 衍生出来的面向对象编程语言。它非常强大，但作为一个刚入门的程序员，你可能会想要远离他。我只提一下它，因为 C++ 也可以用于编写 iOS 应用程序，并有着一段不羁之恋，C++ 与 Object-C 称之为 Object-C++，你可能会不时遇到。
+C++ 是另一种由 C 衍生出来的 object-oriented 编程语言。它非常强大，但作为一个刚入门的程序员，你可能会想要远离他。我只提一下它，因为 C++ 也可以用于编写 iOS 应用程序，并有着一段不羁之恋，C++ 与 Object-C 称之为 Object-C++，你可能会不时遇到。
 
 我可以在 iOS Apprentice 的一开始深入讨论 Swift 的功能，但那样你可能会睡着。所以，我们来慢慢的解释语言，非常简单，等你适应了，再做更深入的讲解。
 
@@ -788,13 +788,15 @@ showAlert 中的代码创建一个标题为 “Hello，World” 的 alert，它�
 
 <center><strong>Cocoa 包含 Foundation 和 ApppKit framework，可用于开发 macOS 系统的应用程序。</strong></center>
 
+<br>
+
 <center><strong>Cocoa Touch 包含 Foundation 和 UIKit framework，可用于开发 iOS 的开发环境。</strong></center>
 
 ---
 
 <br>
 
-## 竖屏（portrait） vs. 横屏（landscape）
+## 竖屏（portrait）vs. 横屏（landscape）
 
 请注意，应用程序的尺寸已更改：iPhone 是倾斜的侧面，屏幕更宽，但不高。 这称为 *landscape* 方向。
 
@@ -855,7 +857,7 @@ showAlert 中的代码创建一个标题为 “Hello，World” 的 alert，它�
 
 ➤ 将按钮移回 view 的中心，因为有着不整洁的用户界面的程序在当下难以有一席之地。
 
-<div align="center"><img alt="在 landscape 下的 view<" src="http://imgur.com/70hdZxh.png"/></div><center>在 landscape 下的 view</center>
+<div align="center"><img alt="在 landscape 下的 view" src="http://imgur.com/70hdZxh.png"/></div><center>在 landscape 下的 view</center>
 
 <br>
 
@@ -864,3 +866,46 @@ showAlert 中的代码创建一个标题为 “Hello，World” 的 alert，它�
 ➤ 在 iPhone SE 模拟器上运行应用程序。屏幕不显示为 landscape，按钮也不再位于中心。
 
 但是，如果你将模拟器旋转为 landscape，那么一切都会看起来像预想的一样了。
+
+➤ 从屏幕顶部的模拟器菜单栏中选择 **Hardware **→ Rotate Left（向左旋转）或 Rotate Right（向右旋转），或按住 ⌘，然后按键盘上的向左或向右箭头键。这将旋转模拟器。
+
+请注意，在 landscape 方向，应用程序不再显示 iPhone 的状态栏。这给应用程序的用户界面留出更多的空间。
+
+你还应该做一件事。有一个配置选项，告诉 iOS 你的应用程序支持的方向。你通过模板所创建的新应用始终都支持纵向和横向。
+
+➤ 单击 **Project navigator** 顶部的蓝色的 **BullsEye** 项目图标。Xcode 窗口的 editor pane 现在显示了项目的一些设置。
+
+➤确保选择的是 **General**（常规）选项卡：
+
+<div align="center"><img alt="项目的设置" src="http://imgur.com/UJlJeHf.png"/></div><center>项目的设置/center>
+
+<br>
+
+在 **Deployment Info**（部署信息）部分中，有一个用于 **Device Orientation** 的选项。
+
+➤仅检查 Landscape Left 和 Landscape Right 选项，并保留未选中的 Portrait 和 Upside Down（倒置）选项。
+
+再次运行应用程序，它将非常正确的从一开始就以 landscape 方向启动。
+
+## Objects，数据（data）和方法（methods）
+
+
+
+是时候来一些编程理论了。是的，你逃不过的。
+
+Swift 是一种所谓的 “object-oriented” 编程语言，这意味着你做的大多数事情的时候都涉及到某种东西。我已经反复提了几次，一个应用程序包含着能彼此发送消息的 object。
+
+编写 iOS 应用程序时，将使用系统为您提供的 object，例如 UIKit 中的 UIButton object，并且你将创建自己的对象，例如 view controller。
+
+那么 object 究竟 *是* 什么呢？想像一个 object 作为你的程序的构建块。（译者注：金字塔上的石块，积木建筑中的积木块）
+
+程序员喜欢将相关的功能分组为 object。这个 object 负责解析文件，那个 object 知道如何在屏幕上绘制图像，而另一个 object 可能会执行困难的计算。
+
+每个 object 负责程序的特定部分。在一个完整的应用程序，你会有许多不同类型的 object（几十或甚至数百）。
+
+即使你的小启动器应用程序也已经包含几个不同的 object。你花了最多的时间，到目前为止的是 ViewController。Hit ME button 也是一个 object，alert 弹出。 和你的 alert text——“Hello, World!” 和 “This is my first app!”——他们都是 object。
+
+该项目还有一个名为 AppDelegate 的 object，即使你将忽略它在此课程（但如果你好奇，可以随意查看它的源文件）。这些 object 无处不在！
+
+一个 object 可以具有数据和功能：
+

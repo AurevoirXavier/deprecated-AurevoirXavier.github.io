@@ -877,7 +877,7 @@ showAlert 中的代码创建一个标题为 “Hello，World” 的 alert，它�
 
 ➤确保选择的是 **General**（常规）选项卡：
 
-<div align="center"><img alt="项目的设置" src="http://imgur.com/UJlJeHf.png"/></div><center>项目的设置/center>
+<div align="center"><img alt="项目的设置" src="http://imgur.com/UJlJeHf.png"/></div><center>项目的设置</center>
 
 <br>
 

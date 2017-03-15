@@ -232,7 +232,7 @@ C++ 是另一种由 C 衍生出来的 object-oriented 编程语言。它非常�
 
 我可以在 iOS Apprentice 的一开始深入讨论 Swift 的功能，但那样你可能会睡着。所以，我们来慢慢的解释语言，非常简单，等你适应了，再做更深入的讲解。
 
-在一开始，一般概念——什么是变量，object（对象），如何调用方法等——远比详细信息重要。虽然缓慢但毫无疑问，我会将 Swift 语言所有的秘密都揭露给你。
+在一开始，一般概念——什么是变量，object（对象），如何调用 method 等——远比详细信息重要。虽然缓慢但毫无疑问，我会将 Swift 语言所有的秘密都揭露给你。
 
 你准备好开始编写你生涯中的第一个 iOS 应用程序了吗？
 
@@ -338,7 +338,7 @@ Xcode 在启动时显示 “欢迎使用 Xcode”：
 - Languages（语言）：**Swift**
 - Devices（设备）：**iPhone**
 
-确保未选中底部的三个选项—— Use Core Data（使用 Core 数据），Include Unit Tests（包括单元测试）和 Include UI Tests（包括UI测试）。你将不会在这个项目中使用这些。
+确保未选中底部的三个选项—— Use Core Data（使用 Core Data），Include Unit Tests（包括单元测试）和 Include UI Tests（包括 UI 测试）。你将不会在这个项目中使用这些。
 
 ➤ 按 **Next**（下一步）。现在 Xcode 会询问你在哪里保存你的项目：
 
@@ -482,7 +482,7 @@ Xcode 窗口的左侧被命名为 **Navigator Area**（导航区域）。顶部�
 
 ➤ 拖放一些其他 controls（控件），如 labels，sliders 和 switches，只管拖动他们就对了。
 
-这应该会给你一些有关 UI controls 的想法，因为 iOS 支持使用它们。请注意，Interface Builder 会帮助您布局 controls，通过将 controls 对齐到 view 的边缘和其他 object。这是一个非常方便的工具！
+这应该会给你一些有关 UI controls 的想法，因为 iOS 支持使用它们。请注意，Interface Builder 会帮助您布局 controls，通过将 controls 对齐到 view 的边缘和其他 objects。这是一个非常方便的工具！
 
 ➤ 双击刚刚放置的 button 以编辑其标题为 “Hit Me!”。
 
@@ -577,11 +577,11 @@ from a nib. }
 
 ## 建立关联
 
-你刚刚所添加到 ViewController.swift 的源代码的作用是让 Interface Builder 知道 controller 有一个名字为 “showAlert” 的操作，它可能会显示一个 alter 弹出窗口。你现在将要做的就是将 button 连接到该操作。
+你刚刚所添加到 ViewController.swift 的源代码的作用是让 Interface Builder 知道 controller 有一个名字为 “showAlert” 的 action（操作），它可能会显示一个 alter 弹出窗口。你现在将要做的就是将 button 连接到该 action。
 
 ➤ 单击 **Main.storyboard** 返回到 Interface Builder。
 
-左边应该有一个 pane，即 **Outline pane**，其中列出了所有项目你的 stpryboard。如果没有看到该 pane，请单击 Interface Builder canvas 左下角的小切换按钮以显示它。
+左边应该有一个 pane，即 **Outline pane**（大纲窗格），其中列出了所有项目你的 stpryboard。如果没有看到该 pane，请单击 Interface Builder canvas 左下角的小切换按钮以显示它。
 
 <div align="center"><img alt="用来显示 Outline pane 的按钮" src="http://imgur.com/uThAxbE.png"/></div><center>用来显示 Outline pane 的按钮</center>
 
@@ -597,29 +597,29 @@ from a nib. }
 
 <br>
 
-一旦你在 View Controller 上，放开鼠标按键，会出现一个小菜单。 它包含两个部分，  “Action Segue”（操作 Segue）和 “Sent Events”（发送事件”），每个下面有一个或多个选项。 你对 Sent Events 下的 **showAlert** 选项感兴趣。这是你先前在 ViewController.swift 的源代码中添加的操作的名称。
+一旦你在 View Controller 上，放开鼠标按键，会出现一个小菜单。 它包含两个部分，  “Action Segue” 和 “Sent Events”（发送事件），每个下面有一个或多个选项。 你对 Sent Events 下的 **showAlert** 选项感兴趣。这是你先前在 ViewController.swift 的源代码中添加的 action 的名称。
 
-<div align="center"><img alt="带有 showAlert 操作的弹出菜单" src="http://imgur.com/tbiY4J1.png"/></div><center>带有 showAlert 操作的弹出菜单</center>
+<div align="center"><img alt="带有 showAlert action的弹出菜单" src="http://imgur.com/tbiY4J1.png"/></div><center>带有 showAlert action 的弹出菜单</center>
 
 <br>
 
 ➤单击 show alert 以选择它。这表明 Interface Builder 在 button 和 @IBAction func show Alert() 之间进行关联。
 
-从现在开始，每当 button 被点击时，将执行 showAlert 操作。这就是如何使 button 和其他controls 互动：你在 view controller 的 Swift 文件中定义一个动作，然后在Interface Builder中进行连接。
+从现在开始，每当 button 被点击时，将执行 showAlert action。这就是如何使 button 和其他controls 互动：你在 view controller 的 Swift 文件中定义一个动作，然后在Interface Builder中进行连接。
 
 你可以看到连接关系，通过 Xcode 窗口右侧的实用程序窗格中的 **Connections inspector**（连接检查器）。
 
 ➤ 单击 pane 顶部的小箭头形按钮以切换到 Connections inspector：
 
-<div align="center"><img alt="inspector 显示从 button 到任何其他 object 的连接" src="http://imgur.com/8qKlFD2.png"/></div><center>inspector 显示从 button 到任何其他 object 的连接</center>
+<div align="center"><img alt="inspector 显示从 button 到任何其他 object 的连接" src="http://imgur.com/8qKlFD2.png"/></div><center>inspector 显示从 button 到任何其他 objects 的连接</center>
 
 <br>
 
-在 Sent Events 部分中，“Touch Up Inside”（触摸内部）事件现在已连接到 showAlert 操作。你同样可以在 Swift 文件中查看连接。
+在 Sent Events 部分中，“Touch Up Inside”（触摸内部）事件现在已连接到 showAlert action。你同样可以在 Swift 文件中查看连接。
 
 ➤ 选择 ViewController.swift 以编辑它。
 
-注意在行 @IBAction func showAlert() 的左边，有一个实心圆？ 点击该圆以显示此操作（译者注：一般这种操作称之为，函数或者方法。原文为：action）所连接的内容。
+注意在行 @IBAction func showAlert() 的左边，有一个实心圆？ 点击该圆以显示此 action 所连接的内容。
 
 <div align="center"><img alt="实心圆表示动作连接到某物" src="http://imgur.com/079R0Yo.png"/></div><center>实心圆表示动作连接到某物</center>
 
@@ -627,9 +627,9 @@ from a nib. }
 
 ## Button 上的行为
 
-你现在有一个带有 button 的屏幕。该 button 被关联到名为 showAlert 的操作上，当用户点击该 button 时将执行该操作。
+你现在有一个带有 button 的屏幕。该 button 被关联到名为 showAlert 的 action 上，当用户点击该 button 时将执行该 action。
 
-然而，目前而言，操作是空的，什么也不会发生（不信试试）。你需要向应用程序提供更多说明。
+然而，目前而言，action 是空的，什么也不会发生（不信试试）。你需要向应用程序提供更多说明。
 
 ➤ 在 ViewController.swift 中，将以下行添加到 showAlert 中：
 
@@ -645,7 +645,7 @@ from a nib. }
 }
 ```
 
-<center>新加入的这几行提供了此操作的实际功能。</center>
+<center>新加入的这几行提供了此 action 的实际功能。</center>
 
 <br>
 
@@ -711,9 +711,9 @@ showAlert 中的代码创建一个标题为 “Hello，World” 的 alert，它�
 
 在这一点上，将会有一些体会关于应用程序的背后到底发生了什么。
 
-应用程序本质上由可以向彼此发送消息的 **objects** 组成。你的应用程序中的许多 objects 由iOS提供，例如 button（UIButton对象）和 alert 弹出窗口（UIAlertController对象）。对于一些 object，你必须自己编程，如 view controller。
+应用程序本质上由可以向彼此发送消息的 **objects** 组成。你的应用程序中的许多 objects 由iOS提供，例如 button（UIButton对象）和 alert 弹出窗口（UIAlertController对象）。对于一些 objects，你必须自己编程，如 view controller。
 
-这些 object 通过将消息传递给彼此进行通信。当用户点击应用程序中的 “Hit Me” button 时，例如，该 UIButton object 发送消息到你的 view controller。view controller 可以通知更多的 objects。
+这些 objects 通过将消息传递给彼此进行通信。当用户点击应用程序中的 “Hit Me” button 时，例如，该 UIButton object 发送消息到你的 view controller。view controller 可以通知更多的 objects。
 
 在 iOS 上，应用程序是事件驱动，这意味着这些 objrcts 侦听某些事件并进行处理。
 
@@ -721,7 +721,7 @@ showAlert 中的代码创建一个标题为 “Hello，World” 的 alert，它�
 
 在此方案中你所做的部分就是，由你编写的源代码将在对象接收到此类事件的消息时执行。
 
-在应用程序中，button 的 Touch Up Inside 事件连接到 view controller 的 showAlert 操作。 所以当 button 识别它已被轻敲时，它发送 showAlert 消息到你的 view controller。
+在应用程序中，button 的 Touch Up Inside 事件连接到 view controller 的 showAlert action。 所以当 button 识别它已被轻敲时，它发送 showAlert 消息到你的 view controller。
 
 在 showAlert 内部，view controller 发送另一个消息，addAction 到 UIAlertController 的 object。为了显示警报，view controller 发送当前消息。
 
@@ -737,7 +737,7 @@ showAlert 中的代码创建一个标题为 “Hello，World” 的 alert，它�
 
 来自用户的输入，大多数是触摸和敲击的形式，是你的应用程序中的最重要的事件源，但也有其他类型的事件。例如，当用户接收到来电时，当它必须重新绘制屏幕时，当定时器倒计时……操作系统就会通知你的应用程序。
 
-你的应用程序执行的所有操作都是由某个事件触发而来的的。
+你的应用程序执行的所有 action 都是由某个事件触发而来的的。
 
 ## 按照待办事项列表工作
 
@@ -763,7 +763,7 @@ showAlert 中的代码创建一个标题为 “Hello，World” 的 alert，它�
 
 `如果你不得不得从头开始写所有的东西，你或许要忙上一会儿。相反，你可以在系统提供的 frameworks 之上构建你的应用程序，并利用苹果工程师已经为你做完了的现成的东西。`
 
-`任何你看到的以 UI 开头的 object，例如 UIButton，都来自 UIKit。当你编写 iOS 应用程序时，UIKit framework 将是耗费你大部分时间的地方，但也有些人不会。`
+`任何你看到的以 UI 开头的 objects，例如 UIButton，都来自 UIKit。当你编写 iOS 应用程序时，UIKit framework 将是耗费你大部分时间的地方，但也有些人不会。`
 
 `其他 frameworks 的示例是 Foundation，它提供了构建应用程序的许多基本构建块; 用于在屏幕上绘制基本形状（如线条，渐变和图像）的核心图形; 播放声音和视频的 AVFoundation; 和许多其它的。`
 
@@ -847,7 +847,7 @@ showAlert 中的代码创建一个标题为 “Hello，World” 的 alert，它�
 1. 在 **Main.storyboard** 将 view 设置为 landscape 而不是 portrait。
 2. 更改应用程序的 **Supported Device Orientations**（支持的设备方向）设置。
 
-➤ 在 Interface Builder 中打开 **Main.storyboard**。在 **View as：iPhone SE** 面板中，将 **Orientation** 更改为 lanscape：
+➤ 在 Interface Builder 中打开 **Main.storyboard**。在 **View as: iPhone SE** 面板中，将 **Orientation** 更改为 lanscape：
 
 <div align="center"><img alt="在 Interface Builder 中更改 orientation" src="http://imgur.com/ronMSFi.png"/></div><center>在 Interface Builder 中更改 orientation</center>
 
@@ -875,7 +875,7 @@ showAlert 中的代码创建一个标题为 “Hello，World” 的 alert，它�
 
 ➤ 单击 **Project navigator** 顶部的蓝色的 **BullsEye** 项目图标。Xcode 窗口的 editor pane 现在显示了项目的一些设置。
 
-➤确保选择的是 **General**（常规）选项卡：
+➤ 确保选择的是 **General**（常规）选项卡：
 
 <div align="center"><img alt="项目的设置" src="http://imgur.com/UJlJeHf.png"/></div><center>项目的设置</center>
 
@@ -883,34 +883,179 @@ showAlert 中的代码创建一个标题为 “Hello，World” 的 alert，它�
 
 在 **Deployment Info**（部署信息）部分中，有一个用于 **Device Orientation** 的选项。
 
-➤仅检查 Landscape Left 和 Landscape Right 选项，并保留未选中的 Portrait 和 Upside Down（倒置）选项。
+➤ 仅检查 Landscape Left 和 Landscape Right 选项，并保留未选中的 Portrait 和 Upside Down（倒置）选项。
 
 再次运行应用程序，它将非常正确的从一开始就以 landscape 方向启动。
 
-## Objects，数据（data）和方法（methods）
-
+## Objects，data 和 method
 
 
 是时候来一些编程理论了。是的，你逃不过的。
 
-Swift 是一种所谓的 “object-oriented” 编程语言，这意味着你做的大多数事情的时候都涉及到某种东西。我已经反复提了几次，一个应用程序包含着能彼此发送消息的 object。
+Swift 是一种所谓的 “object-oriented” 编程语言，这意味着你做的大多数事情的时候都涉及到某种东西。我已经反复提了几次，一个应用程序包含着能彼此发送消息的 objects。
 
-编写 iOS 应用程序时，将使用系统为你提供的 object，例如 UIKit 中的 UIButton object，并且你将创建自己的对象，例如 view controller。
+编写 iOS 应用程序时，将使用系统为你提供的 objects，例如 UIKit 中的 UIButton object，并且你将创建自己的对象，例如 view controller。
 
 那么 object 究竟 *是* 什么呢？想像一个 object 作为你的程序的构建块。（译者注：金字塔上的石块，积木建筑中的积木块）
 
 程序员喜欢将相关的功能分组为 object。这个 object 负责解析文件，那个 object 知道如何在屏幕上绘制图像，而另一个 object 可能会执行困难的计算。
 
-每个 object 负责程序的特定部分。在一个完整的应用程序，你会有许多不同类型的 object（几十或甚至数百）。
+每个 object 负责程序的特定部分。在一个完整的应用程序，你会有许多不同类型的 objects（几十或甚至数百）。
 
-即使你的小启动器应用程序也已经包含几个不同的 object。你花了最多的时间，到目前为止的是 ViewController。Hit Me button 也是一个 object，alert 弹出。 和你的 alert text——“Hello, World!” 和 “This is my first app!”——他们都是 object。
+即使你的小启动器应用程序也已经包含几个不同的 objects。你花了最多的时间，到目前为止的是 ViewController。Hit Me button 也是一个 object，alert 弹出。 和你的 alert text——“Hello, World!” 和 “This is my first app!”——他们都是 object。
 
-该项目还有一个名为 AppDelegate 的 object，不过你将在此课程中忽略它（但如果你好奇，可以随意查看它的源文件）。这些 object 无处不在！
+该项目还有一个名为 AppDelegate 的 object，不过你将在此课程中忽略它（但如果你好奇，可以随意查看它的源文件）。这些 objects 无处不在！
 
-一个 object 可以具有数据和功能：
+一个 object 可以具有 data 和功能：
 
-- 举个说明数据的例子，就是你之前添加到 view controller 的 Hit Me button。当你将 button 拖到 storyboard 中时，实际上那一刻它成为了 view controller 的数据中的一部分。数据包含内容。在这种情况下，view controller 包含 button。
-- 关于功能的一个例子就是，你添加用来响应 button 上的轻击操作的 showAlert 动作。 功能用来 *做* 某事。
+- 举个说明 data 的例子，就是你之前添加到 view controller 的 Hit Me button。当你将 button 拖到 storyboard 中时，实际上那一刻它成为了 view controller 的 data 中的一部分。data 包含内容。在这种情况下，view controller 包含 button。
+- 关于功能的一个例子就是，你添加用来响应 button 上的轻击的 showAlert action。 功能用来 *做* 某事。
 
-button 本身也有数据和功能。button 数据的例子就是，它的标签的文本和颜色，它在屏幕上的位置，宽度和高度等。该 butoon 还具有功能：它可以识别用户点击它，并将触发一个动作作为响应。
+button 本身也有 data 和功能。button data 的例子就是，它的标签的文本和颜色，它在屏幕上的位置，宽度和高度等。该 butoon 还具有功能：它可以识别用户点击它，并将触发一个动作作为响应。
 
+为 object 提供功能的东西通常称为 *method*。 其他编程语言可以将其称为 “procedure”（过程）或 “subroutine”（子程序）或 “function”（函数）。你还将看到 Swift 中使用的术语function; 一个 method 只是一个属于一个 object 的 function，一对多的关系。
+
+你的 showAlert action 就是一个活生生的关于 method 的例子。你可以告诉它是一个 function，因为那一行写道 func（“function” 的缩写），名称后面是括号：
+
+<div align="center"><img alt="所有 method 定义都以 func 开头，并带有括号" src="http://imgur.com/N8DsltG.png"/></div><center>所有 method 定义都以 func 开头，并带有括号</center>
+
+<br>
+
+如果你再看看 **ViewController.swift** 的其余部分，你会看到其他几个方法，如 viewDidLoad() 和 didReceiveMemoryWarning()。
+
+这些目前没啥作用；Xcode 模板只是将放在那里为你提供方便。这些特定的 method 经常被 view controller 使用，所以很可能你需要在某个时候来为它们添加内容。
+
+Method 的概念可能仍然有点怪异，所以这里有一个例子：
+
+<div align="center"><img alt="每一方都需要冰淇淋！" src="http://imgur.com/qPTRt9B.png"/></div><center>每一方都需要冰淇淋！</center>
+
+<br>
+
+你（或至少一个名字为 “你” 的 object）想开一个聚会（译者注：这里给出原文，所以不要问我为什么这个方法名这么奇怪，叫做throwParty：You (or at least an object named “You”) want to throw a party），但你忘了买冰淇淋。幸运的是，你邀请了名为史蒂夫的 object，他恰好住在一家便利店旁边。这不会是一场没有冰淇淋的聚会，所以在你的聚会准备期间的某个时候，你给 object Steve 一个消息，要求他带一些冰淇淋。
+
+计算机现在将 object 切换到 Steve，并从上到下逐个执行他的 buyIceCream() method 的命令。
+
+当他的 method 完成后，计算机返回你的 throwParty() method，并继续，所以你和你的朋友可以吃史蒂夫带回来的冰淇淋。
+
+名为 Steve 的 object 也有 data。在他去商店之前，他有钱。在商店，他交换这些钱 data 为其他，更重要的 data：冰淇淋！做完这个交易后，他把冰淇淋的 data 带到了派对上（如果他一直吃着它，你的程序有一个bug）。
+
+“发送消息” 听起来比它原本的意思更难懂。但这是一个很好的方式来思考 objects 如何沟通，但其中真的没有任何鸽子或邮递员参与。计算机只是从 throwParty() method 跳转到buyIceCream() method，然后再返回。
+
+通常使用术语 “calling a method”（调用方法）或 “invoking a method”（调用方法）。这意味着与发送消息完全相同的事情：计算机跳转到你调用的 method，并返回到该方法结束时它停止的地方。
+
+重要的是要记住的是，对象有 method（涉及购买冰淇淋的步骤）和 data（实际的冰淇淋和用来买它的钱）。
+
+Objects 可以互相看看对方的 data（在某种程度上，就像如果你偷看 Steve 的钱包， 它可能不赞成），并可以要求其他 objects 执行他们的 methods。这就是你让你的应用程序做事情。
+
+## 添加其余的 controls
+
+你的应用程序已经有了按钮，但你仍需要新增其他 UI controls（也称为 “views”「检视」）。再次回到这个屏幕，这次不同的 controls 我在 views 上都给出了相应的注释：（译者注：暂时把 views 理解为视图中的 UI 控件吧）
+
+<div align="center"><img alt="游戏屏幕中的不同视图" src="http://imgur.com/C2mOduT.png"/></div><center>游戏屏幕中的不同 views</center>
+
+<br>
+
+如你所见，我将占位符放的 labels 里放入一些值（例如，“999999”）。这使得你更容易看到这些 labels 如何适应在屏幕上，当他们实际开始运作时。分数 label 可能具有很大的值，所以你最好确保 labels 有足够的空间来显示相应的值（例如分数）。
+
+➤ 通过从 Object Library 中拖动各种 controls，试着自己来重现此屏幕。你需要几个新的 buttons，labels 和一个 slider。你可以在上面的截图中看到项目应该（大致）设置多大。如果你有一些小偏差，没关系。
+
+要调整这些 views 的设置，请使用 **Attributes inspector**（属性检查器）。你可以在 Xcode 窗口右侧的窗格中找到此检查器：
+
+<div align="center"><img alt="The Attributes inspector" src="http://imgur.com/dqfeAAG.png"/></div><center>The Attributes inspector</center>
+
+<br>
+
+Inspector 区域显示当前选择的项目的各个方面。例如，Attributes inspector 可以更改一个 label 的背景颜色或 button上文本的大小。你已经看到显示一个 button's action 的Connections inspector。 随着你更熟练地使用 Interface Builder，你将使用所有这些 inspector 窗格来配置 views。
+
+➤**（i）** button 实际上是常规 button，但他的**类型**在 Attributes inspector 中被设置为了 **Info Light**（信息灯）：
+
+<div align="center"><img alt="button 类型允许您更改 button 的外观" src="http://imgur.com/2wgniuA.png"/></div><center>button 类型允许您更改 button 的外观</center>
+
+<br>
+
+➤ 同时使用 Attributes inspector 配置 **slider**。令其最小值应为 1，其最大值为 100，当前值为 50。
+
+<div align="center"><img alt="滑块属性" src="http://imgur.com/6YhMP2y.png"/></div><center>滑块属性</center>
+
+<br>
+
+完成后，你的场景中应该有 12 个用户界面元素：一个 slider，三个 buttons 和一大堆 labels。很棒。
+
+➤ 运行应用程序并玩上一分钟。这些 controls 并没有做太多的事情（除了应该弹出警报的那个 button），但你至少可以拖动 slider。
+
+现在，你可以从待办事项列表中划掉更多的未完成事件了，所做的一切不需要任何编程！不过，好景不长，因为你将不得不写 Swift 代码来控制这些 controls 做任何事情你指定的事情。
+
+## The slider
+
+待办事项列表中的下一个项目是：“在用户按下 Hit Me button后，读取 slider 的值。”
+
+如果在你看起来乱七八糟的 Interface Builder 中，你没有不小心将 button 与 showAlert action 断开连接，那么你就可以修改应用程序以在 alert 弹出窗口中显示 slider 的值。 （如果你断开了 showAlert 与 button 的关联，那么你应该先连接它。）
+
+记住如何添加一个 action 到 view controller，以识别用户何时点击按钮？你可以为 Slider 做同样的事情。每当用户拖动 Slider 的旋钮时，都将执行这个新的 action。
+
+添加这个 action 的步骤与你之前执行的步骤基本相同。
+
+➤ 首先，转到 **ViewController.swift** 并在底部添加以下内容，只需要紧挨着最后一个括号：
+
+```swift
+@IBAction func sliderMoved(_ slider: UISlider) {
+  print("The value of the slider is now: \(slider.value)")
+}	
+```
+
+<br>
+
+➤ 其次，转到 storyboard，按住 Ctrl 拖动 slider 到 Outline pane 中的 View Controller。放开鼠标按钮，从弹出窗口中选择 **sliderMoved: **。 完成！
+
+只是为了刷新内存，Outline pane 位于 Interface Builder canvas 的左侧。它显示 storyboard 的 view 的层次结构。在这里你可以看到 View Controller 包含一个跨度有场景大小般的白色视图（简称为View），它又包含你添加的 sub-views（子视图）：buttons 和 labels。
+
+<div align="center"><img alt="Outline pane 显示 storyboard 的 view 的层次结构" src="http://imgur.com/rmeKAL7.png"/></div><center>Outline pane 显示 storyboard 的 view 的层次结构</center>
+
+<br>
+
+请记住，如果你看不到 Outline pane，请单击底部的小图标以显示它：
+
+<div align="center"><img alt="控制 Outline pane 显示或隐藏的按钮" src="http://imgur.com/ygdFlFs.png"/></div><center>控制 Outline pane 显示或隐藏的按钮</center>
+
+<br>
+
+连接 slider 时，确保按住 Ctrl 键拖动到 View Controller（带有黄色图标），而不是 View Controller Scene（灰色图标）。如果没有看到黄色图标，请单击 View Controller Scene 前的箭头将其展开。
+
+如果一切顺利，sliderMoved: action 现在挂钩到滑块的 Value Changed 事件。 这意味着sliderMoved() method 将在每次用户向左或向右拖动 slider 时调用。
+
+你可以通过选择 slider 并查看 **Connections inspector** 来验证是否已建立连接：
+
+<div align="center"><img alt="该 slider 现在已经和 view controller 挂钩" src="http://imgur.com/bmvm8Xx.png"/></div><center>该 slider 现在已经和 view controller 挂钩</center>
+
+<br>
+
+<code class="highlighter-rouge"><strong>注意：</strong>你注意到 sliderMoved: action 在他的名称中有冒号，但 showAlert 却没有？这是因为 sliderMoved() 方法接受单个参数，slider，而 showAlert() 没有任何参数。如果操作方法有参数，Interface Builder 将向名称添加 : 。 往后你将了解更多关于使用参数的信息。</code>
+
+➤ 运行应用程序并拖动 slider。
+
+一旦开始拖动，Xcode 窗口就会在底部打开一个新窗格，所谓的 **Debug area**（调试区域），显示消息列表：
+
+<div align="center"><img alt="在 Debug area 打印出信息" src="http://imgur.com/Xn6oM39.png"/></div><center>在 Debug area 打印出信息</center>
+
+<br>
+
+如果你向左滑动 slider，你应该看到值下降到 1 。一直向右，值应该会变成 100。
+
+print() 函数是一个很好的帮助，告诉你在应用程序中发生了什么。它的整个目的是向 Debug area 写入一条文本消息。在这里，你使用它来验证你是否已正确地将 action 挂接到 slider，并且你可以在 slider 移动时读取其值。
+
+我经常使用 print() 来确保我的应用程序运行正确如我所想，在我添加更多功能之前。将消息打印到 Debug area 既快速又容易。
+
+<code class="highlighter-rouge"><strong>注意：</strong>你可能还会在 Debug area 看到一堆其他消息。这是来自 UIKit 和 iOS 模拟器的调试输出。你可以安全地忽略掉这些消息。</code>
+
+## Strings（字符串）
+
+要在你的应用程序中放置文本，你使用一个称为 “string” 的东西。 您目前使用过的 strings 有这些：
+
+```swift
+"Hello, World"
+"This is my first app!"
+"Awesome"
+"The value of the slider is now: \(slider.value)"
+```
+
+<br>

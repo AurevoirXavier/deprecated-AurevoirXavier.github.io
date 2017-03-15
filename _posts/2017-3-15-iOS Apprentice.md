@@ -911,11 +911,11 @@ Swift 是一种所谓的 “object-oriented” 编程语言，这意味着你做
 - 举个说明 data 的例子，就是你之前添加到 view controller 的 Hit Me button。当你将 button 拖到 storyboard 中时，实际上那一刻它成为了 view controller 的 data 中的一部分。data 包含内容。在这种情况下，view controller 包含 button。
 - 关于功能的一个例子就是，你添加用来响应 button 上的轻击的 showAlert action。 功能用来 *做* 某事。
 
-button 本身也有 data 和功能。button data 的例子就是，它的标签的文本和颜色，它在屏幕上的位置，宽度和高度等。该 butoon 还具有功能：它可以识别用户点击它，并将触发一个动作作为响应。
+button 本身也有 data 和功能。button data 的例子就是，它的标签的文本和颜色，它在屏幕上的位置，宽度和高度等。该 button 还具有功能：它可以识别用户点击它，并将触发一个动作作为响应。
 
 为 object 提供功能的东西通常称为 *method*。 其他编程语言可以将其称为 “procedure”（过程）或 “subroutine”（子程序）或 “function”（函数）。你还将看到 Swift 中使用的术语function; 一个 method 只是一个属于一个 object 的 function，一对多的关系。
 
-你的 showAlert action 就是一个活生生的关于 method 的例子。你可以告诉它是一个 function，因为那一行写道 func（“function” 的缩写），名称后面是括号：
+你的 showAlert action 就是一个活生生的关于 method 的例子。你可以说它是一个 function，因为那一行这么写道 func（“function” 的缩写），名称后面跟着的是括号：
 
 <div align="center"><img alt="所有 method 定义都以 func 开头，并带有括号" src="http://imgur.com/N8DsltG.png"/></div><center>所有 method 定义都以 func 开头，并带有括号</center>
 

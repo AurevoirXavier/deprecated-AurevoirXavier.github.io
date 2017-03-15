@@ -895,7 +895,7 @@ showAlert 中的代码创建一个标题为 “Hello，World” 的 alert，它�
 
 Swift 是一种所谓的 “object-oriented” 编程语言，这意味着你做的大多数事情的时候都涉及到某种东西。我已经反复提了几次，一个应用程序包含着能彼此发送消息的 object。
 
-编写 iOS 应用程序时，将使用系统为您提供的 object，例如 UIKit 中的 UIButton object，并且你将创建自己的对象，例如 view controller。
+编写 iOS 应用程序时，将使用系统为你提供的 object，例如 UIKit 中的 UIButton object，并且你将创建自己的对象，例如 view controller。
 
 那么 object 究竟 *是* 什么呢？想像一个 object 作为你的程序的构建块。（译者注：金字塔上的石块，积木建筑中的积木块）
 
@@ -903,9 +903,9 @@ Swift 是一种所谓的 “object-oriented” 编程语言，这意味着你做
 
 每个 object 负责程序的特定部分。在一个完整的应用程序，你会有许多不同类型的 object（几十或甚至数百）。
 
-即使你的小启动器应用程序也已经包含几个不同的 object。你花了最多的时间，到目前为止的是 ViewController。Hit ME button 也是一个 object，alert 弹出。 和你的 alert text——“Hello, World!” 和 “This is my first app!”——他们都是 object。
+即使你的小启动器应用程序也已经包含几个不同的 object。你花了最多的时间，到目前为止的是 ViewController。Hit Me button 也是一个 object，alert 弹出。 和你的 alert text——“Hello, World!” 和 “This is my first app!”——他们都是 object。
 
-该项目还有一个名为 AppDelegate 的 object，即使你将忽略它在此课程（但如果你好奇，可以随意查看它的源文件）。这些 object 无处不在！
+该项目还有一个名为 AppDelegate 的 object，不过你将在此课程中忽略它（但如果你好奇，可以随意查看它的源文件）。这些 object 无处不在！
 
 一个 object 可以具有数据和功能：
 

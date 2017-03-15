@@ -1,8 +1,8 @@
 ---
 layout: post
 title: "iOS Apprentice 1 Getting Started v5.0 （译）"
-date:   2017-03-15
-excerpt: "译至 42 页"
+date:   2017-03-16
+excerpt: "译至 50 页"
 tags: [program, iOS, translate]
 comments: true
 ---
@@ -204,11 +204,14 @@ iPhone 可能假装它是一个电话，但它实际上是一个非常先进的�
 
 ```swift
 func handleMusicEvent(command: Int, noteNumber: Int, velocity: Int) {
+
   if command == NoteOn && velocity != 0 {
     playNote(noteNumber + transpose, velocityCurve[velocity] / 127)
+    
   } else if command == NoteOff ||
            (command == NoteOn && velocity == 0) {
     stopNote(noteNumber + transpose, velocityCurve[velocity] / 127)
+    
   } else if command == ControlChange {
     if noteNumber == 64 {
       damperPedal(velocity)
@@ -232,7 +235,7 @@ C++ 是另一种由 C 衍生出来的 object-oriented 编程语言。它非常�
 
 我可以在 iOS Apprentice 的一开始深入讨论 Swift 的功能，但那样你可能会睡着。所以，我们来慢慢的解释语言，非常简单，等你适应了，再做更深入的讲解。
 
-在一开始，一般概念——什么是变量，object（对象），如何调用 method 等——远比详细信息重要。虽然缓慢但毫无疑问，我会将 Swift 语言所有的秘密都揭露给你。
+在一开始，一般概念——什么是 variable（变量），object（对象），如何调用 method 等——远比详细信息重要。虽然缓慢但毫无疑问，我会将 Swift 语言所有的秘密都揭露给你。
 
 你准备好开始编写你生涯中的第一个 iOS 应用程序了吗？
 
@@ -532,15 +535,19 @@ Interface Builder 将消失，Editor 区域现在展现出一堆明亮的彩色�
 //  Copyright © <year> <you>. All rights reserved.
 //
 import UIKit
+
 class ViewController: UIViewController {
+
   override func viewDidLoad() {
     super.viewDidLoad()
     // Do any additional setup after loading the view, typically
 from a nib. }
+
   override func didReceiveMemoryWarning() {
     super.didReceiveMemoryWarning()
     // Dispose of any resources that can be recreated.
 }
+
   @IBAction func showAlert() {
 } }
 ```
@@ -638,9 +645,12 @@ from a nib. }
   let alert = UIAlertController(title: "Hello, World",
                                 message: "This is my first app!",
                                 preferredStyle: .alert)
+                                
   let action = UIAlertAction(title: "Awesome", style: .default,
                              handler: nil)
+                             
   alert.addAction(action)
+  
   present(alert, animated: true, completion: nil)
 }
 ```
@@ -906,14 +916,14 @@ Swift 是一种所谓的 “object-oriented” 编程语言，这意味着你做
 
 该项目还有一个名为 AppDelegate 的 object，不过你将在此课程中忽略它（但如果你好奇，可以随意查看它的源文件）。这些 objects 无处不在！
 
-一个 object 可以具有 data 和功能：
+一个 object 可以具有 data 和 functionality（功能）：
 
 - 举个说明 data 的例子，就是你之前添加到 view controller 的 Hit Me button。当你将 button 拖到 storyboard 中时，实际上那一刻它成为了 view controller 的 data 中的一部分。data 包含内容。在这种情况下，view controller 包含 button。
-- 关于功能的一个例子就是，你添加用来响应 button 上的轻击的 showAlert action。 功能用来 *做* 某事。
+- 关于 functionality 的一个例子就是，你添加用来响应 button 上的轻击的 showAlert action。 functionality 用来 *做* 某事。
 
-button 本身也有 data 和功能。button data 的例子就是，它的标签的文本和颜色，它在屏幕上的位置，宽度和高度等。该 button 还具有功能：它可以识别用户点击它，并将触发一个动作作为响应。
+button 本身也有 data 和 functionality。button data 的例子就是，它的标签的文本和颜色，它在屏幕上的位置，宽度和高度等。该 button 还具有 functionality：它可以识别用户点击它，并将触发一个动作作为响应。
 
-为 object 提供功能的东西通常称为 *method*。 其他编程语言可以将其称为 “procedure”（过程）或 “subroutine”（子程序）或 “function”（函数）。你还将看到 Swift 中使用的术语function; 一个 method 只是一个属于一个 object 的 function，一对多的关系。
+为 object 提供 functionality 的东西通常称为 *method*。 其他编程语言可以将其称为 “procedure”（过程）或 “subroutine”（子程序）或 “function”（函数）。你还将看到 Swift 中使用的术语function; 一个 method 只是一个属于一个 object 的 function，一对多的关系。
 
 你的 showAlert action 就是一个活生生的关于 method 的例子。你可以说它是一个 function，因为那一行这么写道 func（“function” 的缩写），名称后面跟着的是括号：
 
@@ -1059,3 +1069,81 @@ print() 函数是一个很好的帮助，告诉你在应用程序中发生了什
 ```
 
 <br>
+
+前三个用于制作 UIAlertController；最后一个你使用在 print() 上面。
+
+这样的文本块被称为 string，因为你可以将文本可视化为一个字符序列，就像它们是一个 string 上的珠子（对不起，它与衬衣（内衣）没有任何关系）：
+
+<div align="center"><img alt="A string of characters" src="http://imgur.com/AQyfvcK.png"/></div><center>A string of characters</center>
+
+<br>
+
+与 strings 打交道是你在编写应用程序时必不可少的，所以在本教程系列的过程中，你会得到有关 strings 相当丰富的经验。
+
+要创建一个 string，只需将文本放在双引号之间。在其他语言中，你也可以使用单引号，但在 Swift 中，它们必须是双引号。必须是半角的，不能使用全角。
+
+总结：
+
+```swift
+// This is the proper way to make a Swift string:
+"I am a good string"
+// These are wrong:
+'I should have double quotes'
+''Two single quotes do not make a double quote''
+“My quotes are too fancy”
+@"I am an Objective-C string"
+```
+
+String 中的 \\( … ) 之间的任何内容都是特殊的。print() 语句使用的 string 为 "The value of the slider is now: \\(slider.value)"。 想一下 \\( … ) 作为占位符："The value of the slider is now: X"，其中 X 将被 slider 的值替换。
+
+填空是在 Swift 中构建 string 的一种非常常见的方法。
+
+## 引入 variables
+
+在开发应用程序期间，使用 print() 将信息打印到 Debug area 中非常有用，但它对用户来说绝对没有用，因为他们看不到任何信息。
+
+让我们改进此操作方法，并使其在 alert 弹出窗口中显示 slider 的值。 那么如何获得 slider 的值到 showAlert() ？
+
+当你读取 sliderMoved() 中的 slider 的值时，那条 data 会消失（译者注：data 指 slider 的值，好比有一座图书馆，里面的书都没有名字，你想找你上次看过的那一本书），在 action method 结束时。如果你可以记住这个值并保存直到用户点击 Hie Me button 时，那将非常有用。
+
+幸运的是，Swift 有一个构造块用于这个目的：变量。
+
+➤ 打开 **ViewController.swift** 并在顶部添加以下内容，直接在下面行说 class ViewController:
+
+```swift
+var currentValue: Int = 0
+```
+
+<br>
+
+你现在已向 view controller object 添加了名为 currentValue 的 variable。
+
+代码应该看起来像这样（我省略了 method 的内部）：
+
+```swift
+import UIKit
+class ViewController: UIViewController {
+  var currentValue: Int = 0
+  
+  override func viewDidLoad() {
+... }
+
+  override func didReceiveMemoryWarning() {
+... }
+
+  @IBAction func showAlert() {
+... }
+
+  @IBAction func sliderMoved(_ slider: UISlider) {
+... }
+}
+```
+
+<br>
+
+通常在 method 上面添加 variables，并使用制表符或两到四个空格缩进所有内容。你使用哪一个主要是个人喜好的问题。我喜欢使用两个空格。（你可以在 Xcode 的 preference（首选项）面板中进行配置。从菜单栏中选择 Xcode → preference… → Text Editing（文本编辑），然后转到 Indentation（缩进）选项卡。
+
+记住，当我说一个 view controller，或任何 object，可以有 data 和 functionality，确实如此吗？ showAlert() 和 sliderMoved() actions 是 functionality 的示例，而 currentValue variable 是其 data 的一部分。
+
+一个 variable 允许应用程序记住事物。将 variable 视为单个 data 的临时存储容器。有各种各样的容器和大小，就像 data 有各种形状和大小。
+

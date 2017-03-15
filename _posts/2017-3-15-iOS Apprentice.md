@@ -2,7 +2,7 @@
 layout: post
 title: "iOS Apprentice 1 Getting Started v5.0 （译）"
 date:   2017-03-15
-excerpt: "译至 40 页"
+excerpt: "译至 42 页"
 tags: [program, iOS, translate]
 comments: true
 ---
@@ -908,4 +908,9 @@ Swift 是一种所谓的 “object-oriented” 编程语言，这意味着你做
 该项目还有一个名为 AppDelegate 的 object，不过你将在此课程中忽略它（但如果你好奇，可以随意查看它的源文件）。这些 object 无处不在！
 
 一个 object 可以具有数据和功能：
+
+- 举个说明数据的例子，就是你之前添加到 view controller 的 Hit Me button。当你将 button 拖到 storyboard 中时，实际上那一刻它成为了 view controller 的数据中的一部分。数据包含内容。在这种情况下，view controller 包含 button。
+- 关于功能的一个例子就是，你添加用来响应 button 上的轻击操作的 showAlert 动作。 功能用来 *做* 某事。
+
+button 本身也有数据和功能。button 数据的例子就是，它的标签的文本和颜色，它在屏幕上的位置，宽度和高度等。该 butoon 还具有功能：它可以识别用户点击它，并将触发一个动作作为响应。
 

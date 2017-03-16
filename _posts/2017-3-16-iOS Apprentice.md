@@ -1,5 +1,5 @@
 ---
-****layout: post
+layout: post
 title: "iOS Apprentice 1 Getting Started v5.0 （译）"
 date:   2017-03-16
 excerpt: "译至 58 页"

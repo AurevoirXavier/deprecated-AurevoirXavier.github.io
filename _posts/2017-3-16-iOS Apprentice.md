@@ -2,7 +2,7 @@
 layout: post
 title: "iOS Apprentice 1 Getting Started v5.0 （译）"
 date:   2017-03-16
-excerpt: "译至 50 页"
+excerpt: "译至 58 页"
 tags: [program, iOS, translate]
 comments: true
 ---
@@ -216,7 +216,8 @@ func handleMusicEvent(command: Int, noteNumber: Int, velocity: Int) {
     if noteNumber == 64 {
       damperPedal(velocity)
     }
-} }
+  }
+}
 ```
 
 <center>上面的代码片段取自于一个声音合成器程序中</center>
@@ -541,15 +542,17 @@ class ViewController: UIViewController {
   override func viewDidLoad() {
     super.viewDidLoad()
     // Do any additional setup after loading the view, typically
-from a nib. }
+	from a nib. 
+  }
 
   override func didReceiveMemoryWarning() {
     super.didReceiveMemoryWarning()
     // Dispose of any resources that can be recreated.
-}
+  }
 
   @IBAction func showAlert() {
-} }
+  }
+}
 ```
 
 初尝 Swift 的感觉如何？合你口味吗？ 在我可以告诉你这是什么意思之前，我首先要介绍一个有关 view controller 的概念。
@@ -610,7 +613,7 @@ from a nib. }
 
 <br>
 
-➤单击 show alert 以选择它。这表明 Interface Builder 在 button 和 @IBAction func show Alert() 之间进行关联。
+➤单击 showAlert 以选择它。这表明 Interface Builder 在 button 和 @IBAction func show Alert() 之间进行关联。
 
 从现在开始，每当 button 被点击时，将执行 showAlert action。这就是如何使 button 和其他controls 互动：你在 view controller 的 Swift 文件中定义一个动作，然后在Interface Builder中进行连接。
 
@@ -667,7 +670,7 @@ showAlert 中的代码创建一个标题为 “Hello，World” 的 alert，它�
 
 ➤ 单击 Xcode 工具栏上的 Run 按钮。如果你没有任何的拼写错误，你的应用程序应该会在模拟器中启动，当你点击 button，应该会看到 alert。
 
-<div align="center"><img alt="alert 弹出动作" src="http://imgur.com/suZqPl0.png"/></div><center>alert 弹出动作</center>
+<div align="center"><img alt="alert 弹出动作" src="http://i.imgur.com/suZqPl0.png"/></div><center>alert 弹出动作</center>
 
 <br>
 
@@ -727,7 +730,7 @@ showAlert 中的代码创建一个标题为 “Hello，World” 的 alert，它�
 
 在 iOS 上，应用程序是事件驱动，这意味着这些 objrcts 侦听某些事件并进行处理。
 
-听起来很奇怪，一个应用程序花大部分时间做...什么没有。它只是坐在那里等待某事件发生。当用户点击屏幕时，应用程序弹出几毫秒的动作，然后它再次回到睡眠，直到迎来下一个事件。
+听起来很奇怪，一个应用程序花大部分时间做… 什么没有。它只是坐在那里等待某事件发生。当用户点击屏幕时，应用程序弹出几毫秒的动作，然后它再次回到睡眠，直到迎来下一个事件。
 
 在此方案中你所做的部分就是，由你编写的源代码将在对象接收到此类事件的消息时执行。
 
@@ -763,7 +766,7 @@ showAlert 中的代码创建一个标题为 “Hello，World” 的 alert，它�
 
 <br>
 
-嘿，等一下......这看起来并不像我答应你的那样，展示给你看的游戏那般漂亮！区别在于这都是些标准的 UIKit controls。他们看起来像是直接开箱的样子。
+嘿，等一下...... 这看起来并不像我答应你的那样，展示给你看的游戏那般漂亮！区别在于这都是些标准的 UIKit controls。他们看起来像是直接开箱的样子。
 
 你可能已经看过这个面板，因为它非常适合常规的应用程序。但是因为默认的死沉沉的样子对于一个游戏来说有点枯燥无聊，所以你会在后续课程给它加一些调味料。
 
@@ -1087,7 +1090,8 @@ print() 函数是一个很好的帮助，告诉你在应用程序中发生了什
 ```swift
 // This is the proper way to make a Swift string:
 "I am a good string"
-// These are wrong:
+
+// These are wrong（以下错误示范）:
 'I should have double quotes'
 ''Two single quotes do not make a double quote''
 “My quotes are too fancy”
@@ -1122,20 +1126,25 @@ var currentValue: Int = 0
 
 ```swift
 import UIKit
+
 class ViewController: UIViewController {
   var currentValue: Int = 0
   
   override func viewDidLoad() {
-... }
+  ...
+  }
 
   override func didReceiveMemoryWarning() {
-... }
+  ...
+  }
 
   @IBAction func showAlert() {
-... }
+  ...
+  }
 
   @IBAction func sliderMoved(_ slider: UISlider) {
-... }
+  ...
+  }
 }
 ```
 
@@ -1146,4 +1155,306 @@ class ViewController: UIViewController {
 记住，当我说一个 view controller，或任何 object，可以有 data 和 functionality，确实如此吗？ showAlert() 和 sliderMoved() actions 是 functionality 的示例，而 currentValue variable 是其 data 的一部分。
 
 一个 variable 允许应用程序记住事物。将 variable 视为单个 data 的临时存储容器。有各种各样的容器和大小，就像 data 有各种形状和大小。
+
+你不只是把东西放在容器中，然后忘记它。你将经常用新的值替换其内容。当你的应用需要记住东西的变化，就好像你把箱子打开把旧值拿出来，并放入新的值。
+
+这是 variables 的整体观点：它们可以变化。例如，每次移动 slider 时，都将使用 slider 的新位置更新 currentValue。
+
+存储容器的大小和 variables 可记住的值的类型由其 *data type*（数据类型）或只是 *type*（类型）决定。
+
+你为 currentValue variable 指定了 type Int，这意味着此容器可以保存 20 亿到 -20 亿之间的整数（也称为 “integers”）。Int 是最常见的 data types 之一，但还有很多其他的，你甚至可以自己构造一个出来。
+
+Variables 就像儿童的积木玩具：
+
+<div align="center"><img alt="Variables 是容纳值的容器" src="http://imgur.com/ZKTrOpv.png"/></div><center>Variables 是容纳值的容器</center>
+
+<br>
+
+想法是把正确的形状放在正确的容器中。容器是 variable，它的 type 决定了什么 “形状”。 形状是可能的值它可以放入变量。
+
+你可以稍后更改每个框的内容。例如，你可以取出蓝色正方形，并放入一个红色正方形，只要都是正方形。
+
+但是你不能在圆孔中放一个正方形：值的 data type 和 variable 的 data type 必须匹配。
+
+我说一个 variable 是一个临时存储容器。它会把内容保留多长时间？与肉类或蔬菜不同，如果你保持它们太长时间，variables 不会腐烂变坏——一个 variable 将无限期地保持它的值，直到你把一个新的值放入该 variable，或者直到你完全销毁容器。
+
+每个 variable 都有一定的生命周期（也称为范围），它取决于程序中定义该 variable 的确切位置。在这种情况下，currentValue 会和它的所有者 ViewController 拥有一样的生命周期。他们的命运是交织在一起的（译者注：好比一根绳上的蚂蚱）。
+
+讲了够多的理论了，让我们动手来做，让这个 variable 为我们工作。
+
+➤ 将 **ViewController.swift** 中的 sliderMoved() method 的内容更改为以下内容：
+
+```swift
+@IBAction func sliderMoved(_ slider: UISlider) {
+  currentValue = lroundf(slider.value)
+}
+```
+
+<br>
+
+你删除了print() 语句，并将其替换为此行：
+
+```swift
+currentValue = lroundf(slider.value)
+```
+
+<br>
+
+这里发生了什么？
+
+你已经看到 slider.value 之前，这是在那一刻 slider 的位置。这是介于 1 和 100 之间的值，可能带有小数点后面的数字。currentValue 是你刚刚创建的 variable 的名称。
+
+要将新值放入 varibale，你只需这样做：
+
+```swift
+ variable = the new value
+ 译者注：变量 = 新值
+```
+
+<br>
+
+这被称为 “assignment”（赋值）。将新值分配给 variable。相当于把形状放在盒子里这一步骤。这里，将代表 slider 位置的值放入 currentValue variable 中。
+
+非常简单，但什么是 lroundf ？回想一下 slider 的值可以有小数点后面的数字。在移动 slider 时，你在 Debug area 中看到了 print() 的输出。
+
+然而，如果你让玩家根据滑块的位置猜测一个这么精确带有这么多小数点的值，这个游戏会很难。这几乎不可能得到正确答案！
+
+使用整数更公平。这就是为什么 currentValue 有 data type Int，因为该 type 存储 *integers*。integers 这个名词是整数的专用术语。
+
+你使用 function lroundf() 将十进制数舍入到最接近的整数，然后将该四舍五入的数字存储到 currentValue 中。
+
+<code class="highlighter-rouge"><strong>Functions 和 methods</strong></code>
+
+`你已经看到 methods 提供了 functionality，但是 function 是将 functionality 放入你的应用程序的另一种方式。Functions 和 methods 是 Swift 程序实现将多行代码组合成单个且连贯的单元的功臣。`
+
+`两者之间的区别是，一个 function 不属于一个 object，而一个 method 属于一个 object 换句话说，一个 method 就像一个 function——这就是为什么你使用 func 关键字来定义它们——除了你需要一个 object 来使用该 method。 但是因为 methods 有时被称为常规 functions 或 free functions（自由函数），可以在任何地方使用。`
+
+`Swift 为你的程序提供了一个有用的函数库。function lroundf() 是其中的一个，你将在本课中使用其他几个。print() 也是一个 function，顺便说一下。你可以这么说，因为函数名称后面总是可能包含一个或多个参数的圆括号。`
+
+---
+
+译者注：
+
+如果你被 methods 和 function 搞的晕头转向，试着把它们理解为动词和非谓语动词。它们这很相似却又那么的不同。不过暂时不理解这个问题也不大，没有专门的考试会考你怎么区分，只要你会使用它们即可。相信你以后会有一套自己的理解，本来就是人为规定的东西。
+
+以下来自网上一些较权威说法：
+
+函数是一段代码，通过名字来进行调用。它能将一些数据（参数）传递进去进行处理，然后返回一些数据（返回值），也可以没有返回值。
+
+所有传递给函数的数据都是显式传递的。
+
+方法也是一段代码，也通过名字来进行调用，但它跟一个对象相关联。方法和函数大致上是相同的，但有两个主要的不同之处：
+
+1. 方法中的数据是隐式传递的；
+2. 方法可以操作类内部的数据（请记住，对象是类的实例化–类定义了一个数据类型，而对象是该数据类型的一个实例化）
+
+[原文地址](http://stackoverflow.com/questions/155609/difference-between-a-method-and-a-function?rq=1)，这是 stackoverflow 上票数最高的答案（别问我什么是 stackoverflow）。
+
+***
+
+方法和对象相关；
+
+函数和对象无关。
+
+Java 中只有方法，C 中只有函数，而 C++ 里取决于是否在类中。
+
+---
+
+➤ 现在将 showAlert() method 更改为以下内容：
+
+```swift
+@IBAction func showAlert() {
+  let message = "The value of the slider is: \(currentValue)"
+  
+  let alert = UIAlertController(title: "Hello, World",
+                                message: message,	// changed
+                                preferredStyle: .alert)
+                                
+  let action = UIAlertAction(title: "OK",			// changed
+                             style: .default, handler: nil)
+    
+  alert.addAction(action)
+  
+  present(alert, animated: true, completion: nil)
+}
+```
+<br>
+
+let message = 的行是新的。还要注意另外两个小的变化。
+
+和以前一样，你创建和显示一个 UIAlertController，除了这个时候它的消息说：“The value of the slider is: X”，其中 X 被 currentValue variable 的内容（1 和 100 之间的整数）所替换。
+
+假设 currentValue 是34，这意味着 slider 大约是左边三分之一。上面的新代码将 string "The value of the slider is: \ (currentValue)" 转换为 "The value of the slider is: 34"，并将其放入一个名为 message 的新 object 中。
+
+旧的 print() 执行类似的操作，只是它将结果打印到 Debug area。但是，在此处，你不希望打印结果，而是在 alert 弹出窗口中显示结果。这就是为什么你告诉 UIAlertController 它现在应该使用这个新的 string 作为消息显示。
+
+➤ 运行应用程序，拖动 slider，然后按 button。现在 alert 应该显示 slider 的实际值。
+
+<div align="center"><img alt="The alert 显示 slider 的值" src="http://imgur.com/JcJZl6q.png"/></div><center>The alert 显示 slider 的值</center>
+
+<br>
+
+酷。你已经使用一个 variable，currentValue 来记住特定的 data 片段，slider 的四舍五入位置，以便它可以在应用程序的其他位置使用，在本例的情况下就是应用于 alert 的消息文本中。
+
+如果你再次点按 button 而不移动 slider，则 alert 仍将显示相同的值。variable 保持其值，直到你把一个新的 variable 放进去。
+
+## 你的第一个 bug（漏洞）
+
+这里有一个小问题存在于应用程序中，虽然。也许你已经注意到了。让我们重现一下这个问题现场：
+
+➤ 在 Xcode 中按停止按钮以完全终止应用程序，然后再次按运行。在不移动 slider 的情况下，立即按下 Hit Me button。
+
+The alert 现在说：“The value of the slider is: 0”。 但是 slider 的旋钮显然在中心，所以应该显示的是 50。你发现了一个 bug！
+
+**练习：**想想在这种特殊情况（启动应用程序，不要移动 slider，按下 button）下值为 0 的原因。
+
+答案：这里的线索是，这只发生在你不移动 slider 的情况下。当然，在不移动 slider 的情况下，sliderMoved() 消息永远不会发送出去，并且永远不会将 slider 的值放入currentValue variable 中。
+
+currentValue variable 的默认值为 0，就是你在此处看到的。
+
+➤ 要修复此错误，请将 currentValue 的声明更改为：
+
+```swift
+var currentValue: Int = 50
+```
+
+<br>
+
+现在，currentValue 的起始值是 50，它应该是与 slider 的初始位置相同的值。
+
+➤ 再次运行应用程序，并验证该错误是否已解决。
+
+你可以在本教程的源代码文件夹中的 **02 - Slider and Variables** 下找到应用程序的项目文件。
+
+## 玩够了吧... 让我们做一个游戏！
+
+你已经构建了用户界面，且知道如何找到 slider 的位置。这已经搞定了几个待办事项。
+
+剩余下的一个大问题是生成目标的随机值，并计算玩家的效果。但首先，在 slider 上还有改进的地方。
+
+## Outlets
+
+你设法将 slider 的值存储到 variable 中，并将其显示在 alert 上。这很好，但你仍然可以改进一点。
+
+如果你决定将 storyboard 中 slider 的初始值设置为 50 之外的其他值，如 1 或 100，该怎么办？那么 currentValue 会再次出错，因为应用程序总是假定它将在开始时为 50。你必须记住还修复代码以给 currentValue 一个新的初始值。
+
+就我而言，这些小东西很难记住，特别是当项目变得更大，你有几十个 view controller 需要操心，或者你有几个星期没看你这些代码。
+
+因此，为了一劳永逸地解决这个问题，你将在 **ViewController.swift** 中的 viewDidLoad() method 中做一些工作。该 method 目前看起来像这样：
+
+```swift
+override func viewDidLoad() {
+  super.viewDidLoad()
+  // Do any additional setup after loading the view, typically
+	 from a nib. 
+}
+```
+
+<br>
+
+当你基于 Xcode 模板创建此项目时，Xcode 已经将 viewDidLoad() 方法放入源代码中。你现在将添加一些代码。
+
+一旦 view controller 从 storyboard 文件加载其用户界面，viewDidLoad() 消息由 UIKit 发送。此时，view controller 还不可见，因此这是将实例 variables 设置为其正确初始值的好位置。
+
+➤ 将 viewDidLoad() 更改为以下内容：
+
+```swift
+ override func viewDidLoad() {
+  super.viewDidLoad()
+  currentValue = lroundf(slider.value)
+}
+```
+
+<br>
+
+这个想法是，你在 storyboard 中的 slider 上设置的任何值（无论是 50，1，100 还是其他），并使用它作为 currentValue 的初始内容。
+
+回想一下，你需要舍入该数字，因为 currentValue 是一个Int，整数不能取小数点后面的数字。
+
+不幸的是，当你按 Run 时，Xcode 抱怨这些更改。你可以亲自试试。
+
+➤ 尝试运行应用程序。
+
+Xcode 说 “Build Failed”，后面是类似：“Error: Use of unresolved identifier ‘slider’”（使用了未定义的 slider）。
+
+这是因为 viewDidLoad() 不知道名为 slider 的任何东西。
+
+那么为什么这个运行的更早，在sliderMoved() 里？ 让我们再看看那个 method：
+
+```swift
+@IBAction func sliderMoved(_ slider: UISlider) {
+  currentValue = lroundf(slider.value)
+}
+```
+
+<br>
+
+这里你做同样的事情：你舍弃 slider.value 并把它放到 currentValue。那么为什么它在这里运行正常，而在 viewDidLoad() 出错？
+
+区别是 slider 是 sliderMoved() method 中所谓的参数。参数是括号内的 method 名称后的内容。在这种情况下，有一个名为 slider 的参数，它引用发送此操作消息的 UISlider object。
+
+Action methods 可以具有引用触发该 method 的 UI 控件的参数。当你希望在 method 中使用该 object 时，这就很方便的，就像你在这里所做的那样（所讨论的 object 是 UISlider）。
+
+当用户移动 slider 时，UISlider object 基本上这样说： “Hey view controller, I’m a slider object and I just got moved. By the way, here’s my phone number so you can get in touch with me.”（嘿视图控制器，我是一个滑块对象，我刚刚移动。 顺便说一下，这里是我的电话号码，这样你可以与我联系）
+
+slider 参数包含此 “phone number”（电话号码），但它仅在此特定 method 的有效期内有效。
+
+换句话说，slider 是局部的; 你不能在任何其他地方使用它。
+
+**Locals（本地）**
+
+当我第一次引入 variables 时，我提到每个 variable 都有一定的生命周期，称为其范围。 variable 的范围取决于程序中定义该 variable 的位置。
+
+Swift 有以下三个可能的范围级别：
+
+1. **Global scope**（全局范围）。这些目标可以从任何地方访问。
+2. **Instance scope**（实例范围）。这是说诸如 currentValue 这样的 variables。只要拥有它们的对象保持活动，这些它们就活着。
+3. **Local scope**（本地范围）。具有局部作用域的 object（例如 sliderMoved() 的 slider 参数）仅在该 method 的持续时间内存在。只要程序的执行到离开这个 method，local objects（本地变量）就不再可访问。
+
+让我们看看showAlert() 的顶部：
+
+```swift
+@IBAction func showAlert() {
+  let message = "The value of the slider is: \(currentValue)"
+  
+  let alert = UIAlertController(title: "Hello, World",
+                              message: message, preferredStyle: .alert)
+                              
+  let action = UIAlertAction(title: "OK", style: .default,
+  ...
+```
+
+<br>
+
+因为消息， alert 和 action objects 在方法内创建，所以它们是本地化。它们只有在执行 showAlert() action 时才存在，并在 action 完成时消失。
+
+一旦 showAlert() method 完成，即当没有更多语句要执行时，计算机将销毁消息，alert 和 action objects。他们的存储空间将不再被需要。
+
+然而，currentValue variable 永远存在... 或者至少只要 ViewController 存在（直到用户终止应用程序）。这种 type 的 variable 被命名为一个 instance variable，因为它的作用域与它所属的 object instance 的作用域相同。
+
+换句话说，如果你想保持一个值，从一个动作事件到下一个动作事件，你应该使用 instance variables。
+
+解决方案是将 slider 的引用存储为新的 instance variable，就像你对 currentValue 所做的一样。不过现在，variable 的 data type 不是 Int，而是 UISlider。你不使用常规的 intance variable，而是使用一个特殊的形式称为 *outlet*。
+
+➤ 将以下行添加到 ViewController.swift：
+
+```swift
+@IBOutlet weak var slider: UISlider!
+```
+
+这一行放哪里不是很重要，只要它在类的 ViewController 的括号内的某处。我通常把 outlet 与其他 instance variables 放在一起。
+
+这一行告诉 Interface Builder 你现在有一个名为 slider 的 variable，可以连接到 UISlider object。正如 Interface Builder 喜欢调用 method “actions”，它调用这些variable outlet。Interface Builder 不会看到任何其他 variables，只有标记为 @IBOutlet 的 variables。
+
+不要担心感叹号和 weak 现在。为什么这些是必要的将在下面的教程中解释。现在只需记住一个 variable 的 outlet 需要声明为 @IBOutlet weak var，并在结尾有一个感叹号。（有时候你会看到一个问号，所有这些麻烦的问题会在适当的时候解释）
+
+➤ 打开 storyboard。按住 Ctrl 并单击 slider。不要拖到任何地方只需要：放开鼠标按钮，弹出一个菜单，显示此 slider 的所有连接。（如果你不想按住Ctrl单击，也可以右键单击一次）
+
+此弹出菜单的工作原理与 Connections inspector 完全相同。我只是想告诉你，它作为一种替代存在。
+
+➤ 单击 **New Referencing Outlet** 旁边的空心圆，并拖动到 **View Controller**：
+
+<div align="center"><img alt="连接 slider 到 outlet" src="http://imgur.com/2lsDipi.png"/></div><center>连接 slider 到 outlet</center>
+
+<br>
 

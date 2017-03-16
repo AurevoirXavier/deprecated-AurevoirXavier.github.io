@@ -15,12 +15,6 @@ comments: true
 
 
 
-<h1 align="center">iOS Apprentice 第一章</h1>
-
-<center><strong>Aurevoir Xavier 译</strong></center>
-
-<br>
-
 嗨！我是 Matthijs Hollemans，一名全职 iOS 开发人员和 [www.raywenderlich.com](www.raywenderlich.com) 的辅导团队成员。
 
 接下来你将要读第一章导读部分来自我的书 *iOS Apprentice: Beginning iOS Development with Swift, Fifth Edition* 。

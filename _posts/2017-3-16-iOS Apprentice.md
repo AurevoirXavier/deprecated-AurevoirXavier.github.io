@@ -222,8 +222,6 @@ func handleMusicEvent(command: Int, noteNumber: Int, velocity: Int) {
 
 <center>上面的代码片段取自于一个声音合成器程序中</center>
 
-<br>
-
 它几乎看起来就像是某些有意义的东西。即使你以前从来没有编过程，你可以通过排序，弄清楚其中发生了什么。这几乎就是英语。（译者注：好好学习英语吧，也许我翻译本书是个错误）
 
 Swift 是一门新兴的同时又非常热门的语言，它将传统的 object-oriented（面向对象）编程与函数式编程的各方面相结合。幸运的是，Swift 有许多与其他流行编程语言相同的东西，所以如果你已经熟悉 C#，Python，Ruby 或 Javascript，你会在使用 Swift 过程中体会到宾至如归的感觉。
@@ -523,8 +521,6 @@ Interface Builder 将消失，Editor 区域现在展现出一堆明亮的彩色�
 }
 ```
 
-<br>
-
 **ViewController.swift** 的源代码现在应该如下所示：
 
 ```swift
@@ -556,8 +552,6 @@ class ViewController: UIViewController {
 ```
 
 初尝 Swift 的感觉如何？合你口味吗？ 在我可以告诉你这是什么意思之前，我首先要介绍一个有关 view controller 的概念。
-
-<br>
 
 <code class="highlighter-rouge"><strong>Xcode 会自动保存</strong></code>
 
@@ -659,8 +653,6 @@ class ViewController: UIViewController {
 ```
 
 <center>新加入的这几行提供了此 action 的实际功能。</center>
-
-<br>
 
 {} 括号之间的命令告诉 iPhone 做什么，它们从上到下依次执行。
 
@@ -1016,8 +1008,6 @@ Inspector 区域显示当前选择的项目的各个方面。例如，Attributes
 }	
 ```
 
-<br>
-
 ➤ 其次，转到 storyboard，按住 Ctrl 拖动 slider 到 Outline pane 中的 View Controller。放开鼠标按钮，从弹出窗口中选择 **sliderMoved: **。 完成！
 
 只是为了刷新内存，Outline pane 位于 Interface Builder canvas 的左侧。它显示 storyboard 的 view 的层次结构。在这里你可以看到 View Controller 包含一个跨度有场景大小般的白色视图（简称为View），它又包含你添加的 sub-views（子视图）：buttons 和 labels。
@@ -1071,8 +1061,6 @@ print() 函数是一个很好的帮助，告诉你在应用程序中发生了什
 "The value of the slider is now: \(slider.value)"
 ```
 
-<br>
-
 前三个用于制作 UIAlertController；最后一个你使用在 print() 上面。
 
 这样的文本块被称为 string，因为你可以将文本可视化为一个字符序列，就像它们是一个 string 上的珠子（对不起，它与衬衣（内衣）没有任何关系）：
@@ -1118,8 +1106,6 @@ String 中的 \\( … ) 之间的任何内容都是特殊的。print() 语句使
 var currentValue: Int = 0
 ```
 
-<br>
-
 你现在已向 view controller object 添加了名为 currentValue 的 variable。
 
 代码应该看起来像这样（我省略了 method 的内部）：
@@ -1147,8 +1133,6 @@ class ViewController: UIViewController {
   }
 }
 ```
-
-<br>
 
 通常在 method 上面添加 variables，并使用制表符或两到四个空格缩进所有内容。你使用哪一个主要是个人喜好的问题。我喜欢使用两个空格。（你可以在 Xcode 的 preference（首选项）面板中进行配置。从菜单栏中选择 Xcode → preference… → Text Editing（文本编辑），然后转到 Indentation（缩进）选项卡。
 
@@ -1190,15 +1174,11 @@ Variables 就像儿童的积木玩具：
 }
 ```
 
-<br>
-
 你删除了print() 语句，并将其替换为此行：
 
 ```swift
 currentValue = lroundf(slider.value)
 ```
-
-<br>
 
 这里发生了什么？
 
@@ -1210,8 +1190,6 @@ currentValue = lroundf(slider.value)
  variable = the new value
  译者注：变量 = 新值
 ```
-
-<br>
 
 这被称为 “assignment”（赋值）。将新值分配给 variable。相当于把形状放在盒子里这一步骤。这里，将代表 slider 位置的值放入 currentValue variable 中。
 
@@ -1239,6 +1217,8 @@ currentValue = lroundf(slider.value)
 
 以下来自网上一些较权威说法：
 
+**第一种：**
+
 函数是一段代码，通过名字来进行调用。它能将一些数据（参数）传递进去进行处理，然后返回一些数据（返回值），也可以没有返回值。
 
 所有传递给函数的数据都是显式传递的。
@@ -1250,7 +1230,7 @@ currentValue = lroundf(slider.value)
 
 [原文地址](http://stackoverflow.com/questions/155609/difference-between-a-method-and-a-function?rq=1)，这是 stackoverflow 上票数最高的答案（别问我什么是 stackoverflow）。
 
-***
+**第二种：**
 
 方法和对象相关；
 
@@ -1270,7 +1250,7 @@ Java 中只有方法，C 中只有函数，而 C++ 里取决于是否在类中�
                                 message: message,	// changed
                                 preferredStyle: .alert)
                                 
-  let action = UIAlertAction(title: "OK",			// changed
+  let action = UIAlertAction(title: "OK",	// changed
                              style: .default, handler: nil)
     
   alert.addAction(action)
@@ -1278,8 +1258,6 @@ Java 中只有方法，C 中只有函数，而 C++ 里取决于是否在类中�
   present(alert, animated: true, completion: nil)
 }
 ```
-<br>
-
 let message = 的行是新的。还要注意另外两个小的变化。
 
 和以前一样，你创建和显示一个 UIAlertController，除了这个时候它的消息说：“The value of the slider is: X”，其中 X 被 currentValue variable 的内容（1 和 100 之间的整数）所替换。
@@ -1318,8 +1296,6 @@ currentValue variable 的默认值为 0，就是你在此处看到的。
 var currentValue: Int = 50
 ```
 
-<br>
-
 现在，currentValue 的起始值是 50，它应该是与 slider 的初始位置相同的值。
 
 ➤ 再次运行应用程序，并验证该错误是否已解决。
@@ -1350,8 +1326,6 @@ override func viewDidLoad() {
 }
 ```
 
-<br>
-
 当你基于 Xcode 模板创建此项目时，Xcode 已经将 viewDidLoad() 方法放入源代码中。你现在将添加一些代码。
 
 一旦 view controller 从 storyboard 文件加载其用户界面，viewDidLoad() 消息由 UIKit 发送。此时，view controller 还不可见，因此这是将实例 variables 设置为其正确初始值的好位置。
@@ -1364,8 +1338,6 @@ override func viewDidLoad() {
   currentValue = lroundf(slider.value)
 }
 ```
-
-<br>
 
 这个想法是，你在 storyboard 中的 slider 上设置的任何值（无论是 50，1，100 还是其他），并使用它作为 currentValue 的初始内容。
 
@@ -1386,8 +1358,6 @@ Xcode 说 “Build Failed”，后面是类似：“Error: Use of unresolved ide
   currentValue = lroundf(slider.value)
 }
 ```
-
-<br>
 
 这里你做同样的事情：你舍弃 slider.value 并把它放到 currentValue。那么为什么它在这里运行正常，而在 viewDidLoad() 出错？
 
@@ -1423,8 +1393,6 @@ Swift 有以下三个可能的范围级别：
   let action = UIAlertAction(title: "OK", style: .default,
   ...
 ```
-
-<br>
 
 因为消息， alert 和 action objects 在方法内创建，所以它们是本地化。它们只有在执行 showAlert() action 时才存在，并在 action 完成时消失。
 

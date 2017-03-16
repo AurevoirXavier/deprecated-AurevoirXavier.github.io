@@ -17,6 +17,8 @@ comments: true
 
 <center><strong>iOS 开发专有名词</strong></center>
 
+<center><strong>表一</strong></center>
+
 |         Storyboard          |     故事板      |      |     Interface Builder      |   界面构造器    |
 | :-------------------------: | :----------: | :--: | :------------------------: | :--------: |
 |       **Table views**       |   **表视图**    |      | **Navigation controllers** | **导航控制器**  |
@@ -29,11 +31,19 @@ comments: true
 |      **Outline pane**       |   **大纲窗格**   |      | **Connections inspector**  | **连接检查器**  |
 |     **Issue navigator**     |  **问题导航器**   |      |        **Portrait**        |   **竖屏**   |
 
+<br>
+
+<center><strong>表二</strong></center>
+
 |        Landscape         |    横屏     |      | **Orientation** |   方向   |
 | :----------------------: | :-------: | :--: | :-------------: | :----: |
 | **Attributes inspector** | **属性检查器** |      |    **View**     | **视图** |
 
+<br>
+
 <center><strong>软件开发专有名词</strong></center>
+
+<center><strong>表一</strong></center>
 
 | SDK Software Development Kit |  软件开发工具包  |      |     Variable      |    变量    |
 | :--------------------------: | :-------: | :--: | :---------------: | :------: |
@@ -46,6 +56,10 @@ comments: true
 |         **Function**         |  **函数**   |      | **Functionality** |  **功能**  |
 |           **Type**           |  **类型**   |      |     **Debug**     |  **调试**  |
 |          **String**          |  **字符串**  |      |  **Data types**   | **数据类型** |
+
+<br>
+
+<center><strong>表二</strong></center>
 
 | Assignment |   赋值   |      |          Bug          |    漏洞    |
 | :--------: | :----: | :--: | :-------------------: | :------: |

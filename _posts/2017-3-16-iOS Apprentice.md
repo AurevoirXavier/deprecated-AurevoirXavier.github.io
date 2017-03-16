@@ -29,9 +29,13 @@ comments: true
 |      **Outline pane**       |   **大纲窗格**   |      | **Connections inspector**  | **连接检查器**  |
 |     **Issue navigator**     |  **问题导航器**   |      |        **Portrait**        |   **竖屏**   |
 
+<br>
+
 |        Landscape         |    横屏     |      | **Orientation** |   方向   |
 | :----------------------: | :-------: | :--: | :-------------: | :----: |
 | **Attributes inspector** | **属性检查器** |      |    **View**     | **视图** |
+
+
 
 <center><strong>软件开发专有名词</strong></center>
 
@@ -46,6 +50,8 @@ comments: true
 |         **Function**         |  **函数**   |      | **Functionality** |  **功能**  |
 |           **Type**           |  **类型**   |      |     **Debug**     |  **调试**  |
 |          **String**          |  **字符串**  |      |  **Data types**   | **数据类型** |
+
+<br>
 
 | Assignment |   赋值   |      |          Bug          |    漏洞    |
 | :--------: | :----: | :--: | :-------------------: | :------: |

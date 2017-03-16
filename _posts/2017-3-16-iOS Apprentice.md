@@ -1524,7 +1524,7 @@ comment 行的最佳用法是解释你的代码如何工作。编写出一个好
 
 在游戏可玩之前，你还有很多方法去完善，所以让我们来看看待办列表中的下一个项目：生成一个随机数并在屏幕上显示它。
 
-当你制作游戏时，随机数字很多，因为游戏需要有一些不可预测性。你不能真正地得到一个计算机生成真正随机和不可预测的数字，但你可以使用一个所谓的 pseudo-random generator（伪随机生成器）产生出这种 “随机” 数字。你将使用我最喜欢的一个，arc4random_uniform() function。
+当你制作游戏时，随机数字很多，因为游戏需要有一些不可预测性。你不能真正地得到一个计算机生成真正随机和不可预测的数字，但你可以使用一个所谓的 pseudo-random generator（伪随机生成器）产生出这种 “随机” 数字。你将使用我最喜欢的一个 function，arc4random_uniform()。
 
 生成这个随机数的好实际，是游戏开始的时候。
 
@@ -1534,3 +1534,65 @@ comment 行的最佳用法是解释你的代码如何工作。编写出一个好
 targetValue = 1 + Int(arc4random_uniform(100))
 ```
 
+完整的 viewDidLoad() 现在应该看起来像这样：
+
+```swift
+override func viewDidLoad() {
+  super.viewDidLoad()
+  currentValue = lroundf(slider.value)
+  targetValue = 1 + Int(arc4random_uniform(100))
+}
+```
+
+你在这里做了什么？首先，你使用了一个新的 variable targetValue。你还没有真正定义这个 variable，所以你必须马上做这件事。
+
+你还调用 arc4random_uniform()  function 传递一个介于 0 和 100 之间的任意整数（整数）。
+
+实际上，你将获得的最大数字是 99，因为 arc4random_uniform()  的结果不包含上限。它能达到100，而不是包括。要获取真正在 1 ～ 100 范围内的数字，你需要向 arc4random_uniform() 的结果加 1。
+
+你仍然必须将 variable targetValue 添加到 view controller，否则 Xcode 会抱怨它不知道关于这个 variable 的任何信息。
+
+如果你不告诉编译器 targetValue 是什么样的 variable（译者注：它的 type），那么它不知道要为它分配多少存储空间，也不能检查你是否在任何地方正确地使用这个变量。
+
+➤ 在 **ViewController.swift** 的顶部添加新 variable，和其他 variables 放在一起：
+
+```swift
+var targetValue: Int = 0
+```
+
+Swift 中的 variables 必须总是有一个值，所以在这里你将它初始化为 0。不过它总是会被 viewDidLoad() 中的随机值覆盖。
+
+<code class="highlighter-rouge"><strong>注意：</strong>直到你做出最新的更改之前，Xcode 可能已经指出，它不知道 targetValue variable 是什么。但是更改后该错误消息现在应该已经消失。</code>
+
+`Xcode 试图帮助你，它会在你输入时分析程序错误。有时，当你完成所做的更改时，可能会看到临时警告和错误消息消失。`
+
+`不要被这些信息吓唬到; 它们只是短暂的，因为代码处于变化状态（译者注：比如你正在写一个 function 还没来得及写花括号因为你才刚刚写到函数的名字，这时 Xcode 会报错）。`
+
+我希望你很清楚设置 targetValue 这一个 instance variable 的原因。
+
+你想在一个地方计算随机数——在 viewDidLoad()，然后记住它（保存它的值）在 showAlert() 中，直到用户点击 button。
+
+➤ 将 showAlert() 更改为以下内容：
+
+```swift
+@IBAction func showAlert() {
+  let message = "The value of the slider is: \(currentValue)" +
+                "\nThe target value is: \(targetValue)"
+                
+  let alert = . . .
+}
+```
+
+Tips：每当你看到 . . . 在源代码列表中，我想表达的意思就是：这部分没有改变。（千万不要把那里原有的内容替换为一些省略号！）
+
+你只需将随机数（现在存储在 targetValue 中的值）添加到消息 string。这应该看起来很熟悉：\\(targetValue) 占位符替换为实际的随机数。
+
+这里新出现了一个 \n 字符序列。它代表你想在那个点插入一个特殊的 “新行” 字符（译者注：就是所谓的换行），这将把文本分成两行，所以这让消息读起来更容易。
+
+➤ 运行应用程序并尝试！
+
+<div align="center"><img alt="The alert 在新的一行显示出目标值" src="http://imgur.com/gt4UmUy.png"/></div><center>The alert 在新的一行显示出目标值</center>
+
+<br>
+
+<code class="highlighter-rouge"><strong>注意：</strong>以前你已经使用 + 操作符将两个数字添加在一起（就像它在数学中的效果一样），但是在这里你还使用 + 将不同位的文本拼接成一个大的 string。</code>

@@ -13,7 +13,54 @@ comments: true
 - `当你以后进入公司，保留着这种习惯一定会影响你与同事的交流。`
 - `上网翻阅资料或询问他人时，无论哪里对于专有名词都是直接引用。`
 
+可能一开始你会不习惯，这些中文中穿插着英文，但是这些关键词是至关重要的，特别是在面向对象语言中。如果你在这里学会了，它将不仅仅适用于 swift，在你整个编程生涯中它们的身影随处可见。下面我会列出一个 List（清单） 帮助你适应一下。
 
+<center><strong>iOS 开发专有名词</strong></center>
+
+|         Storyboard          |     故事板      |      |     Interface Builder      |   界面构造器    |
+| :-------------------------: | :----------: | :--: | :------------------------: | :--------: |
+|       **Table views**       |   **表视图**    |      | **Navigation controllers** | **导航控制器**  |
+|        **Delegates**        |    **代理**    |      |     **Core Location**      |  **核心位置**  |
+|        **Core Data**        |   **核心数据**   |      |        **Map Kit**         | **地图工具包**  |
+| **Single View Application** | **单一视图应用程序** |      |     **Navigator Area**     |  **导航区域**  |
+|    **Project Navigator**    |  **项目导航器**   |      |     **Utilities pane**     | **实用程序窗格** |
+|     **View controller**     |  **视图控制器**   |      |         **Scene**          |   **场景**   |
+|     **Object Library**      |   **对象库**    |      |        **Controls**        |   **控件**   |
+|      **Outline pane**       |   **大纲窗格**   |      | **Connections inspector**  | **连接检查器**  |
+|     **Issue navigator**     |  **问题导航器**   |      |        **Portrait**        |   **竖屏**   |
+
+|        Landscape         |    横屏     |      | **Orientation** |   方向   |
+| :----------------------: | :-------: | :--: | :-------------: | :----: |
+| **Attributes inspector** | **属性检查器** |      |    **View**     | **视图** |
+
+<center><strong>软件开发专有名词</strong></center>
+
+| SDK Software Development Kit |  软件开发工具包  |      |     Variable      |    变量    |
+| :--------------------------: | :-------: | :--: | :---------------: | :------: |
+|          **Object**          |  **对象**   |      |    **Method**     |  **方法**  |
+|     **Object-oriented**      | **面向对象**  |      |    **Slider**     |  **滑块**  |
+|          **Button**          |  **按钮**   |      |     **Alert**     |  **提醒**  |
+|          **Labels**          |  **标签**   |      |    **Canvas**     |  **画布**  |
+|          **Action**          | **操作；动作** |      |  **Frameworks**   |  **框架**  |
+|            **UI**            | **用户界面**  |      |     **Data**      |  **数据**  |
+|         **Function**         |  **函数**   |      | **Functionality** |  **功能**  |
+|           **Type**           |  **类型**   |      |     **Debug**     |  **调试**  |
+|          **String**          |  **字符串**  |      |  **Data types**   | **数据类型** |
+
+| Assignment |   赋值   |      |          Bug          |    漏洞    |
+| :--------: | :----: | :--: | :-------------------: | :------: |
+| **Global** | **全局** |      |     **Instance**      |  **实例**  |
+| **Local**  | **本地** |      | **Instance variable** | **实例变量** |
+
+---
+
+<br>
+
+<h1 align="center">iOS Apprentice 第一章</h1>
+
+<center><strong>Aurevoir Xavier 译</strong></center>
+
+<br>
 
 嗨！我是 Matthijs Hollemans，一名全职 iOS 开发人员和 [www.raywenderlich.com](www.raywenderlich.com) 的辅导团队成员。
 

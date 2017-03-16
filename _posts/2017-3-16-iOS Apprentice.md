@@ -1,5 +1,5 @@
 ---
-layout: post
+****layout: post
 title: "iOS Apprentice 1 Getting Started v5.0 （译）"
 date:   2017-03-16
 excerpt: "译至 58 页"
@@ -9,13 +9,50 @@ comments: true
 
 `Tips：专有名词我只会在它第一次出现时翻译，后续不再翻译。`
 
-- `毕竟你要和全英文的编译器打交道，译后你甚至可能找不到它在编译器的何处。`
-
+- `毕竟你要和全英文的 IDE（集成开发环境）打交道，译后你甚至可能找不到它在 IDE 的何处。`
 - `当你以后进入公司，保留着这种习惯一定会影响你与同事的交流。`
-
 - `上网翻阅资料或询问他人时，无论哪里对于专有名词都是直接引用。`
 
-  ---
+可能一开始你会不习惯，这些中文中穿插着英文，但是这些关键词是至关重要的，特别是在面向对象语言中。如果你在这里学会了，它将不仅仅适用于 swift，在你整个编程生涯中它们的身影随处可见。下面我会列出一个 List（清单） 帮助你适应一下。
+
+<center><strong>iOS 开发专有名词</strong></center>
+
+|         Storyboard          |     故事板      |      |     Interface Builder      |   界面构造器    |
+| :-------------------------: | :----------: | :--: | :------------------------: | :--------: |
+|       **Table views**       |   **表视图**    |      | **Navigation controllers** | **导航控制器**  |
+|        **Delegates**        |    **代理**    |      |     **Core Location**      |  **核心位置**  |
+|        **Core Data**        |   **核心数据**   |      |        **Map Kit**         | **地图工具包**  |
+| **Single View Application** | **单一视图应用程序** |      |     **Navigator Area**     |  **导航区域**  |
+|    **Project Navigator**    |  **项目导航器**   |      |     **Utilities pane**     | **实用程序窗格** |
+|     **View controller**     |  **视图控制器**   |      |         **Scene**          |   **场景**   |
+|     **Object Library**      |   **对象库**    |      |        **Controls**        |   **控件**   |
+|      **Outline pane**       |   **大纲窗格**   |      | **Connections inspector**  | **连接检查器**  |
+|     **Issue navigator**     |  **问题导航器**   |      |        **Portrait**        |   **竖屏**   |
+
+|        Landscape         |    横屏     |      | **Orientation** |   方向   |
+| :----------------------: | :-------: | :--: | :-------------: | :----: |
+| **Attributes inspector** | **属性检查器** |      |    **View**     | **视图** |
+
+<center><strong>软件开发专有名词</strong></center>
+
+| SDK Software Development Kit |  软件开发工具包  |      |     Variable      |    变量    |
+| :--------------------------: | :-------: | :--: | :---------------: | :------: |
+|          **Object**          |  **对象**   |      |    **Method**     |  **方法**  |
+|     **Object-oriented**      | **面向对象**  |      |    **Slider**     |  **滑块**  |
+|          **Button**          |  **按钮**   |      |     **Alert**     |  **提醒**  |
+|          **Labels**          |  **标签**   |      |    **Canvas**     |  **画布**  |
+|          **Action**          | **操作；动作** |      |  **Frameworks**   |  **框架**  |
+|            **UI**            | **用户界面**  |      |     **Data**      |  **数据**  |
+|         **Function**         |  **函数**   |      | **Functionality** |  **功能**  |
+|           **Type**           |  **类型**   |      |     **Debug**     |  **调试**  |
+|          **String**          |  **字符串**  |      |  **Data types**   | **数据类型** |
+
+| Assignment |   赋值   |      |          Bug          |    漏洞    |
+| :--------: | :----: | :--: | :-------------------: | :------: |
+| **Global** | **全局** |      |     **Instance**      |  **实例**  |
+| **Local**  | **本地** |      | **Instance variable** | **实例变量** |
+
+---
 
 <br>
 
@@ -25,7 +62,7 @@ comments: true
 
 <br>
 
-嗨！我是 Matthijs Hollemans，一名全职iOS开发人员和 [www.raywenderlich.com](www.raywenderlich.com) 的辅导团队成员。
+嗨！我是 Matthijs Hollemans，一名全职 iOS 开发人员和 [www.raywenderlich.com](www.raywenderlich.com) 的辅导团队成员。
 
 接下来你将要读第一章导读部分来自我的书 *iOS Apprentice: Beginning iOS Development with Swift, Fifth Edition* 。
 
@@ -130,7 +167,7 @@ OS X 10.11 EI Capitan 或 macOS 10.12 Sierra。Xcode，iOS 应用程序的开发
 
 ## Xcode
 
-我们的第一个工作是下载并安装 Xcode 和 iOS SDK（软件开发工具包）。
+我们的第一个工作是下载并安装 Xcode 和 iOS SDK。
 
 <div align="center"><img alt="" src="http://imgur.com/1flkRks.png"/></div>
 
@@ -234,7 +271,7 @@ C++ 是另一种由 C 衍生出来的 object-oriented 编程语言。它非常�
 
 我可以在 iOS Apprentice 的一开始深入讨论 Swift 的功能，但那样你可能会睡着。所以，我们来慢慢的解释语言，非常简单，等你适应了，再做更深入的讲解。
 
-在一开始，一般概念——什么是 variable（变量），object（对象），如何调用 method 等——远比详细信息重要。虽然缓慢但毫无疑问，我会将 Swift 语言所有的秘密都揭露给你。
+在一开始，一般概念——什么是 variable（变量），object（对象），如何调用 method（方法） 等——远比详细信息重要。虽然缓慢但毫无疑问，我会将 Swift 语言所有的秘密都揭露给你。
 
 你准备好开始编写你生涯中的第一个 iOS 应用程序了吗？
 
@@ -246,9 +283,9 @@ C++ 是另一种由 C 衍生出来的 object-oriented 编程语言。它非常�
 
 <br>
 
-目标是滑动图中这个看起来像牛眼一样的 Slider（滑块）（范围 1 ～ 100），使其尽可能的贴近系统给出的随机值。在上面的截图中，目标是将 “牛眼” 滑动到 22 的地方，因为看不到滑块的当前值，所以全靠目测了。
+目标是滑动图中这个看起来像牛眼一样的 slider（滑块）（范围 1 ～ 100），使其尽可能的贴近系统给出的随机值。在上面的截图中，目标是将 “牛眼” 滑动到 22 的地方，因为看不到滑块的当前值，所以全靠目测了。
 
-当你对你的估计有信心时，按下 “Hit Me!” button，弹出的窗口（也称为 alert（提醒））会告诉你，你获得了多少分：
+当你对你的估计有信心时，按下 “Hit Me!” button（按钮），弹出的窗口（也称为 alert（提醒））会告诉你，你获得了多少分：
 
 <div align="center"><img alt="一个显示分数的 alert（弹出警报）" src="http://imgur.com/IGbMo3P.png"/></div><center>一个显示分数的 alert（弹出警报）</center>
 
@@ -278,7 +315,7 @@ C++ 是另一种由 C 衍生出来的 object-oriented 编程语言。它非常�
 
 这是我的想法。我只是根据游戏的描述，并把它分割成一块一块：
 
-- 在屏幕上放置一个 button（按钮），并将其标记为 “Hit Me!”。
+- 在屏幕上放置一个 button，并将其标记为 “Hit Me!”。
 - 当玩家按下 “Hit Me!” button 的时候，应用程序必须弹出一个警告窗口，通知玩家他的表现如何。以某种方式（暂时还不知道该如何做）计算出得分，并将得分放入警报窗口中。
 - 在屏幕上放置文本，例如 “Score:” 和 “Round:” labels（标签）。这些文本会变化，例如分数，当玩家的得分时点数应该相应增加。
 - 将 Slider 放在屏幕上，使其值在 1 到 100 之间。
@@ -390,7 +427,7 @@ Xcode 将工作一会儿，然后它在 iOS 模拟器启动您全新的应用程
 
 如果你的 iPhone 当前通过 USB 电缆连接到你的 Mac，Xcode 可能会试图在你的 iPhone 上运行应用程序，这可能无法工作，因为缺少了一些额外的设置。在本教程的最后，我将告诉你如何让应用程序在你的 iPhone 上运行，所以你可以把它展示给你的朋友，但现在只需坚持使用模拟器。
 
-➤ **Run** 按钮旁边是 **Stop**(停止) 按钮（方形）。 按此退出应用程序。
+➤ **Run** 按钮旁边是 **Stop**（停止）按钮（方形）。 按此退出应用程序。
 
 在你的手机上，你可以使用主屏幕按钮退出应用程序（在模拟器上从菜单栏选择 **Hardware**（硬件）→ **Home**（主页）），但这不会实际终止应用程序。它会从模拟器的屏幕上消失，但应用程序保持暂停在模拟器的内存，就像在一个真正的iPhone。
 
@@ -716,7 +753,7 @@ showAlert 中的代码创建一个标题为 “Hello，World” 的 alert，它�
 
 在这一点上，将会有一些体会关于应用程序的背后到底发生了什么。
 
-应用程序本质上由可以向彼此发送消息的 **objects** 组成。你的应用程序中的许多 objects 由iOS提供，例如 button（UIButton对象）和 alert 弹出窗口（UIAlertController对象）。对于一些 objects，你必须自己编程，如 view controller。
+应用程序本质上由可以向彼此发送消息的 **objects** 组成。你的应用程序中的许多 objects 由iOS提供，例如 button（UIButton 对象）和 alert 弹出窗口（UIAlertController 对象）。对于一些 objects，你必须自己编程，如 view controller。
 
 这些 objects 通过将消息传递给彼此进行通信。当用户点击应用程序中的 “Hit Me” button 时，例如，该 UIButton object 发送消息到你的 view controller。view controller 可以通知更多的 objects。
 
@@ -954,7 +991,7 @@ Objects 可以互相看看对方的 data（在某种程度上，就像如果你�
 
 ## 添加其余的 controls
 
-你的应用程序已经有了按钮，但你仍需要新增其他 UI controls（也称为 “views”「检视」）。再次回到这个屏幕，这次不同的 controls 我在 views 上都给出了相应的注释：（译者注：暂时把 views 理解为视图中的 UI 控件吧）
+你的应用程序已经有了按钮，但你仍需要新增其他 UI controls（也称为 “views”）。再次回到这个屏幕，这次不同的 controls 我在 views 上都给出了相应的 comments（注释）：（译者注：暂时把 views 理解为视图中的 UI 控件吧）
 
 <div align="center"><img alt="游戏屏幕中的不同视图" src="http://imgur.com/C2mOduT.png"/></div><center>游戏屏幕中的不同 views</center>
 
@@ -1425,4 +1462,57 @@ Swift 有以下三个可能的范围级别：
 <div align="center"><img alt="连接 slider 到 outlet" src="http://imgur.com/2lsDipi.png"/></div><center>连接 slider 到 outlet</center>
 
 <br>
+
+➤ 在出现的弹出窗口中，选择 **slider**。
+
+这是你刚刚添加到 object 的 outlet。你已成功将 slider object 从 storyboard 连接到 view controller 的slider outlet。
+
+现在你已经完成了所有这些设置工作，你可以使用 slider variable 从 view controller 中的任何地方引用 slider object。
+
+有了这些更改，就不再需要为 Interface Builder 中的 slider 手动设置初始值。 当应用程序启动时，currentValue 将始终对应于该设置。
+
+➤ 运行应用程序并立即按下 button。它正确地说：“The value of the slider is: 50”。停止应用程序，进入 Interface Builder 并将 slider 的初始值更改为其他值，例如 25。再次运行应用程序，然后按下 button。 The alert 的文本消息现在应显示为 25。
+
+当你完成游戏后，将滑块的起始位置恢复到 50。
+
+**练习：**给 currentValue 一个初始值为 0。它的初始值不再重要——反正初始值将被 viewDidLoad() 重写， 但 Swift 要求所有 varibales 总是要有一些值（译者注：所有 variables 必须要被初始化），0 这个选择不错。
+
+## Comments
+
+你已经看到某些地方以绿色线条 // 作为开头几次了。这些是 comments。你可以在 // 符号后写任何你想要的文本，因为编译器会完全忽略这些行。（译者注：不同 IDE 或配色方案，对应的 comments 颜色不一样，不一定总是绿色的）
+
+```swift
+ // I am a comment! You can type anything here.
+```
+
+/\* 和 */标记之间的任何内容也被视为 comments。// 和 /\* */之间的区别是前者仅在一行上起作用，而后者可以跨越多行。
+
+```swift
+/*
+   I am a comment as well!（我同样也是一个 comment！）
+   I can span multiple lines.（我可以跨越很多行。）
+ */
+```
+
+/* */ 注释通常用于临时禁用源代码的整个部分，通常当你试图捕捉一个麻烦的 bug，这种做法被称为 “commenting out”。
+
+comment 行的最佳用法是解释你的代码如何工作。编写出一个好的的源代码是不言自明的，但有时需要额外的说明是有用的。解释谁听？往往更多时候，是给自己看的。
+
+除非你有一头大象的记忆，当你六个月后再看，你可能已经忘记了你的代码的工作原理。 使用注释来唤醒你的记忆。
+
+正如你所看到的，Xcode 自动在源代码文件的顶部添加一个带有版权信息的 comment 块。就个人而言，我不在乎这些版权块。如果你不喜欢它们，随意删除那些行。
+
+## 生成随机数
+
+在游戏可玩之前，你还有很多方法去完善，所以让我们来看看待办列表中的下一个项目：生成一个随机数并在屏幕上显示它。
+
+当你制作游戏时，随机数字很多，因为游戏需要有一些不可预测性。你不能真正地得到一个计算机生成真正随机和不可预测的数字，但你可以使用一个所谓的 pseudo-random generator（伪随机生成器）产生出这种 “随机” 数字。你将使用我最喜欢的一个，arc4random_uniform() function。
+
+生成这个随机数的好实际，是游戏开始的时候。
+
+➤ 将以下行添加到 **ViewController.swift** 中的 viewDidLoad() 中：
+
+```swift
+targetValue = 1 + Int(arc4random_uniform(100))
+```
 

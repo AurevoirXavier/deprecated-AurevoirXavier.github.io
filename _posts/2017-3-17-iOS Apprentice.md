@@ -2,7 +2,7 @@
 layout: post
 title: "iOS Apprentice 1 Getting Started v5.0 （译）"
 date:   2017-03-17
-excerpt: "译至 63 页"
+excerpt: "译至 70 页"
 tags: [program, iOS, translate]
 comments: true
 ---
@@ -1615,7 +1615,214 @@ Tips：每当你看到 . . . 在源代码列表中，我想表达的意思就是
 
 ---
 
-译者注：**Lather，rinse，repeat**（有时 **wash，rinse，repeat**）是一个成语，引用了许多品牌的洗发水的说明。它也用作幽默的方式指出，如果这样的说明，如果采取字面意思会导致重复相同的步骤，无止境的循环，至少直到洗完用尽。它也是一个讽刺的隐喻，以下的指令或程序很盲目没有批判性思维。它被称为洗发剂算法，并且是介绍计算机科学类中的算法的经典示例。在 Benjamin Cheever 的小说 *The Plagiarist*（剽窃者） 中，虚构的广告主管通过在其说明中添加 “repeat” 一词来增加其客户与洗发水的销售量。
-上文中理解为反复做一件事即可。
+译者注：**Lather，rinse，repeat**（有时是 **wash，rinse，repeat**）这是一个成语，引用了许多品牌的洗发水的说明。它也用作幽默的方式指出，如果这样的说明，如果采取字面意思会导致重复相同的步骤，无止境的循环，至少直到洗完用尽。它也是一个讽刺的隐喻，以下的指令或程序很盲目没有批判性思维。它被称为洗发剂算法，并且是介绍计算机科学类中的算法的经典示例。在 Benjamin Cheever 的小说 *The Plagiarist*（剽窃者） 中，虚构的广告主管通过在其说明中添加 “repeat” 一词来增加其客户与洗发水的销售量。上文中理解为反复做一件事即可。
 
 ---
+
+每当你发现自己在思考：“在应用程序中的这一点，我们必须这样做”，那么它是有意义的，应该为其创建一个新的 method。这个方法将在自己的单元中很好地捕获该 functionality。
+
+➤ 记住这一点，将以下新方法添加到 **ViewController.swift**。
+
+```swift
+func startNewRound() {
+  targetValue = 1 + Int(arc4random_uniform(100))
+  currentValue = 50
+  slider.value = Float(currentValue)
+}
+```
+
+你把它放在哪里并不重要，只要它在类 ViewController 的括号内，这样编译器知道它属于 ViewController 这个 object。
+
+它与你之前做的没有很大的区别，除了你把设置一个新回合的逻辑移动到自己的 method startNewRound() 中。这样做的优点是，你可以在多个地方使用此逻辑。
+
+首先，你将从 viewDidLoad() 调用此新方法来设置第一轮的所有内容。回想一下，viewDidLoad（） 只会在应用程序启动时发生一次，因此这是开始第一轮游戏的好起点。
+
+➤ 将 viewDidLoad() 更改为：
+
+```swift
+override func viewDidLoad() {
+  super.viewDidLoad()
+  startNewRound()
+}
+```
+
+注意，你已经从 viewDidLoad() 中删除了现有的语句，并且只是调用 startNewRound() 来替换它们。
+
+在玩家按下 Hit Me button 后，从 showAlert() 中调用 startNewRound()。
+
+➤ 对 showAlert() 进行以下更改：
+
+```swift
+@IBAction func showAlert() {
+  ...
+  startNewRound()
+}
+```
+
+对 startNewRound() 的调用在最后，紧接着 present(alert, ...)。
+
+到目前为止，UIKit 已经调用了 view controller 的 method：当应用程序加载时执行 viewDidLoad()，玩家点击 button 时执行 showAlert()，当玩家拖动 slider 时执行 sliderMoved()，等等。这是我们之前讨论的事件驱动模型。
+
+它也可以手动调用 method，这是你在这里做的。你正在从 object 中的一个 method 发送消息到同一个 object 中的另一个 method。
+
+在这种情况下，view controller 向其自身发送 startNewRound() 消息，以设置新轮次。然后 iPhone 将去那个 method 里并逐个执行它的语句。当 method 中没有更多的语句时，它返回到调用 method，并继续往下执行——如果这是第一次，则执行 viewDidLoad()，否则该执行的为每一回合的 showAlert()。
+
+有时你可能会看到类似这样写的 method 调用：
+
+```swift
+ self.startNewRound()
+```
+
+这与刚才没有 “self.” 的 startNewRound() 做完全相同的事情。回忆我刚才说的 view controller 发送消息给自己？那么，这就是 “self”（自我） 的意思。
+
+调用你平时写的 object 的方法：
+
+```swift
+  receiver.methodName(parameters)
+  //接收者.方法名(参数)
+```
+
+The receiver（接收者）是你发送消息的 object。如果你发送消息给自己，那么接收者是自己。但是因为向自己发送消息是很常见的，所以你也可以丢掉这个特殊的关键字（译者注：这里指 self）。
+
+老实说，这不是你第一次调用 method。addAction() 是 UIAlertController 上的一个方法，present() 是所有 view controller 都有的 method，包括你的。
+
+当你写 Swift 程序时，你所做的很多事情是调用 object 的 method，因为这是你的应用程序中的 object 的沟通方式。
+
+我希望你能了解把 “new round”（新回合）逻辑放到它自己的 method 中的优点。如果你不这么做，viewDidLoad() 和 showAlert() 的代码如下所示：
+
+```swift
+override func viewDidLoad() {
+  super.viewDidLoad()
+  
+  targetValue = 1 + Int(arc4random_uniform(100))
+  currentValue = 50
+  slider.value = Float(currentValue)
+}
+@IBAction func showAlert() { 
+  ...
+  
+  targetValue = 1 + Int(arc4random_uniform(100))
+  currentValue = 50
+  slider.value = Float(currentValue)
+}
+```
+
+你能看到这里发生了什么吗？相同的功能在两个地方重复。当然，在这里只有三行，但往往真实情况中你不得不重复的代码会更多。
+
+如果你决定改变这个逻辑，会怎么样？你就必须在两个地方做这个更改。
+
+如果你最近写了这段代码，但是如果你必须在几个星期之内做出这样的修改（译者注：前一句提到的修改逻辑），你可能可以记住这样做，但是你更可能只在一个地方更新它并忘记了另一个。
+
+代码重复是一个很大的错误来源，所以如果你需要在两个不同的地方做同样的事情，考虑为它写一个新的 method。
+
+method 的名称也有助于说明它应该做什么。你可以一眼就知道以下内容是什么吗？（译者注：英文不好的同学可能就有点麻烦了）
+
+```swift
+targetValue = 1 + Int(arc4random_uniform(100))
+currentValue = 50
+slider.value = Float(currentValue)
+//目标值 = 1 + 转换为整形(arc4random_uniform(100))
+//当前值 = 50
+//滑块.值 = 转换浮点型的(当前值)
+//你可以很清楚的了解到，这三句话就是在计算一个新的随机数，并把滑块位置恢复到中间
+```
+
+你大概会有理由这样想：“It is calculating a new random number and then resets the position of the slider, so I guess it must be the start of a new round.”（计算新随机数，恢复滑块位置，开始新回合）
+
+一些程序员将使用 comment 来记录发生了什么，但在我的看法是，这样表达更清楚：
+
+```swift
+startNewRound()
+//开始新回合（）
+```
+
+这行几乎说明了你会做什么。如果你想知道在新一轮中发生了什么的细节，你总是可以查找 startNewRound() method 并查看它的内部代码。
+
+编写的好的源代码本身就是对自己的一个说明，让人一读就懂甚至不需要 comments。我希望我已经说服你认同这样构建新 method 的价值！
+
+➤ 运行应用程序，并确认在每次轻击 button 后程序会计算 1 到 100 之间的新随机数。
+
+你也应该注意到，每个回合后，slider 重置到中间位置。这是因为 startNewRound() 将 currentValue 设置为 50，然后告诉 slider 去该位置。这与你之前做的相反（你曾经读取 slider 的位置并把它放到 currentValue 中），但是我认为如果你在每个回合中从相同的位置开始，这样游戏效果更好。
+
+**练习：**只是为了好玩，修改代码，当新回合开始时，slider 不会重置到正中间。
+
+顺便说一下，你可能想知道 Float(…) 和 Int(…) 在这些行：
+
+```swift
+targetValue = 1 + Int(arc4random_uniform(100))
+slider.value = Float(currentValue)
+```
+
+Swift 是一种所谓的 *strongly typed*（强类型）语言，意味着它是非常挑剔形状，你不能把不同的形状放到同一个盒子中。例如，如果一个 variable 是一个Int，你不能把一个 Float 的值放入进去，反之亦然。
+
+UISlider 的值恰好是一个 Float，它是一个数字，小数点后面有数字——之前你在打印出 slider 的值时看到了这一点，但 currentValue 是一个 Int。 所以这样赋值是错的：
+
+```swift
+slider.value = currentValue
+```
+
+编译器认为这是一个错误。但是有些编程语言很乐意将 Int 转换为 Float，但 Swift 希望你明确指出这样的转换。
+
+当你说 Float(currentValue) 时，编译器获取存储在 currentValue 框中的 integer，并将其放入一个新的 Float 值，它可以赋给 UISlider。
+
+类似的事情发生在 arc4random_uniform()，其中随机数在被放入 targetValue 之前被转换为 Int。
+
+因为 Swift 和大多数其他编程语言比起来对待这种事情的时候更严格，所以对于语言新手来说，它往往是一个困扰的来源。不幸的是，Swift 的错误信息并不总是能够很清楚的说明代码哪部分是错误的并且为什么。
+
+只要记住，如果你得到一个错误消息，“cannot assign value of type 'something' to type 'something else'”（不能分配 ”XXX“ 类型的值给 ”WWW“ 类型），那么说明你试图混合不兼容的数据类型。解决方案是将一个类型显式转换为另一个类型，就像你在这里做的一样。
+
+## 将目标值放入 label
+
+很好，你想出了如何计算随机数以及如何将它存储在一个 instance variable：targetValue 中，以便以后可以访问它。
+
+现在你要在屏幕上显示目标值。没有它，玩家不会知道要往哪里瞄准，这将使得游戏几乎不可能获胜...
+
+当你制作 storyboard 时，你已经为目标值添加了 label（右上角）。诀窍是把 targetValue  variable 的值放入这个 label。要做到这一点，你需要完成两件事：
+
+1. 为 label 创建 outlet，以便你可以发送消息
+2. 给 label 显示新的文本
+
+这将非常类似于你对 slider 做的事情。回想一下，你添加了一个 @IBOutlet variable，以便可以在 view controller 中的任意位置引用 slider。使用此 outlet variable，你可以通过 slider.value 请求获取 slider 的值。你会为 label 做同样的事情。
+
+➤ 在 **ViewController.swift** 中，在其他 outlet 下面添加以下行：
+
+```swift
+@IBOutlet weak var targetLabel: UILabel!
+```
+
+➤ 在 **Main.storyboard** 中，单击以选择 label（顶部的说明为 “100” 的 label）。
+
+➤ 转到 **Connections inspector**，然后从 **New Referencing Outlet** 拖动到 **View Controller**。
+
+<div align="center"><img alt="将目标值 label 连接到其 outlet" src="http://imgur.com/aD2n32x.png"/></div><center>将目标值 label 连接到其 outlet</center>
+
+<br>
+
+➤ 从弹出窗口中选择 **targetLabel**，以完成连关联。
+
+➤ 让新的目标址 label 上显示出来，在 startNewRound() 下面添加以下方法到 **ViewController.swift**：
+
+你把这个逻辑放到它自己的 method 中，因为你可能会从不同的地方使用它。
+
+Method 的名称可以清楚表明它的作用：它更新 label 的内容（updateLabels）。目前它只是设置单个 label 的文本，但后来你将添加代码来更新其他 label（总分，回合数）。
+
+updateLabels() 中的代码现在对你来说应该没有什么新奇的地方，虽然你可能想知道为什么这样写，明明这样更简单：
+
+```swift
+targetLabel.text = targetValue
+```
+
+答案是，你不能把一种 data type 的值放入另一种 type 的 variable 中去。方形钉不适合圆孔。（译者注：好比手套穿脚上，袜子戴手上）
+
+The targetLabel outlet 引用一个 UILabel object。UILabel object 具有一个 text 属性，它是一个 string object。你只能把 string 的值放入文本，但上面那行代码试图把 targetValue 放进去，它是一个 Int。这不可能成功，因为一个 Int 和一个 string 是两种非常不同的东西（type）。
+
+所以你必须将 Int 转换为 string，这就是 String(targetValue) 的作用。它类似于你之前见过的 Float(...) 和 Int(…)。
+
+我猜到你想这样说：你也可以把它写成一个 string 和一个像以前一样的占位符：
+
+```swift
+targetLabel.text = "\(targetValue)"
+```
+
+你最喜欢用哪种方法只不过是你个人口味的问题。任何一种方法都会正常工作。
+

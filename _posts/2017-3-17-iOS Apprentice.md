@@ -1746,7 +1746,7 @@ startNewRound()
 
 **练习：**只是为了好玩，修改代码，当新回合开始时，slider 不会重置到正中间。
 
-顺便说一下，你可能想知道 Float(…) 和 Int(…) 在这些行：
+顺便说一下，你可能想了解一下 Float(…) 和 Int(…) 它们在下面这些行出现过：
 
 ```swift
 targetValue = 1 + Int(arc4random_uniform(100))

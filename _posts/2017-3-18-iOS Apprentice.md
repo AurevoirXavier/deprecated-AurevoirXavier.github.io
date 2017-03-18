@@ -1,8 +1,8 @@
 ---
 layout: post
 title: "iOS Apprentice 1 Getting Started v5.0 （译）"
-date:   2017-03-17
-excerpt: "译至 72 页"
+date:   2017-03-18
+excerpt: "译至 76 页"
 tags: [program, iOS, translate]
 comments: true
 ---
@@ -2102,4 +2102,3 @@ difference = targetValue - currentValue
 <br>
 
 ## 计算差值的替代方案
-

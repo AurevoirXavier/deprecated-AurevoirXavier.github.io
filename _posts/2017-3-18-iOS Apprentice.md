@@ -2,7 +2,7 @@
 layout: post
 title: "iOS Apprentice 1 Getting Started v5.0 （译）"
 date:   2017-03-17
-excerpt: "译至 70 页"
+excerpt: "译至 72 页"
 tags: [program, iOS, translate]
 comments: true
 ---
@@ -1825,4 +1825,98 @@ targetLabel.text = "\(targetValue)"
 ```
 
 你最喜欢用哪种方法只不过是你个人口味的问题。任何一种方法都会正常工作。
+
+请注意，updateLabels() 是一个常规 method——它不作为 action 附加到任何 UI controls 上，因此它不会做任何事情，直到你实际调用它。（你懂的，因为它没有在任何地方说 @IBAction）
+
+调用 updateLabels() 的逻辑位置将在每次调用 startNewRound() 之后，因为这是你计算新目标值的地方。
+
+目前，你从两个地方发送 startNewRound() 消息：viewDidLoad() 和 showAlert()，让我们更新这些 method。
+
+➤将 viewDidLoad() 和 showAlert() 更改为：
+
+```Swift
+override func viewDidLoad() {
+  super.viewDidLoad()
+  startNewRound()
+  updateLabels()      // add this line
+}
+```
+
+```Swift
+@IBAction func showAlert() {
+  ...
+  
+  startNewRound()
+  updateLabels()      // add this line
+}
+```
+
+你应该只用键入 method 名称的前几个字母，**upd**，Xcode 将自动补齐其余的。按 **Enter** 接受建议：
+
+<div align="center"><img alt="Xcode 自动补全提供的建议" src="http://imgur.com/r5EpyMK.png"/></div><center>Xcode 自动补全提供的建议</center>
+
+<br>
+
+➤ 运行应用程序，你实际上将在屏幕上看到随机值。这应该使它更容易被瞄准，能让玩家看到目标。
+
+<div align="center"><img alt="右上角的 label 现在显示随机值" src="http://imgur.com/MnbwGKa.png"/></div><center>右上角的 label 现在显示随机值</center>
+
+<br>
+
+你可以在本教程的源代码文件夹中的 **03 - Outlets** 下找到应用程序的项目文件。
+
+**Action methods vs. normal methods**
+
+那么 action method 和常规 method 之间的区别是什么？
+
+答：没有。
+
+一个 action method 和其他 method 一样。唯一特别的地方是 @IBAction 说明符。这允许 Interface Builder 查看 method，以便你可以将其连接到 button，button 等。
+
+其他 method，如 viewDidLoad() ，没有 @IBAction 说明符。这是一件好事，因为如果你把这样的 method 挂钩到你的 button，会发生各种混乱。
+
+这是一个 action method 的简单形式：
+
+```swift
+@IBAction func showAlert()
+```
+
+你还可以使用参数来请求对引发此操作的 object 的引用：
+
+```swift
+@IBAction func sliderMoved(_ slider: UISlider)
+@IBAction func buttonTapped(_ button: UIButton)
+```
+
+但是以下 method 不能用作 Interface Builder 中的 action：
+
+```swift
+func updateLabels()
+```
+
+它没有被标记为 @IBAction，因此 Interface Builder 看不到它。使用 updateLabels()，你必须自己调用它。
+
+如果你做得很远，那么我猜你喜欢你在读什么。 :-)
+
+这只是我的书 *The iOS Apprentice* 中的第一个教程：*Beginning iOS Development with Swift*（使用 Swift 开始 iOS 开发）。完整的书还有多三个像这样的大型教程——在每个教程中你都将从头开始打造一个完整的应用程序。
+
+教程由浅入深。每个新的应用程序都比前一个更高级和复杂。这些应用涵盖了你需要知道的大部分知识，以制作自己的应用程序。
+
+在系列的结尾，你会学到 Swift 和 iOS SDK 的基本要素。更重要的是，你应该对所有不同的部分如何组合在一起有更好的理解，以及如何解决问题，就像专业开发人员一样。
+
+我有信心，通过这些教程，你将能够自己独立的把你的想法变成真正的应用程序！
+
+<div align="center"><img alt="" src="http://imgur.com/V3PbusK.png"/></div>
+
+<br>
+
+你可能不知道一切，但你将能成为独当一面的开发人员——而且你会准备好畅游在令人兴奋的 iPhone 和 iPad 开发的世界。
+
+*The iOS Apprentice* 会教你的一些亮点：
+
+- **如何在 Swift 中编程**，即使你从来没有编程过或害怕学习一门新语言。
+- **如何像一个程序员一样思考**。你不仅仅是一个 code monkey（码农？），只是把源代码插入编辑器。作为一个程序员，你必须考虑困难的计算问题，并找到创造性的解决方案。一旦你拥有这个宝贵的技能，你可以编程任何东西！
+- **使用 SDK 的经验**。iOS SDK 是巨大的，我们没有办法去了解一切，但我们并不需要了解全部。你只需要掌握基本的构建块，像是 view controllers 和 table views。你还将学习如何使用来自你的应用程序的 Web 服务以及如何制作 iPad 应用程序。一旦你理解了这些基本原理，你可以很容易地通过自己学习 SDK 的其余部分工作的原理。
+- **如何使应用程序的外观和给人的感觉变得更好**。在这个过程中，不仅仅是编程。我们将讨论用户界面设计以及图形和动画技术。当你给游戏一个改造和添加支持不同的 iPhone 模型，显然你已经体验过了这件事。
+- **最新和最棒的**。我们将充分利用 Swift 和最新的 iOS 功能，如汽车布局和通用 storyboard。教你如何使用 iOS 开发的旧方法是没有意义的，有很多书在编写的时候是最新的，但现在已经过时了。每一个新版本的 iOS 都增加了改进的开发技术，你将会使用这些帮助你更好的编程。
 

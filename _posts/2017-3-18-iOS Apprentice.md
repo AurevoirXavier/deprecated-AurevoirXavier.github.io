@@ -65,10 +65,11 @@ comments: true
 
 <center><strong>表二</strong></center>
 
-| Assignment | 赋值     |      | Bug                   | 漏洞       |
-| :--------- | :----- | :--: | :-------------------- | :------- |
-| **Global** | **全局** |      | **Instance**          | **实例**   |
-| **Local**  | **本地** |      | **Instance variable** | **实例变量** |
+| Assignment     | 赋值     |      | Bug                   | 漏洞       |
+| :------------- | :----- | :--: | :-------------------- | :------- |
+| **Global**     | **全局** |      | **Instance**          | **实例**   |
+| **Local**      | **本地** |      | **Instance variable** | **实例变量** |
+| **Algorithms** | **算法** |      |                       |          |
 
 ---
 
@@ -1898,6 +1899,10 @@ func updateLabels()
 
 如果你做得很远，那么我猜你喜欢你在读什么。 :-)
 
+---
+
+译者注：以下为原作者的一个小广告，有能力支持的可以购买原版，鼓励作者继续分享更多更好的经验。觉得啰嗦的可以跳过到下一条分割线之后。
+
 这只是我的书 *The iOS Apprentice* 中的第一个教程：*Beginning iOS Development with Swift*（使用 Swift 开始 iOS 开发）。完整的书还有多三个像这样的大型教程——在每个教程中你都将从头开始打造一个完整的应用程序。
 
 教程由浅入深。每个新的应用程序都比前一个更高级和复杂。这些应用涵盖了你需要知道的大部分知识，以制作自己的应用程序。
@@ -1918,5 +1923,183 @@ func updateLabels()
 - **如何像一个程序员一样思考**。你不仅仅是一个 code monkey（码农？），只是把源代码插入编辑器。作为一个程序员，你必须考虑困难的计算问题，并找到创造性的解决方案。一旦你拥有这个宝贵的技能，你可以编程任何东西！
 - **使用 SDK 的经验**。iOS SDK 是巨大的，我们没有办法去了解一切，但我们并不需要了解全部。你只需要掌握基本的构建块，像是 view controllers 和 table views。你还将学习如何使用来自你的应用程序的 Web 服务以及如何制作 iPad 应用程序。一旦你理解了这些基本原理，你可以很容易地通过自己学习 SDK 的其余部分工作的原理。
 - **如何使应用程序的外观和给人的感觉变得更好**。在这个过程中，不仅仅是编程。我们将讨论用户界面设计以及图形和动画技术。当你给游戏一个改造和添加支持不同的 iPhone 模型，显然你已经体验过了这件事。
-- **最新和最棒的**。我们将充分利用 Swift 和最新的 iOS 功能，如汽车布局和通用 storyboard。教你如何使用 iOS 开发的旧方法是没有意义的，有很多书在编写的时候是最新的，但现在已经过时了。每一个新版本的 iOS 都增加了改进的开发技术，你将会使用这些帮助你更好的编程。
+- **最新和最棒的**。我们将充分利用 Swift 和最新的 iOS 功能，如汽车布局和通用 storyboard。教你如何使用 iOS 开发的旧方法是没有意义的，有很多书在编写的时候是最新的，但现在已经过时了。每一个新版本的 iOS 都增加了改进的开发技术，你将会使用这些帮助你更好的进行开发。
+
+这不仅是一堆干的理论，而是实践的实践建议！我会解释一下，当你在做真正的应用程序的一切工作，有大量的图片，清楚地说明了正在发生什么。
+
+如果这个点子听起来非常有趣，请跳到 [raywenderlich.com/store/ios- apprentice](raywenderlich.com/store/ios- apprentice) 获得完整的 *iOS Apprentice* 系列。
+
+---
+
+## 计算得分
+
+现在你既有目标值（随机数）和读取 slider 的位置的 method，你可以计算玩家得分的点数。
+
+The slider 越靠近目标，玩家的点数越高。
+
+要计算这个回合的分数，请看看 slider 的值与目标之间的距离：
+
+<div align="center"><img alt="计算 slider 位置和目标值之间的差值" src="http://imgur.com/Mlyg86t.png"/></div><center>计算 slider 位置和目标值之间的差值</center>
+
+<br>
+
+找到目标和 slider 之间的距离的简单方法就是用 targetValue 减去 currentValue。
+
+不幸的是，如果 slider 位于目标的右边，则得出负值，因为现在的 currentValue 大于 targetValue。
+
+你需要一些方法把负距离变成正值——或者你最终从玩家的分数中减去点数（这样未免不公平）。
+
+如果总是做减法后取相反数 -(currentValue - targetValue)——这并不会解决问题，因为如果 slider 位于目标的左侧而不是右侧，则差值将为负值。
+
+嗯，看起来我们在这陷入了麻烦...
+
+**练习：**如果我要求你用自然语言解决这个问题，你将如何设计这个问题的解决方案？不要担心如何用计算机语言表达现在，只是想到它在纯英语。（译者注：你可以用中文，重要的是思路）
+
+我想出的思路像是这样：
+
+- 如果 slider 的值大于目标值，则差值为： slider 值减去目标值。
+- 但是，如果目标值大于 slider 值，则差值为：目标值减去 slider 值。
+- 否则，两个值一定是相等的，那么差值为零。
+
+为了得到一个恒为正数的值这总会导致一个差异，因为你总是从较大的数字中减去较小的数字。
+
+来做一下数学计算：
+
+如果 slider 于位置 60，目标值为 40，则屏幕上的 slider 位于目标值的右侧，差值为 60 - 40 = 20。
+
+如果 slider 位置在 60，目标值为 40，则屏幕上的 slider 位于目标值的右侧，差值为 60 - 40 = 20。
+
+**Algorithms**（算法）
+
+你刚刚做的是想出一个 algorithms，这是一个花哨的术语，用于解决计算问题的一系列机械步骤。这只是一个非常简单的 algorithms，虽然这个比较简单但不可否认它就是一个 algorithms。
+
+存在许多着名的 algorithms，诸如用于对项目列表进行排序的快速排序和用于通过这种排序列表快速搜索的二分搜索。其他人已经发明了许多 algorithms，你可以在自己的程序中使用，这样就可以帮你省去很多思考！
+
+但是，在你写的所有程序中，你可能需要提出一些自己的 algorithms。有些是简单的，如上面的一个；但也有可能很难，可能会导致你在绝望中摆摆手。但这是编程的乐趣的一部分。（译者注：当你做出来后，就好像解出一道很难的数学题一样）
+
+计算机科学的学术领域主要关注点是学习 algorithms 和找到更好的 algorithms。
+
+你可以用简单的英语描述任何 algorithms（译者注：俗称的伪代码）。它只是一系列的步骤，你执行计算的东西。通常你可以在你的脑海里或纸上，执行计算。但对于更复杂的算法，可能你永远也算不出，所以在某些时候，你必须将 algorithm 转换为计算机代码，让计算机强大的运算能力来帮你算出来。
+
+我想要说的重点就是：如果你遇到困难，你不知道如何让你的程序计算一些东西，拿一张纸，并试着用英语写出步骤（译者注：咱们还是用中文吧）。暂时先把计算机放在一边，想想步骤。如何用手执行此计算？
+
+有可能你想出了一个不同的方式来解决这个小问题，我会给你两个备选方案，但让我们先将它转换为计算机代码：
+
+```swift
+var difference: Int
+if currentValue > targetValue {
+  difference = currentValue - targetValue
+} else if targetValue > currentValue {
+  difference = targetValue - currentValue
+} else {
+  difference = 0
+}
+```
+
+“if” 结构是新出现的。它允许你的代码做出决定，它的工作就像英语字面意思也有。一般来说，它的工作原理如下：
+
+```swift
+if something is true {
+  then do this
+} else if something else is true {
+  then do that instead
+} else {
+  do something when neither of the above are true
+}
+//如果 某事 为 真 {
+//	那么 执行 这个
+//} 另外 如果 某事 为 真 {
+//	那么 执行 这个
+//} 如果以上都不符合 {
+//	那么 做这件事
+//}
+```
+
+你在 if 关键字后面加上一个所谓的 *logical condition*（逻辑条件）。如果该条件为 true（真），例如 currentValue 大于 targetValue，则执行 {} 括号之间的块中的代码。
+
+然而，如果条件为 false（不为真），则计算机查看 else if 条件并对其进行计算。可能有不止一个，如果有，那么计算机久从顶部到底部一个接一个地尝试它们，直到一个被判断为 true。
+
+如果没有发现条件有效，则执行 else 块中的代码。
+
+在这个小的 algorithm 实现中，你首先创建了一个名为 difference 的 local
+
+variable 来保存结果。这将是一个正整数或零，因此Int将做：
+
+```swift
+var difference: Int
+```
+
+然后，将 currentValue 与 targetValue 进行比较。 首先你确定 currentValue 是否大于 targetValue：
+
+```swift
+if currentValue > targetValue {
+```
+
+\> 是大于运算符。如果 currentValue variable 中存储的值至少比 targetValue variable 中存储的值大，则 currentValue > targetValue 条件被判断为 true。在这种情况下，执行以下代码行：
+
+```swift
+difference = currentValue - targetValue
+```
+
+在这里，用 currentValue（较大的一个）减去 targetValue（较小的一个），并将差值存储在 differrnce variable 中。
+
+注意我如何命名 variable，清楚地描述 variable 包含什么样的 data。 大多时候你会看到如下代码：
+
+```swift
+a = b - c
+```
+
+它不能立即清楚这是什么意思，除了让你知道这是一个减法运算。variable 名 “a”，“b” 和 “c” 这没有给出任何表明这些变量目的的提示。
+
+回到 if 语句。如果 currentValue 等于或小于 targetValue，则条件为 false（或计算机为假），程序将跳过代码块直到达到下一个条件：
+
+```swift
+} else if targetValue > currentValue {
+```
+
+同样的事情在这里发生，只不过现在 targetValue 和 currentValue 的角色被颠倒了。当 targetValue 是两个值中的较大值时，计算机将只执行以下行：
+
+```
+difference = targetValue - currentValue
+```
+
+这次你用 targetValue 减去 currentValue（换句话说），并将结果存储在 difference variable 中。
+
+还有最后一种情况，你还没有处理，就是 currentValue 和 targetValue 是相等的。如果发生这种情况，玩家将 slider 精确地放在随机数的位置，一个完美的分数。在这种情况下，差值为0：
+
+```swift
+} else {
+  difference = 0
+}
+```
+
+在这一点上，你已经确定一个值不大于另一个值，也不会更小，那么只剩下一个可能性：两数字相等。
+
+➤ 让我们把这个 algorithms 添加到 action 中。将它添加到 showAlert() 的顶部：
+
+```swift
+@IBAction func showAlert() {
+  var difference: Int
+  if currentValue > targetValue {
+    difference = currentValue - targetValue
+  } else if targetValue > currentValue {
+    difference = targetValue - currentValue
+  } else {
+    difference = 0
+  }
+  let message = "The value of the slider is: \(currentValue)"
+            + "\nThe target value is: \(targetValue)"
+  ... 
+}
+```
+
+只是为了让你你可以看到它的工作原理，早些时候就已经让你添加 difference 的值到 alert 的消息中。
+
+➤ 运行它并亲自查看一下。
+
+<div align="center"><img alt="The alert 显示目标值和 slider 值之间的差值" src="http://imgur.com/q0dUR5L.png"/></div><center>The alert 显示目标值和 slider 值之间的差值</center>
+
+<br>
+
+## 计算差值的替代方案
 

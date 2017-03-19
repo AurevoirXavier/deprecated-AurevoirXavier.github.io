@@ -2,7 +2,7 @@
 layout: post
 title: "iOS Apprentice 1 Getting Started v5.0 （译）"
 date:   2017-03-18
-excerpt: "译至 76 页"
+excerpt: "译至 86 页"
 tags: [program, iOS, translate]
 comments: true
 ---
@@ -69,7 +69,7 @@ comments: true
 | :------------- | :----- | :--: | :-------------------- | :------- |
 | **Global**     | **全局** |      | **Instance**          | **实例**   |
 | **Local**      | **本地** |      | **Instance variable** | **实例变量** |
-| **Algorithms** | **算法** |      |                       |          |
+| **Algorithms** | **算法** |      | **Constant**          | **常量**   |
 
 ---
 
@@ -328,7 +328,7 @@ C++ 是另一种由 C 衍生出来的 object-oriented 编程语言。它非常�
 
 每当我开始打造一个新的应用程序，我首先列出所有不同的那些我认为程序需要的功能。这将成为我的待办事项列表。有一个列表，将设计分为几个小的步骤是一个明智的方式以对处理复杂的项目。
 
-你可能有一个很酷的想法，但当你坐下来写程序时，整个事情似乎要把你压垮。有这么多事要做……从哪里开始？通过将工作量分为一个一个小的部分，你就可以使项目看起来没有那么令人生畏——你总是可以找到一个简单而小巧的步骤，以便创建一个良好的开端，并从那里开始。
+你可能有一个很酷的想法，但当你坐下来写程序时，整个事情似乎要把你压垮。有这么多事要做… 从哪里开始？通过将工作量分为一个一个小的部分，你就可以使项目看起来没有那么令人生畏——你总是可以找到一个简单而小巧的步骤，以便创建一个良好的开端，并从那里开始。
 
 这没什么大不了的，如果这个练习让你觉得困难。只是因为你是个刚开始学习这方面知识的新人而已！随着你对软件工作原理理解的加深，将能够更从容的将工作量合理分配并管理。
 
@@ -573,7 +573,7 @@ Interface Builder 将消失，Editor 区域现在展现出一堆明亮的彩色�
 ➤ 将以下行直接添加到文件中最后一个括号之上：
 
 ```swift
- @IBAction func showAlert() {
+@IBAction func showAlert() {
 }
 ```
 
@@ -796,7 +796,7 @@ showAlert 中的代码创建一个标题为 “Hello，World” 的 alert，它�
 
 应用程序，另一方面，不退出，直到用户终止它们（或它们崩溃！）。它们花费大部分时间等待输入事件，然后处理这些事件并回到睡眠状态。
 
-来自用户的输入，大多数是触摸和敲击的形式，是你的应用程序中的最重要的事件源，但也有其他类型的事件。例如，当用户接收到来电时，当它必须重新绘制屏幕时，当定时器倒计时……操作系统就会通知你的应用程序。
+来自用户的输入，大多数是触摸和敲击的形式，是你的应用程序中的最重要的事件源，但也有其他类型的事件。例如，当用户接收到来电时，当它必须重新绘制屏幕时，当定时器倒计时… 操作系统就会通知你的应用程序。
 
 你的应用程序执行的所有 action 都是由某个事件触发而来的的。
 
@@ -1142,7 +1142,7 @@ print() 函数是一个很好的帮助，告诉你在应用程序中发生了什
 @"I am an Objective-C string"
 ```
 
-String 中的 \\( … ) 之间的任何内容都是特殊的。print() 语句使用的 string 为 "The value of the slider is now: \\(slider.value)"。 想一下 \\( … ) 作为占位符："The value of the slider is now: X"，其中 X 将被 slider 的值替换。
+String 中的 \\(…) 之间的任何内容都是特殊的。print() 语句使用的 string 为 "The value of the slider is now: \\(slider.value)"。 想一下 \\(…) 作为占位符："The value of the slider is now: X"，其中 X 将被 slider 的值替换。
 
 填空是在 Swift 中构建 string 的一种非常常见的方法。
 
@@ -1389,7 +1389,7 @@ override func viewDidLoad() {
 ➤ 将 viewDidLoad() 更改为以下内容：
 
 ```swift
- override func viewDidLoad() {
+override func viewDidLoad() {
   super.viewDidLoad()
   currentValue = lroundf(slider.value)
 }
@@ -1501,7 +1501,7 @@ Swift 有以下三个可能的范围级别：
 你已经看到某些地方以绿色线条 // 作为开头几次了。这些是 comments。你可以在 // 符号后写任何你想要的文本，因为编译器会完全忽略这些行。（译者注：不同 IDE 或配色方案，对应的 comments 颜色不一样，不一定总是绿色的）
 
 ```swift
- // I am a comment! You can type anything here.
+// I am a comment! You can type anything here.
 ```
 
 /\* 和 */标记之间的任何内容也被视为 comments。// 和 /\* */之间的区别是前者仅在一行上起作用，而后者可以跨越多行。
@@ -1671,7 +1671,7 @@ override func viewDidLoad() {
 有时你可能会看到类似这样写的 method 调用：
 
 ```swift
- self.startNewRound()
+self.startNewRound()
 ```
 
 这与刚才没有 “self.” 的 startNewRound() 做完全相同的事情。回忆我刚才说的 view controller 发送消息给自己？那么，这就是 “self”（自我） 的意思。
@@ -1679,8 +1679,8 @@ override func viewDidLoad() {
 调用你平时写的 object 的方法：
 
 ```swift
-  receiver.methodName(parameters)
-  //接收者.方法名(参数)
+receiver.methodName(parameters)
+//接收者.方法名(参数)
 ```
 
 The receiver（接收者）是你发送消息的 object。如果你发送消息给自己，那么接收者是自己。但是因为向自己发送消息是很常见的，所以你也可以丢掉这个特殊的关键字（译者注：这里指 self）。
@@ -1817,7 +1817,7 @@ targetLabel.text = targetValue
 
 The targetLabel outlet 引用一个 UILabel object。UILabel object 具有一个 text 属性，它是一个 string object。你只能把 string 的值放入文本，但上面那行代码试图把 targetValue 放进去，它是一个 Int。这不可能成功，因为一个 Int 和一个 string 是两种非常不同的东西（type）。
 
-所以你必须将 Int 转换为 string，这就是 String(targetValue) 的作用。它类似于你之前见过的 Float(...) 和 Int(…)。
+所以你必须将 Int 转换为 string，这就是 String(targetValue) 的作用。它类似于你之前见过的 Float(…) 和 Int(…)。
 
 我猜到你想这样说：你也可以把它写成一个 string 和一个像以前一样的占位符：
 
@@ -1971,7 +1971,7 @@ The slider 越靠近目标，玩家的点数越高。
 
 **Algorithms**（算法）
 
-你刚刚做的是想出一个 algorithms，这是一个花哨的术语，用于解决计算问题的一系列机械步骤。这只是一个非常简单的 algorithms，虽然这个比较简单但不可否认它就是一个 algorithms。
+你刚刚做的是想出一个 algorithm，这是一个花哨的术语，用于解决计算问题的一系列机械步骤。这只是一个非常简单的 algorithm，虽然这个比较简单但不可否认它就是一个 algorithm。
 
 存在许多着名的 algorithms，诸如用于对项目列表进行排序的快速排序和用于通过这种排序列表快速搜索的二分搜索。其他人已经发明了许多 algorithms，你可以在自己的程序中使用，这样就可以帮你省去很多思考！
 
@@ -2059,7 +2059,7 @@ a = b - c
 
 同样的事情在这里发生，只不过现在 targetValue 和 currentValue 的角色被颠倒了。当 targetValue 是两个值中的较大值时，计算机将只执行以下行：
 
-```
+```swift
 difference = targetValue - currentValue
 ```
 
@@ -2102,3 +2102,376 @@ difference = targetValue - currentValue
 <br>
 
 ## 计算差值的替代方案
+
+我之前提到，还有其他方法来计算 currentValue 和 targetValue 之间的正数差值。上述 algorithm 运行良好，但它用了八行代码。我想我们可以想出一个更简单的方法，占用更少的行。
+
+新 algorithm 如下：
+
+1. 用目标值减去 slider 的值。
+2. 如果结果是负数，则将其乘以 -1以使其为正数。
+
+现在你不再避免计算出负数，因为计算机可以正常工作，虽然仍有可能计算出负数，但你只需把它变成一个正数。
+
+**练习：**将此 algorithm 转换为源代码。提示：algorithm 的英语描述包含单词 “if” 和 “then”，这是一个很好的暗示，你必须使用 if 语句。
+
+你应该得出像是这样的代码：
+
+```swift
+var difference = currentValue - targetValue
+if difference < 0 {
+  difference = difference * -1
+}
+```
+
+这是一个非常直接的新 algorithm 的翻译。
+
+你首先把两个 varible 做减法并将结果放入 difference variable 中。
+
+请注意，你可以创建新 variable 并将计算结果分配给一行（译者注：声明时就定义）。你不需要把它放在两个不同的行，像这样：
+
+```swift
+var difference: Int
+difference = currentValue - targetValue
+```
+
+此外，在新版本中，您不必告诉编译器，differece 需要 Int 值。因为 currentValue 和 targetValue 都是 Int，Swift是聪明的，能够推断出 difference 也应该是一个 Int。
+
+这个特性称为 *type inference*（类型推理），它是 Swift 的主要卖点之一。
+
+一旦得到减法结果，就使用 if 语句来确定差值是否为负，即小于零。如果是，则乘以 -1，并将新结果（现在为正数）返回到 difference variable。
+
+当你写，
+
+```swift
+difference = difference * -1
+```
+
+计算机首先将差值乘以- 1。然后它把计算的结果重新区分。实际上，这将用正数覆盖 difference 的旧内容（负数）。
+
+因为这是一个常见的事情（用变量本身加减乘除另一个数），所以有一个方便的捷径：
+
+```swift
+difference *= -1
+```
+
+\*= 运算符将 * 和 = 组合为一个新的操作符。最终结果是相同的：variable 的旧值已经消失，现在的结果为乘后的结果。
+
+你也可以编写这个 algorithm 如下：
+
+```swift
+var difference = currentValue - targetValue
+if difference < 0 {
+  difference = -difference
+}
+```
+
+而不是乘以 -1，现在使用 - 运算符，以确保 differenece 的值总是正的。这是因为 - 负数使它再次为正数。（问数学教授，如果你不相信我）
+
+➤ 尝试使用这些新 algorithms。你应该替换 showAlert() 顶部的旧东西，如下所示：
+
+```swift
+@IBAction func showAlert() {
+  var difference = currentValue - targetValue
+  if difference < 0 {
+    difference = difference * -1
+  }
+  
+  let message = . . .
+}
+```
+
+当你运行这个新版本的应用程序（试试！），它应该得到的结果完全一样的以前。计算的结果不会改变，改变的只是你所采用的技术。
+
+关于这最后一个替代算法，我想告诉你来使用一个 function。
+
+你已经看过 function 几次：你使用 arc4random_uniform() 当你做随机数字和 lroundf() 四舍五入 slider 的小数。
+
+要确保数字始终为正，可以使用 abs() function。
+
+如果你在学校学习数学，你可能会记得 “绝对值” 这个词，表示一个数字的值不考虑其符号。
+
+这正是你在这里需要的，标准库包含一个方便的功能，它允许你将这个整个问题减少到一行：
+
+```swift
+let difference = abs(targetValue - currentValue)
+```
+
+无论是用 targetValue 减去 currentValue，还是反过来。如果数字为负数，abs() 将其变为正数。这是一个方便的 function，请记住。
+
+➤ 对showAlert() 进行更改并尝试：
+
+```swift
+@IBAction func showAlert() {
+  let difference = abs(targetValue - currentValue)
+  
+  let message = . . .
+}
+```
+
+没有比这更简单的方法了！
+
+**练习：**有个地方已经发生改变… 你能找到它吗？
+
+答：你写的是 let differece，而不是 var difference 了。
+
+Swift 区分了 variables 和所谓的 constants（常量）。与 variable 不同，constant 的值不能改变（你可能根据它的名称猜出）。
+
+你只能把一些东西放到一个常数的盒子中，不能用其他东西代替。
+
+关键字 var 创建一个 variable，而 let 创建一个 constant。这意味着 difference 现在是一个 constant，而不是一个 variable。
+
+在以前的 algorithms 中，differnece 的值可能会改变。如果它是负面的，你把它变成正面。所需的 difference 是一个 variable，因为只有 variable 才能被分配新值。
+
+现在你可以在一行中计算整个事情，diffeence 永远不会改变，一旦你给它一个值。在这种情况下，最好声明它为一个 constant。（为什么更好？它使你的意图清楚，同时又帮助 Swift 编译器更好地了解你的程序）
+
+同样，消息，alert 和 action 也是 costant（一直都是！）。现在你知道为什么你使用 let 而不是 var 来声明这些 object 了吧。一旦他们获得了值，他们就不需要改变。
+
+Constants 在 Swift 中非常常见。通常你只需要保持一个值很短的时间。如果在那个时间内值不会改变，最好声明它为一个 constant（let），而不是一个 variable（var）。
+
+## 得分是多少？
+
+现在你知道 slider 距离目标有多远，计算此轮的玩家得分变得十分容易。
+
+➤ 将 showAlert() 更改为：
+
+```swift
+@IBAction func showAlert() {
+  let difference = abs(targetValue - currentValue)
+  let points = 100 - difference
+  
+  let message = "You scored \(points) points"
+  ...
+}
+```
+
+如果你把 slider 恰好放在目标上，差值为零，你可以得到的最大分数是100点。离目标越远，你赚取的积分就越少。
+
+➤ 运行应用程序并自己玩玩看！
+
+<div align="center"><img alt="The alert 显示当前回合的玩家的得分" src="http://imgur.com/D0mD0tC.png"/></div><center>The alert 显示当前回合的玩家的得分</center>
+
+<br>
+
+**练习：**因为 slider 的最大值为 100，最小值为 1，所以最大的区别是 100 - 1 = 99.这意味着你在一个回合中可以获得的绝对最差分数为1分。解释为什么会这样。 （Eek！它需要数学！）
+
+## 跟踪玩家的总分
+
+在这个游戏中，你想在屏幕上显示玩家的总分。每轮后，应用程序应该将新得分添加到总分，然后更新分数 label。
+
+因为游戏需要保持总分在很长时间，你会把它放在一个 instance variable 中。
+
+➤ 向 **ViewController.swift** 添加新的 score instance variable：
+
+```swift
+class ViewController: UIViewController {
+
+  var currentValue: Int = 0
+  var targetValue: Int = 0
+  var score = 0              // add this line
+```
+
+嘿，这是什么？ 与其他两个 instance variable 不同，你没有说明得分是 Int。
+
+如果你没有指定 data type，Swift 使用 *type inference* 来确定按照你的意思得到的是什么样的 type。因为 0 是一个整数，Swift 假定得分页应该是一个整数，因此自动给它 type Int。方便！
+
+实际上，你不需要为其他 instance variable 指定 Int：
+
+```swift
+var currentValue = 0
+var targetValue = 0
+```
+
+➤ 进行这些更改。 
+
+多亏 type inference，你只需要列出数据类型的名称，即使你不给 variable 一个初始值。大多数时候，你可以安全地让 Swift 猜到类型。
+
+我认为 type inference 是相当贴心！它肯定会帮你节省一些，呃，输入（还有其他地方）。
+
+现在可以修改 showAlert() 以更新此分数 variable。
+
+➤ 进行以下更改：
+
+```swift
+@IBAction func showAlert() {
+  let difference = abs(targetValue - currentValue)
+  let points = 100 - difference
+  
+  score += points        // add this line
+  
+  let message = "You scored \(points) points"
+  ...
+}
+```
+
+没有什么太令人惊讶的地方。你刚刚添加了以下行：
+
+```swift
+score += points
+```
+
+这将用户在这一回合中的得分加到总分。你也可以这样写：
+
+```swift
+score = score + points
+```
+
+就个人而言，我喜欢简写 += 版本，但任一个都没关系。两者完成完全相同的事情。
+
+## 在屏幕上显示得分
+
+你要做的事情与你为目标 label 做的完全相同：将分数 label 与一个 outlet 关联，并将分数值放入 label 的文本属性中。
+
+**练习：**如果没有我的帮助，你是否可以做上述。你之前已经为目标值 label 执行了这些操作，因此你应该能够自己为总分 label 重复这些步骤。
+
+你应该已经做了以下事情。将此行添加到 **ViewController.swift**：
+
+```swift
+@IBOutlet weak var scoreLabel: UILabel!
+```
+
+然后，你进入 storyboard，并将 label（写着 999999 的那个）连接到新的 scoreLabel outlet。
+
+不确定如何连接 outlet？有几种方法可以将用户界面 object 连接到 view controller 的 outlet：
+
+- Ctrl-单击 object 以获取上下文相关的弹出菜单。然后从 New Referencing Outlet 拖到 View Controller（你对 slider 做过同样的事情）。
+- 转到 label 的 Connections Inspector 选项卡。从 New Referencing Outlet 到 View Controller（你对目标 label 做过同样的事情）。
+- Ctrl - 从 View Controller 拖动到 label（现在尝试这个）。 确保你按照这个顺序；从 label 到 view controller的ctrl 拖动将不起作用。
+
+There is more than one way to skin a cat（你总是可以找到不止一种方法来做某事），呃，连接 outlet。（译者注：就是有很多种方法将视图控制器中的对象和你的代码连接起来）
+
+干得漂亮，这给了一个 scoreLabel 一个 outlet，你可以使用把文本放入 label。现在在代码中你应该做什么？在 updateLabels() 中。
+
+➤ 返回 **ViewController.swift**，将 updateLabels() 更改为以下内容：
+
+```swift
+func updateLabels() {
+  targetLabel.text = String(targetValue)
+  scoreLabel.text = String(score)
+}
+```
+
+没什么新鲜的。你将 score（一个 Int）转换为 string，然后将该 string 赋给 label 的 text 属性。为了对以上作出响应，label 将重新绘制自己与新的分数。
+
+➤ 运行应用程序，并确认每次点击 button 时，此回合的积分都会添加到总分数 label 中。
+
+<div align="center"><img alt="得分 label 记录玩家的总分" src="http://imgur.com/PnjlcPG.png"/></div><center>得分 label 记录玩家的总分</center>
+
+<br>
+
+## 更多的回合
+
+说到回合，你还必须在每次玩家开始新回合时递增回合数。
+
+**练习：**跟踪当前回合数（从 1 开始），并在新轮次开始时递增。在相应的 label 中显示当前轮数。到目前为止，如果你已经按照指示学习了之前的每一步，那么你已经可以自己完成这一部分，甚至你可以选择跳过这一小部分教程。祝你好运！
+
+如果你猜到你必须添加另一个 instance variable，那么你是对的。你应该已经添加了以下行到源代码：
+
+```swift
+var round = 0
+```
+
+如果包括 data type 的名称，也可以，即使不做严格要求：
+
+```swift
+var round: Int = 0
+```
+
+还有 label 的 outlet：
+
+```swift
+@IBOutlet weak var roundLabel: UILabel!
+```
+
+和以前一样，你应该在 Interface Builder 中将 label 连接到此 outlet。
+
+<code class="highlighter-rouge"><strong>不要忘记建立这些连接</strong></code>
+
+`忘记在 Interface Builder 中建立连接是一个常常犯的错误，特别它真的发生在你身上了。`
+
+`它经常发生像是我的家常便饭，我做一个 button 的 outlet，编写代码来处理该 button 上的点击，但是当我运行应用程序它不工作。通常它让我一些抓耳挠腮几分钟，然后意识到我忘了连接 button 到 outlet 或 action method。`
+
+`你可以点击 button 然后按你的想法进行，前提是连接存在否则你的代码将不会响应。`
+
+最后，updateLabels() 现在应该如下所示：
+
+```swift
+func updateLabels() {
+  targetLabel.text = String(targetValue)
+  scoreLabel.text = String(score)
+  roundLabel.text = String(round)
+}
+```
+
+你还能够弄清楚在哪里来增加 round variable？
+
+我想说 startNewRound() method 是一个相当不错的地方。毕竟，当你开始一个新的回合，你调用这个 method。在那里增加回合计数器非常合理。
+
+➤ 将 startNewRound() 更改为：
+
+```swift
+ func startNewRound() {
+  round += 1           // add this line
+  targetValue = 1 + Int(arc4random_uniform(100))
+  currentValue = 50
+  slider.value = Float(currentValue)
+}
+```
+
+注意，当你声明 round instance variable 时，你给它一个默认值 0。因此，当应用程序启动时，round 最初是 0。当你第一次调用 startNewRound(0 时，它会添加 1 到这个初始 值，因此第一轮被正确计为回合 1。
+
+➤ 运行应用程序并尝试。每当按下 Hit Me button 时，回合计数器应该更新。
+
+<div align="center"><img alt="回合 label 计算已经进行了多少回合" src="http://imgur.com/VG3eZug.png"/></div><center>回合 label 计算已经进行了多少回合</center>
+
+<br>
+
+你可以在教程的源代码文件夹中的 **04 - Rounds and Score** 下找到应用程序的项目文件。 如果你遇到问题，比较你的应用程序版本与这些源文件，看看你是否遗漏了某些东西。
+
+## 来给游戏润润色
+
+你可以到此为止了，这已经是一个可玩的游戏了。游戏规则都是设定好的，逻辑也没有任何大的缺陷。据我所知，没有 bugs。但仍有一些改进的余地。
+
+显然，游戏不是很漂亮，不过很快这将是你的关注点。同时，有一些较小的调整，需要你来做。
+
+除非你已经改变它，否则 alert 的标题仍然说 “Hello, World!” 你可以替换为游戏名称，“Bull's Eye”，但我有一个更好的主意。如果你根据玩家的表现改变标题怎么办？
+
+如果玩家将 slider 正好放在目标上，则 aliet 可以说：“完美！” 如果 slider 靠近目标但不在那里，则可以说：“你差不多了！”如果玩家离开 ，警报可以说：“差的有些远…” 等等。 这给玩家一个更多的反馈，他们表现的如何。
+
+**练习：**想想一种方法来完成这个。你该把这个逻辑放在哪里，你怎么编程呢？提示：在前面类似情况的句子中你用了很多 “if”。
+
+这个逻辑的正确位置是 showAlert()，因为这是创建 UIAlertController 的地方。你已经做了一些计算以构建消息文本，现在你会做类似的标题文本的东西。
+
+➤ 下面是已更改的方法的全部内容：
+
+```swift
+@IBAction func showAlert() {
+  let difference = abs(targetValue - currentValue)
+  let points = 100 - difference
+  score += points
+  
+  // add these lines
+  let title: String
+  if difference == 0 {
+    title = "Perfect!"
+  } else if difference < 5 {
+    title = "You almost had it!"
+  } else if difference < 10 {
+    title = "Pretty good!"
+  } else {
+    title = "Not even close..."
+  }
+  
+  let message = "You scored \(points) points"
+  
+  let alert = UIAlertController(title: title,	// change this
+                                message: message,
+                                preferredStyle: .alert)
+
+  let action = UIAlertAction(title: "OK", style: .default, handler: nil)
+  alert.addAction(action)
+  present(alert, animated: true, completion: nil)
+  
+  startNewRound()
+  updateLabels()
+}
+```

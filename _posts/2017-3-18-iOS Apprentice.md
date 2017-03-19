@@ -2475,3 +2475,7 @@ func updateLabels() {
   updateLabels()
 }
 ```
+
+你新建一个名为 title 的 local string，其中将包含位于 alert 顶部的文本。最初，此标题没有任何值。
+
+要决定要使用的标题文本，要根据 slider 位置和目标值之间的差异：

@@ -40,6 +40,7 @@ comments: true
 | Landscape                | 横屏        |      | **Orientation** | 方向     |
 | :----------------------- | :-------- | :--- | :-------------- | :----- |
 | **Attributes inspector** | **属性检查器** |      | **View**        | **视图** |
+| **Closure**              | **闭包**    |      |                 |        |
 
 <br>
 
@@ -2670,4 +2671,110 @@ let action = UIAlertAction(title: "OK", style: .default, handler: nil)
 
 第三个参数 handler，告诉 alert 该干什么当 button 被按下时。这是你一直在寻找的 “alert dismissed” 事件。
 
-目前 handler 是nil，这意味着什么都没有发生。要改变这个，你需要给 UIAlertAction 添加一些源代码，当 button 被点击开始执行。当用户最终点击 OK 时，alert 将从屏幕中删除并跳转到你的代码。这是你的线索，从那里拿走。
+目前 handler 是nil，这意味着什么都没有发生。要改变这个，你需要给 UIAlertAction 添加一些源代码，当 button 被点击开始执行。当用户最终点击 OK 时，alert 将从屏幕中删除并跳转到你的代码。这是你的线索用它来搞定后面的事情。
+
+这也称为 *callback* pattern（回调模式）。这种模式在 iOS 上显示有几种方式。通常，你将被要求创建一个新的 method 来处理事件。但在这里你会见识到新的东西：closure（闭包）。
+
+➤ 将 showAlert() 的底部位更改为：
+
+```swift
+@IBAction func showAlert() {
+  ...
+  let alert = UIAlertController(. . .)
+  
+  let action = UIAlertAction(title: "OK", style: .default,
+                             handler: { action in
+                                         self.startNewRound()                           
+                                         self.updateLabels()
+                                      })
+                                      
+  alert.addAction(action)
+  present(alert, animated: true, completion: nil)
+}
+```
+
+这里发生了两件事：
+
+1. 你从 method 底部删除对 startNewRound() 和 updateLabels() 的调用。（不要忘记这部分！）
+2. 你把它们放在你给 UIAlertAction 的 handler 参数的一段代码中。
+
+这样的代码块被称为一个 closure。你可以认为它是一个没有名字的 method。此代码不会立即执行，只有在轻击 OK button 时。此特定 closure 会通知应用程序启动新回合，并在 aliert 被关闭时更新 labels。
+
+➤ 运行它并自己查看。我认为以这种方式游戏感觉好多了。
+
+<code class="highlighter-rouge"><strong>Self</strong></code>
+
+`你可能想知道为什么在处理程序块中你做了 self.startNewRound()，而不是像以前一样写startNewRound()。`
+
+`self 关键字允许 view controller 引用自身。这不应该是一个奇怪概念。当你说，“我想要冰激凌”，你使用 “我” 一词来指自己。同样，object 也可以调用（谈论）自己。`
+
+<code class="highlighter-rouge">通常，你不需要使用 self 向 view controller 发送消息，即使它被允许。异常：但是在 closure 中你<em>必须</em>使用 self 来引用 view controller。</code>
+
+`这是 Swift 中的规矩。如果你忘记了一个 closure 中的 self，Xcode 不想构建你的应用程序（不信你试试）。这个规则之所以存在，因为 closure 可以 “capture”（捕获） variables，这带来了令人惊讶的副作用。你将在其他教程中了解更多。`
+
+## 重新开始
+
+不，这个项目从头到尾，你都不会离开源代码！我在谈论游戏的 “Start Over”（重新开始） button。此 button 应该重置得分，并让玩家回到第一回合。
+
+Start Over button 的一个用途是用于对抗另一个人。第一个玩家做十轮，然后分数重置，第二个玩家做十轮。获得最高分的玩家获胜。
+
+**练习：**尝试自己实现这个 Start Over button。你已经看到了如何使 view controller 对 button 按下做出反应，你应该能够找出如何更改得分和回合 variables。
+
+你怎么做的？如果您遇到问题，请按照以下说明操作。
+
+首先，向 **ViewController.swift** 添加一个 method 来启动一个新游戏。我建议
+你把它放在 startNewRound() 附近，因为两者在概念上是相关的。（译者注：代码整洁，可读性是很重要的。除非你想辞职，可以改写一下，你走了以后这段代码就没人维护得了，几个月后就连自己都看不懂，以此报复老板。开玩笑的）
+
+➤ 添加新 method：
+
+```swift
+func startNewGame() {
+ score = 0
+ round = 0
+ startNewRound()
+}
+```
+
+此 method 重置得分和回合数，并开始新回合。
+
+注意你在这里设置 round 为 0，而不是 1。你使用 0，因为增加 round 的值是 startNewRound() 所做的第一件事。
+
+如果你 将round 设置为 1，那么 startNewRound() 将向它加另一个 1 第一轮实际上将标记为第二轮。
+
+所以你从 0 开始，让 startNewRound() 加一，一切都会正常工作。
+
+（这应该说明为什么我们不用英语来编程）
+
+你还需要一个 action method 来处理 Start Over button 上的敲击。
+
+➤ 将 action method 添加到 **ViewController.swift**：
+
+```swift
+@IBAction func startOver() {
+  startNewGame()
+  updateLabels()
+}
+```
+
+这并不重要，你放置这个方法的位置，但喝下面的其他动作方法放在一起是一个很好的主意。
+
+当按下 Start Over button 时，startOver() action method 首先调用 startNewGame() 开始一个新游戏。（看，如果你选择有意义的 method 名称，然后阅读源代码真的不是那么难）
+
+因为 startNewGame() 更改 instance variables 的内容，还调用 updateLabels() 来更新得分，回合和目标值 labels 的文本。
+
+为了使事情保持一致，在 viewDidLoad() 中，你应该通过 startNewGame() 替换对 startNewRound() 的调用。因为得分和回合已经是 0 当应用程序启动时，它不会真正说明应用程序的工作原理，但它确实使源代码的意图更清楚。
+
+➤ 进行此更改：
+
+```swift
+override func viewDidLoad() {
+  super.viewDidLoad()
+  startNewGame()        // this line changed
+  updateLabels()
+}
+```
+
+最后，你需要将 Start Over button 连接到 action method。
+
+➤ 打开 storyboard，然后从 **Start Over **button Ctrl-拖动到 **View** **Controller**。放开鼠标，从弹出框中选择 startOver。将 button 的 Touch Up Inside 事件连接到你刚刚的定义的 action。
+

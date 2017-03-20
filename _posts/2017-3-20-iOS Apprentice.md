@@ -66,11 +66,11 @@ comments: true
 
 <center><strong>表二</strong></center>
 
-| Assignment     | 赋值     |      | Bug                   | 漏洞       |
-| :------------- | :----- | :--: | :-------------------- | :------- |
-| **Global**     | **全局** |      | **Instance**          | **实例**   |
-| **Local**      | **本地** |      | **Instance variable** | **实例变量** |
-| **Algorithms** | **算法** |      | **Constant**          | **常量**   |
+| Assignment    | 赋值     |      | Bug                   | 漏洞       |
+| :------------ | :----- | :--: | :-------------------- | :------- |
+| **Global**    | **全局** |      | **Instance**          | **实例**   |
+| **Local**     | **本地** |      | **Instance variable** | **实例变量** |
+| **Algorithm** | **算法** |      | **Constant**          | **常量**   |
 
 ---
 
@@ -303,7 +303,7 @@ C++ 是另一种由 C 衍生出来的 object-oriented 编程语言。它非常�
 
 <br>
 
-目标是滑动图中这个看起来像牛眼一样的 slider（滑块）（范围 1 ～ 100），使其尽可能的贴近系统给出的随机值。在上面的截图中，目标是将 “牛眼” 滑动到 22 的地方，因为看不到滑块的当前值，所以全靠目测了。
+目标是滑动图中这个看起来像 bull's eye（牛眼）一样的 slider（滑块）（范围 1 ～ 100），使其尽可能的贴近系统给出的随机值。在上面的截图中，目标是将 bull's eye 滑动到 22 的地方，因为看不到 slider 的当前值，所以全靠目测了。
 
 当你对你的估计有信心时，按下 “Hit Me!” button（按钮），弹出的窗口（也称为 alert（提醒））会告诉你，你获得了多少分：
 
@@ -2778,3 +2778,149 @@ override func viewDidLoad() {
 
 ➤ 打开 storyboard，然后从 **Start Over **button Ctrl-拖动到 **View** **Controller**。放开鼠标，从弹出框中选择 startOver。将 button 的 Touch Up Inside 事件连接到你刚刚的定义的 action。
 
+➤ 运行应用程序并玩几回合。按 Start Over，让你回到第一回合。
+
+提示：如果你忘记了什么 button 或 label 连接到什么 method，你可以单击 storyboard 中的 **View Controller** 查看你到目前为止所有的连接。
+
+你可以右键单击 View Controller 以获取弹出窗口，或者只需在 **Connections inspector** 中查看连接。这将显示已对 view controller 进行连接的所有连接。
+
+<div align="center"><img alt="从 View Controller 到其他 objects 的所有连接" src="http://imgur.com/AMIPBAC.png"/></div><center>从 View Controller 到其他 objects 的所有连接</center>
+
+<br>
+
+你可以在教程的源代码文件夹中的 **05 - Polish** 下找到应用程序当前版本的项目文件。
+
+## 添加关于屏幕
+
+我希望到目前为止你不厌烦这个应用程序，因为还有一个功能，我想添加到它，一个 About（关于）屏幕，显示一些关于游戏的信息：
+
+<div align="center"><img alt="新的 About 屏幕" src="http://imgur.com/QSc6hc4.png"/></div><center>新的 About 屏幕</center>
+
+<br>
+
+这个新屏幕包含一个所谓的 *text view*（文本视图）里面显示游戏规则和一个 button，让玩家关闭该屏幕。你通过点击游戏中的 (i) button 进入 About 屏幕。
+
+大多数应用程序有多个屏幕，甚至非常简单的游戏，所以这是一个好时机，了解如何添加额外的屏幕到你的应用程序。
+
+我已经指出了几次：你的应用程序中的每个屏幕都将有自己的 view controller。如果你认为 “screen”（屏幕） 是，“view controller” 也是。
+
+Xcode 自动为你创建了主 ViewController object，但是 About屏幕的 view controller 就要你自己来创建了。
+
+➤ 转到 Xcode 的 **File** 菜单，然后选择 **New → File…** 在弹出的窗口中，选择 **Cocoa Touch Class** 模板（如果你没有看到它，那么请确保在顶部选择 **iOS**）：
+
+<div align="center"><img alt="选择 Cocoa Touch Class 的文件模板" src="http://imgur.com/7cPI336.png"/></div><center>选择 Cocoa Touch Class 的文件模板</center>
+
+<br>
+
+点击 **Next**。Xcode 给你一些选项来填写：
+
+<div align="center"><img alt="新文件的选项" src="http://imgur.com/Fxx6744.png"/></div><center>保存新文件</center>
+
+<br>
+
+选择以下内容：
+
+- Class: **AboutViewController**
+- Subclass of: **UIViewController**
+- Also create XIB file: Leave this box unchecked.
+- Language: **Swift**
+
+点击 **Next**。Xcode 会问你在哪里保存这个新的 view controller：
+
+<div align="center"><img alt="保存新文件" src="http://imgur.com/aUkkJMt.png"/></div><center>新文件的选项</center>
+
+<br>
+
+➤ 选择 **BullsEye** 文件夹（此文件夹应已被选中）。
+
+还要确保 **Group** 说 **BullsEye**，并在 list of **Targets**（目标列表）中的 BullsEye 前面有一个复选标记。（如果没有看到此面板，请单击 Options 按钮。）
+
+➤ 单击 **Create** 完成。
+
+Xcode 将创建一个新文件并将其添加到你的项目。你可能已经猜到的，新文件是 **AboutViewController.swift**。
+
+<div align="center"><img alt="Project navigator 中的新文件" src="http://imgur.com/qE7b5gw.png"/></div><center>Project navigator 中的新文件</center>
+
+<br>
+
+要设计这个新的 view controller，你需要访问 Interface Builder。
+
+➤ 打开 **Main.storyboard**。没有任何表示关于 view controller 的场景，因此你必须先添加它。
+
+➤ 从 **Object Librart** 中，选择 **View Controller** 并将其拖动到 main View Controller 右侧的 canvans 中。
+
+<div align="center"><img alt="从 Object Library 中拖动新的 View Controller" src="http://imgur.com/xLNZtUP.png"/></div><center>从 Object Library 中拖动新的 View Controller</center>
+
+<br>
+
+这个新的 view controller 是完全空白的。你可能需要重新排列 storyboard，以使两个 view controller 不重叠。Interface Builder 并不总是非常整齐地摆放的东西。
+
+➤ 将新 **Button** 拖动到屏幕中，并给它标题 **Close**。将它放在 vuew 底部中心的某个位置（使用蓝色指南线帮助定位）。
+
+➤ 将一个 **Text View** 拖动到 view 中，使其覆盖 button 上方的大部分空间。
+
+你可以在 Object Library 中找到这些组件。如果你不想滚动，可以通过在底部的字段中键入关键字来过滤组件：
+
+<div align="center"><img alt="搜索文本组件" src="http://imgur.com/O0qActd.png"/></div><center>搜索文本组件</center>
+
+<br>
+
+请注意，还有一个 Text Field，它是一个单行文本组件。你正在寻找 Text View，它可以包含多行文本。
+
+将 text view 和 button 拖到 canvas 上后，应该看起来像这样：
+
+<div align="center"><img alt="Storyboard 中的 About 屏幕" src="http://imgur.com/tZUWemz.png"/></div><center>Storyboard 中的 About 屏幕</center>
+
+<br>
+
+➤ 双击 text view 以使其内容可编辑。默认情况下，text view 包含一大堆假拉丁语占位符文本（也称为 “Lorem Ipsum”）。
+
+将此新文本复制粘贴到其中：
+
+```
+*** Bull’s Eye ***
+
+Welcome to the awesome game of Bull’s Eye where you can win points and fame by dragging a slider.
+
+Your goal is to place the slider as close as possible to the target value. The closer you are, the more points you score. Enjoy!
+```
+
+你也可以将该文本粘贴到 text view 的 Attributes inspector 中，如果你觉得那样更简单的话。
+
+➤ 确保取消选中 **Editable**（可编辑）设置，否则用户实际键入内容到 text view。对于这个游戏，它应该设置为只读。
+
+<div align="center"><img alt="Text view 的 Attributes inspector" src="http://imgur.com/UERdaF5.png"/></div><center>Text view 的 Attributes inspector</center>
+
+<br>
+
+屏幕设计就到此为止，告一段落先。
+
+➤ 单击 **View Controller** 中的 **(i)** button将其选中。然后按住 Ctrl 并拖动到 **About** 屏幕。
+
+<div align="center"><img alt="按住 Ctrl 从一个 view controller 拖动到另一个 view controller 以创建 segue" src="http://imgur.com/CPwILyR.png"/></div><center>按住 Ctrl 从一个 view controller 拖动到另一个 view controller 以创建 segue</center>
+
+<br>
+
+➤ 放开鼠标按钮，弹出窗口中会显示多个选项。选择 **Present Modally**。
+
+<div align="center"><img alt="选择要创建的 segue 类型" src="http://imgur.com/FJ6waoe.png"/></div><center>选择要创建的 segue 类型</center>
+
+<br>
+
+现在，两个屏幕之间将出现一个箭头。此箭头表示 segue。
+
+➤ 单击箭头以将其选中。Segues 也有属性。在 **Attributes inspector** 中，选择 **Transition**（过渡），**Flip Horizontal**（水平翻转）。这是 UIKit 用来在这些屏幕之间移动的动画。
+
+<div align="center"><img alt="改变 segue 的 attributes" src="http://imgur.com/fmgp7XY.png"/></div><center>改变 segue 的 attributes</center>
+
+<br>
+
+➤现在可以运行应用程序。按 **(i)** button查看新屏幕。
+
+<div align="center"><img alt="The About 屏幕将显示一个翻转动画" src="http://imgur.com/wwtPpba.png"/></div><center>The About 屏幕将显示一个翻转动画</center>
+
+<br>
+
+The About 屏幕应该显示一个整洁的动画。很好，这似乎运转正常。
+
+然而，这里有一个明显的缺点：点击 Close button 似乎没有效果。一旦用户进入 About 屏幕，她就永远也离不开了... 那听起来不像是友好的用户界面设计。

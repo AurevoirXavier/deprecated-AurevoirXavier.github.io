@@ -1,8 +1,8 @@
 ---
 layout: post
 title: "iOS Apprentice 1 Getting Started v5.0 （译）"
-date:   2017-03-18
-excerpt: "译至 86 页"
+date:   2017-03-20
+excerpt: "译至 100 页"
 tags: [program, iOS, translate]
 comments: true
 ---
@@ -2478,4 +2478,196 @@ func updateLabels() {
 
 你新建一个名为 title 的 local string，其中将包含位于 alert 顶部的文本。最初，此标题没有任何值。
 
-要决定要使用的标题文本，要根据 slider 位置和目标值之间的差异：
+要决定使用哪种标题文本，要根据 slider 位置和目标值之间的差异：
+
+- 如果它（差值）等于 0，那么玩家完全正确，你把文本 “Perfect!” 放到到标题里。
+- 如果差值小于 5，则使用文本 “You almost had it!”。
+- 小于 10 的差是 “Pretty good!”。
+- 但是，如果差值为10或更大，那么显示 “Not even close…”。
+
+你能遵循这里的逻辑吗？它只是一堆 if 语句，考虑不同的可能性，并选择一个 string 作为响应。
+
+当创建 UIAlertController object 时，现在给它标题 string，而不是固定文本。
+
+运行应用程序，玩一下。你会看到标题文字根据你的得分高低而变化。if 语句非常实用！
+
+<div align="center"><img alt="带有新标题的 alert" src="http://imgur.com/qy4KifZ.png"/></div><center>带有新标题的 alert</center>
+
+<br>
+
+**练习：**当她为完美的得分时，给玩家额外 100 点奖励。这将鼓励玩家真正试图把 bull‘s eye 放在目标上。否则，完美得分 100 分和 98 或 95 分之间没有太大差异，会让玩家失去动力。
+
+给玩家一点鼓励，尝试更努力——一个完美的得分不再只有 100，而是 200 分。你也可以给玩家 50 点，随你设置。
+
+➤ 以下是我将进行这些更改的方式：
+
+```swift
+@IBAction func showAlert() {
+  let difference = abs(targetValue - currentValue)
+  var points = 100 - difference	// change let to var
+  
+  let title: String
+  if difference == 0 {
+    title = "Perfect!"	// add this line
+    points += 100
+  } else if difference < 5 {
+    title = "You almost had it!"
+    if difference == 1 {	// add these lines
+      points += 50 
+    }
+  } else if difference < 10 {
+      title = "Pretty good!"
+  } else {
+    title = "Not even close..."
+  }
+    
+  score += points
+  ... 
+}
+```
+
+你应该注意到一些事情：
+
+- 在第一个 if 你会看到一个大括号之间的新语句。当差值等于零时，你现在不仅将标题设置为 “Perfect!”，还可以额外获得 100 分。
+- 第二个 if 改变了。现在有一个 if 里面有另一个 if。没有什么错！你想处理差异为 1 的情况，以给予玩家奖励积分。这发生在新的 if 语句内。毕竟，如果差值大于 0 但小于 5，它也可以是 1。因此，你执行额外的检查，以查看差异是否真的为 1，如果是，给玩家添加 50 分。
+- 因为这些新的 if 语句添加额外的分，分数不能再是一个 constant；它现在需要是一个 variable。这就是为什么你把它从 let 改成 var。
+- 最后，那一行 line score += points 已移动到 ifs 下面。这是必要的，因为应用程序可能更新这些 if 语句中的 points variable，并且你希望这些额外的也计入分数。
+
+如果你做的有点不同，那也很好，只要它运作正常！通常有不止一种方法来编程某些东西，如果结果相同，则每种方式同样有效。
+
+➤ 运行应用程序，看看是否可以得到一些奖励积分！
+
+<div align="center"><img alt="恰好放在目标值上" src="http://imgur.com/Ki3mFOR.png"/></div><center>恰好放在目标值上</center>
+
+<br>
+
+**Local bariables 概述**
+
+我想再次指出局部变量和实例变量之间的区别。 正如你现在应该知道的，局部变量只存在于定义它的方法的持续时间，而实例变量存在，只要视图控制器（拥有它的对象）存在。 同样的事情对于常量也是如此。
+
+在 showAlert() 中，有六个 local variable，并且使用三个 instace variables：
+
+```Swift
+let difference = abs(targetValue - currentValue)
+var points = 100 - difference
+let title = . . .
+score += points
+let message = . . .
+let alert = . . .
+let action = . . .
+```
+
+**练习：**指出哪些是 local varables，哪些是 showAlert() method 中的 instance variables。在 local 中，哪些是 variables，哪些是 constant？
+
+答案：Local variables 很容易识别，因为第一次在 method 中使用它们的名称前面有 let 或 var：
+
+```swift
+let difference = . . .
+var points = . . .
+let title = . . .
+let message = . . .
+let alert = . . .
+let action = . . .
+```
+
+此语法创建一个新变量（var）或常量（let）。 因为这些 variables 和 constants 是在 method 内创建的，所以它们是 locals。
+
+这六个项目——difference, points, title, message, alert, 和 action——仅限于 showAlert() method，并且不在其外部。一旦该 method 完成，本地的都不再存在。
+
+例如，你可能会想知道，每当玩家点击 Hit Me button 时，difference 如何，即使它是一个 constant。constants 一旦给定一个值，以后不会改变？（译者注：提前透漏一下吧，就算是常量也是可以改变的。仔细看看前一句话，一旦 method 完成，本地的常量或者变量都不再存在。所以点击按钮后，又执行了一次方法，现在的那个常量已经不再是原来那个了。想象一下你有一支笔，笔芯已经没有墨水了，你把没水的笔芯丢掉然后换了一支新的笔芯进去）
+
+这是为什么：每次调用一个方法时，都会重新创建其局部变量和常量。 旧的值早已被遗弃，你得到的是新的。
+
+当调用 showAlert() 时，它会创建一个与前一个无关的完全新的 instance difference。这个特定的 constant 值只用到 showAlert() 结束，然后再次被遗弃。
+
+下一次调用 showAlert() 之后，它会创建另一个新的 instance difference（以及其他 instances of locals points, title, message, alert 和 action）。等等… 有一些重要的回收在这里进行！
+
+但是在 showAlert() 的单一调用中，difference 一旦具有其值就永远不会改变。唯一可以改变的地方是 points，因为它是一个 var。
+
+另一方面，instance variables 在任何 method 之外定义。 通常将它们放在文件的顶部：
+
+```swift
+class ViewController: UIViewController {
+
+  var currentValue = 0
+  var targetValue = 0
+  var score = 0
+  var round = 0
+```
+
+因此，你可以从任何方法使用这些 variables，而无需再次声明它们，并且它们将保留其值。
+
+如果你这样做，
+
+```swift
+@IBAction func showAlert() {
+  let difference = abs(targetValue - currentValue)
+  var points = 100 - difference
+  
+  var score = score + points       // doesn’t work!
+  ...
+}
+```
+
+然后他们不会和你预期一样的去工作。因为你现在把 var 放在 score 的前面，你已经使它成为一个新的 local variable，它只在这个 method 中有效。
+
+换句话说，这不会向 *instance variable* 添加 points，而是添加到也被命名为 score 的新的 *local variable*。instance variable points 永远不会改变，即使它具有相同的名称。（译者注：经常会遇到本地变量和全局变量拥有相同名字，在 c++ 中 人们经常使用 this.a 表示全局变量 a，用 a 表示方法体内的本地变量 a。不过好习惯还是不要使用这么多重复的名字）
+
+显然，这不是你想在这里发生。幸运的是，对于上面的代码上面甚至不会进行编译。Swift knows there’s something fishy about that line（知道上面这行代码有些蹊跷，猫腻）。
+
+<code class="highlighter-rouge"><strong>注意：</strong>为了区分两种类型的 variables，使得方便且清楚地知道它们将存活多长时间，一些程序员在 instance variables 的名称前面加上下划线。</code>
+
+`他们将命名 variable 为 _score而不是 score。现在看起来好多了，因为以下划线开头的名字不会被误认为是 locals。这只是一个惯例。Swift 不关心一种方式，也不关心你如何拼写你的实 instance variables。（译者注：就是不做硬性要求，无论你怎么命名都不会影响编译器的编译）`
+
+`其他程序员使用不同的前缀，例如 “m”（member 成员）或 “f”（filed 字段）目的是一样的。有些甚至把下划线放在变量名后面。 疯狂！`
+
+## 等待 alert 消失
+
+关于这个游戏，有一些事让我困扰。你可能也注意到了...
+
+一旦点击 Hit Me button，弹出 alert，slider 立即重置到其中心位置，回合数递增，目标值 label 获得新的随机数。
+
+新的一回合已经开始，而你却正要观察的本回合的结果如何。这就很不方便而且容易造成混乱。
+
+最好等待玩家关闭 alert 弹出窗口后才开始新的回合。只有这样，当前的轮才真正结束。
+
+也许你想知道为什么这不是已经发生了？毕竟，在 showAlert() 中，只有在显示 alert 弹出窗口后才会调用 startNewRound()：
+
+```swift
+@IBAction func showAlert() {
+  ...
+  
+  let alert = UIAlertController(. . .)
+  let action = UIAlertAction(. . .)
+  alert.addAction(action)
+  
+  // Here you make the alert visible:
+  present(alert, animated: true, completion: nil)
+  
+  // Here you start the new round:
+  startNewRound()
+  updateLabels()
+}
+```
+
+与你的预期可能相反，present(alert, …) 不阻止剩余的 method 继续执行，直到 alert 弹出窗口被关闭。这就是其他平台上的 alert 如何工作，而不是在 iOS 上。（译者注：会 javascript 的读者因该对这一点深有体会吧）
+
+相反，present(alert, …) 将 alert 放在屏幕上并立即返回。showAlert() method 的其余部分杯立即执行，并且新的回合已经在 alert 弹出窗口这个动画完成之前开始。
+
+用编程术语来讲，此处的 alert 是一个 work *asynchronously*（译者注：首先告诉你，synchronously 是同步的意思。没错，你很聪明 asynchronously 是异步的意思。单凭字面意思你应该了解了 alert 在 iOS 中是怎么工作了的吧）。关于这一点，在后面的教程中我会更多的讲述，但现在它对你意味着什么，因为在你预先不知道 alert 什么时候完成。但你可以打赌，在 showAlert() 之后运行一定没问题。
+
+所以如果你不能在 showAlert() 中等待，直到弹出窗口被关闭，那么你怎么等待它关闭？
+
+答案很简单：事件！正如你所看到的，iOS 的许多编程涉及等待特定事件发生——button 被点击，slider 被移动等等。这没有什么不同。你必须等待 “alert dismissed” 事件。同时，你什么都不需要做。
+
+以下是它的工作原理：
+
+对于 alert 上的每个 button，你必须提供一个 UIAlertAction object。此 object 告诉 alert 在 button 上的文本是什么——“OK”——button 的外观是怎么样的（你在这里使用默认样式）：
+
+```swift
+let action = UIAlertAction(title: "OK", style: .default, handler: nil)
+```
+
+第三个参数 handler，告诉 alert 该干什么当 button 被按下时。这是你一直在寻找的 “alert dismissed” 事件。
+
+目前 handler 是nil，这意味着什么都没有发生。要改变这个，你需要给 UIAlertAction 添加一些源代码，当 button 被点击开始执行。当用户最终点击 OK 时，alert 将从屏幕中删除并跳转到你的代码。这是你的线索，从那里拿走。

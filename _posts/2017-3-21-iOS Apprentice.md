@@ -2,7 +2,7 @@
 layout: post
 title: "iOS Apprentice 1 Getting Started v5.0 （译）"
 date:   2017-03-21
-excerpt: "译至 102 页"
+excerpt: "译至 112 页"
 tags: [program, iOS, translate]
 comments: true
 ---
@@ -40,7 +40,7 @@ comments: true
 | Landscape                | 横屏        |      | **Orientation** | 方向     |
 | :----------------------- | :-------- | :--- | :-------------- | :----- |
 | **Attributes inspector** | **属性检查器** |      | **View**        | **视图** |
-| **Closure**              | **闭包**    |      |                 |        |
+| **Closure**              | **闭包**    |      | **Simulate**    | **模拟** |
 
 <br>
 
@@ -66,11 +66,13 @@ comments: true
 
 <center><strong>表二</strong></center>
 
-| Assignment    | 赋值     |      | Bug                   | 漏洞       |
-| :------------ | :----- | :--: | :-------------------- | :------- |
-| **Global**    | **全局** |      | **Instance**          | **实例**   |
-| **Local**     | **本地** |      | **Instance variable** | **实例变量** |
-| **Algorithm** | **算法** |      | **Constant**          | **常量**   |
+| Assignment     | 赋值     |      | Bug                   | 漏洞       |
+| :------------- | :----- | :--: | :-------------------- | :------- |
+| **Global**     | **全局** |      | **Instance**          | **实例**   |
+| **Local**      | **本地** |      | **Instance variable** | **实例变量** |
+| **Algorithm**  | **算法** |      | **Constant**          | **常量**   |
+| **Width**      | **宽度** |      | **Height**            | **高度**   |
+| **Background** | **背景** |      | **Color**             | **颜色**   |
 
 ---
 
@@ -616,7 +618,7 @@ class ViewController: UIViewController {
 
 ## View controllers
 
-你已经编辑 **Main.storyboard** 文件来构建应用程序的用户界面。它只是一个白色背景上的 button，但它确实是一个实实在在的用户界面。你还向 **ViewController.swift** 添加了源代码。
+你已经编辑 **Main.storyboard** 文件来构建应用程序的用户界面。它只是一个白色 background 上的 button，但它确实是一个实实在在的用户界面。你还向 **ViewController.swift** 添加了源代码。
 
 这两个文件——storyboard 和 Swift 文件——一起形成了 *view controller* 的设计和实现。 构建 iOS 应用程序的很多工作是创建 view controller。 view controller 的工作是在应用程序中管理单个屏幕。
 
@@ -876,7 +878,7 @@ showAlert 中的代码创建一个标题为 “Hello，World” 的 alert，它�
 
 对于较旧的设备——最高到 iPhone 3GS 和相应的 iPod touch 型号，以及第一代 iPad 而言一点对应一个像素。因此，这些低分辨率设备看起来不是很清晰，因为它们的大又粗糙的像素。
 
-我相信你知道一个像素是什么。如果你不知道的话：它是屏幕组成的最小的元素。你的 iPhone 显示的是一个大矩阵的像素，每个像素都可以有自己的颜色，就像一个电视屏幕。 改变这些像素的颜色值在显示器上产生可见图像。像素越多，图像看起来越好越细腻。
+我相信你知道一个像素是什么。如果你不知道的话：它是屏幕组成的最小的元素。你的 iPhone 显示的是一个大矩阵的像素，每个像素都可以有自己的 color（颜色），就像一个电视屏幕。 改变这些像素的 color 值在显示器上产生可见图像。像素越多，图像看起来越好越细腻。
 
 在 iPhone 4 和更高版本的高分辨率 Retina 显示器上，一个点实际上对应于水平和垂直的两个像素，因此总共有四个像素。它在非常小的空间中包装了大量像素，使得显示更加清晰，这就是 Retina 设备普及的原因。
 
@@ -973,7 +975,7 @@ Swift 是一种所谓的 “object-oriented” 编程语言，这意味着你做
 - 举个说明 data 的例子，就是你之前添加到 view controller 的 Hit Me button。当你将 button 拖到 storyboard 中时，实际上那一刻它成为了 view controller 的 data 中的一部分。data 包含内容。在这种情况下，view controller 包含 button。
 - 关于 functionality 的一个例子就是，你添加用来响应 button 上的轻击的 showAlert action。 functionality 用来 *做* 某事。
 
-button 本身也有 data 和 functionality。button data 的例子就是，它的标签的文本和颜色，它在屏幕上的位置，宽度和高度等。该 button 还具有 functionality：它可以识别用户点击它，并将触发一个动作作为响应。
+button 本身也有 data 和 functionality。button data 的例子就是，它的标签的文本和 color，它在屏幕上的位置，宽度和高度等。该 button 还具有 functionality：它可以识别用户点击它，并将触发一个动作作为响应。
 
 为 object 提供 functionality 的东西通常称为 *method*。 其他编程语言可以将其称为 “procedure”（过程）或 “subroutine”（子程序）或 “function”（函数）。你还将看到 Swift 中使用的术语function; 一个 method 只是一个属于一个 object 的 function，一对多的关系。
 
@@ -1027,7 +1029,7 @@ Objects 可以互相看看对方的 data（在某种程度上，就像如果你�
 
 <br>
 
-Inspector 区域显示当前选择的项目的各个方面。例如，Attributes inspector 可以更改一个 label 的背景颜色或 button上文本的大小。你已经看到显示一个 button's action 的Connections inspector。 随着你更熟练地使用 Interface Builder，你将使用所有这些 inspector 窗格来配置 views。
+Inspector 区域显示当前选择的项目的各个方面。例如，Attributes inspector 可以更改一个 label 的 background color 或 button上文本的大小。你已经看到显示一个 button's action 的Connections inspector。 随着你更熟练地使用 Interface Builder，你将使用所有这些 inspector 窗格来配置 views。
 
 ➤**（i）** button 实际上是常规 button，但他的**类型**在 Attributes inspector 中被设置为了 **Info Light**（信息灯）：
 
@@ -1499,7 +1501,7 @@ Swift 有以下三个可能的范围级别：
 
 ## Comments
 
-你已经看到某些地方以绿色线条 // 作为开头几次了。这些是 comments。你可以在 // 符号后写任何你想要的文本，因为编译器会完全忽略这些行。（译者注：不同 IDE 或配色方案，对应的 comments 颜色不一样，不一定总是绿色的）
+你已经看到某些地方以绿色线条 // 作为开头几次了。这些是 comments。你可以在 // 符号后写任何你想要的文本，因为编译器会完全忽略这些行。（译者注：不同 IDE 或配色方案，对应的 comments color 不一样，不一定总是绿色的）
 
 ```swift
 // I am a comment! You can type anything here.
@@ -2839,7 +2841,7 @@ Xcode 自动为你创建了主 ViewController object，但是 About屏幕的 vie
 
 Xcode 将创建一个新文件并将其添加到你的项目。你可能已经猜到的，新文件是 **AboutViewController.swift**。
 
-<div align="center"><img alt="Project navigator 中的新文件" src="http://imgur.com/qE7b5gw.png"/></div><center>Project navigator 中的新文件</center>
+<div align="center"><img alt="The project navigator 中的新文件" src="http://imgur.com/qE7b5gw.png"/></div><center>The project navigator 中的新文件</center>
 
 <br>
 
@@ -2889,7 +2891,7 @@ Your goal is to place the slider as close as possible to the target value. The c
 
 ➤ 确保取消选中 **Editable**（可编辑）设置，否则用户实际键入内容到 text view。对于这个游戏，它应该设置为只读。
 
-<div align="center"><img alt="Text view 的 Attributes inspector" src="http://imgur.com/UERdaF5.png"/></div><center>Text view 的 Attributes inspector</center>
+<div align="center"><img alt="The text view 的 Attributes inspector" src="http://imgur.com/UERdaF5.png"/></div><center>The text view 的 Attributes inspector</center>
 
 <br>
 
@@ -2957,3 +2959,247 @@ class AboutViewController: UIViewController {
 **练习：**奖励积分，如果你能发现错误。这是一个非常常见的，令人沮丧的！——错误。
 
 问题是，storyboard 中的这个 scene 还不知道它自己代表 AboutViewController。
+
+你首先添加了 AboutViewController.swift 源文件，然后将一个新的 view controller 拖到 storyboard 中，但是你没有告诉 storyboard，这个新的 view controller 的设计实际上属于 AboutViewController。（这就是为什么在 outline pane 中只是说 View Controller 而不是 About View Controller。）
+
+➤ 幸运的是，这很容易补救。在 Interface Builder 中，选择 About scene 的 **View Controller**，然后转到 **Indentity inspector**（即 Attributes inspector 左侧的按钮）。
+
+➤ 在 **Custom Class** 下，键入 **AboutViewController**。
+
+<div align="center"><img alt="The About screen 的 Identity inspector" src="http://imgur.com/bctNvv0.png"/></div><center>The About screen 的 Identity inspector</center>
+
+<br>
+
+输入前几个字符后，Xcode 会自动完成此操作。如果没有，请仔细检查是否确实选择了 View Controller，而不是其中的一个 view。（The view controller 也应该有一个蓝色边框，表示它被选中）
+
+现在你应该能够将 Close button 连接到 action method。
+
+➤ 在 outline pane 中，从 **Close** button 按住 Ctrl 向左拖动到 **About view Controller**。这应该是老一套了。弹出菜单现在有 close action 的选项（在已发送事件下）。将 button 连接到该 action。
+
+➤ 再次运行应用程序。你现在应该可以从 About 屏幕返回。
+
+恭喜！这完成了游戏。所有的功能完备了——我可以保证——没有 bugs，以破坏乐趣。
+
+但你必须承认游戏仍然看起来不是很好。如果就以当前形式你把它放在 App Store 上，我确定不会有很多人会兴奋的下载它。幸运的是，iOS 让你能够非常容易创建好看的应用程序，所以让我们给 Bull's Eye 一个改造。
+
+你可以在教程的源代码文件夹中的 **06 - About Screen** 下找到应用程序的项目文件。
+
+##使它看起来美观
+
+在 landscape 模式中的应用程序不显示 iPhone 状态栏，除非你告诉他们。这是我们制作的一个很棒的应用程序。游戏需要更身临其境的体验，状态栏应该隐藏起来。
+
+在 iOS 7 及以前版本中，状态栏不会自动消失在 landscape 模式下，本教程的早期版本包括如何从应用程序中删除状态栏的冗长的说明。
+
+即使这不再需要了，仍然有一些事情你可以做，以改善 Bull's Eye 处理状态栏的方式。
+
+首先，你将从 storyboard 中删除状态栏。
+
+➤ 打开 **Main.storyboard** 并选择 **View Controller**。 转到 **Attributes**
+
+**inspector** 并在 **Simulated Metrics** 下将 **Status Bar**（状态栏）设置为 **None**（无）。
+
+这会从 storyboard 中删除状态栏（你应该会看到电池图标从两个 scenes 的右上角消失）。
+
+<div align="center"><img alt="从 view controller 中删除状态栏" src="http://imgur.com/REb6MTo.png"/></div><center>从 view controller 中删除状态栏</center>
+
+<br>
+
+此设置不会影响应用运行时发生的情况。这就是为什么这一部分被标记为 **Simulated Metrics**。Interface Builder 只是假设有一个状态栏作为视觉设计辅助，所以你可以看到你的屏幕设计看起来有一个状态栏在顶部。
+
+尝试启用一些其他 simulated 选项，然后运行应用程序; 你会看到它不会产生影响。
+
+要永久删除状态栏的最后一步是更改应用程序的配置。
+
+➤ 转到 **Project Settings** 屏幕，向下滚动到 **Deployment Info**。 在 **Status Bar Style** 下，选中 **Hide status bar** 选项。
+
+这也将在应用程序启动期间隐藏状态栏。
+
+<div align="center"><img alt="应用程式启动时隐藏状态栏" src="http://imgur.com/QYU14H9.png"/></div><center>应用程式启动时隐藏状态栏</center>
+
+<br>
+
+在应用程序启动时隐藏状态栏是个好主意。操作系统需要几秒钟时间将应用程序加载到内存并启动它，在此期间，状态栏保持可见，除非您使用此选项隐藏它。
+
+这只是一个小细节，但一个平庸的应用程序和一个伟大的应用程序的区别是，伟大的应用程序做的所有的小细节是正确的。
+
+➤ 就是这样。运行应用程序，您会看到状态栏是历史记录。
+
+**Info.plist**
+
+项目设置屏幕中的大多数选项（例如支持的设备方向以及状态栏在启动期间是否可见）都存储在应用程序的 Info.plist 文件中。
+
+Info.plist 是应用程序包内的一个配置文件，它告诉 iOS 应用程序的行为方式。它还描述了应用程序的某些特征，真正适合其他任何地方，如其版本号。
+
+使用以前版本的 Xcode，你经常不得不手动编辑 Info.plist，但是使用 Xcode 8 这就不再需要了。你可以直接从 Project Settings 中进行大部分更改。
+
+但是，了解一下 Info.plist 存在以及它是什么样子是没有坏处得。
+
+➤ 转到 **Project navigator** 并选择名为 Info.plist 的文件以查看其内容。
+
+<div align="center"><img alt="" src="http://imgur.com/fZ8ABUB.png"/></div>
+
+<br>
+
+The Info.plist 文件只是配置选项及其值的列表。大多数这些可能对你没有意义，但是没关系——他们也不总是对我有意义。
+
+请注意，选项 **Status bar is initially hidden**（状态栏最初是隐藏的）。它的值为 YES。这是你刚才更改的选项。
+
+###调整图形
+
+摆脱状态栏只是第一步。我们想从这里：
+
+<div align="center"><img alt="打哈欠..." src="http://imgur.com/P1WNQay.png"/></div><center>打哈欠...</center>
+
+<br>
+
+得到到更像这样的东西：
+
+<div align="center"><img alt="Cool :-)" src="http://imgur.com/0DK4egq.png"/></div><center>Cool :-)</center>
+
+<br>
+
+实际 controls 不改变。你只需使用图像来调整外观，并且还可以调整 color 和字体。
+
+你可以在 background，button，甚至 slider 上放置图像，以自定义其外观。图片应为 PNG 格式。
+
+如果你是画图白痴，那么不用担心，我已经为你提供了一套图像。但如果你有疯狂的 Photoshop 技术，那么一切手段继续前进，设计自己的图标。
+
+本教程自带的 Resources 文件夹包含一个名为 Images 的子文件夹。你将首先将这些图像导入 Xcode 项目。
+
+➤ 在 **Project navigator**，找到 **Assets.xcassets** 并单击它。
+
+这是应用程序所谓的 asset 目录，它包含应用程序所有的图像。现在，它是空的。其唯一的内容是应用程序图标的占位符，拟很快就会添加。
+
+<div align="center"><img alt="The asset 目录最初为空的" src="http://imgur.com/VW1yic5.png"/></div><center>The asset 目录最初为空的</center>
+
+<br>
+
+➤ 在窗格底部有一个 + 按钮。单击它，然后选择 **Import...**（导入）选项。
+
+<div align="center"><img alt="选择 Import 将现有图像放入 asset 目录" src="http://imgur.com/hImLVun.png"/></div><center>选择 Import 将现有图像放入 asset 目录</center>
+
+<br>
+
+Xcode 显示文件选择器。从本教程的资源中选择 Images 文件夹，然后按 ⌘ + A 选择此文件夹中的所有文件。
+
+<div align="center"><img alt="选择要导入的图像" src="http://imgur.com/t9N4Cxe.png"/></div><center>选择要导入的图像</center>
+
+<br>
+
+单击 **Open**，Xcode 将该文件夹中的所有图像文件复制到 asset 目录中：
+
+<div align="center"><img alt="图像现在位于 asset 目录中" src="http://imgur.com/j7cR7ea.png"/></div><center>图像现在位于 asset 目录中</center>
+
+<br>
+
+如果 Xcode 添加了一个名为 “Images” 的文件夹，而不是单个图像文件，则再次尝试，这时请确保在单击打开之前选择 Images 文件夹中的文件而不是文件夹本身。
+
+**1x, 2x 和 3x 显示**
+
+目前，asset 目录中设置的每个图像只有一个用于 “2x” 图像的插槽，但你也可以指定 1x 和 3x 图像。拥有不同大小的同一图像的多个版本，可让你的应用程序支持现有的各种 iPhone 和 iPad 显示器。
+
+**1x** 是用于低分辨率屏幕，具有大的，块状像素的。实际上没有低分辨率的设备，可以运行 iOS 10——他们太老了，所以你不可能再遇到许多 1x 图像了。1x 只是一个问题，仅当你仍然需要设计一个支持 iOS 9 或甚至 iOS 8 的应用程序。
+
+**2x** 是用于高分辨率视网膜屏幕。这涵盖了大多数现代 iPhone，iPod touch 和 iPad。视网膜图像是低分辨率图像的两倍，因此是 2x。你刚刚导入的图片为 2x 图片。
+
+**3x** 是为超高分辨率的 Retina 高清屏幕的 iPhone 6s Plus 和 7 Plus 设计的。如果你希望你的应用程序在这些顶级的 iPhone 模型上有超清晰的图像，那么你可以将它们放入 asset 目录中的 “3x” 插槽。
+
+图像文件有一个特殊的命名约定。如果文件名以 @2x 或 @3x 结尾，那么它被认为是 Retina 或 Retina HD 版本。低分辨率 1x 图像没有特殊名称（你不必写 @1x）。
+
+##放置壁纸
+
+让我们开始将白色 background 变成一些更奇特。
+
+➤ 打开 **Main.storyboard**。进入对 **Object Library** 并找到一个 Image View。（提示：如果你在 Object Library 底部的搜索框中键入 “image”，则会快速过滤掉所有其他 views）。
+
+<div align="center"><img alt="The Object Library 中的 Image View control" src="http://imgur.com/REisqla.png"/></div><center>The Object Library 中的 Image View control</center>
+
+<br>
+
+➤ 拖动在现有用户界面的顶部的 image view。只要它在 Bull’s Eye View Controller 内部，你把它放在哪里并不重要。
+
+<div align="center"><img alt="拖动 Image View 到 view controller" src="http://imgur.com/2neuqvF.png"/></div><center>拖动 Image View 到 view controller</center>
+
+<br>
+
+➤ 在仍选择 image view 的情况下，转到 **Size inspector**（大小检查器）（即 Attributes inspector 旁边的那个），并将 X 和 Y 设置为 0，将 Width（宽度）设置为 568，将 Height（高度）设置为 320。
+
+这将使 image view 覆盖整个屏幕。
+
+<div align="center"><img alt="The Image View的 Size inspector 设置" src="http://imgur.com/LJV1iC6.png"/></div><center>The Image View的 Size inspector 设置</center>
+
+<br>
+
+➤ 转到 image view 的 **Attributes inspector**。在顶部有一个名为 Image 的选项。单击向下箭头，然后从列表中选择 **Background**。
+这将把来自 asset 目录的 “Background” 组的图像放入 image view。
+
+<div align="center"><img alt="在 Image View 上设置 background 图像" src="http://imgur.com/eLAITVS.png"/></div><center>在 Image View 上设置 background 图像</center>
+
+<br>
+
+现在只有一个问题：图像现在盖住了所有其他的 controls。有一个简单的解决办法; 你必须将 image view 移动到其他 views 的后面。
+
+➤ 在 Xcode 菜单栏中屏幕顶部的 **Editor** 菜单中，选择 **Arrange**（排列）**→ Send to Back**（发回）。
+
+有时 Xcode 给刁难你（它仍然有几个 bugs）。如果是，请尝试取消选择 Image View，然后再次选择它。 现在 Send to Back 菜单项应该可用。（译者注：因为有时候它是灰色的不可选中）
+
+或者，在 outline pane 中拾取 image view，并将其拖动到顶部，恰好在 View 下方，以完成相同的操作。
+
+你的界面现在应该如下所示：
+
+<div align="center"><img alt="游戏有了新的 background 图像" src="http://imgur.com/FioXpDV.png"/></div><center>游戏有了新的 background 图像</center>
+
+<br>
+
+➤ 对 **About View Controller**。添加一个 Image View 并给它相同的 “Background” 图像。
+
+在 background 上苦下一番功夫后。运行应用程序，惊讶一下吧！
+
+##更改 labels
+
+因为 background 图像非常暗，黑色 labels 变得难以阅读。幸运的是，Interface Builder 可以改变它们的 color，当你使用它时，你也可以改变字体。
+
+➤ 仍然在 storyboard 中，选择顶部的 label，打开 **Attributes inspector** 并单击 **Color** 项目。
+
+<div align="center"><img alt="设置 label 上的文字的 color" src="http://imgur.com/yLxRXXq.png"/></div><center>设置 label 上的文字的 color</center>
+
+<br>
+
+这将打开 Color Picker（颜色选择器）。它有几种选择 color 的方法。我喜欢 sliders（第二个选项卡）。如果您看到的是灰度 slider，请从顶部的选择框中选择 RGB Sliders。（译者注：哈哈，又是我们的老朋友 Slider，可见他在 UI 中多么常见）
+
+➤ 选择 pure white color（纯白色），Red（红色）：255，Green（绿色）：255，Blue（蓝色）：255，Opacity（不透明度）：100％。
+
+➤ 从 Attributes inspector 中单击 Shadow（阴影）项。这允许你向 label 添加微妙的 shadow。默认情况下，此颜色是透明的（也称为 “Clear Color”），因此你不会看到 shadow。使用 Color Picker，选择 pure black color that is half transparent（半透明的纯黑色），Red：0，Green：0，Blue：0，Opacity：50％。
+
+注意：有时当你更改 Color 或 Shadow 属性时，view 的 background color 也会更改。这是 Xcode 中的一个 bug。当这种情况发生时，把它重置为 Clear Color。
+
+➤ 将 **Shadow Offset**（阴影偏移）更改为 Horizontal（水平）：0，Vertical（垂直）：1。这将 shadow 置于 label 下方。
+
+你选择 shadow 是非常微妙的。如果你不确定它实际上是否可见，请将 vertical offset（垂直偏移）在 1 和 0 之间切换几次。仔细观察，你应该能看到差别。正如我所说，这是非常微妙。
+
+➤ 单击 Font（字体）属性的 [T] 图标。这将打开 Font Picker（字体选择器）。
+
+默认情况下，选择系统字体。这使用用户设备的标准字体，在 iOS 10 是 San Francisco。这是一个很好的字体，但我们想要一些能使这个游戏更刺激的。
+
+<div align="center"><img alt="带有 System font 的 Font picker（带有系统字体的字体选择器）" src="http://imgur.com/1APBlzq.png"/></div><center>带有 System font 的 Font picker（带有系统字体的字体选择器）</center>
+
+<br>
+
+➤ 选择 **Font: Custom**。这启用了 Family 区域。选择 **Family: Arial Rounded MT Bold**。将大小设置为16。
+
+<div align="center"><img alt="设置 label 的 font" src="http://imgur.com/89DXzr0.png"/></div><center>设置 label 的 font</center>
+
+<br>
+
+➤ The label 还具有属性 **Autoshrink**（自动缩放）。确保将其设置为 **Fixed Font Size**（固定字体大小）。
+
+如果启用，Autoshrink 将动态更改 font 的大小，如果文本大于 label。这在某些应用程序是有用的，但不是在这一个。相反，你将更改 label 的大小以适应文本，而不是其他方式。（译者注：就是你输入很多字的话会拉长标签控件，使之变形，不再美观）
+
+➤ 选择 label 后，在键盘上按 ⌘=，或从 **Editor** 菜单中选择 Size to Fit Content（适应内容大小）。
+
+（如果 Size to Fit Content 菜单项是被禁用状态（灰色不可选择），则取消选择 label 并再次选择它。有时 Xcode 会对选择的是什么东西感到困惑。这破工具）
+
+The label 现在将变得略大或略小，以便它紧贴文本。如果在更改 font 时文本被截断，现在它将再次完全显示。
+
+你不必逐一设置其他 label 的这些属性；这将是一个庞大的工程。你可以通过选择多个 label，然后将这些更改应用于全部选择来快速搞定这件事。
+

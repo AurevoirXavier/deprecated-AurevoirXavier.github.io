@@ -1,8 +1,8 @@
 ---
 layout: post
 title: "iOS Apprentice 1 Getting Started v5.0 （译）"
-date:   2017-03-20
-excerpt: "译至 100 页"
+date:   2017-03-21
+excerpt: "译至 102 页"
 tags: [program, iOS, translate]
 comments: true
 ---
@@ -499,11 +499,11 @@ Xcode 窗口的左侧被命名为 **Navigator Area**（导航区域）。顶部�
 
 这是你的应用程序的 storyboard（故事板）。storyboard 包含应用程序所有的屏幕设计，并显示应用程序是如何从一个屏幕到另一个屏幕，通过一个大箭头。
 
-目前，storyboard 只包含一个屏幕或场景，由 Interface Builder Canvas（画布）中间的一个矩形表示。
+目前，storyboard 只包含一个屏幕或 scene（场景），由 Interface Builder Canvas（画布）中间的一个矩形表示。
 
 <code class="highlighter-rouge"><strong>注意：</strong>如果你没有看到标记为 “View Controller”（视图控制器） 的矩形，眼前只有一个空白的 Canvas，则使用鼠标或触控板滚动 storyboard。相信我，它一定在某处！还要确保你的 Xcode 窗口足够大。因为 Interface Builder 占用了很多空间...</code>
 
-该 scene（场景）目前有一部 iPhone 6s 或 iPhone 7 的大小。为了保持清爽简洁，你会首先为 iPhone SE 设计一个稍小的屏幕的应用程序。稍后你将会让这款应用程序也是配更大的 iPhone 6s，7 和 Plus。
+该 scene 目前有一部 iPhone 6s 或 iPhone 7 的大小。为了保持清爽简洁，你会首先为 iPhone SE 设计一个稍小的屏幕的应用程序。稍后你将会让这款应用程序也是配更大的 iPhone 6s，7 和 Plus。
 
 ➤ 在 Interface Builder 窗口底部，单击 **View as**（查看为）**：iPhone 6s** 以打开打开以下面板：
 
@@ -1041,7 +1041,7 @@ Inspector 区域显示当前选择的项目的各个方面。例如，Attributes
 
 <br>
 
-完成后，你的场景中应该有 12 个用户界面元素：一个 slider，三个 buttons 和一大堆 labels。很棒。
+完成后，你的 scene 中应该有 12 个用户界面元素：一个 slider，三个 buttons 和一大堆 labels。很棒。
 
 ➤ 运行应用程序并玩上一分钟。这些 controls 并没有做太多的事情（除了应该弹出警报的那个 button），但你至少可以拖动 slider。
 
@@ -1067,7 +1067,7 @@ Inspector 区域显示当前选择的项目的各个方面。例如，Attributes
 
 ➤ 其次，转到 storyboard，按住 Ctrl 拖动 slider 到 Outline pane 中的 View Controller。放开鼠标按钮，从弹出窗口中选择 **sliderMoved: **。 完成！
 
-只是为了刷新内存，Outline pane 位于 Interface Builder canvas 的左侧。它显示 storyboard 的 view 的层次结构。在这里你可以看到 View Controller 包含一个跨度有场景大小般的白色视图（简称为View），它又包含你添加的 sub-views（子视图）：buttons 和 labels。
+只是为了刷新内存，Outline pane 位于 Interface Builder canvas 的左侧。它显示 storyboard 的 view 的层次结构。在这里你可以看到 View Controller 包含一个跨度有 scene 大小般的白色视图（简称为View），它又包含你添加的 sub-views（子视图）：buttons 和 labels。
 
 <div align="center"><img alt="Outline pane 显示 storyboard 的 view 的层次结构" src="http://imgur.com/rmeKAL7.png"/></div><center>Outline pane 显示 storyboard 的 view 的层次结构</center>
 
@@ -2845,7 +2845,7 @@ Xcode 将创建一个新文件并将其添加到你的项目。你可能已经�
 
 要设计这个新的 view controller，你需要访问 Interface Builder。
 
-➤ 打开 **Main.storyboard**。没有任何表示关于 view controller 的场景，因此你必须先添加它。
+➤ 打开 **Main.storyboard**。没有任何表示关于 view controller 的 scene，因此你必须先添加它。
 
 ➤ 从 **Object Librart** 中，选择 **View Controller** 并将其拖动到 main View Controller 右侧的 canvans 中。
 
@@ -2924,3 +2924,36 @@ Your goal is to place the slider as close as possible to the target value. The c
 The About 屏幕应该显示一个整洁的动画。很好，这似乎运转正常。
 
 然而，这里有一个明显的缺点：点击 Close button 似乎没有效果。一旦用户进入 About 屏幕，她就永远也离不开了... 那听起来不像是友好的用户界面设计。
+
+Segues 的问题是，只有一种方式。要关闭此屏幕，你必须将一些代码连接到 Close button。作为一个崭露头角的 iOS 开发者，你已经知道如何做：使用 action method！
+
+这次你将添加 action method 到 AboutViewController 而不是 ViewController，因为 Close button 是 About 屏幕的一部分，而不是主游戏屏幕。
+
+➤ 打开 **AboutViewController.swift** 并将其内容替换为以下内容：
+
+```swift
+import UIKit
+
+class AboutViewController: UIViewController {
+
+  @IBAction func close() {
+    dismiss(animated: true, completion: nil)
+  }
+}
+```
+
+这个代码在 close() action method 里面告诉 UIKit 用动画关闭 About 屏幕。
+
+如果你说，dismiss(animated: false, ...)，那么将没有页面翻转这个效果，主屏幕会立即重新出现。从用户体验的角度来看，通常最好使用微妙的动画来显示从一个屏幕到另一个屏幕的过渡。
+
+别忘了，你还有一个最后一步，连接 Close button Touch Up Inside 事件到这个新的关 close action。
+
+➤ 打开 storyboard 并按住 Ctr l键从 **Close** button 拖动到 About scene 的 View Controller。嗯，奇怪，关闭动作应该列在这个弹出窗口，但没有。相反，你看到的弹出窗口，和之前你做 segue 时相同：
+
+<div align="center"><img alt="The close action 不会在弹出窗口中列出" src="http://imgur.com/iDWveR6.png"/></div><center>The close action 不会在弹出窗口中列出</center>
+
+<br>
+
+**练习：**奖励积分，如果你能发现错误。这是一个非常常见的，令人沮丧的！——错误。
+
+问题是，storyboard 中的这个 scene 还不知道它自己代表 AboutViewController。

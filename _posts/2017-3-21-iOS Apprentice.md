@@ -21,15 +21,21 @@ comments: true
 
 <center><strong>表一</strong></center>
 
-<center><strong>
+<center><table><strong>
 
-Storyboard 故事版		Interface Builder 界面构造器
+<tr>
 
-<br>
+<td>Storyboard 故事版		Interface Builder 界面构造器</td>
 
-Table views 表视图		Navigation controller 导航控制器
+</tr>
 
-</strong></center>
+<tr>
+
+<td>Table views 表视图		Navigation controller 导航控制器</td>
+
+</tr>
+
+</strong></table></center>
 
 | Storyboard                  | 故事板          |      | Interface Builder          | 界面构造器      |
 | :-------------------------- | :----------- | :--: | :------------------------- | :--------- |

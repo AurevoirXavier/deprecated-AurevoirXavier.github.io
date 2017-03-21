@@ -21,6 +21,16 @@ comments: true
 
 <center><strong>表一</strong></center>
 
+<center><strong>
+
+Storyboard 故事版		Interface Builder 界面构造器
+
+<br>
+
+Table views 表视图		Navigation controller 导航控制器
+
+</strong></center>
+
 | Storyboard                  | 故事板          |      | Interface Builder          | 界面构造器      |
 | :-------------------------- | :----------- | :--: | :------------------------- | :--------- |
 | **Table views**             | **表视图**      |      | **Navigation controllers** | **导航控制器**  |
@@ -3338,4 +3348,3 @@ let trackRightResizable =
                  trackRightImage.resizableImage(withCapInsets: insets)
 slider.setMaximumTrackImage(trackRightResizable, for: .normal)
 ```
-

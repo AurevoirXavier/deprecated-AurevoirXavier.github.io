@@ -2,7 +2,7 @@
 layout: post
 title: "iOS Apprentice 1 Getting Started v5.0 （译）"
 date:   2017-03-21
-excerpt: "译至 112 页"
+excerpt: "译至 120 页"
 tags: [program, iOS, translate]
 comments: true
 ---
@@ -3169,7 +3169,7 @@ Xcode 显示文件选择器。从本教程的资源中选择 Images 文件夹，
 
 ➤ 选择 pure white color（纯白色），Red（红色）：255，Green（绿色）：255，Blue（蓝色）：255，Opacity（不透明度）：100％。
 
-➤ 从 Attributes inspector 中单击 Shadow（阴影）项。这允许你向 label 添加微妙的 shadow。默认情况下，此颜色是透明的（也称为 “Clear Color”），因此你不会看到 shadow。使用 Color Picker，选择 pure black color that is half transparent（半透明的纯黑色），Red：0，Green：0，Blue：0，Opacity：50％。
+➤ 从 Attributes inspector 中单击 Shadow（阴影）项。这允许你向 label 添加微妙的 shadow。默认情况下，此 color 是透明的（也称为 “Clear Color”），因此你不会看到 shadow。使用 Color Picker，选择 pure black color that is half transparent（半透明的纯黑色），Red：0，Green：0，Blue：0，Opacity：50％。
 
 注意：有时当你更改 Color 或 Shadow 属性时，view 的 background color 也会更改。这是 Xcode 中的一个 bug。当这种情况发生时，把它重置为 Clear Color。
 
@@ -3185,7 +3185,7 @@ Xcode 显示文件选择器。从本教程的资源中选择 Images 文件夹，
 
 <br>
 
-➤ 选择 **Font: Custom**。这启用了 Family 区域。选择 **Family: Arial Rounded MT Bold**。将大小设置为16。
+➤ 选择 **Font: Custom**。这启用了 Family 区域。选择 **Family: Arial Rounded MT Bold**。将 size 设置为16。
 
 <div align="center"><img alt="设置 label 的 font" src="http://imgur.com/89DXzr0.png"/></div><center>设置 label 的 font</center>
 
@@ -3193,7 +3193,7 @@ Xcode 显示文件选择器。从本教程的资源中选择 Images 文件夹，
 
 ➤ The label 还具有属性 **Autoshrink**（自动缩放）。确保将其设置为 **Fixed Font Size**（固定字体大小）。
 
-如果启用，Autoshrink 将动态更改 font 的大小，如果文本大于 label。这在某些应用程序是有用的，但不是在这一个。相反，你将更改 label 的大小以适应文本，而不是其他方式。（译者注：就是你输入很多字的话会拉长标签控件，使之变形，不再美观）
+如果启用，Autoshrink 将动态更改 font 的 size，如果文本大于 label。这在某些应用程序是有用的，但不是在这一个。相反，你将更改 label 的 size 以适应文本，而不是其他方式。（译者注：就是你输入很多字的话会拉长标签控件，使之变形，不再美观）
 
 ➤ 选择 label 后，在键盘上按 ⌘=，或从 **Editor** 菜单中选择 Size to Fit Content（适应内容大小）。
 
@@ -3202,4 +3202,140 @@ Xcode 显示文件选择器。从本教程的资源中选择 Images 文件夹，
 The label 现在将变得略大或略小，以便它紧贴文本。如果在更改 font 时文本被截断，现在它将再次完全显示。
 
 你不必逐一设置其他 label 的这些属性；这将是一个庞大的工程。你可以通过选择多个 label，然后将这些更改应用于全部选择来快速搞定这件事。
+
+➤ 单击 **Score:** label 以将其选中。按住 ⌘，然后点击 **Round:** label。 现在两个 labels 都将被选中。 重复上面对这些 labels 的操作：
+
+- 将 Color 设置为 pure white，100％ opaque。
+- 将 Shadow 设置为 pure black，50％ opaque。
+- 将 Shadow Offset 设置为 0 horizontal，1 vertical。
+- 将 Font 设置为 Arial Rounded MT Bold，size 为 16。
+- 确保 Autoshrink 设置为 Fixed Font Size。
+
+如你所见，在我的 storyboard 中，文本不再适合于 Score 和 Round labels：
+
+<div align="center"><img alt="文字太大，无法适合 Score 和 Round labels 中的所有文本 labels" src="http://imgur.com/q3moWjH.png"/></div><center>文字太大，无法适合 Score 和 Round labels 中的所有文本 labels</center>
+
+<br>
+
+你可以通过拖动边框来增大 labels 的大小，也可以手动调整大小，也可以使用 **Size to Fit Content** 选项（⌘=）。 我喜欢后者，因为它工作量更少。
+
+提示：Xcode 足够聪明，记住你最近使用的 Color。而不总是进入 Color Picker，你可以简单地从 Recently Used Colors（最近使用的颜色）菜单中选择其中一种。
+
+点击小箭头，弹出菜单：
+
+<div align="center"><img alt="快速访问最近使用的 colors 和几个方便的预设¨ labels" src="http://imgur.com/bdlckmC.png"/></div><center>快速访问最近使用的 colors 和几个方便的预设</center>
+
+<br>
+
+**练习：**你还下几个 labels。重复你刚才做的为其他 labels。它们应该都变成白色，具有相同的 shadow 和具有相同的 font。但是，slider（1 和 100）两侧的两个 labels 的 font size 为 14，而其他 labels（目标值，分数和回合数的 labels）的 font size 设置为 20，让它们变得显眼。
+
+因为你改变了一些 labels 的尺寸，你仔细构造布局可能已经变得有些乱了。你可能想要清理一下。
+
+在这一点上，我的屏幕看起来像这样：
+
+<div align="center"><img alt="设计 labels 后，storyboard 看起来像什么" src="http://imgur.com/ccUWb9A.png"/></div><center>设计 labels 后，storyboard 看起来像什么</center>
+
+<br>
+
+好吧，它现在开始看起来有那么点像模像样了。顺便说一下，随时都可以尝试更改 fonts 和 colors。如果你想让它看起来完全不同，那么久去做吧。这是你的应用程序！
+
+##The buttons
+
+改变 button 的外观工作方式与上面的步骤非常相似。
+
+➤ 选择 **Hit Me** button。在 **Size inspector** 中将 Width 设置为 100，Height 设置为 37。
+
+➤ 将 button 的位置居中在 background image 的内圆上。
+
+➤ 转到 **Attributes inspector**。将 **Type** 从 System 更改为 **Custom**（自定义））。
+
+一个 “system” button 只有一个 abels，没有边框。通过使它成为一个自定义 button，你用可以用任何方式，变吃成你想要的样式。
+
+➤ 按 **Background** 字段上的箭头，然后从列表中选择 **Button-Normal**。
+
+➤ 将 **Font** 设置为 **Arial Rounded MT Bold**，size 为 20。
+
+➤ 将 **Text Color**（文本颜色）设置为 Red：96，Green：30，Blue：0，Opacity：100％。这是一个暗棕褐色。
+
+➤ 将 **Shadow Color** 设置为 pure white，50％ opacity。The shadow offset 应为 Width 0，Height 1（由于某种原因，它们在此处不称为 horizontal 和 vertical）。
+
+<code class="highlighter-rouge"><strong>混合</strong></code>
+
+`将 opacity 设置为小于 100％ 的任何值将使颜色稍微透明（不透明度为 0％ 的透明度）。部分透明度使 color 与 background 混合，使其看起来更柔和。`
+
+`尝试将 shadow color 设置为 100％ opaque pure white，然后观察区别。`
+
+这将在 “default”（默认）状态下完成 Hit Me button 的设置：
+
+<div align="center"><img alt="在 default 状态下 Hit Me button 的 attributes" src="http://imgur.com/zdYjS8N.png"/></div><center>在 default 状态下 Hit Me button 的 attributes</center>
+
+<br>
+
+Buttons 可以有多个状态。当你点击一个 button 并按住它，它应该显示 “pressed down”（按下），让你知道，当你举起你的手指，该 button 将被激活。这被称为 *highlighted* 状态，并且是用户的重要的视觉线索。
+
+➤ 在保持选择 button 的情况下，单 **State Config**（状态配置）设置，然后从菜单中选择 **Highlighted**。现在，此部分中的 attributes 反映 button 的 highlighted 状态。
+
+➤ 在 **Background** 字段中，选择 **Button-Highlighted**。
+
+➤ 确保 highlighted 的 **Text Color** 与以前的 color 相同（Red 96，Green 30，Blue 0 或从 Recently Used Colors 菜单中选择）。再次将 **Shadow Color** 更改为 half-transparent white（半透明白色）。
+
+➤ 检查 **Reverses On Highlight**（高亮反转）选项。这将使得当用户轻触 button 时 label 的外观看起来像是被按下。
+
+你也可以改变其他属性，但不要太过分了。The highlighted 效果不应该太耀眼。
+
+<div align="center"><img alt="The attributes for the highlighted Hit Me button" src="http://imgur.com/JS3gz9E.png"/></div><center>The attributes for the highlighted Hit Me button</center>
+
+<br>
+
+要在 Interface Builder 中测试 button 的 highlighted 外观，你可以切换 **Control** 部分中的 **Highlighted** 显示框，但是测试完记得切换回去，否则当显示屏幕时 button 看起来就像是被按下去一样。
+
+这是为了 Hit Me button。对 Start OVer button 进行样式设置非常相似，只是将其标题文本替换为图标。
+
+➤选择 **Start Over** button 并更改以下属性：
+
+- 将 Type 设置为 Custom。
+- 从 button 中删除文本 “Start Over”。
+- 对于 Image，选择 **StartOverIcon**。
+- 对于 Background，选择 **SmallButton**。
+- 将 Width和 Height 设置为 32。
+
+你不会在此 button 上设置 highlighted 状态，不过要让 UIKit 处理这个。如果你没有为 highlighted 的状态指定不同的图像，UIKit 将自动使 button 变暗以指示它已哦按下。
+
+➤ 对 **(i)** button 进行相同的更改，但此次为 Image 选择 **InfoButton**。
+
+用户界面几乎完成。只剩下 slider 还没有完成...
+
+<div align="center"><img alt="即将完成" src="http://imgur.com/FsYqo4T.png"/></div><center>即将完成</center>
+
+<br>
+
+##The slider
+
+不幸的是，你只能在 Interface Builder 中自定义滑块的一小部分属性。对于这个游戏需要的更高级的定制——把你自己的图像放在 slider 和轨道上——你必须靠编写源代码来实现。
+你在 Interface Builder 中完成的所有操作都可以在代码中完成。例如，设置 button 上的颜色可以通过向 button 发送 setTitleColor() 消息来完成。
+
+但是，我发现在可视化编辑器（如Interface Builder）中设计要比编写等效的源代码容易得多。但对于 slider 你没有办法，因为官方没有在可视化编辑器中为 slider 提供很多可以自定义的属性。
+
+➤ 转到 **ViewController.swift**，并将以下内容添加到 viewDidLoad()：
+
+```swift
+let thumbImageNormal = UIImage(named: "SliderThumb-Normal")!
+slider.setThumbImage(thumbImageNormal, for: .normal)
+
+let thumbImageHighlighted = UIImage(named: "SliderThumb-Highlighted")!
+slider.setThumbImage(thumbImageHighlighted, for: .highlighted)
+
+let insets = UIEdgeInsets(top: 0, left: 14, bottom: 0, right: 14)
+
+let trackLeftImage = UIImage(named: "SliderTrackLeft")!
+
+let trackLeftResizable =
+                 trackLeftImage.resizableImage(withCapInsets: insets)
+slider.setMinimumTrackImage(trackLeftResizable, for: .normal)
+
+let trackRightImage = UIImage(named: "SliderTrackRight")!
+let trackRightResizable =
+                 trackRightImage.resizableImage(withCapInsets: insets)
+slider.setMaximumTrackImage(trackRightResizable, for: .normal)
+```
 

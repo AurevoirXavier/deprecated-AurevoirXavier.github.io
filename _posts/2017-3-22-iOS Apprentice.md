@@ -1,8 +1,8 @@
 ---
 layout: post
 title: "iOS Apprentice 1 Getting Started v5.0 （译）"
-date:   2017-03-21
-excerpt: "译至 120 页"
+date:   2017-03-22
+excerpt: "译至 125 页"
 tags: [program, iOS, translate]
 comments: true
 ---
@@ -49,39 +49,39 @@ comments: true
 
 <center><strong>软件开发专有名词</strong></center>
 
-| SDK Software Development Kit | Variable              |
-| :--------------------------- | :-------------------- |
-| **软件开发工具包**                  | **变量**                |
-| **Object**                   | **Method**            |
-| **对象**                       | **方法**                |
-| **Object-oriented**          | **Slider**            |
-| **面向对象**                     | **滑块**                |
-| **Button**                   | **Alert**             |
-| **按钮**                       | **提醒**                |
-| **Label**                    | **Canvas**            |
-| **标签**                       | **画布**                |
-| **Action**                   | **Framework**         |
-| **操作；动作**                    | **框架**                |
-| **UI**                       | **Data**              |
-| **用户界面**                     | **数据**                |
-| **Function**                 | **Functionality**     |
-| **函数**                       | **功能**                |
-| **Type**                     | **Debug**             |
-| **类型**                       | **调试**                |
-| **String**                   | **Data type**         |
-| **字符串**                      | **数据类型**              |
-| **Assignment**               | **Bug**               |
-| **赋值**                       | **漏洞**                |
-| **Global**                   | **Instance**          |
-| **全局**                       | **实例**                |
-| **Local**                    | **Instance variable** |
-| **本地**                       | **实例变量**              |
-| **Algorithm**                | **Constant**          |
-| **算法**                       | **常量**                |
-| **Width**                    | **Height**            |
-| **宽度**                       | **高度**                |
-| **Background**               | **Color**             |
-| **背景**                       | **颜色**                |
+| Software Development Kit | Variable              |
+| :----------------------- | :-------------------- |
+| **软件开发工具包**              | **变量**                |
+| **Object**               | **Method**            |
+| **对象**                   | **方法**                |
+| **Object-oriented**      | **Slider**            |
+| **面向对象**                 | **滑块**                |
+| **Button**               | **Alert**             |
+| **按钮**                   | **提醒**                |
+| **Label**                | **Canvas**            |
+| **标签**                   | **画布**                |
+| **Action**               | **Framework**         |
+| **操作；动作**                | **框架**                |
+| **UI**                   | **Data**              |
+| **用户界面**                 | **数据**                |
+| **Function**             | **Functionality**     |
+| **函数**                   | **功能**                |
+| **Type**                 | **Debug**             |
+| **类型**                   | **调试**                |
+| **String**               | **Data type**         |
+| **字符串**                  | **数据类型**              |
+| **Assignment**           | **Bug**               |
+| **赋值**                   | **漏洞**                |
+| **Global**               | **Instance**          |
+| **全局**                   | **实例**                |
+| **Local**                | **Instance variable** |
+| **本地**                   | **实例变量**              |
+| **Algorithm**            | **Constant**          |
+| **算法**                   | **常量**                |
+| **Width**                | **Height**            |
+| **宽度**                   | **高度**                |
+| **Background**           | **Color**             |
+| **背景**                   | **颜色**                |
 
 ---
 
@@ -665,7 +665,7 @@ class ViewController: UIViewController {
 
 （如果你不想按住 Ctrl，你也可以右键单击和拖动，但在开始拖动之前，请不要放开鼠标按键。）
 
-<div align="center"><img alt="从 button 开始按住 ctrl 并拖动到 View Controller" src="http://imgur.com/GXEDkR6.png"/></div><center>从 button 开始按住 ctrl 并拖动到 View Controller</center>
+<div align="center"><img alt="从 button 开始按住 Ctrl 并拖动到 View Controller" src="http://imgur.com/GXEDkR6.png"/></div><center>从 button 开始按住 Ctrl 并拖动到 View Controller</center>
 
 <br>
 
@@ -1484,7 +1484,7 @@ Swift 有以下三个可能的范围级别：
 
 不要担心感叹号和 weak 现在。为什么这些是必要的将在下面的教程中解释。现在只需记住一个 variable 的 outlet 需要声明为 @IBOutlet weak var，并在结尾有一个感叹号。（有时候你会看到一个问号，所有这些麻烦的问题会在适当的时候解释）
 
-➤ 打开 storyboard。按住 Ctrl 并单击 slider。不要拖到任何地方只需要：放开鼠标按钮，弹出一个菜单，显示此 slider 的所有连接。（如果你不想按住Ctrl单击，也可以右键单击一次）
+➤ 打开 storyboard。按住 Ctrl 并单击 slider。不要拖到任何地方只需要：放开鼠标按钮，弹出一个菜单，显示此 slider 的所有连接。（如果你不想按住 Ctrl 单击，也可以右键单击一次）
 
 此弹出菜单的工作原理与 Connections inspector 完全相同。我只是想告诉你，它作为一种替代存在。
 
@@ -2345,9 +2345,9 @@ score = score + points
 
 不确定如何连接 outlet？有几种方法可以将用户界面 object 连接到 view controller 的 outlet：
 
-- Ctrl-单击 object 以获取上下文相关的弹出菜单。然后从 New Referencing Outlet 拖到 View Controller（你对 slider 做过同样的事情）。
+- 按住 Ctrl 单击 object 以获取上下文相关的弹出菜单。然后从 New Referencing Outlet 拖到 View Controller（你对 slider 做过同样的事情）。
 - 转到 label 的 Connections Inspector 选项卡。从 New Referencing Outlet 到 View Controller（你对目标 label 做过同样的事情）。
-- Ctrl - 从 View Controller 拖动到 label（现在尝试这个）。 确保你按照这个顺序；从 label 到 view controller的ctrl 拖动将不起作用。
+- 按住 Ctrl 从 View Controller 拖动到 label（现在尝试这个）。 确保你按照这个顺序；从 label 到 view controller 的 Ctrl 拖动将不起作用。
 
 There is more than one way to skin a cat（你总是可以找到不止一种方法来做某事），呃，连接 outlet。（译者注：就是有很多种方法将视图控制器中的对象和你的代码连接起来）
 
@@ -3347,3 +3347,105 @@ let trackRightResizable =
                  trackRightImage.resizableImage(withCapInsets: insets)
 slider.setMaximumTrackImage(trackRightResizable, for: .normal)
 ```
+
+这将在 slider 上设置四个图像：两个用于滑钮，两个用于轨道。
+
+滑钮的工作方式就像一个 button，因此它可以获得正常的，未压制状态的图像，另一个用于高亮被按下的状态。
+
+在滑钮左侧的轨道用绿色和右侧的轨迹用灰色。
+
+➤ 运行应用程序，你必须承认它现在看起来已经很不错了！
+
+<div align="center"><img alt="游戏与定制的 slider 图形" src="http://imgur.com/hABh8CW.png"/></div><center>游戏与定制的 slider 图形</center>
+
+<br>
+
+<code class="highlighter-rouge"><strong>用 .png 还是不用</strong></code>
+
+`如果你记得，导入到 asset 目录中的图像的文件名是 SliderThumb-Normal@2x.png 等等。`
+
+`创建 UIImage object 时，不要使用原始文件名，而是使用 asset 目录中列出的名称，SliderThumb-Normal。`
+
+`这意味着你可以暂停不用 @2x bit.png 文件扩展名。`
+
+提示：Xcode 8 有一个方便的新功能，使它很容易添加图像到你的代码中。而不是写，
+
+```swift
+let thumbImageNormal = UIImage(named: "SliderThumb-Normal")
+```
+
+你现在可以键入：
+
+```swift
+let thumbImageNormal = Sli
+```
+然后 Xcode 的自动补全功能会显示完成文本，对于 Sli 的建议列表，包括任何以这些字母开头的图片。
+
+<div align="center"><img alt="Xcode 自动补全还显示图像" src="http://imgur.com/9DIBcKL.png"/></div><center>Xcode 自动补全还显示图像</center>
+
+<br>
+
+从列表中选择 **SliderThumb-Normal**，你的代码将如下所示：
+
+<div align="center"><img alt="图像现在是你的源代码的一部分" src="http://imgur.com/v2jvH8L.png"/></div><center>图像现在是你的源代码的一部分</center>
+
+<br>
+
+试一试！ 我真的很喜欢它在代码中显示图像的一个小缩略图。
+
+##使用 web view 的 HTML 内容
+
+The About 屏幕依然还有一些工作要做。
+
+**练习：**更改关于屏幕上的 Close button 看起来像 Hit Me button 一样。你现在应该能够自己做到这一点。小菜一碟！如果你卡住了，请参考 Hit Me button 的说明。
+
+➤ 现在选择 **text view**，然后按键盘上的 **Delete** 键。没错，你现在要把它扔掉。
+
+➤ 用 **Web View** 代替原来的位置（与以前一样，你可以在 Object Library 中找到这个 view）。
+
+关于 web view，顾名思义，可以显示 web pages（网页）。所有你需要做的是给它一个网站的URL。The Web view object 名为 UIWebView。
+
+对于这个应用程序，你将使其显示一个来自应用程序包的静态 HTML 页面，所以它不会实际地去连接网络和下载任何东西。
+
+➤ 转到 **Project navigator**，右键单击 **BullsEye** 组（黄色文件夹）。从菜单中，选择 **Add Files to “BullsEye”**...
+
+<div align="center"><img alt="使用右键菜单将现有文件添加到项目中" src="http://imgur.com/Fa2uXdt.png"/></div><center>使用右键菜单将现有文件添加到项目中</center>
+
+<br>
+
+➤ 在 file picker（文件选择器）中，从 Resources（资源）文件夹中选择 **BullsEye.html** 文件。这是一个包含游戏说明的 HTML5 文档。
+
+<div align="center"><img alt="选择要添加的文件" src="http://imgur.com/U2i4dfO.png"/></div><center>选择要添加的文件</center>
+
+<br>
+
+确保选择 **Copy items if needed**（复制项目，如果需要），并且 **Add to targets**（添加到目标）下，在 **BullsEye** 前面有一个复选标记。（如果没有看到这些选项，请点击底部的 Options 按钮）
+
+➤ 按 **Add** 将 HTML 文件添加到项目中。
+
+➤ 在 **AboutViewController.swift** 中，为 web view 添加一个 outlet：
+
+```swift
+class AboutViewController: UIViewController {
+  @IBOutlet weak var webView: UIWebView!
+  ...
+}
+```
+
+➤ 在 storyboard 文件中，将 UIWebView 元素连接到此新 outlet。最简单的方法是按住 Ctrl 从 **About View Controller**（在 Outline pane 中）拖动到 **Web View**。
+
+（如果你反过来，从Web视图到关于View Controller，那么你会连接错误的东西，当你运行应用程序时，Web视图将保持空白。）
+
+➤在AboutViewController.swift中，添加viewDidLoad() 方法：
+
+```swift
+func updateLabels() {
+  targetLabel.text = String(targetValue)
+  scoreLabel.text = String(score)
+}
+```
+
+这里没有新玩意儿。你将 score（即 Int）转换为 String，然后将该 string 赋给 label 的 text 属性。为了响应，label 将重新绘制自己与新的 score。
+
+➤ 运行应用程序，并确认每次点击 button 时，此回合的积分都会添加到总分数 label 中。
+

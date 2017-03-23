@@ -71,7 +71,7 @@ comments: true
 | **String**               | **Data type**         |
 | **字符串**                  | **数据类型**              |
 | **Assignment**           | **Bug**               |
-| **赋值**                   | **漏洞**                |
+| **赋值**                   | **漏洞；错误**             |
 | **Global**               | **Instance**          |
 | **全局**                   | **实例**                |
 | **Local**                | **Instance variable** |
@@ -103,7 +103,7 @@ comments: true
 
 <br>
 
-每个人都喜欢游戏，所以你将会以打造一个简单而有趣名字叫 Bull's Eye 的 iPhone游戏作为开始。他会教会你 iPhone 编程的基础知识，其他的教程将会建立在这个基础之上。
+每个人都喜欢游戏，所以你将会以打造一个简单而有趣名字叫 Bull’s Eye 的 iPhone游戏作为开始。他会教会你 iPhone 编程的基础知识，其他的教程将会建立在这个基础之上。
 
 最好的地方就是你可以在这里免费享受完整的阅读！
 
@@ -119,23 +119,23 @@ comments: true
 
 这部 iOS Apprentice 将帮助你成为一个杰出的 iOS 开发人员，但主要还是取决于你是否用好它。这里有一些提示，将帮助你充分利用这本书。
 
-#### 通过重复学习
+**通过重复学习**
 
 你会通过这本书做很多应用程序。即使这些应用程序开始时相当简单，你可能会觉得教程有些繁琐难以遵循，特别是你从来没有做过任何计算机编程——因为我会介绍很多新的概念。
 
 如果你没有立刻理解一切，没有关系，只要你得到一个一般的笼统的概念或想法。在本系列的后续教程中，我们将再次讨论这些概念，直到它们刻在你的心里。
 
-#### 遵循说明靠自己
+**遵循说明并靠自己**
 
-重点说的是，你不只是阅读说明，而且事实上你还要**遵循**他们。打开 Xcode，输入源代码片段，并在模拟器中运行应用程序。这有助于你了解应用程序是如何逐步构建出来的。
+重点说的是，你不只是阅读说明，而且事实上你还要**遵循**他们。打开 Xcode，输入源代码片段，并在 Simulator（模拟器）中运行应用程序。这有助于你了解应用程序是如何逐步构建出来的。
 
 更好的是，与代码作乐。随意修改应用程序的任何部分，看看结果是什么。实验和学习！不要担心弄坏它们，这是一半的乐趣所在。你总是可以找到回到开始的方法。
 
-#### 不要惊慌——错误发生！
+**不要惊慌——bugs（错误）发生！**
 
 你将会遇到问题，这点我可以打包票。你的程序可能会有奇怪的错误，并将让你陷入困境。相信我，我已经从事编程 30 年了，这些仍发生在我的身上。我们都只是人类，我们的大脑都只能处理一定复杂程度的编程问题。在这个课程中，我会给你工具，你心灵的工具箱，它会帮助你找到你自己不小心挖出的坑。
 
-#### 了解复制粘贴的节拍
+**了解复制粘贴的节拍**
 
 有非常多的人试图通过盲目地复制粘贴在博客和其他网站上发现的代码来编写 iPhone 应用程序，却不知道其中代码的真正作用，以及该如何适配它们的程序。
 
@@ -183,7 +183,7 @@ comments: true
 
 #### 你必须要投入以下列出的：
 
-**iPhone，iPad 或 iPod touch**。我假设你至少拥有其中一样。iOS 10 运行在以下设备上：iPhone 5 或更新版本，iPad 第四代或更新的版本，iPod touch 第六代。如果你有一个旧的设备，那么这是一个好时机考虑获取升级。但不要担心，如果你没有一个合适的设备：你可以在模拟器上完成你的一切操作。
+**iPhone，iPad 或 iPod touch**。我假设你至少拥有其中一样。iOS 10 运行在以下设备上：iPhone 5 或更新版本，iPad 第四代或更新的版本，iPod touch 第六代。如果你有一个旧的设备，那么这是一个好时机考虑获取升级。但不要担心，如果你没有一个合适的设备：你可以在 Simulator 上完成你的一切操作。
 
 <code class="highlighter-rouge"><strong>注意：</strong>尽管我在本教程中主要讨论 iPhone，但我所说的一切都适用于 iPad 和 iPod touch。除了小的硬件差异，它们使用 iOS，你完全可以按照相同的方式为它们编程。你应该还可以在 iPad 和 iPod touch 上运行本系列教程中教授的所有应用程序，并且不会出现问题。</code>
 
@@ -204,7 +204,7 @@ OS X 10.11 EI Capitan 或 macOS 10.12 Sierra。Xcode，iOS 应用程序的开发
 
 Xcode 是为 iOS 应用程序量身定做的开发工具。它有一个文本编辑器，你可以在其中键入你的源代码，它还有一个可视化编辑器，用于设计你的应用程序用户界面。
 
-Xcode 将你编写的源代码转换为可执行的应用程序，并在模拟器或 iPhone 上启动它。因为没有任何应用程序是完全没有 bug 的，所以 Xcode 还配备了一个调试器，可以帮助你发现代码中存在的缺陷（不幸的是，它并不会自动修复，这仍然是你的工作）。
+Xcode 将你编写的源代码转换为可执行的应用程序，并在 Simulator 或 iPhone 上启动它。因为没有任何应用程序是完全没有 bug 的，所以 Xcode 还配备了一个调试器，可以帮助你发现代码中存在的缺陷（不幸的是，它并不会自动修复，这仍然是你的工作）。
 
 你可以从 Mac App Store 免费下载 Xcode（[itunes.apple.com/app/ xcode/id497799835](itunes.apple.com/app/ xcode/id497799835)）。这至少需要 OS X EI Capitan（10.11），所以如果你仍运行 OS X Yosemite 或甚至是 Mavericks，你必须首先升级到最新版本的 macOS（也可以免费从 Mac App Store 获取）。做好下载一个大型软件的心理准备，因为一个完整的 Xcode 包大约是 5 GB。
 
@@ -220,7 +220,7 @@ Xcode 将你编写的源代码转换为可执行的应用程序，并在模拟�
 
 #### 教程1：入门
 
-在第一个教程中，你将开始建立一个名为 *Bull's Eye* 的游戏。你将学习如何以一种轻松的方式使用 Xcode，Interface Builder（界面构造器） 和 Swift。
+在第一个教程中，你将开始建立一个名为 *Bull’s Eye* 的游戏。你将学习如何以一种轻松的方式使用 Xcode，Interface Builder（界面构造器） 和 Swift。
 
 <div align="center"><img alt="" src="http://imgur.com/TolF1G2.png"/></div>
 
@@ -306,15 +306,15 @@ C++ 是另一种由 C 衍生出来的 object-oriented 编程语言。它非常�
 
 你准备好开始编写你生涯中的第一个 iOS 应用程序了吗？
 
-## Bull's Eye 游戏
+## Bull’s Eye 游戏
 
-在第一课中，你将创建一个名为 Bull‘s Eye 的游戏。这是最终效果：
+在第一课中，你将创建一个名为 Bull’s Eye 的游戏。这是最终效果：
 
-<div align="center"><img alt="完成的 Bull's Eye" src="http://imgur.com/YoEGCsp.png"/></div><center>完成的 Bull's Eye</center>
+<div align="center"><img alt="完成的 Bull’s Eye" src="http://imgur.com/YoEGCsp.png"/></div><center>完成的 Bull’s Eye</center>
 
 <br>
 
-目标是滑动图中这个看起来像 bull's eye（牛眼）一样的 slider（滑块）（范围 1 ～ 100），使其尽可能的贴近系统给出的随机值。在上面的截图中，目标是将 bull's eye 滑动到 22 的地方，因为看不到 slider 的当前值，所以全靠目测了。
+目标是滑动图中这个看起来像 bull's eye（牛眼）一样的 slider（滑块）（范围 1 ～ 100），使其尽可能的贴近系统给出的随机值。在上面的截图中，目标是将牛眼滑动到 22 的地方，因为看不到 slider 的当前值，所以全靠目测了。
 
 当你对你的估计有信心时，按下 “Hit Me!” button（按钮），弹出的窗口（也称为 alert（提醒））会告诉你，你获得了多少分：
 
@@ -401,7 +401,7 @@ Xcode 在启动时显示 “欢迎使用 Xcode”：
 
 ➤ 填写以下选项：
 
-- Product Name（产品名称）：**BullsEye**。如果你想使用正确的英文，你可以命名项目为 Bull's Eye 而不是 BullsEye，但是最好避免在项目名称中出现空格和其他特殊字符。
+- Product Name（产品名称）：**BullsEye**。如果你想使用正确的英文，你可以命名项目为 Bull’s Eye 而不是 BullsEye，但是最好避免在项目名称中出现空格和其他特殊字符。
 - Team（团队）：如果你已经是 Apple 开发人员计划的成员，则会显示你的团队名称。现在，最好暂时留空；我们将在后面的教程回到这里。
 - Organization Name（组织名称）：在此填写你自己的姓名或公司名称。
 - Organization Identifier（组织标识）：我填的是 “com.razeware”。这是我用于我的应用程序标识。按照惯例，这是我的域名写在前面的方式。你应该在这里使用你自己的标识。选择你的唯一身份，你自己网站的域名（反过来）或只是自己的名字。你可以随时更改此设置。
@@ -444,7 +444,7 @@ Xcode 现在将在你指定的文件夹中，创建一个名为 BullsEye 的基�
 
 <code class="highlighter-rouge"><strong>注意：</strong>如果这是您第一次使用Xcode，它可能会要求您启用开发人员模式。单击 <strong>Enable</strong>（启用）并输入密码以允许Xcode进行这些更改。</code>
 
-Xcode 将工作一会儿，然后它在 iOS 模拟器启动您全新的应用程序。就目前而言，可能该应用程序看起来还不像样——里面没有任何东西你可以使用的东西——但这是你的旅程中重要的第一个里程碑。
+Xcode 将工作一会儿，然后它在 iOS Simulator 启动您全新的应用程序。就目前而言，可能该应用程序看起来还不像样——里面没有任何东西你可以使用的东西——但这是你的旅程中重要的第一个里程碑。
 
 <div align="center"><img alt="基于 Single View Application 模板的应用程序是什么样子" src="http://i.imgur.com/5vUDxtf.png"/></div><center>基于 Single View Application 模板的应用程序是什么样子</center>
 
@@ -452,15 +452,15 @@ Xcode 将工作一会儿，然后它在 iOS 模拟器启动您全新的应用程
 
 当你按下运行按钮后如果 Xcode 说 “Build Failed”（建立失败）或 “Xcode cannot run using the selected device”（Xcode 不能使用选定的设备运行） ，然后确保选择器在窗口的顶部为 BullsEye > iPhone SE（或任何其他型号），而不是 Generic iOS Device（通用 iOS 设备）：
 
-<div align="center"><img alt="让 Xcode 在模拟器上运行应用程序" src="http://imgur.com/k2BJR8p.png"/></div><center>让 Xcode 在模拟器上运行应用程序</center>
+<div align="center"><img alt="让 Xcode 在 Simulator 上运行应用程序" src="http://imgur.com/k2BJR8p.png"/></div><center>让 Xcode 在 Simulator 上运行应用程序</center>
 
 <br>
 
-如果你的 iPhone 当前通过 USB 电缆连接到你的 Mac，Xcode 可能会试图在你的 iPhone 上运行应用程序，这可能无法工作，因为缺少了一些额外的设置。在本教程的最后，我将告诉你如何让应用程序在你的 iPhone 上运行，所以你可以把它展示给你的朋友，但现在只需坚持使用模拟器。
+如果你的 iPhone 当前通过 USB 电缆连接到你的 Mac，Xcode 可能会试图在你的 iPhone 上运行应用程序，这可能无法工作，因为缺少了一些额外的设置。在本教程的最后，我将告诉你如何让应用程序在你的 iPhone 上运行，所以你可以把它展示给你的朋友，但现在只需坚持使用 Simulator 。
 
 ➤ **Run** 按钮旁边是 **Stop**（停止）按钮（方形）。 按此退出应用程序。
 
-在你的手机上，你可以使用主屏幕按钮退出应用程序（在模拟器上从菜单栏选择 **Hardware**（硬件）→ **Home**（主页）），但这不会实际终止应用程序。它会从模拟器的屏幕上消失，但应用程序保持暂停在模拟器的内存，就像在一个真正的iPhone。
+在你的手机上，你可以使用主屏幕按钮退出应用程序（在 Simulator 上从菜单栏选择 **Hardware**（硬件）→ **Home**（主页）），但这不会实际终止应用程序。它会从 Simulator 的屏幕上消失，但应用程序保持暂停在 Simulator 的内存，就像在一个真正的iPhone。
 
 直到你按 Stop，Xcode 的顶部活动查看器说 “Running BullsEye on iPhone SE”（在iPhone SE上运行BullsEye）：
 
@@ -468,15 +468,15 @@ Xcode 将工作一会儿，然后它在 iOS 模拟器启动您全新的应用程
 
 <br>
 
-它不是真的必要停止的应用程序，就像你可以回到 Xcode 和更改源代码，而应用程序仍在运行。 但是，在你再次按Run之后，这些更改才会生效。这将终止任何运行的应用程序版本，构建新版本，并在模拟器启动它。
+它不是真的必要停止的应用程序，就像你可以回到 Xcode 和更改源代码，而应用程序仍在运行。 但是，在你再次按Run之后，这些更改才会生效。这将终止任何运行的应用程序版本，构建新版本，并在 Simulator 启动它。
 
 <code class="highlighter-rouge"><strong>当你按 Run 时会发生什么？</strong></code>
 
-`Xcode 将首先编译你的源代码——即：将它——从 Swift 转换为 iPhone（或模拟器）可以理解的机器代码。即使用于编写 iPhone 应用程序的编程语言是 Swift 或 Objective-C，iPhone 本身也不会使用这些语言。翻译步骤是必要的。`
+`Xcode 将首先编译你的源代码——即：将它——从 Swift 转换为 iPhone（或 Simulator）可以理解的机器代码。即使用于编写 iPhone 应用程序的编程语言是 Swift 或 Objective-C，iPhone 本身也不会使用这些语言。翻译步骤是必要的。`
 
 `编译器是 Xcode 的一部分，将 Swift 源代码转换为可执行的二进制代码。它还收集组成应用程序的所有不同组件——源文件，图像，故事板文件等，并将其放入所谓的 “application bundle”（应用程序包）。`
 
-`这整个过程也被称为构建应用程序。如果有任何错误（例如拼写错误），构建将失败。如果一切都按计划进行，Xcode 将应用程序包复制到模拟器或 iPhone 并启动应用程序。所有这一切只需单击一下 Run 按钮。`
+`这整个过程也被称为构建应用程序。如果有任何错误（例如拼写错误），构建将失败。如果一切都按计划进行，Xcode 将应用程序包复制到 Simulator 或 iPhone 并启动应用程序。所有这一切只需单击一下 Run 按钮。`
 
 ## 添加 Button
 
@@ -486,13 +486,13 @@ Xcode 窗口的左侧被命名为 **Navigator Area**（导航区域）。顶部�
 
 这些文件的组织大致对应于硬盘上的项目文件夹，但不一定总是这样。你可以移动文件，并尽情地将它们放入新的组。后续我们将更多地讨论你项目中的不同文件。
 
-➤ 在 **Project Navigator** 中，找到名为 **Main.storyboard** 的项目，然后单击以选择它：
+➤ 在 **Project Navigator** 中，找到名为 **Main.storyboard** 的项，然后单击以选择它：
 
 <div align="center"><img alt="Project navigator 列出项目中的文件" src="http://imgur.com/zQbYOva.png"/></div><center><strong>Project navigator</strong> 列出项目中的文件</center>
 
 <br>
 
-像一个超级英雄在电话亭里改变他的衣服，主编辑窗格现在转换为界面生成器。这个工具允许你将用户界面组件（例如 button）拖放到 **Interface Builder** 中。（OK，虽然这个比方打的不怎样，但是我只是想说 Interface Builder 是一个超级工具。）
+像一个超级英雄在电话亭里改变他的衣服，主编辑 pane（窗格）现在转换为界面生成器。这个工具允许你将用户界面组件（例如 button）拖放到 **Interface Builder** 中。（OK，虽然这个比方打的不怎样，但是我只是想说 Interface Builder 是一个超级工具。）
 
 ➤ 如果它还不是蓝色，请单击 Xcode 工具栏中的 **Hide or show utilities** （隐藏或显示）实用程序按钮：
 
@@ -500,7 +500,7 @@ Xcode 窗口的左侧被命名为 **Navigator Area**（导航区域）。顶部�
 
 <br>
 
-按下这些在工具栏上的按钮将会改变 Xcode 的外观。特别是这一个，它会在 Xcode 窗口的右侧打开一个新窗格。
+按下这些在工具栏上的按钮将会改变 Xcode 的外观。特别是这一个，它会在 Xcode 窗口的右侧打开一个新 pane。
 
 你的 Xcode 现在看起来应该像是这样：
 
@@ -512,7 +512,7 @@ Xcode 窗口的左侧被命名为 **Navigator Area**（导航区域）。顶部�
 
 目前，storyboard 只包含一个屏幕或 scene（场景），由 Interface Builder Canvas（画布）中间的一个矩形表示。
 
-<code class="highlighter-rouge"><strong>注意：</strong>如果你没有看到标记为 “View Controller”（视图控制器） 的矩形，眼前只有一个空白的 Canvas，则使用鼠标或触控板滚动 storyboard。相信我，它一定在某处！还要确保你的 Xcode 窗口足够大。因为 Interface Builder 占用了很多空间...</code>
+<code class="highlighter-rouge"><strong>注意：</strong>如果你没有看到标记为 “View Controller”（视图控制器） 的矩形，眼前只有一个空白的 Canvas，则使用鼠标或触控板滚动 storyboard。相信我，它一定在某处！还要确保你的 Xcode 窗口足够大。因为 Interface Builder 占用了很多空间…</code>
 
 该 scene 目前有一部 iPhone 6s 或 iPhone 7 的大小。为了保持清爽简洁，你会首先为 iPhone SE 设计一个稍小的屏幕的应用程序。稍后你将会让这款应用程序也是配更大的 iPhone 6s，7 和 Plus。
 
@@ -526,11 +526,11 @@ Xcode 窗口的左侧被命名为 **Navigator Area**（导航区域）。顶部�
 
 ➤ 在 Xcode 工具栏中，确保它说 **BullsEye > iPhone SE**（在 Stop 按钮旁边）。如果默认选项不是，那么单击它，并从列表中选择 iPhone SE：
 
-<div align="center"><img alt="将模拟器切换到iPhone SE" src="http://imgur.com/agi8Tbk.png"/></div><center>将模拟器切换到 iPhone SE</center>
+<div align="center"><img alt="将 Simulator 切换到iPhone SE" src="http://imgur.com/agi8Tbk.png"/></div><center>将 Simulator 切换到 iPhone SE</center>
 
 <br>
 
-现在当你运行应用程序，它将运行在 iPhone SE 模拟器（试试吧！）。
+现在当你运行应用程序，它将运行在 iPhone SE Simulator（试试吧！）。
 
 我们接着谈 storyboard：
 
@@ -540,7 +540,7 @@ Xcode 窗口的左侧被命名为 **Navigator Area**（导航区域）。顶部�
 
 <br>
 
-滚动 Object Library 列表中的项目，直到看到 button。
+滚动 Object Library 列表中的项，直到看到 button。
 
 ➤ 将 button 拖动到位于工作区域的 scene 的矩形的顶部。
 
@@ -568,7 +568,7 @@ Xcode 窗口的左侧被命名为 **Navigator Area**（导航区域）。顶部�
 
 这个边框不是 button 的一部分，它只是在那里显示 button 有多大。你可以使用 **Editor** **→ Canvas → Show Bounds Rectangles**（显示矩形边框）菜单选项打开或关闭这些矩形。
 
-当你完成与 Interface Builder 的互动后，按下 Xcode 工具栏上的 Run 按钮。应用程序现在应该出现在模拟器中，完成你的 “Hit Me!” button。但是，当你点击 button 它不做任何事情。为此，你必须写一些 Swift 代码！
+当你完成与 Interface Builder 的互动后，按下 Xcode 工具栏上的 Run 按钮。应用程序现在应该出现在 Simulator 中，完成你的 “Hit Me!” button。但是，当你点击 button 它不做任何事情。为此，你必须写一些 Swift 代码！
 
 ## 源代码 Editor
 
@@ -641,7 +641,7 @@ class ViewController: UIViewController {
 
 这就是为什么你还需要两个 view controller：一个知道如何处理列表，另一个可以处理图像和烹饪说明。 iOS 的设计原则之一就是，应用程序中的每个屏幕都有自己的 view controller。
 
-目前 Bull's Eye 只有一个屏幕（顶部有一个白色 button 的那个），因此只需要一个 view controller。该 view controller 简称为 “ViewController”（译者注：这里看起来比较怪，实际上后者只是一个命名，你可以随意修改。前者则为专有名词），storyboard 和 Swift 文件一起工作来实现它。
+目前 Bull’s Eye 只有一个屏幕（顶部有一个白色 button 的那个），因此只需要一个 view controller。该 view controller 简称为 “ViewController”（译者注：这里看起来比较怪，实际上后者只是一个命名，你可以随意修改。前者则为专有名词），storyboard 和 Swift 文件一起工作来实现它。
 
 简单地说，Main.storyboard 文件包含 view controller 的用户界面的设计，而ViewController.swift 包含其功能——让用户界面按照设定来工作的逻辑，它是使用 Swift 语言来编写的。
 
@@ -653,7 +653,7 @@ class ViewController: UIViewController {
 
 ➤ 单击 **Main.storyboard** 返回到 Interface Builder。
 
-左边应该有一个 pane，即 **Outline pane**（大纲窗格），其中列出了所有项目你的 stpryboard。如果没有看到该 pane，请单击 Interface Builder canvas 左下角的小切换按钮以显示它。
+左边应该有一个 pane，即 **Outline pane**（大纲窗格），其中列出了所有项目，你的 storyboard 中的。如果没有看到该 pane，请单击 Interface Builder canvas 左下角的小切换按钮以显示它。
 
 <div align="center"><img alt="用来显示 Outline pane 的按钮" src="http://imgur.com/uThAxbE.png"/></div><center>用来显示 Outline pane 的按钮</center>
 
@@ -679,7 +679,7 @@ class ViewController: UIViewController {
 
 从现在开始，每当 button 被点击时，将执行 showAlert action。这就是如何使 button 和其他controls 互动：你在 view controller 的 Swift 文件中定义一个动作，然后在Interface Builder中进行连接。
 
-你可以看到连接关系，通过 Xcode 窗口右侧的实用程序窗格中的 **Connections inspector**（连接检查器）。
+你可以看到连接关系，通过 Xcode 窗口右侧的 Utilities pane 中的 **Connections inspector**（连接检查器）。
 
 ➤ 单击 pane 顶部的小箭头形按钮以切换到 Connections inspector：
 
@@ -728,7 +728,7 @@ showAlert 中的代码创建一个标题为 “Hello，World” 的 alert，它�
 
 如果你不确定标题和消息之间的区别：都显示文本，但标题稍大，而且采用粗体。
 
-➤ 单击 Xcode 工具栏上的 Run 按钮。如果你没有任何的拼写错误，你的应用程序应该会在模拟器中启动，当你点击 button，应该会看到 alert。
+➤ 单击 Xcode 工具栏上的 Run 按钮。如果你没有任何的拼写错误，你的应用程序应该会在 Simulator 中启动，当你点击 button，应该会看到 alert。
 
 <div align="center"><img alt="alert 弹出动作" src="http://i.imgur.com/suZqPl0.png"/></div><center>alert 弹出动作</center>
 
@@ -738,7 +738,7 @@ showAlert 中的代码创建一个标题为 “Hello，World” 的 alert，它�
 
 你可以从一开始列出的待办事项列表中删除前两个项目：在屏幕上放置一个 button，并在用户点 button 钮时显示 alert。
 
-休息一下，让它沉淀下来，当你准备好学习更多的时候回来！你只不过是刚刚迈出一小步而已...
+休息一下，让它沉淀下来，当你准备好学习更多的时候回来！你只不过是刚刚迈出一小步而已…
 
 <code class="highlighter-rouge"><strong>注意：</strong>为了防止你卡住，我已经在本教程附带的源代码文件夹中为本教程中的几个检查点提供了完整的 Xcode 项目。这样，你可以拿你的应用程序的版本和我的做对比，或者——如果你真的弄乱了一些东西——可以从一个你拿的准的版本入手。</code>
 
@@ -762,7 +762,7 @@ showAlert 中的代码创建一个标题为 “Hello，World” 的 alert，它�
 
 <br>
 
-当 Xcode 检测到错误时，将左侧窗格切换到 **Issue navigator**（问题导航器），你的项目文件就是这样。此列表显示 Xcode 找到的所有错误和警告。（你可以回到项目文件，通过顶部的小按钮。）
+当 Xcode 检测到错误时，将左侧 pane 切换到 **Issue navigator**（问题导航器），你的项目文件就是这样。此列表显示 Xcode 找到的所有错误和警告。（你可以回到项目文件，通过顶部的小按钮。）
 
 显然，我忘了某处的逗号。
 
@@ -826,7 +826,7 @@ showAlert 中的代码创建一个标题为 “Hello，World” 的 alert，它�
 
 <br>
 
-嘿，等一下...... 这看起来并不像我答应你的那样，展示给你看的游戏那般漂亮！区别在于这都是些标准的 UIKit controls。他们看起来像是直接开箱的样子。
+嘿，等一下…… 这看起来并不像我答应你的那样，展示给你看的游戏那般漂亮！区别在于这都是些标准的 UIKit controls。他们看起来像是直接开箱的样子。
 
 你可能已经看过这个面板，因为它非常适合常规的应用程序。但是因为默认的死沉沉的样子对于一个游戏来说有点枯燥无聊，所以你会在后续课程给它加一些调味料。
 
@@ -936,11 +936,11 @@ showAlert 中的代码创建一个标题为 “Hello，World” 的 alert，它�
 
 关心了一下 view 的布局。
 
-➤ 在 iPhone SE 模拟器上运行应用程序。屏幕不显示为 landscape，按钮也不再位于中心。
+➤ 在 iPhone SE Simulator 上运行应用程序。屏幕不显示为 landscape，按钮也不再位于中心。
 
-但是，如果你将模拟器旋转为 landscape，那么一切都会看起来像预想的一样了。
+但是，如果你将 Simulator 旋转为 landscape，那么一切都会看起来像预想的一样了。
 
-➤ 从屏幕顶部的模拟器菜单栏中选择 **Hardware **→ Rotate Left（向左旋转）或 Rotate Right（向右旋转），或按住 ⌘，然后按键盘上的向左或向右箭头键。这将旋转模拟器。
+➤ 从屏幕顶部的 Simulator 菜单栏中选择 **Hardware **→ Rotate Left（向左旋转）或 Rotate Right（向右旋转），或按住 ⌘，然后按键盘上的向左或向右箭头键。这将旋转 Simulator。
 
 请注意，在 landscape 方向，应用程序不再显示 iPhone 的状态栏。这给应用程序的用户界面留出更多的空间。
 
@@ -1010,7 +1010,7 @@ Method 的概念可能仍然有点怪异，所以这里有一个例子：
 
 当他的 method 完成后，计算机返回你的 throwParty() method，并继续，所以你和你的朋友可以吃史蒂夫带回来的冰淇淋。
 
-名为 Steve 的 object 也有 data。在他去商店之前，他有钱。在商店，他交换这些钱 data 为其他，更重要的 data：冰淇淋！做完这个交易后，他把冰淇淋的 data 带到了派对上（如果他一直吃着它，你的程序有一个bug）。
+名为 Steve 的 object 也有 data。在他去商店之前，他有钱。在商店，他交换这些钱 data 为其他，更重要的 data：冰淇淋！做完这个交易后，他把冰淇淋的 data 带到了派对上（如果他一直吃着它，你的程序有一个 bug）。
 
 “发送消息” 听起来比它原本的意思更难懂。但这是一个很好的方式来思考 objects 如何沟通，但其中真的没有任何鸽子或邮递员参与。计算机只是从 throwParty() method 跳转到buyIceCream() method，然后再返回。
 
@@ -1032,13 +1032,13 @@ Objects 可以互相看看对方的 data（在某种程度上，就像如果你�
 
 ➤ 通过从 Object Library 中拖动各种 controls，试着自己来重现此屏幕。你需要几个新的 buttons，labels 和一个 slider。你可以在上面的截图中看到项目应该（大致）设置多大。如果你有一些小偏差，没关系。
 
-要调整这些 views 的设置，请使用 **Attributes inspector**（属性检查器）。你可以在 Xcode 窗口右侧的窗格中找到此检查器：
+要调整这些 views 的设置，请使用 **Attributes inspector**（属性检查器）。你可以在 Xcode 窗口右侧的 pane 中找到此检查器：
 
 <div align="center"><img alt="The Attributes inspector" src="http://imgur.com/dqfeAAG.png"/></div><center>The Attributes inspector</center>
 
 <br>
 
-Inspector 区域显示当前选择的项目的各个方面。例如，Attributes inspector 可以更改一个 label 的 background color 或 button上文本的大小。你已经看到显示一个 button's action 的Connections inspector。 随着你更熟练地使用 Interface Builder，你将使用所有这些 inspector 窗格来配置 views。
+Inspector 区域显示当前选择的项目的各个方面。例如，Attributes inspector 可以更改一个 label 的 background color 或 button上文本的大小。你已经看到显示一个 button's action 的Connections inspector。 随着你更熟练地使用 Interface Builder，你将使用所有这些 inspector pane 来配置 views。
 
 ➤**（i）** button 实际上是常规 button，但他的**类型**在 Attributes inspector 中被设置为了 **Info Light**（信息灯）：
 
@@ -1104,7 +1104,7 @@ Inspector 区域显示当前选择的项目的各个方面。例如，Attributes
 
 ➤ 运行应用程序并拖动 slider。
 
-一旦开始拖动，Xcode 窗口就会在底部打开一个新窗格，所谓的 **Debug area**（调试区域），显示消息列表：
+一旦开始拖动，Xcode 窗口就会在底部打开一个新的 pane，所谓的 **Debug area**（调试区域），显示消息列表：
 
 <div align="center"><img alt="在 Debug area 打印出信息" src="http://imgur.com/Xn6oM39.png"/></div><center>在 Debug area 打印出信息</center>
 
@@ -1116,7 +1116,7 @@ print() 函数是一个很好的帮助，告诉你在应用程序中发生了什
 
 我经常使用 print() 来确保我的应用程序运行正确如我所想，在我添加更多功能之前。将消息打印到 Debug area 既快速又容易。
 
-<code class="highlighter-rouge"><strong>注意：</strong>你可能还会在 Debug area 看到一堆其他消息。这是来自 UIKit 和 iOS 模拟器的调试输出。你可以安全地忽略掉这些消息。</code>
+<code class="highlighter-rouge"><strong>注意：</strong>你可能还会在 Debug area 看到一堆其他消息。这是来自 UIKit 和 iOS Simulator 的调试输出。你可以安全地忽略掉这些消息。</code>
 
 ## Strings（字符串）
 
@@ -1344,7 +1344,7 @@ let message = 的行是新的。还要注意另外两个小的变化。
 
 如果你再次点按 button 而不移动 slider，则 alert 仍将显示相同的值。variable 保持其值，直到你把一个新的 variable 放进去。
 
-## 你的第一个 bug（漏洞）
+## 你的第一个 bug
 
 这里有一个小问题存在于应用程序中，虽然。也许你已经注意到了。让我们重现一下这个问题现场：
 
@@ -1370,7 +1370,7 @@ var currentValue: Int = 50
 
 你可以在本教程的源代码文件夹中的 **02 - Slider and Variables** 下找到应用程序的项目文件。
 
-## 玩够了吧... 让我们做一个游戏！
+## 玩够了吧… 让我们做一个游戏！
 
 你已经构建了用户界面，且知道如何找到 slider 的位置。这已经搞定了几个待办事项。
 
@@ -1466,7 +1466,7 @@ Swift 有以下三个可能的范围级别：
 
 一旦 showAlert() method 完成，即当没有更多语句要执行时，计算机将销毁消息，alert 和 action objects。他们的存储空间将不再被需要。
 
-然而，currentValue variable 永远存在... 或者至少只要 ViewController 存在（直到用户终止应用程序）。这种 type 的 variable 被命名为一个 instance variable，因为它的作用域与它所属的 object instance 的作用域相同。
+然而，currentValue variable 永远存在… 或者至少只要 ViewController 存在（直到用户终止应用程序）。这种 type 的 variable 被命名为一个 instance variable，因为它的作用域与它所属的 object instance 的作用域相同。
 
 换句话说，如果你想保持一个值，从一个动作事件到下一个动作事件，你应该使用 instance variables。
 
@@ -1672,7 +1672,7 @@ override func viewDidLoad() {
 }
 ```
 
-对 startNewRound() 的调用在最后，紧接着 present(alert, ...)。
+对 startNewRound() 的调用在最后，紧接着 present(alert, …)。
 
 到目前为止，UIKit 已经调用了 view controller 的 method：当应用程序加载时执行 viewDidLoad()，玩家点击 button 时执行 showAlert()，当玩家拖动 slider 时执行 sliderMoved()，等等。这是我们之前讨论的事件驱动模型。
 
@@ -1788,7 +1788,7 @@ slider.value = currentValue
 
 很好，你想出了如何计算随机数以及如何将它存储在一个 instance variable：targetValue 中，以便以后可以访问它。
 
-现在你要在屏幕上显示目标值。没有它，玩家不会知道要往哪里瞄准，这将使得游戏几乎不可能获胜...
+现在你要在屏幕上显示目标值。没有它，玩家不会知道要往哪里瞄准，这将使得游戏几乎不可能获胜…
 
 当你制作 storyboard 时，你已经为目标值添加了 label（右上角）。诀窍是把 targetValue  variable 的值放入这个 label。要做到这一点，你需要完成两件事：
 
@@ -1963,7 +1963,7 @@ The slider 越靠近目标，玩家的点数越高。
 
 如果总是做减法后取相反数 -(currentValue - targetValue)——这并不会解决问题，因为如果 slider 位于目标的左侧而不是右侧，则差值将为负值。
 
-嗯，看起来我们在这陷入了麻烦...
+嗯，看起来我们在这陷入了麻烦…
 
 **练习：**如果我要求你用自然语言解决这个问题，你将如何设计这个问题的解决方案？不要担心如何用计算机语言表达现在，只是想到它在纯英语。（译者注：你可以用中文，重要的是思路）
 
@@ -2445,7 +2445,7 @@ func updateLabels() {
 
 显然，游戏不是很漂亮，不过很快这将是你的关注点。同时，有一些较小的调整，需要你来做。
 
-除非你已经改变它，否则 alert 的标题仍然说 “Hello, World!” 你可以替换为游戏名称，“Bull's Eye”，但我有一个更好的主意。如果你根据玩家的表现改变标题怎么办？
+除非你已经改变它，否则 alert 的标题仍然说 “Hello, World!” 你可以替换为游戏名称，“Bull’s Eye”，但我有一个更好的主意。如果你根据玩家的表现改变标题怎么办？
 
 如果玩家将 slider 正好放在目标上，则 aliet 可以说：“完美！” 如果 slider 靠近目标但不在那里，则可以说：“你差不多了！”如果玩家离开 ，警报可以说：“差的有些远…” 等等。 这给玩家一个更多的反馈，他们表现的如何。
 
@@ -2507,7 +2507,7 @@ func updateLabels() {
 
 <br>
 
-**练习：**当她为完美的得分时，给玩家额外 100 点奖励。这将鼓励玩家真正试图把 bull‘s eye 放在目标上。否则，完美得分 100 分和 98 或 95 分之间没有太大差异，会让玩家失去动力。
+**练习：**当她为完美的得分时，给玩家额外 100 点奖励。这将鼓励玩家真正试图把牛眼放在目标上。否则，完美得分 100 分和 98 或 95 分之间没有太大差异，会让玩家失去动力。
 
 给玩家一点鼓励，尝试更努力——一个完美的得分不再只有 100，而是 200 分。你也可以给玩家 50 点，随你设置。
 
@@ -2635,7 +2635,7 @@ class ViewController: UIViewController {
 
 ## 等待 alert 消失
 
-关于这个游戏，有一些事让我困扰。你可能也注意到了...
+关于这个游戏，有一些事让我困扰。你可能也注意到了…
 
 一旦点击 Hit Me button，弹出 alert，slider 立即重置到其中心位置，回合数递增，目标值 label 获得新的随机数。
 
@@ -2934,7 +2934,7 @@ Your goal is to place the slider as close as possible to the target value. The c
 
 The About 屏幕应该显示一个整洁的动画。很好，这似乎运转正常。
 
-然而，这里有一个明显的缺点：点击 Close button 似乎没有效果。一旦用户进入 About 屏幕，她就永远也离不开了... 那听起来不像是友好的用户界面设计。
+然而，这里有一个明显的缺点：点击 Close button 似乎没有效果。一旦用户进入 About 屏幕，她就永远也离不开了… 那听起来不像是友好的用户界面设计。
 
 Segues 的问题是，只有一种方式。要关闭此屏幕，你必须将一些代码连接到 Close button。作为一个崭露头角的 iOS 开发者，你已经知道如何做：使用 action method！
 
@@ -2955,7 +2955,7 @@ class AboutViewController: UIViewController {
 
 这个代码在 close() action method 里面告诉 UIKit 用动画关闭 About 屏幕。
 
-如果你说，dismiss(animated: false, ...)，那么将没有页面翻转这个效果，主屏幕会立即重新出现。从用户体验的角度来看，通常最好使用微妙的动画来显示从一个屏幕到另一个屏幕的过渡。
+如果你说，dismiss(animated: false, …)，那么将没有页面翻转这个效果，主屏幕会立即重新出现。从用户体验的角度来看，通常最好使用微妙的动画来显示从一个屏幕到另一个屏幕的过渡。
 
 别忘了，你还有一个最后一步，连接 Close button Touch Up Inside 事件到这个新的关 close action。
 
@@ -2989,7 +2989,7 @@ class AboutViewController: UIViewController {
 
 恭喜！这完成了游戏。所有的功能完备了——我可以保证——没有 bugs，以破坏乐趣。
 
-但你必须承认游戏仍然看起来不是很好。如果就以当前形式你把它放在 App Store 上，我确定不会有很多人会兴奋的下载它。幸运的是，iOS 让你能够非常容易创建好看的应用程序，所以让我们给 Bull's Eye 一个改造。
+但你必须承认游戏仍然看起来不是很好。如果就以当前形式你把它放在 App Store 上，我确定不会有很多人会兴奋的下载它。幸运的是，iOS 让你能够非常容易创建好看的应用程序，所以让我们给 Bull’s Eye 一个改造。
 
 你可以在教程的源代码文件夹中的 **06 - About Screen** 下找到应用程序的项目文件。
 
@@ -2999,7 +2999,7 @@ class AboutViewController: UIViewController {
 
 在 iOS 7 及以前版本中，状态栏不会自动消失在 landscape 模式下，本教程的早期版本包括如何从应用程序中删除状态栏的冗长的说明。
 
-即使这不再需要了，仍然有一些事情你可以做，以改善 Bull's Eye 处理状态栏的方式。
+即使这不再需要了，仍然有一些事情你可以做，以改善 Bull’s Eye 处理状态栏的方式。
 
 首先，你将从 storyboard 中删除状态栏。
 
@@ -3057,7 +3057,7 @@ The Info.plist 文件只是配置选项及其值的列表。大多数这些可�
 
 摆脱状态栏只是第一步。我们想从这里：
 
-<div align="center"><img alt="打哈欠..." src="http://imgur.com/P1WNQay.png"/></div><center>打哈欠...</center>
+<div align="center"><img alt="打哈欠…" src="http://imgur.com/P1WNQay.png"/></div><center>打哈欠…</center>
 
 <br>
 
@@ -3083,7 +3083,7 @@ The Info.plist 文件只是配置选项及其值的列表。大多数这些可�
 
 <br>
 
-➤ 在窗格底部有一个 + 按钮。单击它，然后选择 **Import...**（导入）选项。
+➤ 在 pane 底部有一个 + 按钮。单击它，然后选择 **Import…**（导入）选项。
 
 <div align="center"><img alt="选择 Import 将现有图像放入 asset 目录" src="http://imgur.com/hImLVun.png"/></div><center>选择 Import 将现有图像放入 asset 目录</center>
 
@@ -3312,7 +3312,7 @@ Buttons 可以有多个状态。当你点击一个 button 并按住它，它应�
 
 ➤ 对 **(i)** button 进行相同的更改，但此次为 Image 选择 **InfoButton**。
 
-用户界面几乎完成。只剩下 slider 还没有完成...
+用户界面几乎完成。只剩下 slider 还没有完成…
 
 <div align="center"><img alt="即将完成" src="http://imgur.com/FsYqo4T.png"/></div><center>即将完成</center>
 
@@ -3407,7 +3407,7 @@ The About 屏幕依然还有一些工作要做。
 
 对于这个应用程序，你将使其显示一个来自应用程序包的静态 HTML 页面，所以它不会实际地去连接网络和下载任何东西。
 
-➤ 转到 **Project navigator**，右键单击 **BullsEye** 组（黄色文件夹）。从菜单中，选择 **Add Files to “BullsEye”**...
+➤ 转到 **Project navigator**，右键单击 **BullsEye** 组（黄色文件夹）。从菜单中，选择 **Add Files to “BullsEye”**…
 
 <div align="center"><img alt="使用右键菜单将现有文件添加到项目中" src="http://imgur.com/Fa2uXdt.png"/></div><center>使用右键菜单将现有文件添加到项目中</center>
 
@@ -3434,18 +3434,139 @@ class AboutViewController: UIViewController {
 
 ➤ 在 storyboard 文件中，将 UIWebView 元素连接到此新 outlet。最简单的方法是按住 Ctrl 从 **About View Controller**（在 Outline pane 中）拖动到 **Web View**。
 
-（如果你反过来，从Web视图到关于View Controller，那么你会连接错误的东西，当你运行应用程序时，Web视图将保持空白。）
+（如果你反过来，从 Web View 到 About View Controller，那么你会连接错误的东西，当你运行应用程序时，web view 将保持空白）
 
-➤在AboutViewController.swift中，添加viewDidLoad() 方法：
+➤在 **AboutViewController.swift** 中，添加 viewDidLoad() 方法：
 
 ```swift
-func updateLabels() {
-  targetLabel.text = String(targetValue)
-  scoreLabel.text = String(score)
+override func viewDidLoad() {
+  super.viewDidLoad()
+  
+  if let url = Bundle.main.url(forResource: "BullsEye",
+                                            withExtension: "html") {
+    if let htmlData = try? Data(contentsOf: url) {
+      let baseURL = URL(fileURLWithPath: Bundle.main.bundlePath)
+      webView.load(htmlData, mimeType: "text/html",
+                   textEncodingName: "UTF-8", baseURL: baseURL)
+    }
+  }
 }
 ```
 
-这里没有新玩意儿。你将 score（即 Int）转换为 String，然后将该 string 赋给 label 的 text 属性。为了响应，label 将重新绘制自己与新的 score。
+这会将本地 HTML 文件加载到 web view 中。
 
-➤ 运行应用程序，并确认每次点击 button 时，此回合的积分都会添加到总分数 label 中。
+源代码可能看起来很可怕，但发生的事情不是那么复杂：首先在应用程序包中找到 **BullsEye.html** 文件，然后将其加载到一个 Data object 中，最后它要求 web view 显示 data object 的内容。
 
+➤ 运行应用程序，然后按 info（信息）button。About 屏幕应显示游戏规则的说明，这次以 HTML 文档的形式显示：
+
+<div align="center"><img alt="现在 About 屏幕显得光彩夺目" src="http://imgur.com/NLJKDcX.png"/></div><center>现在 About 屏幕显得光彩夺目</center>
+
+<br>
+
+##支持 3.5 寸屏幕
+
+到目前为止，你已经为 iPhone 5，5c，5s 和 iPhone SE 的 4 英寸屏幕设计了应用程序——仍然是目前最受欢迎的 iPhone 型号之一。
+
+早期的 iOS Apprentice 显示了如何使 Bull’s Eye 在 iPhone 4S 上工作。这款旧款机型的屏幕略小，仅 3.5 英寸。
+
+两种类型的屏幕同样 Width（320 点），但 4 英寸的 Retina 手机的 Height 为 568 点，3.5 英寸机型只有 480 点。所以你的应用程序需要以某种方式补偿这 88 点的差异。
+
+不过，现在这个问题现在有些多余… iOS 10 并不支持那些旧的 3.5 英寸的设备。注意在 Xcode 窗口顶部的 Simuators 列表中没有 iPhone 4S——你不能再在 iPhone 4S 上运行应用程序，甚至不能模拟。
+
+不过话说回来，学习如何使应用程序在这些较小的屏幕上正常工作仍然有用，原因如下：
+
+1. ​当你在 iPad 上运行 Bull’s Eye 时，它使用 3.5 英寸尺寸。iPad 可以以特殊的仿真模式运行所有 iPhone 应用程序，但是由于屏幕大小的限制，需要使用 3.5 英寸的外形尺寸。
+2. 如果你以 iOS 开发人员的身份接到一份工作，你可能需要支持旧版本的 iOS。较旧的设备，如 iPhone 4S，仍然可以运行 iOS 9 或 iOS 8。
+3. 借此机会，了解 AutoLayout，一个核心的 UIKit 技术，使你可以轻松地在你的应用程序中支持许多不同的屏幕尺寸，包括 iPhone 6 和 7 以及 iPad 的较大屏幕。
+
+所以即使 iOS 10 没有正式支持 iPhone 4S 的较小的屏幕，我们也让它可以运行 Bull’s Eye。
+
+➤ 要在 3.5 英寸屏幕上查看应用程序的外观，请在 iPad Simulator 上运行应用程序（我使用 iPad Air 2）。你可以使用 Xcode 窗口顶部的选择器在 Simulators 之间切换：
+
+<div align="center"><img alt="使用方案选择器切换到 iPad Simulator" src="http://imgur.com/lEkCIga.png"/></div><center>使用方案选择器切换到 iPad Simulator</center>
+
+<br>
+
+如你所料，屏幕的一部分被拦腰切断：
+
+<div align="center"><img alt="在 iPad Simulator 上，应用程序不会填满整个屏幕" src="http://imgur.com/JZY6K0B.png"/></div><center>在 iPad Simulator 上，应用程序不会填满整个屏幕</center>
+
+<br>
+
+显然，这不会。相当多的人使用他们的 iPad 玩 iPhone 游戏，最后一件你想要的事就是保证不会发生这种事情！
+
+提示：如果 iPad  Simulator 不适合你的屏幕，可以按 **⌘1** 到 **⌘5** 缩放iPad模拟器或使用 **Window → Scale** 菜单项。iPad 是一个怪物！占据太多屏幕位置。
+
+<code class="highlighter-rouge"><strong>通用应用程序</strong></code>
+
+`许多应用程序都是*通用*的，这意味着它们支持 iPhone 和 iPad。在 iPad 上运行时，通用应用程序可以正确利用 iPad 的较大屏幕。`
+
+`Bull’s Eye 不是普遍的应用程序。对于这些类型的应用程序，iPad 的行为就像是 iPhone 一样，但显示的是一切大的两倍。除了 12.9 英寸 iPad Pro，iPad 只有足够的像素可以模拟 3.5 英寸的手机。`
+
+`最好让 Bull’s Eye 成为一个真正的通用应用程序，但这个入门教程就会涉及太多了。你将在教程 4 StoreSearch 中了解有关 iPad 和通用应用程序的所有信息。`
+
+Interface Builder 具有方便的工具，可帮助你使游戏适合 3.5 英寸屏幕。
+
+➤ 转到 **Main.storyboard**。打开底部的 **View as:** 面板，选择最小的设备。（你可能需要将方向更改为 landscape）
+
+<div align="center"><img alt="查看 3.5 英寸的 storyboard" src="http://imgur.com/guuibXl.png"/></div><center>查看 3.5 英寸的 storyboard</center>
+
+<br>
+
+The storyboard 应该看起来像在 iPad 模拟器中的应用程序，右部分切断。现在你可以看到 storyboard 上的变化如何影响较小的 iPhone 4S 屏幕。
+
+首先，让我们修复 background image。图像是 568 点宽，但在 3.5 英寸，我们只有 480 点的空间，所以 image 显示偏离中心。
+
+全靠 Auto Layout 了，就像是雪中送炭。
+
+➤在 storyboard 中，在主 **View Controller** 上选择 **Background image view** 并单击 Xcode 窗口底部的小 **Align**（对齐）按钮：
+
+<div align="center"><img alt="The Align 按钮" src="http://imgur.com/XHKVQk2.png"/></div><center>The Align 按钮</center>
+
+<br>
+
+此菜单可让你将 view 与 scene 中的其他 views 对齐。
+
+如果你放置 background image，使原木色的圆环始终处于屏幕中心，那样看起来最好。Auto Layout 的方法是创建两个 alignment constraints（对齐约束），其中一个是 horizontal 另一个是 vertical。
+
+使用 Auto Layout 的方法是通过定义不同 views 之间的关系，即所谓的 *constraints*（约束）。运行应用程序时，UIKit 会评估这些 constraints 并计算 views 的最终布局。这可能听起来有点抽象，但你会很快看到它在实践中如何工作。
+
+➤ 在 **Align menu** 中，将 **Horizontally in Container** 和 **Vertically in Container** 前面的复选标记打上勾：
+
+<div align="center"><img alt="使用 Align 菜单将  background image 居中" src="http://imgur.com/mUlRfJ8.png"/></div><center>使用 Align 菜单将  background image 居中</center>
+
+<br>
+
+➤ 将 **Update Frames** 更改为 **Items of New Constraints**。
+
+➤ 单击 **Add 2 Constraints** 以完成。圆环现在正确对准中间。（按几下 Undo（撤消）和 Redo（重做）查看差异）
+
+新的 alignment constraints 被绘制为穿过 scene 的蓝色条：
+
+<div align="center"><img alt="蓝色条表示 alignment constraints" src="http://imgur.com/osq8nKx.png"/></div><center>蓝色条表示 alignment constraints</center>
+
+<br>
+
+在 Outline pane 中还有一个名为 **Constraints** 的项：
+
+<div align="center"><img alt="新的 Auto Layout constraints 显示在 Outline pane 中" src="http://imgur.com/Wx700nS.png"/></div><center>新的 Auto Layout constraints 显示在 Outline pane 中</center>
+
+<br>
+
+这里应该有两个 constraints，一个用于 **Background.centerX**，另一个用于 **Background.centerY**。
+
+<code class="highlighter-rouge"><strong>注意：</strong>根据你在 Xcode 中查看这些 constraints 的准确位置，它们也可以称为 **“Align Center X”**（用于 horizontal）和 **“Align Center Y”**（用于 vertical）。</code>
+
+➤再次在iPad模拟器和4英寸iPhone SE模拟器上再次运行应用程序。 在这两种情况下，背景应完全居中
+
+如果使用View as：面板将故事板切换回iPhone SE，背景应该也完全居中。
+
+让我们在“关于”屏幕上重复此操作。
+
+➤使用对齐菜单将两个对齐约束添加到关于屏幕的背景图像视图。
+
+背景图片现在应该居中。 当然，关闭按钮和网页视图仍然完全关闭。
+
+➤在故事板中，拖动“关闭”按钮，使其与视图的中心以及底部指南对齐。
+
+Interface Builder显示一个方便的指南，蓝色虚线，靠近屏幕边缘，这对于手动对齐对象很有用。 （您可能需要移动网页视图，以使其更容易捕捉按钮。）

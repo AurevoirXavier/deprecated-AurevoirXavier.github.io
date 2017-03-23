@@ -1,8 +1,8 @@
 ---
 layout: post
 title: "iOS Apprentice 1 Getting Started v5.0 （译）"
-date:   2017-03-22
-excerpt: "译至 125 页"
+date:   2017-03-23
+excerpt: "译至 130 页"
 tags: [program, iOS, translate]
 comments: true
 ---
@@ -44,6 +44,8 @@ comments: true
 | **视图**                      | **横屏**                    |
 | **Closure**                 | **Simulate**              |
 | **闭包**                      | **模拟**                    |
+| **Alignment constraints**   | **centering constraint**  |
+| **对齐约束**                    | **居中约束**                  |
 
 <br>
 
@@ -1034,7 +1036,7 @@ Objects 可以互相看看对方的 data（在某种程度上，就像如果你�
 
 要调整这些 views 的设置，请使用 **Attributes inspector**（属性检查器）。你可以在 Xcode 窗口右侧的 pane 中找到此检查器：
 
-<div align="center"><img alt="The Attributes inspector" src="http://imgur.com/dqfeAAG.png"/></div><center>The Attributes inspector</center>
+<div align="center"><img alt="Attributes inspector" src="http://imgur.com/dqfeAAG.png"/></div><center>Attributes inspector</center>
 
 <br>
 
@@ -1336,7 +1338,7 @@ let message = 的行是新的。还要注意另外两个小的变化。
 
 ➤ 运行应用程序，拖动 slider，然后按 button。现在 alert 应该显示 slider 的实际值。
 
-<div align="center"><img alt="The alert 显示 slider 的值" src="http://imgur.com/JcJZl6q.png"/></div><center>The alert 显示 slider 的值</center>
+<div align="center"><img alt="Alert 显示 slider 的值" src="http://imgur.com/JcJZl6q.png"/></div><center>Alert 显示 slider 的值</center>
 
 <br>
 
@@ -1604,7 +1606,7 @@ Tips：每当你看到 . . . 在源代码列表中，我想表达的意思就是
 
 ➤ 运行应用程序并尝试！
 
-<div align="center"><img alt="The alert 在新的一行显示出目标值" src="http://imgur.com/gt4UmUy.png"/></div><center>The alert 在新的一行显示出目标值</center>
+<div align="center"><img alt="Alert 在新的一行显示出目标值" src="http://imgur.com/gt4UmUy.png"/></div><center>Alert 在新的一行显示出目标值</center>
 
 <br>
 
@@ -1695,7 +1697,7 @@ receiver.methodName(parameters)
 //接收者.方法名(参数)
 ```
 
-The receiver（接收者）是你发送消息的 object。如果你发送消息给自己，那么接收者是自己。但是因为向自己发送消息是很常见的，所以你也可以丢掉这个特殊的关键字（译者注：这里指 self）。
+Receiver（接收者）是你发送消息的 object。如果你发送消息给自己，那么接收者是自己。但是因为向自己发送消息是很常见的，所以你也可以丢掉这个特殊的关键字（译者注：这里指 self）。
 
 老实说，这不是你第一次调用 method。addAction() 是 UIAlertController 上的一个方法，present() 是所有 view controller 都有的 method，包括你的。
 
@@ -1827,7 +1829,7 @@ targetLabel.text = targetValue
 
 答案是，你不能把一种 data type 的值放入另一种 type 的 variable 中去。方形钉不适合圆孔。（译者注：好比手套穿脚上，袜子戴手上）
 
-The targetLabel outlet 引用一个 UILabel object。UILabel object 具有一个 text 属性，它是一个 string object。你只能把 string 的值放入文本，但上面那行代码试图把 targetValue 放进去，它是一个 Int。这不可能成功，因为一个 Int 和一个 string 是两种非常不同的东西（type）。
+TargetLabel outlet 引用一个 UILabel object。UILabel object 具有一个 text 属性，它是一个 string object。你只能把 string 的值放入文本，但上面那行代码试图把 targetValue 放进去，它是一个 Int。这不可能成功，因为一个 Int 和一个 string 是两种非常不同的东西（type）。
 
 所以你必须将 Int 转换为 string，这就是 String(targetValue) 的作用。它类似于你之前见过的 Float(…) 和 Int(…)。
 
@@ -1947,7 +1949,7 @@ func updateLabels()
 
 现在你既有目标值（随机数）和读取 slider 的位置的 method，你可以计算玩家得分的点数。
 
-The slider 越靠近目标，玩家的点数越高。
+Slider 越靠近目标，玩家的点数越高。
 
 要计算这个回合的分数，请看看 slider 的值与目标之间的距离：
 
@@ -2109,7 +2111,7 @@ difference = targetValue - currentValue
 
 ➤ 运行它并亲自查看一下。
 
-<div align="center"><img alt="The alert 显示目标值和 slider 值之间的差值" src="http://imgur.com/q0dUR5L.png"/></div><center>The alert 显示目标值和 slider 值之间的差值</center>
+<div align="center"><img alt="Alert 显示目标值和 slider 值之间的差值" src="http://imgur.com/q0dUR5L.png"/></div><center>Alert 显示目标值和 slider 值之间的差值</center>
 
 <br>
 
@@ -2260,7 +2262,7 @@ Constants 在 Swift 中非常常见。通常你只需要保持一个值很短的
 
 ➤ 运行应用程序并自己玩玩看！
 
-<div align="center"><img alt="The alert 显示当前回合的玩家的得分" src="http://imgur.com/D0mD0tC.png"/></div><center>The alert 显示当前回合的玩家的得分</center>
+<div align="center"><img alt="Alert 显示当前回合的玩家的得分" src="http://imgur.com/D0mD0tC.png"/></div><center>Alert 显示当前回合的玩家的得分</center>
 
 <br>
 
@@ -2850,7 +2852,7 @@ Xcode 自动为你创建了主 ViewController object，但是 About屏幕的 vie
 
 Xcode 将创建一个新文件并将其添加到你的项目。你可能已经猜到的，新文件是 **AboutViewController.swift**。
 
-<div align="center"><img alt="The project navigator 中的新文件" src="http://imgur.com/qE7b5gw.png"/></div><center>The project navigator 中的新文件</center>
+<div align="center"><img alt="Project navigator 中的新文件" src="http://imgur.com/qE7b5gw.png"/></div><center>Project navigator 中的新文件</center>
 
 <br>
 
@@ -2900,7 +2902,7 @@ Your goal is to place the slider as close as possible to the target value. The c
 
 ➤ 确保取消选中 **Editable**（可编辑）设置，否则用户实际键入内容到 text view。对于这个游戏，它应该设置为只读。
 
-<div align="center"><img alt="The text view 的 Attributes inspector" src="http://imgur.com/UERdaF5.png"/></div><center>The text view 的 Attributes inspector</center>
+<div align="center"><img alt="Text view 的 Attributes inspector" src="http://imgur.com/UERdaF5.png"/></div><center>Text view 的 Attributes inspector</center>
 
 <br>
 
@@ -2928,11 +2930,11 @@ Your goal is to place the slider as close as possible to the target value. The c
 
 ➤现在可以运行应用程序。按 **(i)** button查看新屏幕。
 
-<div align="center"><img alt="The About 屏幕将显示一个翻转动画" src="http://imgur.com/wwtPpba.png"/></div><center>The About 屏幕将显示一个翻转动画</center>
+<div align="center"><img alt="About 屏幕将显示一个翻转动画" src="http://imgur.com/wwtPpba.png"/></div><center>About 屏幕将显示一个翻转动画</center>
 
 <br>
 
-The About 屏幕应该显示一个整洁的动画。很好，这似乎运转正常。
+About 屏幕应该显示一个整洁的动画。很好，这似乎运转正常。
 
 然而，这里有一个明显的缺点：点击 Close button 似乎没有效果。一旦用户进入 About 屏幕，她就永远也离不开了… 那听起来不像是友好的用户界面设计。
 
@@ -2961,7 +2963,7 @@ class AboutViewController: UIViewController {
 
 ➤ 打开 storyboard 并按住 Ctr l键从 **Close** button 拖动到 About scene 的 View Controller。嗯，奇怪，关闭动作应该列在这个弹出窗口，但没有。相反，你看到的弹出窗口，和之前你做 segue 时相同：
 
-<div align="center"><img alt="The close action 不会在弹出窗口中列出" src="http://imgur.com/iDWveR6.png"/></div><center>The close action 不会在弹出窗口中列出</center>
+<div align="center"><img alt="Close action 不会在弹出窗口中列出" src="http://imgur.com/iDWveR6.png"/></div><center>Close action 不会在弹出窗口中列出</center>
 
 <br>
 
@@ -2975,11 +2977,11 @@ class AboutViewController: UIViewController {
 
 ➤ 在 **Custom Class** 下，键入 **AboutViewController**。
 
-<div align="center"><img alt="The About screen 的 Identity inspector" src="http://imgur.com/bctNvv0.png"/></div><center>The About screen 的 Identity inspector</center>
+<div align="center"><img alt="About screen 的 Identity inspector" src="http://imgur.com/bctNvv0.png"/></div><center>About screen 的 Identity inspector</center>
 
 <br>
 
-输入前几个字符后，Xcode 会自动完成此操作。如果没有，请仔细检查是否确实选择了 View Controller，而不是其中的一个 view。（The view controller 也应该有一个蓝色边框，表示它被选中）
+输入前几个字符后，Xcode 会自动完成此操作。如果没有，请仔细检查是否确实选择了 View Controller，而不是其中的一个 view。（View controller 也应该有一个蓝色边框，表示它被选中）
 
 现在你应该能够将 Close button 连接到 action method。
 
@@ -3049,7 +3051,7 @@ Info.plist 是应用程序包内的一个配置文件，它告诉 iOS 应用程�
 
 <br>
 
-The Info.plist 文件只是配置选项及其值的列表。大多数这些可能对你没有意义，但是没关系——他们也不总是对我有意义。
+Info.plist 文件只是配置选项及其值的列表。大多数这些可能对你没有意义，但是没关系——他们也不总是对我有意义。
 
 请注意，选项 **Status bar is initially hidden**（状态栏最初是隐藏的）。它的值为 YES。这是你刚才更改的选项。
 
@@ -3079,7 +3081,7 @@ The Info.plist 文件只是配置选项及其值的列表。大多数这些可�
 
 这是应用程序所谓的 asset 目录，它包含应用程序所有的图像。现在，它是空的。其唯一的内容是应用程序图标的占位符，拟很快就会添加。
 
-<div align="center"><img alt="The asset 目录最初为空的" src="http://imgur.com/VW1yic5.png"/></div><center>The asset 目录最初为空的</center>
+<div align="center"><img alt="Asset 目录最初为空的" src="http://imgur.com/VW1yic5.png"/></div><center>Asset 目录最初为空的</center>
 
 <br>
 
@@ -3121,7 +3123,7 @@ Xcode 显示文件选择器。从本教程的资源中选择 Images 文件夹，
 
 ➤ 打开 **Main.storyboard**。进入对 **Object Library** 并找到一个 Image View。（提示：如果你在 Object Library 底部的搜索框中键入 “image”，则会快速过滤掉所有其他 views）。
 
-<div align="center"><img alt="The Object Library 中的 Image View control" src="http://imgur.com/REisqla.png"/></div><center>The Object Library 中的 Image View control</center>
+<div align="center"><img alt="Object Library 中的 Image View control" src="http://imgur.com/REisqla.png"/></div><center>Object Library 中的 Image View control</center>
 
 <br>
 
@@ -3135,7 +3137,7 @@ Xcode 显示文件选择器。从本教程的资源中选择 Images 文件夹，
 
 这将使 image view 覆盖整个屏幕。
 
-<div align="center"><img alt="The Image View的 Size inspector 设置" src="http://imgur.com/LJV1iC6.png"/></div><center>The Image View的 Size inspector 设置</center>
+<div align="center"><img alt="Image View的 Size inspector 设置" src="http://imgur.com/LJV1iC6.png"/></div><center>Image View的 Size inspector 设置</center>
 
 <br>
 
@@ -3200,7 +3202,7 @@ Xcode 显示文件选择器。从本教程的资源中选择 Images 文件夹，
 
 <br>
 
-➤ The label 还具有属性 **Autoshrink**（自动缩放）。确保将其设置为 **Fixed Font Size**（固定字体大小）。
+➤ Label 还具有属性 **Autoshrink**（自动缩放）。确保将其设置为 **Fixed Font Size**（固定字体大小）。
 
 如果启用，Autoshrink 将动态更改 font 的 size，如果文本大于 label。这在某些应用程序是有用的，但不是在这一个。相反，你将更改 label 的 size 以适应文本，而不是其他方式。（译者注：就是你输入很多字的话会拉长标签控件，使之变形，不再美观）
 
@@ -3208,7 +3210,7 @@ Xcode 显示文件选择器。从本教程的资源中选择 Images 文件夹，
 
 （如果 Size to Fit Content 菜单项是被禁用状态（灰色不可选择），则取消选择 label 并再次选择它。有时 Xcode 会对选择的是什么东西感到困惑。这破工具）
 
-The label 现在将变得略大或略小，以便它紧贴文本。如果在更改 font 时文本被截断，现在它将再次完全显示。
+Label 现在将变得略大或略小，以便它紧贴文本。如果在更改 font 时文本被截断，现在它将再次完全显示。
 
 你不必逐一设置其他 label 的这些属性；这将是一个庞大的工程。你可以通过选择多个 label，然后将这些更改应用于全部选择来快速搞定这件事。
 
@@ -3266,7 +3268,7 @@ The label 现在将变得略大或略小，以便它紧贴文本。如果在更�
 
 ➤ 将 **Text Color**（文本颜色）设置为 Red：96，Green：30，Blue：0，Opacity：100％。这是一个暗棕褐色。
 
-➤ 将 **Shadow Color** 设置为 pure white，50％ opacity。The shadow offset 应为 Width 0，Height 1（由于某种原因，它们在此处不称为 horizontal 和 vertical）。
+➤ 将 **Shadow Color** 设置为 pure white，50％ opacity。Shadow offset 应为 Width 0，Height 1（由于某种原因，它们在此处不称为 horizontal 和 vertical）。
 
 <code class="highlighter-rouge"><strong>混合</strong></code>
 
@@ -3290,9 +3292,9 @@ Buttons 可以有多个状态。当你点击一个 button 并按住它，它应�
 
 ➤ 检查 **Reverses On Highlight**（高亮反转）选项。这将使得当用户轻触 button 时 label 的外观看起来像是被按下。
 
-你也可以改变其他属性，但不要太过分了。The highlighted 效果不应该太耀眼。
+你也可以改变其他属性，但不要太过分了。Highlighted 效果不应该太耀眼。
 
-<div align="center"><img alt="The attributes for the highlighted Hit Me button" src="http://imgur.com/JS3gz9E.png"/></div><center>The attributes for the highlighted Hit Me button</center>
+<div align="center"><img alt="Attributes for the highlighted Hit Me button" src="http://imgur.com/JS3gz9E.png"/></div><center>Attributes for the highlighted Hit Me button</center>
 
 <br>
 
@@ -3395,7 +3397,7 @@ let thumbImageNormal = Sli
 
 ##使用 web view 的 HTML 内容
 
-The About 屏幕依然还有一些工作要做。
+About 屏幕依然还有一些工作要做。
 
 **练习：**更改关于屏幕上的 Close button 看起来像 Hit Me button 一样。你现在应该能够自己做到这一点。小菜一碟！如果你卡住了，请参考 Hit Me button 的说明。
 
@@ -3403,7 +3405,7 @@ The About 屏幕依然还有一些工作要做。
 
 ➤ 用 **Web View** 代替原来的位置（与以前一样，你可以在 Object Library 中找到这个 view）。
 
-关于 web view，顾名思义，可以显示 web pages（网页）。所有你需要做的是给它一个网站的URL。The Web view object 名为 UIWebView。
+关于 web view，顾名思义，可以显示 web pages（网页）。所有你需要做的是给它一个网站的URL。Web view object 名为 UIWebView。
 
 对于这个应用程序，你将使其显示一个来自应用程序包的静态 HTML 页面，所以它不会实际地去连接网络和下载任何东西。
 
@@ -3513,7 +3515,7 @@ Interface Builder 具有方便的工具，可帮助你使游戏适合 3.5 英寸
 
 <br>
 
-The storyboard 应该看起来像在 iPad 模拟器中的应用程序，右部分切断。现在你可以看到 storyboard 上的变化如何影响较小的 iPhone 4S 屏幕。
+Storyboard 应该看起来像在 iPad 模拟器中的应用程序，右部分切断。现在你可以看到 storyboard 上的变化如何影响较小的 iPhone 4S 屏幕。
 
 首先，让我们修复 background image。图像是 568 点宽，但在 3.5 英寸，我们只有 480 点的空间，所以 image 显示偏离中心。
 
@@ -3521,7 +3523,7 @@ The storyboard 应该看起来像在 iPad 模拟器中的应用程序，右部�
 
 ➤在 storyboard 中，在主 **View Controller** 上选择 **Background image view** 并单击 Xcode 窗口底部的小 **Align**（对齐）按钮：
 
-<div align="center"><img alt="The Align 按钮" src="http://imgur.com/XHKVQk2.png"/></div><center>The Align 按钮</center>
+<div align="center"><img alt="Align 按钮" src="http://imgur.com/XHKVQk2.png"/></div><center>Align 按钮</center>
 
 <br>
 
@@ -3557,16 +3559,73 @@ The storyboard 应该看起来像在 iPad 模拟器中的应用程序，右部�
 
 <code class="highlighter-rouge"><strong>注意：</strong>根据你在 Xcode 中查看这些 constraints 的准确位置，它们也可以称为 **“Align Center X”**（用于 horizontal）和 **“Align Center Y”**（用于 vertical）。</code>
 
-➤再次在iPad模拟器和4英寸iPhone SE模拟器上再次运行应用程序。 在这两种情况下，背景应完全居中
+➤ 再次在 iPad Simulator 和 4 英寸 iPhone SE Simulator 上再次运行应用程序。在这两种情况下，背景应完全居中。
 
-如果使用View as：面板将故事板切换回iPhone SE，背景应该也完全居中。
+如果使用 **View as:** 面板将 storyboard 切换回 iPhone SE，背景应该也完全居中。
 
-让我们在“关于”屏幕上重复此操作。
+让我们在 About 屏幕上重复此操作。
 
-➤使用对齐菜单将两个对齐约束添加到关于屏幕的背景图像视图。
+➤ 使用 **Align menu** 将两个 alignment constraints 添加到 About 屏幕的 background image view。
 
-背景图片现在应该居中。 当然，关闭按钮和网页视图仍然完全关闭。
+Background image 现在应该居中。当然，Close button 和 web view 仍然在屏幕外面。
 
-➤在故事板中，拖动“关闭”按钮，使其与视图的中心以及底部指南对齐。
+➤ 在 storyboard 中，拖动 **Close** button，使其与 view 的中心以及底部指南对齐。
 
-Interface Builder显示一个方便的指南，蓝色虚线，靠近屏幕边缘，这对于手动对齐对象很有用。 （您可能需要移动网页视图，以使其更容易捕捉按钮。）
+Interface Builder 显示一个方便的指南，蓝色虚线，靠近屏幕边缘，这对于手动对齐 objects 很有用。（你可能需要移动 web view，以使其更容易捕捉 button）
+
+<div align="center"><img alt="虚线的蓝线是帮助定位你的 UI 元素的指南" src="http://imgur.com/14gFfqt.png"/></div><center>虚线的蓝线是帮助定位你的 UI 元素的指南</center>
+
+<br>
+
+像以前一样，你要创建一个 centering constraint（居中的约束），使 Close button 保持在屏幕中间，无论屏幕宽度如何。
+
+➤ 单击 **Close** button 进行选择。从 **Align** 菜单中，选择 **Horizontally in Container**，然后单击 **Add 1 Constraint**。
+
+Interface Builder 现在绘制一个红色条以表示 constraint，以及一个位于按钮周围的红色框。
+
+<div align="center"><img alt="Close button 有红色的 constraints" src="http://imgur.com/yYr7HPG.png"/></div><center>Close button 有红色的 constraints</center>
+
+<br>
+
+这是一个问题：线条都应该是蓝色的，而不是红色。红色表示 constraints 有问题，通常是因为没有足够的 constraints。
+
+对于每个 view，必须始终有足够的 constraints 来定义其位置和大小。Close button 已经知道它的大小——你之前将其输入到 Size inspector（尺寸检查器）中——但是对于它的位置，只有 X 坐标（horizontal 方向对齐）的 constraint。你还需要为 Y 坐标添加 constraint。
+
+有不同类型的 constraints。到目前为止，你已经使用了 alignment constraints，但也有 “spacing” constraints（“间距”约束），可以确保两个 views 的两边保持粘合在一起，间隔一定的间距。你可以使用 Pin menu 进行 spacing constraints。
+
+➤ 保持 **Close** button 仍然选中，单击窗口底部的 **Pin button**（固定按钮）：
+
+<div align="center"><img alt="Pin button 用于添加 spacing constraints" src="http://imgur.com/QW27B5Y.png"/></div><center>Pin button 用于添加 spacing constraints</center>
+
+<br>
+
+此菜单可让你将 view “pin” 到其相邻 view。对于 Close button，你希望它始终保持在距离屏幕底部 20 点的地方，这样就可以将其固定。
+
+➤ 在 **Pin menu** 中，**Spacing to nearest neighbor** 部分中有四个线条表示 view 可以被固定的四边。因为你想要固定 Close button 的底部，请选择该线条使其完全变红。
+
+<div align="center"><img alt="红色的线条决定了被锁定的两边" src="http://imgur.com/pAh68ws.png"/></div><center>红色的线条决定了被锁定的两边</center>
+
+<br>
+
+➤ 确保间距为 **20**，然后单击 **Add 1 Constraint** 完成。现在的 constraints 全都变蓝了，意思就是一切都OK：
+
+<div align="center"><img alt="Close button 的 constraints 是有效的" src="http://imgur.com/60vBsnN.png"/></div><center>Close button 的 constraints 是有效的</center>
+
+<br>
+
+如果你还看不到蓝色的线条，而且看到橙色的线条，那么你的 Auto Layout constraints 仍然有问题：
+
+<div align="center"><img alt="Views 不是根据 constraints 定位的" src="http://imgur.com/h7Ud7Rk.png"/></div><center>Views 不是根据 constraints 定位的</center>
+
+<br>
+
+这发生在 constraints 有效（否则条将是红色），但是 view 不在 scene 中的正确位置。在旁边的橙色的虚线框是 Auto Layout 已经计算出的 view，而不是根据你给出的 constraints 得到的。
+
+要解决此问题，请再次选择 **Close** button，然后从 **Resolve Auto Layout Issues** 菜单中选择 **Update Frames**：
+
+<div align="center"><img alt="Resolving Auto Layout issues" src="http://imgur.com/cSiwUEb.png"/></div><center>Resolving Auto Layout issues</center>
+
+<br>
+
+无论你是在 3.5 英寸还是 4 英寸 Simulator 上，Close button 现在应始终完美居中。
+

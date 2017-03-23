@@ -2,7 +2,7 @@
 layout: post
 title: "iOS Apprentice 1 Getting Started v5.0 （译）"
 date:   2017-03-23
-excerpt: "译至 130 页"
+excerpt: "译至 135 页"
 tags: [program, iOS, translate]
 comments: true
 ---
@@ -494,7 +494,7 @@ Xcode 窗口的左侧被命名为 **Navigator Area**（导航区域）。顶部�
 
 <br>
 
-像一个超级英雄在电话亭里改变他的衣服，主编辑 pane（窗格）现在转换为界面生成器。这个工具允许你将用户界面组件（例如 button）拖放到 **Interface Builder** 中。（OK，虽然这个比方打的不怎样，但是我只是想说 Interface Builder 是一个超级工具。）
+像一个超级英雄在电话亭里改变他的衣服，主编辑 pane（窗格）现在转换为 **Interface Builder**。这个工具允许你将用户界面组件（例如 button）拖放到 **Interface Builder** 中。（OK，虽然这个比方打的不怎样，但是我只是想说 Interface Builder 是一个超级工具。）
 
 ➤ 如果它还不是蓝色，请单击 Xcode 工具栏中的 **Hide or show utilities** （隐藏或显示）实用程序按钮：
 
@@ -2860,7 +2860,7 @@ Xcode 将创建一个新文件并将其添加到你的项目。你可能已经�
 
 ➤ 打开 **Main.storyboard**。没有任何表示关于 view controller 的 scene，因此你必须先添加它。
 
-➤ 从 **Object Librart** 中，选择 **View Controller** 并将其拖动到 main View Controller 右侧的 canvans 中。
+➤ 从 **Object Librart** 中，选择 **View Controller** 并将其拖动到主 View Controller 右侧的 canvans 中。
 
 <div align="center"><img alt="从 Object Library 中拖动新的 View Controller" src="http://imgur.com/xLNZtUP.png"/></div><center>从 Object Library 中拖动新的 View Controller</center>
 
@@ -3628,4 +3628,129 @@ Interface Builder 现在绘制一个红色条以表示 constraint，以及一个
 <br>
 
 无论你是在 3.5 英寸还是 4 英寸 Simulator 上，Close button 现在应始终完美居中。
+
+<code class="highlighter-rouge"><strong>注意：如果你不对 views 添加任何 constraints，会发生什么？在这种情况下，Xcode 会在构建应用程序时自动添加 constraints。这就是为什么你以前不需要理会这些。</strong></code>
+
+`但是，这些默认 constraints 可能并不总是做你想要的。例如，他们不会自动调整 view 的大小，以适应较小的 3.5 英寸屏幕。如果你想要适应，那么你需要添加自己的 constraints。（Auto Layout 看不懂你的头脑！）`
+
+`只要在 view 中添加一个 constraint，Xcode 将不再为该 view 添加任何其他自动 constraints。从那时起，你负责添加足够的其他 constraint，以便 UIKit 始终知道 view 的位置和大小将是什么。`
+
+在 About 屏幕中有一件事可以解决，那就是网 web view。
+
+➤ 选择 **Web View** 并打开 **Pin menu**。首先，确保 **Constrain to margins** 未被选中。然后点击所有四个线条，使它们变得坚实的红色，并将它们的间距设置为 20 点，除了底部 8 点：
+
+<div align="center"><img alt="创建 web view 的 constraints" src="http://imgur.com/FMFFq5T.png"/></div><center>创建 web view 的 constraints</center>
+
+<br>
+
+➤对于 **Update Frames** 选择 **Items of New Constraints**。这将调整 web view 的尺寸至适当大小，根据你选择的 constraints。
+
+<div align="center"><img alt="为 Update Frames 选择正确的选项" src="http://imgur.com/ZgmKTaL.png"/></div><center>为 Update Frames 选择正确的选项</center>
+
+<br>
+
+没有此设置，Xcode 可能会显示橙色线条，表示它在抱怨 web view 的大小和位置与你添加的 constraints 不对应。您可以使用“解决自动布局问题”按钮进行修复，但是为什么在Xcode可以为您解决问题时呢？
+
+➤ 通过单击 **Add 4 Constraints**。
+
+Web view 现在有四个 constraints（蓝色线条）：
+
+<div align="center"><img alt="Web view 的四个 constraints" src="http://imgur.com/ZYHH7QR.png"/></div><center>Web view 的四个 constraints</center>
+
+<br>
+
+其中三个将 web view 固定到主视图，以便始终随其一起调整大小，并将其连接到 Close button。这足以在任何情况下确定 web view 的大小和位置。
+
+回到主要的游戏 scene，这仍然需要一些工作来适应较小的屏幕尺寸。
+
+首先，您将通过将所有 controls 拖动到左侧来清理 storyboard，以便整齐地放置在 3.5 英寸的屏幕上。这在 3.5 英寸模式中有点棘手，因为一些 buttons 和 labels 位于可见区域之外，因此无法选择它们并移动。
+
+幸运的是，Interface Builder 有一个方便的 preview pane（预览窗格），可以帮助你。
+
+➤ 使用 **View as:** 面板切换回 4 英寸 iPhone SE。现在所有的 labels 和 buttons 都可以再次看到。
+
+➤ 确保主 **View Controller** 是被选中状态。
+
+➤ 单击 Xcode 工具栏中两个重叠的圆圈的按钮打开 **Assistant editor**（助手编辑器）。
+
+➤ 在跳转栏中选择 **Preview**，然后选择 **Main.storyboard（Preview）**。 （在此选项变为可见之前，您可能需要点击一下）
+
+<div align="center"><img alt="在 Interface Builder 中启用 preview assistant" src="http://imgur.com/u2LcfHf.png"/></div><center>在 Interface Builder 中启用 preview assistant</center>
+
+<br>
+
+屏幕现在分为两部分。左边是 storyboard; 右侧是一个 preview pane，显示应用程序在不同 iPhone 设备上的外观。
+
+如果你的屏幕不能看到全部东西，你可以通过使用工具栏中的按钮隐藏 navigator 和实用 utilities panes 来腾出多一些空间。你也可以折叠 Interface Builder 的 Outline pane。（或购买一个超大的 30 英寸显示器）
+
+Preview assistant目前应该展示 3.5 寸 iPhone 4S。如果没有，请执行以下操作：
+
+➤ 选择 preview，使其成为蓝色边框，然后按键盘上的 Delete 键将其删除。
+
+➤ 使用底部的小 **+** 按钮然后选择 **iPhone 4s**。这增加了 3.5 英寸手机的预览，但是以 portrait 显示。
+
+➤ 将鼠标悬停在 preview 上会显示旋转图标。单击旋转图标将预览翻转为 landscape：
+
+<div align="center"><img alt="旋转图标在 protrait 和 landscape 之间切换" src="http://imgur.com/dBIx7lM.png"/></div><center>旋转图标在 protrait 和 landscape 之间切换</center>
+
+<br>
+
+现在 preview pane 应该看起来就像在 iPad Simulator 上的应用程序，游戏的右侧部分切断。
+
+➤ 在 storyboard（左窗格），移动 labels，buttons 和 slider，使一切看起来在右侧的 preview pane 不错。这是 preview pane 真正方便的地方！
+
+<div align="center"><img alt="一切重新排列，以适应较小的 3.5 英寸屏幕" src="http://imgur.com/hmZJ33h.png"/></div><center>一切重新排列，以适应较小的 3.5 英寸屏幕</center>
+
+<br>
+
+当然，这款游戏在 4 英寸手机上看起来有点偏差。你将通过将所有 labels，buttons 和 slider 放入新的 “container” view（容器视图）来进行修复。使用 Auto Layout，你可以将该 container view 放在屏幕中，无论屏幕大小多大。
+
+➤ 选择所有 labels，buttons 和 slider。你可以按住 ⌘ 并单击它们，但更简单的方法是转到 **Outline pane**，单击第一个 view（对于我来说，第一个是 “Put the Bull’s Eye as close as you can to:” label），然后按住 Shfit 并点击最后一个 view（在我的情况来看，最后一个是 Hit Me button）：
+
+<div align="center"><img alt="从 Outline pane 中选择 views" src="http://imgur.com/aciNS7x.png"/></div><center>从 Outline pane 中选择 views</center>
+
+<br>
+
+你应该已经选择了除 background image view 之外的所有内容。
+
+➤ 从 Xcode 的菜单栏中，选择 **Editor → Embed In → View**。这将所选 views 放置在新的 container view 中：
+
+<div align="center"><img alt="Views 嵌入到新的 container view 中" src="http://imgur.com/aS1zoA1.png"/></div><center>Views 嵌入到新的 container view 中</center>
+
+<br>
+
+这个新的 view 是完全白色的，这不是你最终想要的，但它确实可以更容易地添加 constraints。
+
+➤ 选择新添加的 **container view** 并打开 **Pin menu**。在 **Width** 和 **Height** 前面的复选框打上勾，以便为它们制定 constraints。 单击 **Add 2 Constraints** 以完成。
+
+<div align="center"><img alt="固定 container view 的 width 和 height" src="http://imgur.com/7hpHQuA.png"/></div><center>固定 container view 的 width 和 height</center>
+
+<br>
+
+Interface Builder 现在在 view 周围绘制几个表示 Width 和 Height constraints 的线条，但它们是红色的。不要惊慌 这只意味着还没有足够的 constraints。没问题，你会添加缺少的 constraints。
+➤ 在 container view 仍被选中的情况下，打开 **Align menu**。勾选 **Horizontally in Container** 和 **Vertically in Container**。对于 **Update Frames**，选择 **Items of New Constraints**。单击 **Add 2 Constraints**。
+
+所有的 Auto Layout 线条现在应该是蓝色， view 是完美地居中。
+
+➤ 最后，将 container view 的 **Background&& color 更改为 **Clear Color**（换句话说，100% transparent）。
+
+你现在可以在 3.5 英寸和 4 英寸 iPhone 上正确布局！ 试试看：
+
+<div align="center"><img alt="该游戏运行在 3.5 英寸和 4 英寸 iPhone 上" src="http://imgur.com/qxSz9vt.png"/></div><center>该游戏运行在 3.5 英寸和 4 英寸 iPhone 上</center>
+
+<br>
+
+Auto Layout 可能需要一段时间才能习惯。添加 constraints 以便定位 UI 元素比直接把它拖放到位稍微不那么明显。
+
+但是，当你处理具有不同屏幕尺寸的设备时，你还需要大量的权利和灵活性。
+
+你将在 *The iOS Apprentice* 的其他部分了解有关 Auto Layout 的更多信息。
+
+##支持 iPhone 6 及更新
+
+使游戏在较小的设备上工作是一回事，但是更大的设备，如 iPhone 6, 7 和 Plus 呢？普通的 iPhone 6, 6s 和 7 有一个 4.7 英寸的屏幕，而 Plus 有一个高达 5.5 英寸的屏幕。
+
+➤ 尝试一下！ 您可以使用 **View as:** 或 preview pane 查看 4.7 英寸和 5.5 英寸模式的 storyboard，也可以在 iPhone 6s，iPhone 7 或 Plus simulators 中运行应用程序。
+
+发生了什么？这就是运行在 7 Plus Simulator 上的样子：
 

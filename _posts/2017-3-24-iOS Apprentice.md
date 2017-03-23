@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "iOS Apprentice 1 Getting Started v5.0 （译）"
-date:   2017-03-23
+date:   2017-03-24
 excerpt: "译至 135 页"
 tags: [program, iOS, translate]
 comments: true
@@ -3732,7 +3732,7 @@ Interface Builder 现在在 view 周围绘制几个表示 Width 和 Height const
 
 所有的 Auto Layout 线条现在应该是蓝色， view 是完美地居中。
 
-➤ 最后，将 container view 的 **Background&& color 更改为 **Clear Color**（换句话说，100% transparent）。
+➤ 最后，将 container view 的 **Background** color 更改为 **Clear Color**（换句话说，100% transparent）。
 
 你现在可以在 3.5 英寸和 4 英寸 iPhone 上正确布局！ 试试看：
 
@@ -3753,4 +3753,20 @@ Auto Layout 可能需要一段时间才能习惯。添加 constraints 以便定�
 ➤ 尝试一下！ 您可以使用 **View as:** 或 preview pane 查看 4.7 英寸和 5.5 英寸模式的 storyboard，也可以在 iPhone 6s，iPhone 7 或 Plus simulators 中运行应用程序。
 
 发生了什么？这就是运行在 7 Plus Simulator 上的样子：
+
+<div align="center"><img alt="游戏在 iPhone 6s Plus 或者 7 Plus 上的表现" src="http://imgur.com/fQELwMa.png"/></div><center>游戏在 iPhone 6s Plus 或 7 Plus 上的表现</center>
+
+<br>
+
+（记住，你可以按 **⌘1** 到 **⌘**5 缩放 Simulator，如果它不适合你的屏幕的话，因为 iPhone Plus 几乎和 iPad 一样大！）
+
+嗯，我猜这不是太糟糕——但是也不是很好。Background image 不太适合，应用程序没有利用所有可用空间。如果一切都稍大一些会更好。
+
+有几种方法可以解决这个问题，但是我们要作弊，采取简单的方法。
+
+应用程序需要选择支持 iPhone 6 及更高版本的较大屏幕。
+
+如果一个应用程序*不*加入，iPhone 6/7 / Plus 将自动扩展应用程序以填补额外的空间。这样做是为了使较旧的应用程序仍然可以在这些较大的设备上使用。这对我们来说非常棒，因为扩大规模正是我们想要的——这样可以省不少事。
+
+启用 iPhone 6 支持的应用程序必须提供所谓的 **launch screen**（启动屏幕）。你已经看到过这个 lanuch screen 在 action 中，可能不知道。
 

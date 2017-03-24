@@ -2,7 +2,7 @@
 layout: post
 title: "iOS Apprentice 1 Getting Started v5.0 （译）"
 date:   2017-03-24
-excerpt: "译至 135 页"
+excerpt: "译至 140 页"
 tags: [program, iOS, translate]
 comments: true
 ---

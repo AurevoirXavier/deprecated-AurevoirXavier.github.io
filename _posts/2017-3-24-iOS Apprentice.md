@@ -46,6 +46,8 @@ comments: true
 | **闭包**                      | **模拟**                    |
 | **Alignment constraints**   | **centering constraint**  |
 | **对齐约束**                    | **居中约束**                  |
+| **Core Animation**            | **Launch screen**       |
+| **核心动画**                   | **启动屏幕**              |
 
 <br>
 
@@ -355,7 +357,7 @@ C++ 是另一种由 C 衍生出来的 object-oriented 编程语言。它非常�
 - 在用户按下 “Hit Me!” button 后，读取 Slider 的值。
 - 在每个回合开始时生成一个随机数，并将其显示在屏幕上，这是目标值。
 - 将 Slider 的值与随机数进行比较，并计算出得分。让得分在警报窗口中显示。
-- 将 “开始” 按钮放在屏幕上。点击它会重置得分，并从第一轮重新开始。
+- 将 Start Over button 放在屏幕上。点击它会重置得分，并从第一轮重新开始。
 - 将应用程序以横屏显示。
 - 美化。 :-)
 
@@ -1006,7 +1008,7 @@ Method 的概念可能仍然有点怪异，所以这里有一个例子：
 
 <br>
 
-你（或至少一个名字为 “你” 的 object）想开一个聚会（译者注：这里给出原文，所以不要问我为什么这个方法名这么奇怪，叫做throwParty：You (or at least an object named “You”) want to throw a party），但你忘了买冰淇淋。幸运的是，你邀请了名为史蒂夫的 object，他恰好住在一家便利店旁边。这不会是一场没有冰淇淋的聚会，所以在你的聚会准备期间的某个时候，你给 object Steve 一个消息，要求他带一些冰淇淋。
+你（或至少一个名字为 “你” 的 object）想开一个聚会（译者注：这里给出原文，所以不要问我为什么这个 method 名这么奇怪，叫做throwParty：You (or at least an object named “You”) want to throw a party），但你忘了买冰淇淋。幸运的是，你邀请了名为史蒂夫的 object，他恰好住在一家便利店旁边。这不会是一场没有冰淇淋的聚会，所以在你的聚会准备期间的某个时候，你给 object Steve 一个消息，要求他带一些冰淇淋。
 
 计算机现在将 object 切换到 Steve，并从上到下逐个执行他的 buyIceCream() method 的命令。
 
@@ -1016,7 +1018,7 @@ Method 的概念可能仍然有点怪异，所以这里有一个例子：
 
 “发送消息” 听起来比它原本的意思更难懂。但这是一个很好的方式来思考 objects 如何沟通，但其中真的没有任何鸽子或邮递员参与。计算机只是从 throwParty() method 跳转到buyIceCream() method，然后再返回。
 
-通常使用术语 “calling a method”（调用方法）或 “invoking a method”（调用方法）。这意味着与发送消息完全相同的事情：计算机跳转到你调用的 method，并返回到该方法结束时它停止的地方。
+通常使用术语 “calling a method”（调用方法）或 “invoking a method”（调用方法）。这意味着与发送消息完全相同的事情：计算机跳转到你调用的 method，并返回到该 method 结束时它停止的地方。
 
 重要的是要记住的是，对象有 method（涉及购买冰淇淋的步骤）和 data（实际的冰淇淋和用来买它的钱）。
 
@@ -1102,7 +1104,7 @@ Inspector 区域显示当前选择的项目的各个方面。例如，Attributes
 
 <br>
 
-<code class="highlighter-rouge"><strong>注意：</strong>你注意到 sliderMoved: action 在他的名称中有冒号，但 showAlert 却没有？这是因为 sliderMoved() 方法接受单个参数，slider，而 showAlert() 没有任何参数。如果操作方法有参数，Interface Builder 将向名称添加 : 。 往后你将了解更多关于使用参数的信息。</code>
+<code class="highlighter-rouge"><strong>注意：</strong>你注意到 sliderMoved: action 在他的名称中有冒号，但 showAlert 却没有？这是因为 sliderMoved() method 接受单个参数，slider，而 showAlert() 没有任何参数。如果 action method 有参数，Interface Builder 将向名称添加 :。 往后你将了解更多关于使用参数的信息。</code>
 
 ➤ 运行应用程序并拖动 slider。
 
@@ -1164,7 +1166,7 @@ String 中的 \\(…) 之间的任何内容都是特殊的。print() 语句使�
 
 在开发应用程序期间，使用 print() 将信息打印到 Debug area 中非常有用，但它对用户来说绝对没有用，因为他们看不到任何信息。
 
-让我们改进此操作方法，并使其在 alert 弹出窗口中显示 slider 的值。 那么如何获得 slider 的值到 showAlert() ？
+让我们改进此 action method，并使其在 alert 弹出窗口中显示 slider 的值。 那么如何获得 slider 的值到 showAlert() ？
 
 当你读取 sliderMoved() 中的 slider 的值时，那条 data 会消失（译者注：data 指 slider 的值，好比有一座图书馆，里面的书都没有名字，你想找你上次看过的那一本书），在 action method 结束时。如果你可以记住这个值并保存直到用户点击 Hie Me button 时，那将非常有用。
 
@@ -1396,7 +1398,7 @@ override func viewDidLoad() {
 }
 ```
 
-当你基于 Xcode 模板创建此项目时，Xcode 已经将 viewDidLoad() 方法放入源代码中。你现在将添加一些代码。
+当你基于 Xcode 模板创建此项目时，Xcode 已经将 viewDidLoad() method 放入源代码中。你现在将添加一些代码。
 
 一旦 view controller 从 storyboard 文件加载其用户界面，viewDidLoad() 消息由 UIKit 发送。此时，view controller 还不可见，因此这是将实例 variables 设置为其正确初始值的好位置。
 
@@ -1464,7 +1466,7 @@ Swift 有以下三个可能的范围级别：
   ...
 ```
 
-因为消息， alert 和 action objects 在方法内创建，所以它们是本地化。它们只有在执行 showAlert() action 时才存在，并在 action 完成时消失。
+因为消息， alert 和 action objects 在 method 内创建，所以它们是本地化。它们只有在执行 showAlert() action 时才存在，并在 action 完成时消失。
 
 一旦 showAlert() method 完成，即当没有更多语句要执行时，计算机将销毁消息，alert 和 action objects。他们的存储空间将不再被需要。
 
@@ -1634,9 +1636,9 @@ Tips：每当你看到 . . . 在源代码列表中，我想表达的意思就是
 
 ---
 
-每当你发现自己在思考：“在应用程序中的这一点，我们必须这样做”，那么它是有意义的，应该为其创建一个新的 method。这个方法将在自己的单元中很好地捕获该 functionality。
+每当你发现自己在思考：“在应用程序中的这一点，我们必须这样做”，那么它是有意义的，应该为其创建一个新的 method。这个 method 将在自己的单元中很好地捕获该 functionality。
 
-➤ 记住这一点，将以下新方法添加到 **ViewController.swift**。
+➤ 记住这一点，将以下新 method 添加到 **ViewController.swift**。
 
 ```swift
 func startNewRound() {
@@ -1650,7 +1652,7 @@ func startNewRound() {
 
 它与你之前做的没有很大的区别，除了你把设置一个新回合的逻辑移动到自己的 method startNewRound() 中。这样做的优点是，你可以在多个地方使用此逻辑。
 
-首先，你将从 viewDidLoad() 调用此新方法来设置第一轮的所有内容。回想一下，viewDidLoad（） 只会在应用程序启动时发生一次，因此这是开始第一轮游戏的好起点。
+首先，你将从 viewDidLoad() 调用此新 method 来设置第一轮的所有内容。回想一下，viewDidLoad（） 只会在应用程序启动时发生一次，因此这是开始第一轮游戏的好起点。
 
 ➤ 将 viewDidLoad() 更改为：
 
@@ -1690,7 +1692,7 @@ self.startNewRound()
 
 这与刚才没有 “self.” 的 startNewRound() 做完全相同的事情。回忆我刚才说的 view controller 发送消息给自己？那么，这就是 “self”（自我） 的意思。
 
-调用你平时写的 object 的方法：
+调用你平时写的 object 的 method：
 
 ```swift
 receiver.methodName(parameters)
@@ -1699,7 +1701,7 @@ receiver.methodName(parameters)
 
 Receiver（接收者）是你发送消息的 object。如果你发送消息给自己，那么接收者是自己。但是因为向自己发送消息是很常见的，所以你也可以丢掉这个特殊的关键字（译者注：这里指 self）。
 
-老实说，这不是你第一次调用 method。addAction() 是 UIAlertController 上的一个方法，present() 是所有 view controller 都有的 method，包括你的。
+老实说，这不是你第一次调用 method。addAction() 是 UIAlertController 上的一个 method，present() 是所有 view controller 都有的 method，包括你的。
 
 当你写 Swift 程序时，你所做的很多事情是调用 object 的 method，因为这是你的应用程序中的 object 的沟通方式。
 
@@ -1815,7 +1817,7 @@ slider.value = currentValue
 
 ➤ 从弹出窗口中选择 **targetLabel**，以完成连关联。
 
-➤ 让新的目标址 label 上显示出来，在 startNewRound() 下面添加以下方法到 **ViewController.swift**：
+➤ 让新的目标址 label 上显示出来，在 startNewRound() 下面添加以下 method 到 **ViewController.swift**：
 
 你把这个逻辑放到它自己的 method 中，因为你可能会从不同的地方使用它。
 
@@ -2455,7 +2457,7 @@ func updateLabels() {
 
 这个逻辑的正确位置是 showAlert()，因为这是创建 UIAlertController 的地方。你已经做了一些计算以构建消息文本，现在你会做类似的标题文本的东西。
 
-➤ 下面是已更改的方法的全部内容：
+➤ 下面是已更改的 method 的全部内容：
 
 ```swift
 @IBAction func showAlert() {
@@ -2557,7 +2559,7 @@ func updateLabels() {
 
 **Local bariables 概述**
 
-我想再次指出局部变量和实例变量之间的区别。 正如你现在应该知道的，局部变量只存在于定义它的方法的持续时间，而实例变量存在，只要视图控制器（拥有它的对象）存在。 同样的事情对于常量也是如此。
+我想再次指出局部变量和实例变量之间的区别。 正如你现在应该知道的，局部变量只存在于定义它的 method 的持续时间，而实例变量存在，只要视图控制器（拥有它的对象）存在。 同样的事情对于常量也是如此。
 
 在 showAlert() 中，有六个 local variable，并且使用三个 instace variables：
 
@@ -2588,9 +2590,9 @@ let action = . . .
 
 这六个项目——difference, points, title, message, alert, 和 action——仅限于 showAlert() method，并且不在其外部。一旦该 method 完成，本地的都不再存在。
 
-例如，你可能会想知道，每当玩家点击 Hit Me button 时，difference 如何，即使它是一个 constant。constants 一旦给定一个值，以后不会改变？（译者注：提前透漏一下吧，就算是常量也是可以改变的。仔细看看前一句话，一旦 method 完成，本地的常量或者变量都不再存在。所以点击按钮后，又执行了一次方法，现在的那个常量已经不再是原来那个了。想象一下你有一支笔，笔芯已经没有墨水了，你把没水的笔芯丢掉然后换了一支新的笔芯进去）
+例如，你可能会想知道，每当玩家点击 Hit Me button 时，difference 如何，即使它是一个 constant。constants 一旦给定一个值，以后不会改变？（译者注：提前透漏一下吧，就算是常量也是可以改变的。仔细看看前一句话，一旦 method 完成，本地的常量或者变量都不再存在。所以点击按钮后，又执行了一次 method，现在的那个常量已经不再是原来那个了。想象一下你有一支笔，笔芯已经没有墨水了，你把没水的笔芯丢掉然后换了一支新的笔芯进去）
 
-这是为什么：每次调用一个方法时，都会重新创建其局部变量和常量。 旧的值早已被遗弃，你得到的是新的。
+这是为什么：每次调用一个 method 时，都会重新创建其局部变量和常量。 旧的值早已被遗弃，你得到的是新的。
 
 当调用 showAlert() 时，它会创建一个与前一个无关的完全新的 instance difference。这个特定的 constant 值只用到 showAlert() 结束，然后再次被遗弃。
 
@@ -2609,7 +2611,7 @@ class ViewController: UIViewController {
   var round = 0
 ```
 
-因此，你可以从任何方法使用这些 variables，而无需再次声明它们，并且它们将保留其值。
+因此，你可以从任何 method 使用这些 variables，而无需再次声明它们，并且它们将保留其值。
 
 如果你这样做，
 
@@ -2625,7 +2627,7 @@ class ViewController: UIViewController {
 
 然后他们不会和你预期一样的去工作。因为你现在把 var 放在 score 的前面，你已经使它成为一个新的 local variable，它只在这个 method 中有效。
 
-换句话说，这不会向 *instance variable* 添加 points，而是添加到也被命名为 score 的新的 *local variable*。instance variable points 永远不会改变，即使它具有相同的名称。（译者注：经常会遇到本地变量和全局变量拥有相同名字，在 c++ 中 人们经常使用 this.a 表示全局变量 a，用 a 表示方法体内的本地变量 a。不过好习惯还是不要使用这么多重复的名字）
+换句话说，这不会向 *instance variable* 添加 points，而是添加到也被命名为 score 的新的 *local variable*。instance variable points 永远不会改变，即使它具有相同的名称。（译者注：经常会遇到本地变量和全局变量拥有相同名字，在 c++ 中 人们经常使用 this.a 表示全局变量 a，用 a 表示 method 体内的本地变量 a。不过好习惯还是不要使用这么多重复的名字）
 
 显然，这不是你想在这里发生。幸运的是，对于上面的代码上面甚至不会进行编译。Swift knows there’s something fishy about that line（知道上面这行代码有些蹊跷，猫腻）。
 
@@ -2769,7 +2771,7 @@ func startNewGame() {
 }
 ```
 
-这并不重要，你放置这个方法的位置，但喝下面的其他动作方法放在一起是一个很好的主意。
+这并不重要，你放置这个 method 的位置，但喝下面的其他 action method 放在一起是一个很好的主意。
 
 当按下 Start Over button 时，startOver() action method 首先调用 startNewGame() 开始一个新游戏。（看，如果你选择有意义的 method 名称，然后阅读源代码真的不是那么难）
 
@@ -2805,19 +2807,19 @@ override func viewDidLoad() {
 
 ## 添加关于屏幕
 
-我希望到目前为止你不厌烦这个应用程序，因为还有一个功能，我想添加到它，一个 About（关于）屏幕，显示一些关于游戏的信息：
+我希望到目前为止你不厌烦这个应用程序，因为还有一个功能，我想添加到它，一个 About screen（关于屏幕），显示一些关于游戏的信息：
 
-<div align="center"><img alt="新的 About 屏幕" src="http://imgur.com/QSc6hc4.png"/></div><center>新的 About 屏幕</center>
+<div align="center"><img alt="新的 About screen" src="http://imgur.com/QSc6hc4.png"/></div><center>新的 About screen</center>
 
 <br>
 
-这个新屏幕包含一个所谓的 *text view*（文本视图）里面显示游戏规则和一个 button，让玩家关闭该屏幕。你通过点击游戏中的 (i) button 进入 About 屏幕。
+这个新屏幕包含一个所谓的 *text view*（文本视图）里面显示游戏规则和一个 button，让玩家关闭该屏幕。你通过点击游戏中的 (i) button 进入 About screen。
 
 大多数应用程序有多个屏幕，甚至非常简单的游戏，所以这是一个好时机，了解如何添加额外的屏幕到你的应用程序。
 
 我已经指出了几次：你的应用程序中的每个屏幕都将有自己的 view controller。如果你认为 “screen”（屏幕） 是，“view controller” 也是。
 
-Xcode 自动为你创建了主 ViewController object，但是 About屏幕的 view controller 就要你自己来创建了。
+Xcode 自动为你创建了主 ViewController object，但是 About screen 的 view controller 就要你自己来创建了。
 
 ➤ 转到 Xcode 的 **File** 菜单，然后选择 **New → File…** 在弹出的窗口中，选择 **Cocoa Touch Class** 模板（如果你没有看到它，那么请确保在顶部选择 **iOS**）：
 
@@ -2882,7 +2884,7 @@ Xcode 将创建一个新文件并将其添加到你的项目。你可能已经�
 
 将 text view 和 button 拖到 canvas 上后，应该看起来像这样：
 
-<div align="center"><img alt="Storyboard 中的 About 屏幕" src="http://imgur.com/tZUWemz.png"/></div><center>Storyboard 中的 About 屏幕</center>
+<div align="center"><img alt="Storyboard 中的 About screen" src="http://imgur.com/tZUWemz.png"/></div><center>Storyboard 中的 About screen</center>
 
 <br>
 
@@ -2908,7 +2910,7 @@ Your goal is to place the slider as close as possible to the target value. The c
 
 屏幕设计就到此为止，告一段落先。
 
-➤ 单击 **View Controller** 中的 **(i)** button将其选中。然后按住 Ctrl 并拖动到 **About** 屏幕。
+➤ 单击 **View Controller** 中的 **(i)** button将其选中。然后按住 Ctrl 并拖动到 **About** screen。
 
 <div align="center"><img alt="按住 Ctrl 从一个 view controller 拖动到另一个 view controller 以创建 segue" src="http://imgur.com/CPwILyR.png"/></div><center>按住 Ctrl 从一个 view controller 拖动到另一个 view controller 以创建 segue</center>
 
@@ -2930,17 +2932,17 @@ Your goal is to place the slider as close as possible to the target value. The c
 
 ➤现在可以运行应用程序。按 **(i)** button查看新屏幕。
 
-<div align="center"><img alt="About 屏幕将显示一个翻转动画" src="http://imgur.com/wwtPpba.png"/></div><center>About 屏幕将显示一个翻转动画</center>
+<div align="center"><img alt="About screen 将显示一个翻转动画" src="http://imgur.com/wwtPpba.png"/></div><center>About screen 将显示一个翻转动画</center>
 
 <br>
 
-About 屏幕应该显示一个整洁的动画。很好，这似乎运转正常。
+About screen 应该显示一个整洁的动画。很好，这似乎运转正常。
 
-然而，这里有一个明显的缺点：点击 Close button 似乎没有效果。一旦用户进入 About 屏幕，她就永远也离不开了… 那听起来不像是友好的用户界面设计。
+然而，这里有一个明显的缺点：点击 Close button 似乎没有效果。一旦用户进入 About screen，她就永远也离不开了… 那听起来不像是友好的用户界面设计。
 
 Segues 的问题是，只有一种方式。要关闭此屏幕，你必须将一些代码连接到 Close button。作为一个崭露头角的 iOS 开发者，你已经知道如何做：使用 action method！
 
-这次你将添加 action method 到 AboutViewController 而不是 ViewController，因为 Close button 是 About 屏幕的一部分，而不是主游戏屏幕。
+这次你将添加 action method 到 AboutViewController 而不是 ViewController，因为 Close button 是 About screen 的一部分，而不是主游戏屏幕。
 
 ➤ 打开 **AboutViewController.swift** 并将其内容替换为以下内容：
 
@@ -2987,7 +2989,7 @@ class AboutViewController: UIViewController {
 
 ➤ 在 outline pane 中，从 **Close** button 按住 Ctrl 向左拖动到 **About view Controller**。这应该是老一套了。弹出菜单现在有 close action 的选项（在已发送事件下）。将 button 连接到该 action。
 
-➤ 再次运行应用程序。你现在应该可以从 About 屏幕返回。
+➤ 再次运行应用程序。你现在应该可以从 About screen 返回。
 
 恭喜！这完成了游戏。所有的功能完备了——我可以保证——没有 bugs，以破坏乐趣。
 
@@ -3397,7 +3399,7 @@ let thumbImageNormal = Sli
 
 ##使用 web view 的 HTML 内容
 
-About 屏幕依然还有一些工作要做。
+About screen 依然还有一些工作要做。
 
 **练习：**更改关于屏幕上的 Close button 看起来像 Hit Me button 一样。你现在应该能够自己做到这一点。小菜一碟！如果你卡住了，请参考 Hit Me button 的说明。
 
@@ -3438,7 +3440,7 @@ class AboutViewController: UIViewController {
 
 （如果你反过来，从 Web View 到 About View Controller，那么你会连接错误的东西，当你运行应用程序时，web view 将保持空白）
 
-➤在 **AboutViewController.swift** 中，添加 viewDidLoad() 方法：
+➤在 **AboutViewController.swift** 中，添加 viewDidLoad() method：
 
 ```swift
 override func viewDidLoad() {
@@ -3459,9 +3461,9 @@ override func viewDidLoad() {
 
 源代码可能看起来很可怕，但发生的事情不是那么复杂：首先在应用程序包中找到 **BullsEye.html** 文件，然后将其加载到一个 Data object 中，最后它要求 web view 显示 data object 的内容。
 
-➤ 运行应用程序，然后按 info（信息）button。About 屏幕应显示游戏规则的说明，这次以 HTML 文档的形式显示：
+➤ 运行应用程序，然后按 info（信息）button。About screen 应显示游戏规则的说明，这次以 HTML 文档的形式显示：
 
-<div align="center"><img alt="现在 About 屏幕显得光彩夺目" src="http://imgur.com/NLJKDcX.png"/></div><center>现在 About 屏幕显得光彩夺目</center>
+<div align="center"><img alt="现在 About screen 显得光彩夺目" src="http://imgur.com/NLJKDcX.png"/></div><center>现在 About screen 显得光彩夺目</center>
 
 <br>
 
@@ -3565,7 +3567,7 @@ Storyboard 应该看起来像在 iPad 模拟器中的应用程序，右部分切
 
 让我们在 About 屏幕上重复此操作。
 
-➤ 使用 **Align menu** 将两个 alignment constraints 添加到 About 屏幕的 background image view。
+➤ 使用 **Align menu** 将两个 alignment constraints 添加到 About screen 的 background image view。
 
 Background image 现在应该居中。当然，Close button 和 web view 仍然在屏幕外面。
 
@@ -3629,13 +3631,13 @@ Interface Builder 现在绘制一个红色条以表示 constraint，以及一个
 
 无论你是在 3.5 英寸还是 4 英寸 Simulator 上，Close button 现在应始终完美居中。
 
-<code class="highlighter-rouge"><strong>注意：如果你不对 views 添加任何 constraints，会发生什么？在这种情况下，Xcode 会在构建应用程序时自动添加 constraints。这就是为什么你以前不需要理会这些。</strong></code>
+<code class="highlighter-rouge"><strong>注意：</strong>如果你不对 views 添加任何 constraints，会发生什么？在这种情况下，Xcode 会在构建应用程序时自动添加 constraints。这就是为什么你以前不需要理会这些。</code>
 
 `但是，这些默认 constraints 可能并不总是做你想要的。例如，他们不会自动调整 view 的大小，以适应较小的 3.5 英寸屏幕。如果你想要适应，那么你需要添加自己的 constraints。（Auto Layout 看不懂你的头脑！）`
 
 `只要在 view 中添加一个 constraint，Xcode 将不再为该 view 添加任何其他自动 constraints。从那时起，你负责添加足够的其他 constraint，以便 UIKit 始终知道 view 的位置和大小将是什么。`
 
-在 About 屏幕中有一件事可以解决，那就是网 web view。
+在 About screen 中有一件事可以解决，那就是网 web view。
 
 ➤ 选择 **Web View** 并打开 **Pin menu**。首先，确保 **Constrain to margins** 未被选中。然后点击所有四个线条，使它们变得坚实的红色，并将它们的间距设置为 20 点，除了底部 8 点：
 
@@ -3649,7 +3651,7 @@ Interface Builder 现在绘制一个红色条以表示 constraint，以及一个
 
 <br>
 
-没有此设置，Xcode 可能会显示橙色线条，表示它在抱怨 web view 的大小和位置与你添加的 constraints 不对应。您可以使用“解决自动布局问题”按钮进行修复，但是为什么在Xcode可以为您解决问题时呢？
+没有此设置，Xcode 可能会显示橙色线条，表示它在抱怨 web view 的大小和位置与你添加的 constraints 不对应。你可以使用 Resolve Auto Layout Issues 按钮进行修复，但是为什么 Xcode 可以为你解决问题的情况下还要这样呢？
 
 ➤ 通过单击 **Add 4 Constraints**。
 
@@ -3746,7 +3748,7 @@ Auto Layout 可能需要一段时间才能习惯。添加 constraints 以便定�
 
 你将在 *The iOS Apprentice* 的其他部分了解有关 Auto Layout 的更多信息。
 
-##支持 iPhone 6 及更新
+##支持 iPhone 6 及更高版本
 
 使游戏在较小的设备上工作是一回事，但是更大的设备，如 iPhone 6, 7 和 Plus 呢？普通的 iPhone 6, 6s 和 7 有一个 4.7 英寸的屏幕，而 Plus 有一个高达 5.5 英寸的屏幕。
 
@@ -3770,3 +3772,91 @@ Auto Layout 可能需要一段时间才能习惯。添加 constraints 以便定�
 
 启用 iPhone 6 支持的应用程序必须提供所谓的 **launch screen**（启动屏幕）。你已经看到过这个 lanuch screen 在 action 中，可能不知道。
 
+<code class="highlighter-rouge"><strong>注意：</strong>启动应用程序通常需要一段时间。你可以在点击应用图标之间进行转换，并通过使用 launch scrren 实际使用该应用更加无缝。这是在应用程序加载时显示的占位符。（译者注：意义上就等于你在生活中常见的 loading 条，给你心理安慰看起来启动好像是无缝的，实际程序加载是需要时间的，这个一晃而过的界面可以让你不那么急躁）</code>
+
+`没有这个占位符，iPhone 的屏幕将被清空，直到应用程序准备好，这不是很欢迎。`
+
+`许多开发人员滥用此功能来显示他们的 Logo 在 launch screen 中，但如果你只显示用户界面的静态图像，而不是其他更多，则对用户更好。没有人喜欢等待应用加载，而且精心挑选的 launch screen 会给出应用程序加载速度比其实际更快的错觉。`
+
+`您可以使用常规图像，但也可以使用 storyboard 文件或 XIB 文件。XIB 也被称为 “nib”，就像一个 storyboard，只不过它只能包含一个屏幕的设计。`
+
+应用程序 launch screen 的设计位于 **LaunchScreen.storyboard** 文件中。目前该 storyboard 包含一个完全空的 view controller，导致它是一个空白的 launch screen。你每次启动应用程序都看过它，但是因为它完全是白色的，所以没有太多的看法。（为了好玩，将一个 label 拖到此 storyboard 中，看看运行应用程序时会发生什么）
+
+要获得 iPhone 6 及更高版本的自动缩放，你需要删除此 storyboard 文件。换句话说，通过删除 launch screen，你选择*不使用*这些较大设备的额外像素。为了不浪费任何屏幕空间，UIKit 将自动放大游戏，使其填满屏幕。
+
+➤ 在 **Project navigator** 中，选择 **LaunchScreen.storyboard**，然后按 **delete** 键将其删除。当 Xcode 要求确认时，选择 **Move to Trash**（移至垃圾桶）。
+
+这一点还不够。你还需要告诉 Xcode 它不能再使用此 launch screen 文件。
+
+➤ 转到 **Project Settings** 屏幕。在 **App Icons and Launch Images** 部分中，将 **Launch Screen File** 的框设置为空：
+
+<div align="center"><img alt="Launch Screen File 字段必须为空" src="http://imgur.com/9aLSLSP.png"/></div><center>Launch Screen File 字段必须为空</center>
+
+<br>
+
+➤ 要完全擦除 Xcode 的此 launch screen 文件的内存，请按住 **Alt/Option** 键，然后从 Xcode 菜单栏中选择 **Product → Clean Build Folder**。按 **Clean** 确认。
+
+➤ 运行应用程序。你不应再看到 launch screen。如果还会看到，从 Simulator 菜单栏中选择 **Simulator → Reset Contents and Settings**，重新开始。
+
+你可能会惊喜。这是 iPhone 6s 和 7 Simulator上的应用程序的样子：
+
+<div align="center"><img alt="The app is letterboxed on the iPhone 6s and 7" src="http://imgur.com/JdiQRZL.png"/></div><center>The app is letterboxed on the iPhone 6s and 7</center>
+
+<br>
+
+---
+译者注：自从 DVD 的概念形成之后，相信你对这一词汇早已耳熟能详，但对其本质却未必清楚。下文将有幸详细解释这些主要 DVD 词汇。
+
+首先，我们可以设想一下当电影下片后即将录制 DVD、VCD、LD（激光影碟）甚至 VHS 时，其中各种转录操作与相关人员的艰苦。大部分的电影都是以 2:35:1 到 1:66:1 的宽／高比例所拍摄。你一定要问为什么？答案很简单。人类的双眼较适合观看 “宽广” 的画面，因为这样最符合我们的视觉感观。甚至可以说现今的标准电视都不适合人类宝贵的双眼，而电影院的银幕大小就非常适用于观赏影片内容。
+
+转录操作其实是非常麻烦的过程，因此诞生了 Pan&Scan、letterbox 和宽屏幕等显示格式：Pan&Scan 用于某些 DVD 软件或硬件播放器，可让用户以电影原有的显示比例（即，宽于 4:3）进行观赏，而没有黑边！由于用户多半使用标准电视机 (4:3)，因此将无法同时观看整个画面，不过他们可以控制要观赏的画面部分。
+
+Letterbox 表示 4:3 或 1:33:1 的屏幕比例，广为一般家庭无线电视机所采用。在此种标准电视上观赏屏幕比例较宽的电影时，往往将两边截除。如果观赏影片时有黑边出现，即表示画面比例并非为 4:3，因此较接近其原始画面显示比例，不过必须牺牲部分画面。
+
+宽屏幕 (Widescreen) 的比例为 16:9 或 1:66:1，当大众消费能力达到更高水平，未来宽屏幕电视必将迅速取代所有 4:3 标准电视！新一代的电视，例如 HDTV（高画质电视），都将采用此种比例。
+
+---
+
+侧面有两个黑色部分。你在这里看到的是 3.5 英寸模式的应用程序，但扩展到 iPhone 6的较大屏幕。所以很奇怪！
+
+解决方案是向项目添加一个 4 英寸的启动图片。这不是 XIB 或 storyboard 文件，只是木材纹理背景的静态图片。
+
+➤ 在 **Project navigator** 中，右键单击 **BullsEye** 组（带有黄色图标的组），然后从菜单中选择 **Add Files to “BullsEye”**（将文件添加到 “BullsEye”）。
+
+➤ 从本教程的资源文件夹中找到 **Launch Images** 文件夹，然后选择 **Default-568h@2x.png** 文件。该图像与 background image 相同但横向转动（启动图像必须始终处于 portrait orientation）。
+
+确保 **Copy items if needed** 被勾选（单击选项按钮以显示此选项），然后按 **Add** 将文件添加到项目中。这就是在这里需要做的一切！
+
+运行应用程序，注意到转换到应用程序看起来更加顺畅。这些细节像这些数字一样。最重要的是，该应用程序现在在 iPhone 6s，7 和 Plus 上看起来很棒！
+
+<code class="highlighter-rouge"><strong>注意：</strong>只需扩展大型手机的应用程序对于Bull's Eye就能很好地工作，但对于大多数应用，您将需要利用所有额外的屏幕空间。 iOS有几个功能可以帮助您 - 自动布局和大小类 - 您将在下一个教程中了解它们。</code>
+
+##交叉淡入淡出
+
+在提到 Core Animation（核心动画）之前，我不能总结本教程。这项技术使你很容易在应用程序中创建真正甜蜜的动画，只需几行代码。添加微妙的动画（强调微妙）可以使你的应用程序被人更愉快使用。
+
+你将在按下 Start Over button 后添加一个简单的交叉淡入淡出，因此新回合的开始似乎不会显得那么唐突。
+
+➤在 **ViewController.swift** 中，在其他导入的正下方添加以下行：
+
+```swift
+import QuartzCore
+```
+
+Core Animation 技术依赖自己的 framework，QuartzCore。使用 import 语句，告诉编译器你要使用此 framework 中的 objects。
+
+➤ 将 startOver() method 更改为：
+
+```swift
+@IBAction func startOver() {
+  startNewGame()
+  updateLabels()
+  
+  let transition = CATransition()
+  transition.type = kCATransitionFade
+  transition.duration = 1
+  transition.timingFunction = CAMediaTimingFunction(name:
+                                          kCAMediaTimingFunctionEaseOut)
+  view.layer.add(transition, forKey: nil)
+}
+```

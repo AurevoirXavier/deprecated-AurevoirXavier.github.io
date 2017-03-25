@@ -1,15 +1,15 @@
 ---
 layout: post
 title: "iOS Apprentice 1 Getting Started v5.0 （译）"
-date:   2017-03-24
-excerpt: "译至 140 页"
+date:   2017-03-25
+excerpt: "译至 145 页"
 tags: [program, iOS, translate]
 comments: true
 ---
 
 `Tips：专有名词我只会在它第一次出现时翻译，后续不再翻译。`
 
-- `毕竟你要和全英文的 IDE（集成开发环境）打交道，译后你甚至可能找不到它在 IDE 的何处。`
+- `毕竟你要和全英文的 IDE（集成开发环境）打交道，译后你甚至可能找不到它在何处。`
 - `当你以后进入公司，保留着这种习惯一定会影响你与同事的交流。`
 - `上网翻阅资料或询问他人时，无论哪里对于专有名词都是直接引用。`
 
@@ -46,8 +46,8 @@ comments: true
 | **闭包**                      | **模拟**                    |
 | **Alignment constraints**   | **centering constraint**  |
 | **对齐约束**                    | **居中约束**                  |
-| **Core Animation**            | **Launch screen**       |
-| **核心动画**                   | **启动屏幕**              |
+| **Core Animation**          | **Launch screen**         |
+| **核心动画**                    | **启动屏幕**                  |
 
 <br>
 
@@ -3860,3 +3860,125 @@ Core Animation 技术依赖自己的 framework，QuartzCore。使用 import 语�
   view.layer.add(transition, forKey: nil)
 }
 ```
+
+对 startNewGame() 和 updateLabels() 的调用是在之前，但是 CATransition 这个东西是新的。
+
+我不会在这里讲太多的细节。只是说你正在设置一个动画，在当前在屏幕上显现变化和你在 startNewGame() 中所做的更改——将 slider 重置为中心位置——并且 updateLabels()——重置标签的值。
+
+➤ 运行应用程序并移动 slier，使其不再位于中央。按 Start Over button，你应该看到一个微妙的交叉淡入淡出动画。
+
+<div align="center"><img alt="旧的与新的状态之间的屏幕交叉淡化" src="http://imgur.com/46EI8aX.png"/></div><center>旧的与新的状态之间的屏幕交叉淡化</center>
+
+<br>
+
+##图标
+
+你几乎完成了这个应用程序，但还有一些马马虎虎的地方。你可能已经注意到这个应用程序有一个非常无聊的白色图标。那可不行！
+
+➤ 打开 asset 目录（**Assets.xcassets**）并选择 **AppIcon**：
+
+<div align="center"><img alt="asset 目录中的 App Icon 组
+" src="http://imgur.com/ulALzUg.png"/></div><center>asset 目录中的 App Icon 组
+</center>
+
+<br>
+
+这个应用程序需要的不同类型的图标有8个插槽。
+
+➤ 在 Finder 中，从本教程的 resources 中打开 Icon 文件夹。拖动 **Icon-40.png** 文件放入第一个插槽，**iPhone Notification 20pt**：
+
+<div align="center"><img alt="将图标拖动到 asset 目录中" src="http://imgur.com/ly4phUu.png"/></div><center>将图标拖动到 asset 目录中</center>
+
+<br>
+
+你可能会想知道为什么要将 Icon-40.png 文件拖放到 20pt 的插槽中，而不是 Icon-20.png。请注意，这个插槽表示 2x，这意味着它是 Retina 设备和 Retina 屏幕上一点计数为两个像素。
+
+➤ 将 **Icon-60.png** 文件拖动到其旁边的 **3x** 插槽中。这是针对 iPhone 6s Plus 和 7 Plus 的 3 倍分辨率。
+
+➤ 对于 **iPhone Spotlight & Settings 29pt**，将 **Icon-58.png** 文件拖动到 2x 插槽和 **Icon-87.png** 到 3x 插槽中。（什么，你不知道 29 乘法表？）
+
+➤ 对于 **iPhone Spotlight 40pt**，将 **Icon-80.png** 文件拖动到 2x 插槽和 **Icon-120.png** 插入 3x 插槽中。
+
+➤ 对于 **iPhone App 60pt**，将 **Icon-120.png** 文件拖动到 2x 插槽和 **Icon-180.png** 到 3x 插槽中。
+
+这是四种不同尺寸的图标。我的天！！
+
+该文件夹中的其他文件用于 iPad。该应用没有 iPad 版本，但这并不能阻止在 iPad 上运行。所有 iPad 都可以运行所有的 iPhone 应用程序，但它们显示在较小的框架中。为了适应这一点，如果你还提供 iPad 的图标，那最好。
+
+➤ 在 **AppIcon** 仍然被选中的情况下，在 **Attributes** inspector 中，选择 **iOS 7.0 and Later** for **iPad**。这为 AppIcon 集添加了九个新插槽。
+
+➤ 将图标拖放到正确的插槽中。请注意，iPad 图标需要提供 1x 和 2x 尺寸（但不是 3x）。你可能需要在这里做一些心理算术，以弄清楚哪个图标插入哪个插槽！
+
+<div align="center"><img alt="这个应用程序的全套图标，包括 iPad 图标" src="http://imgur.com/dwdwU7C.png"/></div><center>这个应用程序的全套图标，包括 iPad 图标</center>
+
+<br>
+
+**Icon-1024.png** 文件不被应用程序使用。这是提交给 App Store 的。作为应用程序提交的一部分，你需要上传 1024×1024 像素版本的图标。
+
+➤ 运行应用程序并关闭它。你会看到图标在 Simulator 的 springboard 上发生了变化。如果没有，请从 Simulator 中删除该应用程序，然后重试（有时 Simulator 会继续使用旧图标，然后重新安装该应用程序就可以解决此问题）。
+
+<div align="center"><img alt="Simulator 模拟器 springboard 上的图标" src="http://imgur.com/Yxs0OLq.png"/></div><center>Simulator 模拟器 springboard 上的图标</center>
+
+<br>
+
+##Display name（显示名称）
+
+最后一件事。你将项目命名为 BullsEye，这是在图标下显示的名称。不过，我宁愿拼写 “Bull’s Eye”。
+
+图标下方的空间只有有限的空间，对于具有较长名称的应用程序，你必须创造性地使其名称合适。但是，对于这个游戏，有足够的空间来添加空格和撇号。
+
+➤ 转到 **Project Settings** 屏幕。第一个选项是 **Display Name**。改为 **Bull's Eye**。
+
+<div align="center"><img alt="更改应用程序的 display name" src="http://imgur.com/JqgkGIq.png"/></div><center>更改应用程序的 display name</center>
+
+<br>
+
+像许多项目的设置一样，你还可以在应用程序的 Info.plist 文件中找到 display name。我们来看一下。
+
+➤ 从 **Project navigator** 中，选择 **Info.plist**。
+
+<div align="center"><img alt="Info.plist 中应用程序的 display name" src="http://imgur.com/ic4ED3P.png"/></div><center>Info.plist 中应用程序的 display name</center>
+
+<br>
+
+**Bundle display name** 那一行包含刚刚给出应用程序的新名称。
+
+<code class="highlighter-rouge"><strong>注意：</strong>如果 **Bundle display name** 不存在，应用程序将使用字段 **Bundle name** 中的值。这具有特殊值 “$(PRODUCT_NAME)”，这意味着当 Xcode 将 Info.plist 添加到应用程序包时，Xcode 将自动将项目名称 BullsEye 放在此字段中。通过提供一个 **Bundle display name**，你可以覆盖此默认名称，并为应用程序提供任何你想要的名称。</code>
+
+➤ 运行应用程序并退出该应用程序，以查看该图标下的新名称。
+
+<div align="center"><img alt="通过 bundle display name 设置更改图标下的名称" src="http://imgur.com/4HvSqME.png"/></div><center>通过 bundle display name 设置更改图标下的名称</center>
+
+<br>
+
+真棒，这完成了你的第一个应用程序！
+
+你可以在教程的 Source Code 文件夹 **07 - Final App** 下找到完成的应用程序的项目文件。
+
+还有一个名为 **08 - Final App with Comments** 有很多 comments，以解释每一段代码的作用。我还删除了 Xcode 模板插入的任何东西，这个游戏实际上不需要那些，保证代码尽可能简单。
+
+##在你的设备上运行游戏
+
+到目前为止，你已经在 Simulator 上运行了应用程序。这很好，但为什么你正在学习 iOS 开发？你想制作运行在真正的 iPhone 和 iPad 上的应用程序！比起在自己的手机上运行自己制作的应用程序来说，几乎没有什么能更令人兴奋的了。当然，要向别人展现你劳动的成果！
+
+不要误会我：在 Simulator 上开发你的应用程序是非常好的。在开发的时候，我花费大部分的时间与 Simulator 打交道，只偶尔在 iPhone 上测试应用程序。
+
+Simulator 是很棒的，但你确实需要在真实的设备上运行你的创作，以便正确测试它们。这是 Simulator 根本无法做到的一些事情。例如，如果你的应用需要 iPhone 的加速度计，你别无选择，只能在实际设备上测试该功能。不要坐在那里摇你的 Mac！
+
+直到最近，你需要一个付费的开发者计划帐户来运行 iPhone 上的应用程序。不过，从Xcode 7 开始，你可以免费使用它。所有你需要的仅仅是一个 Apple ID。同时 Xcode 8 比以前更容易使用。
+
+➤ 使用 USB 电缆将 iPhone，iPod touch 或 iPad 连接到 Mac。
+
+➤ 从 Xcode 菜单栏选择 **Window → Devices** 打开设备窗口。
+
+我的界面看起来像这样（我正在使用的是 iPhone 6s）：
+
+<div align="center"><img alt="Xcode 的 Devices 窗口" src="http://imgur.com/ZREUWhQ.png"/></div><center>Xcode 的 Devices 窗口</center>
+
+<br>
+
+左侧是可用于开发的设备列表。
+
+➤ 单击你的设备名称进行选择。
+
+如果这是你第一次让 Xcode 与设备工作，Devices 窗口将会显示 “iPhone is not paired with your computer.”。要将设备与 Xcode 配对，你需要首先解锁设备（按住 home 键）。解锁后，设备上会弹出 alert（译者注：看吧，和你学到的一模一样），要求你信任您要配对的计算机。点击 Trust（信任）继续。

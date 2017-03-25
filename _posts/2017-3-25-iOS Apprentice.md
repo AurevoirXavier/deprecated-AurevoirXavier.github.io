@@ -222,25 +222,25 @@ Xcode 将你编写的源代码转换为可执行的应用程序，并在 Simulat
 
 *iOS Apprentice* 分为四个教程部分，从开始到其中的主题。在每个教程中，你将从头开始构建一个完整的应用程序！让我们先来看看将要做些什么。
 
-#### 教程1：入门
+**教程 1：入门**
 
 在第一个教程中，你将开始建立一个名为 *Bull’s Eye* 的游戏。你将学习如何以一种轻松的方式使用 Xcode，Interface Builder（界面构造器） 和 Swift。
 
 <div align="center"><img alt="" src="http://imgur.com/TolF1G2.png"/></div>
 
-#### 教程2：清单
+**教程 2：清单**
 
 在本系列的第二个教程中，你将创建自己的待办事项列表应用程序。你将了解所有 iOS 应用程序使用的基本设计模式，以及 table views（表视图），navigation controllers（导航控制器）和 delegates（代理）。现在，你即将真正的打造出一个应用程序！
 
 <div align="center"><img alt="" src="http://imgur.com/Dm64Fp1.png"/></div>
 
-#### 教程3：我的位置
+**教程3：我的位置**
 
 在本系列的第三个教程中，你将开发一个位置感知的应用程序，让你创建一个保存你感兴趣的地点的列表。在此过程中，你将了解 Core Location（核心位置），Core Data（核心数据），Map Kit（地图工具包）等等！
 
 <div align="center"><img alt="" src="http://imgur.com/hhv9qH9.png"/></div>
 
-#### 教程4：商店搜索
+**教程4：商店搜索**
 
 移动应用程序常需要与 Web 服务交流，这就是你在本系列中的最后一个教程中将要做的。你将创建出一个时尚的应用程序，让你使用 HTTP 请求和 JSON 在 iTunes 商店搜索产品。
 
@@ -2997,7 +2997,7 @@ class AboutViewController: UIViewController {
 
 你可以在教程的源代码文件夹中的 **06 - About Screen** 下找到应用程序的项目文件。
 
-##使它看起来美观
+## 使它看起来美观
 
 在 landscape 模式中的应用程序不显示 iPhone 状态栏，除非你告诉他们。这是我们制作的一个很棒的应用程序。游戏需要更身临其境的体验，状态栏应该隐藏起来。
 
@@ -3057,7 +3057,7 @@ Info.plist 文件只是配置选项及其值的列表。大多数这些可能对
 
 请注意，选项 **Status bar is initially hidden**（状态栏最初是隐藏的）。它的值为 YES。这是你刚才更改的选项。
 
-###调整图形
+## 调整图形
 
 摆脱状态栏只是第一步。我们想从这里：
 
@@ -3119,7 +3119,7 @@ Xcode 显示文件选择器。从本教程的资源中选择 Images 文件夹，
 
 图像文件有一个特殊的命名约定。如果文件名以 @2x 或 @3x 结尾，那么它被认为是 Retina 或 Retina HD 版本。低分辨率 1x 图像没有特殊名称（你不必写 @1x）。
 
-##放置壁纸
+## 放置壁纸
 
 让我们开始将白色 background 变成一些更奇特。
 
@@ -3168,7 +3168,7 @@ Xcode 显示文件选择器。从本教程的资源中选择 Images 文件夹，
 
 在 background 上苦下一番功夫后。运行应用程序，惊讶一下吧！
 
-##更改 labels
+## 更改 labels
 
 因为 background 图像非常暗，黑色 labels 变得难以阅读。幸运的是，Interface Builder 可以改变它们的 color，当你使用它时，你也可以改变字体。
 
@@ -3252,7 +3252,7 @@ Label 现在将变得略大或略小，以便它紧贴文本。如果在更改 f
 
 好吧，它现在开始看起来有那么点像模像样了。顺便说一下，随时都可以尝试更改 fonts 和 colors。如果你想让它看起来完全不同，那么久去做吧。这是你的应用程序！
 
-##The buttons
+## The buttons
 
 改变 button 的外观工作方式与上面的步骤非常相似。
 
@@ -3322,7 +3322,7 @@ Buttons 可以有多个状态。当你点击一个 button 并按住它，它应�
 
 <br>
 
-##The slider
+## The slider
 
 不幸的是，你只能在 Interface Builder 中自定义滑块的一小部分属性。对于这个游戏需要的更高级的定制 - 把你自己的图像放在 slider 和轨道上 - 你必须靠编写源代码来实现。
 你在 Interface Builder 中完成的所有操作都可以在代码中完成。例如，设置 button 上的颜色可以通过向 button 发送 setTitleColor() 消息来完成。
@@ -3397,7 +3397,7 @@ let thumbImageNormal = Sli
 
 试一试！ 我真的很喜欢它在代码中显示图像的一个小缩略图。
 
-##使用 web view 的 HTML 内容
+## 使用 HTML 内容的 web view
 
 About screen 依然还有一些工作要做。
 
@@ -3467,7 +3467,7 @@ override func viewDidLoad() {
 
 <br>
 
-##支持 3.5 寸屏幕
+## 支持 3.5 寸屏幕
 
 到目前为止，你已经为 iPhone 5，5c，5s 和 iPhone SE 的 4 英寸屏幕设计了应用程序 - 仍然是目前最受欢迎的 iPhone 型号之一。
 
@@ -3748,7 +3748,7 @@ Auto Layout 可能需要一段时间才能习惯。添加 constraints 以便定�
 
 你将在 *The iOS Apprentice* 的其他部分了解有关 Auto Layout 的更多信息。
 
-##支持 iPhone 6 及更高版本
+## 支持 iPhone 6 及更高版本
 
 使游戏在较小的设备上工作是一回事，但是更大的设备，如 iPhone 6, 7 和 Plus 呢？普通的 iPhone 6, 6s 和 7 有一个 4.7 英寸的屏幕，而 Plus 有一个高达 5.5 英寸的屏幕。
 
@@ -3831,7 +3831,7 @@ Letterbox 表示 4:3 或 1:33:1 的屏幕比例，广为一般家庭无线电视
 
 <code class="highlighter-rouge"><strong>注意：</strong>只需扩展大型手机的应用程序对于Bull's Eye就能很好地工作，但对于大多数应用，您将需要利用所有额外的屏幕空间。 iOS有几个功能可以帮助您 - 自动布局和大小类 - 您将在下一个教程中了解它们。</code>
 
-##交叉淡入淡出
+## 交叉淡入淡出
 
 在提到 Core Animation（核心动画）之前，我不能总结本教程。这项技术使你很容易在应用程序中创建真正甜蜜的动画，只需几行代码。添加微妙的动画（强调微妙）可以使你的应用程序被人更愉快使用。
 
@@ -3871,7 +3871,7 @@ Core Animation 技术依赖自己的 framework，QuartzCore。使用 import 语�
 
 <br>
 
-##图标
+## 图标
 
 你几乎完成了这个应用程序，但还有一些马马虎虎的地方。你可能已经注意到这个应用程序有一个非常无聊的白色图标。那可不行！
 
@@ -3921,7 +3921,7 @@ Core Animation 技术依赖自己的 framework，QuartzCore。使用 import 语�
 
 <br>
 
-##Display name（显示名称）
+## Display name（显示名称）
 
 最后一件事。你将项目命名为 BullsEye，这是在图标下显示的名称。不过，我宁愿拼写 “Bull’s Eye”。
 
@@ -3957,7 +3957,7 @@ Core Animation 技术依赖自己的 framework，QuartzCore。使用 import 语�
 
 还有一个名为 **08 - Final App with Comments** 有很多 comments，以解释每一段代码的作用。我还删除了 Xcode 模板插入的任何东西，这个游戏实际上不需要那些，保证代码尽可能简单。
 
-##在你的设备上运行游戏
+## 在你的设备上运行游戏
 
 到目前为止，你已经在 Simulator 上运行了应用程序。这很好，但为什么你正在学习 iOS 开发？你想制作运行在真正的 iPhone 和 iPad 上的应用程序！比起在自己的手机上运行自己制作的应用程序来说，几乎没有什么能更令人兴奋的了。当然，要向别人展现你劳动的成果！
 
@@ -4111,7 +4111,7 @@ Xcode 必须了解你要运行应用程序的设备。这就是为什么我要�
 
 <br>
 
-##结束还是开始？
+## 结束还是开始？
 
 这是很长的一课 - 如果你刚开始编程，你必须在你的头脑里搞定很多新的概念。我希望你的大脑没有爆炸！
 
@@ -4129,7 +4129,7 @@ Xcode 必须了解你要运行应用程序的设备。这就是为什么我要�
 
 如果你对图形的制作感兴趣，请浏览资源文件夹中的 Photoshop 文件。木背景纹理图片来自 [subtlepatterns.com](subtlepatterns.com) 的 Atle Mo 制作。
 
-##但还有更多！
+## 但还有更多！
 
 感谢你阅读我的书 *The iOS Apprentice* 中的第一个教程！
 
@@ -4170,7 +4170,7 @@ Xcode 必须了解你要运行应用程序的设备。这就是为什么我要�
 
 这是值得的，如果你想成为一个伟大的 iOS 开发人员！
 
-##保持联系
+## 保持联系
 
 如果你对这些教程有任何问题或意见 [mail@hollance.com](mail@hollance.com)，请随时发送电子邮件至 Matthijs。当然，欢迎你在 [forums.raywenderlich.com](forums.raywenderlich.com) 上访问论坛进行一些很棒的交流。
 

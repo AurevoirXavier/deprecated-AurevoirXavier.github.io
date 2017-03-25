@@ -97,7 +97,7 @@ comments: true
 
 <br>
 
-嗨！我是 Matthijs Hollemans，一名全职 iOS 开发人员和 [www.raywenderlich.com](www.raywenderlich.com) 的辅导团队成员。
+嗨！我是 Matthijs Hollemans，一名全职 iOS 开发人员和 [www.raywenderlich.com](https://www.raywenderlich.com) 的辅导团队成员。
 
 接下来你将要读第一章导读部分来自我的书 *iOS Apprentice: Beginning iOS Development with Swift, Fifth Edition* 。
 
@@ -117,7 +117,7 @@ comments: true
 
 编写自己的 iPhone 和 iPad 应用程序是一个很多乐趣，但同时又有许多辛苦工作的过程。如果你有想象力和毅力，那么一切都不是问题。我真诚地相信，这个系列可以将你从一个彻彻底底的新手打造成一个成熟的 iOS 开发人员，但你必须投入时间和精力。通过写这些教程我已经完成了我的部分，那么现在交给你了！（师父领进门，修行在个人）
 
-享受第一个教程吧！如果它对你有用，那么我希望你从 [www.raywenderlich.com/store/ios-apprentice](www.raywenderlich.com/store/ios-apprentice) 或亚马逊来获得它的其余部分。
+享受第一个教程吧！如果它对你有用，那么我希望你从 [www.raywenderlich.com/store/ios-apprentice](https://www.raywenderlich.com/store/ios-apprentice) 或亚马逊来获得它的其余部分。
 
 ## 关于这本书
 
@@ -198,7 +198,7 @@ OS X 10.11 EI Capitan 或 macOS 10.12 Sierra。Xcode，iOS 应用程序的开发
 
 如果你买不起最新的机型，从而打算去 eBay 购入一个二手的 Mac。只要确保它满足最低要求（intel CPU，最好超过 1 GB RAM）。如果你碰巧买到一台装有较旧版本的 OS X（10.10 Yosemite 或更早版本）的机器，你可以从在线 Mac App Store 免费升级到最新版本的 macOS。
 
-**Apple 开发者计划账户**。你可以免费下载所有开发工具，你可以在开发过程中在自己的 iPhone，iPad 或 iPod touch 上使用你的应用程序，因此你不必加入 Apple 开发人员计划。但要将完成的应用程序提交到 App Store，你必须注册付费开发者计划。这将花费你 $99 每年。有关详情请参见 [developer.apple.com/programs/](developer.apple.com/programs/)。
+**Apple 开发者计划账户**。你可以免费下载所有开发工具，你可以在开发过程中在自己的 iPhone，iPad 或 iPod touch 上使用你的应用程序，因此你不必加入 Apple 开发人员计划。但要将完成的应用程序提交到 App Store，你必须注册付费开发者计划。这将花费你 $99 每年。有关详情请参见 [developer.apple.com/programs/](https://developer.apple.com/programs/)。
 
 ## Xcode
 
@@ -4133,7 +4133,7 @@ Xcode 必须了解你要运行应用程序的设备。这就是为什么我要�
 
 感谢你阅读我的书 *The iOS Apprentice* 中的第一个教程！
 
-我希望这个第一个教程给你一些体验，其余部分，可从 [www.raywenderlich.com](www.raywenderlich.com) 获得。
+我希望这个第一个教程给你一些体验，其余部分，可从 [www.raywenderlich.com](https://www.raywenderlich.com) 获得。
 
 完整的书有另外三个史诗级长度的教程，每个教程都解释了一个应用程序而且逐渐变得复杂，提升难度。
 
@@ -4166,12 +4166,12 @@ Xcode 必须了解你要运行应用程序的设备。这就是为什么我要�
 
 最后，我将解释如何使用 Ad Hoc 分发进行 beta 测试，以及如何将应用程序提交到App Store。在这个怪物般的教程结束时，一定彻彻底底解决你新手道路上的所有问题！
 
-你可以在 [www.raywenderlich.com/store/ios-apprentice](www.raywenderlich.com/store/ios-apprentice) 上获得完整版的 *The iOS Apprentice: Beginning iOS Development with Swift, Fifth Edition*。
+你可以在 [www.raywenderlich.com/store/ios-apprentice](https://www.raywenderlich.com/store/ios-apprentice) 上获得完整版的 *The iOS Apprentice: Beginning iOS Development with Swift, Fifth Edition*。
 
 这是值得的，如果你想成为一个伟大的 iOS 开发人员！
 
 ## 保持联系
 
-如果你对这些教程有任何问题或意见 [mail@hollance.com](mail@hollance.com)，请随时发送电子邮件至 Matthijs。当然，欢迎你在 [forums.raywenderlich.com](forums.raywenderlich.com) 上访问论坛进行一些很棒的交流。
+如果你对这些教程有任何问题或意见 [mail@hollance.com](https://mail@hollance.com)，请随时发送电子邮件至 Matthijs。当然，欢迎你在 [forums.raywenderlich.com](https://forums.raywenderlich.com) 上访问论坛进行一些很棒的交流。
 
 感谢阅读！

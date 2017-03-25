@@ -2,7 +2,7 @@
 layout: post
 title: "iOS Apprentice 1 Getting Started v5.0 （译）"
 date:   2017-03-25
-excerpt: "译至 145 页"
+excerpt: "第一章"
 tags: [program, iOS, translate]
 comments: true
 ---
@@ -125,7 +125,7 @@ comments: true
 
 **通过重复学习**
 
-你会通过这本书做很多应用程序。即使这些应用程序开始时相当简单，你可能会觉得教程有些繁琐难以遵循，特别是你从来没有做过任何计算机编程——因为我会介绍很多新的概念。
+你会通过这本书做很多应用程序。即使这些应用程序开始时相当简单，你可能会觉得教程有些繁琐难以遵循，特别是你从来没有做过任何计算机编程 - 因为我会介绍很多新的概念。
 
 如果你没有立刻理解一切，没有关系，只要你得到一个一般的笼统的概念或想法。在本系列的后续教程中，我们将再次讨论这些概念，直到它们刻在你的心里。
 
@@ -135,7 +135,7 @@ comments: true
 
 更好的是，与代码作乐。随意修改应用程序的任何部分，看看结果是什么。实验和学习！不要担心弄坏它们，这是一半的乐趣所在。你总是可以找到回到开始的方法。
 
-**不要惊慌——bugs（错误）发生！**
+**不要惊慌 - bugs（错误）发生！**
 
 你将会遇到问题，这点我可以打包票。你的程序可能会有奇怪的错误，并将让你陷入困境。相信我，我已经从事编程 30 年了，这些仍发生在我的身上。我们都只是人类，我们的大脑都只能处理一定复杂程度的编程问题。在这个课程中，我会给你工具，你心灵的工具箱，它会帮助你找到你自己不小心挖出的坑。
 
@@ -143,7 +143,7 @@ comments: true
 
 有非常多的人试图通过盲目地复制粘贴在博客和其他网站上发现的代码来编写 iPhone 应用程序，却不知道其中代码的真正作用，以及该如何适配它们的程序。
 
-在网上寻找解决方案这一行为并没有什么错——我一直都这样——但我想给你工具和知识然后让你去了解你在做什么，以及为什么。
+在网上寻找解决方案这一行为并没有什么错 - 我一直都这样 - 但我想给你工具和知识然后让你去了解你在做什么，以及为什么。
 
 这是实践的练习建议，并不只是一堆干巴巴的理论（虽然不可避免的会涉及一些理论）。你将从刚开始入门就构建真正的应用程序，我将解释一切是靠着什么方式来运作，并且有大量的图片来辅助说明到底发生了什么。
 
@@ -151,7 +151,7 @@ comments: true
 
 #### 做练习
 
-我将会了解一下，对于某些事你的想法是怎样的——是的，这里有一些练习！事实上，做这些练习能最大程度地激发你的想法。知道路怎么走和怎么走这条路之间有着巨大差别，而学习编程的唯一方法就是做到这一点。我鼓励你不只是做练习，而且要玩玩那些你将要写的代码（比如说修改几处看看会有何变化，或者加一些自己的功能）。实验，改进，尝试添加新功能。软件是一个复杂的机械，要找出它的工作原理，有时你必须在轮子上放一些辐条，把整件事情分开。这就是你的学习方式！
+我将会了解一下，对于某些事你的想法是怎样的 - 是的，这里有一些练习！事实上，做这些练习能最大程度地激发你的想法。知道路怎么走和怎么走这条路之间有着巨大差别，而学习编程的唯一方法就是做到这一点。我鼓励你不只是做练习，而且要玩玩那些你将要写的代码（比如说修改几处看看会有何变化，或者加一些自己的功能）。实验，改进，尝试添加新功能。软件是一个复杂的机械，要找出它的工作原理，有时你必须在轮子上放一些辐条，把整件事情分开。这就是你的学习方式！
 
 #### 尽情享受
 
@@ -163,11 +163,11 @@ comments: true
 
 这本书最棒的地方就是，无论你是全新的编程菜鸟，或者是有着其他编程背景的程序员，并且期待去学习 iOS 开发，都非常适合。
 
-如果你是一个彻头彻尾的开发新手，不要担心——这本书并没有假设你有任何有关编程或制作应用程序的基础。当然，如果你有编程经验，那么会有助于你更快上手。Swift 是一种新兴的编程语言，但在许多方面与 PHP，C#，Javascript 之类的流行语言有着相似之处。
+如果你是一个彻头彻尾的开发新手，不要担心 - 这本书并没有假设你有任何有关编程或制作应用程序的基础。当然，如果你有编程经验，那么会有助于你更快上手。Swift 是一种新兴的编程语言，但在许多方面与 PHP，C#，Javascript 之类的流行语言有着相似之处。
 
 如果你曾使用过 iOS 的 Object-C 开发语言，那么它低水平的特性和奇怪的语法可能会让你失望。好吧，这里有一个好消息告诉你：现在，通过 Swift 我们拥有了更现代化的语言，iOS 开发相对过去已经变得容易了很多。
 
-教会你一切 iPhone 和 iPad 的开发知识不是本系列的目的。因为 iOS SDK（软件开发工具包）实在是太庞大了，我们没有办法去涉及到它的一切——但幸运的是，我们并不需要了解所有。你只需要掌握 Swift 和 iOS 的基本构建块。一旦你了解了这些基本原理，你可以很容易的通过自己来找出它是如何工作的，并自学其余的部分。
+教会你一切 iPhone 和 iPad 的开发知识不是本系列的目的。因为 iOS SDK（软件开发工具包）实在是太庞大了，我们没有办法去涉及到它的一切 - 但幸运的是，我们并不需要了解所有。你只需要掌握 Swift 和 iOS 的基本构建块。一旦你了解了这些基本原理，你可以很容易的通过自己来找出它是如何工作的，并自学其余的部分。
 
 我要教会你的最重要的一件事就是，如何像一个程序员一样思考。这将帮助你上手任何编程任务，无论是游戏，使用程序，使用 Web 服务的移动应用程序，或任何其他你可以想象到的。
 
@@ -179,7 +179,7 @@ comments: true
 
 旧版设备的拥有者（例如 iPhone 4S 或 第一代 iPad）可能会被 iOS 9 或更早版本所困扰，但这只是市场的一小部分。支持这些较旧的 iOS 版本所花费的成本远超出得到的回报。
 
-不过最终还是由你自己决定是否让应用程序支持旧设备，但我的建议是，应该将工作的重点放在他们最重要的地方。苹果作为一个公司总是不懈地展望未来——如果你想在苹果的地盘玩耍，跟随他们的领导是个明智的选择。那么，放眼未来吧！
+不过最终还是由你自己决定是否让应用程序支持旧设备，但我的建议是，应该将工作的重点放在他们最重要的地方。苹果作为一个公司总是不懈地展望未来 - 如果你想在苹果的地盘玩耍，跟随他们的领导是个明智的选择。那么，放眼未来吧！
 
 ## 你需要些什么
 
@@ -272,7 +272,7 @@ iPhone 可能假装它是一个电话，但它实际上是一个非常先进的�
 
 其中 movl 和 call 只是放在那里，使之变得更适合人类阅读。好吧，我不知道你对此有何感想，但对我来说，这仍然很难理解。
 
-当然有可能用这种迷之语言来编写程序——这就是过去人们在计算机上花费几百万美元，一台计算机体积大到要占用整个房间的那年代所做的——但我宁愿编写看起来像是这样的程序：
+当然有可能用这种迷之语言来编写程序 - 这就是过去人们在计算机上花费几百万美元，一台计算机体积大到要占用整个房间的那年代所做的 - 但我宁愿编写看起来像是这样的程序：
 
 ```swift
 func handleMusicEvent(command: Int, noteNumber: Int, velocity: Int) {
@@ -306,7 +306,7 @@ C++ 是另一种由 C 衍生出来的 object-oriented 编程语言。它非常�
 
 我可以在 iOS Apprentice 的一开始深入讨论 Swift 的功能，但那样你可能会睡着。所以，我们来慢慢的解释语言，非常简单，等你适应了，再做更深入的讲解。
 
-在一开始，一般概念——什么是 variable（变量），object（对象），如何调用 method（方法） 等——远比详细信息重要。虽然缓慢但毫无疑问，我会将 Swift 语言所有的秘密都揭露给你。
+在一开始，一般概念 - 什么是 variable（变量），object（对象），如何调用 method（方法） 等 - 远比详细信息重要。虽然缓慢但毫无疑问，我会将 Swift 语言所有的秘密都揭露给你。
 
 你准备好开始编写你生涯中的第一个 iOS 应用程序了吗？
 
@@ -338,13 +338,13 @@ C++ 是另一种由 C 衍生出来的 object-oriented 编程语言。它非常�
 
 *应用程序需要在屏幕上放置 “Hit Me!” button，并在用户按下时显示警告弹出窗口。*
 
-尝试想想还需要做些什么——如果你实际上并不知道该如何完成这些任务。首先一点，你需要确定下来你要做什么，而不是怎么做。
+尝试想想还需要做些什么 - 如果你实际上并不知道该如何完成这些任务。首先一点，你需要确定下来你要做什么，而不是怎么做。
 
 一旦你知道你想要什么，你也就可以一步一步弄清楚如何做到，尽管你不得不请教别人或者查阅有关资料。但是 “什么” 是你要首先确定的。（你会惊讶于不知道有多少人开始编写代码，却没有弄清实际上想要实现什么。难怪他们会陷入困境！）
 
 每当我开始打造一个新的应用程序，我首先列出所有不同的那些我认为程序需要的功能。这将成为我的待办事项列表。有一个列表，将设计分为几个小的步骤是一个明智的方式以对处理复杂的项目。
 
-你可能有一个很酷的想法，但当你坐下来写程序时，整个事情似乎要把你压垮。有这么多事要做… 从哪里开始？通过将工作量分为一个一个小的部分，你就可以使项目看起来没有那么令人生畏——你总是可以找到一个简单而小巧的步骤，以便创建一个良好的开端，并从那里开始。
+你可能有一个很酷的想法，但当你坐下来写程序时，整个事情似乎要把你压垮。有这么多事要做… 从哪里开始？通过将工作量分为一个一个小的部分，你就可以使项目看起来没有那么令人生畏 - 你总是可以找到一个简单而小巧的步骤，以便创建一个良好的开端，并从那里开始。
 
 这没什么大不了的，如果这个练习让你觉得困难。只是因为你是个刚开始学习这方面知识的新人而已！随着你对软件工作原理理解的加深，将能够更从容的将工作量合理分配并管理。
 
@@ -377,7 +377,7 @@ C++ 是另一种由 C 衍生出来的 object-oriented 编程语言。它非常�
 
 在本教程中你将使用 Xcode 8.0 或更高版本。较新版本的 Xcode 也可以工作，但是任何比 8.0 版本更旧的都不适用。
 
-因为 Swift 是一种非常新的语言，它往往在 Xcode 的版本之间变化。如果你的 Xcode 太旧了——或太新了！——那么本书中的所有代码并不一定都可以正常工作。（出于同样的原因，建议你不要使用 Xcode 的测试版，除了 Mac App Store 中的官方版本。）
+因为 Swift 是一种非常新的语言，它往往在 Xcode 的版本之间变化。如果你的 Xcode 太旧了 - 或太新了！- 那么本书中的所有代码并不一定都可以正常工作。（出于同样的原因，建议你不要使用 Xcode 的测试版，除了 Mac App Store 中的官方版本。）
 
 ➤ 启动 Xcode。如果在查找 Xcode 应用程序时遇到问题，可以在文件夹 **/Applications/Xcode** 或 Launchpad 中找到它。因为我一直使用 Xcode，我把它的图标放在我的 Dock 栏里以便访问。
 
@@ -412,7 +412,7 @@ Xcode 在启动时显示 “欢迎使用 Xcode”：
 - Languages（语言）：**Swift**
 - Devices（设备）：**iPhone**
 
-确保未选中底部的三个选项—— Use Core Data（使用 Core Data），Include Unit Tests（包括单元测试）和 Include UI Tests（包括 UI 测试）。你将不会在这个项目中使用这些。
+确保未选中底部的三个选项 - Use Core Data（使用 Core Data），Include Unit Tests（包括单元测试）和 Include UI Tests（包括 UI 测试）。你将不会在这个项目中使用这些。
 
 ➤ 按 **Next**（下一步）。现在 Xcode 会询问你在哪里保存你的项目：
 
@@ -448,7 +448,7 @@ Xcode 现在将在你指定的文件夹中，创建一个名为 BullsEye 的基�
 
 <code class="highlighter-rouge"><strong>注意：</strong>如果这是您第一次使用Xcode，它可能会要求您启用开发人员模式。单击 <strong>Enable</strong>（启用）并输入密码以允许Xcode进行这些更改。</code>
 
-Xcode 将工作一会儿，然后它在 iOS Simulator 启动您全新的应用程序。就目前而言，可能该应用程序看起来还不像样——里面没有任何东西你可以使用的东西——但这是你的旅程中重要的第一个里程碑。
+Xcode 将工作一会儿，然后它在 iOS Simulator 启动您全新的应用程序。就目前而言，可能该应用程序看起来还不像样 - 里面没有任何东西你可以使用的东西 - 但这是你的旅程中重要的第一个里程碑。
 
 <div align="center"><img alt="基于 Single View Application 模板的应用程序是什么样子" src="http://i.imgur.com/5vUDxtf.png"/></div><center>基于 Single View Application 模板的应用程序是什么样子</center>
 
@@ -476,9 +476,9 @@ Xcode 将工作一会儿，然后它在 iOS Simulator 启动您全新的应用�
 
 <code class="highlighter-rouge"><strong>当你按 Run 时会发生什么？</strong></code>
 
-`Xcode 将首先编译你的源代码——即：将它——从 Swift 转换为 iPhone（或 Simulator）可以理解的机器代码。即使用于编写 iPhone 应用程序的编程语言是 Swift 或 Objective-C，iPhone 本身也不会使用这些语言。翻译步骤是必要的。`
+`Xcode 将首先编译你的源代码 - 即：将它 - 从 Swift 转换为 iPhone（或 Simulator）可以理解的机器代码。即使用于编写 iPhone 应用程序的编程语言是 Swift 或 Objective-C，iPhone 本身也不会使用这些语言。翻译步骤是必要的。`
 
-`编译器是 Xcode 的一部分，将 Swift 源代码转换为可执行的二进制代码。它还收集组成应用程序的所有不同组件——源文件，图像，故事板文件等，并将其放入所谓的 “application bundle”（应用程序包）。`
+`编译器是 Xcode 的一部分，将 Swift 源代码转换为可执行的二进制代码。它还收集组成应用程序的所有不同组件 - 源文件，图像，故事板文件等，并将其放入所谓的 “application bundle”（应用程序包）。`
 
 `这整个过程也被称为构建应用程序。如果有任何错误（例如拼写错误），构建将失败。如果一切都按计划进行，Xcode 将应用程序包复制到 Simulator 或 iPhone 并启动应用程序。所有这一切只需单击一下 Run 按钮。`
 
@@ -633,7 +633,7 @@ class ViewController: UIViewController {
 
 你已经编辑 **Main.storyboard** 文件来构建应用程序的用户界面。它只是一个白色 background 上的 button，但它确实是一个实实在在的用户界面。你还向 **ViewController.swift** 添加了源代码。
 
-这两个文件——storyboard 和 Swift 文件——一起形成了 *view controller* 的设计和实现。 构建 iOS 应用程序的很多工作是创建 view controller。 view controller 的工作是在应用程序中管理单个屏幕。
+这两个文件 - storyboard 和 Swift 文件 - 一起形成了 *view controller* 的设计和实现。 构建 iOS 应用程序的很多工作是创建 view controller。 view controller 的工作是在应用程序中管理单个屏幕。
 
 以一个简单的食谱应用程序为例。当你启动它时，其主屏幕列出可用的食谱。点击一个食谱打开一个新的屏幕，显示食谱详细的一个美味的照片和烹饪说明。每个屏幕由其自己的 view controller 来管理。
 
@@ -647,7 +647,7 @@ class ViewController: UIViewController {
 
 目前 Bull’s Eye 只有一个屏幕（顶部有一个白色 button 的那个），因此只需要一个 view controller。该 view controller 简称为 “ViewController”（译者注：这里看起来比较怪，实际上后者只是一个命名，你可以随意修改。前者则为专有名词），storyboard 和 Swift 文件一起工作来实现它。
 
-简单地说，Main.storyboard 文件包含 view controller 的用户界面的设计，而ViewController.swift 包含其功能——让用户界面按照设定来工作的逻辑，它是使用 Swift 语言来编写的。
+简单地说，Main.storyboard 文件包含 view controller 的用户界面的设计，而ViewController.swift 包含其功能 - 让用户界面按照设定来工作的逻辑，它是使用 Swift 语言来编写的。
 
 因为你使用 Single View Application 模板，Xcode 自动为你创建 view controller。 稍后，你将为游戏添加第二个屏幕，你将为此创建自己的 view controller。
 
@@ -744,7 +744,7 @@ showAlert 中的代码创建一个标题为 “Hello，World” 的 alert，它�
 
 休息一下，让它沉淀下来，当你准备好学习更多的时候回来！你只不过是刚刚迈出一小步而已…
 
-<code class="highlighter-rouge"><strong>注意：</strong>为了防止你卡住，我已经在本教程附带的源代码文件夹中为本教程中的几个检查点提供了完整的 Xcode 项目。这样，你可以拿你的应用程序的版本和我的做对比，或者——如果你真的弄乱了一些东西——可以从一个你拿的准的版本入手。</code>
+<code class="highlighter-rouge"><strong>注意：</strong>为了防止你卡住，我已经在本教程附带的源代码文件夹中为本教程中的几个检查点提供了完整的 Xcode 项目。这样，你可以拿你的应用程序的版本和我的做对比，或者 - 如果你真的弄乱了一些东西 - 可以从一个你拿的准的版本入手。</code>
 
 <code class="highlighter-rouge">你可以在 <strong>01 - One Button App</strong> 文件夹中找到你迄今为止所做的应用程序的项目文件。</code>
 
@@ -822,7 +822,7 @@ showAlert 中的代码创建一个标题为 “Hello，World” 的 alert，它�
 
 你不必真的要以某种特定的顺序去做，虽然一些事情在别的事情之前做有意义。 例如，如果你还没有 slider，则无法读取 slider 的位置。
 
-所以，让我们添加其余的 controls——slider 和 text labels，并将这个应用程序变成一个真正的游戏！
+所以，让我们添加其余的 controls - slider 和 text labels，并将这个应用程序变成一个真正的游戏！
 
 当你完成后，应用程序将如下所示：
 
@@ -889,7 +889,7 @@ showAlert 中的代码创建一个标题为 “Hello，World” 的 alert，它�
 
 那么什么是点呢？
 
-对于较旧的设备——最高到 iPhone 3GS 和相应的 iPod touch 型号，以及第一代 iPad 而言一点对应一个像素。因此，这些低分辨率设备看起来不是很清晰，因为它们的大又粗糙的像素。
+对于较旧的设备 - 最高到 iPhone 3GS 和相应的 iPod touch 型号，以及第一代 iPad 而言一点对应一个像素。因此，这些低分辨率设备看起来不是很清晰，因为它们的大又粗糙的像素。
 
 我相信你知道一个像素是什么。如果你不知道的话：它是屏幕组成的最小的元素。你的 iPhone 显示的是一个大矩阵的像素，每个像素都可以有自己的 color（颜色），就像一个电视屏幕。 改变这些像素的 color 值在显示器上产生可见图像。像素越多，图像看起来越好越细腻。
 
@@ -915,7 +915,7 @@ showAlert 中的代码创建一个标题为 “Hello，World” 的 alert，它�
 
 点和像素之间的差异可能有点混乱，但到现在为止如果这是唯一使你困惑的事情，那么我做的教程还不错。 ;-)
 
-在本教程中，你最初将只使用大小为 320×568 点的 iPhone SE 屏幕——只是为了简单。稍后在教程中，你还将使游戏适配其他尺寸的iPhone。
+在本教程中，你最初将只使用大小为 320×568 点的 iPhone SE 屏幕 - 只是为了简单。稍后在教程中，你还将使游戏适配其他尺寸的iPhone。
 
 ## 将应用转换为 landscape
 
@@ -979,7 +979,7 @@ Swift 是一种所谓的 “object-oriented” 编程语言，这意味着你做
 
 每个 object 负责程序的特定部分。在一个完整的应用程序，你会有许多不同类型的 objects（几十或甚至数百）。
 
-即使你的小启动器应用程序也已经包含几个不同的 objects。你花了最多的时间，到目前为止的是 ViewController。Hit Me button 也是一个 object，alert 弹出。 和你的 alert text——“Hello, World!” 和 “This is my first app!”——他们都是 object。
+即使你的小启动器应用程序也已经包含几个不同的 objects。你花了最多的时间，到目前为止的是 ViewController。Hit Me button 也是一个 object，alert 弹出。 和你的 alert text - “Hello, World!” 和 “This is my first app!” - 他们都是 object。
 
 该项目还有一个名为 AppDelegate 的 object，不过你将在此课程中忽略它（但如果你好奇，可以随意查看它的源文件）。这些 objects 无处不在！
 
@@ -1232,7 +1232,7 @@ Variables 就像儿童的积木玩具：
 
 但是你不能在圆孔中放一个正方形：值的 data type 和 variable 的 data type 必须匹配。
 
-我说一个 variable 是一个临时存储容器。它会把内容保留多长时间？与肉类或蔬菜不同，如果你保持它们太长时间，variables 不会腐烂变坏——一个 variable 将无限期地保持它的值，直到你把一个新的值放入该 variable，或者直到你完全销毁容器。
+我说一个 variable 是一个临时存储容器。它会把内容保留多长时间？与肉类或蔬菜不同，如果你保持它们太长时间，variables 不会腐烂变坏 - 一个 variable 将无限期地保持它的值，直到你把一个新的值放入该 variable，或者直到你完全销毁容器。
 
 每个 variable 都有一定的生命周期（也称为范围），它取决于程序中定义该 variable 的确切位置。在这种情况下，currentValue 会和它的所有者 ViewController 拥有一样的生命周期。他们的命运是交织在一起的（译者注：好比一根绳上的蚂蚱）。
 
@@ -1277,7 +1277,7 @@ currentValue = lroundf(slider.value)
 
 `你已经看到 methods 提供了 functionality，但是 function 是将 functionality 放入你的应用程序的另一种方式。Functions 和 methods 是 Swift 程序实现将多行代码组合成单个且连贯的单元的功臣。`
 
-`两者之间的区别是，一个 function 不属于一个 object，而一个 method 属于一个 object 换句话说，一个 method 就像一个 function——这就是为什么你使用 func 关键字来定义它们——除了你需要一个 object 来使用该 method。 但是因为 methods 有时被称为常规 functions 或 free functions（自由函数），可以在任何地方使用。`
+`两者之间的区别是，一个 function 不属于一个 object，而一个 method 属于一个 object 换句话说，一个 method 就像一个 function - 这就是为什么你使用 func 关键字来定义它们 - 除了你需要一个 object 来使用该 method。 但是因为 methods 有时被称为常规 functions 或 free functions（自由函数），可以在任何地方使用。`
 
 `Swift 为你的程序提供了一个有用的函数库。function lroundf() 是其中的一个，你将在本课中使用其他几个。print() 也是一个 function，顺便说一下。你可以这么说，因为函数名称后面总是可能包含一个或多个参数的圆括号。`
 
@@ -1510,7 +1510,7 @@ Swift 有以下三个可能的范围级别：
 
 当你完成游戏后，将滑块的起始位置恢复到 50。
 
-**练习：**给 currentValue 一个初始值为 0。它的初始值不再重要——反正初始值将被 viewDidLoad() 重写， 但 Swift 要求所有 varibales 总是要有一些值（译者注：所有 variables 必须要被初始化），0 这个选择不错。
+**练习：**给 currentValue 一个初始值为 0。它的初始值不再重要 - 反正初始值将被 viewDidLoad() 重写， 但 Swift 要求所有 varibales 总是要有一些值（译者注：所有 variables 必须要被初始化），0 这个选择不错。
 
 ## Comments
 
@@ -1587,7 +1587,7 @@ Swift 中的 variables 必须总是有一个值，所以在这里你将它初始
 
 我希望你很清楚设置 targetValue 这一个 instance variable 的原因。
 
-你想在一个地方计算随机数——在 viewDidLoad()，然后记住它（保存它的值）在 showAlert() 中，直到用户点击 button。
+你想在一个地方计算随机数 - 在 viewDidLoad()，然后记住它（保存它的值）在 showAlert() 中，直到用户点击 button。
 
 ➤ 将 showAlert() 更改为以下内容：
 
@@ -1682,7 +1682,7 @@ override func viewDidLoad() {
 
 它也可以手动调用 method，这是你在这里做的。你正在从 object 中的一个 method 发送消息到同一个 object 中的另一个 method。
 
-在这种情况下，view controller 向其自身发送 startNewRound() 消息，以设置新轮次。然后 iPhone 将去那个 method 里并逐个执行它的语句。当 method 中没有更多的语句时，它返回到调用 method，并继续往下执行——如果这是第一次，则执行 viewDidLoad()，否则该执行的为每一回合的 showAlert()。
+在这种情况下，view controller 向其自身发送 startNewRound() 消息，以设置新轮次。然后 iPhone 将去那个 method 里并逐个执行它的语句。当 method 中没有更多的语句时，它返回到调用 method，并继续往下执行 - 如果这是第一次，则执行 viewDidLoad()，否则该执行的为每一回合的 showAlert()。
 
 有时你可能会看到类似这样写的 method 调用：
 
@@ -1772,7 +1772,7 @@ slider.value = Float(currentValue)
 
 Swift 是一种所谓的 *strongly typed*（强类型）语言，意味着它是非常挑剔形状，你不能把不同的形状放到同一个盒子中。例如，如果一个 variable 是一个Int，你不能把一个 Float 的值放入进去，反之亦然。
 
-UISlider 的值恰好是一个 Float，它是一个数字，小数点后面有数字——之前你在打印出 slider 的值时看到了这一点，但 currentValue 是一个 Int。 所以这样赋值是错的：
+UISlider 的值恰好是一个 Float，它是一个数字，小数点后面有数字 - 之前你在打印出 slider 的值时看到了这一点，但 currentValue 是一个 Int。 所以这样赋值是错的：
 
 ```swift
 slider.value = currentValue
@@ -1843,7 +1843,7 @@ targetLabel.text = "\(targetValue)"
 
 你最喜欢用哪种方法只不过是你个人口味的问题。任何一种方法都会正常工作。
 
-请注意，updateLabels() 是一个常规 method——它不作为 action 附加到任何 UI controls 上，因此它不会做任何事情，直到你实际调用它。（你懂的，因为它没有在任何地方说 @IBAction）
+请注意，updateLabels() 是一个常规 method - 它不作为 action 附加到任何 UI controls 上，因此它不会做任何事情，直到你实际调用它。（你懂的，因为它没有在任何地方说 @IBAction）
 
 调用 updateLabels() 的逻辑位置将在每次调用 startNewRound() 之后，因为这是你计算新目标值的地方。
 
@@ -1919,7 +1919,7 @@ func updateLabels()
 
 译者注：以下为原作者的一个小广告，有能力支持的可以购买原版，鼓励作者继续分享更多更好的经验。觉得啰嗦的可以跳过到下一条分割线之后。
 
-这只是我的书 *The iOS Apprentice* 中的第一个教程：*Beginning iOS Development with Swift*（使用 Swift 开始 iOS 开发）。完整的书还有多三个像这样的大型教程——在每个教程中你都将从头开始打造一个完整的应用程序。
+这只是我的书 *The iOS Apprentice* 中的第一个教程：*Beginning iOS Development with Swift*（使用 Swift 开始 iOS 开发）。完整的书还有多三个像这样的大型教程 - 在每个教程中你都将从头开始打造一个完整的应用程序。
 
 教程由浅入深。每个新的应用程序都比前一个更高级和复杂。这些应用涵盖了你需要知道的大部分知识，以制作自己的应用程序。
 
@@ -1931,7 +1931,7 @@ func updateLabels()
 
 <br>
 
-你可能不知道一切，但你将能成为独当一面的开发人员——而且你会准备好畅游在令人兴奋的 iPhone 和 iPad 开发的世界。
+你可能不知道一切，但你将能成为独当一面的开发人员 - 而且你会准备好畅游在令人兴奋的 iPhone 和 iPad 开发的世界。
 
 *The iOS Apprentice* 会教你的一些亮点：
 
@@ -1963,9 +1963,9 @@ Slider 越靠近目标，玩家的点数越高。
 
 不幸的是，如果 slider 位于目标的右边，则得出负值，因为现在的 currentValue 大于 targetValue。
 
-你需要一些方法把负距离变成正值——或者你最终从玩家的分数中减去点数（这样未免不公平）。
+你需要一些方法把负距离变成正值 - 或者你最终从玩家的分数中减去点数（这样未免不公平）。
 
-如果总是做减法后取相反数 -(currentValue - targetValue)——这并不会解决问题，因为如果 slider 位于目标的左侧而不是右侧，则差值将为负值。
+如果总是做减法后取相反数 -(currentValue - targetValue) - 这并不会解决问题，因为如果 slider 位于目标的左侧而不是右侧，则差值将为负值。
 
 嗯，看起来我们在这陷入了麻烦…
 
@@ -2513,7 +2513,7 @@ func updateLabels() {
 
 **练习：**当她为完美的得分时，给玩家额外 100 点奖励。这将鼓励玩家真正试图把牛眼放在目标上。否则，完美得分 100 分和 98 或 95 分之间没有太大差异，会让玩家失去动力。
 
-给玩家一点鼓励，尝试更努力——一个完美的得分不再只有 100，而是 200 分。你也可以给玩家 50 点，随你设置。
+给玩家一点鼓励，尝试更努力 - 一个完美的得分不再只有 100，而是 200 分。你也可以给玩家 50 点，随你设置。
 
 ➤ 以下是我将进行这些更改的方式：
 
@@ -2588,7 +2588,7 @@ let action = . . .
 
 此语法创建一个新变量（var）或常量（let）。 因为这些 variables 和 constants 是在 method 内创建的，所以它们是 locals。
 
-这六个项目——difference, points, title, message, alert, 和 action——仅限于 showAlert() method，并且不在其外部。一旦该 method 完成，本地的都不再存在。
+这六个项目 - difference, points, title, message, alert, 和 action - 仅限于 showAlert() method，并且不在其外部。一旦该 method 完成，本地的都不再存在。
 
 例如，你可能会想知道，每当玩家点击 Hit Me button 时，difference 如何，即使它是一个 constant。constants 一旦给定一个值，以后不会改变？（译者注：提前透漏一下吧，就算是常量也是可以改变的。仔细看看前一句话，一旦 method 完成，本地的常量或者变量都不再存在。所以点击按钮后，又执行了一次 method，现在的那个常量已经不再是原来那个了。想象一下你有一支笔，笔芯已经没有墨水了，你把没水的笔芯丢掉然后换了一支新的笔芯进去）
 
@@ -2674,11 +2674,11 @@ class ViewController: UIViewController {
 
 所以如果你不能在 showAlert() 中等待，直到弹出窗口被关闭，那么你怎么等待它关闭？
 
-答案很简单：事件！正如你所看到的，iOS 的许多编程涉及等待特定事件发生——button 被点击，slider 被移动等等。这没有什么不同。你必须等待 “alert dismissed” 事件。同时，你什么都不需要做。
+答案很简单：事件！正如你所看到的，iOS 的许多编程涉及等待特定事件发生 - button 被点击，slider 被移动等等。这没有什么不同。你必须等待 “alert dismissed” 事件。同时，你什么都不需要做。
 
 以下是它的工作原理：
 
-对于 alert 上的每个 button，你必须提供一个 UIAlertAction object。此 object 告诉 alert 在 button 上的文本是什么——“OK”——button 的外观是怎么样的（你在这里使用默认样式）：
+对于 alert 上的每个 button，你必须提供一个 UIAlertAction object。此 object 告诉 alert 在 button 上的文本是什么 - “OK” - button 的外观是怎么样的（你在这里使用默认样式）：
 
 ```swift
 let action = UIAlertAction(title: "OK", style: .default, handler: nil)
@@ -2969,7 +2969,7 @@ class AboutViewController: UIViewController {
 
 <br>
 
-**练习：**奖励积分，如果你能发现错误。这是一个非常常见的，令人沮丧的！——错误。
+**练习：**奖励积分，如果你能发现错误。这是一个非常常见的，令人沮丧的！- 错误。
 
 问题是，storyboard 中的这个 scene 还不知道它自己代表 AboutViewController。
 
@@ -2991,7 +2991,7 @@ class AboutViewController: UIViewController {
 
 ➤ 再次运行应用程序。你现在应该可以从 About screen 返回。
 
-恭喜！这完成了游戏。所有的功能完备了——我可以保证——没有 bugs，以破坏乐趣。
+恭喜！这完成了游戏。所有的功能完备了 - 我可以保证 - 没有 bugs，以破坏乐趣。
 
 但你必须承认游戏仍然看起来不是很好。如果就以当前形式你把它放在 App Store 上，我确定不会有很多人会兴奋的下载它。幸运的是，iOS 让你能够非常容易创建好看的应用程序，所以让我们给 Bull’s Eye 一个改造。
 
@@ -3053,7 +3053,7 @@ Info.plist 是应用程序包内的一个配置文件，它告诉 iOS 应用程�
 
 <br>
 
-Info.plist 文件只是配置选项及其值的列表。大多数这些可能对你没有意义，但是没关系——他们也不总是对我有意义。
+Info.plist 文件只是配置选项及其值的列表。大多数这些可能对你没有意义，但是没关系 - 他们也不总是对我有意义。
 
 请注意，选项 **Status bar is initially hidden**（状态栏最初是隐藏的）。它的值为 YES。这是你刚才更改的选项。
 
@@ -3111,7 +3111,7 @@ Xcode 显示文件选择器。从本教程的资源中选择 Images 文件夹，
 
 目前，asset 目录中设置的每个图像只有一个用于 “2x” 图像的插槽，但你也可以指定 1x 和 3x 图像。拥有不同大小的同一图像的多个版本，可让你的应用程序支持现有的各种 iPhone 和 iPad 显示器。
 
-**1x** 是用于低分辨率屏幕，具有大的，块状像素的。实际上没有低分辨率的设备，可以运行 iOS 10——他们太老了，所以你不可能再遇到许多 1x 图像了。1x 只是一个问题，仅当你仍然需要设计一个支持 iOS 9 或甚至 iOS 8 的应用程序。
+**1x** 是用于低分辨率屏幕，具有大的，块状像素的。实际上没有低分辨率的设备，可以运行 iOS 10 - 他们太老了，所以你不可能再遇到许多 1x 图像了。1x 只是一个问题，仅当你仍然需要设计一个支持 iOS 9 或甚至 iOS 8 的应用程序。
 
 **2x** 是用于高分辨率视网膜屏幕。这涵盖了大多数现代 iPhone，iPod touch 和 iPad。视网膜图像是低分辨率图像的两倍，因此是 2x。你刚刚导入的图片为 2x 图片。
 
@@ -3324,7 +3324,7 @@ Buttons 可以有多个状态。当你点击一个 button 并按住它，它应�
 
 ##The slider
 
-不幸的是，你只能在 Interface Builder 中自定义滑块的一小部分属性。对于这个游戏需要的更高级的定制——把你自己的图像放在 slider 和轨道上——你必须靠编写源代码来实现。
+不幸的是，你只能在 Interface Builder 中自定义滑块的一小部分属性。对于这个游戏需要的更高级的定制 - 把你自己的图像放在 slider 和轨道上 - 你必须靠编写源代码来实现。
 你在 Interface Builder 中完成的所有操作都可以在代码中完成。例如，设置 button 上的颜色可以通过向 button 发送 setTitleColor() 消息来完成。
 
 但是，我发现在可视化编辑器（如Interface Builder）中设计要比编写等效的源代码容易得多。但对于 slider 你没有办法，因为官方没有在可视化编辑器中为 slider 提供很多可以自定义的属性。
@@ -3469,13 +3469,13 @@ override func viewDidLoad() {
 
 ##支持 3.5 寸屏幕
 
-到目前为止，你已经为 iPhone 5，5c，5s 和 iPhone SE 的 4 英寸屏幕设计了应用程序——仍然是目前最受欢迎的 iPhone 型号之一。
+到目前为止，你已经为 iPhone 5，5c，5s 和 iPhone SE 的 4 英寸屏幕设计了应用程序 - 仍然是目前最受欢迎的 iPhone 型号之一。
 
 早期的 iOS Apprentice 显示了如何使 Bull’s Eye 在 iPhone 4S 上工作。这款旧款机型的屏幕略小，仅 3.5 英寸。
 
 两种类型的屏幕同样 Width（320 点），但 4 英寸的 Retina 手机的 Height 为 568 点，3.5 英寸机型只有 480 点。所以你的应用程序需要以某种方式补偿这 88 点的差异。
 
-不过，现在这个问题现在有些多余… iOS 10 并不支持那些旧的 3.5 英寸的设备。注意在 Xcode 窗口顶部的 Simuators 列表中没有 iPhone 4S——你不能再在 iPhone 4S 上运行应用程序，甚至不能模拟。
+不过，现在这个问题现在有些多余… iOS 10 并不支持那些旧的 3.5 英寸的设备。注意在 Xcode 窗口顶部的 Simuators 列表中没有 iPhone 4S - 你不能再在 iPhone 4S 上运行应用程序，甚至不能模拟。
 
 不过话说回来，学习如何使应用程序在这些较小的屏幕上正常工作仍然有用，原因如下：
 
@@ -3591,7 +3591,7 @@ Interface Builder 现在绘制一个红色条以表示 constraint，以及一个
 
 这是一个问题：线条都应该是蓝色的，而不是红色。红色表示 constraints 有问题，通常是因为没有足够的 constraints。
 
-对于每个 view，必须始终有足够的 constraints 来定义其位置和大小。Close button 已经知道它的大小——你之前将其输入到 Size inspector（尺寸检查器）中——但是对于它的位置，只有 X 坐标（horizontal 方向对齐）的 constraint。你还需要为 Y 坐标添加 constraint。
+对于每个 view，必须始终有足够的 constraints 来定义其位置和大小。Close button 已经知道它的大小 - 你之前将其输入到 Size inspector（尺寸检查器）中 - 但是对于它的位置，只有 X 坐标（horizontal 方向对齐）的 constraint。你还需要为 Y 坐标添加 constraint。
 
 有不同类型的 constraints。到目前为止，你已经使用了 alignment constraints，但也有 “spacing” constraints（“间距”约束），可以确保两个 views 的两边保持粘合在一起，间隔一定的间距。你可以使用 Pin menu 进行 spacing constraints。
 
@@ -3762,13 +3762,13 @@ Auto Layout 可能需要一段时间才能习惯。添加 constraints 以便定�
 
 （记住，你可以按 **⌘1** 到 **⌘**5 缩放 Simulator，如果它不适合你的屏幕的话，因为 iPhone Plus 几乎和 iPad 一样大！）
 
-嗯，我猜这不是太糟糕——但是也不是很好。Background image 不太适合，应用程序没有利用所有可用空间。如果一切都稍大一些会更好。
+嗯，我猜这不是太糟糕 - 但是也不是很好。Background image 不太适合，应用程序没有利用所有可用空间。如果一切都稍大一些会更好。
 
 有几种方法可以解决这个问题，但是我们要作弊，采取简单的方法。
 
 应用程序需要选择支持 iPhone 6 及更高版本的较大屏幕。
 
-如果一个应用程序*不*加入，iPhone 6/7 / Plus 将自动扩展应用程序以填补额外的空间。这样做是为了使较旧的应用程序仍然可以在这些较大的设备上使用。这对我们来说非常棒，因为扩大规模正是我们想要的——这样可以省不少事。
+如果一个应用程序*不*加入，iPhone 6/7 / Plus 将自动扩展应用程序以填补额外的空间。这样做是为了使较旧的应用程序仍然可以在这些较大的设备上使用。这对我们来说非常棒，因为扩大规模正是我们想要的 - 这样可以省不少事。
 
 启用 iPhone 6 支持的应用程序必须提供所谓的 **launch screen**（启动屏幕）。你已经看到过这个 lanuch screen 在 action 中，可能不知道。
 
@@ -3863,7 +3863,7 @@ Core Animation 技术依赖自己的 framework，QuartzCore。使用 import 语�
 
 对 startNewGame() 和 updateLabels() 的调用是在之前，但是 CATransition 这个东西是新的。
 
-我不会在这里讲太多的细节。只是说你正在设置一个动画，在当前在屏幕上显现变化和你在 startNewGame() 中所做的更改——将 slider 重置为中心位置——并且 updateLabels()——重置标签的值。
+我不会在这里讲太多的细节。只是说你正在设置一个动画，在当前在屏幕上显现变化和你在 startNewGame() 中所做的更改 - 将 slider 重置为中心位置 - 并且 updateLabels() - 重置标签的值。
 
 ➤ 运行应用程序并移动 slier，使其不再位于中央。按 Start Over button，你应该看到一个微妙的交叉淡入淡出动画。
 
@@ -3982,3 +3982,196 @@ Simulator 是很棒的，但你确实需要在真实的设备上运行你的创�
 ➤ 单击你的设备名称进行选择。
 
 如果这是你第一次让 Xcode 与设备工作，Devices 窗口将会显示 “iPhone is not paired with your computer.”。要将设备与 Xcode 配对，你需要首先解锁设备（按住 home 键）。解锁后，设备上会弹出 alert（译者注：看吧，和你学到的一模一样），要求你信任您要配对的计算机。点击 Trust（信任）继续。
+
+Xcode 现在将刷新页面，并让你使用该设备进行开发。给它几分钟（见 Xcode 主窗口中的进度条）。如果需要太长时间，可能需要先拔掉设备的电源插头。
+
+此时可能会收到错误消息 “An error was encountered while enabling development on this device.”。你需要拔下设备并重新启动它。在重新连接设备之前，请确保重新启动 Xcode。
+
+酷，那是设备排序。
+
+下一步是使用 Xcode 设置你的 Apple ID。使用在 iTunes 和 iPhone 上正在使用的相同的 Apple ID，但如果你经营业务，则可能需要创建一个新的 Apple ID，以便将这些内容分开。当然，如果你已经注册了付费开发者计划帐户，你应该使用该 Apple ID。
+
+➤ 在 Xcode Preferences 窗口中打开 **Accounts** pane：
+
+<div align="center"><img alt="The Accounts preferences" src="http://imgur.com/x4EHa71.png"/></div><center>The Accounts preferences</center>
+
+<br>
+
+➤ 单击底部的 + 按钮，然后选择 **Add Apple ID**。Xcode 将请求你的 Apple ID：
+
+<div align="center"><img alt="将你的 Apple ID 添加到 Xcode" src="http://imgur.com/7iBzccO.png"/></div><center>将你的 Apple ID 添加到 Xcode</center>
+
+<br>
+
+➤键入你的 Apple ID 用户名和密码，然后单击 Sign In（登录）。
+
+Xcode 验证你的帐户详细信息，并将其添加到 accounts 窗口。
+
+<code class="highlighter-rouge"><strong>注意：</strong>Xcode 可能无法使用你提供的Apple ID，例如，如果它已经与过去的开发人员计划帐户一起使用，现在已过期。最简单的解决方案是注册新的 Apple ID。它是免费的，只需要几分钟。<a href="https://appleid.apple.com">https://appleid.apple.com</a></code>
+
+在构建应用程序时，你仍然需要告诉 Xcode 使用此帐户。
+
+➤ 转到 **Project Settings** 屏幕。在 **General** 选项卡中，转到 **Signing** 部分。
+
+<div align="center"><img alt="Project Settings 屏幕中的 Signing 选项" src="http://imgur.com/oyXn0Rk.png"/></div><center>Project Settings 屏幕中的 Signing 选项</center>
+
+<br>
+
+为了允许 Xcode 在 iPhone 上放置一个应用程序，应用程序必须用你的 **Development Certificate**（开发证书）进行 *digitally signed*（数字签名）。证书是一个电子文档，将你标识为 iOS 应用程序开发人员，仅在有限的时间内有效。
+
+你要提交给 App Store 的应用程序必须使用其他证书 **Distribution Certificate**（分销证书）进行签名。要使用发行证书，你必须是付费开发者计划的成员，但使用开发证书是免费的。
+
+除了有效的证书之外，您还需要为你制作的每个应用程序提供所谓的配置配置文件。Xcode 使用此配置文件对你的设备上的应用程序进行签名。具体细节并不重要，只需要知道你需要配置配置文件，否则该应用程序将不会放在你的设备上。
+
+使证书和 **Provisioning Profile**（配置文件）过于令人沮丧和容易出错。幸运的是，这些日子已经结束了：Xcode 8 使它操作起来变得非常简单。当启用 **Automatically manage signing**（自动管理签名）选项时，Xcode 将使用证书和 Provisioning Profile 来处理所有这些业务，你不必操心这些了。
+
+➤ 单击 **Team** 以选择你的 Apple ID。
+
+Xcode 现在将自动注册你的设备与帐户，创建一个新的 Development Certificate，下载并安装 Provisioning Profile 到你的设备上。在以前，这些都是你不得不手动完成的所有步骤，但现在 Xcode 8 会搞定所有这些。
+
+可能会出现以下错误：
+
+<div align="center"><img alt="Bundle identifier 已被使用" src="http://imgur.com/iXNJQRQ.png"/></div><center>Bundle identifier 已被使用</center>
+
+<br>
+
+应用程序的 Bundle Identifier - 或它在这里被称为 App ID（应用程序ID） - 必须是唯一的。如果另一个应用程序已经使用该 identifier，那么你不能再使用它了。这就是为什么你应该用自己的域名启动 Bundle ID。修复方法很简单：将 Bundle Identifier 字段更改为其他内容，然后重试。
+
+也可能会得到这个错误：
+
+<div align="center"><img alt="没有设备注册" src="http://imgur.com/S9ggzUe.png"/></div><center>没有设备注册</center>
+
+<br>
+
+Xcode 必须了解你要运行应用程序的设备。这就是为什么我要求你先连接你的设备。仔细检查你的 iPhone 或 iPad 是否仍然连接到你的 Mac，并在 Devices 窗口中列出。
+
+如果所有这些都检查过了，请返回到 Xcode 的主窗口，然后单击工具栏中的框以更改运行应用程序的位置。你的设备的名称应该在该列表的某个地方。
+
+在我的系统上，它看起来像这样：
+
+<div align="center"><img alt="更改应用程序将在哪里运行" src="http://imgur.com/bRNNPs3.png"/></div><center>更改应用程序将在哪里运行</center>
+
+<br>
+
+你已经准备万全！
+
+➤ 按 Run 启动应用程序。
+
+在这时，你可能会收到一个弹出窗口，问题是 “codesign wants to sign using key … in your keychain”。如果是这样，请务必使用 **Always Allow**。这是 Xcode 试图使用刚才创建的新的开发证书，但你需要先授予它权限。
+
+应用程序是否工作？真棒！如果没有，请阅读…
+
+当你尝试将应用程序放在设备上时，有几件事可能会出错，特别是如果你以前从未执行此操作，那么如果遇到问题，请不要惊慌。
+
+**The device is not connected**（设备未连接）。确保你的 iPhone，iPod touch 或 iPad 已连接到 Mac。该设备必须列在 Xcode 的 Devices 窗口中，不应有黄色警告图标。
+
+**The device does not trust you**（该设备不信任你）。你可能会收到以下警告：
+
+<div align="center"><img alt="快，呼叫保安！" src="http://imgur.com/g61FlM2.png"/></div><center>快，呼叫保安！</center>
+
+<br>
+
+在设备上，将出现一个包含文本“Untrusted Developer. Your device management settings do not allow using apps from developer ...”。
+
+如果发生这种情况，请打开设备上的 Settings（设置），然后转到 General（通用），Profile（配置文件）。你的 Apple ID 应该列在该屏幕中。点击它，然后点击 Trust （信任）按钮。然后再次尝试运行应用程序。
+
+**The device is locked**（设备被锁定）。如果你的手机几分钟后自动锁屏，你可能会收到以下警告：
+
+<div align="center"><img alt="如果设备被锁定，该应用将不会运行" src="http://imgur.com/XiurYhy.png"/></div><center>如果设备被锁定，该应用将不会运行</center>
+
+<br>
+
+只需解锁你的设备（按住 Home 键，输入 4 位密码等等…），然后再次按 Run。
+
+如果你对这些证书和配置文件很好奇，请打开 **Preferences** 窗口并转到 **Accounts** 选项卡。选择你的帐户，然后点击右下角的 **View Details…** 按钮。
+
+这将启动另一个面板，列出你的 signing identities（certificates）和 provisioning profiles：
+
+<div align="center"><img alt="帐户详细信息面板" src="http://imgur.com/LXYHE8q.png"/></div><center>帐户详细信息面板</center>
+
+<br>
+
+“iOS Team Provisioning Profile：*” 是允许你在设备上运行应用程序的东西。（顺便说一下，他们称之为 “team” 配置文件，因为经常有不止一个开发人员在应用程序上工作，他们都可以共享该配置文件）
+
+完成后，关闭 Accounts 窗口并转到 Devices 窗口。你可以通过右键单击来查看设备上安装的配置配置文件，
+
+单击设备名称并选择 **Show Provisioning Profiles**：
+
+<div align="center"><img alt="你设备上的 provisioning profiles" src="http://imgur.com/908YlbI.png"/></div><center>你设备上的 provisioning profiles</center>
+
+<br>
+
+您可以安装多个 certificate 和 provisioning profile。如果你在多个开发团队，或者你希望手动管理不同应用程序的配置文件，这将非常有用。
+
+要查看 Xcode 如何选择哪个 profile 和 certificate 签署你的应用程序，请转到 Project Settings 屏幕并切换到 **Build Settings** 选项卡。此列表中有很多设置，因此通过在搜索框中输入 **signing** 进行过滤。（还要确保全部被选中，而不是基本）
+
+屏幕看起来会像是这样：
+
+<div align="center"><img alt="Code Signing 设置" src="http://imgur.com/ALJxE9w.png"/></div><center>Code Signing 设置</center>
+
+<br>
+
+##结束还是开始？
+
+这是很长的一课 - 如果你刚开始编程，你必须在你的头脑里搞定很多新的概念。我希望你的大脑没有爆炸！
+
+至少你应该了解开发应用程序需要做些什么。
+
+我不期望你准确理解你做的一切,尤其是涉及到编写代码的部分。很好，如果你还不理解,只要你享受其中你就得到了 objects，methods 和 variables 的基本概念。
+
+如果你能跟随并做练习，你的很有潜力！
+
+我鼓励你再多玩一遍代码。学习编程的最好办法就是做到这一点，包括做错事和弄乱事情。我特此授予你这样做的许可！也许你可以添加一些很酷的新功能到游戏（如果你这样做，让我知道）。
+
+但是现在，喝一杯，休息放松一下！这是你应得的。
+
+在本教程的源代码文件夹中，你可以找到 Bull's Eye 应用程序的完整源代码，并添加大量补充说明。如果你仍然不清楚自己所做的一切，那么查看这个整洁的完整的源代码可能是个好主意。
+
+如果你对图形的制作感兴趣，请浏览资源文件夹中的 Photoshop 文件。木背景纹理图片来自 [subtlepatterns.com](subtlepatterns.com) 的 Atle Mo 制作。
+
+##但还有更多！
+
+感谢你阅读我的书 *The iOS Apprentice* 中的第一个教程！
+
+我希望这个第一个教程给你一些体验，其余部分，可从 [www.raywenderlich.com](www.raywenderlich.com) 获得。
+
+完整的书有另外三个史诗级长度的教程，每个教程都解释了一个应用程序而且逐渐变得复杂，提升难度。
+
+你已经看到了建立一个相当简单的游戏所需要的。在下一个教程中，我想向你展示如何使用 table views，navigation controllers，地图 和 GPS 等功能，照相机，网络服务等等… 你需要了解的所有基础知识，以使你自己能够得心应手的在你的应用程序上使用。
+
+如果你喜欢这个免费的教程，你想要了解更多有关 iPhone 和 iPad 编程的信息，那么请尝试下一个课程。每个新的教程都建立在你之前所学到的知识之后，整个过程结束之后，你应该可以从头开始编写自己的应用程序 - 对你正在做的事情非常了解。
+
+你将在本书的其余部分学到什么：
+
+**教程 2：Checklists（清单）**
+
+现在，你已经了解了一切如何运作，你将要创建一个基本的 to-do list（待办事项列表）应用程序。
+
+你将了解 table views，navigation controllers，delegates 和保存数据。你还将发现所有 iOS 应用程序使用的基本设计模式，并且 Swift 语言逐渐开始对你有意义。
+
+奖励功能：使用本地通知设置提醒。
+
+**教程 3：MyLocations**
+
+基于前两章学到的内容，本教程将进一步深入 Swift 和 iOS 框架。
+
+你将制作一个使用 Core Location framework 的应用程序，以获取用户的行踪的 GPS 坐标，Map Kit 可以在地图上显示用户最喜爱的位置，iPhone 的相机和照片库将照片附加到这些位置，Core Data 将所有内容存储在数据库中。
+这又许多东西！在这个课程之后，Swift 和你会相处得很好，如果你无法写出你自己的几个应用程序，我会感到惊讶。
+
+**教程 4：StoreSearch**
+
+移动应用程序通常需要与 Web 服务对话，这是你将在本系列的最终教程中所做的。你将制作一款时尚的应用程序，让你可以使用 HTTP requests（请求）和 JSON 在 iTunes 商店中搜索产品。
+
+你将了解 view controller containment - 或者如何将一个 view controller 嵌入另一个 view controller 中 - 以及如何在 landscape 中显示完全不同的 UI。我们将讨论 animation（动画），scroll views（滚动视图），下载图像，支持多种语言，并将应用程序移植到 iPad。
+
+最后，我将解释如何使用 Ad Hoc 分发进行 beta 测试，以及如何将应用程序提交到App Store。在这个怪物般的教程结束时，一定彻彻底底解决你新手道路上的所有问题！
+
+你可以在 [www.raywenderlich.com/store/ios-apprentice](www.raywenderlich.com/store/ios-apprentice) 上获得完整版的 *The iOS Apprentice: Beginning iOS Development with Swift, Fifth Edition*。
+
+这是值得的，如果你想成为一个伟大的 iOS 开发人员！
+
+##保持联系
+
+如果你对这些教程有任何问题或意见 [mail@hollance.com](mail@hollance.com)，请随时发送电子邮件至 Matthijs。当然，欢迎你在 [forums.raywenderlich.com](forums.raywenderlich.com) 上访问论坛进行一些很棒的交流。
+
+感谢阅读！

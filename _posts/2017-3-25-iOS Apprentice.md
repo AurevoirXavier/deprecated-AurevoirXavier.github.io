@@ -210,7 +210,7 @@ Xcode 是为 iOS 应用程序量身定做的开发工具。它有一个文本编
 
 Xcode 将你编写的源代码转换为可执行的应用程序，并在 Simulator 或 iPhone 上启动它。因为没有任何应用程序是完全没有 bug 的，所以 Xcode 还配备了一个调试器，可以帮助你发现代码中存在的缺陷（不幸的是，它并不会自动修复，这仍然是你的工作）。
 
-你可以从 Mac App Store 免费下载 Xcode（[itunes.apple.com/app/ xcode/id497799835](itunes.apple.com/app/ xcode/id497799835)）。这至少需要 OS X EI Capitan（10.11），所以如果你仍运行 OS X Yosemite 或甚至是 Mavericks，你必须首先升级到最新版本的 macOS（也可以免费从 Mac App Store 获取）。做好下载一个大型软件的心理准备，因为一个完整的 Xcode 包大约是 5 GB。
+你可以从 Mac App Store 免费下载 Xcode（[itunes.apple.com/app/ xcode/id497799835](https://itunes.apple.com/app/ xcode/id497799835)）。这至少需要 OS X EI Capitan（10.11），所以如果你仍运行 OS X Yosemite 或甚至是 Mavericks，你必须首先升级到最新版本的 macOS（也可以免费从 Mac App Store 获取）。做好下载一个大型软件的心理准备，因为一个完整的 Xcode 包大约是 5 GB。
 
 重要事项：你的系统上可能已经有一个预装的 OS X 的 Xcode 版本。该版本绝对是已经过期的了，因此不要使用它。Apple 定期发布新版本，并且鼓励你始终使用最新版本的 OS X ，Xcode 和 SDK 来进行开发。
 
@@ -4172,6 +4172,6 @@ Xcode 必须了解你要运行应用程序的设备。这就是为什么我要�
 
 ## 保持联系
 
-如果你对这些教程有任何问题或意见 [mail@hollance.com](https://mail@hollance.com)，请随时发送电子邮件至 Matthijs。当然，欢迎你在 [forums.raywenderlich.com](https://forums.raywenderlich.com) 上访问论坛进行一些很棒的交流。
+如果你对这些教程有任何问题或意见 <a href="mailto:mail@hollance.com">mail@hollance.com</a>，请随时发送电子邮件至 Matthijs。当然，欢迎你在 [forums.raywenderlich.com](https://forums.raywenderlich.com) 上访问论坛进行一些很棒的交流。
 
 感谢阅读！

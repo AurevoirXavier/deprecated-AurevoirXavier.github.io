@@ -149,11 +149,11 @@ comments: true
 
 我会尽我所能地讲清楚一切是如何相互配合的，为什么我们要以某种方式去做事情，以及替代方案会有哪些。
 
-#### 做练习
+**做练习**
 
 我将会了解一下，对于某些事你的想法是怎样的 - 是的，这里有一些练习！事实上，做这些练习能最大程度地激发你的想法。知道路怎么走和怎么走这条路之间有着巨大差别，而学习编程的唯一方法就是做到这一点。我鼓励你不只是做练习，而且要玩玩那些你将要写的代码（比如说修改几处看看会有何变化，或者加一些自己的功能）。实验，改进，尝试添加新功能。软件是一个复杂的机械，要找出它的工作原理，有时你必须在轮子上放一些辐条，把整件事情分开。这就是你的学习方式！
 
-#### 尽情享受
+**尽情享受**
 
 最后但并不是最重要的，记得享受其中！一步一步建立起你的编程理解，同时开发出有趣的应用程序。在本系列的结尾，你会学到 Swift 和 iOS 开发包的基本要素。更重要的是，你应该有一个很好的想法关于如何将一切结合在一起，如何像一个程序员一样去思考问题。
 
@@ -185,7 +185,7 @@ comments: true
 
 为 iPhone 和 iPad 做开发，这是一个很大的乐趣，但像大多数爱好（或企业）它将花费一些物力财力。当然，一旦你掌握并灵活使用它，打造出一个出色的应用程序，你将有潜力赚回这笔钱的数倍。
 
-#### 你必须要投入以下列出的：
+##你必须要投入以下列出的：**
 
 **iPhone，iPad 或 iPod touch**。我假设你至少拥有其中一样。iOS 10 运行在以下设备上：iPhone 5 或更新版本，iPad 第四代或更新的版本，iPod touch 第六代。如果你有一个旧的设备，那么这是一个好时机考虑获取升级。但不要担心，如果你没有一个合适的设备：你可以在 Simulator 上完成你的一切操作。
 
@@ -4156,6 +4156,7 @@ Xcode 必须了解你要运行应用程序的设备。这就是为什么我要�
 基于前两章学到的内容，本教程将进一步深入 Swift 和 iOS 框架。
 
 你将制作一个使用 Core Location framework 的应用程序，以获取用户的行踪的 GPS 坐标，Map Kit 可以在地图上显示用户最喜爱的位置，iPhone 的相机和照片库将照片附加到这些位置，Core Data 将所有内容存储在数据库中。
+
 这又许多东西！在这个课程之后，Swift 和你会相处得很好，如果你无法写出你自己的几个应用程序，我会感到惊讶。
 
 **教程 4：StoreSearch**
@@ -4164,7 +4165,7 @@ Xcode 必须了解你要运行应用程序的设备。这就是为什么我要�
 
 你将了解 view controller containment - 或者如何将一个 view controller 嵌入另一个 view controller 中 - 以及如何在 landscape 中显示完全不同的 UI。我们将讨论 animation（动画），scroll views（滚动视图），下载图像，支持多种语言，并将应用程序移植到 iPad。
 
-最后，我将解释如何使用 Ad Hoc 分发进行 beta 测试，以及如何将应用程序提交到App Store。在这个怪物般的教程结束时，一定彻彻底底解决你新手道路上的所有问题！
+最后，我将解释如何使用 Ad Hoc 分发进行 beta 测试，以及如何将应用程序提交到 App Store。在这个怪物般的教程结束时，一定彻彻底底解决你新手道路上的所有问题！
 
 你可以在 [www.raywenderlich.com/store/ios-apprentice](https://www.raywenderlich.com/store/ios-apprentice) 上获得完整版的 *The iOS Apprentice: Beginning iOS Development with Swift, Fifth Edition*。
 
@@ -4172,6 +4173,6 @@ Xcode 必须了解你要运行应用程序的设备。这就是为什么我要�
 
 ## 保持联系
 
-如果你对这些教程有任何问题或意见 <a href="mailto:mail@hollance.com">mail@hollance.com</a>，请随时发送电子邮件至 Matthijs。当然，欢迎你在 [forums.raywenderlich.com](https://forums.raywenderlich.com) 上访问论坛进行一些很棒的交流。
+如果你对这些教程有任何问题或意见 <a href="mailto:mail@hollance.com">mail@hollance.com</a>，请随时发送电子邮件至 Matthijs。当然，欢迎你访问 [forums.raywenderlich.com](https://forums.raywenderlich.com) 论坛并进行一些很棒的交流。
 
 感谢阅读！

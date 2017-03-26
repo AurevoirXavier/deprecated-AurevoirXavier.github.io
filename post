@@ -1,7 +1,7 @@
 #!/usr/bin/env sh
 
 # Update post.
-sudo rm _posts/*iOS*
+sudo rm _posts/*Chapter*
 sudo cp ~/Documents/Post/* _posts/
 
 # Build site.

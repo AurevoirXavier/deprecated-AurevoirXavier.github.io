@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: project
 title: "iOS Apprentice 1 Getting Started v5.0 素材及源代码"
 date:   2017-03-25
 excerpt: "素材及源代码"

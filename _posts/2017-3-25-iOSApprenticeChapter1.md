@@ -44,7 +44,7 @@ comments: true
 | **视图**                      | **横屏**                    |
 | **Closure**                 | **Simulate**              |
 | **闭包**                      | **模拟**                    |
-| **Alignment constraints**   | **centering constraint**  |
+| **Alignment constraints**   | **Centering constraint**  |
 | **对齐约束**                    | **居中约束**                  |
 | **Core Animation**          | **Launch screen**         |
 | **核心动画**                    | **启动屏幕**                  |

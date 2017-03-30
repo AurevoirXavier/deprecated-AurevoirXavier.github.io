@@ -1,8 +1,8 @@
 #!/usr/bin/env sh
 
 # Update post.
-sudo rm _posts/*Chapter*
-sudo cp ~/Documents/Post/* _posts/
+sudo rm _posts/*
+sudo cp ~/Documents/Posts/* _posts/
 
 # Build site.
 bundle exec jekyll build

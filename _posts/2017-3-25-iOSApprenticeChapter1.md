@@ -326,7 +326,7 @@ C++ 是另一种由 C 衍生出来的 object-oriented 编程语言。它非常�
 
 <br>
 
-越近目标值，你的得分就越高。在按下 OK（确定）按钮关闭警报弹出窗口后，新的轮次开始目标值被重新设置。游戏重复，直到玩家按下 “重新开始” 按钮（左下角的弯箭头），将分数重置为 0。
+越近目标值，你的得分就越高。在按下 OK（确定）button 关闭 alert 窗口后，新的轮次开始目标值被重新设置。游戏重复，直到玩家按下 Start Over button（左下角的弯箭头），将分数重置为 0。
 
 这个游戏可能不会让你在 App Store 上成为百万富翁，但却是你将来成为百万富翁的一个开端。
 
@@ -351,25 +351,25 @@ C++ 是另一种由 C 衍生出来的 object-oriented 编程语言。它非常�
 这是我的想法。我只是根据游戏的描述，并把它分割成一块一块：
 
 - 在屏幕上放置一个 button，并将其标记为 “Hit Me!”。
-- 当玩家按下 “Hit Me!” button 的时候，应用程序必须弹出一个警告窗口，通知玩家他的表现如何。以某种方式（暂时还不知道该如何做）计算出得分，并将得分放入警报窗口中。
+- 当玩家按下 “Hit Me!” button 的时候，应用程序必须弹出一个警告窗口，通知玩家他的表现如何。以某种方式（暂时还不知道该如何做）计算出得分，并将得分放入 alert 窗口中。
 - 在屏幕上放置文本，例如 “Score:” 和 “Round:” labels（标签）。这些文本会变化，例如分数，当玩家的得分时点数应该相应增加。
 - 将 Slider 放在屏幕上，使其值在 1 到 100 之间。
 - 在用户按下 “Hit Me!” button 后，读取 Slider 的值。
 - 在每个回合开始时生成一个随机数，并将其显示在屏幕上，这是目标值。
-- 将 Slider 的值与随机数进行比较，并计算出得分。让得分在警报窗口中显示。
+- 将 Slider 的值与随机数进行比较，并计算出得分。让得分在 alert 窗口中显示。
 - 将 Start Over button 放在屏幕上。点击它会重置得分，并从第一轮重新开始。
 - 将应用程序以横屏显示。
-- 美化。 :-)
+- 美化。:-)
 
 我可能忽略了一两件事，但这看起来像是一个好的开端。即使对于这样简单的游戏，也有很多事需要你去做。使应用程序变得有趣，但同时也是一个大的工程！
 
 ## 只有一个 Button 的应用程序
 
-让我们从刚才列出的列表的最顶端开始，做一个很简单的 v1.0 版本，只显示一个 button。当你按下它应用程序会弹出警报消息。这就是你现在要做的。一旦你完成了这个工作，你就可以在这个基础上继续构建游戏的其余部分。
+让我们从刚才列出的列表的最顶端开始，做一个很简单的 v1.0 版本，只显示一个 button。当你按下它应用程序会弹出 alert 消息。这就是你现在要做的。一旦你完成了这个工作，你就可以在这个基础上继续构建游戏的其余部分。
 
 应用程序将会看起来像这样：
 
-<div align="center"><img alt="应用程序包含一个按钮（左），但按下时显示警报（右）" src="http://imgur.com/BlMYBTG.png"/></div><center>应用程序包含一个按钮（左），当按下时显示警报（右）</center>
+<div align="center"><img alt="应用程序包含一个 button（左），但按下时显示 alert（右）" src="http://imgur.com/BlMYBTG.png"/></div><center>应用程序包含一个 button（左），当按下时显示 alert（右）</center>
 
 <br>
 
@@ -377,7 +377,7 @@ C++ 是另一种由 C 衍生出来的 object-oriented 编程语言。它非常�
 
 在本教程中你将使用 Xcode 8.0 或更高版本。较新版本的 Xcode 也可以工作，但是任何比 8.0 版本更旧的都不适用。
 
-因为 Swift 是一种非常新的语言，它往往在 Xcode 的版本之间变化。如果你的 Xcode 太旧了 - 或太新了！- 那么本书中的所有代码并不一定都可以正常工作。（出于同样的原因，建议你不要使用 Xcode 的测试版，除了 Mac App Store 中的官方版本。）
+因为 Swift 是一种非常新的语言，它往往在 Xcode 的版本之间变化。如果你的 Xcode 太旧了 - 或太新了！- 那么本书中的所有代码并不一定都可以正常工作。（出于同样的原因，建议你不要使用 Xcode 的测试版，除了 Mac App Store 中的官方版本）
 
 ➤ 启动 Xcode。如果在查找 Xcode 应用程序时遇到问题，可以在文件夹 **/Applications/Xcode** 或 Launchpad 中找到它。因为我一直使用 Xcode，我把它的图标放在我的 Dock 栏里以便访问。
 
@@ -436,9 +436,9 @@ Xcode 现在将在你指定的文件夹中，创建一个名为 BullsEye 的基�
 
 <br>
 
-如果您使用的 Xcode 版本高于8.0，则上述过程展示的图片与你在自己的计算机上看到的内容可能存在细微差异。放心，任何差异只会是表面的。
+如果你使用的 Xcode 版本高于8.0，则上述过程展示的图片与你在自己的计算机上看到的内容可能存在细微差异。放心，任何差异只会是表面的。
 
-<code class="highlighter-rouge"><strong>注意：</strong>如果在左边的列表中没有看到名为 ViewController.swift 的文件，取而代之的是 ViewController.h 和 ViewController.m，那么当您制定项目（Objective-C）时选择了错误的语言。重新开始，并确保选择Swift作为编程语言。</code>
+<code class="highlighter-rouge"><strong>注意：</strong>如果在左边的列表中没有看到名为 ViewController.swift 的文件，取而代之的是 ViewController.h 和 ViewController.m，那么当你制定项目（Objective-C）时选择了错误的语言。重新开始，并确保选择Swift作为编程语言。</code>
 
 ➤ 点击左上角的 **Run**（运行）按钮：
 
@@ -446,9 +446,9 @@ Xcode 现在将在你指定的文件夹中，创建一个名为 BullsEye 的基�
 
 <br>
 
-<code class="highlighter-rouge"><strong>注意：</strong>如果这是您第一次使用Xcode，它可能会要求您启用开发人员模式。单击 <strong>Enable</strong>（启用）并输入密码以允许Xcode进行这些更改。</code>
+<code class="highlighter-rouge"><strong>注意：</strong>如果这是你第一次使用Xcode，它可能会要求你启用开发人员模式。单击 <strong>Enable</strong>（启用）并输入密码以允许Xcode进行这些更改。</code>
 
-Xcode 将工作一会儿，然后它在 iOS Simulator 启动您全新的应用程序。就目前而言，可能该应用程序看起来还不像样 - 里面没有任何东西你可以使用的东西 - 但这是你的旅程中重要的第一个里程碑。
+Xcode 将工作一会儿，然后它在 iOS Simulator 启动你全新的应用程序。就目前而言，可能该应用程序看起来还不像样 - 里面没有任何东西你可以使用的东西 - 但这是你的旅程中重要的第一个里程碑。
 
 <div align="center"><img alt="基于 Single View Application 模板的应用程序是什么样子" src="http://i.imgur.com/5vUDxtf.png"/></div><center>基于 Single View Application 模板的应用程序是什么样子</center>
 
@@ -462,7 +462,7 @@ Xcode 将工作一会儿，然后它在 iOS Simulator 启动您全新的应用�
 
 如果你的 iPhone 当前通过 USB 电缆连接到你的 Mac，Xcode 可能会试图在你的 iPhone 上运行应用程序，这可能无法工作，因为缺少了一些额外的设置。在本教程的最后，我将告诉你如何让应用程序在你的 iPhone 上运行，所以你可以把它展示给你的朋友，但现在只需坚持使用 Simulator 。
 
-➤ **Run** 按钮旁边是 **Stop**（停止）按钮（方形）。 按此退出应用程序。
+➤ **Run** 按钮旁边是 **Stop**（停止）按钮（方形）。按此退出应用程序。
 
 在你的手机上，你可以使用主屏幕按钮退出应用程序（在 Simulator 上从菜单栏选择 **Hardware**（硬件）→ **Home**（主页）），但这不会实际终止应用程序。它会从 Simulator 的屏幕上消失，但应用程序保持暂停在 Simulator 的内存，就像在一个真正的iPhone。
 
@@ -472,7 +472,7 @@ Xcode 将工作一会儿，然后它在 iOS Simulator 启动您全新的应用�
 
 <br>
 
-它不是真的必要停止的应用程序，就像你可以回到 Xcode 和更改源代码，而应用程序仍在运行。 但是，在你再次按Run之后，这些更改才会生效。这将终止任何运行的应用程序版本，构建新版本，并在 Simulator 启动它。
+它不是真的必要停止的应用程序，就像你可以回到 Xcode 和更改源代码，而应用程序仍在运行。但是，在你再次按 Run 之后，这些更改才会生效。这将终止任何运行的应用程序版本，构建新版本，并在 Simulator 启动它。
 
 <code class="highlighter-rouge"><strong>当你按 Run 时会发生什么？</strong></code>
 
@@ -496,7 +496,7 @@ Xcode 窗口的左侧被命名为 **Navigator Area**（导航区域）。顶部�
 
 <br>
 
-像一个超级英雄在电话亭里改变他的衣服，主编辑 pane（窗格）现在转换为 **Interface Builder**。这个工具允许你将用户界面组件（例如 button）拖放到 **Interface Builder** 中。（OK，虽然这个比方打的不怎样，但是我只是想说 Interface Builder 是一个超级工具。）
+像一个超级英雄在电话亭里改变他的衣服，主编辑 pane（窗格）现在转换为 **Interface Builder**。这个工具允许你将用户界面组件（例如 button）拖放到 **Interface Builder** 中。（OK，虽然这个比方打的不怎样，但是我只是想说 Interface Builder 是一个超级工具）
 
 ➤ 如果它还不是蓝色，请单击 Xcode 工具栏中的 **Hide or show utilities** （隐藏或显示）实用程序按钮：
 
@@ -552,11 +552,11 @@ Xcode 窗口的左侧被命名为 **Navigator Area**（导航区域）。顶部�
 
 <br>
 
-看，添加一个 button 多么简单，只需要拖放。 这也适用于所有其他用户界面元素。你会做很多这样的事情，所以花一些时间来熟悉这个过程。
+看，添加一个 button 多么简单，只需要拖放。这也适用于所有其他用户界面元素。你会做很多这样的事情，所以花一些时间来熟悉这个过程。
 
 ➤ 拖放一些其他 controls（控件），如 labels，sliders 和 switches，只管拖动他们就对了。
 
-这应该会给你一些有关 UI controls 的想法，因为 iOS 支持使用它们。请注意，Interface Builder 会帮助您布局 controls，通过将 controls 对齐到 view 的边缘和其他 objects。这是一个非常方便的工具！
+这应该会给你一些有关 UI controls 的想法，因为 iOS 支持使用它们。请注意，Interface Builder 会帮助你布局 controls，通过将 controls 对齐到 view 的边缘和其他 objects。这是一个非常方便的工具！
 
 ➤ 双击刚刚放置的 button 以编辑其标题为 “Hit Me!”。
 
@@ -564,7 +564,7 @@ Xcode 窗口的左侧被命名为 **Navigator Area**（导航区域）。顶部�
 
 <br>
 
-你的按钮可能有一个边框：
+你的 button 可能有一个边框：
 
 <div align="center"><img alt="带有边界矩形的 button" src="http://imgur.com/1pBSWja.png"/></div><center>带有边界矩形的 button</center>
 
@@ -576,7 +576,7 @@ Xcode 窗口的左侧被命名为 **Navigator Area**（导航区域）。顶部�
 
 ## 源代码 Editor
 
-一个 button，没有做任何事情，任何人按它都没有用，所以让我们让它显示一个 alert 弹出。 在完成的游戏中，alert 将显示玩家的分数，但现在我们将限制自己一个简单的文本消息（传统的“Hello, World!”）。（译者注：有这么一个故事：有一天，某程序员爱慕已久的女神主动和他打了招呼。女神：“Hello.”，程序员：“World!”，那么这个故事就到此打住了）
+一个 button，没有做任何事情，任何人按它都没有用，所以让我们让它显示一个 alert 弹出。在完成的游戏中，alert 将显示玩家的分数，但现在我们将限制自己一个简单的文本消息（传统的“Hello, World!”）。（译者注：有这么一个故事：有一天，某程序员爱慕已久的女神主动和他打了招呼。女神：“Hello.”，程序员：“World!”，那么这个故事就到此打住了）
 
 ➤ 在 **Project navigator**，单击 **ViewController.swift**。
 
@@ -633,7 +633,7 @@ class ViewController: UIViewController {
 
 你已经编辑 **Main.storyboard** 文件来构建应用程序的用户界面。它只是一个白色 background 上的 button，但它确实是一个实实在在的用户界面。你还向 **ViewController.swift** 添加了源代码。
 
-这两个文件 - storyboard 和 Swift 文件 - 一起形成了 *view controller* 的设计和实现。 构建 iOS 应用程序的很多工作是创建 view controller。 view controller 的工作是在应用程序中管理单个屏幕。
+这两个文件 - storyboard 和 Swift 文件 - 一起形成了 *view controller* 的设计和实现。构建 iOS 应用程序的很多工作是创建 view controller。view controller 的工作是在应用程序中管理单个屏幕。
 
 以一个简单的食谱应用程序为例。当你启动它时，其主屏幕列出可用的食谱。点击一个食谱打开一个新的屏幕，显示食谱详细的一个美味的照片和烹饪说明。每个屏幕由其自己的 view controller 来管理。
 
@@ -643,13 +643,13 @@ class ViewController: UIViewController {
 
 相比之下，这两个屏幕是非常不同的。一个是几个项目的列表；另一个呈现单个项目的详细视图。
 
-这就是为什么你还需要两个 view controller：一个知道如何处理列表，另一个可以处理图像和烹饪说明。 iOS 的设计原则之一就是，应用程序中的每个屏幕都有自己的 view controller。
+这就是为什么你还需要两个 view controller：一个知道如何处理列表，另一个可以处理图像和烹饪说明。iOS 的设计原则之一就是，应用程序中的每个屏幕都有自己的 view controller。
 
 目前 Bull’s Eye 只有一个屏幕（顶部有一个白色 button 的那个），因此只需要一个 view controller。该 view controller 简称为 “ViewController”（译者注：这里看起来比较怪，实际上后者只是一个命名，你可以随意修改。前者则为专有名词），storyboard 和 Swift 文件一起工作来实现它。
 
 简单地说，Main.storyboard 文件包含 view controller 的用户界面的设计，而ViewController.swift 包含其功能 - 让用户界面按照设定来工作的逻辑，它是使用 Swift 语言来编写的。
 
-因为你使用 Single View Application 模板，Xcode 自动为你创建 view controller。 稍后，你将为游戏添加第二个屏幕，你将为此创建自己的 view controller。
+因为你使用 Single View Application 模板，Xcode 自动为你创建 view controller。稍后，你将为游戏添加第二个屏幕，你将为此创建自己的 view controller。
 
 ## 建立关联
 
@@ -667,13 +667,13 @@ class ViewController: UIViewController {
 
 选中 “Hit Me” button 后，按住 Ctrl 键，单击 button 并向上拖动到 Outline pane 中的 View Controller 项。你应该会看到 button 和 View Controller 之间出现一条蓝线。
 
-（如果你不想按住 Ctrl，你也可以右键单击和拖动，但在开始拖动之前，请不要放开鼠标按键。）
+（如果你不想按住 Ctrl，你也可以右键单击和拖动，但在开始拖动之前，请不要放开鼠标按键）
 
 <div align="center"><img alt="从 button 开始按住 Ctrl 并拖动到 View Controller" src="http://imgur.com/GXEDkR6.png"/></div><center>从 button 开始按住 Ctrl 并拖动到 View Controller</center>
 
 <br>
 
-一旦你在 View Controller 上，放开鼠标按键，会出现一个小菜单。 它包含两个部分，  “Action Segue” 和 “Sent Events”（发送事件），每个下面有一个或多个选项。 你对 Sent Events 下的 **showAlert** 选项感兴趣。这是你先前在 ViewController.swift 的源代码中添加的 action 的名称。
+一旦你在 View Controller 上，放开鼠标按键，会出现一个小菜单。它包含两个部分，  “Action Segue” 和 “Sent Events”（发送事件），每个下面有一个或多个选项。你对 Sent Events 下的 **showAlert** 选项感兴趣。这是你先前在 ViewController.swift 的源代码中添加的 action 的名称。
 
 <div align="center"><img alt="带有 showAlert action的弹出菜单" src="http://imgur.com/tbiY4J1.png"/></div><center>带有 showAlert action 的弹出菜单</center>
 
@@ -738,7 +738,7 @@ showAlert 中的代码创建一个标题为 “Hello，World” 的 alert，它�
 
 <br>
 
-恭喜，你刚刚编写了属于你的第一个 iOS 应用程序！你刚刚做的事可能在你看来是莫名其妙的，但这不重要。 我们一次只走一小步。
+恭喜，你刚刚编写了属于你的第一个 iOS 应用程序！你刚刚做的事可能在你看来是莫名其妙的，但这不重要。我们一次只走一小步。
 
 你可以从一开始列出的待办事项列表中删除前两个项目：在屏幕上放置一个 button，并在用户点 button 钮时显示 alert。
 
@@ -766,7 +766,7 @@ showAlert 中的代码创建一个标题为 “Hello，World” 的 alert，它�
 
 <br>
 
-当 Xcode 检测到错误时，将左侧 pane 切换到 **Issue navigator**（问题导航器），你的项目文件就是这样。此列表显示 Xcode 找到的所有错误和警告。（你可以回到项目文件，通过顶部的小按钮。）
+当 Xcode 检测到错误时，将左侧 pane 切换到 **Issue navigator**（问题导航器），你的项目文件就是这样。此列表显示 Xcode 找到的所有错误和警告。（你可以回到项目文件，通过顶部的小按钮）
 
 显然，我忘了某处的逗号。
 
@@ -780,7 +780,7 @@ showAlert 中的代码创建一个标题为 “Hello，World” 的 alert，它�
 
 <code class="highlighter-rouge"><strong>Errors（错误）和 warnings（警告）</strong></code>
 
-`Xcode区分 errors（红色）和 warnings（黄色）。errors 是致命的。 如果你有一个，你不能运行应用程序。warnings 是信息。Xcode只是说，“你可能不是想这样做，但仍然继续。`
+`Xcode区分 errors（红色）和 warnings（黄色）。errors 是致命的。如果你有一个，你不能运行应用程序。warnings 是信息。Xcode只是说，“你可能不是想这样做，但仍然继续。`
 
 `在我看来，最好把所有 warnings 看作是 errors。在继续操作之前修复 warnings，并且只有在出现零个 errors 和零个 warnings 时才运行应用程序。这不保证应用程序不会有任何错误，但至少它不会是愚蠢的。`
 
@@ -798,9 +798,9 @@ showAlert 中的代码创建一个标题为 “Hello，World” 的 alert，它�
 
 在此方案中你所做的部分就是，由你编写的源代码将在对象接收到此类事件的消息时执行。
 
-在应用程序中，button 的 Touch Up Inside 事件连接到 view controller 的 showAlert action。 所以当 button 识别它已被轻敲时，它发送 showAlert 消息到你的 view controller。
+在应用程序中，button 的 Touch Up Inside 事件连接到 view controller 的 showAlert action。所以当 button 识别它已被轻敲时，它发送 showAlert 消息到你的 view controller。
 
-在 showAlert 内部，view controller 发送另一个消息，addAction 到 UIAlertController 的 object。为了显示警报，view controller 发送当前消息。
+在 showAlert 内部，view controller 发送另一个消息，addAction 到 UIAlertController 的 object。为了显示 alert，view controller 发送当前消息。
 
 你的整个应用程序将由以这种方式来通信的对象所组成。
 
@@ -820,7 +820,7 @@ showAlert 中的代码创建一个标题为 “Hello，World” 的 alert，它�
 
 现在你已经完成了第一个任务，在屏幕上放置一个 button，并使其显示一个 alert，你只需下去列表，勾选其他项目。
 
-你不必真的要以某种特定的顺序去做，虽然一些事情在别的事情之前做有意义。 例如，如果你还没有 slider，则无法读取 slider 的位置。
+你不必真的要以某种特定的顺序去做，虽然一些事情在别的事情之前做有意义。例如，如果你还没有 slider，则无法读取 slider 的位置。
 
 所以，让我们添加其余的 controls - slider 和 text labels，并将这个应用程序变成一个真正的游戏！
 
@@ -836,7 +836,7 @@ showAlert 中的代码创建一个标题为 “Hello，World” 的 alert，它�
 
 <code class="highlighter-rouge"><strong>UIKit 和其他 frameworks（框架）</strong></code>
 
-`iOS 提供了许多 frameworks 或 “kits” 形式的构建块。UIKit frameworks 提供了用户界面的 controls，如 buttons，labels 和 navigation bar。它管理 view controller，通常负责处理应用程序的用户界面。（ UI 代表：用户界面。）`
+`iOS 提供了许多 frameworks 或 “kits” 形式的构建块。UIKit frameworks 提供了用户界面的 controls，如 buttons，labels 和 navigation bar。它管理 view controller，通常负责处理应用程序的用户界面。（ UI 代表：用户界面）`
 
 `如果你不得不得从头开始写所有的东西，你或许要忙上一会儿。相反，你可以在系统提供的 frameworks 之上构建你的应用程序，并利用苹果工程师已经为你做完了的现成的东西。`
 
@@ -875,9 +875,9 @@ showAlert 中的代码创建一个标题为 “Hello，World” 的 alert，它�
 
 ## 竖屏（portrait）vs. 横屏（landscape）
 
-请注意，应用程序的尺寸已更改：iPhone 是倾斜的侧面，屏幕更宽，但不高。 这称为 *landscape* 方向。
+请注意，应用程序的尺寸已更改：iPhone 是倾斜的侧面，屏幕更宽，但不高。这称为 *landscape* 方向。
 
-你毫无疑问在 iPhone 上看到了 landscape 应用程序。 对于游戏而言这是一个常见的显示方向，但通常来说，许多其他类型的应用程序，除了工作在常规的 “直立” *portrait* 方向之外也工作在 landscape 模式下。
+你毫无疑问在 iPhone 上看到了 landscape 应用程序。对于游戏而言这是一个常见的显示方向，但通常来说，许多其他类型的应用程序，除了工作在常规的 “直立” *portrait* 方向之外也工作在 landscape 模式下。
 
 例如，许多人喜欢用他们的设备翻转写电子邮件，因为更宽的屏幕允许更大的键盘就使得打字更容易。（译者注：然而国人更青睐九宫格）
 
@@ -891,7 +891,7 @@ showAlert 中的代码创建一个标题为 “Hello，World” 的 alert，它�
 
 对于较旧的设备 - 最高到 iPhone 3GS 和相应的 iPod touch 型号，以及第一代 iPad 而言一点对应一个像素。因此，这些低分辨率设备看起来不是很清晰，因为它们的大又粗糙的像素。
 
-我相信你知道一个像素是什么。如果你不知道的话：它是屏幕组成的最小的元素。你的 iPhone 显示的是一个大矩阵的像素，每个像素都可以有自己的 color（颜色），就像一个电视屏幕。 改变这些像素的 color 值在显示器上产生可见图像。像素越多，图像看起来越好越细腻。
+我相信你知道一个像素是什么。如果你不知道的话：它是屏幕组成的最小的元素。你的 iPhone 显示的是一个大矩阵的像素，每个像素都可以有自己的 color（颜色），就像一个电视屏幕。改变这些像素的 color 值在显示器上产生可见图像。像素越多，图像看起来越好越细腻。
 
 在 iPhone 4 和更高版本的高分辨率 Retina 显示器上，一个点实际上对应于水平和垂直的两个像素，因此总共有四个像素。它在非常小的空间中包装了大量像素，使得显示更加清晰，这就是 Retina 设备普及的原因。
 
@@ -907,13 +907,13 @@ showAlert 中的代码创建一个标题为 “Hello，World” 的 alert，它�
 
 <br>
 
-在 iOS 的早期时代，只有一个屏幕尺寸。 但是，“一刀切” 的时代已经过去了。现在我们有各种各样的屏幕尺寸要处理。
+在 iOS 的早期时代，只有一个屏幕尺寸。但是，“一刀切” 的时代已经过去了。现在我们有各种各样的屏幕尺寸要处理。
 
 请记住，UIKit 使用点而不是像素，因此你只需要担心以点为单位测量的屏幕尺寸之间的差异。实际的像素数量只对平面设计师很重要，因为图像仍然是以像素为单位测量的。
 
 开发人员在工作在点层次上，设计师工作在像素层次上。
 
-点和像素之间的差异可能有点混乱，但到现在为止如果这是唯一使你困惑的事情，那么我做的教程还不错。 ;-)
+点和像素之间的差异可能有点混乱，但到现在为止如果这是唯一使你困惑的事情，那么我做的教程还不错。;-)
 
 在本教程中，你最初将只使用大小为 320×568 点的 iPhone SE 屏幕 - 只是为了简单。稍后在教程中，你还将使游戏适配其他尺寸的iPhone。
 
@@ -930,9 +930,9 @@ showAlert 中的代码创建一个标题为 “Hello，World” 的 alert，它�
 
 <br>
 
-这将更改 view controller 的尺寸。它会把按钮放在一个尴尬的地方。
+这将更改 view controller 的尺寸。它会把 button 放在一个尴尬的地方。
 
-➤ 将按钮移回 view 的中心，因为有着不整洁的用户界面的程序在当下难以有一席之地。
+➤ 将 button 移回 view 的中心，因为有着不整洁的用户界面的程序在当下难以有一席之地。
 
 <div align="center"><img alt="在 landscape 下的 view" src="http://imgur.com/70hdZxh.png"/></div><center>在 landscape 下的 view</center>
 
@@ -940,7 +940,7 @@ showAlert 中的代码创建一个标题为 “Hello，World” 的 alert，它�
 
 关心了一下 view 的布局。
 
-➤ 在 iPhone SE Simulator 上运行应用程序。屏幕不显示为 landscape，按钮也不再位于中心。
+➤ 在 iPhone SE Simulator 上运行应用程序。屏幕不显示为 landscape，button 也不再位于中心。
 
 但是，如果你将 Simulator 旋转为 landscape，那么一切都会看起来像预想的一样了。
 
@@ -979,18 +979,18 @@ Swift 是一种所谓的 “object-oriented” 编程语言，这意味着你做
 
 每个 object 负责程序的特定部分。在一个完整的应用程序，你会有许多不同类型的 objects（几十或甚至数百）。
 
-即使你的小启动器应用程序也已经包含几个不同的 objects。你花了最多的时间，到目前为止的是 ViewController。Hit Me button 也是一个 object，alert 弹出。 和你的 alert text - “Hello, World!” 和 “This is my first app!” - 他们都是 object。
+即使你的小启动器应用程序也已经包含几个不同的 objects。你花了最多的时间，到目前为止的是 ViewController。Hit Me button 也是一个 object，alert 弹出。和你的 alert text - “Hello, World!” 和 “This is my first app!” - 他们都是 object。
 
 该项目还有一个名为 AppDelegate 的 object，不过你将在此课程中忽略它（但如果你好奇，可以随意查看它的源文件）。这些 objects 无处不在！
 
 一个 object 可以具有 data 和 functionality（功能）：
 
 - 举个说明 data 的例子，就是你之前添加到 view controller 的 Hit Me button。当你将 button 拖到 storyboard 中时，实际上那一刻它成为了 view controller 的 data 中的一部分。data 包含内容。在这种情况下，view controller 包含 button。
-- 关于 functionality 的一个例子就是，你添加用来响应 button 上的轻击的 showAlert action。 functionality 用来 *做* 某事。
+- 关于 functionality 的一个例子就是，你添加用来响应 button 上的轻击的 showAlert action。functionality 用来 *做* 某事。
 
 button 本身也有 data 和 functionality。button data 的例子就是，它的标签的文本和 color，它在屏幕上的位置，宽度和高度等。该 button 还具有 functionality：它可以识别用户点击它，并将触发一个动作作为响应。
 
-为 object 提供 functionality 的东西通常称为 *method*。 其他编程语言可以将其称为 “procedure”（过程）或 “subroutine”（子程序）或 “function”（函数）。你还将看到 Swift 中使用的术语function; 一个 method 只是一个属于一个 object 的 function，一对多的关系。
+为 object 提供 functionality 的东西通常称为 *method*。其他编程语言可以将其称为 “procedure”（过程）或 “subroutine”（子程序）或 “function”（函数）。你还将看到 Swift 中使用的术语function; 一个 method 只是一个属于一个 object 的 function，一对多的关系。
 
 你的 showAlert action 就是一个活生生的关于 method 的例子。你可以说它是一个 function，因为那一行这么写道 func（“function” 的缩写），名称后面跟着的是括号：
 
@@ -1026,7 +1026,7 @@ Objects 可以互相看看对方的 data（在某种程度上，就像如果你�
 
 ## 添加其余的 controls
 
-你的应用程序已经有了按钮，但你仍需要新增其他 UI controls（也称为 “views”）。再次回到这个屏幕，这次不同的 controls 我在 views 上都给出了相应的 comments（注释）：（译者注：暂时把 views 理解为视图中的 UI 控件吧）
+你的应用程序已经有了 button，但你仍需要新增其他 UI controls（也称为 “views”）。再次回到这个屏幕，这次不同的 controls 我在 views 上都给出了相应的 comments（注释）：（译者注：暂时把 views 理解为视图中的 UI 控件吧）
 
 <div align="center"><img alt="游戏屏幕中的不同视图" src="http://imgur.com/C2mOduT.png"/></div><center>游戏屏幕中的不同 views</center>
 
@@ -1042,11 +1042,11 @@ Objects 可以互相看看对方的 data（在某种程度上，就像如果你�
 
 <br>
 
-Inspector 区域显示当前选择的项目的各个方面。例如，Attributes inspector 可以更改一个 label 的 background color 或 button上文本的大小。你已经看到显示一个 button's action 的Connections inspector。 随着你更熟练地使用 Interface Builder，你将使用所有这些 inspector pane 来配置 views。
+Inspector 区域显示当前选择的项目的各个方面。例如，Attributes inspector 可以更改一个 label 的 background color 或 button上文本的大小。你已经看到显示一个 button's action 的Connections inspector。随着你更熟练地使用 Interface Builder，你将使用所有这些 inspector pane 来配置 views。
 
 ➤**（i）** button 实际上是常规 button，但他的**类型**在 Attributes inspector 中被设置为了 **Info Light**（信息灯）：
 
-<div align="center"><img alt="button 类型允许您更改 button 的外观" src="http://imgur.com/2wgniuA.png"/></div><center>button 类型允许您更改 button 的外观</center>
+<div align="center"><img alt="button 类型允许你更改 button 的外观" src="http://imgur.com/2wgniuA.png"/></div><center>button 类型允许你更改 button 的外观</center>
 
 <br>
 
@@ -1058,7 +1058,7 @@ Inspector 区域显示当前选择的项目的各个方面。例如，Attributes
 
 完成后，你的 scene 中应该有 12 个用户界面元素：一个 slider，三个 buttons 和一大堆 labels。很棒。
 
-➤ 运行应用程序并玩上一分钟。这些 controls 并没有做太多的事情（除了应该弹出警报的那个 button），但你至少可以拖动 slider。
+➤ 运行应用程序并玩上一分钟。这些 controls 并没有做太多的事情（除了应该弹出 alert 的那个 button），但你至少可以拖动 slider。
 
 现在，你可以从待办事项列表中划掉更多的未完成事件了，所做的一切不需要任何编程！不过，好景不长，因为你将不得不写 Swift 代码来控制这些 controls 做任何事情你指定的事情。
 
@@ -1066,9 +1066,9 @@ Inspector 区域显示当前选择的项目的各个方面。例如，Attributes
 
 待办事项列表中的下一个项目是：“在用户按下 Hit Me button后，读取 slider 的值。”
 
-如果在你看起来乱七八糟的 Interface Builder 中，你没有不小心将 button 与 showAlert action 断开连接，那么你就可以修改应用程序以在 alert 弹出窗口中显示 slider 的值。 （如果你断开了 showAlert 与 button 的关联，那么你应该先连接它。）
+如果在你看起来乱七八糟的 Interface Builder 中，你没有不小心将 button 与 showAlert action 断开连接，那么你就可以修改应用程序以在 alert 弹出窗口中显示 slider 的值。（如果你断开了 showAlert 与 button 的关联，那么你应该先连接它）
 
-记住如何添加一个 action 到 view controller，以识别用户何时点击按钮？你可以为 Slider 做同样的事情。每当用户拖动 Slider 的旋钮时，都将执行这个新的 action。
+记住如何添加一个 action 到 view controller，以识别用户何时点击 button？你可以为 Slider 做同样的事情。每当用户拖动 Slider 的旋钮时，都将执行这个新的 action。
 
 添加这个 action 的步骤与你之前执行的步骤基本相同。
 
@@ -1080,7 +1080,7 @@ Inspector 区域显示当前选择的项目的各个方面。例如，Attributes
 }	
 ```
 
-➤ 其次，转到 storyboard，按住 Ctrl 拖动 slider 到 Outline pane 中的 View Controller。放开鼠标按钮，从弹出窗口中选择 **sliderMoved: **。 完成！
+➤ 其次，转到 storyboard，按住 Ctrl 拖动 slider 到 Outline pane 中的 View Controller。放开鼠标按键，从弹出窗口中选择 **sliderMoved: **。完成！
 
 只是为了刷新内存，Outline pane 位于 Interface Builder canvas 的左侧。它显示 storyboard 的 view 的层次结构。在这里你可以看到 View Controller 包含一个跨度有 scene 大小般的白色视图（简称为View），它又包含你添加的 sub-views（子视图）：buttons 和 labels。
 
@@ -1096,7 +1096,7 @@ Inspector 区域显示当前选择的项目的各个方面。例如，Attributes
 
 连接 slider 时，确保按住 Ctrl 键拖动到 View Controller（带有黄色图标），而不是 View Controller Scene（灰色图标）。如果没有看到黄色图标，请单击 View Controller Scene 前的箭头将其展开。
 
-如果一切顺利，sliderMoved: action 现在挂钩到滑块的 Value Changed 事件。 这意味着sliderMoved() method 将在每次用户向左或向右拖动 slider 时调用。
+如果一切顺利，sliderMoved: action 现在挂钩到滑块的 Value Changed 事件。这意味着sliderMoved() method 将在每次用户向左或向右拖动 slider 时调用。
 
 你可以通过选择 slider 并查看 **Connections inspector** 来验证是否已建立连接：
 
@@ -1104,7 +1104,7 @@ Inspector 区域显示当前选择的项目的各个方面。例如，Attributes
 
 <br>
 
-<code class="highlighter-rouge"><strong>注意：</strong>你注意到 sliderMoved: action 在他的名称中有冒号，但 showAlert 却没有？这是因为 sliderMoved() method 接受单个参数，slider，而 showAlert() 没有任何参数。如果 action method 有参数，Interface Builder 将向名称添加 :。 往后你将了解更多关于使用参数的信息。</code>
+<code class="highlighter-rouge"><strong>注意：</strong>你注意到 sliderMoved: action 在他的名称中有冒号，但 showAlert 却没有？这是因为 sliderMoved() method 接受单个参数，slider，而 showAlert() 没有任何参数。如果 action method 有参数，Interface Builder 将向名称添加 :。往后你将了解更多关于使用参数的信息。</code>
 
 ➤ 运行应用程序并拖动 slider。
 
@@ -1124,7 +1124,7 @@ print() 函数是一个很好的帮助，告诉你在应用程序中发生了什
 
 ## Strings（字符串）
 
-要在你的应用程序中放置文本，你使用一个称为 “string” 的东西。 您目前使用过的 strings 有这些：
+要在你的应用程序中放置文本，你使用一个称为 “string” 的东西。你目前使用过的 strings 有这些：
 
 ```swift
 "Hello, World"
@@ -1158,7 +1158,7 @@ print() 函数是一个很好的帮助，告诉你在应用程序中发生了什
 @"I am an Objective-C string"
 ```
 
-String 中的 \\(…) 之间的任何内容都是特殊的。print() 语句使用的 string 为 "The value of the slider is now: \\(slider.value)"。 想一下 \\(…) 作为占位符："The value of the slider is now: X"，其中 X 将被 slider 的值替换。
+String 中的 \\(…) 之间的任何内容都是特殊的。print() 语句使用的 string 为 "The value of the slider is now: \\(slider.value)"。想一下 \\(…) 作为占位符："The value of the slider is now: X"，其中 X 将被 slider 的值替换。
 
 填空是在 Swift 中构建 string 的一种非常常见的方法。
 
@@ -1166,7 +1166,7 @@ String 中的 \\(…) 之间的任何内容都是特殊的。print() 语句使�
 
 在开发应用程序期间，使用 print() 将信息打印到 Debug area 中非常有用，但它对用户来说绝对没有用，因为他们看不到任何信息。
 
-让我们改进此 action method，并使其在 alert 弹出窗口中显示 slider 的值。 那么如何获得 slider 的值到 showAlert() ？
+让我们改进此 action method，并使其在 alert 弹出窗口中显示 slider 的值。那么如何获得 slider 的值到 showAlert() ？
 
 当你读取 sliderMoved() 中的 slider 的值时，那条 data 会消失（译者注：data 指 slider 的值，好比有一座图书馆，里面的书都没有名字，你想找你上次看过的那一本书），在 action method 结束时。如果你可以记住这个值并保存直到用户点击 Hie Me button 时，那将非常有用。
 
@@ -1226,7 +1226,7 @@ Variables 就像儿童的积木玩具：
 
 <br>
 
-想法是把正确的形状放在正确的容器中。容器是 variable，它的 type 决定了什么 “形状”。 形状是可能的值它可以放入变量。
+想法是把正确的形状放在正确的容器中。容器是 variable，它的 type 决定了什么 “形状”。形状是可能的值它可以放入变量。
 
 你可以稍后更改每个框的内容。例如，你可以取出蓝色正方形，并放入一个红色正方形，只要都是正方形。
 
@@ -1277,7 +1277,7 @@ currentValue = lroundf(slider.value)
 
 `你已经看到 methods 提供了 functionality，但是 function 是将 functionality 放入你的应用程序的另一种方式。Functions 和 methods 是 Swift 程序实现将多行代码组合成单个且连贯的单元的功臣。`
 
-`两者之间的区别是，一个 function 不属于一个 object，而一个 method 属于一个 object 换句话说，一个 method 就像一个 function - 这就是为什么你使用 func 关键字来定义它们 - 除了你需要一个 object 来使用该 method。 但是因为 methods 有时被称为常规 functions 或 free functions（自由函数），可以在任何地方使用。`
+`两者之间的区别是，一个 function 不属于一个 object，而一个 method 属于一个 object 换句话说，一个 method 就像一个 function - 这就是为什么你使用 func 关键字来定义它们 - 除了你需要一个 object 来使用该 method。但是因为 methods 有时被称为常规 functions 或 free functions（自由函数），可以在任何地方使用。`
 
 `Swift 为你的程序提供了一个有用的函数库。function lroundf() 是其中的一个，你将在本课中使用其他几个。print() 也是一个 function，顺便说一下。你可以这么说，因为函数名称后面总是可能包含一个或多个参数的圆括号。`
 
@@ -1354,7 +1354,7 @@ let message = 的行是新的。还要注意另外两个小的变化。
 
 ➤ 在 Xcode 中按停止按钮以完全终止应用程序，然后再次按运行。在不移动 slider 的情况下，立即按下 Hit Me button。
 
-The alert 现在说：“The value of the slider is: 0”。 但是 slider 的旋钮显然在中心，所以应该显示的是 50。你发现了一个 bug！
+The alert 现在说：“The value of the slider is: 0”。但是 slider 的旋钮显然在中心，所以应该显示的是 50。你发现了一个 bug！
 
 **练习：**想想在这种特殊情况（启动应用程序，不要移动 slider，按下 button）下值为 0 的原因。
 
@@ -1437,7 +1437,7 @@ Xcode 说 “Build Failed”，后面是类似：“Error: Use of unresolved ide
 
 Action methods 可以具有引用触发该 method 的 UI 控件的参数。当你希望在 method 中使用该 object 时，这就很方便的，就像你在这里所做的那样（所讨论的 object 是 UISlider）。
 
-当用户移动 slider 时，UISlider object 基本上这样说： “Hey view controller, I’m a slider object and I just got moved. By the way, here’s my phone number so you can get in touch with me.”（嘿视图控制器，我是一个滑块对象，我刚刚移动。 顺便说一下，这里是我的电话号码，这样你可以与我联系）
+当用户移动 slider 时，UISlider object 基本上这样说： “Hey view controller, I’m a slider object and I just got moved. By the way, here’s my phone number so you can get in touch with me.”（嘿视图控制器，我是一个滑块对象，我刚刚移动。顺便说一下，这里是我的电话号码，这样你可以与我联系）
 
 slider 参数包含此 “phone number”（电话号码），但它仅在此特定 method 的有效期内有效。
 
@@ -1445,7 +1445,7 @@ slider 参数包含此 “phone number”（电话号码），但它仅在此特
 
 **Locals（本地）**
 
-当我第一次引入 variables 时，我提到每个 variable 都有一定的生命周期，称为其范围。 variable 的范围取决于程序中定义该 variable 的位置。
+当我第一次引入 variables 时，我提到每个 variable 都有一定的生命周期，称为其范围。variable 的范围取决于程序中定义该 variable 的位置。
 
 Swift 有以下三个可能的范围级别：
 
@@ -1488,7 +1488,7 @@ Swift 有以下三个可能的范围级别：
 
 不要担心感叹号和 weak 现在。为什么这些是必要的将在下面的教程中解释。现在只需记住一个 variable 的 outlet 需要声明为 @IBOutlet weak var，并在结尾有一个感叹号。（有时候你会看到一个问号，所有这些麻烦的问题会在适当的时候解释）
 
-➤ 打开 storyboard。按住 Ctrl 并单击 slider。不要拖到任何地方只需要：放开鼠标按钮，弹出一个菜单，显示此 slider 的所有连接。（如果你不想按住 Ctrl 单击，也可以右键单击一次）
+➤ 打开 storyboard。按住 Ctrl 并单击 slider。不要拖到任何地方只需要：放开鼠标按键，弹出一个菜单，显示此 slider 的所有连接。（如果你不想按住 Ctrl 单击，也可以右键单击一次）
 
 此弹出菜单的工作原理与 Connections inspector 完全相同。我只是想告诉你，它作为一种替代存在。
 
@@ -1504,9 +1504,9 @@ Swift 有以下三个可能的范围级别：
 
 现在你已经完成了所有这些设置工作，你可以使用 slider variable 从 view controller 中的任何地方引用 slider object。
 
-有了这些更改，就不再需要为 Interface Builder 中的 slider 手动设置初始值。 当应用程序启动时，currentValue 将始终对应于该设置。
+有了这些更改，就不再需要为 Interface Builder 中的 slider 手动设置初始值。当应用程序启动时，currentValue 将始终对应于该设置。
 
-➤ 运行应用程序并立即按下 button。它正确地说：“The value of the slider is: 50”。停止应用程序，进入 Interface Builder 并将 slider 的初始值更改为其他值，例如 25。再次运行应用程序，然后按下 button。 The alert 的文本消息现在应显示为 25。
+➤ 运行应用程序并立即按下 button。它正确地说：“The value of the slider is: 50”。停止应用程序，进入 Interface Builder 并将 slider 的初始值更改为其他值，例如 25。再次运行应用程序，然后按下 button。The alert 的文本消息现在应显示为 25。
 
 当你完成游戏后，将滑块的起始位置恢复到 50。
 
@@ -1525,7 +1525,7 @@ Swift 有以下三个可能的范围级别：
 ```swift
 /*
    I am a comment as well!（我同样也是一个 comment！）
-   I can span multiple lines.（我可以跨越很多行。）
+   I can span multiple lines.（我可以跨越很多行）
  */
 ```
 
@@ -1533,7 +1533,7 @@ Swift 有以下三个可能的范围级别：
 
 comment 行的最佳用法是解释你的代码如何工作。编写出一个好的的源代码是不言自明的，但有时需要额外的说明是有用的。解释谁听？往往更多时候，是给自己看的。
 
-除非你有一头大象的记忆，当你六个月后再看，你可能已经忘记了你的代码的工作原理。 使用注释来唤醒你的记忆。
+除非你有一头大象的记忆，当你六个月后再看，你可能已经忘记了你的代码的工作原理。使用注释来唤醒你的记忆。
 
 正如你所看到的，Xcode 自动在源代码文件的顶部添加一个带有版权信息的 comment 块。就个人而言，我不在乎这些版权块。如果你不喜欢它们，随意删除那些行。
 
@@ -1620,9 +1620,9 @@ Tips：每当你看到 . . . 在源代码列表中，我想表达的意思就是
 
 ## 为游戏增加回合
 
-如果你按几次 Hit Me button，你会注意到随机数从不改变。 恐怕游戏不会那么有趣。
+如果你按几次 Hit Me button，你会注意到随机数从不改变。恐怕游戏不会那么有趣。
 
-发生这种情况是因为你在 viewDidLoad() 中生成了随机数，之后不再重复。 viewDidLoad() method 只在在应用程序启动期间 view controller 创建之时被调用一次。
+发生这种情况是因为你在 viewDidLoad() 中生成了随机数，之后不再重复。viewDidLoad() method 只在在应用程序启动期间 view controller 创建之时被调用一次。
 
 待办事项列表上的项目实际上表示：“Generate a random number *at the start of each round*”（在每轮开始时生成一个随机数）。让我们来谈谈一个回合在游戏中的意义。
 
@@ -1772,7 +1772,7 @@ slider.value = Float(currentValue)
 
 Swift 是一种所谓的 *strongly typed*（强类型）语言，意味着它是非常挑剔形状，你不能把不同的形状放到同一个盒子中。例如，如果一个 variable 是一个Int，你不能把一个 Float 的值放入进去，反之亦然。
 
-UISlider 的值恰好是一个 Float，它是一个数字，小数点后面有数字 - 之前你在打印出 slider 的值时看到了这一点，但 currentValue 是一个 Int。 所以这样赋值是错的：
+UISlider 的值恰好是一个 Float，它是一个数字，小数点后面有数字 - 之前你在打印出 slider 的值时看到了这一点，但 currentValue 是一个 Int。所以这样赋值是错的：
 
 ```swift
 slider.value = currentValue
@@ -1913,7 +1913,7 @@ func updateLabels()
 
 它没有被标记为 @IBAction，因此 Interface Builder 看不到它。使用 updateLabels()，你必须自己调用它。
 
-如果你做得很远，那么我猜你喜欢你在读什么。 :-)
+如果你做得很远，那么我猜你喜欢你在读什么。:-)
 
 ---
 
@@ -2045,7 +2045,7 @@ variable 来保存结果。这将是一个正整数或零，因此Int将做：
 var difference: Int
 ```
 
-然后，将 currentValue 与 targetValue 进行比较。 首先你确定 currentValue 是否大于 targetValue：
+然后，将 currentValue 与 targetValue 进行比较。首先你确定 currentValue 是否大于 targetValue：
 
 ```swift
 if currentValue > targetValue {
@@ -2059,7 +2059,7 @@ difference = currentValue - targetValue
 
 在这里，用 currentValue（较大的一个）减去 targetValue（较小的一个），并将差值存储在 differrnce variable 中。
 
-注意我如何命名 variable，清楚地描述 variable 包含什么样的 data。 大多时候你会看到如下代码：
+注意我如何命名 variable，清楚地描述 variable 包含什么样的 data。大多时候你会看到如下代码：
 
 ```swift
 a = b - c
@@ -2150,7 +2150,7 @@ var difference: Int
 difference = currentValue - targetValue
 ```
 
-此外，在新版本中，您不必告诉编译器，differece 需要 Int 值。因为 currentValue 和 targetValue 都是 Int，Swift是聪明的，能够推断出 difference 也应该是一个 Int。
+此外，在新版本中，你不必告诉编译器，differece 需要 Int 值。因为 currentValue 和 targetValue 都是 Int，Swift是聪明的，能够推断出 difference 也应该是一个 Int。
 
 这个特性称为 *type inference*（类型推理），它是 Swift 的主要卖点之一。
 
@@ -2268,7 +2268,7 @@ Constants 在 Swift 中非常常见。通常你只需要保持一个值很短的
 
 <br>
 
-**练习：**因为 slider 的最大值为 100，最小值为 1，所以最大的区别是 100 - 1 = 99.这意味着你在一个回合中可以获得的绝对最差分数为1分。解释为什么会这样。 （Eek！它需要数学！）
+**练习：**因为 slider 的最大值为 100，最小值为 1，所以最大的区别是 100 - 1 = 99.这意味着你在一个回合中可以获得的绝对最差分数为1分。解释为什么会这样。（Eek！它需要数学！）
 
 ## 跟踪玩家的总分
 
@@ -2297,7 +2297,7 @@ var currentValue = 0
 var targetValue = 0
 ```
 
-➤ 进行这些更改。 
+➤ 进行这些更改。
 
 多亏 type inference，你只需要列出数据类型的名称，即使你不给 variable 一个初始值。大多数时候，你可以安全地让 Swift 猜到类型。
 
@@ -2351,7 +2351,7 @@ score = score + points
 
 - 按住 Ctrl 单击 object 以获取上下文相关的弹出菜单。然后从 New Referencing Outlet 拖到 View Controller（你对 slider 做过同样的事情）。
 - 转到 label 的 Connections Inspector 选项卡。从 New Referencing Outlet 到 View Controller（你对目标 label 做过同样的事情）。
-- 按住 Ctrl 从 View Controller 拖动到 label（现在尝试这个）。 确保你按照这个顺序；从 label 到 view controller 的 Ctrl 拖动将不起作用。
+- 按住 Ctrl 从 View Controller 拖动到 label（现在尝试这个）。确保你按照这个顺序；从 label 到 view controller 的 Ctrl 拖动将不起作用。
 
 There is more than one way to skin a cat（你总是可以找到不止一种方法来做某事），呃，连接 outlet。（译者注：就是有很多种方法将视图控制器中的对象和你的代码连接起来）
 
@@ -2441,7 +2441,7 @@ func updateLabels() {
 
 <br>
 
-你可以在教程的源代码文件夹中的 **04 - Rounds and Score** 下找到应用程序的项目文件。 如果你遇到问题，比较你的应用程序版本与这些源文件，看看你是否遗漏了某些东西。
+你可以在教程的源代码文件夹中的 **04 - Rounds and Score** 下找到应用程序的项目文件。如果你遇到问题，比较你的应用程序版本与这些源文件，看看你是否遗漏了某些东西。
 
 ## 来给游戏润润色
 
@@ -2451,7 +2451,7 @@ func updateLabels() {
 
 除非你已经改变它，否则 alert 的标题仍然说 “Hello, World!” 你可以替换为游戏名称，“Bull’s Eye”，但我有一个更好的主意。如果你根据玩家的表现改变标题怎么办？
 
-如果玩家将 slider 正好放在目标上，则 aliet 可以说：“完美！” 如果 slider 靠近目标但不在那里，则可以说：“你差不多了！”如果玩家离开 ，警报可以说：“差的有些远…” 等等。 这给玩家一个更多的反馈，他们表现的如何。
+如果玩家将 slider 正好放在目标上，则 aliet 可以说：“完美！” 如果 slider 靠近目标但不在那里，则可以说：“你差不多了！”如果玩家离开 ，alert 可以说：“差的有些远…” 等等。这给玩家一个更多的反馈，他们表现的如何。
 
 **练习：**想想一种方法来完成这个。你该把这个逻辑放在哪里，你怎么编程呢？提示：在前面类似情况的句子中你用了很多 “if”。
 
@@ -2559,7 +2559,7 @@ func updateLabels() {
 
 **Local bariables 概述**
 
-我想再次指出局部变量和实例变量之间的区别。 正如你现在应该知道的，局部变量只存在于定义它的 method 的持续时间，而实例变量存在，只要视图控制器（拥有它的对象）存在。 同样的事情对于常量也是如此。
+我想再次指出局部变量和实例变量之间的区别。正如你现在应该知道的，局部变量只存在于定义它的 method 的持续时间，而实例变量存在，只要视图控制器（拥有它的对象）存在。同样的事情对于常量也是如此。
 
 在 showAlert() 中，有六个 local variable，并且使用三个 instace variables：
 
@@ -2586,13 +2586,13 @@ let alert = . . .
 let action = . . .
 ```
 
-此语法创建一个新变量（var）或常量（let）。 因为这些 variables 和 constants 是在 method 内创建的，所以它们是 locals。
+此语法创建一个新变量（var）或常量（let）。因为这些 variables 和 constants 是在 method 内创建的，所以它们是 locals。
 
 这六个项目 - difference, points, title, message, alert, 和 action - 仅限于 showAlert() method，并且不在其外部。一旦该 method 完成，本地的都不再存在。
 
-例如，你可能会想知道，每当玩家点击 Hit Me button 时，difference 如何，即使它是一个 constant。constants 一旦给定一个值，以后不会改变？（译者注：提前透漏一下吧，就算是常量也是可以改变的。仔细看看前一句话，一旦 method 完成，本地的常量或者变量都不再存在。所以点击按钮后，又执行了一次 method，现在的那个常量已经不再是原来那个了。想象一下你有一支笔，笔芯已经没有墨水了，你把没水的笔芯丢掉然后换了一支新的笔芯进去）
+例如，你可能会想知道，每当玩家点击 Hit Me button 时，difference 如何，即使它是一个 constant。constants 一旦给定一个值，以后不会改变？（译者注：提前透漏一下吧，就算是常量也是可以改变的。仔细看看前一句话，一旦 method 完成，本地的常量或者变量都不再存在。所以点击 button 后，又执行了一次 method，现在的那个常量已经不再是原来那个了。想象一下你有一支笔，笔芯已经没有墨水了，你把没水的笔芯丢掉然后换了一支新的笔芯进去）
 
-这是为什么：每次调用一个 method 时，都会重新创建其局部变量和常量。 旧的值早已被遗弃，你得到的是新的。
+这是为什么：每次调用一个 method 时，都会重新创建其局部变量和常量。旧的值早已被遗弃，你得到的是新的。
 
 当调用 showAlert() 时，它会创建一个与前一个无关的完全新的 instance difference。这个特定的 constant 值只用到 showAlert() 结束，然后再次被遗弃。
 
@@ -2600,7 +2600,7 @@ let action = . . .
 
 但是在 showAlert() 的单一调用中，difference 一旦具有其值就永远不会改变。唯一可以改变的地方是 points，因为它是一个 var。
 
-另一方面，instance variables 在任何 method 之外定义。 通常将它们放在文件的顶部：
+另一方面，instance variables 在任何 method 之外定义。通常将它们放在文件的顶部：
 
 ```swift
 class ViewController: UIViewController {
@@ -2635,7 +2635,7 @@ class ViewController: UIViewController {
 
 `他们将命名 variable 为 _score而不是 score。现在看起来好多了，因为以下划线开头的名字不会被误认为是 locals。这只是一个惯例。Swift 不关心一种方式，也不关心你如何拼写你的实 instance variables。（译者注：就是不做硬性要求，无论你怎么命名都不会影响编译器的编译）`
 
-`其他程序员使用不同的前缀，例如 “m”（member 成员）或 “f”（filed 字段）目的是一样的。有些甚至把下划线放在变量名后面。 疯狂！`
+`其他程序员使用不同的前缀，例如 “m”（member 成员）或 “f”（filed 字段）目的是一样的。有些甚至把下划线放在变量名后面。疯狂！`
 
 ## 等待 alert 消失
 
@@ -2735,7 +2735,7 @@ Start Over button 的一个用途是用于对抗另一个人。第一个玩家�
 
 **练习：**尝试自己实现这个 Start Over button。你已经看到了如何使 view controller 对 button 按下做出反应，你应该能够找出如何更改得分和回合 variables。
 
-你怎么做的？如果您遇到问题，请按照以下说明操作。
+你怎么做的？如果你遇到问题，请按照以下说明操作。
 
 首先，向 **ViewController.swift** 添加一个 method 来启动一个新游戏。我建议
 你把它放在 startNewRound() 附近，因为两者在概念上是相关的。（译者注：代码整洁，可读性是很重要的。除非你想辞职，可以改写一下，你走了以后这段代码就没人维护得了，几个月后就连自己都看不懂，以此报复老板。开玩笑的）
@@ -2848,7 +2848,7 @@ Xcode 自动为你创建了主 ViewController object，但是 About screen 的 v
 
 ➤ 选择 **BullsEye** 文件夹（此文件夹应已被选中）。
 
-还要确保 **Group** 说 **BullsEye**，并在 list of **Targets**（目标列表）中的 BullsEye 前面有一个复选标记。（如果没有看到此面板，请单击 Options 按钮。）
+还要确保 **Group** 说 **BullsEye**，并在 list of **Targets**（目标列表）中的 BullsEye 前面有一个复选标记。（如果没有看到此面板，请单击 Options 按钮）
 
 ➤ 单击 **Create** 完成。
 
@@ -2916,7 +2916,7 @@ Your goal is to place the slider as close as possible to the target value. The c
 
 <br>
 
-➤ 放开鼠标按钮，弹出窗口中会显示多个选项。选择 **Present Modally**。
+➤ 放开鼠标按键，弹出窗口中会显示多个选项。选择 **Present Modally**。
 
 <div align="center"><img alt="选择要创建的 segue 类型" src="http://imgur.com/FJ6waoe.png"/></div><center>选择要创建的 segue 类型</center>
 
@@ -2973,7 +2973,7 @@ class AboutViewController: UIViewController {
 
 问题是，storyboard 中的这个 scene 还不知道它自己代表 AboutViewController。
 
-你首先添加了 AboutViewController.swift 源文件，然后将一个新的 view controller 拖到 storyboard 中，但是你没有告诉 storyboard，这个新的 view controller 的设计实际上属于 AboutViewController。（这就是为什么在 outline pane 中只是说 View Controller 而不是 About View Controller。）
+你首先添加了 AboutViewController.swift 源文件，然后将一个新的 view controller 拖到 storyboard 中，但是你没有告诉 storyboard，这个新的 view controller 的设计实际上属于 AboutViewController。（这就是为什么在 outline pane 中只是说 View Controller 而不是 About View Controller）
 
 ➤ 幸运的是，这很容易补救。在 Interface Builder 中，选择 About scene 的 **View Controller**，然后转到 **Indentity inspector**（即 Attributes inspector 左侧的按钮）。
 
@@ -3007,7 +3007,7 @@ class AboutViewController: UIViewController {
 
 首先，你将从 storyboard 中删除状态栏。
 
-➤ 打开 **Main.storyboard** 并选择 **View Controller**。 转到 **Attributes**
+➤ 打开 **Main.storyboard** 并选择 **View Controller**。转到 **Attributes**
 
 **inspector** 并在 **Simulated Metrics** 下将 **Status Bar**（状态栏）设置为 **None**（无）。
 
@@ -3023,7 +3023,7 @@ class AboutViewController: UIViewController {
 
 要永久删除状态栏的最后一步是更改应用程序的配置。
 
-➤ 转到 **Project Settings** 屏幕，向下滚动到 **Deployment Info**。 在 **Status Bar Style** 下，选中 **Hide status bar** 选项。
+➤ 转到 **Project Settings** 屏幕，向下滚动到 **Deployment Info**。在 **Status Bar Style** 下，选中 **Hide status bar** 选项。
 
 这也将在应用程序启动期间隐藏状态栏。
 
@@ -3031,11 +3031,11 @@ class AboutViewController: UIViewController {
 
 <br>
 
-在应用程序启动时隐藏状态栏是个好主意。操作系统需要几秒钟时间将应用程序加载到内存并启动它，在此期间，状态栏保持可见，除非您使用此选项隐藏它。
+在应用程序启动时隐藏状态栏是个好主意。操作系统需要几秒钟时间将应用程序加载到内存并启动它，在此期间，状态栏保持可见，除非你使用此选项隐藏它。
 
 这只是一个小细节，但一个平庸的应用程序和一个伟大的应用程序的区别是，伟大的应用程序做的所有的小细节是正确的。
 
-➤ 就是这样。运行应用程序，您会看到状态栏是历史记录。
+➤ 就是这样。运行应用程序，你会看到状态栏是历史记录。
 
 **Info.plist**
 
@@ -3154,7 +3154,7 @@ Xcode 显示文件选择器。从本教程的资源中选择 Images 文件夹，
 
 ➤ 在 Xcode 菜单栏中屏幕顶部的 **Editor** 菜单中，选择 **Arrange**（排列）**→ Send to Back**（发回）。
 
-有时 Xcode 给刁难你（它仍然有几个 bugs）。如果是，请尝试取消选择 Image View，然后再次选择它。 现在 Send to Back 菜单项应该可用。（译者注：因为有时候它是灰色的不可选中）
+有时 Xcode 给刁难你（它仍然有几个 bugs）。如果是，请尝试取消选择 Image View，然后再次选择它。现在 Send to Back 菜单项应该可用。（译者注：因为有时候它是灰色的不可选中）
 
 或者，在 outline pane 中拾取 image view，并将其拖动到顶部，恰好在 View 下方，以完成相同的操作。
 
@@ -3178,7 +3178,7 @@ Xcode 显示文件选择器。从本教程的资源中选择 Images 文件夹，
 
 <br>
 
-这将打开 Color Picker（颜色选择器）。它有几种选择 color 的方法。我喜欢 sliders（第二个选项卡）。如果您看到的是灰度 slider，请从顶部的选择框中选择 RGB Sliders。（译者注：哈哈，又是我们的老朋友 Slider，可见他在 UI 中多么常见）
+这将打开 Color Picker（颜色选择器）。它有几种选择 color 的方法。我喜欢 sliders（第二个选项卡）。如果你看到的是灰度 slider，请从顶部的选择框中选择 RGB Sliders。（译者注：哈哈，又是我们的老朋友 Slider，可见他在 UI 中多么常见）
 
 ➤ 选择 pure white color（纯白色），Red（红色）：255，Green（绿色）：255，Blue（蓝色）：255，Opacity（不透明度）：100％。
 
@@ -3216,7 +3216,7 @@ Label 现在将变得略大或略小，以便它紧贴文本。如果在更改 f
 
 你不必逐一设置其他 label 的这些属性；这将是一个庞大的工程。你可以通过选择多个 label，然后将这些更改应用于全部选择来快速搞定这件事。
 
-➤ 单击 **Score:** label 以将其选中。按住 ⌘，然后点击 **Round:** label。 现在两个 labels 都将被选中。 重复上面对这些 labels 的操作：
+➤ 单击 **Score:** label 以将其选中。按住 ⌘，然后点击 **Round:** label。现在两个 labels 都将被选中。重复上面对这些 labels 的操作：
 
 - 将 Color 设置为 pure white，100％ opaque。
 - 将 Shadow 设置为 pure black，50％ opaque。
@@ -3230,7 +3230,7 @@ Label 现在将变得略大或略小，以便它紧贴文本。如果在更改 f
 
 <br>
 
-你可以通过拖动边框来增大 labels 的大小，也可以手动调整大小，也可以使用 **Size to Fit Content** 选项（⌘=）。 我喜欢后者，因为它工作量更少。
+你可以通过拖动边框来增大 labels 的大小，也可以手动调整大小，也可以使用 **Size to Fit Content** 选项（⌘=）。我喜欢后者，因为它工作量更少。
 
 提示：Xcode 足够聪明，记住你最近使用的 Color。而不总是进入 Color Picker，你可以简单地从 Recently Used Colors（最近使用的颜色）菜单中选择其中一种。
 
@@ -3583,7 +3583,7 @@ Interface Builder 显示一个方便的指南，蓝色虚线，靠近屏幕边�
 
 ➤ 单击 **Close** button 进行选择。从 **Align** 菜单中，选择 **Horizontally in Container**，然后单击 **Add 1 Constraint**。
 
-Interface Builder 现在绘制一个红色条以表示 constraint，以及一个位于按钮周围的红色框。
+Interface Builder 现在绘制一个红色条以表示 constraint，以及一个位于 button 周围的红色框。
 
 <div align="center"><img alt="Close button 有红色的 constraints" src="http://imgur.com/yYr7HPG.png"/></div><center>Close button 有红色的 constraints</center>
 
@@ -3665,7 +3665,7 @@ Web view 现在有四个 constraints（蓝色线条）：
 
 回到主要的游戏 scene，这仍然需要一些工作来适应较小的屏幕尺寸。
 
-首先，您将通过将所有 controls 拖动到左侧来清理 storyboard，以便整齐地放置在 3.5 英寸的屏幕上。这在 3.5 英寸模式中有点棘手，因为一些 buttons 和 labels 位于可见区域之外，因此无法选择它们并移动。
+首先，你将通过将所有 controls 拖动到左侧来清理 storyboard，以便整齐地放置在 3.5 英寸的屏幕上。这在 3.5 英寸模式中有点棘手，因为一些 buttons 和 labels 位于可见区域之外，因此无法选择它们并移动。
 
 幸运的是，Interface Builder 有一个方便的 preview pane（预览窗格），可以帮助你。
 
@@ -3675,7 +3675,7 @@ Web view 现在有四个 constraints（蓝色线条）：
 
 ➤ 单击 Xcode 工具栏中两个重叠的圆圈的按钮打开 **Assistant editor**（助手编辑器）。
 
-➤ 在跳转栏中选择 **Preview**，然后选择 **Main.storyboard（Preview）**。 （在此选项变为可见之前，您可能需要点击一下）
+➤ 在跳转栏中选择 **Preview**，然后选择 **Main.storyboard（Preview）**。（在此选项变为可见之前，你可能需要点击一下）
 
 <div align="center"><img alt="在 Interface Builder 中启用 preview assistant" src="http://imgur.com/u2LcfHf.png"/></div><center>在 Interface Builder 中启用 preview assistant</center>
 
@@ -3723,7 +3723,7 @@ Preview assistant目前应该展示 3.5 寸 iPhone 4S。如果没有，请执行
 
 这个新的 view 是完全白色的，这不是你最终想要的，但它确实可以更容易地添加 constraints。
 
-➤ 选择新添加的 **container view** 并打开 **Pin menu**。在 **Width** 和 **Height** 前面的复选框打上勾，以便为它们制定 constraints。 单击 **Add 2 Constraints** 以完成。
+➤ 选择新添加的 **container view** 并打开 **Pin menu**。在 **Width** 和 **Height** 前面的复选框打上勾，以便为它们制定 constraints。单击 **Add 2 Constraints** 以完成。
 
 <div align="center"><img alt="固定 container view 的 width 和 height" src="http://imgur.com/7hpHQuA.png"/></div><center>固定 container view 的 width 和 height</center>
 
@@ -3752,7 +3752,7 @@ Auto Layout 可能需要一段时间才能习惯。添加 constraints 以便定�
 
 使游戏在较小的设备上工作是一回事，但是更大的设备，如 iPhone 6, 7 和 Plus 呢？普通的 iPhone 6, 6s 和 7 有一个 4.7 英寸的屏幕，而 Plus 有一个高达 5.5 英寸的屏幕。
 
-➤ 尝试一下！ 您可以使用 **View as:** 或 preview pane 查看 4.7 英寸和 5.5 英寸模式的 storyboard，也可以在 iPhone 6s，iPhone 7 或 Plus simulators 中运行应用程序。
+➤ 尝试一下！ 你可以使用 **View as:** 或 preview pane 查看 4.7 英寸和 5.5 英寸模式的 storyboard，也可以在 iPhone 6s，iPhone 7 或 Plus simulators 中运行应用程序。
 
 发生了什么？这就是运行在 7 Plus Simulator 上的样子：
 
@@ -3778,7 +3778,7 @@ Auto Layout 可能需要一段时间才能习惯。添加 constraints 以便定�
 
 `许多开发人员滥用此功能来显示他们的 Logo 在 launch screen 中，但如果你只显示用户界面的静态图像，而不是其他更多，则对用户更好。没有人喜欢等待应用加载，而且精心挑选的 launch screen 会给出应用程序加载速度比其实际更快的错觉。`
 
-`您可以使用常规图像，但也可以使用 storyboard 文件或 XIB 文件。XIB 也被称为 “nib”，就像一个 storyboard，只不过它只能包含一个屏幕的设计。`
+`你可以使用常规图像，但也可以使用 storyboard 文件或 XIB 文件。XIB 也被称为 “nib”，就像一个 storyboard，只不过它只能包含一个屏幕的设计。`
 
 应用程序 launch screen 的设计位于 **LaunchScreen.storyboard** 文件中。目前该 storyboard 包含一个完全空的 view controller，导致它是一个空白的 launch screen。你每次启动应用程序都看过它，但是因为它完全是白色的，所以没有太多的看法。（为了好玩，将一个 label 拖到此 storyboard 中，看看运行应用程序时会发生什么）
 
@@ -3829,7 +3829,7 @@ Letterbox 表示 4:3 或 1:33:1 的屏幕比例，广为一般家庭无线电视
 
 运行应用程序，注意到转换到应用程序看起来更加顺畅。这些细节像这些数字一样。最重要的是，该应用程序现在在 iPhone 6s，7 和 Plus 上看起来很棒！
 
-<code class="highlighter-rouge"><strong>注意：</strong>只需扩展大型手机的应用程序对于Bull's Eye就能很好地工作，但对于大多数应用，您将需要利用所有额外的屏幕空间。 iOS有几个功能可以帮助您 - 自动布局和大小类 - 您将在下一个教程中了解它们。</code>
+<code class="highlighter-rouge"><strong>注意：</strong>只需扩展大型手机的应用程序对于 Bull's Eye 就能很好地工作，但对于大多数应用，你将需要利用所有额外的屏幕空间。iOS 有几个功能可以帮助你 - Auto Layout 合 Size Classes - 你将在下一个教程中了解它们。</code>
 
 ## 交叉淡入淡出
 
@@ -3981,7 +3981,7 @@ Simulator 是很棒的，但你确实需要在真实的设备上运行你的创�
 
 ➤ 单击你的设备名称进行选择。
 
-如果这是你第一次让 Xcode 与设备工作，Devices 窗口将会显示 “iPhone is not paired with your computer.”。要将设备与 Xcode 配对，你需要首先解锁设备（按住 home 键）。解锁后，设备上会弹出 alert（译者注：看吧，和你学到的一模一样），要求你信任您要配对的计算机。点击 Trust（信任）继续。
+如果这是你第一次让 Xcode 与设备工作，Devices 窗口将会显示 “iPhone is not paired with your computer.”。要将设备与 Xcode 配对，你需要首先解锁设备（按住 home 键）。解锁后，设备上会弹出 alert（译者注：看吧，和你学到的一模一样），要求你信任你要配对的计算机。点击 Trust（信任）继续。
 
 Xcode 现在将刷新页面，并让你使用该设备进行开发。给它几分钟（见 Xcode 主窗口中的进度条）。如果需要太长时间，可能需要先拔掉设备的电源插头。
 
@@ -4021,7 +4021,7 @@ Xcode 验证你的帐户详细信息，并将其添加到 accounts 窗口。
 
 你要提交给 App Store 的应用程序必须使用其他证书 **Distribution Certificate**（分销证书）进行签名。要使用发行证书，你必须是付费开发者计划的成员，但使用开发证书是免费的。
 
-除了有效的证书之外，您还需要为你制作的每个应用程序提供所谓的配置配置文件。Xcode 使用此配置文件对你的设备上的应用程序进行签名。具体细节并不重要，只需要知道你需要配置配置文件，否则该应用程序将不会放在你的设备上。
+除了有效的证书之外，你还需要为你制作的每个应用程序提供所谓的配置配置文件。Xcode 使用此配置文件对你的设备上的应用程序进行签名。具体细节并不重要，只需要知道你需要配置配置文件，否则该应用程序将不会放在你的设备上。
 
 使证书和 **Provisioning Profile**（配置文件）过于令人沮丧和容易出错。幸运的是，这些日子已经结束了：Xcode 8 使它操作起来变得非常简单。当启用 **Automatically manage signing**（自动管理签名）选项时，Xcode 将使用证书和 Provisioning Profile 来处理所有这些业务，你不必操心这些了。
 
@@ -4073,7 +4073,7 @@ Xcode 必须了解你要运行应用程序的设备。这就是为什么我要�
 
 在设备上，将出现一个包含文本“Untrusted Developer. Your device management settings do not allow using apps from developer ...”。
 
-如果发生这种情况，请打开设备上的 Settings（设置），然后转到 General（通用），Profile（配置文件）。你的 Apple ID 应该列在该屏幕中。点击它，然后点击 Trust （信任）按钮。然后再次尝试运行应用程序。
+如果发生这种情况，请打开设备上的 Settings（设置），然后转到 General（通用），Profile（配置文件）。你的 Apple ID 应该列在该屏幕中。点击它，然后点击 Trust （信任）button（这儿和你学到的 button 一模一样）。然后再次尝试运行应用程序。
 
 **The device is locked**（设备被锁定）。如果你的手机几分钟后自动锁屏，你可能会收到以下警告：
 
@@ -4101,7 +4101,7 @@ Xcode 必须了解你要运行应用程序的设备。这就是为什么我要�
 
 <br>
 
-您可以安装多个 certificate 和 provisioning profile。如果你在多个开发团队，或者你希望手动管理不同应用程序的配置文件，这将非常有用。
+你可以安装多个 certificate 和 provisioning profile。如果你在多个开发团队，或者你希望手动管理不同应用程序的配置文件，这将非常有用。
 
 要查看 Xcode 如何选择哪个 profile 和 certificate 签署你的应用程序，请转到 Project Settings 屏幕并切换到 **Build Settings** 选项卡。此列表中有很多设置，因此通过在搜索框中输入 **signing** 进行过滤。（还要确保全部被选中，而不是基本）
 

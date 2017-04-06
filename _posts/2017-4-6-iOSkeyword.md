@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "iOS 编程专有名词"
+title: "编程专有名词"
 date:   2017-04-6
 excerpt: "仅针对 iOS Apprentice 中出现的高频专有名词"
 tags: [program, iOS, translate]

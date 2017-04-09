@@ -31,15 +31,15 @@ comments: true
 
 制作一个待办事项列表应用程序有点像一个流行的 iOS 开发人员的通行证，必经之路，所以你也有道理创建一个。
 
-完成后，你自己的待办事项列表应用程序，清单将会如下所示：
+完成后，你自己的待办事项列表应用程序，**Checklists** 将会如下所示：
 
-<div align="center"><img alt="完成的清单应用程序" src="http://imgur.com/36bdaK8.png"/></div><center>完成的清单应用程序</center>
+<div align="center"><img alt="完成的 Checklists 应用程序" src="http://imgur.com/36bdaK8.png"/></div><center>完成的 Checklists 应用程序</center>
 
 <br>
 
 该应用程序可让你将待办事项组织到列表中，然后在完成这些项目后检查这些项目。你还可以在待办事项上设置提醒，即使应用程序未运行，iPhone 将在达到预设时间后弹出 alert。
 
-对于待办事项列表应用程序来说，**清单** 是非常基本的，但不要小看它。即使这样一个简单的应用程序也已经有五种不同的屏幕和很多 scenes（场景）背后的复杂性。
+对于待办事项列表应用程序来说，**Checklists** 是非常基本的，但不要小看它。即使这样一个简单的应用程序也已经有五种不同的屏幕和很多 scenes（场景）背后的复杂性。
 
 ##Table views 和 navigation controllers
 
@@ -49,7 +49,7 @@ comments: true
 
 Navigation controller 允许你构建从一个屏幕到另一个的屏幕层次结构。它在顶部添加了一个导航栏，标题和 “back”（后退）button。
 
-在这个应用程序中，点击列表的名称 - 例如 “Groceries” - 在包含该列表中待办事项的屏幕中滑动。 左上角的 button 可让你回到上一个屏幕，并带有平滑的动画。在这些屏幕之间移动是 navigation controller 的工作。
+在这个应用程序中，点击列表的名称 - 例如 “Groceries” - 在包含该列表中待办事项的屏幕中滑动。左上角的 button 可让你回到上一个屏幕，并带有平滑的动画。在这些屏幕之间移动是 navigation controller 的工作。
 
 Navigation controllers 和 table views 通常一起使用：
 
@@ -79,23 +79,23 @@ Navigation controllers 和 table views 通常一起使用：
 
 顺便说一句，如果你不清楚某些东西 - 例如，你可能会想知道为什么 Swift中 的方法名称看起来很有趣 - 那么不要惊慌！保持一些信念，继续前进...一切都会在适当的时候给予解释。
 
-##清单应用程序设计
+##Checklists 应用程序设计
 
-在这部分你只需要知道你在做什么，这里是一个概述有关清单应用程序的工作原理：
+在这部分你只需要知道你在做什么，这里是一个概述有关 Checklists 应用程序的工作原理：
 
-<div align="center"><img alt="清单应用程序的所有屏幕" src="http://imgur.com/t5rRjEg.png"/></div><center>清单应用程序的所有屏幕</center>
+<div align="center"><img alt="Checklists 应用程序的所有屏幕" src="http://imgur.com/t5rRjEg.png"/></div><center>Checklists 应用程序的所有屏幕</center>
 
 <br>
 
-该应用程序的主屏幕显示所有的 “checklists”（清单）（1）。你可以创建多个列表来组织待办事项。
+该应用程序的主屏幕显示所有的 “checklists”（1）。你可以创建多个列表来组织待办事项。
 
-清单中有一个名称，一个图标和零个或多个待办事项。你可以在 Add/Edit（添加/编辑）清单屏幕（2）和（3）中编辑清单的名称和图标。
+Checklists 中有一个名称，一个图标和零个或多个待办事项。你可以在 Add/Edit（添加/编辑）Checklists 屏幕（2）和（3）中编辑 Checklists 的名称和图标。
 
-你可以点击清单的名称查看其待办事项（4）。
+你可以点击 Checklists 的名称查看其待办事项（4）。
 
 待办事项有描述，将项目标记为已完成的复选标记以及可选的到期日。你可以在 Add/Edit 项目屏幕（5）中编辑项目。
 
-即使该应用没有运行，iOS 也会自动通知用户有 “remind me”（提醒我）选项集（6）的清单项目（7）。这是一个非常先进的功能，但我认为你会完成任务。
+即使该应用没有运行，iOS 也会自动通知用户有 “remind me”（提醒我）选项集（6）的 Checklists 项目（7）。这是一个非常先进的功能，但我认为你会完成任务。
 
 你可以在本教程的资源文件夹中找到此应用程序的完整源代码，以便与其一起玩，以了解其工作原理。
 
@@ -149,7 +149,7 @@ Xcode 将要求你填写以下几个选项：
 
 如果你愿意，你可以运行应用程序，但在这一时刻它只是一个白色的屏幕。
 
-清单只能以 portrait 方向运行，但 Xcode 刚刚生成的项目也包括 landscape。
+Checklists 只能以 portrait 方向运行，但 Xcode 刚刚生成的项目也包括 landscape。
 
 ➤ 单击 project navigator 顶部的 Checklists 项目项，然后转到 **General** 选项卡。在 **Deployment Info**，**Device Orientation** 下，确保只选择 **Portrait**。
 
@@ -187,13 +187,13 @@ Storyboard 包含单个文档中所有应用程序 view controller 的设计，�
 
 ➤ 在左侧的轮廓窗格中选择 **View Controller**。
 
-提示：回想一下，大纲窗格显示故事板中所有场景的视图层次结构。 如果看不到大纲窗格，请单击“界面构建器”窗口底部的小箭头按钮来切换其可见性。
+提示：回想一下，大纲窗格显示故事板中所有场景的视图层次结构。如果看不到大纲窗格，请单击“界面构建器”窗口底部的小箭头按钮来切换其可见性。
 
 <div align="center"><img alt="此按钮显示并隐藏轮廓窗格" src="http://imgur.com/s7R5Nyw.png"/></div><center>此按钮显示并隐藏轮廓窗格</center>
 
 <br>
 
-➤ 按键盘上的 **delete** 从 storyboard 中删除 **View Controller Scene**。Canvas 应为空，大纲窗格显示 “No Scenes”（无场景）。
+➤ 按键盘上的 **delete** 从 storyboard 中删除 **View Controller Scene**。画布应为空，大纲窗格显示 “No Scenes”（无场景）。
 
 你正在删除此场景，因为你不需要常规 view controller，而是要使用所谓的 **table view controller**。这是一种特殊类型的 view controller，它使得使用 table views 更容易一些。
 
@@ -228,3 +228,78 @@ class ChecklistViewController: UITableViewController {
 <div align="center"><img alt="重命名 Swift 文件" src="http://imgur.com/prH1mxU.png"/></div><center>重命名 Swift 文件</center>
 
 <br>
+
+你现在可能会收到警告：“The document could not be saved. The file has been changed by another application.”（该文档无法保存。该文件已被其他应用程序更改。）单击 **Save Anyway 以使其消失。
+
+➤ 返回 storyboard，将 **Table View Controller** 从 Object Library（右下角）拖动到画布中：
+
+<div align="center"><img alt="将 Table View Controller 拖动到 storyboard 中" src="http://imgur.com/b4nZ3GN.png"/></div><center>将 Table View Controller 拖动到 storyboard 中</center>
+
+<br>
+
+这将添加一个新的 Table View Controller 场景到 storyboard。
+
+➤ 转到 **Identity inspector**（Xcode 窗口右侧的检查器窗格中的第三个选项卡）以及 **Custom Class** 分类下面的 **ChecklistViewController**（或使用小箭头选择它）。
+
+提示：执行此操作时，请确保选择了实际的 Table View Controller，而不是其中的 Table View。场景周围应该有一个淡蓝色的边框。
+
+<div align="center"><img alt="更改 Table View Controller 的 Custom Class" src="http://imgur.com/6ROUvXg.png"/></div><center>更改 Table View Controller 的 Custom Class</center>
+
+<br>
+
+左侧轮廓窗格中的场景名称应更改为 “Checklist View Controller Scene”。你已成功将ChecklistViewController 从常规 view controller object 更改为view controller object。
+
+顾名思义，你可以在 storyboard 中看到，view controller 包含一个 Table View object。我们将尽快介绍 controllers 和 views 之间的区别，但是现在记住，controller 是整个屏幕，而 table view 是实际绘制列表的 object。
+
+如果没有大箭头指向新的 table view controller，则转到 **Attributes inspector**，然后将 **Is Initial View Controller** 打上勾。
+
+<div align="center"><img alt="更箭头指向 initial view controller（初始视图控制器）" src="http://imgur.com/SMRnNvi.png"/></div><center>箭头指向 initial view controller（初始视图控制器）</center>
+
+<br>
+
+Initial view controller 是你的用户将看到的第一个屏幕。如果没有它，iOS 应用程序启动时，不会知道让哪个 view controller 从你的 storyboard 中加载，你将最终盯着黑屏。
+
+➤ 在 Simulator 上运行应用程序。
+
+你应该看到一个空的列表。这是 table view。你可以上下拖动列表，但它不包含任何数据。
+
+<div align="center"><img alt="该应用程序现在使用一个 table view controller" src="http://imgur.com/XskeEOu.png"/></div><center>该应用程序现在使用一个 table view controller</center>
+
+<br>
+
+顺便说一下，使用哪个 Simulator 并不重要。Table views 可以自动调整设备的尺寸，并且该应用程序在小型 iPhone SE 和巨大的 iPhone 7 Plus 上表现也同样出色。
+
+就我个人而言，我使用的是 iPhone SE Simulator，因为它适合我的 Mac 的屏幕，只是勉强！（请记住，你可以使用 **⌘1**，**⌘2** 和 **⌘3** 缩放 Simulator 窗口）
+
+<code class="highlighter-rouge"><strong>注意：</strong>构建应用程序时，Xcode 会发出警告：“Prototype cells must have reuse identifiers”（原型单元必须具有重用标识符）。现在不要担心，我们会尽快解决这个问题。</code>
+
+##剖析 table view
+
+首先，让我们再来谈一谈 table views。UITableView object 显示一些事物列表。
+
+<code class="highlighter-rouge"><strong>注意：</strong>我不知道为什么它被命名为 *table*（表），因为表通常被认为是具有多行和多列的 spreadsheet-type（电子表格类型）的 object，而 UITableView 只有行。它和表比起来更像是一个列表，但是我想我们现在不要再纠结命名了。UIKit 还提供了一个 UICollectionView object 它类似于 UITableView 但允许多列。</code>
+
+有两种样式的表：“plain” 和 “grouped”。他们的工作主要是相同的，但有一些小的差异。最明显的不同之处在于，grouped 样式的表中的行将放置在浅灰色背景的框（groups）中。
+
+<div align="center"><img alt="Plain 样式的表（左）和 grouped 样式的表（右）" src="http://imgur.com/yzSLeD8.png"/></div><center>Plain 样式的表（左）和 grouped 样式的表（右）</center>
+
+<br>
+
+Plain 样式用于所有表示类似东西的行，例如地址簿中的每个行包含一个人的名称的联系人。
+
+当每行代表不同的东西，例如其中一个联系人的各种属性时，使用 grouped 样式。Grouped 样式的表将具有名称行，地址行，电话号码行等。
+
+你将在 Checklists 应用程序中使用两种样式的表。
+
+表格的数据以**行**的形式出现。在第一个版本的 Checklists 中，每一行将对应一个待办事项，你可以在完成之后检查。
+
+尽管不推荐使用这种设计，但你可能会有许多行（数万）。大多数用户会有一个令人难以置信的烦恼，就是滚动一万行找到来他们想要的那行，谁可以责怪他们...
+
+表格中的数据显示在 **cells**（单元格）中。一个单元格与一行相关，但它不完全相同。单元格是一个视图，显示在该时刻恰好可见的一行数据。如果你的表格可以在屏幕上一次显示10行，那么它只有 10 个单元格，即使可能有数百行的实际数据。
+
+每当一行滚动屏幕并变为不可见时，其单元格将重新用于滚动到屏幕的新行。
+
+<div align="center"><img alt="单元格显示行的内容" src="http://imgur.com/nziYhDP.png"/></div><center>单元格显示行的内容</center>
+
+<br>
+

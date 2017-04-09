@@ -150,25 +150,25 @@ Xcode 将你编写的源代码转换为可执行的应用程序，并在 Simulat
 
 *iOS Apprentice* 分为四个教程部分，从开始到其中的主题。在每个教程中，你将从头开始构建一个完整的应用程序！让我们先来看看将要做些什么。
 
-**教程 1：入门**
+**教程 1：Getting Started**
 
 在第一个教程中，你将开始建立一个名为 *Bull’s Eye* 的游戏。你将学习如何以一种轻松的方式使用 Xcode，Interface Builder（界面构造器） 和 Swift。
 
 <div align="center"><img alt="" src="http://imgur.com/TolF1G2.png"/></div>
 
-**教程 2：清单**
+**教程 2：Checklists**
 
 在本系列的第二个教程中，你将创建自己的待办事项列表应用程序。你将了解所有 iOS 应用程序使用的基本设计模式，以及 table views（表视图），navigation controllers（导航控制器）和 delegates（代理）。现在，你即将真正的打造出一个应用程序！
 
 <div align="center"><img alt="" src="http://imgur.com/Dm64Fp1.png"/></div>
 
-**教程3：我的位置**
+**教程3：MyLocations**
 
 在本系列的第三个教程中，你将开发一个位置感知的应用程序，让你创建一个保存你感兴趣的地点的列表。在此过程中，你将了解 Core Location（核心位置），Core Data（核心数据），Map Kit（地图工具包）等等！
 
 <div align="center"><img alt="" src="http://imgur.com/hhv9qH9.png"/></div>
 
-**教程4：商店搜索**
+**教程4：StoreSearch**
 
 移动应用程序常需要与 Web 服务交流，这就是你在本系列中的最后一个教程中将要做的。你将创建出一个时尚的应用程序，让你使用 HTTP 请求和 JSON 在 iTunes 商店搜索产品。
 
@@ -444,7 +444,7 @@ Xcode 窗口的左侧被命名为 **Navigator Area**（导航区域）。顶部�
 
 目前，storyboard 只包含一个屏幕或场景，由 Interface Builder Canvas（画布）中间的一个矩形表示。
 
-<code class="highlighter-rouge"><strong>注意：</strong>如果你没有看到标记为 “View Controller”（视图控制器） 的矩形，眼前只有一个空白的 Canvas，则使用鼠标或触控板滚动 storyboard。相信我，它一定在某处！还要确保你的 Xcode 窗口足够大。因为 Interface Builder 占用了很多空间…</code>
+<code class="highlighter-rouge"><strong>注意：</strong>如果你没有看到标记为 “View Controller”（视图控制器） 的矩形，眼前只有一个空白的画布，则使用鼠标或触控板滚动 storyboard。相信我，它一定在某处！还要确保你的 Xcode 窗口足够大。因为 Interface Builder 占用了很多空间…</code>
 
 该场景目前有一部 iPhone 6s 或 iPhone 7 的大小。为了保持清爽简洁，你会首先为 iPhone SE 设计一个稍小的屏幕的应用程序。稍后你将会让这款应用程序也是配更大的 iPhone 6s，7 和 Plus。
 
@@ -484,7 +484,7 @@ Xcode 窗口的左侧被命名为 **Navigator Area**（导航区域）。顶部�
 
 ➤ 拖放一些其他 controls（控件），如 labels，sliders 和 switches，只管拖动他们就对了。
 
-这应该会给你一些有关 UI controls 的想法，因为 iOS 支持使用它们。请注意，Interface Builder 会帮助你布局 controls，通过将 controls 对齐到 view 的边缘和其他 objects。这是一个非常方便的工具！
+这应该会给你一些有关 UI controls 的想法，因为 iOS 支持使用它们。请注意，Interface Builder 会帮助你布局 controls，通过将 controls 对齐到视图的边缘和其他 objects。这是一个非常方便的工具！
 
 ➤ 双击刚刚放置的 button 以编辑其标题为 “Hit Me!”。
 
@@ -575,7 +575,7 @@ class ViewController: UIViewController {
 
 目前 Bull’s Eye 只有一个屏幕（顶部有一个白色 button 的那个），因此只需要一个 view controller。该 view controller 简称为 “ViewController”（译者注：这里看起来比较怪，实际上后者只是一个命名，你可以随意修改。前者则为专有名词），storyboard 和 Swift 文件一起工作来实现它。
 
-简单地说，Main.storyboard 文件包含 view controller 的用户界面的设计，而ViewController.swift 包含其功能 - 让用户界面按照设定来工作的逻辑，它是使用 Swift 语言来编写的。
+简单地说，Main.storyboard 文件包含 view controller 的用户界面的设计，而 ViewController.swift 包含其功能 - 让用户界面按照设定来工作的逻辑，它是使用 Swift 语言来编写的。
 
 因为你使用 Single View Application 模板，Xcode 自动为你创建 view controller。稍后，你将为游戏添加第二个屏幕，你将为此创建自己的 view controller。
 
@@ -585,7 +585,7 @@ class ViewController: UIViewController {
 
 ➤ 单击 **Main.storyboard** 返回到 Interface Builder。
 
-左边应该有一个窗格，即**大纲窗格**，其中列出了所有项目，你的 storyboard 中的。如果没有看到该 pane，请单击 Interface Builder canvas 左下角的小切换按钮以显示它。
+左边应该有一个窗格，即**大纲窗格**，其中列出了所有项目，你的 storyboard 中的。如果没有看到该 pane，请单击 Interface Builder 画布左下角的小切换按钮以显示它。
 
 <div align="center"><img alt="用来显示大纲窗格的按钮" src="http://imgur.com/uThAxbE.png"/></div><center>用来显示大纲窗格的按钮</center>
 
@@ -849,7 +849,7 @@ showAlert 中的代码创建一个标题为 “Hello，World” 的 alert，它�
 
 要将应用程序从 portrait 转为 landscape，你必须做两件事：
 
-1. 在 **Main.storyboard** 将 view 设置为 landscape 而不是 portrait。
+1. 在 **Main.storyboard** 将视图设置为 landscape 而不是 portrait。
 2. 更改应用程序的 **Supported Device Orientations**（支持的设备方向）设置。
 
 ➤ 在 Interface Builder 中打开 **Main.storyboard**。在 **View as: iPhone SE** 面板中，将 **Orientation** 更改为 lanscape：
@@ -860,13 +860,13 @@ showAlert 中的代码创建一个标题为 “Hello，World” 的 alert，它�
 
 这将更改 view controller 的尺寸。它会把 button 放在一个尴尬的地方。
 
-➤ 将 button 移回 view 的中心，因为有着不整洁的用户界面的程序在当下难以有一席之地。
+➤ 将 button 移回视图的中心，因为有着不整洁的用户界面的程序在当下难以有一席之地。
 
-<div align="center"><img alt="在 landscape 下的 view" src="http://imgur.com/70hdZxh.png"/></div><center>在 landscape 下的 view</center>
+<div align="center"><img alt="在 landscape 下的视图" src="http://imgur.com/70hdZxh.png"/></div><center>在 landscape 下的视图</center>
 
 <br>
 
-关心了一下 view 的布局。
+关心了一下视图的布局。
 
 ➤ 在 iPhone SE Simulator 上运行应用程序。屏幕不显示为 landscape，button 也不再位于中心。
 
@@ -954,9 +954,9 @@ Objects 可以互相看看对方的数据（在某种程度上，就像如果你
 
 ## 添加其余的 controls
 
-你的应用程序已经有了 button，但你仍需要新增其他 UI controls（也称为 “views”）。再次回到这个屏幕，这次不同的 controls 我在 views 上都给出了相应的 comments（注释）：（译者注：暂时把 views 理解为视图中的 UI 控件吧）
+你的应用程序已经有了 button，但你仍需要新增其他 UI controls（也称为视图）。再次回到这个屏幕，这次不同的 controls 我在视图上都给出了相应的 comments（注释）：（译者注：暂时把视图理解为视图中的 UI 控件吧）
 
-<div align="center"><img alt="游戏屏幕中的不同视图" src="http://imgur.com/C2mOduT.png"/></div><center>游戏屏幕中的不同 views</center>
+<div align="center"><img alt="游戏屏幕中的不同视图" src="http://imgur.com/C2mOduT.png"/></div><center>游戏屏幕中的不同视图</center>
 
 <br>
 
@@ -964,13 +964,13 @@ Objects 可以互相看看对方的数据（在某种程度上，就像如果你
 
 ➤ 通过从 Object Library 中拖动各种 controls，试着自己来重现此屏幕。你需要几个新的 buttons，labels 和一个 slider。你可以在上面的截图中看到项目应该（大致）设置多大。如果你有一些小偏差，没关系。
 
-要调整这些 views 的设置，请使用 **Attributes inspector**（属性检查器）。你可以在 Xcode 窗口右侧的 pane 中找到此检查器：
+要调整这些视图的设置，请使用 **Attributes inspector**（属性检查器）。你可以在 Xcode 窗口右侧的 pane 中找到此检查器：
 
 <div align="center"><img alt="Attributes inspector" src="http://imgur.com/dqfeAAG.png"/></div><center>Attributes inspector</center>
 
 <br>
 
-Inspector 区域显示当前选择的项目的各个方面。例如，Attributes inspector 可以更改一个 label 的 background color 或 button上文本的大小。你已经看到显示一个 button's action 的Connections inspector。随着你更熟练地使用 Interface Builder，你将使用所有这些 inspector pane 来配置 views。
+Inspector 区域显示当前选择的项目的各个方面。例如，Attributes inspector 可以更改一个 label 的 background color 或 button上文本的大小。你已经看到显示一个 button's action 的Connections inspector。随着你更熟练地使用 Interface Builder，你将使用所有这些 inspector pane 来配置视图。
 
 ➤**（i）** button 实际上是常规 button，但他的**类型**在 Attributes inspector 中被设置为了 **Info Light**（信息灯）：
 
@@ -1010,9 +1010,9 @@ Inspector 区域显示当前选择的项目的各个方面。例如，Attributes
 
 ➤ 其次，转到 storyboard，按住 Ctrl 拖动 slider 到大纲窗格中的 View Controller。放开鼠标按键，从弹出窗口中选择 **sliderMoved: **。完成！
 
-只是为了刷新内存，大纲窗格位于 Interface Builder canvas 的左侧。它显示 storyboard 的 view 的层次结构。在这里你可以看到 View Controller 包含一个跨度有场景大小般的白色视图（简称为View），它又包含你添加的 sub-views（子视图）：buttons 和 labels。
+只是为了刷新内存，大纲窗格位于 Interface Builder 画布的左侧。它显示 storyboard 的视图的层次结构。在这里你可以看到 View Controller 包含一个跨度有场景大小般的白色视图（简称为视图），它又包含你添加的 sub-views（子视图）：buttons 和 labels。
 
-<div align="center"><img alt="大纲窗格显示 storyboard 的 view 的层次结构" src="http://imgur.com/rmeKAL7.png"/></div><center>大纲窗格显示 storyboard 的 view 的层次结构</center>
+<div align="center"><img alt="大纲窗格显示 storyboard 的视图的层次结构" src="http://imgur.com/rmeKAL7.png"/></div><center>大纲窗格显示 storyboard 的视图的层次结构</center>
 
 <br>
 
@@ -2719,7 +2719,7 @@ override func viewDidLoad() {
 
 最后，你需要将 Start Over button 连接到 action method。
 
-➤ 打开 storyboard，然后从 **Start Over **button Ctrl-拖动到 **View** **Controller**。放开鼠标，从弹出框中选择 startOver。将 button 的 Touch Up Inside 事件连接到你刚刚的定义的 action。
+➤ 打开 storyboard，然后从 **Start Over** button Ctrl-拖动到 **View Controller**。放开鼠标，从弹出框中选择 startOver。将 button 的 Touch Up Inside 事件连接到你刚刚的定义的 action。
 
 ➤ 运行应用程序并玩几回合。按 Start Over，让你回到第一回合。
 
@@ -2800,7 +2800,7 @@ Xcode 将创建一个新文件并将其添加到你的项目。你可能已经�
 
 ➤ 将新 **Button** 拖动到屏幕中，并给它标题 **Close**。将它放在 vuew 底部中心的某个位置（使用蓝色指南线帮助定位）。
 
-➤ 将一个 **Text View** 拖动到 view 中，使其覆盖 button 上方的大部分空间。
+➤ 将一个 **Text View** 拖动到视图中，使其覆盖 button 上方的大部分空间。
 
 你可以在 Object Library 中找到这些组件。如果你不想滚动，可以通过在底部的字段中键入关键字来过滤组件：
 
@@ -2810,7 +2810,7 @@ Xcode 将创建一个新文件并将其添加到你的项目。你可能已经�
 
 请注意，还有一个 Text Field，它是一个单行文本组件。你正在寻找 Text View，它可以包含多行文本。
 
-将 text view 和 button 拖到 canvas 上后，应该看起来像这样：
+将 text view 和 button 拖到画布上后，应该看起来像这样：
 
 <div align="center"><img alt="Storyboard 中的 About screen" src="http://imgur.com/tZUWemz.png"/></div><center>Storyboard 中的 About screen</center>
 
@@ -2911,7 +2911,7 @@ class AboutViewController: UIViewController {
 
 <br>
 
-输入前几个字符后，Xcode 会自动完成此操作。如果没有，请仔细检查是否确实选择了 View Controller，而不是其中的一个 view。（View controller 也应该有一个蓝色边框，表示它被选中）
+输入前几个字符后，Xcode 会自动完成此操作。如果没有，请仔细检查是否确实选择了 View Controller，而不是其中的一个视图。（View controller 也应该有一个蓝色边框，表示它被选中）
 
 现在你应该能够将 Close button 连接到 action method。
 
@@ -3051,7 +3051,7 @@ Xcode 显示文件选择器。从本教程的资源中选择 Images 文件夹，
 
 让我们开始将白色 background 变成一些更奇特。
 
-➤ 打开 **Main.storyboard**。进入对 **Object Library** 并找到一个 Image View。（提示：如果你在 Object Library 底部的搜索框中键入 “image”，则会快速过滤掉所有其他 views）。
+➤ 打开 **Main.storyboard**。进入对 **Object Library** 并找到一个 Image View。（提示：如果你在 Object Library 底部的搜索框中键入 “image”，则会快速过滤掉所有其他视图）。
 
 <div align="center"><img alt="Object Library 中的 Image View control" src="http://imgur.com/REisqla.png"/></div><center>Object Library 中的 Image View control</center>
 
@@ -3067,7 +3067,7 @@ Xcode 显示文件选择器。从本教程的资源中选择 Images 文件夹，
 
 这将使 image view 覆盖整个屏幕。
 
-<div align="center"><img alt="Image View的 Size inspector 设置" src="http://imgur.com/LJV1iC6.png"/></div><center>Image View的 Size inspector 设置</center>
+<div align="center"><img alt="Image View 的 Size inspector 设置" src="http://imgur.com/LJV1iC6.png"/></div><center>Image View 的 Size inspector 设置</center>
 
 <br>
 
@@ -3078,13 +3078,13 @@ Xcode 显示文件选择器。从本教程的资源中选择 Images 文件夹，
 
 <br>
 
-现在只有一个问题：图像现在盖住了所有其他的 controls。有一个简单的解决办法; 你必须将 image view 移动到其他 views 的后面。
+现在只有一个问题：图像现在盖住了所有其他的 controls。有一个简单的解决办法; 你必须将 image view 移动到其他视图的后面。
 
 ➤ 在 Xcode 菜单栏中屏幕顶部的 **Editor** 菜单中，选择 **Arrange**（排列）**→ Send to Back**（发回）。
 
 有时 Xcode 给刁难你（它仍然有几个 bugs）。如果是，请尝试取消选择 Image View，然后再次选择它。现在 Send to Back 菜单项应该可用。（译者注：因为有时候它是灰色的不可选中）
 
-或者，在大纲窗格中拾取 image view，并将其拖动到顶部，恰好在 View 下方，以完成相同的操作。
+或者，在大纲窗格中拾取 image view，并将其拖动到顶部，恰好在视图下方，以完成相同的操作。
 
 你的界面现在应该如下所示：
 
@@ -3112,7 +3112,7 @@ Xcode 显示文件选择器。从本教程的资源中选择 Images 文件夹，
 
 ➤ 从 Attributes inspector 中单击 Shadow（阴影）项。这允许你向 label 添加微妙的 shadow。默认情况下，此 color 是透明的（也称为 “Clear Color”），因此你不会看到 shadow。使用 Color Picker，选择 pure black color that is half transparent（半透明的纯黑色），Red：0，Green：0，Blue：0，Opacity：50％。
 
-注意：有时当你更改 Color 或 Shadow 属性时，view 的 background color 也会更改。这是 Xcode 中的一个 bug。当这种情况发生时，把它重置为 Clear Color。
+注意：有时当你更改 Color 或 Shadow 属性时，视图的 background color 也会更改。这是 Xcode 中的一个 bug。当这种情况发生时，把它重置为 Clear Color。
 
 ➤ 将 **Shadow Offset**（阴影偏移）更改为 Horizontal（水平）：0，Vertical（垂直）：1。这将 shadow 置于 label 下方。
 
@@ -3333,7 +3333,7 @@ About screen 依然还有一些工作要做。
 
 ➤ 现在选择 **text view**，然后按键盘上的 **Delete** 键。没错，你现在要把它扔掉。
 
-➤ 用 **Web View** 代替原来的位置（与以前一样，你可以在 Object Library 中找到这个 view）。
+➤ 用 **Web View** 代替原来的位置（与以前一样，你可以在 Object Library 中找到这个视图）。
 
 关于 web view，顾名思义，可以显示 web pages（网页）。所有你需要做的是给它一个网站的URL。Web view object 名为 UIWebView。
 
@@ -3457,11 +3457,11 @@ Storyboard 应该看起来像在 iPad 模拟器中的应用程序，右部分切
 
 <br>
 
-此菜单可让你将 view 与场景中的其他 views 对齐。
+此菜单可让你将视图与场景中的其他视图对齐。
 
 如果你放置 background image，使原木色的圆环始终处于屏幕中心，那样看起来最好。Auto Layout 的方法是创建两个 alignment constraints（对齐约束），其中一个是 horizontal 另一个是 vertical。
 
-使用 Auto Layout 的方法是通过定义不同 views 之间的关系，即所谓的 *constraints*（约束）。运行应用程序时，UIKit 会评估这些 constraints 并计算 views 的最终布局。这可能听起来有点抽象，但你会很快看到它在实践中如何工作。
+使用 Auto Layout 的方法是通过定义不同视图之间的关系，即所谓的 *constraints*（约束）。运行应用程序时，UIKit 会评估这些 constraints 并计算视图的最终布局。这可能听起来有点抽象，但你会很快看到它在实践中如何工作。
 
 ➤ 在 **Align menu** 中，将 **Horizontally in Container** 和 **Vertically in Container** 前面的复选标记打上勾：
 
@@ -3499,7 +3499,7 @@ Storyboard 应该看起来像在 iPad 模拟器中的应用程序，右部分切
 
 Background image 现在应该居中。当然，Close button 和 web view 仍然在屏幕外面。
 
-➤ 在 storyboard 中，拖动 **Close** button，使其与 view 的中心以及底部指南对齐。
+➤ 在 storyboard 中，拖动 **Close** button，使其与视图的中心以及底部指南对齐。
 
 Interface Builder 显示一个方便的指南，蓝色虚线，靠近屏幕边缘，这对于手动对齐 objects 很有用。（你可能需要移动 web view，以使其更容易捕捉 button）
 
@@ -3519,9 +3519,9 @@ Interface Builder 现在绘制一个红色条以表示 constraint，以及一个
 
 这是一个问题：线条都应该是蓝色的，而不是红色。红色表示 constraints 有问题，通常是因为没有足够的 constraints。
 
-对于每个 view，必须始终有足够的 constraints 来定义其位置和大小。Close button 已经知道它的大小 - 你之前将其输入到 Size inspector（尺寸检查器）中 - 但是对于它的位置，只有 X 坐标（horizontal 方向对齐）的 constraint。你还需要为 Y 坐标添加 constraint。
+对于每个视图，必须始终有足够的 constraints 来定义其位置和大小。Close button 已经知道它的大小 - 你之前将其输入到 Size inspector（尺寸检查器）中 - 但是对于它的位置，只有 X 坐标（horizontal 方向对齐）的 constraint。你还需要为 Y 坐标添加 constraint。
 
-有不同类型的 constraints。到目前为止，你已经使用了 alignment constraints，但也有 “spacing” constraints（“间距”约束），可以确保两个 views 的两边保持粘合在一起，间隔一定的间距。你可以使用 Pin menu 进行 spacing constraints。
+有不同类型的 constraints。到目前为止，你已经使用了 alignment constraints，但也有 “spacing” constraints（“间距”约束），可以确保两个视图的两边保持粘合在一起，间隔一定的间距。你可以使用 Pin menu 进行 spacing constraints。
 
 ➤ 保持 **Close** button 仍然选中，单击窗口底部的 **Pin button**（固定按钮）：
 
@@ -3529,9 +3529,9 @@ Interface Builder 现在绘制一个红色条以表示 constraint，以及一个
 
 <br>
 
-此菜单可让你将 view “pin” 到其相邻 view。对于 Close button，你希望它始终保持在距离屏幕底部 20 点的地方，这样就可以将其固定。
+此菜单可让你将视图 “pin” 到其相邻视图。对于 Close button，你希望它始终保持在距离屏幕底部 20 点的地方，这样就可以将其固定。
 
-➤ 在 **Pin menu** 中，**Spacing to nearest neighbor** 部分中有四个线条表示 view 可以被固定的四边。因为你想要固定 Close button 的底部，请选择该线条使其完全变红。
+➤ 在 **Pin menu** 中，**Spacing to nearest neighbor** 部分中有四个线条表示视图可以被固定的四边。因为你想要固定 Close button 的底部，请选择该线条使其完全变红。
 
 <div align="center"><img alt="红色的线条决定了被锁定的两边" src="http://imgur.com/pAh68ws.png"/></div><center>红色的线条决定了被锁定的两边</center>
 
@@ -3545,11 +3545,11 @@ Interface Builder 现在绘制一个红色条以表示 constraint，以及一个
 
 如果你还看不到蓝色的线条，而且看到橙色的线条，那么你的 Auto Layout constraints 仍然有问题：
 
-<div align="center"><img alt="Views 不是根据 constraints 定位的" src="http://imgur.com/h7Ud7Rk.png"/></div><center>Views 不是根据 constraints 定位的</center>
+<div align="center"><img alt="视图不是根据 constraints 定位的" src="http://imgur.com/h7Ud7Rk.png"/></div><center>视图不是根据 constraints 定位的</center>
 
 <br>
 
-这发生在 constraints 有效（否则条将是红色），但是 view 不在场景中的正确位置。在旁边的橙色的虚线框是 Auto Layout 已经计算出的 view，而不是根据你给出的 constraints 得到的。
+这发生在 constraints 有效（否则条将是红色），但是视图不在场景中的正确位置。在旁边的橙色的虚线框是 Auto Layout 已经计算出的视图，而不是根据你给出的 constraints 得到的。
 
 要解决此问题，请再次选择 **Close** button，然后从 **Resolve Auto Layout Issues** 菜单中选择 **Update Frames**：
 
@@ -3559,11 +3559,11 @@ Interface Builder 现在绘制一个红色条以表示 constraint，以及一个
 
 无论你是在 3.5 英寸还是 4 英寸 Simulator 上，Close button 现在应始终完美居中。
 
-<code class="highlighter-rouge"><strong>注意：</strong>如果你不对 views 添加任何 constraints，会发生什么？在这种情况下，Xcode 会在构建应用程序时自动添加 constraints。这就是为什么你以前不需要理会这些。</code>
+<code class="highlighter-rouge"><strong>注意：</strong>如果你不对视图添加任何 constraints，会发生什么？在这种情况下，Xcode 会在构建应用程序时自动添加 constraints。这就是为什么你以前不需要理会这些。</code>
 
-`但是，这些默认 constraints 可能并不总是做你想要的。例如，他们不会自动调整 view 的大小，以适应较小的 3.5 英寸屏幕。如果你想要适应，那么你需要添加自己的 constraints。（Auto Layout 看不懂你的头脑！）`
+`但是，这些默认 constraints 可能并不总是做你想要的。例如，他们不会自动调整视图的大小，以适应较小的 3.5 英寸屏幕。如果你想要适应，那么你需要添加自己的 constraints。（Auto Layout 看不懂你的头脑！）`
 
-`只要在 view 中添加一个 constraint，Xcode 将不再为该 view 添加任何其他自动 constraints。从那时起，你负责添加足够的其他 constraint，以便 UIKit 始终知道 view 的位置和大小将是什么。`
+`只要在视图中添加一个 constraint，Xcode 将不再为该视图添加任何其他自动 constraints。从那时起，你负责添加足够的其他 constraint，以便 UIKit 始终知道视图的位置和大小将是什么。`
 
 在 About screen 中有一件事可以解决，那就是网 web view。
 
@@ -3635,21 +3635,21 @@ Preview assistant目前应该展示 3.5 寸 iPhone 4S。如果没有，请执行
 
 当然，这款游戏在 4 英寸手机上看起来有点偏差。你将通过将所有 labels，buttons 和 slider 放入新的 “container” view（容器视图）来进行修复。使用 Auto Layout，你可以将该 container view 放在屏幕中，无论屏幕大小多大。
 
-➤ 选择所有 labels，buttons 和 slider。你可以按住 ⌘ 并单击它们，但更简单的方法是转到 **大纲窗格**，单击第一个 view（对于我来说，第一个是 “Put the Bull’s Eye as close as you can to:” label），然后按住 Shfit 并点击最后一个 view（在我的情况来看，最后一个是 Hit Me button）：
+➤ 选择所有 labels，buttons 和 slider。你可以按住 ⌘ 并单击它们，但更简单的方法是转到 **大纲窗格**，单击第一个视图（对于我来说，第一个是 “Put the Bull’s Eye as close as you can to:” label），然后按住 Shfit 并点击最后一个视图（在我的情况来看，最后一个是 Hit Me button）：
 
-<div align="center"><img alt="从大纲窗格中选择 views" src="http://imgur.com/aciNS7x.png"/></div><center>从大纲窗格中选择 views</center>
+<div align="center"><img alt="从大纲窗格中选择视图" src="http://imgur.com/aciNS7x.png"/></div><center>从大纲窗格中选择视图</center>
 
 <br>
 
 你应该已经选择了除 background image view 之外的所有内容。
 
-➤ 从 Xcode 的菜单栏中，选择 **Editor → Embed In → View**。这将所选 views 放置在新的 container view 中：
+➤ 从 Xcode 的菜单栏中，选择 **Editor → Embed In → View**。这将所选视图放置在新的 container view 中：
 
-<div align="center"><img alt="Views 嵌入到新的 container view 中" src="http://imgur.com/aS1zoA1.png"/></div><center>Views 嵌入到新的 container view 中</center>
+<div align="center"><img alt="视图嵌入到新的 container view 中" src="http://imgur.com/aS1zoA1.png"/></div><center>视图嵌入到新的 container view 中</center>
 
 <br>
 
-这个新的 view 是完全白色的，这不是你最终想要的，但它确实可以更容易地添加 constraints。
+这个新的视图是完全白色的，这不是你最终想要的，但它确实可以更容易地添加 constraints。
 
 ➤ 选择新添加的 **container view** 并打开 **Pin menu**。在 **Width** 和 **Height** 前面的复选框打上勾，以便为它们制定 constraints。单击 **Add 2 Constraints** 以完成。
 
@@ -3657,10 +3657,10 @@ Preview assistant目前应该展示 3.5 寸 iPhone 4S。如果没有，请执行
 
 <br>
 
-Interface Builder 现在在 view 周围绘制几个表示 Width 和 Height constraints 的线条，但它们是红色的。不要惊慌 这只意味着还没有足够的 constraints。没问题，你会添加缺少的 constraints。
+Interface Builder 现在在视图周围绘制几个表示 Width 和 Height constraints 的线条，但它们是红色的。不要惊慌 这只意味着还没有足够的 constraints。没问题，你会添加缺少的 constraints。
 ➤ 在 container view 仍被选中的情况下，打开 **Align menu**。勾选 **Horizontally in Container** 和 **Vertically in Container**。对于 **Update Frames**，选择 **Items of New Constraints**。单击 **Add 2 Constraints**。
 
-所有的 Auto Layout 线条现在应该是蓝色， view 是完美地居中。
+所有的 Auto Layout 线条现在应该是蓝色， 视图是完美地居中。
 
 ➤ 最后，将 container view 的 **Background** color 更改为 **Clear Color**（换句话说，100% transparent）。
 
@@ -4071,7 +4071,7 @@ Xcode 必须了解你要运行应用程序的设备。这就是为什么我要�
 
 你将在本书的其余部分学到什么：
 
-**教程 2：清单**
+**教程 2：Checklists**
 
 现在，你已经了解了一切如何运作，你将要创建一个简单的待办事项列表应用程序。
 
@@ -4079,7 +4079,7 @@ Xcode 必须了解你要运行应用程序的设备。这就是为什么我要�
 
 奖励功能：使用本地通知设置提醒。
 
-**教程 3：我的位置**
+**教程 3：MyLocations**
 
 基于前两章学到的内容，本教程将进一步深入 Swift 和 iOS 框架。
 
@@ -4087,7 +4087,7 @@ Xcode 必须了解你要运行应用程序的设备。这就是为什么我要�
 
 这又许多东西！在这个课程之后，Swift 和你会相处得很好，如果你无法写出你自己的几个应用程序，我会感到惊讶。
 
-**教程 4：商店搜索**
+**教程 4：StoreSearch**
 
 移动应用程序通常需要与 Web 服务对话，这是你将在本系列的最终教程中所做的。你将制作一款时尚的应用程序，让你可以使用 HTTP requests（请求）和 JSON 在 iTunes 商店中搜索产品。
 

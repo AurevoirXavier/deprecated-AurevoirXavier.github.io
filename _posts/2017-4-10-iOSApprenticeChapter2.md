@@ -303,3 +303,183 @@ Plain 样式用于所有表示类似东西的行，例如地址簿中的每个�
 
 <br>
 
+过去，你必须投入大量的精力为你的表创建单元格，但是现在，Xcode 有一个非常方便的功能，称为 **prototype cells**（原型单元格），可让你在 Interface Builder 中设计你的单元格。
+
+➤ 打开 storyboard，单击空白单元格以选中它。
+
+<div align="center"><img alt="选择原型单元格" src="http://imgur.com/PLHAhIi.png"/></div><center>选择原型单元格</center>
+
+<br>
+
+有时可能难以确切地看出所选择的内容，因此请留意大纲窗格，以确保你选择了正确的内容。
+
+➤ 将一个 **Label** 从 Object Library 拖动到此单元格中。确保 Label 跨越单元格的整个宽度（但在侧面留些位置）。
+
+<div align="center"><img alt="将 label 添加到原型单元格" src="http://imgur.com/opYhNjX.png"/></div><center>将 label 添加到原型单元格</center>
+
+<br>
+
+除了 label，你还将在单元格的设计中添加一个勾号。复选标记由一个称为 **accessory** 的东西提供，内置视图显示在单元格的右侧。你可以从几个标准 accessory controls 中进行选择或提供自己的。
+
+➤ 再次选择 **Table View Cell**。**Attributes inspector** 内的 **Accessory** 字段设置为 **Checkmark**：
+
+<div align="center"><img alt="更改附件以获取复选标记" src="http://imgur.com/bS91awy.png"/></div><center>更改附件以获取复选标记</center>
+
+<br>
+
+（如果你没有看到此选项，请确保你选择了 Table View Cell，而不是下面的 Content View 或 Label）
+
+你的设计现在如下所示：
+
+<div align="center"><img alt="原型单元的设计：一个 label 和一个复选标记" src="http://imgur.com/zDCAxt7.png"/></div><center>原型单元的设计：一个 label 和一个复选标记</center>
+
+<br>
+
+你可能想要重新调整 label 的大小，以使其不与复选标记重叠。
+
+你还需要在单元格上设置 **reuse identifier**（重用标识符）。这是一个内部名称，table view 用于查找自由单元格以便在行滚动屏幕时重新使用，并且新行必须变得可见。
+
+该表需要将单元格分配给这些新行，并且循环现有单元格比创建新单元更有效。这种技术使得桌面视图平滑滚动。
+
+重用标识符对于何时在同一个表中显示不同类型的单元格也很重要。例如，一种类型的单元格可以具有 image 和 label，而另一种可以具有 label 和 button。你将给每个单元格类型自己的标识符，因此 table view 可以将正确的单元格分配给右侧的行。
+
+Checklists 只有一种类型的单元格，但你仍然需要给它一个标识符。
+
+➤ 将 **ChecklistItem** 类型格式化到 Table View Cell 的 **Identifier** 字段中（你可以在 Attributes inspector 中找到它）。
+
+<div align="center"><img alt="原型单元的设计：一个 label 和复选标记" src="http://imgur.com/FDlZu2k.png"/></div><center>原型单元的设计：一个 label 和复选标记</center>
+
+<br>
+
+➤ 运行应用程序，你将看到...与以前完全相同。表格仍然是空的。
+
+你只将单元格设计添加到表中，而不是实际的行。记住单元格只是行的可视化表示，而不是实际的数据。要将数据添加到表中，你必须编写一些代码。
+
+
+##数据源
+
+➤ 前往 **ChecklistViewController.swift**，并在文件底部的闭括号之前添加以下 methods：
+
+```swift
+override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+  return 1
+}
+
+override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+
+  let cell = tableView.dequeueReusableCell( withIdentifier: "ChecklistItem", for: indexPath)
+  return cell
+}
+```
+
+这些 methods 看起来比在 Bull's Eye 中看到的复杂得多，但这是因为每个都需要两个参数，并向调用者返回一个值。除此之外，他们的工作方式与以前处理的方法相同。
+
+这 methods 特定的方法是 UITableView 的 **data source** protocol*（数据源协议）的一部分。
+
+数据源是你的数据和 table view 之间的链接。通常 view controller 起到数据源的作用，从而实现这些 methods。
+
+Table view 需要知道它有多少行数据，以及它应该如何显示这些行的每一行。但是你不能简单地将该数据转储到 table view 中，并将其完成。你不能说：“亲爱的 table view，这里是我的 100 行，现在去显示他们在屏幕上。
+
+相反，你对 table view 说：“此 view controller 现在是你的数据源。你可以随时向它提出有关数据的问题。”
+
+一旦连接到数据源 - 即你的 view controller - table view 发送 “numberOfRowsInSection” 消息来查找有多少行。
+
+而当表格视图需要在屏幕上画一个特定的行时，它会发送“cellForRowAt”消息来向数据源询问单元格。
+
+你在 iOS 中一直看到这种模式：一个 object 代表另一个 object 做某事。在这种情况下，ChecklistViewController 用于将数据提供给 table view ，但只有当 table view  要求它这么做时。
+
+<div align="center"><img alt="数据源和 table view 的约会仪式" src="http://imgur.com/5wJXEJf.png"/></div><center>数据源和 table view 的约会仪式</center>
+
+<br>
+
+你执行的 tableView(numberOfRowsInSection) - 你添加的第一个 method - 返回值为 1。这将告诉 table view，你只需要一行数据。
+
+return 声明在 Swift 中非常重要。它允许一种 method 将数据发送回其呼叫者。在 tableView(numberOfRowsInSection) 的情况下，调用者是 UITableView object，它想知道表中有多少行。
+
+Method 中的语句通常使用实例变量和通过 method 参数接收的任何数据执行某种计算。当该 method 完成后，返回说：“嘿，我已经完成了。这是我想出的答案。” 返回值通常称为 method 的 *result**（结果）。
+
+对于 tableView(numberOfRowsInSection)，答案很简单：只有一行，所以返回 1。
+
+现在 table view 知道它有一行显示，它调用你添加的第二个 method - tableView(cellForRowAt) 来获取该行的单元格。该 method 将获取原型单元格的副本，并将其返回给 table view，并返回一个返回语句。
+
+在 tableView(cellForRowAt) 中，通常将行数据放入单元格中，但是应用程序还没有任何行数据。
+
+➤ 运行应用程序，你将看到表中有一个单元格：
+
+<div align="center"><img alt="该表现在有一行" src="http://imgur.com/dQz02YN.png"/></div><center>该表现在有一行</center>
+
+<br>
+
+注意 iPhone 的状态栏如何与 table view 部分重叠。状态栏没有自己的单独区域，而是简单地绘制在所有内容之上。在本教程的后面，你将通过在 table view 的顶部放置导航栏来修复这个小的问题。
+
+**练习：**修改应用程序，让它显示五行。
+
+这应该不是很难：
+
+```swift
+override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+  return 5
+}
+```
+
+如果你有兴趣进入 storyboard，并重复原型单元格五次，那么你会将单元格与行混淆。
+
+当您使 tableView(numberOfRowsInSection) 返回数字 5 时，你会告诉 table view 将有五行。
+
+Table view 然后发送 “cellForRowAt” 消息五次，每行一次。因为 tableView(cellForRowAt) 目前只是返回原型单元格的副本，所以你的 table view 显示了五个相同的行：
+
+<div align="center"><img alt="该表现在有五个相同的行" src="http://imgur.com/PBj9anu.png"/></div><center>该表现在有五个相同的行</center>
+
+<br>
+
+有几种方法可以在 tableView(cellForRowAt) 中创建单元格，但到目前为止，最简单的方法就是在这里完成：
+
+1. 在 storyboard 中的 table view 中添加一个原型单元格;
+
+2. 在原型单元上设置重用标识符;
+
+3. 调用 tableView.dequeueReusableCell(withIdentifier)。这是一个新的副本如果需要，可以使用原型单元，或者回收不再使用的现有单元。
+
+一旦你有一个单元格，你应该填写与相应行的数据，并将其返回到 table view。这就是你将在下一节中做的。
+
+##将行数据放入单元格
+
+目前，行（或者单元格）都包含占位符文本 “Label”。让我们给每行一个不同的文字。
+
+➤ 打开 storyboard，并选择表视图单元格内的 **Label**。 转到 **Attributes inspector**，并将 **Tag**（标签）字段设置为 1000。
+
+<div align="center"><img alt="将 label 的 tag 设置为 1000" src="http://imgur.com/AEBRJzD.png"/></div><center>将 label 的 tag 设置为 1000</center>
+
+<br>
+
+*Tag* 是一个数字标识符，你可以给 user interface control（用户界面控件）添加，以便以后轻松查找。 为什么数字 1000？没有特别的原因。它应该是除 0 之外的东西，因为这是所有 tags 的默认值。1000 可以是任何一个数字。
+
+仔细检查以确保在 *Label* 上设置 tag，而不是在 Table View Cell 或其 Content View 上。将 tag 设置在错误的视图上是一个常见的错误，然后结果将不会是你想要的！
+
+➤ 在 **ChecklistViewController.swift** 中，将 tableView(cellForRowAt) 更改为以下内容：
+
+```swift
+override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+
+  let cell = tableView.dequeueReusableCell( withIdentifier: "ChecklistItem", for: indexPath)
+
+  let label = cell.viewWithTag(1000) as! UILabel
+
+  if indexPath.row == 0 { 
+    label.text = "Walk the dog"
+  } else if indexPath.row == 1 {
+    label.text = "Brush my teeth"
+  } else if indexPath.row == 2 {
+    label.text = "Learn iOS development" 
+  } else if indexPath.row == 3 {
+    label.text = "Soccer practice"
+  } else if indexPath.row == 4 {
+    label.text = "Eat ice cream" 
+  }
+
+  return cell
+}
+```
+
+你已经看到了第一行。这样就可以获得原型单元格的一个副本，不管是新的还是再循环的，并将其放入名为 cell 的 local constant 中：
+

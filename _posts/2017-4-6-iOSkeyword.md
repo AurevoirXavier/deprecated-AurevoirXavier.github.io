@@ -12,9 +12,9 @@ comments: true
 |         Storyboard          |     Interface Builder     |
 | :-------------------------: | :-----------------------: |
 |           **故事板**           |         **界面构造器**         |
-|       **Table views**       | **Navigation controller** |
+|       **Table view**       | **Navigation controller** |
 |           **表视图**           |         **导航控制器**         |
-|        **Delegates**        |     **Core Location**     |
+|        **Delegate**        |     **Core Location**     |
 |           **代理**            |         **核心位置**          |
 |        **Core Data**        |        **Map Kit**        |
 |          **核心数据**           |         **地图工具包**         |
@@ -22,8 +22,8 @@ comments: true
 |        **单一视图应用程序**         |         **导航区域**          |
 |    **Project Navigator**    |    **Utilities pane**     |
 |          **项目导航器**          |        **实用程序窗格**         |
-|     **View controller**     |         **Scene**         |
-|          **视图控制器**          |          **场景**           |
+|     **View controller**     |         **Identity inspector**         |
+|          **视图控制器**          |          **身份检查器**           |
 |     **Object Library**      |        **Control**        |
 |           **对象库**           |          **控件**           |
 |      **Outline pane**       | **Connections inspector** |

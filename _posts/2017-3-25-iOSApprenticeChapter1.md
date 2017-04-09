@@ -442,11 +442,11 @@ Xcode 窗口的左侧被命名为 **Navigator Area**（导航区域）。顶部�
 
 这是你的应用程序的 storyboard（故事板）。storyboard 包含应用程序所有的屏幕设计，并显示应用程序是如何从一个屏幕到另一个屏幕，通过一个大箭头。
 
-目前，storyboard 只包含一个屏幕或 scene（场景），由 Interface Builder Canvas（画布）中间的一个矩形表示。
+目前，storyboard 只包含一个屏幕或场景，由 Interface Builder Canvas（画布）中间的一个矩形表示。
 
 <code class="highlighter-rouge"><strong>注意：</strong>如果你没有看到标记为 “View Controller”（视图控制器） 的矩形，眼前只有一个空白的 Canvas，则使用鼠标或触控板滚动 storyboard。相信我，它一定在某处！还要确保你的 Xcode 窗口足够大。因为 Interface Builder 占用了很多空间…</code>
 
-该 scene 目前有一部 iPhone 6s 或 iPhone 7 的大小。为了保持清爽简洁，你会首先为 iPhone SE 设计一个稍小的屏幕的应用程序。稍后你将会让这款应用程序也是配更大的 iPhone 6s，7 和 Plus。
+该场景目前有一部 iPhone 6s 或 iPhone 7 的大小。为了保持清爽简洁，你会首先为 iPhone SE 设计一个稍小的屏幕的应用程序。稍后你将会让这款应用程序也是配更大的 iPhone 6s，7 和 Plus。
 
 ➤ 在 Interface Builder 窗口底部，单击 **View as**（查看为）**：iPhone 6s** 以打开打开以下面板：
 
@@ -474,9 +474,9 @@ Xcode 窗口的左侧被命名为 **Navigator Area**（导航区域）。顶部�
 
 滚动 Object Library 列表中的项，直到看到 button。
 
-➤ 将 button 拖动到位于工作区域的 scene 的矩形的顶部。
+➤ 将 button 拖动到位于工作区域的场景的矩形的顶部。
 
-<div align="center"><img alt="拖动 button 到 scene 顶部" src="http://imgur.com/lbNySmJ.png"/></div><center>拖动 button 到 scene 顶部</center>
+<div align="center"><img alt="拖动 button 到场景顶部" src="http://imgur.com/lbNySmJ.png"/></div><center>拖动 button 到场景顶部</center>
 
 <br>
 
@@ -984,7 +984,7 @@ Inspector 区域显示当前选择的项目的各个方面。例如，Attributes
 
 <br>
 
-完成后，你的 scene 中应该有 12 个用户界面元素：一个 slider，三个 buttons 和一大堆 labels。很棒。
+完成后，你的场景中应该有 12 个用户界面元素：一个 slider，三个 buttons 和一大堆 labels。很棒。
 
 ➤ 运行应用程序并玩上一分钟。这些 controls 并没有做太多的事情（除了应该弹出 alert 的那个 button），但你至少可以拖动 slider。
 
@@ -1010,7 +1010,7 @@ Inspector 区域显示当前选择的项目的各个方面。例如，Attributes
 
 ➤ 其次，转到 storyboard，按住 Ctrl 拖动 slider 到 Outline pane 中的 View Controller。放开鼠标按键，从弹出窗口中选择 **sliderMoved: **。完成！
 
-只是为了刷新内存，Outline pane 位于 Interface Builder canvas 的左侧。它显示 storyboard 的 view 的层次结构。在这里你可以看到 View Controller 包含一个跨度有 scene 大小般的白色视图（简称为View），它又包含你添加的 sub-views（子视图）：buttons 和 labels。
+只是为了刷新内存，Outline pane 位于 Interface Builder canvas 的左侧。它显示 storyboard 的 view 的层次结构。在这里你可以看到 View Controller 包含一个跨度有场景大小般的白色视图（简称为View），它又包含你添加的 sub-views（子视图）：buttons 和 labels。
 
 <div align="center"><img alt="Outline pane 显示 storyboard 的 view 的层次结构" src="http://imgur.com/rmeKAL7.png"/></div><center>Outline pane 显示 storyboard 的 view 的层次结构</center>
 
@@ -1022,7 +1022,7 @@ Inspector 区域显示当前选择的项目的各个方面。例如，Attributes
 
 <br>
 
-连接 slider 时，确保按住 Ctrl 键拖动到 View Controller（带有黄色图标），而不是 View Controller Scene（灰色图标）。如果没有看到黄色图标，请单击 View Controller Scene 前的箭头将其展开。
+连接 slider 时，确保按住 Ctrl 键拖动到 View Controller（带有黄色图标），而不是 View Controller场景（灰色图标）。如果没有看到黄色图标，请单击 View Controller场景前的箭头将其展开。
 
 如果一切顺利，sliderMoved: action 现在挂钩到滑块的 Value Changed 事件。这意味着sliderMoved() method 将在每次用户向左或向右拖动 slider 时调用。
 
@@ -2788,7 +2788,7 @@ Xcode 将创建一个新文件并将其添加到你的项目。你可能已经�
 
 要设计这个新的 view controller，你需要访问 Interface Builder。
 
-➤ 打开 **Main.storyboard**。没有任何表示关于 view controller 的 scene，因此你必须先添加它。
+➤ 打开 **Main.storyboard**。没有任何表示关于 view controller 的场景，因此你必须先添加它。
 
 ➤ 从 **Object Librart** 中，选择 **View Controller** 并将其拖动到主 View Controller 右侧的 canvans 中。
 
@@ -2891,7 +2891,7 @@ class AboutViewController: UIViewController {
 
 别忘了，你还有一个最后一步，连接 Close button Touch Up Inside 事件到这个新的关 close action。
 
-➤ 打开 storyboard 并按住 Ctr l键从 **Close** button 拖动到 About scene 的 View Controller。嗯，奇怪，关闭动作应该列在这个弹出窗口，但没有。相反，你看到的弹出窗口，和之前你做 segue 时相同：
+➤ 打开 storyboard 并按住 Ctr l键从 **Close** button 拖动到 About场景的 View Controller。嗯，奇怪，关闭动作应该列在这个弹出窗口，但没有。相反，你看到的弹出窗口，和之前你做 segue 时相同：
 
 <div align="center"><img alt="Close action 不会在弹出窗口中列出" src="http://imgur.com/iDWveR6.png"/></div><center>Close action 不会在弹出窗口中列出</center>
 
@@ -2899,11 +2899,11 @@ class AboutViewController: UIViewController {
 
 **练习：**奖励积分，如果你能发现错误。这是一个非常常见的，令人沮丧的！- 错误。
 
-问题是，storyboard 中的这个 scene 还不知道它自己代表 AboutViewController。
+问题是，storyboard 中的这个场景还不知道它自己代表 AboutViewController。
 
 你首先添加了 AboutViewController.swift 源文件，然后将一个新的 view controller 拖到 storyboard 中，但是你没有告诉 storyboard，这个新的 view controller 的设计实际上属于 AboutViewController。（这就是为什么在 outline pane 中只是说 View Controller 而不是 About View Controller）
 
-➤ 幸运的是，这很容易补救。在 Interface Builder 中，选择 About scene 的 **View Controller**，然后转到 **Indentity inspector**（即 Attributes inspector 左侧的按钮）。
+➤ 幸运的是，这很容易补救。在 Interface Builder 中，选择 About场景的 **View Controller**，然后转到 **Indentity inspector**（即 Attributes inspector 左侧的按钮）。
 
 ➤ 在 **Custom Class** 下，键入 **AboutViewController**。
 
@@ -2939,7 +2939,7 @@ class AboutViewController: UIViewController {
 
 **inspector** 并在 **Simulated Metrics** 下将 **Status Bar**（状态栏）设置为 **None**（无）。
 
-这会从 storyboard 中删除状态栏（你应该会看到电池图标从两个 scenes 的右上角消失）。
+这会从 storyboard 中删除状态栏（你应该会看到电池图标从两个场景的右上角消失）。
 
 <div align="center"><img alt="从 view controller 中删除状态栏" src="http://imgur.com/REb6MTo.png"/></div><center>从 view controller 中删除状态栏</center>
 
@@ -3457,7 +3457,7 @@ Storyboard 应该看起来像在 iPad 模拟器中的应用程序，右部分切
 
 <br>
 
-此菜单可让你将 view 与 scene 中的其他 views 对齐。
+此菜单可让你将 view 与场景中的其他 views 对齐。
 
 如果你放置 background image，使原木色的圆环始终处于屏幕中心，那样看起来最好。Auto Layout 的方法是创建两个 alignment constraints（对齐约束），其中一个是 horizontal 另一个是 vertical。
 
@@ -3473,7 +3473,7 @@ Storyboard 应该看起来像在 iPad 模拟器中的应用程序，右部分切
 
 ➤ 单击 **Add 2 Constraints** 以完成。圆环现在正确对准中间。（按几下 Undo（撤消）和 Redo（重做）查看差异）
 
-新的 alignment constraints 被绘制为穿过 scene 的蓝色条：
+新的 alignment constraints 被绘制为穿过场景的蓝色条：
 
 <div align="center"><img alt="蓝色条表示 alignment constraints" src="http://imgur.com/osq8nKx.png"/></div><center>蓝色条表示 alignment constraints</center>
 
@@ -3549,7 +3549,7 @@ Interface Builder 现在绘制一个红色条以表示 constraint，以及一个
 
 <br>
 
-这发生在 constraints 有效（否则条将是红色），但是 view 不在 scene 中的正确位置。在旁边的橙色的虚线框是 Auto Layout 已经计算出的 view，而不是根据你给出的 constraints 得到的。
+这发生在 constraints 有效（否则条将是红色），但是 view 不在场景中的正确位置。在旁边的橙色的虚线框是 Auto Layout 已经计算出的 view，而不是根据你给出的 constraints 得到的。
 
 要解决此问题，请再次选择 **Close** button，然后从 **Resolve Auto Layout Issues** 菜单中选择 **Update Frames**：
 
@@ -3591,7 +3591,7 @@ Web view 现在有四个 constraints（蓝色线条）：
 
 其中三个将 web view 固定到主视图，以便始终随其一起调整大小，并将其连接到 Close button。这足以在任何情况下确定 web view 的大小和位置。
 
-回到主要的游戏 scene，这仍然需要一些工作来适应较小的屏幕尺寸。
+回到主要的游戏场景，这仍然需要一些工作来适应较小的屏幕尺寸。
 
 首先，你将通过将所有 controls 拖动到左侧来清理 storyboard，以便整齐地放置在 3.5 英寸的屏幕上。这在 3.5 英寸模式中有点棘手，因为一些 buttons 和 labels 位于可见区域之外，因此无法选择它们并移动。
 
@@ -4071,15 +4071,15 @@ Xcode 必须了解你要运行应用程序的设备。这就是为什么我要�
 
 你将在本书的其余部分学到什么：
 
-**教程 2：Checklists**
+**教程 2：清单**
 
-现在，你已经了解了一切如何运作，你将要创建一个基本的 to-do list（待办事项列表）应用程序。
+现在，你已经了解了一切如何运作，你将要创建一个简单的待办事项列表应用程序。
 
-你将了解 table views，navigation controllers，delegates 和保存数据。你还将发现所有 iOS 应用程序使用的基本设计模式，并且 Swift 语言逐渐开始对你有意义。
+你将了解 table views，navigation controllers，delegates 和保存数据。你还将发现所有 iOS 应用程序使用的基本设计模式，并且要越来越多地和 Swift 打交道。
 
 奖励功能：使用本地通知设置提醒。
 
-**教程 3：MyLocations**
+**教程 3：我的位置**
 
 基于前两章学到的内容，本教程将进一步深入 Swift 和 iOS 框架。
 
@@ -4087,7 +4087,7 @@ Xcode 必须了解你要运行应用程序的设备。这就是为什么我要�
 
 这又许多东西！在这个课程之后，Swift 和你会相处得很好，如果你无法写出你自己的几个应用程序，我会感到惊讶。
 
-**教程 4：StoreSearch**
+**教程 4：商店搜索**
 
 移动应用程序通常需要与 Web 服务对话，这是你将在本系列的最终教程中所做的。你将制作一款时尚的应用程序，让你可以使用 HTTP requests（请求）和 JSON 在 iTunes 商店中搜索产品。
 

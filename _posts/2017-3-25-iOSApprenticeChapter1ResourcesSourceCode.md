@@ -12,6 +12,8 @@ comments: true
 
 <center><strong>所有资料已上传至 GitHub，点击上方即可进入。</strong></center>
 
+<br>
+
 <center><strong>梦想无大小之分，一切努力都应被尊重。</strong></center>
 
 <div align="center"><img alt="梦想无大小之分，一切努力都应被尊重。" src="http://imgur.com/N5GTjdK.gif"/></div>

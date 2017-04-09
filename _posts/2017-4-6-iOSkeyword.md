@@ -26,8 +26,8 @@ comments: true
 |          **视图控制器**          |          **身份检查器**           |
 |     **Object Library**      |        **Control**        |
 |           **对象库**           |          **控件**           |
-|      **Outline pane**       | **Connections inspector** |
-|          **大纲窗格**           |         **连接检查器**         |
+|      **Scene**       | **Connections inspector** |
+|          **场景**           |         **连接检查器**         |
 |     **Issue navigator**     |       **Portrait**        |
 |          **问题导航器**          |          **竖屏**           |
 |  **Attributes inspector**   |      **Orientation**      |

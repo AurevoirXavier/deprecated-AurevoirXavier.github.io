@@ -340,7 +340,7 @@ Xcode 在启动时显示 “欢迎使用 Xcode”：
 - Languages（语言）：**Swift**
 - Devices（设备）：**iPhone**
 
-确保未选中底部的三个选项 - Use Core Data（使用 Core Data），Include Unit Tests（包括单元测试）和 Include UI Tests（包括 UI 测试）。你将不会在这个项目中使用这些。
+确保未选中底部的三个选项 - Use Core Data（使用核心数据），Include Unit Tests（包括单元测试）和 Include UI Tests（包括 UI 测试）。你将不会在这个项目中使用这些。
 
 ➤ 按 **Next**（下一步）。现在 Xcode 会询问你在哪里保存你的项目：
 
@@ -585,15 +585,15 @@ class ViewController: UIViewController {
 
 ➤ 单击 **Main.storyboard** 返回到 Interface Builder。
 
-左边应该有一个 pane，即 **Outline pane**（大纲窗格），其中列出了所有项目，你的 storyboard 中的。如果没有看到该 pane，请单击 Interface Builder canvas 左下角的小切换按钮以显示它。
+左边应该有一个窗格，即**大纲窗格**，其中列出了所有项目，你的 storyboard 中的。如果没有看到该 pane，请单击 Interface Builder canvas 左下角的小切换按钮以显示它。
 
-<div align="center"><img alt="用来显示 Outline pane 的按钮" src="http://imgur.com/uThAxbE.png"/></div><center>用来显示 Outline pane 的按钮</center>
+<div align="center"><img alt="用来显示大纲窗格的按钮" src="http://imgur.com/uThAxbE.png"/></div><center>用来显示大纲窗格的按钮</center>
 
 <br>
 
 ➤ 单击 **Hit Me** button 将其选中。
 
-选中 “Hit Me” button 后，按住 Ctrl 键，单击 button 并向上拖动到 Outline pane 中的 View Controller 项。你应该会看到 button 和 View Controller 之间出现一条蓝线。
+选中 “Hit Me” button 后，按住 Ctrl 键，单击 button 并向上拖动到大纲窗格中的 View Controller 项。你应该会看到 button 和 View Controller 之间出现一条蓝线。
 
 （如果你不想按住 Ctrl，你也可以右键单击和拖动，但在开始拖动之前，请不要放开鼠标按键）
 
@@ -716,7 +716,7 @@ showAlert 中的代码创建一个标题为 “Hello，World” 的 alert，它�
 
 在这一点上，将会有一些体会关于应用程序的背后到底发生了什么。
 
-应用程序本质上由可以向彼此发送消息的 **objects** 组成。你的应用程序中的许多 objects 由iOS提供，例如 button（UIButton 对象）和 alert 弹出窗口（UIAlertController 对象）。对于一些 objects，你必须自己编程，如 view controller。
+应用程序本质上由可以向彼此发送消息的 **objects** 组成。你的应用程序中的许多 objects 由iOS提供，例如 button（UIButton object）和 alert 弹出窗口（UIAlertController object）。对于一些 objects，你必须自己编程，如 view controller。
 
 这些 objects 通过将消息传递给彼此进行通信。当用户点击应用程序中的 “Hit Me” button 时，例如，该 UIButton object 发送消息到你的 view controller。view controller 可以通知更多的 objects。
 
@@ -724,13 +724,13 @@ showAlert 中的代码创建一个标题为 “Hello，World” 的 alert，它�
 
 听起来很奇怪，一个应用程序花大部分时间做… 什么没有。它只是坐在那里等待某事件发生。当用户点击屏幕时，应用程序弹出几毫秒的动作，然后它再次回到睡眠，直到迎来下一个事件。
 
-在此方案中你所做的部分就是，由你编写的源代码将在对象接收到此类事件的消息时执行。
+在此方案中你所做的部分就是，由你编写的源代码将在 object 接收到此类事件的消息时执行。
 
 在应用程序中，button 的 Touch Up Inside 事件连接到 view controller 的 showAlert action。所以当 button 识别它已被轻敲时，它发送 showAlert 消息到你的 view controller。
 
 在 showAlert 内部，view controller 发送另一个消息，addAction 到 UIAlertController 的 object。为了显示 alert，view controller 发送当前消息。
 
-你的整个应用程序将由以这种方式来通信的对象所组成。
+你的整个应用程序将由以这种方式来通信的 object 所组成。
 
 <div align="center"><img alt="应用中事件的一般流程" src="http://imgur.com/peQXMv5.png"/></div><center>应用中事件的一般流程</center>
 
@@ -899,7 +899,7 @@ showAlert 中的代码创建一个标题为 “Hello，World” 的 alert，它�
 
 Swift 是一种所谓的 “object-oriented” 编程语言，这意味着你做的大多数事情的时候都涉及到某种东西。我已经反复提了几次，一个应用程序包含着能彼此发送消息的 objects。
 
-编写 iOS 应用程序时，将使用系统为你提供的 objects，例如 UIKit 中的 UIButton object，并且你将创建自己的对象，例如 view controller。
+编写 iOS 应用程序时，将使用系统为你提供的 objects，例如 UIKit 中的 UIButton object，并且你将创建自己的 object ，例如 view controller。
 
 那么 object 究竟 *是* 什么呢？想像一个 object 作为你的程序的构建块。（译者注：金字塔上的石块，积木建筑中的积木块）
 
@@ -911,12 +911,12 @@ Swift 是一种所谓的 “object-oriented” 编程语言，这意味着你做
 
 该项目还有一个名为 AppDelegate 的 object，不过你将在此课程中忽略它（但如果你好奇，可以随意查看它的源文件）。这些 objects 无处不在！
 
-一个 object 可以具有 data 和 functionality（功能）：
+一个 object 可以具有数据和 functionality（功能）：
 
-- 举个说明 data 的例子，就是你之前添加到 view controller 的 Hit Me button。当你将 button 拖到 storyboard 中时，实际上那一刻它成为了 view controller 的 data 中的一部分。data 包含内容。在这种情况下，view controller 包含 button。
+- 举个说明数据的例子，就是你之前添加到 view controller 的 Hit Me button。当你将 button 拖到 storyboard 中时，实际上那一刻它成为了 view controller 的数据中的一部分。数据包含内容。在这种情况下，view controller 包含 button。
 - 关于 functionality 的一个例子就是，你添加用来响应 button 上的轻击的 showAlert action。functionality 用来 *做* 某事。
 
-button 本身也有 data 和 functionality。button data 的例子就是，它的标签的文本和 color，它在屏幕上的位置，宽度和高度等。该 button 还具有 functionality：它可以识别用户点击它，并将触发一个动作作为响应。
+button 本身也有数据和 functionality。button 数据的例子就是，它的标签的文本和 color，它在屏幕上的位置，宽度和高度等。该 button 还具有 functionality：它可以识别用户点击它，并将触发一个动作作为响应。
 
 为 object 提供 functionality 的东西通常称为 *method*。其他编程语言可以将其称为 “procedure”（过程）或 “subroutine”（子程序）或 “function”（函数）。你还将看到 Swift 中使用的术语function; 一个 method 只是一个属于一个 object 的 function，一对多的关系。
 
@@ -942,15 +942,15 @@ Method 的概念可能仍然有点怪异，所以这里有一个例子：
 
 当他的 method 完成后，计算机返回你的 throwParty() method，并继续，所以你和你的朋友可以吃史蒂夫带回来的冰淇淋。
 
-名为 Steve 的 object 也有 data。在他去商店之前，他有钱。在商店，他交换这些钱 data 为其他，更重要的 data：冰淇淋！做完这个交易后，他把冰淇淋的 data 带到了派对上（如果他一直吃着它，你的程序有一个 bug）。
+名为 Steve 的 object 也有数据。在他去商店之前，他有钱。在商店，他交换这些钱的数据为其他，更重要的数据：冰淇淋！做完这个交易后，他把冰淇淋的数据带到了派对上（如果他一直吃着它，你的程序有一个 bug）。
 
 “发送消息” 听起来比它原本的意思更难懂。但这是一个很好的方式来思考 objects 如何沟通，但其中真的没有任何鸽子或邮递员参与。计算机只是从 throwParty() method 跳转到buyIceCream() method，然后再返回。
 
 通常使用术语 “calling a method”（调用方法）或 “invoking a method”（调用方法）。这意味着与发送消息完全相同的事情：计算机跳转到你调用的 method，并返回到该 method 结束时它停止的地方。
 
-重要的是要记住的是，对象有 method（涉及购买冰淇淋的步骤）和 data（实际的冰淇淋和用来买它的钱）。
+重要的是要记住的是，object 有 method（涉及购买冰淇淋的步骤）和数据（实际的冰淇淋和用来买它的钱）。
 
-Objects 可以互相看看对方的 data（在某种程度上，就像如果你偷看 Steve 的钱包， 它可能不赞成），并可以要求其他 objects 执行他们的 methods。这就是你让你的应用程序做事情。
+Objects 可以互相看看对方的数据（在某种程度上，就像如果你偷看 Steve 的钱包， 它可能不赞成），并可以要求其他 objects 执行他们的 methods。这就是你让你的应用程序做事情。
 
 ## 添加其余的 controls
 
@@ -1008,17 +1008,17 @@ Inspector 区域显示当前选择的项目的各个方面。例如，Attributes
 }	
 ```
 
-➤ 其次，转到 storyboard，按住 Ctrl 拖动 slider 到 Outline pane 中的 View Controller。放开鼠标按键，从弹出窗口中选择 **sliderMoved: **。完成！
+➤ 其次，转到 storyboard，按住 Ctrl 拖动 slider 到大纲窗格中的 View Controller。放开鼠标按键，从弹出窗口中选择 **sliderMoved: **。完成！
 
-只是为了刷新内存，Outline pane 位于 Interface Builder canvas 的左侧。它显示 storyboard 的 view 的层次结构。在这里你可以看到 View Controller 包含一个跨度有场景大小般的白色视图（简称为View），它又包含你添加的 sub-views（子视图）：buttons 和 labels。
+只是为了刷新内存，大纲窗格位于 Interface Builder canvas 的左侧。它显示 storyboard 的 view 的层次结构。在这里你可以看到 View Controller 包含一个跨度有场景大小般的白色视图（简称为View），它又包含你添加的 sub-views（子视图）：buttons 和 labels。
 
-<div align="center"><img alt="Outline pane 显示 storyboard 的 view 的层次结构" src="http://imgur.com/rmeKAL7.png"/></div><center>Outline pane 显示 storyboard 的 view 的层次结构</center>
+<div align="center"><img alt="大纲窗格显示 storyboard 的 view 的层次结构" src="http://imgur.com/rmeKAL7.png"/></div><center>大纲窗格显示 storyboard 的 view 的层次结构</center>
 
 <br>
 
-请记住，如果你看不到 Outline pane，请单击底部的小图标以显示它：
+请记住，如果你看不到大纲窗格，请单击底部的小图标以显示它：
 
-<div align="center"><img alt="控制 Outline pane 显示或隐藏的按钮" src="http://imgur.com/ygdFlFs.png"/></div><center>控制 Outline pane 显示或隐藏的按钮</center>
+<div align="center"><img alt="控制大纲窗格显示或隐藏的按钮" src="http://imgur.com/ygdFlFs.png"/></div><center>控制大纲窗格显示或隐藏的按钮</center>
 
 <br>
 
@@ -1096,9 +1096,9 @@ String 中的 \\(…) 之间的任何内容都是特殊的。print() 语句使�
 
 让我们改进此 action method，并使其在 alert 弹出窗口中显示 slider 的值。那么如何获得 slider 的值到 showAlert() ？
 
-当你读取 sliderMoved() 中的 slider 的值时，那条 data 会消失（译者注：data 指 slider 的值，好比有一座图书馆，里面的书都没有名字，你想找你上次看过的那一本书），在 action method 结束时。如果你可以记住这个值并保存直到用户点击 Hie Me button 时，那将非常有用。
+当你读取 sliderMoved() 中的 slider 的值时，那条数据会消失（译者注：数据 指 slider 的值，好比有一座图书馆，里面的书都没有名字，你想找你上次看过的那一本书），在 action method 结束时。如果你可以记住这个值并保存直到用户点击 Hie Me button 时，那将非常有用。
 
-幸运的是，Swift 有一个构造块用于这个目的：变量。
+幸运的是，Swift 有一个构造块用于这个目的：variables。
 
 ➤ 打开 **ViewController.swift** 并在顶部添加以下内容，直接在下面行说 class ViewController:
 
@@ -1136,9 +1136,9 @@ class ViewController: UIViewController {
 
 通常在 method 上面添加 variables，并使用制表符或两到四个空格缩进所有内容。你使用哪一个主要是个人喜好的问题。我喜欢使用两个空格。（你可以在 Xcode 的 preference（首选项）面板中进行配置。从菜单栏中选择 Xcode → preference… → Text Editing（文本编辑），然后转到 Indentation（缩进）选项卡。
 
-记住，当我说一个 view controller，或任何 object，可以有 data 和 functionality，确实如此吗？ showAlert() 和 sliderMoved() actions 是 functionality 的示例，而 currentValue variable 是其 data 的一部分。
+记住，当我说一个 view controller，或任何 object，可以有数据和 functionality，确实如此吗？ showAlert() 和 sliderMoved() actions 是 functionality 的示例，而 currentValue variable 是其数据的一部分。
 
-一个 variable 允许应用程序记住事物。将 variable 视为单个 data 的临时存储容器。有各种各样的容器和大小，就像 data 有各种形状和大小。
+一个 variable 允许应用程序记住事物。将 variable 视为单个数据的临时存储容器。有各种各样的容器和大小，就像数据有各种形状和大小。
 
 你不只是把东西放在容器中，然后忘记它。你将经常用新的值替换其内容。当你的应用需要记住东西的变化，就好像你把箱子打开把旧值拿出来，并放入新的值。
 
@@ -1146,7 +1146,7 @@ class ViewController: UIViewController {
 
 存储容器的大小和 variables 可记住的值的类型由其 *data type*（数据类型）或只是 *type*（类型）决定。
 
-你为 currentValue variable 指定了 type Int，这意味着此容器可以保存 20 亿到 -20 亿之间的整数（也称为 “integers”）。Int 是最常见的 data types 之一，但还有很多其他的，你甚至可以自己构造一个出来。
+你为 currentValue variable 指定了 type Int，这意味着此容器可以保存 20 亿到 -20 亿之间的整数（也称为 “integers”）。Int 是最常见的数据类型之一，但还有很多其他的，你甚至可以自己构造一个出来。
 
 Variables 就像儿童的积木玩具：
 
@@ -1154,11 +1154,11 @@ Variables 就像儿童的积木玩具：
 
 <br>
 
-想法是把正确的形状放在正确的容器中。容器是 variable，它的 type 决定了什么 “形状”。形状是可能的值它可以放入变量。
+想法是把正确的形状放在正确的容器中。容器是 variable，它的 type 决定了什么 “形状”。形状是将值放入 variables 的前提。
 
 你可以稍后更改每个框的内容。例如，你可以取出蓝色正方形，并放入一个红色正方形，只要都是正方形。
 
-但是你不能在圆孔中放一个正方形：值的 data type 和 variable 的 data type 必须匹配。
+但是你不能在圆孔中放一个正方形：值的数据类型和 variable 的数据类型必须匹配。
 
 我说一个 variable 是一个临时存储容器。它会把内容保留多长时间？与肉类或蔬菜不同，如果你保持它们太长时间，variables 不会腐烂变坏 - 一个 variable 将无限期地保持它的值，直到你把一个新的值放入该 variable，或者直到你完全销毁容器。
 
@@ -1197,7 +1197,7 @@ currentValue = lroundf(slider.value)
 
 然而，如果你让玩家根据滑块的位置猜测一个这么精确带有这么多小数点的值，这个游戏会很难。这几乎不可能得到正确答案！
 
-使用整数更公平。这就是为什么 currentValue 有 data type Int，因为该 type 存储 *integers*。integers 这个名词是整数的专用术语。
+使用整数更公平。这就是为什么 currentValue 有数据类型 Int，因为该 type 存储 *integers*。integers 这个名词是整数的专用术语。
 
 你使用 function lroundf() 将十进制数舍入到最接近的整数，然后将该四舍五入的数字存储到 currentValue 中。
 
@@ -1272,7 +1272,7 @@ let message = 的行是新的。还要注意另外两个小的变化。
 
 <br>
 
-酷。你已经使用一个 variable，currentValue 来记住特定的 data 片段，slider 的四舍五入位置，以便它可以在应用程序的其他位置使用，在本例的情况下就是应用于 alert 的消息文本中。
+酷。你已经使用一个 variable，currentValue 来记住特定的数据片段，slider 的四舍五入位置，以便它可以在应用程序的其他位置使用，在本例的情况下就是应用于 alert 的消息文本中。
 
 如果你再次点按 button 而不移动 slider，则 alert 仍将显示相同的值。variable 保持其值，直到你把一个新的 variable 放进去。
 
@@ -1328,7 +1328,7 @@ override func viewDidLoad() {
 
 当你基于 Xcode 模板创建此项目时，Xcode 已经将 viewDidLoad() method 放入源代码中。你现在将添加一些代码。
 
-一旦 view controller 从 storyboard 文件加载其用户界面，viewDidLoad() 消息由 UIKit 发送。此时，view controller 还不可见，因此这是将实例 variables 设置为其正确初始值的好位置。
+一旦 view controller 从 storyboard 文件加载其用户界面，viewDidLoad() 消息由 UIKit 发送。此时，view controller 还不可见，因此这是将 instance variables 设置为其正确初始值的好位置。
 
 ➤ 将 viewDidLoad() 更改为以下内容：
 
@@ -1365,7 +1365,7 @@ Xcode 说 “Build Failed”，后面是类似：“Error: Use of unresolved ide
 
 Action methods 可以具有引用触发该 method 的 UI 控件的参数。当你希望在 method 中使用该 object 时，这就很方便的，就像你在这里所做的那样（所讨论的 object 是 UISlider）。
 
-当用户移动 slider 时，UISlider object 基本上这样说： “Hey view controller, I’m a slider object and I just got moved. By the way, here’s my phone number so you can get in touch with me.”（嘿视图控制器，我是一个滑块对象，我刚刚移动。顺便说一下，这里是我的电话号码，这样你可以与我联系）
+当用户移动 slider 时，UISlider object 基本上这样说： “Hey view controller, I’m a slider object and I just got moved. By the way, here’s my phone number so you can get in touch with me.”（嘿视 view controller，我是一个 slider object，我刚刚移动。顺便说一下，这里是我的电话号码，这样你可以与我联系）
 
 slider 参数包含此 “phone number”（电话号码），但它仅在此特定 method 的有效期内有效。
 
@@ -1378,8 +1378,8 @@ slider 参数包含此 “phone number”（电话号码），但它仅在此特
 Swift 有以下三个可能的范围级别：
 
 1. **Global scope**（全局范围）。这些目标可以从任何地方访问。
-2. **Instance scope**（实例范围）。这是说诸如 currentValue 这样的 variables。只要拥有它们的对象保持活动，这些它们就活着。
-3. **Local scope**（本地范围）。具有局部作用域的 object（例如 sliderMoved() 的 slider 参数）仅在该 method 的持续时间内存在。只要程序的执行到离开这个 method，local objects（本地变量）就不再可访问。
+2. **Instance scope**（实例范围）。这是说诸如 currentValue 这样的 variables。只要拥有它们的 objects 保持活动，这些它们就活着。
+3. **Local scope**（本地范围）。具有局部作用域的 object（例如 sliderMoved() 的 slider 参数）仅在该 method 的持续时间内存在。只要程序的执行到离开这个 method，local objects（本地对象）就不再可访问。
 
 让我们看看showAlert() 的顶部：
 
@@ -1402,7 +1402,7 @@ Swift 有以下三个可能的范围级别：
 
 换句话说，如果你想保持一个值，从一个动作事件到下一个动作事件，你应该使用 instance variables。
 
-解决方案是将 slider 的引用存储为新的 instance variable，就像你对 currentValue 所做的一样。不过现在，variable 的 data type 不是 Int，而是 UISlider。你不使用常规的 intance variable，而是使用一个特殊的形式称为 *outlet*。
+解决方案是将 slider 的引用存储为新的 instance variable，就像你对 currentValue 所做的一样。不过现在，variable 的数据类型不是 Int，而是 UISlider。你不使用常规的 intance variable，而是使用一个特殊的形式称为 *outlet*。
 
 ➤ 将以下行添加到 ViewController.swift：
 
@@ -1497,7 +1497,7 @@ override func viewDidLoad() {
 
 你仍然必须将 variable targetValue 添加到 view controller，否则 Xcode 会抱怨它不知道关于这个 variable 的任何信息。
 
-如果你不告诉编译器 targetValue 是什么样的 variable（译者注：它的 type），那么它不知道要为它分配多少存储空间，也不能检查你是否在任何地方正确地使用这个变量。
+如果你不告诉编译器 targetValue 是什么样的 variable（译者注：它的 type），那么它不知道要为它分配多少存储空间，也不能检查你是否在任何地方正确地使用这个 variable。
 
 ➤ 在 **ViewController.swift** 的顶部添加新 variable，和其他 variables 放在一起：
 
@@ -1757,7 +1757,7 @@ updateLabels() 中的代码现在对你来说应该没有什么新奇的地方�
 targetLabel.text = targetValue
 ```
 
-答案是，你不能把一种 data type 的值放入另一种 type 的 variable 中去。方形钉不适合圆孔。（译者注：好比手套穿脚上，袜子戴手上）
+答案是，你不能把一种数据类型的值放入另一种 type 的 variable 中去。方形钉不适合圆孔。（译者注：好比手套穿脚上，袜子戴手上）
 
 TargetLabel outlet 引用一个 UILabel object。UILabel object 具有一个 text 属性，它是一个 string object。你只能把 string 的值放入文本，但上面那行代码试图把 targetValue 放进去，它是一个 Int。这不可能成功，因为一个 Int 和一个 string 是两种非常不同的东西（type）。
 
@@ -1987,13 +1987,13 @@ difference = currentValue - targetValue
 
 在这里，用 currentValue（较大的一个）减去 targetValue（较小的一个），并将差值存储在 differrnce variable 中。
 
-注意我如何命名 variable，清楚地描述 variable 包含什么样的 data。大多时候你会看到如下代码：
+注意我如何命名 variable，清楚地描述 variable 包含什么样的数据。大多时候你会看到如下代码：
 
 ```swift
 a = b - c
 ```
 
-它不能立即清楚这是什么意思，除了让你知道这是一个减法运算。variable 名 “a”，“b” 和 “c” 这没有给出任何表明这些变量目的的提示。
+它不能立即清楚这是什么意思，除了让你知道这是一个减法运算。variable 名 “a”，“b” 和 “c” 这没有给出任何表明这些 variables 目的的提示。
 
 回到 if 语句。如果 currentValue 等于或小于 targetValue，则条件为 false（或计算机为假），程序将跳过代码块直到达到下一个条件：
 
@@ -2092,7 +2092,7 @@ difference = difference * -1
 
 计算机首先将差值乘以- 1。然后它把计算的结果重新区分。实际上，这将用正数覆盖 difference 的旧内容（负数）。
 
-因为这是一个常见的事情（用变量本身加减乘除另一个数），所以有一个方便的捷径：
+因为这是一个常见的事情（用 variable 本身加减乘除另一个数），所以有一个方便的捷径：
 
 ```swift
 difference *= -1
@@ -2216,7 +2216,7 @@ class ViewController: UIViewController {
 
 嘿，这是什么？ 与其他两个 instance variable 不同，你没有说明得分是 Int。
 
-如果你没有指定 data type，Swift 使用 *type inference* 来确定按照你的意思得到的是什么样的 type。因为 0 是一个整数，Swift 假定得分页应该是一个整数，因此自动给它 type Int。方便！
+如果你没有指定数据类型，Swift 使用 *type inference* 来确定按照你的意思得到的是什么样的 type。因为 0 是一个整数，Swift 假定得分页应该是一个整数，因此自动给它 type Int。方便！
 
 实际上，你不需要为其他 instance variable 指定 Int：
 
@@ -2281,7 +2281,7 @@ score = score + points
 - 转到 label 的 Connections Inspector 选项卡。从 New Referencing Outlet 到 View Controller（你对目标 label 做过同样的事情）。
 - 按住 Ctrl 从 View Controller 拖动到 label（现在尝试这个）。确保你按照这个顺序；从 label 到 view controller 的 Ctrl 拖动将不起作用。
 
-There is more than one way to skin a cat（你总是可以找到不止一种方法来做某事），呃，连接 outlet。（译者注：就是有很多种方法将视图控制器中的对象和你的代码连接起来）
+There is more than one way to skin a cat（你总是可以找到不止一种方法来做某事），呃，连接 outlet。（译者注：就是有很多种方法将 view controllers 中的 obejcts 和你的代码连接起来）
 
 干得漂亮，这给了一个 scoreLabel 一个 outlet，你可以使用把文本放入 label。现在在代码中你应该做什么？在 updateLabels() 中。
 
@@ -2314,7 +2314,7 @@ func updateLabels() {
 var round = 0
 ```
 
-如果包括 data type 的名称，也可以，即使不做严格要求：
+如果包括数据类型的名称，也可以，即使不做严格要求：
 
 ```swift
 var round: Int = 0
@@ -2487,7 +2487,7 @@ func updateLabels() {
 
 **Local bariables 概述**
 
-我想再次指出局部变量和实例变量之间的区别。正如你现在应该知道的，局部变量只存在于定义它的 method 的持续时间，而实例变量存在，只要视图控制器（拥有它的对象）存在。同样的事情对于常量也是如此。
+我想再次指出 local variables 和 instance variables 之间的区别。正如你现在应该知道的，local variables 只存在于定义它的 method 的持续时间，而 instance variables 存在，只要 view controller（拥有它的 object）存在。同样的事情对于 constants 也是如此。
 
 在 showAlert() 中，有六个 local variable，并且使用三个 instace variables：
 
@@ -2514,13 +2514,13 @@ let alert = . . .
 let action = . . .
 ```
 
-此语法创建一个新变量（var）或常量（let）。因为这些 variables 和 constants 是在 method 内创建的，所以它们是 locals。
+此语法创建一个新 variable（var）或 constant（let）。因为这些 variables 和 constants 是在 method 内创建的，所以它们是 locals。
 
-这六个项目 - difference, points, title, message, alert, 和 action - 仅限于 showAlert() method，并且不在其外部。一旦该 method 完成，本地的都不再存在。
+这六个项目 - difference, points, title, message, alert, 和 action - 仅限于 showAlert() method，并且不在其外部。一旦该 method 完成，locals 都不再存在。
 
-例如，你可能会想知道，每当玩家点击 Hit Me button 时，difference 如何，即使它是一个 constant。constants 一旦给定一个值，以后不会改变？（译者注：提前透漏一下吧，就算是常量也是可以改变的。仔细看看前一句话，一旦 method 完成，本地的常量或者变量都不再存在。所以点击 button 后，又执行了一次 method，现在的那个常量已经不再是原来那个了。想象一下你有一支笔，笔芯已经没有墨水了，你把没水的笔芯丢掉然后换了一支新的笔芯进去）
+例如，你可能会想知道，每当玩家点击 Hit Me button 时，difference 如何，即使它是一个 constant。constants 一旦给定一个值，以后不会改变？（译者注：提前透漏一下吧，就算是 constants 也是可以改变的。仔细看看前一句话，一旦 method 完成，local constants 或者 variables 都不再存在。所以点击 button 后，又执行了一次 method，现在的那个 constant 已经不再是原来那个了。想象一下你有一支笔，笔芯已经没有墨水了，你把没水的笔芯丢掉然后换了一支新的笔芯进去）
 
-这是为什么：每次调用一个 method 时，都会重新创建其局部变量和常量。旧的值早已被遗弃，你得到的是新的。
+这是为什么：每次调用一个 method 时，都会重新创建其 local variables 和 constants。旧的值早已被遗弃，你得到的是新的。
 
 当调用 showAlert() 时，它会创建一个与前一个无关的完全新的 instance difference。这个特定的 constant 值只用到 showAlert() 结束，然后再次被遗弃。
 
@@ -2555,7 +2555,7 @@ class ViewController: UIViewController {
 
 然后他们不会和你预期一样的去工作。因为你现在把 var 放在 score 的前面，你已经使它成为一个新的 local variable，它只在这个 method 中有效。
 
-换句话说，这不会向 *instance variable* 添加 points，而是添加到也被命名为 score 的新的 *local variable*。instance variable points 永远不会改变，即使它具有相同的名称。（译者注：经常会遇到本地变量和全局变量拥有相同名字，在 c++ 中 人们经常使用 this.a 表示全局变量 a，用 a 表示 method 体内的本地变量 a。不过好习惯还是不要使用这么多重复的名字）
+换句话说，这不会向 *instance variable* 添加 points，而是添加到也被命名为 score 的新的 *local variable*。instance variable points 永远不会改变，即使它具有相同的名称。（译者注：经常会遇到本地变量和全局变量拥有相同名字，在 c++ 中 人们经常使用 this.a 表示 global variable a，用 a 表示 method 体内的 local variable a。不过好习惯还是不要使用这么多重复的名字）
 
 显然，这不是你想在这里发生。幸运的是，对于上面的代码上面甚至不会进行编译。Swift knows there’s something fishy about that line（知道上面这行代码有些蹊跷，猫腻）。
 
@@ -2563,7 +2563,7 @@ class ViewController: UIViewController {
 
 `他们将命名 variable 为 _score而不是 score。现在看起来好多了，因为以下划线开头的名字不会被误认为是 locals。这只是一个惯例。Swift 不关心一种方式，也不关心你如何拼写你的实 instance variables。（译者注：就是不做硬性要求，无论你怎么命名都不会影响编译器的编译）`
 
-`其他程序员使用不同的前缀，例如 “m”（member 成员）或 “f”（filed 字段）目的是一样的。有些甚至把下划线放在变量名后面。疯狂！`
+`其他程序员使用不同的前缀，例如 “m”（member 成员）或 “f”（filed 字段）目的是一样的。有些甚至把下划线放 variable 名后面。疯狂！`
 
 ## 等待 alert 消失
 
@@ -2901,7 +2901,7 @@ class AboutViewController: UIViewController {
 
 问题是，storyboard 中的这个场景还不知道它自己代表 AboutViewController。
 
-你首先添加了 AboutViewController.swift 源文件，然后将一个新的 view controller 拖到 storyboard 中，但是你没有告诉 storyboard，这个新的 view controller 的设计实际上属于 AboutViewController。（这就是为什么在 outline pane 中只是说 View Controller 而不是 About View Controller）
+你首先添加了 AboutViewController.swift 源文件，然后将一个新的 view controller 拖到 storyboard 中，但是你没有告诉 storyboard，这个新的 view controller 的设计实际上属于 AboutViewController。（这就是为什么在大纲窗格中只是说 View Controller 而不是 About View Controller）
 
 ➤ 幸运的是，这很容易补救。在 Interface Builder 中，选择 About场景的 **View Controller**，然后转到 **Indentity inspector**（即 Attributes inspector 左侧的按钮）。
 
@@ -2915,7 +2915,7 @@ class AboutViewController: UIViewController {
 
 现在你应该能够将 Close button 连接到 action method。
 
-➤ 在 outline pane 中，从 **Close** button 按住 Ctrl 向左拖动到 **About view Controller**。这应该是老一套了。弹出菜单现在有 close action 的选项（在已发送事件下）。将 button 连接到该 action。
+➤ 在大纲窗格中，从 **Close** button 按住 Ctrl 向左拖动到 **About view Controller**。这应该是老一套了。弹出菜单现在有 close action 的选项（在已发送事件下）。将 button 连接到该 action。
 
 ➤ 再次运行应用程序。你现在应该可以从 About screen 返回。
 
@@ -3084,7 +3084,7 @@ Xcode 显示文件选择器。从本教程的资源中选择 Images 文件夹，
 
 有时 Xcode 给刁难你（它仍然有几个 bugs）。如果是，请尝试取消选择 Image View，然后再次选择它。现在 Send to Back 菜单项应该可用。（译者注：因为有时候它是灰色的不可选中）
 
-或者，在 outline pane 中拾取 image view，并将其拖动到顶部，恰好在 View 下方，以完成相同的操作。
+或者，在大纲窗格中拾取 image view，并将其拖动到顶部，恰好在 View 下方，以完成相同的操作。
 
 你的界面现在应该如下所示：
 
@@ -3364,7 +3364,7 @@ class AboutViewController: UIViewController {
 }
 ```
 
-➤ 在 storyboard 文件中，将 UIWebView 元素连接到此新 outlet。最简单的方法是按住 Ctrl 从 **About View Controller**（在 Outline pane 中）拖动到 **Web View**。
+➤ 在 storyboard 文件中，将 UIWebView 元素连接到此新 outlet。最简单的方法是按住 Ctrl 从 **About View Controller**（在大纲窗格中）拖动到 **Web View**。
 
 （如果你反过来，从 Web View 到 About View Controller，那么你会连接错误的东西，当你运行应用程序时，web view 将保持空白）
 
@@ -3387,7 +3387,7 @@ override func viewDidLoad() {
 
 这会将本地 HTML 文件加载到 web view 中。
 
-源代码可能看起来很可怕，但发生的事情不是那么复杂：首先在应用程序包中找到 **BullsEye.html** 文件，然后将其加载到一个 Data object 中，最后它要求 web view 显示 data object 的内容。
+源代码可能看起来很可怕，但发生的事情不是那么复杂：首先在应用程序包中找到 **BullsEye.html** 文件，然后将其加载到一个数据 object 中，最后它要求 web view 显示数据 object 的内容。
 
 ➤ 运行应用程序，然后按 info（信息）button。About screen 应显示游戏规则的说明，这次以 HTML 文档的形式显示：
 
@@ -3479,9 +3479,9 @@ Storyboard 应该看起来像在 iPad 模拟器中的应用程序，右部分切
 
 <br>
 
-在 Outline pane 中还有一个名为 **Constraints** 的项：
+在大纲窗格中还有一个名为 **Constraints** 的项：
 
-<div align="center"><img alt="新的 Auto Layout constraints 显示在 Outline pane 中" src="http://imgur.com/Wx700nS.png"/></div><center>新的 Auto Layout constraints 显示在 Outline pane 中</center>
+<div align="center"><img alt="新的 Auto Layout constraints 显示在大纲窗格中" src="http://imgur.com/Wx700nS.png"/></div><center>新的 Auto Layout constraints 显示在大纲窗格中</center>
 
 <br>
 
@@ -3611,7 +3611,7 @@ Web view 现在有四个 constraints（蓝色线条）：
 
 屏幕现在分为两部分。左边是 storyboard; 右侧是一个 preview pane，显示应用程序在不同 iPhone 设备上的外观。
 
-如果你的屏幕不能看到全部东西，你可以通过使用工具栏中的按钮隐藏 navigator 和实用 utilities panes 来腾出多一些空间。你也可以折叠 Interface Builder 的 Outline pane。（或购买一个超大的 30 英寸显示器）
+如果你的屏幕不能看到全部东西，你可以通过使用工具栏中的按钮隐藏 navigator 和实用 utilities panes 来腾出多一些空间。你也可以折叠 Interface Builder 的大纲窗格。（或购买一个超大的 30 英寸显示器）
 
 Preview assistant目前应该展示 3.5 寸 iPhone 4S。如果没有，请执行以下操作：
 
@@ -3635,9 +3635,9 @@ Preview assistant目前应该展示 3.5 寸 iPhone 4S。如果没有，请执行
 
 当然，这款游戏在 4 英寸手机上看起来有点偏差。你将通过将所有 labels，buttons 和 slider 放入新的 “container” view（容器视图）来进行修复。使用 Auto Layout，你可以将该 container view 放在屏幕中，无论屏幕大小多大。
 
-➤ 选择所有 labels，buttons 和 slider。你可以按住 ⌘ 并单击它们，但更简单的方法是转到 **Outline pane**，单击第一个 view（对于我来说，第一个是 “Put the Bull’s Eye as close as you can to:” label），然后按住 Shfit 并点击最后一个 view（在我的情况来看，最后一个是 Hit Me button）：
+➤ 选择所有 labels，buttons 和 slider。你可以按住 ⌘ 并单击它们，但更简单的方法是转到 **大纲窗格**，单击第一个 view（对于我来说，第一个是 “Put the Bull’s Eye as close as you can to:” label），然后按住 Shfit 并点击最后一个 view（在我的情况来看，最后一个是 Hit Me button）：
 
-<div align="center"><img alt="从 Outline pane 中选择 views" src="http://imgur.com/aciNS7x.png"/></div><center>从 Outline pane 中选择 views</center>
+<div align="center"><img alt="从大纲窗格中选择 views" src="http://imgur.com/aciNS7x.png"/></div><center>从大纲窗格中选择 views</center>
 
 <br>
 

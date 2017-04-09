@@ -39,7 +39,7 @@ comments: true
 
 该应用程序可让你将待办事项组织到列表中，然后在完成这些项目后检查这些项目。你还可以在待办事项上设置提醒，即使应用程序未运行，iPhone 将在达到预设时间后弹出 alert。
 
-对于待办事项列表应用程序来说，**清单** 是非常基本的，但不要小看它。即使这样一个简单的应用程序也已经有五种不同的屏幕和很多 scenes 背后的复杂性。
+对于待办事项列表应用程序来说，**清单** 是非常基本的，但不要小看它。即使这样一个简单的应用程序也已经有五种不同的屏幕和很多 scenes（场景）背后的复杂性。
 
 ##Table views 和 navigation controllers
 
@@ -101,3 +101,130 @@ Navigation controllers 和 table views 通常一起使用：
 
 玩够了吗？然后让我们开始吧！
 
+<code class="highlighter-rouge"><strong>重要提示：</strong>iOS Apprentice 教程仅适用于 Xcode 8.0 和更高版本。如果你仍在使用 Xcode 7，请从 Mac App Store 更新到最新版本的 Xcode。
+
+但也不要太激进 - 通常苹果公司可以提供即将推出的 Xcode 版本的测试版本。请不要使用Xcode测试版来关注本教程。通常 beta 版本以意想不到的方式突破事件（译者注：就像 iPhone 突然没了耳机孔），你只会最终感到困惑。坚持正式版本！</code>
+
+#与 table views 一起玩耍
+
+看到 table views 是如此重要，你将从开始考察它们的工作原理。制作列表从来没有这么好玩过！
+
+因为聪明的开发人员总是会将工作分解成小而简单的步骤，这是你将在第一部分中做的：
+
+1. 在应用程序的屏幕上放置一个 table view
+2. 将数据放入该 table view
+3. 允许用户点击表中的一行来打开和关闭复选标记
+
+完成这些基础知识后，你将不断在本教程中添加新功能，直到完成应用程序。
+
+➤ 启动 Xcode 并启动新项目。选择 **Single View Application** 模板：
+
+<div align="center"><img alt="选择 Xcode 模板" src="http://imgur.com/AyQCfve.png"/></div><center>选择 Xcode 模板</center>
+
+<br>
+
+Xcode 将要求你填写以下几个选项：
+
+<div align="center"><img alt="选择模板选项" src="http://imgur.com/r6U46Ly.png"/></div><center>选择模板选项</center>
+
+<br>
+
+➤ 填写以下选项：
+
+- Product Name: **Checklists**
+
+- Team: 只需将其保留到默认设置
+
+- Organization Name: 你的姓名或公司名称
+
+- Organization Identifier: 在此使用你自己的标识符，使用反向域名符号
+
+- Language: **Swift**
+
+- Devices: iPhone
+
+- Use Core Data, Include Unit Tests, Include UI Tests: 这些应该关闭。
+
+➤ 按 **Next** 并选择项目的位置。
+
+如果你愿意，你可以运行应用程序，但在这一时刻它只是一个白色的屏幕。
+
+清单只能以 portrait 方向运行，但 Xcode 刚刚生成的项目也包括 landscape。
+
+➤ 单击 project navigator 顶部的 Checklists 项目项，然后转到 **General** 选项卡。在 **Deployment Info**，**Device Orientation** 下，确保只选择 **Portrait**。
+
+<div align="center"><img alt="设备方向设置" src="http://imgur.com/Kq3cGhM.png"/></div><center>设备方向设置</center>
+
+<br>
+
+禁用 landscape 选项后，旋转设备将不再有任何影响。该应用程序始终保持 portrait 方向。
+
+<code class="highlighter-rouge"><strong>Upside down</strong></code>
+
+`还有一个 Upside Down（颠倒）的方向，但你通常不会使用它。`
+
+`如果你的应用程序支持颠倒功能，用户可以旋转其 iPhone，使主屏幕位于屏幕顶部而不是底部。`
+
+`这可能会令人困惑，特别是当用户接听电话时：麦克风是错误的，手机颠倒了。`
+
+`另一方面，iPad 应用程序应该支持所有四个方面，包括倒置。`
+
+## 编辑 storyboard
+
+Xcode 创建了一个由单个 view controller 组成的基本应用程序。回想一下，view controller 表示你的应用程序的一个屏幕，并由 **Main.storyboard** 中的源代码文件 **ViewController.swift** 和用户界面设计组成。
+
+Storyboard 包含单个文档中所有应用程序 view controller 的设计，箭头显示它们之间的流。在 storyboard 术语中，每个 view controller 被命名为*场景*。
+
+你已经在 Bull's Eye 中使用了一个 storyboard，但在本教程中，你将解锁 storyboard 的全部功能。
+
+➤ 单击 **Main.storyboard** 以打开 Interface Builder。
+
+<div align="center"><img alt="设该 storyboard 编辑器与应用程序的唯一场景" src="http://imgur.com/9OANMtl.png"/></div><center>该 storyboard 编辑器与应用程序的唯一场景</center>
+
+<br>
+
+场景中有 iPhone 6 和 iPhone 7 的尺寸。我使用底部的 **View as:** 面板切换到较小的 iPhone SE，因为占用的空间较小。然而，你选择编辑 storyboard 的设备大小无关紧要：应用程序将自动调整大小以适应所有 iPhone 型号。
+
+➤ 在左侧的轮廓窗格中选择 **View Controller**。
+
+提示：回想一下，大纲窗格显示故事板中所有场景的视图层次结构。 如果看不到大纲窗格，请单击“界面构建器”窗口底部的小箭头按钮来切换其可见性。
+
+<div align="center"><img alt="此按钮显示并隐藏轮廓窗格" src="http://imgur.com/s7R5Nyw.png"/></div><center>此按钮显示并隐藏轮廓窗格</center>
+
+<br>
+
+➤ 按键盘上的 **delete** 从 storyboard 中删除 **View Controller Scene**。Canvas 应为空，大纲窗格显示 “No Scenes”（无场景）。
+
+你正在删除此场景，因为你不需要常规 view controller，而是要使用所谓的 **table view controller**。这是一种特殊类型的 view controller，它使得使用 table views 更容易一些。
+
+要将 ViewController 的类型更改为 table view controller，你首先必须编辑其 Swift 文件。
+
+➤ 单击 **ViewController.swift**，在源代码编辑器中打开它，并从下面更改以下行：
+
+```swift
+class ViewController: UIViewController {
+```
+
+到这里：
+
+```swift
+class ChecklistViewController: UITableViewController {
+```
+
+通过此更改，你可以告诉 Swift 编译器，你自己的 view controller 现在是一个 UITableViewController object，而不是常规的 UIViewController。
+
+记住，从 “UI” 开始的一切都是 UIKit 的一部分。这些预制组件可以作为你自己的应用程序的构建块。
+
+当 Xcode 创建项目时，它假设你希望将 ViewController object 构建在基本的 UIViewController 之上，但是在这里，你正在将其更改为使用 UITableViewController 构建块。
+
+你还将 ViewController 重命名为 ChecklistViewController 以给它一个更具描述性的名称。这是你自己的 object - 你可以告诉它，因为它的名称不是从 UI 开始的。
+
+在本教程的过程中，你将向 ChecklistViewController object 添加数据和 functionality，使应用程序实际执行操作。你还将向应用程序添加多个新的 view controller。
+
+➤ 在左侧的 Project navigator 中，单击一次以选择 **ViewController.swift**，然后再次单击以编辑其名称。（不要双击太快，否则你将在新的源代码编辑器窗口中打开 Swift 文件）
+
+将文件名更改为 **ChecklistViewController.swift**：
+
+<div align="center"><img alt="重命名 Swift 文件" src="http://imgur.com/prH1mxU.png"/></div><center>重命名 Swift 文件</center>
+
+<br>

@@ -2,7 +2,7 @@
 layout: post
 title: "iOS Apprentice 1 Getting Started v5.0 Chapter 2"
 date:   2017-04-10
-excerpt: "翻译中"
+excerpt: "第二章，翻译中"
 tags: [program, iOS, translate]
 comments: true
 ---

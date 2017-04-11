@@ -117,10 +117,10 @@ comments: true
 
 **iPhone，iPad 或 iPod touch**。我假设你至少拥有其中一样。iOS 10 运行在以下设备上：iPhone 5 或更新版本，iPad 第四代或更新的版本，iPod touch 第六代。如果你有一个旧的设备，那么这是一个好时机考虑获取升级。但不要担心，如果你没有一个合适的设备：你可以在 Simulator 上完成你的一切操作。
 
-<code class="highlighter-rouge"><strong>注意：</strong>尽管我在本教程中主要讨论 iPhone，但我所说的一切都适用于 iPad 和 iPod touch。除了小的硬件差异，它们使用 iOS，你完全可以按照相同的方式为它们编程。你应该还可以在 iPad 和 iPod touch 上运行本系列教程中教授的所有应用程序，并且不会出现问题。</code>
+<code class="highlighter-rouge"><strong>注意：</strong>尽管我在本教程中主要讨论 iPhone，但我所说的一切都适用于 iPad 和 iPod touch。除了小的硬件差异，它们都使用 iOS，你完全可以按照相同的方式为它们编程。你应该还可以在 iPad 和 iPod touch 上运行本系列教程中教授的所有应用程序，并且不会出现问题。</code>
 
 **Mac 计算机与 intel 处理器**。你在过去几年间买的任何 Mac，即使是 Mac mini 或 MacBook Air。它需要至少有
-OS X 10.11 EI Capitan 或 macOS 10.12 Sierra。Xcode，iOS 应用程序的开发环境，它是一个非常吃内存的工具，所以占用你 4 GB 的内存完全不算什么。也许你不会用这么多，但是不要委屈自己，升级一下你的 Mac。RAM 越多越好。一个聪明的开发者应该会懂得在工具和设备下点成本。
+OS X 10.11 EI Capitan 或 macOS 10.12 Sierra。Xcode，iOS 应用程序的开发环境，它是一个非常吃内存的工具，所以占用你 4 GB 的内存完全不算什么。也许你不会用这么多，但是不要委屈自己，升级一下你的 Mac。RAM 越多越好。一个聪明的开发者应该会懂得在工具和设备上下点成本。
 
 有一些方法，可以让你在 Windows 或 Linux 机器上开发 iOS 应用程序，或者安装了 macOS 的 PC（所谓的 “Hackintosh” ），但是你用 Mac 的话，可以省去不少麻烦。
 

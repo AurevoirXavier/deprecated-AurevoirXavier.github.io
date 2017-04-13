@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "iOS Apprentice 1 Getting Started v5.0 Chapter 2"
-date:   2017-04-10
+date:   2017-04-11
 excerpt: "第二章，翻译中"
 tags: [program, iOS, translate]
 comments: true
@@ -483,3 +483,16 @@ override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexP
 
 你已经看到了第一行。这样就可以获得原型单元格的一个副本，不管是新的还是再循环的，并将其放入名为 cell 的 local constant 中：
 
+```Swift
+let cell = tableView.dequeueReusableCell( withIdentifier: "ChecklistItem", for: indexPath)
+```
+
+（回想一下，这是一个 constant，因为它是用 let 定义的，而不是var。同时它又是局部的，因为它是在 method 中定义的）
+
+但是这个 indexPath 是什么东西？
+
+IndexPath 只是一个指向表中特定行的 object。当 table view 询问单元格的数据源时，可以查看 indexPath.row 属性中的行号，以了解该单元格所针对的行。
+
+<code class="highlighter-rouge"><strong>注意：</strong>表也可以将行分组成部分。在地址簿应用中，你可以按姓氏排序联系人。姓氏以 “A” 开头的所有联系人分为一部分，所有姓名以 “B” 开头的联系人分为另一部分，依此类推。</code>
+
+`要查找一行属于哪个部分，你可以查看 indexPath.section 属性。检查列表应用程序不需要此类分组，因此你现在将忽略 IndexPath 的部分属性。`

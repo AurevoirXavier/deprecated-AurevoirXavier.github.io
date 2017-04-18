@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Syntactic sugar (version: Swift)"
+title: "Syntactic sugar (if let, guard)"
 date:   2017-04-11
 excerpt: "Swift 中的一些语法糖"
 tags: [program, swift]

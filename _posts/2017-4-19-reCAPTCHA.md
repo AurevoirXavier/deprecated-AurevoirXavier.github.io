@@ -81,3 +81,28 @@ Google 的跟踪 cookie 在确定应该向用户呈现何种难度的验证码�
 |     ToR      |  Frequent   |   No    |   9th day   |
 |     ToR      |  Moderate   |   No    |   9th day   |
 |   **Any**    |  **None**   | **No**  | **9th day** |
+
+**2.2 浏览器环境**
+
+reCaptcha 空间执行一系列的检查是为了检测浏览器的属性或可疑行为。虽然控件的 JavaScript 代码被模糊化以防止分析，但是已经发布了去混淆的代码 (1)。通过返混淆，我们知道了它具体做了什么些检查。在这里，我们将探讨我们的自动浏览器环境的各个方面是如何影响风险分析结果的。
+
+<center><strong>表 3. 我们系统使用的和用户机器包含的不匹配信息的组合</strong></center>
+
+|    Component    | 9-day Cookie |           System runs           |            User-Agent reports            | Captcha  |
+| :-------------: | :----------: | :-----------------------------: | :--------------------------------------: | :------: |
+|     Browser     |      ✔       |          Firefox/36.0           | {Mobile/8C148 Safari/6533.18.5, Chrome/42.0.2311.135 Safari/537.36} |  image   |
+| Browser version |      ✔       |          Firefox/36.0           |    Firefox/{10.0, 35.0, 36.0, 3.0.12}    | checkbox |
+| Browser version |      ✘       |          Firefox/36.0           |        Firefox/{10.0, 35.0, 36.0}        |  image   |
+| Browser version |      -       |          Firefox/36.0           |              Firefox/1.0.4               | fallback |
+| Browser version |      ✘       |           Chrome/42.0           |      Chrome/{15.0.861.0, 4.0.212.1}      |  image   |
+| Browser version |      -       |           Chrome/42.0           |             Chrome/3.0.191.3             | fallback |
+| Engine version  |      -       | Chrome/42.0; AppleWebKit/537.36 |    AppleWebKit/{528.10, 530.5, 531.3}    | fallback |
+| Engine version  |      ✘       | Chrome/42.0; AppleWebKit/537.36 |         AppleWebKit/{532 and up}         |  image   |
+| Engine version  |     ✔\|✘     |  Firefox/36.0; Gecko/20100101   |              Gecko/20040914              |  image   |
+| Browser/Engine  |      -       | Chrome/42.0; AppleWebKit/537.36 |       Chrome 42/0; Gecko/20100101        | fallback |
+| Browser/Engine  |     ✔\|✘     |  Firefox/36.0; Gecko/20100101   |     Firefox/36.0; AppleWebKit/537.36     |  image   |
+|    Platform     |      ✔       |          Linux x86_64           | {(Macintosh; Intel Mac OS X 10.8;), (Android; Mobile;), (Windows NT 6.3;)} | checkbox |
+|        -        |      -       |                -                |  wrong format or incomplete information  | fallback |
+|        -        |      ✔       |   Linux x86_64; Firefox/36.0    | Mozilla/5.0 (iPhone; U; CPU like Mac OS X; en) AppleWebKit/420 (KHTML, like Gecko) Version/3.0 Mobile/1A543a Safari/419.3 | checkbox |
+
+**Canvas 渲染**

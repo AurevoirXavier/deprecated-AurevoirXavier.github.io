@@ -9,7 +9,7 @@ comments: true
 
 ---
 
-<h2>我虽非人类：且看我如何攻破 Google reCAPTCHA</h2>
+<h2 align="center">我虽非人类：且看我如何攻破 Google reCAPTCHA</h2>
 
 ---
 

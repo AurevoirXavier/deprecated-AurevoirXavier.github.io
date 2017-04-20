@@ -9,7 +9,7 @@ comments: true
 
 ---
 
-<div align="left"><img align="left" src="http://imgur.com/Jsyem7Q.png"/><h2>我虽非人类：且看我如何攻破 Google reCAPTCHA</h2></div>
+<div align="center"><img align="left" src="http://imgur.com/Jsyem7Q.png"/><h2>我虽非人类：且看我如何攻破 Google reCAPTCHA</h2></div>
 
 ---
 

@@ -9,7 +9,7 @@ comments: true
 
 ---
 
-<h2 style="align=center">我虽非人类：且看我如何攻破 Google reCAPTCHA</h2>
+<center><h2 style="">我虽非人类：且看我如何攻破 Google reCAPTCHA</h2></center>
 
 <center><strong>Aurevoir Xavier 译</strong></center>
 

@@ -9,7 +9,12 @@ comments: true
 
 ---
 
-<h2 align="center">我虽非人类：且看我如何攻破 Google reCAPTCHA</h2>
+<h2 style="align=center">我虽非人类：且看我如何攻破 Google reCAPTCHA</h2>
+Suphannee Sivakorn, Jason Polakis, and Angelos D. Keromytis
+
+[suphannee, polakis, angelos]@cs.columbia.edu Columbia University, 
+
+New York NY, USA
 
 ---
 

@@ -13,9 +13,9 @@ comments: true
 
 <center><strong>Aurevoir Xavier 译</strong></center>
 
-<h2><i>Suphannee Sivakorn, Jason Polakis, and Angelos D. Keromytis</i></h2>
+<center><h2><i>Suphannee Sivakorn, Jason Polakis, and Angelos D. Keromytis</i></h2></center>
 
-<i>[suphannee, polakis, angelos]@cs.columbia.edu Columbia University, New York NY, USA</i>
+<center><i>[suphannee, polakis, angelos]@cs.columbia.edu Columbia University, New York NY, USA</i></center>
 
 ---
 

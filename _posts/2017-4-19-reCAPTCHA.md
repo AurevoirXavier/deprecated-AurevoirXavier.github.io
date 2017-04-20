@@ -37,6 +37,12 @@ Google 提供的 reCaptcha 服务 [1] 是最广泛使用的验证码服务，已
 
 <div><div align="center"><img alt="(a) 用户点击复选框之前" src="http://imgur.com/eHshegQ.png"/></div><center>(a) 用户点击复选框之前</center><div align="center"><img alt="(b) 用户点击复选框之后" src="http://imgur.com/OjqRJCz.png"/></div><center>(b) 用户点击复选框之后</center></div><center><strong>图 1. reCaptcha 网页控件</strong></center>
 
+
+
+<br>
+
+
+
 <div align="center"><img alt="reCaptcha 网页控件" src="http://imgur.com/bejOjrz.png"/></div><center><strong>图 2. reCaptcha 提供的相似图片验证码</strong></center>
 
 **验证码类型**
@@ -49,9 +55,11 @@ Google 提供的 reCaptcha 服务 [1] 是最广泛使用的验证码服务，已
 
 <center><strong>表 1. 文本 reCaptcha 的一些例子</strong></center>
 
-|   (a)![](http://imgur.com/rDE98fd.png)   |   (b)![](http://imgur.com/w7oBpZG.png)   |
-| :--------------------------------------: | :--------------------------------------: |
-| **(c)**![](http://imgur.com/Q7weiAs.png) | **(d)**![](http://imgur.com/YyemWJV.png) |
-| **(e)**![](http://imgur.com/D3cyxkI.png) |                                          |
+|   (a)   | ![](http://imgur.com/rDE98fd.png) | (b)     | ![](http://imgur.com/w7oBpZG.png) |
+| :-----: | :-------------------------------: | ------- | --------------------------------- |
+| **(c)** | ![](http://imgur.com/Q7weiAs.png) | **(d)** | ![](http://imgur.com/YyemWJV.png) |
+| **(e)** | ![](http://imgur.com/D3cyxkI.png) |         |                                   |
 
 **解决方案**
+
+<center><strong>表 2. 构造追踪 cookie 和 “模拟” 用户行为</strong></center>

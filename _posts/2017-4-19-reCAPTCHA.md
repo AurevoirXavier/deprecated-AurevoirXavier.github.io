@@ -55,8 +55,8 @@ Google 提供的 reCaptcha 服务 [1] 是最广泛使用的验证码服务，已
 
 <center><strong>表 1. 文本 reCaptcha 的一些例子</strong></center>
 
-|   (a)   | ![](http://imgur.com/rDE98fd.png) | (b)     | ![](http://imgur.com/w7oBpZG.png) |
-| :-----: | :-------------------------------: | ------- | --------------------------------- |
+|     (a) | ![](http://imgur.com/rDE98fd.png) |     (b) | ![](http://imgur.com/w7oBpZG.png) |
+| ------: | :-------------------------------- | ------: | :-------------------------------- |
 | **(c)** | ![](http://imgur.com/Q7weiAs.png) | **(d)** | ![](http://imgur.com/YyemWJV.png) |
 | **(e)** | ![](http://imgur.com/D3cyxkI.png) |         |                                   |
 

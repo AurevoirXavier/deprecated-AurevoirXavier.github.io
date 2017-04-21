@@ -213,5 +213,5 @@ Jia 等人 [13] 发布了 Caffe，这是一个深入的学习框架，我们也�
 
 我们在下载资料库中模拟了验证码攻击。图 4 展示了每个模块的准确性和信息类型。在这里，我们使用了测试中生成的 hint_list，但没有使用历史模块或图像标签分类器。
 
-<div align="center"><img alt="图 4. 在模拟攻击中，不同模块与数据的组合对 reCaptcha 图片验证码的攻击精确度" src="http://imgur.com/BdZIUga.png"/></div><center><strong>图 4. 在模拟攻击中，不同模块与数据的组合对reCaptcha图片验证码的攻击精确度</strong></center>
+<div align="center"><img alt="图 4. 在模拟攻击中，不同模块与数据的组合对 reCaptcha 图片验证码的攻击精确度" src="http://imgur.com/BdZIUga.png"/></div><center><strong>图 4. 在模拟攻击中，不同模块与数据的组合对 reCaptcha 图片验证码的攻击精确度</strong></center>
 

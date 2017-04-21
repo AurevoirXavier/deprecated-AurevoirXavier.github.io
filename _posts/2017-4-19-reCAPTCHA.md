@@ -21,7 +21,7 @@ comments: true
 
 自从验证码被创造出来那一天，就广泛地运用于阻止攻击者的不合法操作。尽管验证码能在一定程度上拦截恶意攻击者，但是在经济利益的诱惑下，各种针对验证码的自动化攻击方式如雨后春笋般冒出，那么验证码服务也就相应地做出改进。然而近来，出现了一种针对文本验证码的新型且通用攻击方式。Google 也适时地公布了 reCaptcha 的最新版本。最新版本有两个目标：一是减少合法用户通过验证码认证的成本 (省时省力)，二是提供了对计算机来说，比文本识别更有难度的验证码。reCaptcha 是由一个 “高级的风险分析系统” 驱动的，这种系统通过分析收到的请求，挑出适合难度的验证码返回给用户。用户可能需要勾选一个复选框，或者需要挑出描述相同内容的一组图像。
 
-在这篇论文中，我们对 reCaptcha 和多种多样的用户请求是如何影响风险分析系统做判断，做了系统研究。通过大量的实验，我们发现一些缺陷，攻击者可以通过这些缺陷来轻松地影响风险分析系统，绕过验证码限制，进而实施大规模的攻击。随后，我们利用深度学习技术进行图像的语义注释，设计了一种新颖的低成本攻击方式。我们的攻击系统非常有效，能够自动解决 70.78% 的图像 reCaptcha，每个验证码的认证只平均只耗费 19 秒。我们对 Facebook 的图像验证码也做了测试攻击，成功率达到了 83.5%。基于我们的实验所得，我们针对这些攻击，提供了一系列的保护和改善措施。总之，我们的研究专注于 reCaptcha，这些发现有非常广的影响。因为对图像所传达的语义信息的逻辑自动化处理越来越多，越来越频繁，所以，验证码也必然要顺应趋势，在更新奇的方向上做更深的探索。
+在这篇论文中，我们对 reCaptcha 和多种多样的用户请求是如何影响风险分析系统做判断，做了系统研究。通过大量的实验，我们发现一些缺陷，攻击者可以通过这些缺陷来轻松地影响风险分析系统，绕过验证码限制，进而实施大规模的攻击。随后，我们利用深度学习技术进行图像的语义注释，设计了一种新颖的低成本攻击方式。我们的攻击系统非常有效，能够自动解决 70.78% 的图像 reCaptcha，每个验证码的认证只平均只耗费 19s。我们对 Facebook 的图像验证码也做了测试攻击，成功率达到了 83.5%。基于我们的实验所得，我们针对这些攻击，提供了一系列的保护和改善措施。总之，我们的研究专注于 reCaptcha，这些发现有非常广的影响。因为对图像所传达的语义信息的逻辑自动化处理越来越多，越来越频繁，所以，验证码也必然要顺应趋势，在更新奇的方向上做更深的探索。
 
 ## 1 了解 reCaptcha
 
@@ -58,7 +58,7 @@ Google 提供的 reCaptcha 服务 [1] 是最广泛使用的验证码服务，已
 
 **解决方案**
 
-一旦验证码对用户展示出来，它必须在 55 秒内被回答。否则，用户需要再次单击该复选框以接收新的验证码。一旦用户点击，一个名为 `recaptcha-token` 的 HTML 字段就用会被储存到 token 中。如果用户被判定是合法的，不需要验证码验证，则该 token 在 Google 服务器获取认可。当完成所需的操作时，token 将提交给网站，用于获取认可。网站通过 reCaptcha API 发送验证请求，该 API 包含： (i) 共享密钥，(ii) 响应令牌，以及 (iii)用户的 IP 地址。若收到这个请求的响应，说明认证成功。
+一旦验证码对用户展示出来，它必须在 55s 内被回答。否则，用户需要再次单击该复选框以接收新的验证码。一旦用户点击，一个名为 `recaptcha-token` 的 HTML 字段就用会被储存到 token 中。如果用户被判定是合法的，不需要验证码验证，则该 token 在 Google 服务器获取认可。当完成所需的操作时，token 将提交给网站，用于获取认可。网站通过 reCaptcha API 发送验证请求，该 API 包含： (i) 共享密钥，(ii) 响应令牌，以及 (iii)用户的 IP 地址。若收到这个请求的响应，说明认证成功。
 
 ## 2 剖析风险分析系统
 
@@ -189,7 +189,7 @@ Karpathy 和 Fei-Fei [8] 开发了 NeuralTalk，一种循环神经网络架构�
 
 Jia 等人 [13] 发布了 Caffe，这是一个深入的学习框架，我们也在本地使用它来处理图像。Caffe 返回一组 10 个标签；5 具有最高的信用指数的标签，5 个可信度较低关键字，但可能更像是关键词的标签。
 
-<center><strong>表 5. 每个图像注释模块的输出示例，标签以降序的顺序进行排序。</strong></center>
+<center><strong>表 5. 每个图像注释模块的输出示例，标签以降序的顺序进行排序</strong></center>
 
 |                                   |      GRIS      |   Alchemy   |                 Clarifai                 |                   TDL                    |                NeuralTalk                |                   Caﬀe                   |
 | :-------------------------------: | :------------: | :---------: | :--------------------------------------: | :--------------------------------------: | :--------------------------------------: | :--------------------------------------: |
@@ -201,7 +201,7 @@ Jia 等人 [13] 发布了 Caffe，这是一个深入的学习框架，我们也�
 
 **5.3 历史模块**
 
-许多图像实际上被重复应用于各种验证码。因此，我们手动创建带有图像的标签数据集及其标签，从收集我们遇到的的验证码。每个图像都用描述内容 (例如猫，汤) 的验证码中提供的提示进行注释。我们还列出了一个 `hint_list`，用于储存我们已经看过的图像标签。
+许多图像实际上被重复应用于各种验证码。因此，我们手动创建带有图像的标签数据库及其标签，从收集我们遇到的的验证码。每个图像都用描述内容 (例如猫，汤) 的验证码中提供的提示进行注释。我们还列出了一个 `hint_list`，用于储存我们已经看过的图像标签。
 
 **5.4 方案**
 
@@ -215,3 +215,99 @@ Jia 等人 [13] 发布了 Caffe，这是一个深入的学习框架，我们也�
 
 <div align="center"><img alt="图 4. 在模拟攻击中，不同模块与数据的组合对 reCaptcha 图片验证码的攻击精确度" src="http://imgur.com/BdZIUga.png"/></div><center><strong>图 4. 在模拟攻击中，不同模块与数据的组合对 reCaptcha 图片验证码的攻击精确度</strong></center>
 
+如之前表 4 所示，reCaptcha 是非常灵活的，即使我们的选择包含错误的图像，也会被认为是正确的 (通过验证)。因此，我们确定系统选择 3 个图像作为解决方案，以便落入 “放宽” 限制。图 4 中的 Pass Challenge 显示的就是攻击结果。
+
+对于每种模块，在它们基于重合标签挑选图像的时候，给它们设置了一个最低准则；对于 GRIS，它同样需要用到验证码中的样本图像标签和 RIS 返回的最佳标签。总的来说，GRIS 的命中率受限于我们获取到的候选图像的最佳标签的数量。对于其他的模块，最低准则就是挑出来 3。张和样本图像有最相似标签的那些候选图像。当使用样本图像标签，候选图像的最佳标签和网页标题时，Alchemy 模块通过了 49.9% 的验证码，Clarifai 通过了 58%。Caffe 也不差，通过 45.9% 的验证码。多数情况下，样本图像标签起着至关重要的作用，依赖注释系统能提高 1.5% 到 15.5% 的命中率。
+
+我们也探索了如何通过为图像注释模块提供更高分辨率版本的图像来影响攻击的准确性。我们能够从 700 个验证码中自动获得 2,909 张图像的更高分辨率版本。其中 371 是相同的图像。高分辨率图像增加了攻击的成功概率，Alchemy 和 Clarifai 分别通过了 53.4％ 和 61.2％ 的验证码。TDL 不太准确，通过了 45％，而 Caffe 的命中率增长到 49.1％。
+
+我们还衡量了如果忽略验证的灵活性，我们的系统还能否胜任这种攻击。由于在大多数情况下，该解决方案由 2 个图像组成，因此我们调整系统为每个验证码选择 2。个图像。图 4 中的精确解决方案栏提供了结果，我们可以看到，所有的图像注释服务在识别正确的图像方面都非常有效。Clarifai 是最有效的，因为它选择了 40.2％ 的验证码中的精确图像，而 Alchemy 达到 31.5％，Caffe 为 28.3％。
+
+**标签分类器**
+
+为了量化我们的标签分类器在我们的验证码系统中的有效性，我们采用了 10 层迭代的验证方法来对资料库中 700 个标记图像验证码的数据库进行分类测试。在我们的第一个实验中，我们跳过了其他图像选择步骤，仅依靠分类器选择图像。对于每个图像，分类器作为输入提示和标签列表，并返回 “相似性” 得分；我们选择了最高分的 3 张图像。我们的攻击提供了 26.28％ (σ= 7.09) 的精确度，并且通过了 44.71％ (σ= 6.39) 的验证码。在第二个实验中，我们将我们的分类器并入我们的系统中，在从 `undecided` 列表中挑选图片时，使用基于分类器的选择结果，而不是基于近似标签的选择结果。使用分类器时，我们的攻击对 Clarifai 的平均精度达到 66.57％ (σ= 7.53)，提高了约 5.3％。分类器比相似度匹配方法更有效，因为它标识了与每个提示相关联的标签的特定子集，而不是通用标签数量而划分出来的子集进行简单的度量。此外，分类器方式并不影响攻击效率，仅仅多耗废大概 0.025s。
+
+**实时攻击**
+
+为了准确测量我们的攻击精度，我们直接用自动验证码破解器攻击 reCaptcha。我们使用 Clarifai 服务，因为它目前为止表现结果最好。
+
+*标签数据库*。我们创建了一个标记的数据库来减少图像重复带来的影响。我们手动标记从验证码中收集的 3,000 张图像，并为每个图像分配描述内容的标签。我们从我们的 hint_list 中选择了相应的标签。我们使用 pHash 进行比较，因为它非常有效，并允许我们的系统在 3.3s 内将验证码的图像与我们的数据库中所有图像进行比较。
+
+我们针对 2,235 个验证码运行了我们设计的系统，并获得了 70.78％ 的准确性。与模拟实验相比有更高的精度，部分原因是因为图像重复较多；历史模块在我们的标记数据库中识别到了 1,515 个样本图像和 385 个候选图像。
+
+*平均运行时间*。我们的攻击非常有效，破解单个验证码平均耗时 19.2s。最耗时的阶段是运行 GRIS，因为它搜索 Google 中的所有图像并处理结果，包括提取指向更高分辨率版本的图像的链接。
+
+*离线模式*。我们同样评估了离线模式下的攻击，不使用任何的在线注释服务或者 GRIS；仅仅使用本地的库，标签数据库和分类器。一共使用了两个库：NeuralTalk 和 Caffe。当使用 Caffe 和分类器时，我们的系统解决了 41.57% 的图像验证码，单个平均耗时提高到了 20.9s。当使用 NeuralTalk 时，大概解决了 40%，耗时也相当长，达到了 117.8s，因为 NeuralTalk 处理 10 个图像需要 110.9s。不过，利用 GPU 来做计算会提高效率，减少耗时。
+
+因此，攻击者能对 reCaptcha 的图像验证码部署精确有效的攻击，并且不需要依赖外部的服务，这些处理大量图片或报告可疑活动的服务也行不免费。
+
+<div align="center"><img alt="图 5. Facebook 的图片验证码" src="http://imgur.com/nSVewHc.png"/></div><center><strong>图 5. Facebook 的图片验证码</strong></center>
+
+## 6 适用性
+
+我们的攻击的原理也可以应用于其他方案，通过提取图像的语义，我们可以构建对其他基于图像的验证码的攻击，如 Facebook captcha (图 6)。当用户向包含可疑 URL 的其他用户发送消息时，向用户显示图像验证码，他们必须首先传递图像。Facebook 的图像验证码采用与 reCaptcha 相同的方法，用户必须确定哪些图像 (12 张以内) 中具有与给定提示相匹配的内容。然而，有一些差异。 Facebook 以 HTML 动态调整图像大小，允许访问图像的高分辨率版本。此外，没有显示样品图像。该系统有与 reCaptcha 相同的灵活性规则。正确图像的数量从 2 到 10 不等，其中 5 - 7 是最常见的情况。因此，我们调整我们的解算法只能选择包含在 `select` 中的图像，而不是选择特定数量的图像。
+
+对于超过 200 个 Facebook 图片验证码，我们与 Clarifai 的攻击达到了最高的准确率为 83.5％。与 reCaptcha 相比，更高的精度是由于两个特征。首先，候选图像的分辨率越高，其次，创建挑战时使用完全不相关的图像有助于丢弃不正确的选项。另一方面，reCaptcha 选择属于同一类别的图像 (例如，所有都是某种类型的食物)，这使得区分更加困难。
+
+** 7 经济分析
+
+鉴于验证码破解通常源于经济利益，我们从经济角度评估我们的发现，并将我们的攻击视为一种验证码攻击。
+
+**7.1 图片验证码**
+
+将我们的表现与 Decaptcher 最旧的验证码服务比较。我们选择了 Decaptcher 有两个原因。首先，它支持图像 reCaptcha，每解决 1000 个验证码收取 \$2。二，它之前的表现 [15]，证明它是准确度最高的验证码破解服务。
+
+我们将 700 图像验证码提交给 Decaptcher，并测量响应时间和准确性 (考虑到解决方案的灵活性)。有趣的是，Decaptcher 拒绝了我们提交的许多验证码。
+
+由于服务超载，我们的提交的一些验证码被拒绝，并且必须过段时间后重新提交，并收到超时错误，因为解决者在服务分配的时间窗口中没有提供答案。 258 个挑战 (占全部的 36.85％) 是完全匹配的。考虑到灵活性，解决了 321 (44.3％) 的验证码。单个平均的解决时间是 22.5s。随着人们越来越适应图片验证码，人工破解的精确度会随着时间提高，但是不可否认，我们的系统还是一种比较有经济效益的可选方案。*我们的完全离线验证码破解系统在准确度和效率上完全比得上专业的破解服务，尽管如此，我们也不会提供给任何攻击者来获利。*
+
+<center><strong>表 6. 从Decaptcher服务返回的错误</strong></center>
+
+|        Detail         | Out of 700 challenges |
+| :-------------------: | :-------------------: |
+|       **Error**       |                       |
+| System overload error |     147 (21.00%)      |
+|     Timeout error     |      88 (12.57%)      |
+|      **Success**      |                       |
+|      Exact match      |     258 (36.85%)      |
+|    Pass challenges    |     321 (44.30%)      |
+
+**7.2 复选框验证码**
+
+假设每解决 1000 个验证码收费 \$2 的话，我们的 token 攻击，一个主机 (IP 地址) 一天，能收入 \$104 到 \$110。通过使用代理服务做并行攻击的话，这个收入的数字会更加可观。
+
+## 道德声明
+
+我们把发现和建议报告给了 Google，帮助他们提高 reCaptcha 对自动攻击的健壮性。根据我们的成果，reCaptcha 改变了安全策略和风险分析过程，来缓解我们的大规模 token 攻击。他们也移除了图片验证码方案的灵活性和样本图片，从而降低了攻击的准确度。我们也通知的 Facebook，但还没有发现他们做任何改变。总之，我们希望通过分享我们的发现，能帮助发起研究者和企业之间对于验证码未来的亟需的讨论。
+
+## 参考文献
+
+[1] L. Von Ahn, B. Maurer, C. McMillen, D. Abraham, and M. Blum, “reCAPTCHA: Human-based character recognition via web security measures,” Science, vol. 321, no. 5895, 2008.
+
+[2] Google Online Security Blog, “Are you a robot? Introducing “No CAPTCHA reCAPTCHA”,” [http:// googleonlinesecurity.blogspot.com/2014/12/are-you-robot-introducing-no-captcha.html](http:// googleonlinesecurity.blogspot.com/2014/12/are-you-robot-introducing-no-captcha.html).
+
+[3] E. Bursztein, J. Aigrain, A. Moscicki, and J. C. Mitchell, “The end is nigh: Generic solving of text-based CAPTCHAs.” in USENIX WOOT ’14.
+
+[4] I. J. Goodfellow, Y. Bulatov, J. Ibarz, S. Arnoud, and V. Shet, “Multi-digit number recognition from street view imagery using deep convolutional neural networks,” in CoRR ’13.
+
+[5] K. Mowery and H. Shacham, “Pixel perfect: Fingerprinting canvas in html5,” in W2SP ’12.
+
+[6] E. Homakov. The No CAPTCHA problem. [http://homakov.blogspot.in/2014/12/the-no-captcha-problem.html](http://homakov.blogspot.in/2014/12/the-no-captcha-problem.html).
+
+[7] O. Vinyals, A. Toshev, S. Bengio, and D. Erhan, “Show and tell: A neural image caption generator,” in CoRR ’14.
+
+[8] A. Karpathy and L. Fei-Fei, “Deep visual-semantic alignments for generating image descriptions,” in CoRR ’14.
+
+[9] M. M. Kalayeh, H. Idrees, and M. Shah, “NMF-KNN: Image Annotation Using Weighted Multi-view Non-negative Matrix Factorization,” in CVPR ’14.
+
+[10] N. Srivastava and R. Salakhutdinov, “Multimodal learning with deep boltzmann machines,” Journal of Machine Learning Research, vol. 15, pp. 2949–2980, 2014.
+
+[11] A. Krizhevsky, I. Sutskever, and G. E. Hinton, “Imagenet classiﬁcation with deep convolutional neural networks,” in NIPS ’12.
+
+[12] M. D. Zeiler, G. W. Taylor, and R. Fergus, “Adaptive deconvolutional networks for mid and high level feature learning,” in ICCV ’11.
+
+[13] Y. Jia, E. Shelhamer, J. Donahue, S. Karayev, J. Long, R. Girshick, S. Guadarrama, and T. Darrell, “Caffe: Convolutional architecture for fast feature embedding.”
+
+[14] T. Mikolov, K. Chen, G. Corrado, and J. Dean, “Efﬁcient estimation of word representations in vector space,” in CoRR ’13.
+
+[15] M. Motoyama, K. Levchenko, C. Kanich, D. McCoy, G. M. Voelker, and S. Savage, “Re: CAPTCHAs: understanding captcha-solving services in an economic context,” in USENIX Security ’10.

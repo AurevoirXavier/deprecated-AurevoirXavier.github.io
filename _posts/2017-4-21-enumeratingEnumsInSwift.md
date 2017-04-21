@@ -17,9 +17,9 @@ enum Letter: String {
 
 定义完后我大概可以做一些类似这样的事情：
 
-```Swift
-for element in Letter {
-//	Do something for each element
+```swift
+for element in Letter.allValues {
+  //Do something for each element
 }
 ```
 

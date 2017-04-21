@@ -284,7 +284,7 @@ Jia 等人 [13] 发布了 Caffe，这是一个深入的学习框架，我们也�
 
 [1] L. Von Ahn, B. Maurer, C. McMillen, D. Abraham, and M. Blum, “reCAPTCHA: Human-based character recognition via web security measures,” Science, vol. 321, no. 5895, 2008.
 
-[2] Google Online Security Blog, “Are you a robot? Introducing “No CAPTCHA reCAPTCHA”,” [http:// googleonlinesecurity.blogspot.com/2014/12/are-you-robot-introducing-no-captcha.html](http:// googleonlinesecurity.blogspot.com/2014/12/are-you-robot-introducing-no-captcha.html).
+[2] Google Online Security Blog, “Are you a robot? Introducing “No CAPTCHA reCAPTCHA”,” [https://security.googleblog.com/2014/12/are-you-robot-introducing-no-captcha.html](https://security.googleblog.com/2014/12/are-you-robot-introducing-no-captcha.html).
 
 [3] E. Bursztein, J. Aigrain, A. Moscicki, and J. C. Mitchell, “The end is nigh: Generic solving of text-based CAPTCHAs.” in USENIX WOOT ’14.
 

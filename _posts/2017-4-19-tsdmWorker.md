@@ -20,10 +20,10 @@ comments: true
 
 <div align="center"><img alt="" src="http://i.imgur.com/k1bqetR.gif"/></div>
 
-<br>
+---
 
 <div align="center"><img alt="" src="http://i.imgur.com/4t9YDMR.gif"/></div>
 
-<br>
+---
 
 <div align="center"><img alt="" src="http://i.imgur.com/xGQH1Pk.gif"/></div>

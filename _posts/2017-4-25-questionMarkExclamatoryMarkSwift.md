@@ -74,7 +74,7 @@ let hashValue = demo?.hashValue
 
 `demo` 是 **Optional** 类型的字符串，如果 `demo`是 `nil`，则 `hashValue` 也为 `nil`，如果 `demo` 不为 `nil`，`hashValue` 就是 `demo` 字符串的哈希值 (**Optional wrap** 之后的值)。
 
-? 也可以用在 protocol 类型的方法上使其更加安全：
+`?` 也可以用在 `protocol` 类型的方法上使其更加安全：
 
 ```swift
 import Foundation
@@ -125,7 +125,7 @@ if let tmp = demo {
 }
 ```
 
-还有一种是在具体的操作前加上一个 `!` 符号。
+还有一种是在具体的操作前加上一个 `!`。
 
 `demo` 是 **Optional** 的 `String`：
 

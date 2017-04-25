@@ -46,5 +46,5 @@ var strValue: String?   //? 相当于下面这种写法的语法糖
 var strValue: Optional<String>
 ```
 
-<center><a href = “syntacticSugarSwift”>更多 Swift 语法糖点击此</a></center>
+<center><a href = "syntacticSugarSwift">更多 Swift 语法糖点击此</a></center>
 

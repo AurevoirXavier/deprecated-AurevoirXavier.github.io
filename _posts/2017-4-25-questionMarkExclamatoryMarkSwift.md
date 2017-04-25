@@ -157,8 +157,8 @@ demoButton!.setTitle("demo", for: .normal)
 对于这种类型的值，应该这样声明：“`var myLabel: UILabel!`”。这种特殊的 **Optional**，称之为 **Implicitly Unwrapped Optionals** (隐式拆包的可选值)，就等于说每次对这种类型的值操作时，都会自动在操作前补上一个 `!` 进行 **unwrap**，然后再执行后面的操作，当然如果该值是 `nil`，程序也一样会崩溃掉。
 
 ```swift
-var myLabel: UILabel!	//	! 相当于下面这种写法的语法糖
-var myLabel: ImplicitlyUnwrappedOptional<UILabel>
+var demoButton: UIButton!	//	! 相当于下面这种写法的语法糖
+var demoButton: ImplicitlyUnwrappedOptional<UIButton>
 ```
 那么 `!` 也讨论了两种使用场景：
 

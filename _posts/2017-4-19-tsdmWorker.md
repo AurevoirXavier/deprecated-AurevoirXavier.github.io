@@ -8,7 +8,7 @@ tags: [js, html]
 comments: true
 ---
 
-<h1><center><a href="https://github.com/AurevoirXavier/TsdmWorker">TsdmWorker.js</a></center></h1>
+<h1><center><a href="https://github.com/AurevoirXavier/TsdmWorker">TsdmWorker.user.js</a></center></h1>
 
 下载 TsdmWorker.user.js 后，拖入 Tampermonkey 内即可使用。
 

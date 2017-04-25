@@ -76,3 +76,12 @@ func printX(str: String?)
 var demo: String?	//	? 是下面这种写法的语法糖
 var demo: Optional<String>
 ```
+
+## Optional !
+
+这种特殊的 **Optional**，称之为 **Implicitly Unwrapped Optionals** (隐式拆包的可选值)，就等于说每次对这种类型的值操作时，都会自动在操作前补上一个 `!` 进行 **unwrap**，然后再执行后面的操作。
+
+```swift
+var myLabel: UILabel!	//	! 相当于下面这种写法的语法糖
+var myLabel: ImplicitlyUnwrappedOptional<UILabel>
+```

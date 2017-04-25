@@ -34,7 +34,7 @@ enum Optional<</span>T> : LogicValue, Reflectable {
     func getLogicValue() -> Bool
 
     /// Haskell's fmap, which was mis-named
-    func map<</span>U>(f: (T) -> U) -> U?
+    func map<U>(f: (T) -> U) -> U?
     func getMirror() -> Mirror
 }
 ```

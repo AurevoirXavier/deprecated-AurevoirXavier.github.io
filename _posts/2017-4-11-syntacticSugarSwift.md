@@ -73,6 +73,6 @@ func printX(str: String?)
 一个 **Optional** 值是一个具体的值或者是 `nil` 以表示值缺失。在类型后面加一个 `?` 来标记这个变量的值是可选的：
 
 ```swift
-var strValue: String?   //? 相当于下面这种写法的语法糖
-var strValue: Optional<String>
+var demo: String?   //? 是下面这种写法的语法糖
+var demo: Optional<String>
 ```

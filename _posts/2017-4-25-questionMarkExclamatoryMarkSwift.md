@@ -12,10 +12,10 @@ comments: true
 使用 `let` 来声明常量，使用 `var` 来声明变量。一个常量的值，在编译的时候，并不需要有明确的值，但是你只能 为它赋值一次。也就是说你可以用常量来表示这样一个值：你只需要决定一次，但是需要使用很多次。但 Swift 不会自动给变量赋初始值，也就是说变量不会有默认值，所以要求使用变量之前必须要对其初始化。如果在使用变量之前不进行初始化就会报错：
 
 ```swift
-var testString: String
+var demo: String
 //note: variable defined here
 
-let hashValue = testString.hashValue
+let hashValue = demo.hashValue
 //error: variable 'testString' used before being initialized
 ```
 
@@ -42,9 +42,12 @@ enum Optional<</span>T> : LogicValue, Reflectable {
 一个 **Optional** 值是一个具体的值或者是 `nil` 以表示值缺失。在类型后面加一个 `?` 来标记这个变量的值是可选的：
 
 ```swift
-var strValue: String?   //? 相当于下面这种写法的语法糖
-var strValue: Optional<String>
+var demo: String?   //? 是下面这种写法的语法糖
+var demo: Optional<String>
 ```
 
-<center><a href = "syntacticSugarSwift">更多 Swift 语法糖点击此</a></center>
+<center><a href = "http://uvwvu.com/syntacticSugarSwift">更多 Swift 语法糖点击此</a></center>
 
+上面这个 **Optional** 的声明，意思不是 ”我声明了一个 **Optional** 的 `String` 值”, 而是 ”我声明了一个 **Optional** 类型值，它可能包含一个 `String` 值，也可能什么都不包含”，也就是说实际上我们声明的是 **Optional** 类型，而不是声明了一个 `String` 类型，这一点非常重要。
+
+一旦声明为 **Optional** 的，如果不显式的赋值就会有默认值 `nil`。判断一个 **Optional** 的值是否有值，可以用 `if` 来判断：

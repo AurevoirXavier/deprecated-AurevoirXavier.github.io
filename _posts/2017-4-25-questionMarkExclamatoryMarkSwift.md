@@ -68,3 +68,36 @@ if demo {
 let hashValue = demo?.hashValue
 ```
 
+`demo` 是 **Optional** 类型的字符串，如果 `demo`是 `nil`，则 `hashValue` 也为 `nil`，如果 `demo` 不为 `nil`，`hashValue` 就是 `demo` 字符串的哈希值 (**Optional wrap** 之后的值)。
+
+? 也可以用在 protocol 类型的方法上使其更加安全：
+
+```Swift
+@objc protocol Readable {
+    @optional func read(toPath: String) -> Bool;
+}
+
+@objc class Content: Readable {
+    //	read 方法没有被实现
+}
+
+var delegate: Readable = Readable()
+delegate.read?("/此处/填写/路径")
+```
+因为 `delegate` 是 `Readable` 类型的，其 `read` 方法是 `Optional` 的，所以它有没有实现 `read` 方法是不可确定的。**Swift** 提供了一种在参数括号前加上一个 `?` 的方式来安全地调用 `protocol` 中 `@optional` 方法。
+
+**Downcast** (向下造型) 的时候也可能会用到 `as?`：
+
+```swift
+if let demoDataSource = object as? UITableViewDataSource {
+    let demoRowsInSection  = demoDataSource.tableView(tableView, numberOfRowsInSection: 0)
+}
+```
+
+目前为止，一共列举了四种使用场景：
+
+1. 声明 **Optional** 变量时
+2. 对 **Optional** 变量的值操作时
+3. 在调用 `protocol` 的 `@optional` 方法时
+4. **Downcast** (向下造型) 时
+

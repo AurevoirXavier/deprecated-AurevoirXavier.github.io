@@ -20,7 +20,7 @@ func printX(str: String?)
     
     if x != nil
     {
-     	print(x)   // 做些什么，比如输出一下 x
+     	print(x)	//	做些什么，比如输出一下 x
     }
 }
 ```
@@ -32,7 +32,7 @@ func printX(str: String?)
 {
     if let x = str
     {
-     	print(x)   // 做些什么，比如输出一下 x
+     	print(x)	//	做些什么，比如输出一下 x
     }
 }
 ```
@@ -51,7 +51,7 @@ func printX(str: String?)
      	return
     }
     
-    print(x)   // 做些什么，比如输出一下 x
+    print(x)	//	做些什么，比如输出一下 x
 }
 ```
 
@@ -62,7 +62,7 @@ func printX(str: String?)
 {
     guard let x = str else { return }
 
-    print(x)   // 做些什么，比如输出一下 x
+    print(x)   //	做些什么，比如输出一下 x
 }
 ```
 
@@ -73,6 +73,6 @@ func printX(str: String?)
 一个 **Optional** 值是一个具体的值或者是 `nil` 以表示值缺失。在类型后面加一个 `?` 来标记这个变量的值是可选的：
 
 ```swift
-var demo: String?   //? 是下面这种写法的语法糖
+var demo: String?	//	? 是下面这种写法的语法糖
 var demo: Optional<String>
 ```

@@ -15,16 +15,16 @@ comments: true
 
 ```swift
 func dataFilePath() -> URL { 
-  return documentsDirectory().appendingPathComponent("Checklists.plist")
+	return documentsDirectory().appendingPathComponent("Checklists.plist")
 }
 
 func saveChecklists() {
-  let data = NSMutableData() 
-  let archiver = NSKeyedArchiver(forWritingWith: data)
+	let data = NSMutableData() 
+	let archiver = NSKeyedArchiver(forWritingWith: data)
 
-  archiver.encode(lists, forKey: "Checklists")
-  archiver.finishEncoding()
-  data.write(to: dataFilePath(), atomically: true)
+	archiver.encode(lists, forKey: "Checklists")
+	archiver.finishEncoding()
+	data.write(to: dataFilePath(), atomically: true)
 }
 ```
 

@@ -19,7 +19,7 @@ enum Letter: String {
 
 ```swift
 for element in Letter.allValues {
-  //Do something for each element
+	//	Do something for each element
 }
 ```
 
@@ -37,7 +37,7 @@ enum Letter: String {
 }
   
 for element in Letter.allValues {
-  //Do something for each element
+	//	Do something for each element
 }
 ```
 

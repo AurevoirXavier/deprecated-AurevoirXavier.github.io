@@ -72,7 +72,7 @@ let hashValue = demo?.hashValue
 
 ? 也可以用在 protocol 类型的方法上使其更加安全：
 
-```Swift
+```swift
 @objc protocol Readable {
     @optional func read(toPath: String) -> Bool;
 }

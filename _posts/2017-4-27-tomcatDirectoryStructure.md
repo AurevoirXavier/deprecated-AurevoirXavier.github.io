@@ -7,7 +7,7 @@ tags: [jsp, program, tomcat]
 comments: true
 ---
 
-# Tomcat 服务器的目录结构
+<center><h1>Tomcat 服务器的目录结构</h1></center>
 
 |    目录    |                    说明                    |
 | :------: | :--------------------------------------: |

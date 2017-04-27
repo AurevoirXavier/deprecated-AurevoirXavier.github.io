@@ -9,7 +9,7 @@ comments: true
 
 <center><h1>Tomcat 服务器的目录结构</h1></center>
 
-|    目录    |                    说明                    |
+| 目录       | 说明                                       |
 | :------- | :--------------------------------------- |
 | /bin     | 存放各种平台下启动和停止 **Tomcat** 的命令文件，如 **startup.sh**，**startup.bat** |
 | /conf    | 存放 **Tomcat** 的各种配置文件                    |

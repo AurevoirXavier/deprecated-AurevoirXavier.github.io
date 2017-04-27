@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Syntactic sugar (Swift)"
+title: "Syntactic sugar in Swift"
 date:   2017-04-11
 excerpt: "Swift 中的一些语法糖"
 tags: [program, swift]

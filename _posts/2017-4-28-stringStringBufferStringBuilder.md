@@ -141,7 +141,7 @@ public class Test {
 
 从输出结果可以看到，**String** 慢很多。同样都是用的 `append()`，为什么会有如此大的差别？
 
-只需要用 `java -c` 命令查看 **class** 文件，答案一目了然，在 `testString()` 中每次循环都要重新初始化 **StringBuilder** 对象，所以拉低了效率。
+只需要用 `java -c` 命令查看 **class** 文件。答案一目了然：在 `testString()` 中，每次循环都要重新初始化 **StringBuilder** 对象，所以拉低了效率。
 
 ## 关于性能
 

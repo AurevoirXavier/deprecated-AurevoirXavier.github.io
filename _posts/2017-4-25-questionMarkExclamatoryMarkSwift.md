@@ -13,10 +13,10 @@ comments: true
 
 ```swift
 var demo: String
-//	note: variable defined here
+//  note: variable defined here
 
 let hashValue = demo.hashValue
-//	error: variable 'demo' used before being initialized
+//  error: variable 'demo' used before being initialized
 ```
 
 # Optional (可选值)
@@ -27,24 +27,24 @@ let hashValue = demo.hashValue
 
 ```swift
 enum Optional<T> : LogicValue, Reflectable {
-    case None
-    case Some(T)
-    init()
-    init(_ some: T)
+  case None
+  case Some(T)
+  init()
+  init(_ some: T)
 
-    //	Allow use in a Boolean context.
-    func getLogicValue() -> Bool
+  //  Allow use in a Boolean context.
+  func getLogicValue() -> Bool
 
-    //	Haskell's fmap, which was mis-named
-    func map<U>(f: (T) -> U) -> U?
-    func getMirror() -> Mirror
+  //  Haskell's fmap, which was mis-named
+  func map<U>(f: (T) -> U) -> U?
+  func getMirror() -> Mirror
 }
 ```
 
 一个 **Optional** 变量的值是一个具体的值或者是 `nil` (表示值缺失)。在类型后加一个 `?` 来标记变量的值是可选的：
 
 ```swift
-var demo: String?	//	? 是下面这种写法的语法糖
+var demo: String?  //  ? 是下面这种写法的语法糖
 var demo: Optional<String>
 ```
 
@@ -58,7 +58,7 @@ var demo: Optional<String>
 var demo: String?
 
 if demo != nil {
-	//	做些什么
+  //  做些什么
 }
 ```
 
@@ -80,10 +80,10 @@ let hashValue = demo?.hashValue
 import Foundation
 
 @objc protocol Readable {
-    @objc optional func read(toPath: String) -> Bool;
+  @objc optional func read(toPath: String) -> Bool;
 }
 @objc class Content: Readable {
-    //	read 方法没有被实现
+  //  read 方法没有被实现
 }
 
 var delegate: Readable = Readable()
@@ -95,7 +95,7 @@ delegate.read?("/此处/填写/路径")
 
 ```swift
 if let demoDataSource = object as? UITableViewDataSource {
-    let demoRowsInSection  = demoDataSource.tableView(tableView, numberOfRowsInSection: 0)
+  let demoRowsInSection  = demoDataSource.tableView(tableView, numberOfRowsInSection: 0)
 }
 ```
 
@@ -112,7 +112,7 @@ if let demoDataSource = object as? UITableViewDataSource {
 var demo: String?
 
 let hashValue = demo.hashValue
-//	error: value of optional type 'String?' not unwrapped; did you mean to use '!' or '?'?
+//  error: value of optional type 'String?' not unwrapped; did you mean to use '!' or '?'?
 ```
 
 **Optional** 变量需要 **unwrap** 后才能得到它的值，然后才能对其操作，那么如何进行 **unwarp** 呢？**unwrap** 又几种方法，一种是 **Optional Binding**：
@@ -121,7 +121,7 @@ let hashValue = demo.hashValue
 var demo: String?
 
 if let tmp = demo {
-    let hashValue = tmp.hashValue
+  let hashValue = tmp.hashValue
 }
 ```
 
@@ -141,7 +141,7 @@ let hashValue = demo!.hashValue
 var demo: String?
 
 if demo != nil {
-    let hashValue = demo!.hashValue
+  let hashValue = demo!.hashValue
 }
 ```
 
@@ -157,7 +157,7 @@ demoButton!.setTitle("demo", for: .normal)
 对于这种类型的值，应该这样声明：“`var myLabel: UILabel!`”。这种特殊的 **Optional**，称之为 **Implicitly Unwrapped Optionals** (隐式拆包的可选值)，就等于说每次对这种类型的值操作时，都会自动在操作前补上一个 `!` 进行 **unwrap**，然后再执行后面的操作，当然如果该值是 `nil`，程序也一样会崩溃掉。
 
 ```swift
-var demoButton: UIButton!	//	! 相当于下面这种写法的语法糖
+var demoButton: UIButton!  //  ! 相当于下面这种写法的语法糖
 var demoButton: ImplicitlyUnwrappedOptional<UIButton>
 ```
 那么 `!` 也讨论了两种使用场景：

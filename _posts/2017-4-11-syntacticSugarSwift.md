@@ -14,26 +14,22 @@ comments: true
 ## if let
 
 ```swift
-func printX(str: String?)
-{
-    let x: String! = str
-    
-    if x != nil
-    {
-     	print(x)	//	做些什么，比如输出一下 x
-    }
+func printX(str: String?) {
+  let x: String! = str
+  
+  if x != nil {
+   	print(x)  //  做些什么，比如输出一下 x
+  }
 }
 ```
 
 **Swift** 中有 **optional**，经常需要判断其是否为空。如果不使用 `if let`，`printX()` 写出来是上面那样，使用了 `if let` 后：
 
 ```swift
-func printX(str: String?)
-{
-    if let x = str
-    {
-     	print(x)	//	做些什么，比如输出一下 x
-    }
+func printX(str: String?) {
+  if let x = str {
+   	print(x)  //  做些什么，比如输出一下 x
+  }
 }
 ```
 
@@ -42,27 +38,24 @@ func printX(str: String?)
 当 `if` 中有较长的代码时，通常先将错误情况先返回，这样做可以避免过多的嵌套。比如：
 
 ```swift
-func printX(str: String?)
-{
-    let x: String! = str
-    
-    if x == nil
-    {
-     	return
-    }
-    
-    print(x)	//	做些什么，比如输出一下 x
+func printX(str: String?) {
+  let x: String! = str
+  
+  if x == nil {
+   	return
+  }
+  
+  print(x)  //  做些什么，比如输出一下 x
 }
 ```
 
 此处 **Swift** 也提供了一个语法糖 `guard`，用 `guard` 可以改写成：
 
 ```swift
-func printX(str: String?)
-{
-    guard let x = str else { return }
+func printX(str: String?) {
+  guard let x = str else { return }
 
-    print(x)   //	做些什么，比如输出一下 x
+  print(x)  //  做些什么，比如输出一下 x
 }
 ```
 
@@ -73,7 +66,7 @@ func printX(str: String?)
 一个 **Optional** 值是一个具体的值或者是 `nil` 以表示值缺失。在类型后面加一个 `?` 来标记这个变量的值是可选的：
 
 ```swift
-var demo: String?	//	? 是下面这种写法的语法糖
+var demo: String?  //  ? 是下面这种写法的语法糖
 var demo: Optional<String>
 ```
 
@@ -82,6 +75,6 @@ var demo: Optional<String>
 这种特殊的 **Optional**，称之为 **Implicitly Unwrapped Optionals** (隐式拆包的可选值)，就等于说每次对这种类型的值操作时，都会自动在操作前补上一个 `!` 进行 **unwrap**，然后再执行后面的操作。
 
 ```swift
-var demoButton: UIButton!	//	! 相当于下面这种写法的语法糖
+var demoButton: UIButton!  //  ! 相当于下面这种写法的语法糖
 var demoButton: ImplicitlyUnwrappedOptional<UIButton>
 ```

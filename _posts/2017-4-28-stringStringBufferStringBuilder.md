@@ -145,4 +145,78 @@ public class Test {
 
 ## 关于性能
 
+**StringBuilder** 内部实际上维护了一个 `char[]` 类型的 `value`，用来保存通过 `append()` 添加的内容，通过 `new StringBuilder()` 初始化时，`char[]` 的默认长度为 16，如果 `append()` 第 17 个字符，会发生什么？
+
+```java
+void expandCapacity(int minimumCapacity) {
+  int newCapacity = value.length * 2 + 2;
+  
+  if (newCapacity - minimumCapacity < 0) {
+    newCapacity = minimumCapacity;
+  }
+  if (newCapacity < 0) {
+    if (minimumCapacity < 0) {
+      throw new OutOfMemoryError();
+    }
+    
+    newCapacity = integer.MAX_VALUE;
+  }
+  
+  value = Arrays.copyOf(value, newCapacity);
+}
+```
+
+如果 `value` 的剩余容量，无法添加全部内容，则通过 `expandSize(int minimumCapacity)()` 对 `value` 进行扩容，其中 `minimumCapacity = 原 value 长度 + append 添加的内容长度`。
+
+1. 扩大容量为原来的两倍 + 2，为什么要 + 2，而不是刚好两倍？
+2. 如果扩容之后，还是无法添加全部内容，则将 minimumCapacity 作为最终的容量大小；
+3. 利用 `System.arraycopy` 方法对原value数据进行复制；
+
+在使用StringBuilder时，如果给定一个合适的初始值，可以避免由于char[]数组多次复制而导致的性能问题。
+
 ## 关于内存
+
+**StringBuilder** 内部进行扩容时，会新建一个大小为原来两倍 + 2 的 `char` 数组，并复制原 `char` 数组到新数组，导致内存的消耗，增加垃圾回收的压力。
+
+**StringBuilder** 的 `toString()`，也会造成 `char` 数组的浪费：
+
+```java
+public String toString() {
+  return new String(value, 0, count);
+}
+```
+
+`String` 的构造方法中，会新建一个大小相等的 `char` 数组，并使用 `System.arraycopy()` 复制 **StringBuilder** 中 `char` 数组的数据到其中，这样 **StringBuilder**的 `char` 数组就白白浪费了。
+
+**重用StringBuilder**
+
+```java
+public class RStringBuilder {
+  private final StringBuilder stringBuilder;
+  
+  public StringBuilderHolder(int size) {
+    stringBuilder = new StringBuilder(size);
+  }
+  
+  public StringBuilder reset() {
+    stringBuilder.setLength(0);
+    
+    return stringBuilder;
+  }
+}
+```
+
+通过 `stringBuilder.setLength(0)` 可以把 `char` 数组的内存区域设置为 `0`，这样 `char` 数组重复使用，为了避免并发访问，可以在 `ThreadLocal` 中使用 **RStringBuilder**：
+
+```java
+private static final ThreadLocal<RStringBuilder> stringBuilder = new ThreadLocal<RStringBuilder>() {
+  @Override
+  protected RStringBuilder initialValue() {
+    return new RStringBuilder(256);
+  }
+};
+
+StringBuilder demoStringBuilder = stringBuilder.get().reset();
+```
+
+不过这种方式也存在一个弊端，**StringBuilder** 实例的内存空间一直不会被垃圾回收，如果 `char` 数组在某次操作中被扩容到一个很大的值，可能之后很长一段时间都不会用到如此大的空间，就会造成内存的浪费。

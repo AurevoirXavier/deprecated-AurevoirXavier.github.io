@@ -71,7 +71,7 @@ String demoString = demoString1 + demoString2 + demoString3 + demoString4 + demo
 
 如果字符串被多个线程使用，**JVM** 会保证对 **StringBuffer** 的操作是安全的，却不会对 **StringBuilder** 承诺。
 
-由此可见，它们的执行速度：**StringBuilder > StringBuffer > Sting**。
+由此可见，它们的执行速度：**StringBuilder > StringBuffer > String**。
 
 所以一般根据下面三种情况来进行选择：
 
@@ -92,7 +92,7 @@ String demoString = demoString1 + demoString2 + demoString3 + demoString4 + demo
 3. **JVM** 初始化新的 **StringBuilder** 来进行 `append()` 操作
 4. 将 **StringBuilder** 变为 **String**
 
-- `特别注意：前两步是发生在编译过程中的！`
+- `特别注意：前两步是发生在编译过程中的!`
 
 所以说下面两者执行效果是一样的：
 

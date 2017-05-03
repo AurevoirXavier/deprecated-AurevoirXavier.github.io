@@ -3,11 +3,11 @@ layout: post
 title: "Tomcat directory structure"
 date:   2017-04-27
 excerpt: "Tomcat 目录结构"
-tags: [jsp, program, tomcat]
+tags: [program, tomcat]
 comments: true
 ---
 
-<center><h1>Tomcat 服务器的目录结构</h1></center>
+## Tomcat 服务器的目录结构
 
 | 目录       | 说明                                       |
 | :------- | :--------------------------------------- |

@@ -3,11 +3,11 @@ layout: post
 title: "WEB-INF directory in Jsp"
 date:   2017-04-27
 excerpt: "Jsp 中的 WEB-INF 目录详解"
-tags: [jsp, program]
+tags: [java, jsp, program]
 comments: true
 ---
 
-# WEB-INF 简介
+## WEB-INF 简介
 
 **WEB-INF** 是 **Java**的 **Web** 应用的安全目录。所谓安全就是客户端无法访问，只有服务端可以访问的目录。
 
@@ -17,7 +17,7 @@ comments: true
 
 **WEB-INF** 文件夹中除了有 **classes** 文件夹和一个 **web.xml** 文件外、还有 **lib** 文件夹 (用于存放需要的 **JAR** 包，用于配置，比如说用来配置过滤器等)。
 
-# WEB-INF 目录结构
+## WEB-INF 目录结构
 
 | 目录                           | 说明                                       |
 | ---------------------------- | ---------------------------------------- |

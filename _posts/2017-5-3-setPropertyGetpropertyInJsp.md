@@ -31,7 +31,7 @@ comments: true
 
 `<jsp:getProperty name="JavaBean 实例名" property="JavaBean 属性名"/>`
 
-## 以下源码可供你体验四种方式，去掉方法体注释即可看到效果：
+## 以下源码可供你体验本文所述的全部内容，去掉某一方法体注释并注释其他方法体即可看到对应效果：
 
 <center><strong>User.java</strong></center>
 

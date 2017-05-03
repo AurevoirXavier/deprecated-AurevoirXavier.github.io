@@ -25,7 +25,9 @@ comments: true
 
 `<jsp:setProperty name = "JavaBean 实例名" property = "JavaBean 属性名" param = "request 对象中的参数名"/>` 此方法跟 **request** 参数关联
 
-## 以下源码可供你体验四种方式，去掉方法体注释即可看到效果
+## 以下源码可供你体验四种方式，去掉方法体注释即可看到效果：
+
+<center><strong>User.java</strong></center>
 
 ```java
 package com.po;
@@ -54,6 +56,8 @@ public class User {
 }
 ```
 
+<center><strong>index.jsp</strong></center>
+
 ```html
 <%@ page import="com.po.User" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
@@ -80,6 +84,8 @@ public class User {
 </body>
 </html>
 ```
+
+<center><strong>deal.jsp</strong></center>
 
 ```html
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>

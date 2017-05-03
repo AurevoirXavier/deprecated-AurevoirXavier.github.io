@@ -2,7 +2,7 @@
 layout: post
 title: "setProperty in Jsp"
 date:   2017-05-3
-excerpt: "Java 中的 setProperty"
+excerpt: "Jsp 中的 setProperty"
 tags: [java, jsp, program]
 comments: true
 ---
@@ -52,10 +52,9 @@ public class User {
         this.id = id;
     }
 }
-
 ```
 
-```jsp
+```html
 <%@ page import="com.po.User" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
@@ -82,7 +81,7 @@ public class User {
 </html>
 ```
 
-```jsp
+```Html
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>

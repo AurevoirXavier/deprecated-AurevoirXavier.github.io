@@ -1,8 +1,8 @@
 ---
 layout: post
-title: "setProperty in Jsp"
+title: "setProperty and getProperty in Jsp"
 date:   2017-05-3
-excerpt: "Jsp 中的 setProperty"
+excerpt: "Jsp 中的 setProperty 与 getProperty"
 tags: [java, jsp, program]
 comments: true
 ---
@@ -11,19 +11,25 @@ comments: true
 
 *方法一：*
 
-`<jsp:setProperty name = "JavaBean 实例名" property = "*"/>` 此方法跟 **form** 关联
+`<jsp:setProperty name = "JavaBean 实例名" property = "*"/>` (此方法跟 **form** 关联)
 
 *方法二：*
 
-`<jsp:setProperty name = "JavaBean 实例名" property = "JavaBean 属性名"/>` 此方法跟 **form** 关联
+`<jsp:setProperty name = "JavaBean 实例名" property = "JavaBean 属性名"/>` (此方法跟 **form** 关联)
 
 *方法三：*
 
-`<jsp:setProperty name = "JavaBean 实例名" property = "JavaBean 属性名" value = "JavaBean 对应属性名的值"/>` 此方法为纯手工设置
+`<jsp:setProperty name = "JavaBean 实例名" property = "JavaBean 属性名" value = "JavaBean 对应属性名的值"/>` (此方法为纯手工设置)
 
 *方法四：*
 
-`<jsp:setProperty name = "JavaBean 实例名" property = "JavaBean 属性名" param = "request 对象中的参数名"/>` 此方法跟 **request** 参数关联
+`<jsp:setProperty name = "JavaBean 实例名" property = "JavaBean 属性名" param = "request 对象中的参数名"/>` (此方法跟 **request** 参数关联)
+
+## \<jsp:getProperty> 是用来获取指定的 JavaBean 对象的属性值。那么该如何使用 \<jsp:getProperty>？
+
+获取参数就没有那么多方法了，因为步骤就是定位和取得参数这么简单：
+
+`<jsp:getProperty name="JavaBean 实例名" property="JavaBean 属性名"/>`
 
 ## 以下源码可供你体验四种方式，去掉方法体注释即可看到效果：
 
@@ -97,6 +103,7 @@ public class User {
 <jsp:useBean id="myUser" class="com.po.User" scope="page"/>
 <h1>setProperty</h1>
 <hr>
+<%--====================setProperty===================--%>
 <%--方法一：根据 form 自动匹配所有属性。对应原则：java 文件中的私有变量名对应此处的 property，* 代表全部匹配。--%>
 <%--<jsp:setProperty name="myUser" property="*"/>--%>
 <%--方法二：大致如方法一，但由自己手动匹配属性。--%>
@@ -105,8 +112,23 @@ public class User {
 <%--<jsp:setProperty name="myUser" property="name" value="Mr.A"/>--%>
 <%--<jsp:setProperty name="myUser" property="id" value="1"/>--%>
 <%--方法四：与 request 提交的参数有关，不一定使用表单参数可以用 URL 传来的参数。--%>
-<jsp:setProperty name="myUser" property="id" param="param"/>
-<%--=================================================================================================--%>
+<jsp:setProperty name="myUser" property="name" param="param1"/>
+<jsp:setProperty name="myUser" property="id" param="param2"/>
+<%--====================setProperty===================--%>
+
+<%--===================jspExpression==================--%>
+<%--Username: <%=myUser.getName()%>--%>
+<%--<br>--%>
+<%--Id: <%=myUser.getId()%>--%>
+<%--<br>--%>
+<%--===================jspExpression==================--%>
+
+<%--====================getProperty===================--%>
+Username: <jsp:getProperty name="myUser" property="name"/>
+<br>
+Id: <jsp:getProperty name="myUser" property="id"/>
+<br>
+<%--====================getProperty===================--%>
 Username: <%=myUser.getName()%>
 <br>
 Id: <%=myUser.getId()%>

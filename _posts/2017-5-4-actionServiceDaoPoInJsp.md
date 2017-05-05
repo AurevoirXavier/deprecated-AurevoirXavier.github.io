@@ -2,7 +2,7 @@
 layout: post
 title: "Action, Service, DAO and PO in Jsp"
 date:   2017-05-4
-excerpt: "Jsp 中的 action，service，dao 和 po"
+excerpt: "Jsp 中的 Action，Service，DAO 和 PO"
 tags: [java, jsp, program]
 comments: true
 ---

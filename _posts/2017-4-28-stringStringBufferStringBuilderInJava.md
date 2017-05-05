@@ -2,7 +2,7 @@
 layout: post
 title: "String, StringBuffer and StringBuilder in Java"
 date:   2017-04-27
-excerpt: "Java 中的 String, StringBuffer, StringBuilder 详解"
+excerpt: "Java 中的 String，StringBuffer，StringBuilder 详解"
 tags: [java, program]
 comments: true
 ---

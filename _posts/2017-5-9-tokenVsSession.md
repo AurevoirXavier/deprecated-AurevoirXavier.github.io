@@ -9,7 +9,7 @@ comments: true
 
 许多现代 *Web 应用程序* 使用 **JSON Web Tokens (JWT)**，而不是传统的基于 **session** 的*身份验证*。在现代应用程序中使用服务器端会话已经发现了很多挑战。在这篇文章中，我们将确定这些挑战，并解释 **JWT** 和 **sessions** 在实践中如何工作。
 
-<code class="highlighter-rouge">最近有关于 <strong>JWT</stong> 真正发光的用例以及那些做得不好的工作的争议。也就是说，<strong>JSON Web Tokens</strong> 对于 <strong>sessions</strong> 来说足够好 - 还是应该继续使用 <strong>cookies</strong>？</code>
+<code class="highlighter-rouge">最近有关于 <strong>JWT</strong> 真正发光的用例以及那些做得不好的工作的争议。也就是说，<strong>JSON Web Tokens</strong> 对于 <strong>sessions</strong> 来说足够好 - 还是应该继续使用 <strong>cookies</strong>？</code>
 
 ## 什么是 JSON Web Tokens?
 
@@ -23,9 +23,9 @@ comments: true
 
 在*身份验证*中，当用户使用其凭据成功登录时，将返回一个 **JSON Web Token**，并且必须保存在本地 (通常在本地存储中，但也可以使用 **cookies**)，而不是像传统的方法一样，在服务器中创建一个会话并返回一个 **cookie**。
 
-每当用户想要访问受保护的路由时，它应该发送 **JWT**，通常在*授权*头中使用承载模式。因此，标题的内容应如下：
+每当用户想要访问受保护的路由时，它应该发送 **JWT**，通常在*授权*头中使用承载模式。因此，标头的内容应如下：
 
-```json
+```html
 Authorization: Bearer <token>
 ```
 

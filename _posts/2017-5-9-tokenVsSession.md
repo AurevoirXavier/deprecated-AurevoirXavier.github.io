@@ -1,15 +1,15 @@
 ---
 layout: post
 title: "Token vs. Session"
-date:   2017-05-4
+date:   2017-05-9
 excerpt: "Web 应用中的 Token 与 Session"
 tags: [json, program, web]
 comments: true
 ---
 
-许多现代 *Web 应用程序* 使用 **JSON Web Tokens (JWT)**，而不是传统的基于 **session** 的*身份验证*。在现代应用程序中使用服务器端会话已经发现了很多挑战。在这篇文章中，我们将确定这些挑战，并解释 **JWT** 和 **sessions** 在实践中如何工作。
+许多现代 *Web 应用程序* 使用 **JSON Web Tokens (JWT)**，而不是传统的基于 **session** 的*身份验证*。在现代应用程序中使用服务器端 **sessions** 已经发现了很多挑战。在这篇文章中，我们将确定这些挑战，并解释 **JWT** 和 **sessions** 在实践中如何工作。
 
-<code class="highlighter-rouge">最近有关于 <strong>JWT</strong> 真正发光的用例以及那些做得不好的工作的争议。也就是说，<strong>JSON Web Tokens</strong> 对于 <strong>sessions</strong> 来说足够好 - 还是应该继续使用 <strong>cookies</strong>？</code>
+<code class="highlighter-rouge">最近有关于 <strong>JWT</strong> 的杰出用例以及那些做得不够好的工作的争议。也就是说，<strong>JSON Web Tokens</strong> 对于 <strong>sessions</strong> 来说足够好 - 还是应该继续使用 <strong>cookies</strong>？</code>
 
 ## 什么是 JSON Web Tokens?
 
@@ -113,4 +113,4 @@ Authorization: Bearer <token>
 
 就个人而言，我认为没有一个一刀切的方法。它将始终取决于你的应用程序架构和用例。
 
-你仍然更喜欢在实践中使用 *JSON Web代码*？让我们在评论部分知道你的想法！
+你仍然更喜欢在实践中使用 *JSON Web代码*？在评论部分说出你的想法！

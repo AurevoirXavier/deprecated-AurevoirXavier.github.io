@@ -85,7 +85,7 @@ comments: true
 
 - 盐值应该使用**基于加密的伪随机数生成器 (Cryptographically Secure Pseudo-Random Number Generator – CSPRNG)** 来生成。*CSPRNG* 和普通的随机数生成器有很大不同，如 C 语言中的 `rand()` 函数。物如其名，*CSPRNG* 专门被设计成用于加密，它能提供高度随机和无法预测的随机数。我们显然不希望自己的盐值被猜测到，所以一定要使用 *CSPRNG*。
 
-  <center>当前主流编程语言中的 *CSPRNG* 方法：</center>
+  <center>当前主流编程语言中的 <i>CSPRNG</i> 方法：</center>
 
   |           **Platform**            |                **CSPRNG**                |
   | :-------------------------------: | :--------------------------------------: |

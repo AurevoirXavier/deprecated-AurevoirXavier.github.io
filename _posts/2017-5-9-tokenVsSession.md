@@ -7,7 +7,7 @@ tags: [json, program, web]
 comments: true
 ---
 
-许多现代 *Web 应用程序* 使用 **JSON Web Tokens (JWT)**，而不是传统的基于 **session** 的*身份验证*。在现代应用程序中使用服务器端 **sessions** 已经发现了很多挑战。在这篇文章中，我们将确定这些挑战，并解释 **JWT** 和 **sessions** 在实践中如何工作。
+许多现代 *Web 应用程序*使用 **JSON Web Tokens (JWT)**，而不是传统的基于 **session** 的*身份验证*。在现代应用程序中使用服务器端 **sessions** 已经发现了很多挑战。在这篇文章中，我们将确定这些挑战，并解释 **JWT** 和 **sessions** 在实践中如何工作。
 
 <code class="highlighter-rouge">最近有关于 <strong>JWT</strong> 的杰出用例以及那些做得不够好的工作的争议。也就是说，<strong>JSON Web Tokens</strong> 对于 <strong>sessions</strong> 来说足够好 - 还是应该继续使用 <strong>cookies</strong>？</code>
 

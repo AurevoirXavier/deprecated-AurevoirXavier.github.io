@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Understanding POJOs 译"
+title: "Understanding POJOs"
 date:   2017-05-20
 excerpt: "理解 POJOs"
 tags: [springmvc, translate]

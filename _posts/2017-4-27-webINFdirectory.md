@@ -1,9 +1,9 @@
 ---
 layout: post
-title: "WEB-INF directory in Jsp"
+title: "WEB-INF directory"
 date:   2017-04-27
-excerpt: "Jsp 中的 WEB-INF 目录详解"
-tags: [java, jsp, program]
+excerpt: "WEB-INF 目录详解"
+tags: [java, program, web]
 comments: true
 ---
 

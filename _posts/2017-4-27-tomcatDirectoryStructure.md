@@ -3,7 +3,7 @@ layout: post
 title: "Tomcat directory structure"
 date:   2017-04-27
 excerpt: "Tomcat 目录结构"
-tags: [program, tomcat]
+tags: [program, tomcat, web]
 comments: true
 ---
 

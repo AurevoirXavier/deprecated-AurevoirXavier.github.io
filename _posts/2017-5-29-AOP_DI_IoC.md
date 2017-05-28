@@ -1,8 +1,8 @@
 ---
 layout: post
-title: "What are AOP, Dependency Injection and Inversion Of Control"
+title: "What are IoC, DI, AOP"
 date:   2017-05-29
-excerpt: "什么是 AOP，DI，IoC"
+excerpt: "什么是 IoC，DI，AOP"
 tags: [springmvc]
 comments: true
 ---

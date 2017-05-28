@@ -13,15 +13,15 @@ comments: true
 
 **IoC** 是一种设计原则，而非通用的，指的是行为规范与实际执行时的解耦。比较例如：
 
-`myDependency.doThis()` 和 `myDependency.onEventX += doThis()` 在后者中，没有直接调用更灵活。在其一般形式中，**IoC** 涉及观察者模式，事件或回调。
+`dependency.doThis()` 和 `dependency.onEventX += doThis()` 在后者中，没有直接调用更灵活。在其一般形式中，**IoC** 涉及观察者模式，事件或回调。
 
 # Dependency Inversion, DI (依赖反转)
 
 **Dependency Inversion** 是另一种设计原则。粗略地说，高层抽象不应该直接取决于较低层次的抽象；这样做的结果确实在没有较低级别抽象的情况下不能重复使用高级抽象的设计。
 
 ```java
- class MyHighLevelClass {
-     MyLowLevelClass dep = new MyLowLeverClass();
+ class TheHighLevelClass {
+     TheLowLevelClass dependency = new TheLowLeverClass();
  }
 
  class App {
@@ -29,17 +29,17 @@ comments: true
  }
 ```
 
-在这里，`MyHighLevelClass` 无法编译，无法访问 `MyLowLevelClass`。为了打破这种耦合，我们需要用一个接口来抽象低阶类，并且去除直接的实例化。
+在这里，`TheHighLevelClass` 无法编译，无法访问 `TheLowLevelClass`。为了打破这种耦合，我们需要用一个接口来抽象低阶类，并且去除直接的实例化。
 
 ```java
-class MyLowLevelClass implements MyUsefulAbstraction { ... }
+class TheLowLevelClass implements TheUsefulAbstraction { ... }
 
-class MyHighLevelClass {
+class TheHighLevelClass {
 
-    MyUsefulAbstraction dep;
+    TheUsefulAbstraction dependency;
 
-    MyHighLevelClass( MyUsefulAbstraction dep ) {
-        this.dep = dep;
+    TheHighLevelClass( TheUsefulAbstraction dependency ) {
+        this.dependency = dependency;
     }
 }
 

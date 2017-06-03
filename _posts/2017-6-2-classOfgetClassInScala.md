@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "classOf and getClass in Scala"
-date:   2017-06-2
+date:   2017-06-02
 excerpt: "Scala 中的 classOf 与 getClass"
 tags: [program, scala]
 comments: true

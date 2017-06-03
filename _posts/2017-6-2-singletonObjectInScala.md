@@ -2,7 +2,7 @@
 layout: post
 title: "Scala's singleton object"
 date:   2017-06-02
-excerpt: "Scala 中的 classOf 与 getClass"
+excerpt: "Scala 之单例对象"
 tags: [program, scala]
 comments: true
 ---

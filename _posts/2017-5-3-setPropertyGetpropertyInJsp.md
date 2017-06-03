@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "setProperty and getProperty in Jsp"
-date:   2017-05-3
+date:   2017-05-03
 excerpt: "Jsp 中的 setProperty 与 getProperty"
 tags: [java, jsp, program]
 comments: true

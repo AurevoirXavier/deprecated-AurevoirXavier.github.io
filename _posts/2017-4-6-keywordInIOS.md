@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Programming keywords"
-date:   2017-04-6
+date:   2017-04-06
 excerpt: "仅针对 iOS Apprentice 中出现的高频专有名词"
 tags: [iOS, program, swift, translate]
 comments: true

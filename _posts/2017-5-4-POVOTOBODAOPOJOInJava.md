@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "PO，VO，TO，BO，DAO，POJO in Java"
-date:   2017-05-4
+date:   2017-05-04
 excerpt: "Java 中 PO，VO，TO，BO，DAO，POJO 的解释"
 tags: [java, springmvc, program]
 comments: true

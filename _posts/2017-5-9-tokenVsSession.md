@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Token vs. Session"
-date:   2017-05-9
+date:   2017-05-09
 excerpt: "Web 应用中的 Token 与 Session"
 tags: [json, program, web]
 comments: true

@@ -13,7 +13,7 @@ comments: true
 ---
 
 ## 如果英文水平有限
-那么我在这里推荐三个博文：
+那么我在这里推荐三篇博文：
 
 - [理解 **RESTful** 架构](http://www.ruanyifeng.com/blog/2011/09/restful)
 - [**RESTful API** 设计指南](http://www.ruanyifeng.com/blog/2014/05/restful_api.html)

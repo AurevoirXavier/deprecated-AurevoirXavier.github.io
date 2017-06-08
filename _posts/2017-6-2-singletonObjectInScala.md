@@ -19,14 +19,14 @@ Example：
 class Demo {
 }
 
-class A{
+class A {
     def apply() = println("class A")
     def test: Unit ={
         println("class A -> apply()")
     }
 }
 
-object A{
+object A {
      def apply() = {
           println("object A")
         new A

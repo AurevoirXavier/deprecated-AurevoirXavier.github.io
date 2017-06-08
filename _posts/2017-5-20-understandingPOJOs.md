@@ -17,8 +17,7 @@ public class ExampleListener implements MessageListener {
         if (message instanceof TextMessage) {
             try {
                 System.out.println(((TextMessage) message).getText());
-            }
-            catch (JMSException ex) {
+            } catch (JMSException ex) {
                 throw new RuntimeException(ex);
             }
         } else {

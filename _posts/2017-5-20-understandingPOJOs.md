@@ -13,7 +13,6 @@ POJO 表示 **Plain Old Java Object** (普通 Java 对象)。它是指 Java 对�
 
 ```java
 public class ExampleListener implements MessageListener {
-
     public void onMessage(Message message) {
         if (message instanceof TextMessage) {
             try {
@@ -22,12 +21,10 @@ public class ExampleListener implements MessageListener {
             catch (JMSException ex) {
                 throw new RuntimeException(ex);
             }
-        }
-        else {
+        } else {
             throw new IllegalArgumentException("Message must be of type TextMessage");
         }
     }
-
 }
 ```
 
@@ -39,8 +36,8 @@ POJO 驱动的方法意味着编写你的消息处理解决方案没有接口。
 ```java
 @Component
 public class ExampleListener {
-
     @JmsListener(destination = "myDestination")
+
     public void processOrder(String message) {
         System.out.println(message);
     }

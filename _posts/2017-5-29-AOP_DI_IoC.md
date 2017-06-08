@@ -35,7 +35,6 @@ comments: true
 class TheLowLevelClass implements TheUsefulAbstraction { ... }
 
 class TheHighLevelClass {
-
     TheUsefulAbstraction dependency;
 
     TheHighLevelClass( TheUsefulAbstraction dependency ) {

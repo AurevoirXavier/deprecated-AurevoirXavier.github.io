@@ -11,7 +11,7 @@ comments: true
 
 **Part I** 为启用 **I2C**，如果还需要使用 **SPI**，请看 **Part II**。
 
-##Part I
+## Part I
 
 **第一步**
 
@@ -37,7 +37,7 @@ device_tree_param=i2c_arm=on
 
 ---
 
-##Part II
+## Part II
 
 **第一步**
 

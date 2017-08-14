@@ -7,7 +7,7 @@ tags: [Archlinux, raspberry, program]
 comments: true
 ---
 
-## 首先本人的树莓派型号为 树莓派3b+。Part I 为启用 I2C，如果还需要使用 SPI，请看 Part II。
+## 首先本人的树莓派型号为<树莓派3b+>。Part I 为启用 I2C，如果还需要使用 SPI，请看 Part II。
 
 --- 
 

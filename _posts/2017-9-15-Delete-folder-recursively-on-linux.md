@@ -3,7 +3,6 @@ layout: post
 title: "Delete folder recursively on Linux"
 date:   2017-09-15
 excerpt: "Linux 下递归删除文件"
-project:    true
 tags: [Linux, shell]
 comments: true
 ---

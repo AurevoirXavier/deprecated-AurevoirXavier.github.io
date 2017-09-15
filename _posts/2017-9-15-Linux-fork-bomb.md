@@ -3,7 +3,6 @@ layout: post
 title: "Linux fork bomb"
 date:   2017-09-15
 excerpt: "Linux fork 炸弹"
-project:    true
 tags: [Linux, shell]
 comments: true
 ---

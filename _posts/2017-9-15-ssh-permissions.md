@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "ssh permissions"
+title: "SSH permissions"
 date:   2017-09-15
 excerpt: "ssh 权限"
 tags: [Linux, OSX, ssh]

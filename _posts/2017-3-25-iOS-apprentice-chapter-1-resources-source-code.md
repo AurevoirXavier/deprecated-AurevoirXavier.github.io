@@ -14,4 +14,4 @@ comments: true
 
 <center><strong>梦想无大小之分，一切努力都应被尊重。</strong></center>
 
-<div align="center"><img alt="梦想无大小之分，一切努力都应被尊重。" src="http://imgur.com/N5GTjdK.gif"/></div>
+<div align="center"><img alt="swift" src="http://imgur.com/N5GTjdK.gif"/></div>

@@ -2,28 +2,14 @@
 layout: post
 title: "Tsdm Worker"
 date:   2017-04-19
-excerpt: "天使动漫一键打工脚本"
+excerpt: "天使动漫签到打工合并版"
 project:    true
 tags: [js]
 comments: true
 ---
 
-<h1><center><a href="https://github.com/AurevoirXavier/TsdmWorker">TsdmWorker.user.js</a></center></h1>
+从 greasyfork 安装两个插件即可，链接： [签到打工面板](https://greasyfork.org/en/scripts/34332-天使动漫打工签到集合版)，[打工页面依赖](https://greasyfork.org/en/scripts/29119-天使动漫打工)。
 
-下载 TsdmWorker.user.js 后，拖入 Tampermonkey 内即可使用。
+效果演示：
 
-如不能拖入，右键编辑或者在 github 里直接点开，复制（一定要复制完整）粘贴源代码进 Tampermonkey 即可。
-
-有坛友反应不能使用，原因在于你的网速过慢，你还没有加载完页面，我的脚本就执行了，实际上页面里面检测你点击了多少广告数的脚本并没有开始计数。请结合自身网速条件更改我脚本中的两个 0 单位是毫秒。第一个 0 多久时间开始点击广告，第二个 0 是多久时间开始点击领取奖励。(第二个数值必须大于等于第一个数值因为是同步执行的，第二个等待时间会从第一个等待时间开始计算)
-
-图解：
-
-<div align="center"><img alt="" src="http://i.imgur.com/k1bqetR.gif"/></div>
-
----
-
-<div align="center"><img alt="" src="http://i.imgur.com/4t9YDMR.gif"/></div>
-
----
-
-<div align="center"><img alt="" src="http://i.imgur.com/xGQH1Pk.gif"/></div>
+<div align="center"><blockquote class="imgur-embed-pub" lang="en" data-id="a/zBbti"><a href="//imgur.com/zBbti"></a></blockquote><script async src="//s.imgur.com/min/embed.js" charset="utf-8"></script></div>

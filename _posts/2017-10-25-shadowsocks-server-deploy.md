@@ -37,12 +37,14 @@ comments: true
 - Private Network `私有网络`：✗
 - AutoBackups `自动备份`：✓
 - DDos Protection `DDos 保护`：✗
+- Block Storage Compatible `储存区块`：✗
 
 **Tips：**
 
 1. 私有网络其实就是添加内网地址。
 2. 自动备份（这里我开启了没什么用处的话不推荐你们开启）。
 3. DDos 保护就是防御洪水攻击的，如果你只是为了翻墙一般是没用的。
+4. 免费提供的储存区块对于我们翻墙来说没什么用。不过这个功能仅限纽约和新泽西的服务器可以使用。
 
 ## Startup Script 启动脚本：
 
@@ -50,7 +52,7 @@ comments: true
 
 ## SSH Keys：
 
-这里我添加了没什么用，到头来还是自己执行 `ssh-copy-id` 后才实现免密登陆。
+和自己执行 `ssh-copy-id` 实现免密登陆有异曲同工之妙。不过需要的注意的是点击 Add Keys 并且把公钥保存之后，需要回到部署页面刷新一下然后才会出现刚添加的项目，然后单击底色变蓝说明勾选。
 
 ## Server Hostname & Label 域名与标签：
 

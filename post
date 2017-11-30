@@ -11,7 +11,7 @@ bundle exec jekyll build
 git add .
 currentTime=`date +%H:%M/%x`
 git commit -m "$currentTime"
-git push origin master
+proxychains4 git push origin master
 
 echo Update Successfully!
 

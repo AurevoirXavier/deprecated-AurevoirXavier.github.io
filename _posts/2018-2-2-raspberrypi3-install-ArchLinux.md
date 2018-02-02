@@ -40,6 +40,7 @@ $ wget http://archlinuxarm.org/os/ArchLinuxARM-rpi-2-latest.tar.gz
 
 # 下面需要 root 用户，用 sudo 是不可行的。详见官网：https://archlinuxarm.org/platforms/armv8/broadcom/raspberry-pi-3
 $ su
+# 密码默认为 root
 
 $ tar xvzf ArchLinuxARM-rpi-2-latest.tar.gz -C /mnt/root
 

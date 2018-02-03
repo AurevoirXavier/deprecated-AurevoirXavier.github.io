@@ -1,7 +1,7 @@
 ---
 layout: page
 title: About the Blog
-tags: [about, Jekyll, theme, moon]
+tags: []
 date: 2016-03-21
 comments: false
 ---

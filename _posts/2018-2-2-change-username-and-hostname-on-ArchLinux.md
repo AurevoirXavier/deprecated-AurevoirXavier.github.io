@@ -13,11 +13,15 @@ comments: true
 
 ```sh
 $ usermod -d /my/new/home -m username
+
+$ usermod -l newname oldname
 ```
 
 1.  `/my/new/home` 这个是你的新的用户目录比如我就改成 `/home/aurevoirxavier`。
 
 2.  `username` 就是要更改的用户名。（注意不是你想改的而是现有的）这里我填写 `alarm`。
+
+3.  `newname` 是新的名字，`oldname` 是原名。
 
     **注意：不要登录你要修改的用户来修改！！。**
 

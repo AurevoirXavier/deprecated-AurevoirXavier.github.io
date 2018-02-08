@@ -16,15 +16,17 @@ $ usermod -d /my/new/home -m username
 ```
 
 1.  `/my/new/home` 这个是你的新的用户目录比如我就改成 `/home/aurevoirxavier`。
+
 2.  `username` 就是要更改的用户名。（注意不是你想改的而是现有的）这里我填写 `alarm`。
 
-接着更改主机名（[参考资料](https://wiki.archlinux.org/index.php/Network_configuration#Set_the_hostname)）：
+    **注意：不要登录你要修改的用户来修改！！。**
 
-**注意：不要登录你要修改的用户来修改！！。**
+接着更改主机名（[参考资料](https://wiki.archlinux.org/index.php/Network_configuration#Set_the_hostname)）：
 
 ```sh
 $ hostnamectl set-hostname myhostname
 ```
 
 1.  只需要把 `myhostname` 替换成你想要的即可，我这里替换为 `aurevoirxavier`。
+
 

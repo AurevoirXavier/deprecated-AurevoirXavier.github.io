@@ -41,7 +41,7 @@ $ vi /boot/config.txt
 
 **可选 hdmi 模式（注意：与你上面的选择有关）：**
 
-*如果选择了高清电视：*
+1 - 如果选择了高清电视：
 
 <div align="center"><img alt="hdmi_group=1" src="https://i.imgur.com/dCUwpnZ.png"/></div>
 
@@ -49,7 +49,7 @@ $ vi /boot/config.txt
 
 <div align="center"><img alt="hdmi_group=1" src="https://i.imgur.com/44JCdxX.png"/></div>
 
-*如果选择了电脑显示器：*
+2 - 如果选择了电脑显示器：
 
 <div align="center"><img alt="hdmi_group=2" src="https://i.imgur.com/l9vQnDB.png"/></div>
 

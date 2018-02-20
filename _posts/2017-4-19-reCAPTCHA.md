@@ -35,7 +35,7 @@ Google 提供的 reCaptcha 服务 [1] 是最广泛使用的验证码服务，已
 
 一旦用户点击了复选框，就会向 Google 发送一个请求，其中包括 (i) `Referrer`，(ii) 网站的 `sitekey` (在注册 reCaptcha 时获得)，(iii) 提供给 `google.com` 的 cookie，以及 (iv) 由执行此控件的浏览器生成的信息检查 (加密)。然后由先进的风险分析系统分析该请求，最后决定向用户呈现哪种类型的验证码。
 
-<div><div align="center"><img alt="(a) 用户点击复选框之前" src="http://imgur.com/eHshegQ.png"/></div><center>(a) 用户点击复选框之前</center><div align="center"><img alt="(b) 用户点击复选框之后" src="http://imgur.com/OjqRJCz.png"/></div><center>(b) 用户点击复选框之后</center></div><center><strong>图 1. reCaptcha 网页控件</strong></center>
+<div align="center"><img alt="(a) 用户点击复选框之前" src="http://imgur.com/eHshegQ.png"/></div><center>(a) 用户点击复选框之前</center><div align="center"><img alt="(b) 用户点击复选框之后" src="http://imgur.com/OjqRJCz.png"/></div><center>(b) 用户点击复选框之后</center></div><center><strong>图 1. reCaptcha 网页控件</strong></center>
 
 <br>
 

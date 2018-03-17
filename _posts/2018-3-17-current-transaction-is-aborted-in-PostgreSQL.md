@@ -49,7 +49,7 @@ InternalError: current transaction is aborted, commands ignored until end of tra
 # 这时候你有两个选择 commit 或者 rollback
 # commit 的话数据库那边会出一个错误信息告诉你 users 不存在
 # rollback 的话就恢复到你这次未提交输入的所有命令之前
-# 而且经过我的测试，就算是 commit 的话，你前面所有正确 sql 语句也都作废
+# 顺便说一下，就算是 commit 的话，你前面所有正确 sql 语句也都作废
 # 那么我们选择 rollback 吧，不让数据库出错误日志
 connect.rollback()
 

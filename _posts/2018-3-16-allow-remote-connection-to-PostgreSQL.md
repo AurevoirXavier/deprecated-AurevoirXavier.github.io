@@ -28,7 +28,7 @@ host    all         all         all                   trust
 host    all         all         all                   trust
 ```
 
-**注意：如果 method 为 trust 说明无需验证密码，如果远程登录要验证密码改为 password。[更多配置](https://www.postgresql.org/docs/10/static/auth-methods.html)**
+**注意：如果 method 为 trust 说明无需验证密码，如果远程登录要验证密码改为 password，当然你可以保持 turst 然后通过限定前面 ip 范围同样起到一个验证效果。[更多配置参考](https://www.postgresql.org/docs/10/static/auth-methods.html)**
 
 然后另一个文件这么改：
 

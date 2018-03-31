@@ -19,14 +19,16 @@ $ sudo vi /var/lib/postgres/data/pg_hba.conf
 # IPv4 local connections:
 host    all         all         127.0.0.1/32          trust
 # IPv6 local connections:
-host    all         all         ::1/128               ident
+host    all         all         ::1/128               trust
 
 # 为了方便我直接改成了全部都允许：
 # IPv4 local connections:
 host    all         all         all                   trust
 # IPv6 local connections:
-host    all         all         all                   ident
+host    all         all         all                   trust
 ```
+
+**注意：如果 method 为 trust 说明无需验证密码，如果远程登录要验证密码改为 password。[更多配置](https://www.postgresql.org/docs/10/static/auth-methods.html)**
 
 然后另一个文件这么改：
 

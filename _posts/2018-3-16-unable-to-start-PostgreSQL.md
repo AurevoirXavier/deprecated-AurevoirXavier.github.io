@@ -22,7 +22,7 @@ comments: true
 $ sudo mkdir /var/lib/postgres/data
 
 # 将刚创建的文件夹所有权交给 postgres 用户
-$ sudo chown postgres /vat/lib/postgres/data
+$ sudo chown postgres /var/lib/postgres/data
 
 # 用 postgres 用户启动数据库初始化
 $ sudo -i -u postgres

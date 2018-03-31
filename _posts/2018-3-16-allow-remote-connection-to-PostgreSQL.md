@@ -12,7 +12,8 @@ comments: true
 那么先说说第一个怎么改：
 
 ```sh
-$ sudo vi /var/lib/pgsql/data/pg_hba.conf
+# 旧版本的 conf 文件在 /var/lib/pgsql/data/ 下
+$ sudo vi /var/lib/postgres/data/pg_hba.conf
 # 下面是文件里面默认允许的 ip 范围
 
 # IPv4 local connections:
@@ -31,7 +32,8 @@ host    all         all         all                   ident
 然后另一个文件这么改：
 
 ```sh
-$ sudo vi /var/lib/pgsql/data/postgresql.conf
+# 旧版本的 conf 文件在 /var/lib/pgsql/data/ 下
+$ sudo vi /var/lib/postgres/data/postgresql.conf
 
 # 下面是文件里面默认监听的 ip
 

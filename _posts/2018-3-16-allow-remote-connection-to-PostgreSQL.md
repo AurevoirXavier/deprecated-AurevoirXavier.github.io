@@ -15,13 +15,13 @@ comments: true
 # 旧版本的 conf 文件在 /var/lib/pgsql/data/ 下
 $ sudo vi /var/lib/postgres/data/pg_hba.conf
 
-# 下面是文件里面默认允许的 ip 范围
+# 下面是文件里面默认允许的 ip 范围：
 # IPv4 local connections:
 host    all         all         127.0.0.1/32          trust
 # IPv6 local connections:
 host    all         all         ::1/128               ident
 
-# 为了方便我直接改成了全部都允许，如下所示：
+# 为了方便我直接改成了全部都允许：
 # IPv4 local connections:
 host    all         all         all                   trust
 # IPv6 local connections:
@@ -34,10 +34,10 @@ host    all         all         all                   ident
 # 旧版本的 conf 文件在 /var/lib/pgsql/data/ 下
 $ sudo vi /var/lib/postgres/data/postgresql.conf
 
-# 下面是文件里面默认监听的 ip
+# 下面是文件里面默认监听的 ip：
 listen_addresses = 'localhost'
 
-# 为了方便同样我也把它改成了监听所有
+# 为了方便同样我也把它改成了监听所有：
 listen_addresses = '*'
 ```
 

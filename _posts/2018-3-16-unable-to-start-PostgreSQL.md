@@ -28,6 +28,10 @@ $ sudo chown postgres /var/lib/postgres/data
 $ sudo -i -u postgres
 $ initdb -D '/var/lib/postgres/data'
 
+# 如果提示 initdb not found 那么我们来搜索一下它的位置，没有的话请跳过下面两步
+$ sudo find / -name "initdb"
+$ /path/to/initdb -D '/var/lib/postgres/data'
+
 # 启动数据库服务
 $ sudo systemctl start postgresql
 ```

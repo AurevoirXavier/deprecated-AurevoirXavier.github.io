@@ -9,72 +9,25 @@ comments: true
 
 <center><strong>iOS 编程专有名词</strong></center>
 
-|         Storyboard          |     Interface Builder     |
+| English | 中文 |
 | :-------------------------: | :-----------------------: |
-|           **故事板**           |         **界面构造器**         |
-|       **Table view**       | **Navigation controller** |
-|           **表视图**           |         **导航控制器**         |
-|        **Delegate**        |     **Core Location**     |
-|           **代理**            |         **核心位置**          |
-|        **Core Data**        |        **Map Kit**        |
-|          **核心数据**           |         **地图工具包**         |
-| **Single View Application** |    **Navigator Area**     |
-|        **单一视图应用程序**         |         **导航区域**          |
-|    **Project Navigator**    |    **Utilities pane**     |
-|          **项目导航器**          |        **实用程序窗格**         |
-|     **View controller**     |         **Identity inspector**         |
-|          **视图控制器**          |          **身份检查器**           |
-|     **Object Library**      |        **Control**        |
-|           **对象库**           |          **控件**           |
-|      **Scene**       | **Connections inspector** |
-|          **场景**           |         **连接检查器**         |
-|     **Issue navigator**     |       **Portrait**        |
-|          **问题导航器**          |          **竖屏**           |
-|  **Attributes inspector**   |      **Orientation**      |
-|          **属性检查器**          |          **方向**           |
-|          **View**           |       **Landscape**       |
-|           **视图**            |          **横屏**           |
-|         **Closure**         |       **Simulate**        |
-|           **闭包**            |          **模拟**           |
-|  **Alignment constraints**  | **Centering constraint**  |
-|          **对齐约束**           |         **居中约束**          |
-|     **Core Animation**      |     **Launch screen**     |
-|          **核心动画**           |         **启动屏幕**          |
-
-<br>
-
-<center><strong>通用编程专有名词</strong></center>
-
-|         SDK         |       Variable        |
-| :-----------------: | :-------------------: |
-|     **软件开发工具包**     |        **变量**         |
-|     **Object**      |      **Method**       |
-|       **对象**        |        **方法**         |
-| **Object-oriented** |      **Slider**       |
-|      **面向对象**       |        **滑块**         |
-|     **Button**      |       **Alert**       |
-|       **按钮**        |        **提醒**         |
-|      **Label**      |      **Canvas**       |
-|       **标签**        |        **画布**         |
-|     **Action**      |     **Framework**     |
-|      **操作；动作**      |        **框架**         |
-|       **UI**        |       **Data**        |
-|      **用户界面**       |        **数据**         |
-|    **Function**     |   **Functionality**   |
-|       **函数**        |        **功能**         |
-|      **Type**       |       **Debug**       |
-|       **类型**        |        **调试**         |
-|     **String**      |     **Data type**     |
-|       **字符串**       |       **数据类型**        |
-|   **Assignment**    |        **Bug**        |
-|       **赋值**        |       **漏洞；错误**       |
-|     **Global**      |     **Instance**      |
-|       **全局**        |        **实例**         |
-|      **Local**      | **Instance variable** |
-|       **本地**        |       **实例变量**        |
-|    **Algorithm**    |     **Constant**      |
-|       **算法**        |        **常量**         |
-|      **Width**      |      **Height**       |
-|       **宽度**        |        **高度**         |
-|   **Background**    |       **Color**       |
-|       **背景**        |        **颜色**         |
+|           **Storyboard**           |         **故事板**         |
+|       **Table view**       | **表视图** |
+|        **Delegate**        | **代理** |
+| **Single View Application** |    **单一视图应用程序**    |
+|    **Project Navigator**    |    **项目导航器**    |
+|     **View controller**     |         **视图控制器**         |
+|      **Scene**      | **场景** |
+|     **Issue navigator**     |       **问题导航器**       |
+|  **Attributes inspector**  |      **属性检查器**      |
+|  **Alignment constraints**  | **对齐约束** |
+| **Interface Builder** | **界面构造器** |
+| **Navigation controller** | **导航控制器** |
+| **Landscape** | **横屏** |
+| **Navigator Area** | **导航区域** |
+| **Utilities pane** | **实用程序窗格** |
+| **Identity inspector** | **身份检查器** |
+| **Connections inspector** | **连接检查器** |
+| **Portrait** | **竖屏** |
+| **Orientation** | **方向** |
+| **Centering constraint** | **居中约束** |

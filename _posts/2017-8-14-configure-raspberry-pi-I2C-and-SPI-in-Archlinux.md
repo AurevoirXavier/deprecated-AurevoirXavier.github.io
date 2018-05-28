@@ -3,15 +3,19 @@ layout: post
 title: "Configure raspberry's I2C and SPI in Archlinux"
 date:   2017-08-14
 excerpt: "在 Archlinux 下配置树莓派的 I2C SPI"
-tags: [Archlinux, raspberry pi]
+tags: [Archlinux, raspberyPi]
 comments: true
 ---
 
-## 首先，本人的树莓派型号为<树莓派3b+>。Part I 为启用 I2C，如果还需要使用 SPI，请看 Part II。
+<center><h2>在 Archlinux 下配置树莓派的 I2C SPI</h2></center>
+
+<!--more-->
+
+<center><strong><i>首先，本人的树莓派型号为<树莓派3b+>。Part I 为启用 I2C，如果还需要使用 SPI，请看 Part II。</i></strong></center>
 
 ---
 
-# Part I
+### Part I
 
 **第一步**
 
@@ -37,7 +41,7 @@ device_tree_param=i2c_arm=on
 
 ---
 
-# Part II
+### Part II
 
 **第一步**
 

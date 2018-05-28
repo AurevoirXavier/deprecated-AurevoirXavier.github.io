@@ -1,8 +1,8 @@
 ---
 layout: post
-title: "OSX Language Setting"
+title: "OS X Language Setting"
 date:   2017-08-8
-excerpt: "OSX 语言设置"
+excerpt: "OS X 语言设置"
 tags: [OS X]
 comments: true
 ---

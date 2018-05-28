@@ -3,9 +3,11 @@ layout: post
 title: "SSH permissions"
 date:   2017-09-15
 excerpt: "ssh 权限"
-tags: [Linux, OSX, ssh]
+tags: [SSH]
 comments: true
 ---
+
+<center><h2>SSH permissions</h2></center>
 
 The following permissions are needed:
 
@@ -19,4 +21,3 @@ Also:
 chmod g-w ~/
 chmod o-wx ~/
 ```
-

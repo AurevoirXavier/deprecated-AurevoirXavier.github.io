@@ -1,11 +1,15 @@
 ---
 layout: post
-title: "Update ruby with rvm on mac"
+title: "Update Ruby with rvm on mac"
 date:   2018-01-28
-excerpt: "在 mac 下通过 rvm 更新 ruby"
-tags: [OS X, ruby, system]
+excerpt: "在 mac 下通过 rvm 更新 Ruby"
+tags: [OS X, Ruby]
 comments: true
 ---
+
+<center><h2>在 mac 下通过 rvm 更新 ruby</h2></center>
+
+<!--more-->
 
 **rvm** 全名 *Ruby Version Manager (RVM)* 是国外一个开源的 **ruby** 版本管理工具，可以管理多个 **ruby** 版本并自由切换，[官网](www.rvm.io)。
 
@@ -56,4 +60,3 @@ $ ruby -v
 ```sh
 $ rvm remove (你想删除的版本)
 ```
-

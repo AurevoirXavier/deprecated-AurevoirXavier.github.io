@@ -3,7 +3,7 @@ layout: post
 title: "Add new user and grant privilege in CentOS 7"
 date:   2018-01-05
 excerpt: "CentOS 7中添加一个新用户并授权"
-tags: [gfw, linux, netstat, shadowsocks]
+tags: [CentOS, Linux]
 comments: true
 ---
 

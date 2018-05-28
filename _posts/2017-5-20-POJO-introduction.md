@@ -1,11 +1,17 @@
 ---
 layout: post
-title: "Understanding POJOs"
+title: "POJO introduction"
 date:   2017-05-20
-excerpt: "理解 POJOs"
-tags: [springmvc, translate]
+excerpt: "POJO 介绍"
+tags: [Java]
 comments: true
 ---
+
+<center><h2>POJO 介绍</h2></center>
+
+<!--more-->
+
+<center>[原文链接](https://spring.io/understanding/POJO#understanding-pojos)</center>
 
 POJO 表示 **Plain Old Java Object** (普通 Java 对象)。它是指 Java 对象 (定义的实例)，不被框架扩展所阻碍。
 
@@ -49,5 +55,3 @@ public class ExampleListener {
 这只是一个例子。这并不意味着说明 JMS vs. RabbitMQ，而是代替编码的价值而不是与特定接口绑定。通过使用 **Plain Old Java Object**，你的代码可以简单得多。这有助于更好的测试，灵活性和今后做出新决策的能力。
 
 Spring 框架及其各种投资组合项目总是旨在减少代码与现有库之间的耦合。这是依赖注入的一个主要概念，你的服务使用方式应该是连接应用程序而不是服务本身的一部分。
-
-[原文链接。](https://spring.io/understanding/POJO#understanding-pojos)

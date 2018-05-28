@@ -7,7 +7,7 @@ tags: [Swift]
 comments: true
 ---
 
-<center><h1>我天真地定义了以下枚举：</h1></center>
+<center><h2>遍历 Swift 中的枚举类型</h2></center>
 
 <!--more-->
 

@@ -3,11 +3,15 @@ layout: post
 title: "? and ! in Swift"
 date:   2017-04-25
 excerpt: "Swift 中的 ? 和 !"
-tags: [syntax, program, swift]
+tags: [Swift]
 comments: true
 ---
 
-# 简单值
+<center><h2>Swift 中的 ? 和 !</h2></center>
+
+<!--more-->
+
+### 简单值
 
 使用 `let` 来声明常量，使用 `var` 来声明变量。一个常量的值，在编译的时候，并不需要有明确的值，但是只能为它赋值一次。也就是说可以用常量来表示这样一个值：只需要决定一次，但是需要使用很多次。但 Swift 不会自动给变量赋初始值，变量不会有默认值，所以要求使用变量之前必须要对其初始化。如果在使用变量之前不进行初始化就会报错：
 
@@ -19,9 +23,9 @@ let hashValue = demo.hashValue
 //  error: variable 'demo' used before being initialized
 ```
 
-# Optional (可选值)
+### Optional (可选值)
 
-## Optional 是什么？
+#### Optional 是什么？
 
 **Optional** 其实是个 `enum`，其中有 `None` 和 `Some` 这两种类型。`nil` 就是 `Optional.None`, 非 `nil` 就是 `Optional.Some`, 通过 `Some(T)` **wrap** (包装) 原始值，这也是为什么在使用 **Optional** 的时候要 **unwrap** (解包: 从 `enum` 里取出来原始值), 同时也是 *PlayGround* 会把 **Optional** 变量显示为诸如 `{Some "hello world"}` 之类的原因，以下是 **enum Optional** 的定义：
 
@@ -48,7 +52,7 @@ var demo: String?  //  ? 是下面这种写法的语法糖
 var demo: Optional<String>
 ```
 
-<center><a href = "http://uvwvu.com/syntacticSugarSwift">更多 Swift 语法糖点击此</a></center>
+<center><a href="https://uvwvu.xyz/Swift/syntactic-surgar-of-Swift.rust">更多 Swift 语法糖点击此</a></center>
 
 上面这个 **Optional** 声明的意思不是 ”声明了一个 **Optional** 的 `String` 值”, 而是 ”声明了一个 **Optional** 类型值，其中可能包含一个 `String` 值，也可能什么都不包含”。总的来说，声明的是 **Optional** 类型，而不是声明了一个 `String` 类型，这一点非常之重要。
 
@@ -62,7 +66,7 @@ if demo != nil {
 }
 ```
 
-## 如何使用 Optional？
+#### 如何使用 Optional？
 
 在使用 **Optional** 变量的时候需要在具体的操作，比如调用方法、属性、下标索引等前面需要加上一个 `?`，如果是 `nil` 值 (`Optional.None`)，会跳过后面的操作不执行，如果有值 (`Optional.Some`)，可能会 **unwrap** ，然后对 **unwrap** 后的值执行后面的操作，来保证执行这个操作更加安全，举几个例子看看：
 
@@ -164,4 +168,3 @@ var demoButton: ImplicitlyUnwrappedOptional<UIButton>
 
 1. 强制对 **Optional** 变量进行 **unwrap** 时
 2. 声明 **Implicitly Unwrapped Optionals** 变量时
-

@@ -3,11 +3,15 @@ layout: post
 title: "WEB-INF directory"
 date:   2017-04-27
 excerpt: "WEB-INF 目录详解"
-tags: [java, program, web]
+tags: [Java, Web]
 comments: true
 ---
 
-## WEB-INF 简介
+<center><h2>WEB-INF 目录详解</h2></center>
+
+<!--more-->
+
+### WEB-INF 简介
 
 **WEB-INF** 是 **Java**的 **Web** 应用的安全目录。所谓安全就是客户端无法访问，只有服务端可以访问的目录。
 
@@ -17,9 +21,9 @@ comments: true
 
 **WEB-INF** 文件夹中除了有 **classes** 文件夹和一个 **web.xml** 文件外、还有 **lib** 文件夹 (用于存放需要的 **JAR** 包，用于配置，比如说用来配置过滤器等)。
 
-## WEB-INF 目录结构
+### WEB-INF 目录结构
 
-| 目录                           | 说明                                       |
+| <font color="red">目录</font> | <font color="blue">说明</font>           |
 | ---------------------------- | ---------------------------------------- |
 | /WEB-INF/web.xml             | **Web** 应用程序配置文件，描述了 **Servlet** 和其他的应用组件配置及命名规则。 |
 | /WEB-INF/classes/            | 包含了站点所有用的 **class** 文件，包括 **Servlet class** 和非 **Servlet class**，他们不能包含在 **.jar** 文件中。 |
@@ -30,4 +34,3 @@ comments: true
 | /WEB-INF/jsp/                | **Jsp 1.2** 以下版本的文件存放位置。改目录没有特定的声明，同样，可以根据自己的喜好与习惯来命名。此目录主要存放的是 **Jsp 1.2** 以下版本的文件，为区分 **Jsp 2.0** 文件，通常使用 **jsp** 命名，当然你也可以命名为 **jspOldEdition**。 |
 | /WEB-INF/jsp2/               | 与 **jsp** 文件目录相比，该目录下主要存放 **Jsp 2.0** 以下版本的文件，当然，它也是可以任意命名的，同样为区别 **Jsp 1.2** 以下版本的文件目录，通常才命名为 **jsp2**。 |
 | META-INF                     | 相当于一个信息包，目录中的文件和目录获得 **Java2** 平台的认可与解释，用来配置应用程序、扩展程序、类加载器和服务 **manifest.mf** 文件，在用 **JAR** 打包时自动生成。 |
-

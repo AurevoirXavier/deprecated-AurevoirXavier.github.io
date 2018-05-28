@@ -1,27 +1,31 @@
 ---
 layout: post
-title: "Shadowsocks server deploy"
+title: "shadowsocks server deploy"
 date:   2017-10-25
-excerpt: "Shadowsocks 服务器搭建"
-tags: [gfw, shadowsocks]
+excerpt: "shadowsocks 服务器搭建"
+tags: [shadowsocks]
 comments: true
 ---
 
-## 服务器选择：
+<center><h2>shadowsocks 服务器搭建</h2></center>
+
+<!--more-->
+
+### 服务器选择：
 
 个人推荐 [vultr](https://www.vultr.com/?ref=7243921)，在我这里是能达到百兆光纤速度的上限。
 
 <a href="https://www.vultr.com/?ref=7243921"><img src="https://www.vultr.com/media/banner_1.png" width="728" height="90"></a>
 
-## 创建用户：
+### 创建用户：
 
 这个没什么好说的吧。
 
-## Server Location 地区:
+### Server Location 地区:
 
 看个人需求了，一般来说是机房地理位置离你越近越好。我选择的是 `Tokyo Japan` 的机房。
 
-## Server Type & Server Size 服务器配置：
+### Server Type & Server Size 服务器配置：
 
 - 操作系统：Debian 7 x64
 - 硬盘空间：25GB SSD
@@ -31,7 +35,7 @@ comments: true
 
 以上是推荐个人或者两个人共同使用的配置，如有特别需求自行选择。
 
-## Additional Features 附加功能：
+### Additional Features 附加功能：
 
 - IPv6 `启用 IPv6`：✗
 - Private Network `私有网络`：✗
@@ -46,27 +50,27 @@ comments: true
 3. DDos 保护就是防御洪水攻击的，如果你只是为了翻墙一般是没用的。
 4. 免费提供的储存区块对于我们翻墙来说没什么用。不过这个功能仅限纽约和新泽西的服务器可以使用。
 
-## Startup Script 启动脚本：
+### Startup Script 启动脚本：
 
 开机时会自动执行的脚本，不过我不在此设置。
 
-## SSH Keys：
+### SSH Keys：
 
 和自己执行 `ssh-copy-id` 实现免密登陆有异曲同工之妙。不过需要的注意的是点击 Add Keys 并且把公钥保存之后，需要回到部署页面刷新一下然后才会出现刚添加的项目，然后单击底色变蓝说明勾选。
 
-## Server Hostname & Label 域名与标签：
+### Server Hostname & Label 域名与标签：
 
 如果你有域名可以绑上去，远程连接或者使用 shadowsocks 的时候就不用记那一串 ip 地址了。
 
 ---
 
-## 连接服务器：
+### 连接服务器：
 
 使用 `putty` 或者 `ssh`，或者直接使用部署成功后进入服务器网页里面的 `console`。网上过多教程，此处不在赘述。
 
 ---
 
-##  安装 shadowsocks：
+### 安装 shadowsocks：
 
 一键脚本（由 teddysun 提供）：
 
@@ -80,7 +84,7 @@ wget --no-check-certificate https://raw.githubusercontent.com/teddysun/shadowsoc
 2. 使用端口，输入 `443`。
 3. 加密方式：`rc4-md5`，输入前面的序号，我记得应该是 `18` 。
 
-## 安装 BBR（可选）：
+### 安装 BBR（可选）：
 
 最近，Google 开源了其 TCP BBR 拥塞控制算法，并提交到了 Linux 内核，从 4.9 开始，Linux 内核已经用上了该算法。根据以往的传统，Google 总是先在自家的生产环境上线运用后，才会将代码开源，此次也不例外。
 根据实地测试，在部署了最新版内核并开启了 TCP BBR 的机器上，网速甚至可以提升好几个数量级。
@@ -172,7 +176,7 @@ dpkg -i linux-image-4.12.4-041204-generic_4.12.4-041204.201707271932_amd64.deb
 mount -o remount rw /
 ```
 
-## 安装锐速 （可选）：
+### 安装锐速 （可选）：
 
 锐速起到一个加速的作用，其实就像是马路上的红绿灯，用算法调节阻塞。
 
@@ -200,9 +204,7 @@ service serverSpeeder start
 
 ------
 
-
-
-## 最后配置：
+### 最后配置：
 
 编辑 `/etc/shadowsocks-libev/config.json` ，至于选择什么编辑器自行百度一下，毕竟看这个教程的大部分是新手而 linux 的许多编辑器对新手确实是不太友好例如 vi。
 
@@ -217,7 +219,8 @@ config.json ：
 "timeout":600,
 "method":"这里是加密方式同样用之前配置好的 rc4-md5 就行了"
 ```
-## 防火墙（可选）：
+
+### 防火墙（可选）：
 
 安装防火墙：
 

@@ -1,11 +1,15 @@
 ---
 layout: post
-title: "Raspberry PI 3 install Archlinux"
+title: "Install Archlinux on raspberryPI 3"
 date:   2018-02-02
 excerpt: "Raspberry PI 3 安装 Archlinux"
-tags: [Archlinux, raspberry pi]
+tags: [Archlinux, raspberryPi]
 comments: true
 ---
+
+<center><h2>Raspberry PI 3 安装 Archlinux</h2></center>
+
+<!--more-->
 
 首先说明本教材需要一台 **Linux** 机器。*OSX，Windows* 都不行。如果没有现成的，那么虚拟机是一个好选择。
 

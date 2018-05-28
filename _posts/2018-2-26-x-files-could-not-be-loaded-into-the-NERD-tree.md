@@ -7,6 +7,10 @@ tags: [nerdtree, vim]
 comments: true
 ---
 
+<center><h2>x file(s) could not be loaded into the NERD tree</h2></center>
+
+<!--more-->
+
 一般是所有者的问题，打开问题所在路径：
 
 ```sh
@@ -20,4 +24,3 @@ $ chown $(whoami) *
 
 # 2.删除不是当前用户的文件（记得备份）
 ```
-

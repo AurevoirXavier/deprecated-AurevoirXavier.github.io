@@ -3,9 +3,13 @@ layout: post
 title: "ssh with root"
 date:   2018-02-02
 excerpt: "使用 root 账户 ssh 登录"
-tags: [ssh]
+tags: [SSH]
 comments: true
 ---
+
+<center><h2>使用 root 账户 ssh 登录</h2></center>
+
+<!--more-->
 
 有时候我们需要以 **root** 身份来登录。这就需要配置一下了，因为处于安全考虑默认是不可的。我也建议在你使用完后更改回去。
 
@@ -24,4 +28,3 @@ PermitRootLogin yes
 # 如果怎样都不行或者嫌麻烦直接重启机器
 $ systemctl restart sshd
 ```
-

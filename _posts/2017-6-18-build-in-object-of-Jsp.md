@@ -1,16 +1,20 @@
 ---
 layout: post
-title: "Jsp's build-in object"
+title: "build-in object of Jsp"
 date:   2017-06-18
-excerpt: "Servlet 与九大内置对象"
-tags: [jsp, program]
+excerpt: "Jsp 内置对象"
+tags: [Java, Web]
 comments: true
 ---
 
+<center><h2>Jsp 内置对象</h2></center>
 
+<!--more-->
 
-|   Jsp 对象    |          如何获得          |
+<center>
+|||
 | :---------: | :--------------------: |
+|   <font color="red">Clarifai</font>    |    <font color="blue">如何获得</font>    |
 |     out     |     resp.getWriter     |
 |   request   |  service 方法中的 req 参数   |
 |  response   |  service 方法中的 resp 参数  |
@@ -20,4 +24,4 @@ comments: true
 |    page     |          this          |
 | pageContext |      PageContext       |
 |   Config    |  getServletConfig 函数   |
-
+</center>

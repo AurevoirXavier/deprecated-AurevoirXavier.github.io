@@ -3,13 +3,17 @@ layout: post
 title: "Error while loading shared libraries"
 date:   2017-09-27
 excerpt: "加载共享库出错"
-tags: [Linux, library]
+tags: [Linux]
 comments: true
 ---
 
+<center><h2>加载共享库出错</h2></center>
+
+<!--more-->
+
 有时候执行某些命令的时候会出现这种情况：
 
-```shell
+```sh
 ./somecommand: error while loading shared libraries: xxx.so.0:cannot open shared object file: No such file or directory
 ```
 
@@ -17,13 +21,13 @@ comments: true
 
 如果你不确定你的系统中有没有这个文件可以 `find` 一下：
 
-```shell
+```sh
 find / -name "xxx.so"
 ```
 
 如果有结果的话，记下路径然后编辑 `/etc/ld.so.conf` 这个文件：
 
-```shell
+```sh
 vim /etc/ld.so.conf
 ```
 
@@ -33,7 +37,6 @@ Ps：一般而言，很多 `so` 都在 `/usr/local/lib` 和 `/usr/lib` 下，所
 
 最后保存对 `/etc/ld.so.conf` 的修改后，要刷新一下让系统知道做了变更该去哪里寻找：
 
-```shell
+```sh
 /sbin/ldconfig –v
 ```
-

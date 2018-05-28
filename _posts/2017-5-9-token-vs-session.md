@@ -2,24 +2,28 @@
 layout: post
 title: "Token vs. Session"
 date:   2017-05-09
-excerpt: "Web 应用中的 Token 与 Session"
-tags: [json, program, web]
+excerpt: "Token 与 Session"
+tags: [Web]
 comments: true
 ---
+
+<center><h2>Token 与 Session</h2></center>
+
+<!--more-->
 
 许多现代 *Web 应用程序*使用 **JSON Web Tokens (JWT)**，而不是传统的基于 **session** 的*身份验证*。在现代应用程序中使用服务器端 **sessions** 已经发现了很多挑战。在这篇文章中，我们将确定这些挑战，并解释 **JWT** 和 **sessions** 在实践中如何工作。
 
 <code class="highlighter-rouge">最近有关于 <strong>JWT</strong> 的杰出用例以及那些做得不够好的工作的争议。也就是说，<strong>JSON Web Tokens</strong> 对于 <strong>sessions</strong> 来说足够好 - 还是应该继续使用 <strong>cookies</strong>？</code>
 
-## 什么是 JSON Web Tokens?
+### 什么是 JSON Web Tokens?
 
 **JSON Web Token (JWT)** 是一种开放标准 ([RFC 7519](https://tools.ietf.org/html/rfc7519))，它定义了一种紧凑且 *self-contains (自包含)* 的方式，可以作为 **JSON** 对象在各方之间安全地传输信息。该信息可以通过*数字签名*进行*验证*和*信任*。**JWTs** 可以使用密钥 (使用 *HMAC 算法*) 或使用 *RSA 的公钥/私钥*对进行*签名*。
 
-## 剖析 JWT
+### 剖析 JWT
 
 **JWTs** 基本上由三部分组成由一个 `.` 分隔。*header (标头)*，*payload (有效载荷)* 和*签名*。接下来将对 *JWT 结构* 进行全面的解释。查看这篇优秀[文章](https://auth0.com/learn/json-web-tokens/)，有着对 *JWT 结构*的全面解释。
 
-## JSON Web Tokens 的工作原理
+### JSON Web Tokens 的工作原理
 
 在*身份验证*中，当用户使用其凭据成功登录时，将返回一个 **JSON Web Token**，并且必须保存在本地 (通常在本地存储中，但也可以使用 **cookies**)，而不是像传统的方法一样，在服务器中创建一个会话并返回一个 **cookie**。
 
@@ -37,7 +41,7 @@ Authorization: Bearer <token>
 
 ![](http://imgur.com/VBQMuz9.png)
 
-## 为什么应该使用 JWTs？
+### 为什么应该使用 JWTs？
 
 你应该使用 **JSON Web Tokens** 以下几个原因：
 
@@ -49,7 +53,7 @@ Authorization: Bearer <token>
 
 上面的要点将在下面详细解释。
 
-## JWTs vs. Sessions
+### JWTs vs. Sessions
 
 在出现 **JSON Web Tokens** 之前，主要采用基于服务器的*身份验证*。众所周知，*HTTP 协议*是*无状态的*，这意味着如果使用用户名和密码验证用户，那么在下一个*请求*中，应用程序将不知道是谁。必须再次验证。因此，需要确保在用户登录后，仍然可以在每个后续 *HTTP 请求*中*验证用户的身份验证状态*。
 
@@ -101,13 +105,13 @@ Authorization: Bearer <token>
 
 **5.下游服务：** 现代 *Web 应用程序*看到的另一种常见模式是它们常常依赖于下游服务。例如，在解决*原始请求*之前，对主应用程序服务器的调用可能会向下游服务器发出请求。这里的问题是，**cookies** 不会轻易地流向下游的服务器，也不能告诉这些服务器有关用户的*身份验证状态*。由于每个服务器都有自己的 **cookies** 方案，因此流量很大，连接困难。**JSON Web Tokens** 再次使这些变得轻而易举！
 
-## 使用 JWTs 验证 Auth0
+### 使用 JWTs 验证 Auth0
 
 在 *Auth0* 中，由于*认证*过程，发布了 **JWTs**。当用户使用 *Auth0* 登录时，创建，*签名*并发送给用户的 **JWT**。*Auth0* 支持使用 *HMAC 和 RSA 算法*来*签名***JWT**。用户可以灵活地从仪表板中实际选择这两种算法。然后，该 **token** 将用于使用 *APIs* 进行*身份验证*和*授权*，这将允许访问其受保护的路由和资源。
 
 还使用 **JWTs** 在 [*Auth0 的 API v2*](https://auth0.com/docs/api/management/v2) 中执行*认证*和*授权*，取代了常规不透明 *API* 密钥的传统用法。关于*授权*，**JSON Web Tokens** 允许精细的安全性，这是能够在 **token** 中指定一组特定权限，从而提高可调试性。
 
-## 结论
+### 结论
 
 **JSON Web Token** 是轻量级的，可以轻松地跨平台和语言使用。是一个聪明的方式来*验证*和*授权*没有 **sessions**。有几个 *JWT 库*可用于*签名*和*验证* **tokens**。使用 **tokens** 的原因还有很多，*Auth0* 可以通过简单，安全的方式实现 **token** *认证*。
 

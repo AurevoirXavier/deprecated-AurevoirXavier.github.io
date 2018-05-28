@@ -2,10 +2,14 @@
 layout: post
 title: "Allow remote connection to PostgreSQL"
 date:   2018-03-16
-excerpt: "远程连接 PostgreSQL 数据库"
-tags: [PostgreSQL]
+excerpt: "允许远程连接 PostgreSQL 数据库"
+tags: [Linux, PostgreSQL]
 comments: true
 ---
+
+<center><h2>允许远程连接 PostgreSQL 数据库</h2></center>
+
+<!--more-->
 
 要允许远程登录一共要修改两个文件分别是 `/var/lib/pgsql/data/pg_hba.conf` 和 `/var/lib/pgsql/data/postgresql.conf`。
 

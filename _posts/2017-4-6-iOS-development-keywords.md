@@ -7,7 +7,9 @@ tags: [iOS]
 comments: true
 ---
 
-<center><strong>iOS 编程名词</strong></center>
+<center><h1>iOS 编程名词</h1></center>
+
+<!--more-->
 
 <center>
 |||

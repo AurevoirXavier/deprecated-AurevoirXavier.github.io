@@ -7,15 +7,15 @@ tags: [Swift]
 comments: true
 ---
 
-<center><h1>Swift 中的一些语法糖</h1></center>
+<center><h2>Swift 中的一些语法糖</h2></center>
 
 <!--more-->
 
-## Syntactic sugar 是什么？
+### Syntactic sugar 是什么？
 
 语法糖 (Syntactic sugar)，也译为糖衣语法，是由英国计算机科学家彼得·约翰·兰达 (Peter J. Landin) 发明的一个术语，指计算机语言中添加的某种语法，这种语法对语言的功能并没有影响，但是更方便程序员使用。通常来说使用语法糖能够增加程序的可读性，从而减少程序代码出错的机会。语法糖和其他编程思想一样重要，什么 *duck type*，人本接口，最小接口，约定优于配置，广义来讲都是一些思想上的“语法糖“。需要声明的是 “语法糖” 这个词绝非贬义词，它可以给我们带来方便，是一种便捷的写法，编译器会帮我们做转换；而且可以提高开发编码的效率，在性能上也不会带来损失。
 
-## if let
+### if let
 
 ```swift
 func printX(str: String?) {
@@ -37,7 +37,7 @@ func printX(str: String?) {
 }
 ```
 
-## guard
+### guard
 
 当 `if` 中有较长的代码时，通常先将错误情况先返回，这样做可以避免过多的嵌套。比如：
 
@@ -65,7 +65,7 @@ func printX(str: String?) {
 
 有关 `if let` 和 `guard` 语法中出现的 `where` (本文例子中未出现)，属于一些约束。相当于逻辑运算 && 和 \|\|。不妨把它看作 **Sql** 中的 `where` 吧。
 
-## Optional ?
+### Optional ?
 
 一个 **Optional** 值是一个具体的值或者是 `nil` 以表示值缺失。在类型后面加一个 `?` 来标记这个变量的值是可选的：
 
@@ -74,7 +74,7 @@ var demo: String?  //  ? 是下面这种写法的语法糖
 var demo: Optional<String>
 ```
 
-## Optional !
+### Optional !
 
 这种特殊的 **Optional**，称之为 **Implicitly Unwrapped Optionals** (隐式拆包的可选值)，就等于说每次对这种类型的值操作时，都会自动在操作前补上一个 `!` 进行 **unwrap**，然后再执行后面的操作。
 

@@ -3,11 +3,15 @@ layout: post
 title: "ssh without password"
 date:   2018-02-02
 excerpt: "ssh 免密登录"
-tags: [ssh]
+tags: [SSH]
 comments: true
 ---
 
-Grammar：
+<center><h2>ssh 免密登录</h2></center>
+
+<!--more-->
+
+Command：
 
 ```sh
 $ ssh-copy-id [-i [identity_file]] [user@]machine

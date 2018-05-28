@@ -3,11 +3,13 @@ layout: post
 title: "netstat useful command"
 date:   2018-01-05
 excerpt: "netstat 常用命令"
-tags: [linux, network, netstat]
+tags: [Linux, netstat]
 comments: true
 ---
 
-## netstat 常用指令
+<center><h2>netstat 常用指令</h2></center>
+
+<!--more-->
 
 **1. 列出所有端口 (包括监听和未监听的)**
 
@@ -294,4 +296,3 @@ $ netstat -nat |awk '{print $6}'|sort|uniq -c|sort -rn
 ```sh
 $ awk '{print $1}' access.log |sort|uniq -c|sort -nr|head -10
 ```
-

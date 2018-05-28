@@ -7,6 +7,10 @@ tags: [gfw, linux, netstat, shadowsocks]
 comments: true
 ---
 
+<center><h2>CentOS 7中添加一个新用户并授权</h2></center>
+
+<!--more-->
+
 **创建新用户**
 
 创建一个用户名为：ax

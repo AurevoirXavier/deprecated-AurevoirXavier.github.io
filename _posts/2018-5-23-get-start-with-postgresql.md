@@ -2,10 +2,14 @@
 layout: post
 title: "Get start with postgresql"
 date:   2018-05-23
-excerpt: "postgresql 基本指令"
-tags: [postgresql]
+excerpt: "PostgreSQL 基本指令"
+tags: [PostgreSQL]
 comments: true
 ---
+
+<center><h2>PostgreSQL 基本指令</h2></center>
+
+<!--more-->
 
 前面讲了安装后的启动和如何远程连接，这次讲几个基本命令。
 

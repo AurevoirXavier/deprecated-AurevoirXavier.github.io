@@ -3,9 +3,13 @@ layout: post
 title: "Vim search highlight"
 date:   2018-05-22
 excerpt: "vim 搜索关键词高亮"
-tags: [vim]
+tags: [Linux, vim]
 comments: true
 ---
+
+<center><h2>vim 搜索关键词高亮</h2></center>
+
+<!--more-->
 
 高亮：`:set hlsearch`.
 取消高亮： `:noh`.

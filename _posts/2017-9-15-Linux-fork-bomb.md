@@ -3,9 +3,13 @@ layout: post
 title: "Linux fork bomb"
 date:   2017-09-15
 excerpt: "Linux fork 炸弹"
-tags: [Linux, shell]
+tags: [Linux]
 comments: true
 ---
+
+<center><h2>Linux fork 炸弹</h2></center>
+
+<!--more-->
 
 Jaromil 在 2002 年设计了最为精简的一个 fork 炸弹的实现。fork 炸弹是一种恶意程序，它的内部有一个在不断 fork 进程的无限循环，fork 炸弹并不需要有特别的权限即可对系统造成破坏。fork 炸弹其实就是一个递归程序。由于程序是递归的，如果没有任何限制，这个简单的程序可以轻而易举的耗尽系统里面的所有资源。来一探究竟吧:
 

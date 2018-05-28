@@ -1,8 +1,8 @@
 ---
 layout: post
-title: "atomically in Swift"
+title: "Atomically of Swift"
 date:   2017-04-11
-excerpt: "Swift 中的 atomically 参数详解"
+excerpt: "Swift 中的 atomically 详解"
 tags: [program, swift]
 comments: true
 ---

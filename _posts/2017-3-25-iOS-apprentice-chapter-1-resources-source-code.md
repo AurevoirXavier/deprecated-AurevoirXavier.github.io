@@ -2,7 +2,7 @@
 layout: post
 title: "iOS Apprentice 1 Getting Started v5.0 Chapter 1"
 date:   2017-03-25
-excerpt: "第一章，素材及源代码"
+excerpt: "iOS Apprentice 第一章，素材及源代码"
 project:    true
 tags: [iOS, Project]
 comments: true

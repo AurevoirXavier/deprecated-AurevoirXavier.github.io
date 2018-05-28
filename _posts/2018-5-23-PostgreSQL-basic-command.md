@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Get start with postgresql"
+title: "PostgreSQL basic command"
 date:   2018-05-23
 excerpt: "PostgreSQL 基本指令"
 tags: [PostgreSQL]

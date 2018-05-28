@@ -3,9 +3,13 @@ layout: post
 title: "Current transaction is aborted in PostgreSQL"
 date:   2018-03-17
 excerpt: "ERROR: current transaction is aborted"
-tags: [PostgreSQL]
+tags: [PostgreSQL, Python]
 comments: true
 ---
+
+<center><h2>ERROR: current transaction is aborted</h2></center>
+
+<!--more-->
 
 这个错误是在事务中某个 sql 语句执行错误后没有 `rollback` 或者 `commit`，然后继续执行其他 sql 导致的。而且这个问题大多数出在与程序的交互中，因为当你直接操作数据库的时候它是默认开启了 `AUTOCOMMIT`（自动提交），当你直接操作数据库时输错了什么后结果都会直接出现在终端里面。不过如果你想关掉这个功能可以：`\set AUTOCOMMIT off`。
 

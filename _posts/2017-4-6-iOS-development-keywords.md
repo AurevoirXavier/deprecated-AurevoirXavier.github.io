@@ -1,16 +1,18 @@
 ---
 layout: post
-title: "Programming keywords"
+title: "iOS development keywords"
 date:   2017-04-06
-excerpt: "仅针对 iOS Apprentice 中出现的高频专有名词"
-tags: [iOS, program, swift, translate]
+excerpt: "iOS 编程名词"
+tags: [iOS]
 comments: true
 ---
 
-<center><strong>iOS 编程专有名词</strong></center>
+<center><strong>iOS 编程名词</strong></center>
 
-| English | 中文 |
+<center>
+|||
 | :-------------------------: | :-----------------------: |
+| <font color="red">English</font> | <font color="blue">中文</font> |
 |           **Storyboard**           |         **故事板**         |
 |       **Table view**       | **表视图** |
 |        **Delegate**        | **代理** |
@@ -31,3 +33,4 @@ comments: true
 | **Portrait** | **竖屏** |
 | **Orientation** | **方向** |
 | **Centering constraint** | **居中约束** |
+</center>

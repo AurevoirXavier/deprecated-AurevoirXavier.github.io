@@ -3,19 +3,23 @@ layout: post
 title: "Salt your hashes"
 date:   2017-05-12
 excerpt: "盐化你的哈希 (为你的哈希加盐)"
-tags: [aes, hash, md5, salt, security, sha1]
+tags: [Cryotology, Hash]
 comments: true
 ---
 
-## 哈希
+<center><h2>盐化你的哈希 (为你的哈希加盐)</h2></center>
+
+<!--more-->
+
+### 哈希
 
 哈希是单向函数，它产生一个通常是数字的数据。它们总是从相同的数据生成相同的*散列*，并没有简单的方法来反转进程。这使得它们对密码存储非常有用。不过不是存储用户的密码，而是存储密码的哈希值。当用户再次登录时，不是检查与存储的密码相对应的密码，而是计算输入密码的哈希值，并将其与存储的哈希进行比较。有很多不同的哈希算法，最常用的是 **MD5** 和 **SHA1**。
 
-## 哈希安全吗
+### 哈希安全吗
 
 也许你很容易就认为只需要简单地执行一遍加密哈希函数，密码就能安全，那么你大错特错了。有太多的办法可以快速地把密码从简单哈希值中恢复出来，但也有很多比较容易实现的技术能使攻击者的效率大大降低。黑客的进步也在激励着这些技术的进步，比如这样一个[网站](http://cmd5.com/)：你可以提交一系列待破解的哈希值，并且在不到 1 秒的时间内得到了结果。显然，简单哈希加密并不能满足我们对安全性的需求。不幸的是，确保密码安全存储并不像使用存储密码的哈希一样简单。散列的两个优势也是他们最大的潜在弱点：它们很小，可以存储和快速生成。例如，为了生成英文中每个单词的 **SHA1** 和 **MD5** *散列*，都需要时间。要存储的数据量也是微不足道的。要生成字母和数字的所有组合的哈希值，加上几个常用的标点符号，最多可以说 8 个字符，但是没有任何特殊的设置或设备，仍然可行。这样的数据的预先计算的*散列表*可以很容易地在线发现或容易地生成。如果有一些数据的哈希 (如密码)，并且想要查看最初的数据，则可以将哈希值与预先计算的表中的条目进行比较。如果找到匹配项，已经发现最初用于生成哈希的数据。因此，基本的密码散列对于大多数用户来说基本上是无用的。将基本密码的哈希与预先计算的散列表进行比较从而大大减少 *“dehash” 密码*这一工作,是一个简单的过程。有些人推荐嵌套哈希值作为增加复杂性并因此增加安全性的方法。不幸的是，生成嵌套哈希表几乎与简单的哈希一样容易，而且安全性差不多。
 
-## 如何破解哈希
+### 如何破解哈希
 
 **字典攻击和暴力攻击**
 
@@ -37,11 +41,11 @@ comments: true
 
 - 彩虹表是一种在时间和空间的消耗上找寻平衡的破解技术。它和查表法很类似，但是为了使查询表占用的空间更小而牺牲了破解速度。因为它更小，于是我们可以在一定的空间内存储更多的哈希值，从而使攻击更加有效。能够破解任何 8 位及以下长度 **MD5** 值的[彩虹表](http://www.freerainbowtables.com/en/tables2/)已经出现了。
 
-## 盐化 (加盐)
+### 盐化 (加盐)
 
 解决方案是将哈希不仅仅是用户的密码，而这个过程叫做 **“salting (盐化)”**。查表法和彩虹表只有在所有密码都以相同方式进行哈希加密时才有效。如果两个用户密码相同，那么他们密码的哈希值也是相同的。我们可以通过 “随机化” 哈希来阻止这类攻击，于是当相同的密码被哈希两次之后，得到的值就不相同了。比如可以在密码中混入一段 “随机” 的字符串再进行哈希加密，这个被字符串被称作盐值。为了校验密码是否正确，我们需要储存盐值。通常和密码哈希值一起存放在账户数据库中，或者直接存为哈希字符串的一部分。盐值并不需要保密，由于随机化了哈希值，查表法、反向查表法和彩虹表都不再有效。攻击者无法确知盐值，于是就不能预先计算出一个查询表或者彩虹表。这样每个用户的密码都混入不同的盐值后再进行哈希，因此反向查表法也变得难以实施。例如，可以将邮箱地址及其密码的哈希存储在一起，而不是存储用户密码的散列。这是有效的，因为生成数据超过约 10 个字符的散列表的难度开始变得刁钻 (因为随机添加了一段额外的字符串) 以生成和存储。在这一点上，表格必须基于词典和已知的单词生成，而不是生成一个范围内所有可能的密码的编程列表。“电子邮件加密码” 的平均长度容易在 25 个字符的区域内。不仅如此，如果有人制定出正在使用 “电子邮件加密码” 的散列表，那么他们仍然需要为每个要排除的密码生成一个新的表格。这种复杂性水平加上相当强大的密码策略，确保如果 (或何时) 用户数据被暴露出来，从其中提取可用密码所涉及的工作量将会让人望而却步，除非这个攻击者有着坚定不移的决心。不仅如此，即使他们发现，数据的批量提取也是非常困难的。
 
-## 盐化过程中注意事项：
+### 盐化过程中注意事项：
 
 **避免短盐值和盐值重复**
 
@@ -79,24 +83,27 @@ comments: true
 - **不**安全的 `crypt()` 版本 `(\$1\$，\$2\$，\$2x\$，\$3\$)`
 - 任何你自己设计的加密算法。只应该使用那些在公开领域中的，并且被密码学家完整测试过的技术
 
-## 进阶
+### 进阶
 
 **基本要素：加盐哈希**
 
 - 盐值应该使用**基于加密的伪随机数生成器 (Cryptographically Secure Pseudo-Random Number Generator – CSPRNG)** 来生成。*CSPRNG* 和普通的随机数生成器有很大不同，如 C 语言中的 `rand()` 函数。物如其名，*CSPRNG* 专门被设计成用于加密，它能提供高度随机和无法预测的随机数。我们显然不希望自己的盐值被猜测到，所以一定要使用 *CSPRNG*。
 
-<center>当前主流编程语言中的 <i>CSPRNG</i> 方法：</center>
+<center>当前主流编程语言中的 *CSPRNG* 方法：</center>
 
-  |           **Platform**            |                **CSPRNG**                |
-  | :-------------------------------: | :--------------------------------------: |
-  |                PHP                | [mcrypt_create_iv](http://php.net/manual/en/function.mcrypt-create-iv.php), [openssl_random_pseudo_bytes](http://php.net/manual/en/function.openssl-random-pseudo-bytes.php) |
-  |               Java                | [java.security.SecureRandom](http://docs.oracle.com/javase/6/docs/api/java/security/SecureRandom.html) |
-  |         Dot NET (C#, VB)          | [System.Security.Cryptography.RNGCryptoServiceProvider](http://msdn.microsoft.com/en-us/library/system.security.cryptography.rngcryptoserviceprovider.aspx) |
-  |               Ruby                | [SecureRandom](http://rubydoc.info/stdlib/securerandom/1.9.3/SecureRandom) |
-  |              Python               | [os.urandom](http://docs.python.org/library/os.html) |
+<center>
+|||
+| :------: | :--------------------------------: |
+|PHP | [mcrypt_create_iv](http://php.net/manual/en/function.mcrypt-create-iv.php), [openssl_random_pseudo_bytes](http://php.net/manual/en/function.openssl-random-pseudo-bytes.php)  |
+|               Java                | [java.security.SecureRandom](http://docs.oracle.com/javase/6/docs/api/java/security/SecureRandom.html) |
+|         Dot NET (C#, VB)          | [System.Security.Cryptography.RNGCryptoServiceProvider](http://msdn.microsoft.com/en-us/library/system.security.cryptography.rngcryptoserviceprovider.aspx) |
+|               Ruby                | [SecureRandom](http://rubydoc.info/stdlib/securerandom/1.9.3/SecureRandom) |
+|              Python               | [os.urandom](http://docs.python.org/library/os.html) |
   |               Perl                | [Math::Random::Secure](http://search.cpan.org/~mkanat/Math-Random-Secure-0.06/lib/Math/Random/Secure.pm) |
   |        C/C++ (Windows API)        | [CryptGenRandom](http://en.wikipedia.org/wiki/CryptGenRandom) |
   | Any language on GNU/Linux or Unix | Read from [/dev/random or /dev/urandom](http://en.wikipedia.org/wiki/dev/random) |
+</center>
+
 
 - 对于每个用户的每个密码，盐值都应该是独一无二的。每当有新用户注册或者修改密码，都应该使用新的盐值进行加密。并且这个盐值也应该足够长，使得有足够多的盐值以供加密。一个好的标准的是：盐值至少和哈希函数的输出一样长；盐值应该被储存和密码哈希一起储存在账户数据表中。
 

@@ -3,13 +3,15 @@ layout: post
 title: "Tomcat directory structure"
 date:   2017-04-27
 excerpt: "Tomcat 目录结构"
-tags: [program, tomcat, web]
+tags: [Tomcat, Web]
 comments: true
 ---
 
-## Tomcat 服务器的目录结构
+<center><h2>Tomcat 服务器的目录结构</h2></center>
 
-| 目录       | 说明                                       |
+<!--more-->
+
+| <font color="red">目录</font>       | <font color="blue">说明</font>    |
 | :------- | :--------------------------------------- |
 | /bin     | 存放各种平台下启动和停止 **Tomcat** 的命令文件，如 **startup.sh**，**startup.bat** |
 | /conf    | 存放 **Tomcat** 的各种配置文件                    |

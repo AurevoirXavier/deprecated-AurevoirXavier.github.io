@@ -3,12 +3,16 @@ layout: post
 title: "String, StringBuffer and StringBuilder in Java"
 date:   2017-04-27
 excerpt: "Java 中的 String，StringBuffer，StringBuilder 详解"
-tags: [java, program]
+tags: [Java]
 comments: true
 ---
 
-|      String       |   字符串常量   |
+<center><h2>Java 中的 String，StringBuffer，StringBuilder 详解</h2></center>
+
+<!--more-->
+
 | :---------------: | :-------: |
+| <font color="red">String</font> | <font color="blue">字符串常量</font> |
 | **StringBuffer**  | **字符串变量** |
 | **StringBuilder** | **字符串变量** |
 
@@ -81,9 +85,9 @@ String demoString = demoString1 + demoString2 + demoString3 + demoString4 + demo
 
 如果想了解更多，接着往下看。
 
-# StringBuilder
+### StringBuilder
 
-## 符号 “+” 的本质
+#### 符号 “+” 的本质
 
 当对 **String** 类型字符串进行 `+` 操作时，实际上发生了这些：
 
@@ -143,7 +147,7 @@ public class Test {
 
 只需要用 `java -c` 命令查看 **class** 文件。答案一目了然：在 `testString()` 中，每次循环都要重新初始化 **StringBuilder** 对象，所以拉低了效率。
 
-## 关于性能
+#### 关于性能
 
 **StringBuilder** 内部实际上维护了一个 `char[]` 类型的 `value`，用来保存通过 `append()` 添加的内容，通过 `new StringBuilder()` 初始化时，`char[]` 的默认长度为 16，如果 `append()` 第 17 个字符，会发生什么？
 
@@ -174,7 +178,7 @@ void expandCapacity(int minimumCapacity) {
 
 在使用StringBuilder时，如果给定一个合适的初始值，可以避免由于char[]数组多次复制而导致的性能问题。
 
-## 关于内存
+#### 关于内存
 
 **StringBuilder** 内部进行扩容时，会新建一个大小为原来两倍 + 2 的 `char` 数组，并复制原 `char` 数组到新数组，导致内存的消耗，增加垃圾回收的压力。
 

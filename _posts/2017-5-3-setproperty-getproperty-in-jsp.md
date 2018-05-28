@@ -3,11 +3,15 @@ layout: post
 title: "setProperty and getProperty in Jsp"
 date:   2017-05-03
 excerpt: "Jsp 中的 setProperty 与 getProperty"
-tags: [java, jsp, program]
+tags: [Java, Web]
 comments: true
 ---
 
-## \<jsp:setProperty> 是用来给已经实例化的 JavaBean 对象的属性赋值。那么该如何使用 \<jsp:setProperty>？
+<center><h2>Jsp 中的 setProperty 与 getProperty</h2></center>
+
+<!--more-->
+
+#### \<jsp:setProperty> 是用来给已经实例化的 JavaBean 对象的属性赋值。那么该如何使用 \<jsp:setProperty>？
 
 *方法一：*
 
@@ -25,13 +29,13 @@ comments: true
 
 `<jsp:setProperty name = "JavaBean 实例名" property = "JavaBean 属性名" param = "request 对象中的参数名"/>` (此方法跟 **request** 参数关联)
 
-## \<jsp:getProperty> 是用来获取指定的 JavaBean 对象的属性值。那么该如何使用 \<jsp:getProperty>？
+#### \<jsp:getProperty> 是用来获取指定的 JavaBean 对象的属性值。那么该如何使用 \<jsp:getProperty>？
 
 获取参数就没有那么多方法了，因为步骤就是定位和取得参数这么简单：
 
 `<jsp:getProperty name="JavaBean 实例名" property="JavaBean 属性名"/>`
 
-## 以下源码可供你体验本文所述的全部内容，去掉某一方法体注释并注释其他方法体即可看到对应效果：
+#### 以下源码可供你体验本文所述的全部内容，去掉某一方法体注释并注释其他方法体即可看到对应效果：
 
 <center><strong>User.java</strong></center>
 
@@ -136,4 +140,3 @@ Id: <%=myUser.getId()%>
 </body>
 </html>
 ```
-

@@ -3,16 +3,20 @@ layout: post
 title: "RESTful tutorial"
 date:   2017-06-05
 excerpt: "RESTful 教程"
-tags: [http, idempotence,RESTful, program]
+tags: [RESTful, Web]
 comments: true
 ---
 
-## 如果英语水平够好
+<center><h2>RESTful 入门</h2></center>
+
+<!--more-->
+
+#### 如果英语水平够好
 直接去[这里](http://www.restapitutorial.com/index.html)，这是一个非常非常好的 **REST API** 教学网站。
 
 ---
 
-## 如果英文水平有限
+#### 如果英文水平有限
 那么我在这里推荐三篇博文：
 
 - [理解 **RESTful** 架构](http://www.ruanyifeng.com/blog/2011/09/restful)

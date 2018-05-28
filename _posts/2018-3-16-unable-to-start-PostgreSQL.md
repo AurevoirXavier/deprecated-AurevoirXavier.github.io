@@ -3,9 +3,13 @@ layout: post
 title: "Unable to start PostgreSQL"
 date:   2018-03-16
 excerpt: "无法启动 PostgreSQL 数据库"
-tags: [PostgreSQL]
+tags: [Linux, PostgreSQL]
 comments: true
 ---
+
+<center><h2>无法启动 PostgreSQL 数据库</h2></center>
+
+<!--more-->
 
 ```sh
  $ sudo systemctl start postgresql

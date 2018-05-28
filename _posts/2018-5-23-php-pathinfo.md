@@ -1,11 +1,15 @@
 ---
 layout: post
-title: "php pathinfo"
+title: "Enable php pathinfo with nginx"
 date:   2018-05-23
-excerpt: "php pathinfo"
-tags: [php]
+excerpt: "配置 nginx 启用 php pathinfo"
+tags: [php, nginx]
 comments: true
 ---
+
+<center><h2>配置 nginx 启用 php pathinfo</h2></center>
+
+<!--more-->
 
 `sudo vi /usr/local/nginx/conf/enable-php-pathinfo.conf`:
 

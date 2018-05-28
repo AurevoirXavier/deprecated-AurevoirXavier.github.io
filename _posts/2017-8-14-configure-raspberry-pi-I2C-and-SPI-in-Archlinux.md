@@ -2,7 +2,7 @@
 layout: post
 title: "Configure raspberry's I2C and SPI in Archlinux"
 date:   2017-08-14
-excerpt: "在 Archlinux 下配置树莓派的 I2C SPI"
+excerpt: "Archlinux 下配置树莓派的 I2C SPI"
 tags: [Archlinux, raspberryPi]
 comments: true
 ---

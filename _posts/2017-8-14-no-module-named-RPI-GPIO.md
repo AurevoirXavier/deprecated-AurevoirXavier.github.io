@@ -2,10 +2,14 @@
 layout: post
 title: "No module named 'RPi.GPIO'"
 date:   2017-08-14
-excerpt: "在 Archlinux 下安装树莓派的 GPIO 库"
-tags: [Archlinux, raspberry pi]
+excerpt: "Archlinux 下安装树莓派的 GPIO 库"
+tags: [Archlinux, raspberryPi]
 comments: true
 ---
+
+<center><h2>在 Archlinux 下安装树莓派的 GPIO 库</h2></center>
+
+<!--more-->
 
 根据你的 **Python** 版本安装对应的工具链，例如 `python2-setuptools`  `python2-pip,`  `python-setuptools` `python-pip`。
 
@@ -18,4 +22,3 @@ sudo pacman -S python-setuptools python-pip
 
 sudo pip install RPI.GPIO
 ```
-

@@ -3,9 +3,13 @@ layout: post
 title: "Enumerating enums in Swift"
 date:   2017-04-21
 excerpt: "遍历 Swift 中的枚举类型"
-tags: [enums, program, swift]
+tags: [Swift]
 comments: true
 ---
+
+<center><h1>我天真地定义了以下枚举：</h1></center>
+
+<!--more-->
 
 我天真地定义了以下枚举：
 

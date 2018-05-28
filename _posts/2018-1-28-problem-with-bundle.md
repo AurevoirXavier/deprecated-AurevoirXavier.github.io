@@ -1,11 +1,15 @@
 ---
 layout: post
-title: "Problem with bundle"
+title: "ruby: bad interpreter"
 date:   2018-01-28
-excerpt: "关于 bundle 的一个小问题"
-tags: [bundle, ruby]
+excerpt: "ruby: bad interpreter"
+tags: [Ruby]
 comments: true
 ---
+
+<center><h2>ruby: bad interpreter</h2></center>
+
+<!--more-->
 
 由于删除重建用户目录丢失了一些东西。当我在终端运行 `bundle` 的时候，出了一个错误：
 
@@ -31,4 +35,3 @@ $ gem install bundler
 $ bundle install
 Fetching gem metadata from http://rubygems.org/..........
 ```
-

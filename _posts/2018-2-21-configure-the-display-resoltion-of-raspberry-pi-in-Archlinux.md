@@ -1,11 +1,15 @@
 ---
 layout: post
-title: "Configure the display resoltion of raspberry pi in Archlinux"
+title: "Configure the display resoltion of raspberryPi on Archlinux"
 date:   2018-02-21
-excerpt: "在 Archlinux 下配置树莓派的输出分辨率"
-tags: [Archlinux, raspberry pi]
+excerpt: "Archlinux 下配置树莓派的输出分辨率"
+tags: [Archlinux, raspberryPi]
 comments: true
 ---
+
+<center><h2>Archlinux 下配置树莓派的输出分辨率</h2></center>
+
+<!--more-->
 
 **需要权限来做修改：**
 
@@ -80,4 +84,3 @@ hdmi_mode=82
 
 framebuffer_depth=32
 ```
-

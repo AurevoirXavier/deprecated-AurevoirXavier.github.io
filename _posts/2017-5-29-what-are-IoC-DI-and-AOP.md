@@ -3,7 +3,7 @@ layout: post
 title: "What are IoC, DI, AOP"
 date:   2017-05-29
 excerpt: "什么是 IoC，DI，AOP"
-tags: [springmvc]
+tags: [Java]
 comments: true
 ---
 

@@ -1,11 +1,15 @@
 ---
 layout: post
-title: "Scala's singleton object"
+title: "Singleton object of Scala"
 date:   2017-06-02
 excerpt: "Scala 之单例对象"
-tags: [program, scala]
+tags: [Scala]
 comments: true
 ---
+
+<center><h2>Scala 之单例对象</h2></center>
+
+<!--more-->
 
 **Scala** 比 **Java** 更面向对象的一个方面是 **Scala** 没有静态成员。作为弥补，**Scala** 有单例对象：singleton object。
 
@@ -42,4 +46,3 @@ object Demo {
     }
 }
 ```
-

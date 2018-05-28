@@ -3,9 +3,13 @@ layout: post
 title: "classOf and getClass in Scala"
 date:   2017-06-02
 excerpt: "Scala 中的 classOf 与 getClass"
-tags: [program, scala]
+tags: [Scala]
 comments: true
 ---
+
+<center><h2>Scala 中的 classOf 与 getClass</h2></center>
+
+<!--more-->
 
 ```scala
 scala> class  A
@@ -33,4 +37,3 @@ res13: Boolean = true
 scala> val c:Class[A] = a.getClass
 <console>:9: error: type mismatch;
 ```
-

@@ -9,6 +9,8 @@ comments: true
 
 <center><h2 style="">我虽非人类：且看我如何攻破 Google reCAPTCHA</h2></center>
 
+<!--more-->
+
 <center><strong>Aurevoir Xavier 译</strong></center>
 
 <center><h4><i>Suphannee Sivakorn, Jason Polakis, and Angelos D. Keromytis</i></h4></center>

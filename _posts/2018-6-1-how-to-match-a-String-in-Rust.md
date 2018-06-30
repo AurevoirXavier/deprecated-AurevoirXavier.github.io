@@ -29,7 +29,7 @@ fn main() {
 //          found type `&'static str`
 ```
 
-*这里给出 [E0308](https://doc.rust-lang.org/error-index.html#E0308) 的详细解释*
+*这里给出 [E0308](https://doc.rust-lang.org/error-index.html#E0308) 的详细解释。*
 
 不过对于对 **Rust** 有一定基础的人会先这么想到：
 
@@ -64,7 +64,7 @@ fn main() {
 // 意思就是你尝试以结构体或者枚举去匹配一个并非前面所述两者其中之一的情况
 ```
 
-*这里给出 [E0164](https://doc.rust-lang.org/error-index.html#E0164) 的详细解释*
+*这里给出 [E0164](https://doc.rust-lang.org/error-index.html#E0164) 的详细解释。*
 
 ---
 

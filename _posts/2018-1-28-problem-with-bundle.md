@@ -17,7 +17,7 @@ comments: true
 zsh: /usr/local/bin/bundle: /usr/local/bin/ruby: bad interpreter: No such file or directory.
 ```
 
-**bundle** 的可执行文件由 *bundler gem* 提供。如果正在使用 **rvm**，那么看看 `/usr/local/bin/bundle` 中的哪个包有问题，因为使用 **rvm** 意味着像 **bundler** 那样的 **gem** 安装在你的用户目录下，通常在 `~/.rvm/gems/....`。问题一目了然，目录下的 `.rvm/` 不在了。那么重新安装 **rvm** 并用其安装 **ruby** 即可（方法可以参见这一篇[文章](http://uvwvu.com/update-ruby-with-rvm-on-mac/)）。
+**bundle** 的可执行文件由 *bundler gem* 提供。如果正在使用 **rvm**，那么看看 `/usr/local/bin/bundle` 中的哪个包有问题，因为使用 **rvm** 意味着像 **bundler** 那样的 **gem** 安装在你的用户目录下，通常在 `~/.rvm/gems/....`。问题一目了然，目录下的 `.rvm/` 不在了。那么重新安装 **rvm** 并用其安装 **ruby** 即可（方法可以参见这一篇[文章](https://uvwvu.xyz/OS-X/update-Ruby-with-rvm-on-mac.rust)）。
 
 安装完后（如果你不是使用 **rvm** 直接从修复 **bundler** 步骤开始）：
 

@@ -31,7 +31,7 @@ fn main() {
 
 *这里给出 [E0308](https://doc.rust-lang.org/error-index.html#E0308) 的详细解释*
 
-不过对于 **Rust** 有一定基础的人会先这么想到：
+不过对于对 **Rust** 有一定基础的人会先这么想到：
 
 ```rust
 fn main() {

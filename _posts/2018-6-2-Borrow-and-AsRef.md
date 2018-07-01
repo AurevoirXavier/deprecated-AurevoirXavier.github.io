@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Borrow and AsRef"
-date:   2018-06-01
+date:   2018-06-02
 excerpt: "Borrow 与 AsRef"
 tags: [Rust]
 comments: true

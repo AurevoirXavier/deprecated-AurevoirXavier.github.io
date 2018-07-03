@@ -1,105 +1,26 @@
 ---
 layout: post
-title: "ref and &"
-date:   2018-06-03
-excerpt: "ref 与 &"
+title: "String and &str"
+date:   2018-06-04
+excerpt: "String 与 &str"
 tags: [Rust]
 comments: true
 ---
 
-<center><h2>ref 与 &amp;</h2></center>
+<center><h2>String 与 &amp;str</h2></center>
 
 <!--more-->
 
-`ref` 一般用于模式匹配当中，但我们先举几个简单但不常用的例子：
+#### 这里我们需要先谈一谈 *Rust* 中的字符类型。
 
-```rust
-// 首先，下面这两句话的意义是完全相同的
-let x = &y;
-let ref x = y;
+相信从别的编程语言来的人基本都很熟悉 `String` 这个类型，但是到了 *Rust* 中它就有了些变化。而且还有一个 `str` 类型来表示字符串，这就让刚接触 *Rust* 的人有些困扰。
 
-// 不过，下面这两句话稍有变化
-let mut x = &y;         // 创建一个指针，指针自身是可以变的，可以指向其他地方
-let ref mut x = &y;     // 这个用法非常少见，创建了一个指向可变的 y 的指针，你可以通过它改变 y，但是不能使它指向其他地方
-let x = &mut y;         // 完全等价于上一句行
+首先 `str` 的官方名字叫做字符串字面值，它是被硬编码进程序中的，说到这里你应该清楚，它是不可变的。所以我们需要多一个字符串类型来满足其他需求，比如说灵活修改内容还有获取用户输入（外来输入这意味着一开始并不知道确切的内容是什么），这就有了 `String`。
 
-// 这时候，有人会想要一个指向可变内容的可变指针
-let mut ref mut x = &y; // 很遗憾，这行不通，语法解析将会卡在 mut 后面紧跟一个 ref 上
-let mut x = &mut y;     // 但是这样就可以得到一个指向可变内容的可变指针了
-```
+这时候你可能会说同样任务交给 `String` 都能完成，`str` 有什么理由的存在，这时候就要说一下它们的内存分配方式了：
 
-通过上面大致了解了两者的功能，下面来说一下 `ref` 最常被用到的地方：
+- 对于 `str`，在编译时就知道其内容所以它直接被硬编码进最终的可执行文件中，所以它快速且高效。
+- 对于 `String`，为了支持一个可变，可增长的文本片段，需要在堆上分配一块在编译时未知大小的内存来存放内容。这意味着：
+  1. 内存必须在运行时向操作系统请求。
+  2. 需要一个当处理完 `String` 时将内存返回给操作系统的方法。
 
-```rust
-let foo = 1u32;
-let bar = Some(&foo);
-
-match bar {
-    Some(&v) => {} // 这里发生了解构，v = foo
-}
-
-let bar = Some(foo);
-
-match bar {
-    Some(ref r) => {} // 这里是 r = &foo
-}
-```
-
-仔细思考 `bar` 这个变量，会对理解有所帮助。
-
----
-
-**自己动手试试：**
-
-下面这个程序会打印出 `val` 的内存占用大小。如果打印出的结果是 **8** 说明 `val` 此时指向一个**指针**，如果打印结果是 **24** 说明此时指向一个 `Vector`。
-
-顺便一提，你可以同时打印 `v` 的占用大小帮助理解。
-
-再顺便一提 `size_of_val()` 函数需要的是一个引用做参数，但返回的不是那个引用自身的内存占用大小，不要搞混了。举个比较随便的例子，通过身份证号得到的出生年月是属于一个人的，并不是身份证的。
-
-在我留下下划线的地方尝试修改为 `ref` 或者 `&` 甚至 `*`，这里有多种组合，耐心尝试，然后你会有所收获。
-
-```rust
-fn main() {
-    let __ v = __ vec![1, 2, 3];
-    
-    match __ v {
-        __ val => println!("{:?}", std::mem::size_of_val( __ val))
-    }
-}
-```
-
-先抛几个砖：
-
-```rust
-fn main() {
-    let v = &vec![1, 2, 3];
-    
-    // v 指向 Vector，val = v，得到 Vector 的大小
-    match v {
-        val => println!("{:?}", std::mem::size_of_val(val))
-    }
-    
-    // v 指向 Vector，val = &v，得到指向 Vector 的指针的大小
-    match v {
-        ref val => println!("{:?}", std::mem::size_of_val(val))
-    }
-    
-    // v 指向 Vector，val = &v，解引 val，得到 Vector 的大小
-    match v {
-        ref val => println!("{:?}", std::mem::size_of_val(*val))
-    }
-    
-    // 解引 v，v = vec![1, 2, 3]，val = &v，得到 Vector 的大小
-    match *v {
-        ref val => println!("{:?}", std::mem::size_of_val(val))
-    }
-    
-    // 解引 v，v = vec![1, 2, 3]，val = &v，传入 &val，得到指向 Vector 的指针的大小
-    match *v {
-        ref val => println!("{:?}", std::mem::size_of_val(&val))
-    }
-}
-```
-
-不过仍有很多情况没有列举出，期待诸位引出的玉。

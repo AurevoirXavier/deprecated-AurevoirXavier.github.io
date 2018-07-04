@@ -51,7 +51,7 @@ match bar {
 
 **自己动手试试：**
 
-下面这个程序会打印出 `val` 的内存占用大小。如果打印出的结果是 **8** 说明 `val` 此时指向一个**指针**，如果打印结果是 **24** 说明此时指向一个 `Vector`。
+下面这个程序会打印出 `val` 的内存占用大小。如果打印出的结果是 **8** 说明 `val` 此时指向一个**指针**，如果打印结果是 **24** 说明此时指向一个 `Vec`。
 
 顺便一提，你可以同时打印 `v` 的占用大小帮助理解。
 
@@ -75,27 +75,27 @@ fn main() {
 fn main() {
     let v = &vec![1, 2, 3];
     
-    // v 指向 Vector，val = v，得到 Vector 的大小
+    // v 指向 Vec，val = v，得到 Vec 的大小
     match v {
         val => println!("{}", std::mem::size_of_val(val))
     }
     
-    // v 指向 Vector，val = &v，得到指向 Vector 的指针的大小
+    // v 指向 Vec，val = &v，得到指向 Vec 的指针的大小
     match v {
         ref val => println!("{}", std::mem::size_of_val(val))
     }
     
-    // v 指向 Vector，val = &v，解引 val，得到 Vector 的大小
+    // v 指向 Vec，val = &v，解引 val，得到 Vec 的大小
     match v {
         ref val => println!("{}", std::mem::size_of_val(*val))
     }
     
-    // 解引 v，v = vec![1, 2, 3]，val = &v，得到 Vector 的大小
+    // 解引 v，v = vec![1, 2, 3]，val = &v，得到 Vec 的大小
     match *v {
         ref val => println!("{}", std::mem::size_of_val(val))
     }
     
-    // 解引 v，v = vec![1, 2, 3]，val = &v，传入 &val，得到指向 Vector 的指针的大小
+    // 解引 v，v = vec![1, 2, 3]，val = &v，传入 &val，得到指向 Vec 的指针的大小
     match *v {
         ref val => println!("{}", std::mem::size_of_val(&val))
     }

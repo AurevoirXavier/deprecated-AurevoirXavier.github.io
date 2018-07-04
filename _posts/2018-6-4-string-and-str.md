@@ -50,9 +50,13 @@ let s2 = s1.clone();
 
 想更多了解 `String` ？查看，[额外内容](https://doc.rust-lang.org/book/second-edition/ch04-01-what-is-ownership.html)。
 
-#### 通过上面的了解，现在来对比一下 `&String`，`&str` 以及 **slice**
+#### 单独说一下 **slice**
 
-首先我们说一下 **slice** 是一个没有所有权的数据类型，允许你引用集合中一段连续的元素序列，而不用引用整个集合：
+**slice** 是一个没有所有权的数据类型，允许你引用集合中一段连续的元素序列，而不用引用整个集合。
+
+下面会涉及 *Rust* 的 `..` **range*** 语法。这类似于获取整个 `String` 的引用不过带有额外的 `[starting_index..ending_index]`部分。不同于整个 `String` 的引用，这是一个包含 `String` 内部的一个位置和所需元素数量的引用。`start..end` 语法代表一个以 `start` 开头并一直持续到但不包含 `end` 的 **range**，但是可以也不写 `start` 会取默认值 *0*，`end` 会取最大长度。
+
+使用一个由中括号中的 `[starting_index..ending_index]` 指定的 **range** 创建一个 **slice**，其中 `starting_index` 是包含在 **slice**** 的第一个位置，`ending_index` 则是 **slice** 最后一个位置的后一个值。在其内部，**slice** 的数据结构储存了开始位置和 **slice** 的长度，长度对应 `ending_index` 减去 `starting_index` 的值：
 
 ```rust
 let foo = &"hello"[..]; // foo: &str
@@ -77,6 +81,17 @@ let hello = &s[0..5];
 let world = &s[6..11];
 ```
 
-![world containing a pointer to the 6th byte of String s and a length 5](https://uvwvu.xyz/usr/uploads/2018/07/581699634.svg)大体上，一个 `String` 包装并管理一个动态分配的 `str` 作为后备存储器。由于 `str` 不能调整大小，所以 `String` 将动态地分配和释放内存。因此 `&str` 是直接进入字符串备份存储的引用，而 `&String` 是对**包装对象**的引用。还有一点，`&str` 可用于子字符串，即它可以是 `slice（切片）`，而 `&String` 引用的总是整个字符串。想更多了解 `str` ？查看，[额外内容](https://doc.rust-lang.org/book/second-edition/ch19-04-advanced-types.html#dynamically-sized-types--sized)。
+![world containing a pointer to the 6th byte of String s and a length 5](https://uvwvu.xyz/usr/uploads/2018/07/581699634.svg)
+
+对于 `let world = &s[6..11];` 的情况，`world` 是一个包含指向 `s` 第 6 个字节的指针和长度值 5 的 **slice**。
 
 想了解更多 `slice` ？查看，[额外内容](https://doc.rust-lang.org/book/second-edition/ch04-03-slices.html)。
+
+#### 通过上面的了解，现在来对比一下 `&String`，`&str` 以及 **slice**
+
+大体上，一个 `String` 包装并管理一个动态分配的 `str` 作为后备存储器。由于 `str` 不能调整大小，所以 `String` 将动态地分配和释放内存。因此 `&str` 是直接进入字符串备份存储的引用，而 `&String` 是对**包装对象**的引用。还有一点，`&str` 可用于子字符串，即它可以是 `slice（切片）`，而 `&String` 引用的总是整个字符串。
+
+
+
+想更多了解 `str` ？查看，[额外内容](https://doc.rust-lang.org/book/second-edition/ch19-04-advanced-types.html#dynamically-sized-types--sized)。
+

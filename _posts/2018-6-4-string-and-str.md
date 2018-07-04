@@ -19,7 +19,7 @@ comments: true
 
 这时候你可能会说同样任务交给 `String` 都能完成，`str` 有什么理由的存在，这时候就要说一下它们的内存分配方式了：
 
-- 对于 `str`，在编译时就知道其内容所以它直接被硬编码进最终的可执行文件中，所以它使用起来快速且高效。
+- 对于 `str`，在编译时就知道其内容而直接被硬编码进最终的可执行文件中，所以它使用起来快速且高效。
 - 对于 `String`，为了支持一个可变，可增长的文本片段，需要在堆上分配一块在编译时未知大小的内存来存放内容。
 
 ```rust
@@ -48,13 +48,13 @@ let s2 = s1.clone();
 
 ![s1 and s2 to two places](https://uvwvu.xyz/usr/uploads/2018/07/3155458848.svg)
 
-想更多了解 `String` ？查看，[额外内容](https://doc.rust-lang.org/book/second-edition/ch04-01-what-is-ownership.html)。
+想更多了解 `String` ？查看，[这里](https://doc.rust-lang.org/book/second-edition/ch04-01-what-is-ownership.html)还有[这里](https://doc.rust-lang.org/book/second-edition/ch08-02-strings.html)。
 
 #### 单独说一下 **slice**
 
 **slice** 是一个没有所有权的数据类型，允许你引用集合中一段连续的元素序列，而不用引用整个集合。
 
-下面会涉及 *Rust* 的 `..` **range*** 语法。这类似于获取整个 `String` 的引用不过带有额外的 `[starting_index..ending_index]`部分。不同于整个 `String` 的引用，这是一个包含 `String` 内部的一个位置和所需元素数量的引用。`start..end` 语法代表一个以 `start` 开头并一直持续到但不包含 `end` 的 **range**，但是可以也不写 `start` 会取默认值 *0*，`end` 会取最大长度。
+下面会涉及 *Rust* 的 `..` **range*** 语法。这类似于获取整个 `String` 的引用不过带有额外的 `[starting_index..ending_index]`部分。不同于整个 `String` 的引用，这是一个包含 `String` 内部的一个位置和所需元素数量的引用。`start..end` 语法代表一个以 `start` 开头并一直持续到但不包含 `end` 的 **range**，但是可以也不写 `start` 会取默认值 **0**，`end` 会取最大长度。
 
 使用一个由中括号中的 `[starting_index..ending_index]` 指定的 **range** 创建一个 **slice**，其中 `starting_index` 是包含在 **slice**** 的第一个位置，`ending_index` 则是 **slice** 最后一个位置的后一个值。在其内部，**slice** 的数据结构储存了开始位置和 **slice** 的长度，长度对应 `ending_index` 减去 `starting_index` 的值：
 
@@ -89,7 +89,7 @@ let world = &s[6..11];
 
 #### 通过上面的了解，现在来对比一下 `&String`，`&str` 以及 **slice**
 
-大体上，一个 `String` 包装并管理一个动态分配的 `str` 作为后备存储器。由于 `str` 不能调整大小，所以 `String` 将动态地分配和释放内存。因此 `&str` 是直接进入字符串备份存储的引用，而 `&String` 是对**包装对象**的引用。还有一点，`&str` 可用于子字符串，即它可以是 `slice（切片）`，而 `&String` 引用的总是整个字符串。
+大体上，一个 `String` 包装并管理一个动态分配的 `str` 作为后备存储器。由于 `str` 不能调整大小，所以 `String` 将动态地分配和释放内存。因此 `&str` 是直接进入字符串备份存储的引用，而 `&String` 是对 **包装对象** 的引用。还有一点，`&str` 可用于子字符串，即它可以是 `slice（切片）`，而 `&String` 引用的总是整个字符串。
 
 想更多了解 `str` ？查看，[额外内容](https://doc.rust-lang.org/book/second-edition/ch19-04-advanced-types.html#dynamically-sized-types--sized)。
 
@@ -118,7 +118,7 @@ struct String {
 
 退一步来看。
 
-*Rust* 希望能够有效地获取并传递数组的切片。传递 `(&T, usize)` 是一个不错的主意：一个指向第一个元素的指针，以及元素的数量。可以从**任何**连续存储中创建其中一个，无论来自何处。例如，`&[T]` 是一个来自其他其他存储的借用切片。这就引出一个问题：如果 `&SOMTHING` 是指向 `SOMETHING` 的指针，那么 `[T]` 本身意味着什么？虽然我们可以简单的理解它为不可变的数组。
+*Rust* 希望能够有效地获取并传递数组的切片。传递 `(&T, usize)` 是一个不错的主意：一个指向第一个元素的指针，以及元素的数量。可以从 **任何** 连续存储中创建其中一个，无论来自何处。例如，`&[T]` 是一个来自其他其他存储的借用切片。这就引出一个问题：如果 `&SOMTHING` 是指向 `SOMETHING` 的指针，那么 `[T]` 本身意味着什么？虽然我们可以简单的理解它为不可变的数组。
 
 `[T]`：一些连续存储的 n 个 `T` 的类型。没有说明它们存储在哪里，谁拥有它们，如何管理它们，等等，只是某个数字存在于某个地方。我们需要 `[T]`，因为可以通过构建它来创建其他更有用的类型，这些类型对于如何存储这些 `T` 是有意义的。
 
@@ -126,7 +126,7 @@ struct String {
 
 这里不得不提一下 `Vec` 存在的原因：建立数组元素的元素是一个很常见的事情。它基本上可以看作 `Box<[T]>`，但是它保留了一些额外的空间，以使它更高效。你可以对它进行切片以获取 `&[T]`，因为你可以对所有连续存储的东西进行切片以获取 `&[T]`。
 
-`String` 和 `str` 本质上是完全相同的，除了**必须是有效的 UTF-8**之外。所以 `[T]`/`str` 是基本的构建块。`Vec` 和 `String` 都是建立在它们之上的东西，因为 `[T]` 和 `str` 本身不会做很多事情。
+`String` 和 `str` 本质上是完全相同的，除了必须是 **有效的 UTF-8** 之外。所以 `[T]`/`str` 是基本的构建块。`Vec` 和 `String` 都是建立在它们之上的东西，因为 `[T]` 和 `str` 本身不会做很多事情。
 
 最后最后再总结一下上面的话：
 

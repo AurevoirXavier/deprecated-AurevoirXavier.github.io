@@ -1,17 +1,17 @@
 ---
 layout: post
-title: "String and &str"
+title: "String, str and slice"
 date:   2018-06-04
 excerpt: "String 与 &str"
 tags: [Rust]
 comments: true
 ---
 
-<center><h2>String 与 &amp;str</h2></center>
+<center><h2>String，str 与 slice</h2></center>
 
 <!--more-->
 
-#### 这里我们需要先谈一谈 *Rust* 中的字符类型
+#### 这里我们先来谈一谈 *Rust* 中的字符类型
 
 相信从别的编程语言来的人基本都很熟悉 `String` 这个类型，但是到了 *Rust* 中它就有了些变化。而且还有一个 `str` 类型来表示字符串，这就让刚接触 *Rust* 的人有些困扰。
 
@@ -35,7 +35,7 @@ let s2 = s1;
 
 当我们把 `s1` 赋值给 `s2`，`String` 的数据被复制了，这意味着我们从栈上拷贝了它的指针、长度和容量。我们并没有复制堆上指针所指向的数据。换句话说，内存中数据是这样的：
 
-![s1 moved to s2][https://uvwvu.xyz/usr/uploads/2018/07/1189791748.svg]
+![s1 moved to s2](https://uvwvu.xyz/usr/uploads/2018/07/1189791748.svg)
 
 变量离开作用域后 *Rust* 自动调用 `drop` 函数并清理变量的堆内存。不过上图显示了两个数据指针指向了同一位置。这就有了一个问题：当 `s2` 和 `s1` 离开作用域，他们都会尝试释放相同的内存。这是一个叫做 **二次释放**（*double free*）的错误。两次释放（相同）内存会导致内存污染，它可能会导致潜在的安全漏洞。如果你在其他语言中听说过术语 “浅拷贝”（“shallow copy”）和 “深拷贝”（“deep copy”），那么拷贝指针、长度和容量而不拷贝数据可能听起来像浅拷贝。不过 *Rust* 在 `s2` 被创建的同时使 `s1` 无效化了，这个操作被称为 **移动**（*move*），而不是浅拷贝。上面的例子可以解读为 `s1` 被 **移动** 到了 `s2` 中。图中以涂上阴影的方式来表示被无效化。顺便一提如果你想要深拷贝，只需要使用 `clone()`。
 
@@ -48,17 +48,35 @@ let s2 = s1.clone();
 
 ![s1 and s2 to two places](https://uvwvu.xyz/usr/uploads/2018/07/3155458848.svg)
 
-想更多了解 `String`？查看，[额外内容](https://doc.rust-lang.org/book/second-edition/ch04-01-what-is-ownership.html)。
+想更多了解 `String` ？查看，[额外内容](https://doc.rust-lang.org/book/second-edition/ch04-01-what-is-ownership.html)。
 
-#### 上面讲了这么多，现在来对比一下 `&String` 和 `&str`
+#### 通过上面的了解，现在来对比一下 `&String`，`&str` 以及 **slice**
 
-大体上，一个 `String` 包装并管理一个动态分配的 `str` 作为后备存储器。由于 `str` 不能调整大小，所以 `String` 将动态地分配和释放内存。因此 `&str` 是直接进入字符串备份存储的引用，而 `&String` 是对**包装对象**的引用。还有一点，`&str` 可用于子字符串，即它们是 `slices（切片）`，而 `&String` 引用的总是整个字符串。
+首先我们说一下 **slice** 是一个没有所有权的数据类型，允许你引用集合中一段连续的元素序列，而不用引用整个集合：
 
 ```rust
-let a = "hello";
-let b = "hello"[0..3];
+let foo = &"hello"[..]; // foo: &str
 
-println!("{}", &a[0..3]);
+// 下面着两种都是无法通过编译的，因为 foo 编译时大小未知，如果想要通过编译，把它们变成引用就可以了
+// let foo = "hello"[0..3];            
+// let foo = String::from("hello")[0..3];   
+
+let bar: &[i32; 3] = &[1, 2, 3];
+let v = vec![1, 2, 3];  // bar: Vec<i32>
+let baz = &bar[..];     // baz: &[i32; 3]
+
+// 以上除了 v 之外，都可以称之为 slice。如你所见，slice 不光适用于字符串
 ```
 
-想更多了解 `str`？查看，[额外内容](https://doc.rust-lang.org/book/second-edition/ch19-04-advanced-types.html#dynamically-sized-types--sized)。
+我们再来从内存层面来看一下 `slice`：
+
+```rust
+let s = String::from("hello world");
+
+let hello = &s[0..5];
+let world = &s[6..11];
+```
+
+![world containing a pointer to the 6th byte of String s and a length 5](https://uvwvu.xyz/usr/uploads/2018/07/581699634.svg)大体上，一个 `String` 包装并管理一个动态分配的 `str` 作为后备存储器。由于 `str` 不能调整大小，所以 `String` 将动态地分配和释放内存。因此 `&str` 是直接进入字符串备份存储的引用，而 `&String` 是对**包装对象**的引用。还有一点，`&str` 可用于子字符串，即它可以是 `slice（切片）`，而 `&String` 引用的总是整个字符串。想更多了解 `str` ？查看，[额外内容](https://doc.rust-lang.org/book/second-edition/ch19-04-advanced-types.html#dynamically-sized-types--sized)。
+
+想了解更多 `slice` ？查看，[额外内容](https://doc.rust-lang.org/book/second-edition/ch04-03-slices.html)。

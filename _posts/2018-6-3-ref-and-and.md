@@ -21,7 +21,7 @@ let ref x = y;
 // 不过，下面这两句话稍有变化
 let mut x = &y;         // 创建一个指针，指针自身是可以变的，可以指向其他地方
 let ref mut x = &y;     // 这个用法非常少见，创建了一个指向可变的 y 的指针，你可以通过它改变 y，但是不能使它指向其他地方
-let x = &mut y;         // 完全等价于上一句行
+let x = &mut y;         // 完全等价于上一行
 
 // 这时候，有人会想要一个指向可变内容的可变指针
 let mut ref mut x = &y; // 很遗憾，这行不通，语法解析将会卡在 mut 后面紧跟一个 ref 上
@@ -64,12 +64,12 @@ fn main() {
     let __ v = __ vec![1, 2, 3];
     
     match __ v {
-        __ val => println!("{:?}", std::mem::size_of_val( __ val))
+        __ val => println!("{}", std::mem::size_of_val( __ val))
     }
 }
 ```
 
-先抛几个砖：
+先稍微抛砖引玉一下：
 
 ```rust
 fn main() {
@@ -77,29 +77,29 @@ fn main() {
     
     // v 指向 Vector，val = v，得到 Vector 的大小
     match v {
-        val => println!("{:?}", std::mem::size_of_val(val))
+        val => println!("{}", std::mem::size_of_val(val))
     }
     
     // v 指向 Vector，val = &v，得到指向 Vector 的指针的大小
     match v {
-        ref val => println!("{:?}", std::mem::size_of_val(val))
+        ref val => println!("{}", std::mem::size_of_val(val))
     }
     
     // v 指向 Vector，val = &v，解引 val，得到 Vector 的大小
     match v {
-        ref val => println!("{:?}", std::mem::size_of_val(*val))
+        ref val => println!("{}", std::mem::size_of_val(*val))
     }
     
     // 解引 v，v = vec![1, 2, 3]，val = &v，得到 Vector 的大小
     match *v {
-        ref val => println!("{:?}", std::mem::size_of_val(val))
+        ref val => println!("{}", std::mem::size_of_val(val))
     }
     
     // 解引 v，v = vec![1, 2, 3]，val = &v，传入 &val，得到指向 Vector 的指针的大小
     match *v {
-        ref val => println!("{:?}", std::mem::size_of_val(&val))
+        ref val => println!("{}", std::mem::size_of_val(&val))
     }
 }
 ```
 
-不过仍有很多情况没有列举出，期待诸位引出的玉。
+不过仍有很多情况没有列举出，有待各位尝试。

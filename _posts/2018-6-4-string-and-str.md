@@ -50,6 +50,8 @@ let s2 = s1.clone();
 
 想更多了解 `String` ？查看，[这里](https://doc.rust-lang.org/book/second-edition/ch04-01-what-is-ownership.html)还有[这里](https://doc.rust-lang.org/book/second-edition/ch08-02-strings.html)。
 
+---
+
 #### 单独说一下 **slice**
 
 **slice** 是一个没有所有权的数据类型，允许你引用集合中一段连续的元素序列，而不用引用整个集合。
@@ -87,6 +89,8 @@ let world = &s[6..11];
 
 想了解更多 `slice` ？查看，[额外内容](https://doc.rust-lang.org/book/second-edition/ch04-03-slices.html)。
 
+---
+
 #### 通过上面的了解，现在来对比一下 `&String`，`&str` 以及 **slice**
 
 大体上，一个 `String` 包装并管理一个动态分配的 `str` 作为后备存储器。由于 `str` 不能调整大小，所以 `String` 将动态地分配和释放内存。因此 `&str` 是直接进入字符串备份存储的引用，而 `&String` 是对 **包装对象** 的引用。还有一点，`&str` 可用于子字符串，即它可以是 `slice（切片）`，而 `&String` 引用的总是整个字符串。
@@ -111,6 +115,8 @@ struct String {
    char *text;       // 动态内存分配发生
 }
 ```
+
+---
 
 #### 最后总结一下
 

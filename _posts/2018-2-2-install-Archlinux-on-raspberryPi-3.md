@@ -101,4 +101,4 @@ export LANG=en_US.UTF-8
 export LC_ALL=en_US.UTF-8
 ```
 
-至此基本配置完成。如果不满意 alarm 这个用户名或者 alarmpi 这个主机名，可以参考我的另外一篇[文章](https://uvwvu.xyz/Archlinux/change-username-and-hostname-on-ArchLinux.rust)来做修改。
+至此基本配置完成。如果不满意 alarm 这个用户名或者 alarmpi 这个主机名，可以参考我的另外一篇[文章](https://uvwvu.xyz/Archlinux/change-username-and-hostname-on-ArchLinux.rs)来做修改。

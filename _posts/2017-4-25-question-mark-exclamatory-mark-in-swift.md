@@ -52,7 +52,7 @@ var demo: String?  //  ? 是下面这种写法的语法糖
 var demo: Optional<String>
 ```
 
-<center><a href="https://uvwvu.xyz/Swift/syntactic-surgar-of-Swift.rust">更多 Swift 语法糖点击此</a></center>
+<center><a href="https://uvwvu.xyz/Swift/syntactic-surgar-of-Swift.rs">更多 Swift 语法糖点击此</a></center>
 
 上面这个 **Optional** 声明的意思不是 ”声明了一个 **Optional** 的 `String` 值”, 而是 ”声明了一个 **Optional** 类型值，其中可能包含一个 `String` 值，也可能什么都不包含”。总的来说，声明的是 **Optional** 类型，而不是声明了一个 `String` 类型，这一点非常之重要。
 

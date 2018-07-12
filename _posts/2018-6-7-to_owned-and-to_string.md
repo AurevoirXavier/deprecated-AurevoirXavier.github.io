@@ -45,4 +45,4 @@ need_string(s.to_owned());
 
 **为什么都有人采用？**
 
-时至今日，[对于 `str::to_string()` 的特化 405](https://github.com/rust-lang/rust/pull/32586) 已经完成。可以确保 `to_owned()` 与 `to_string()` 的性能完全相同。因此我们现在应该使用 `to_string()`，因为它有更好的可读性，一看就知道这是一个转换为 `String` 的操作。
+时至今日，对于 [`str::to_string()` 的特化 405](https://github.com/rust-lang/rust/pull/32586) 已经完成。可以确保 `to_owned()` 与 `to_string()` 的性能完全相同。因此我们现在应该使用 `to_string()`，因为它有更好的可读性，一看就知道这是一个转换为 `String` 的操作。

@@ -5,7 +5,7 @@ sudo rm _posts/*
 sudo cp ~/Documents/Posts/* _posts/
 
 # Build site.
-bundle exec jekyll build
+#bundle exec jekyll build
 
 # Push to master.
 git add .

@@ -2,40 +2,40 @@
 layout: post
 title: "How to pipe in Rust"
 date:   2018-06-10
-excerpt: "如何在 Rust 中实现管道符号"
+excerpt: "如何在 Rust 中实现管道功能"
 tags: [Rust]
 comments: true
 ---
 
-<center><h2>如何在 Rust 中实现管道符号</h2></center>
+<center><h2>如何在 Rust 中实现管道功能</h2></center>
 
 <!--more-->
 
-某些时候我们需要使用一些系统命令，于是有了 `std::process::Command`，它类似于 **Python** 的 `os.system()`。但有些时候我们需要管道符号的功能，比如 `mail` 命令的 `echo` 用法。这里用 `ls -la  | rg rs`（`rg` 是一个用 **Rust** 实现的 `grep` 并且更加好用，你可以使用 `cargo install ripgrep` 安装它）做一个例子：
+某些时候我们需要使用一些系统命令，于是有了 `std::process::Command`，它类似于 **Python** 的 `os.system()`。还有些时候我们需要管道符号的功能，比如 `mail` 命令的 `echo` 用法。那么该如何实现管道功能呢？接下来用 `ls -la  | rg rs`（`rg` 是一个用 **Rust** 实现的 `grep` 并且更加好用，你可以使用 `cargo install ripgrep` 安装它）来演示一下：
 
 ```rust
 fn main() {
     use std::io::Write;
     use std::process::{Command, Stdio};
 
-    let output = Command::new("ls")
-        .arg("-l")
-        .arg("-a")
-        .output()
+    let output = Command::new("ls")                 // 1
+        .arg("-l")                                  // 2
+        .arg("-a")                                  // 2
+        .output()                                   // 3
         .unwrap();
     
-    let mut child = Command::new("rg")
-        .stdin(Stdio::piped())
-        .spawn()
+    let mut child = Command::new("rg")              // 4
+        .stdin(Stdio::piped())                      // 5, 6
+        .spawn()                                    // 7
         .unwrap();
 
     {
-        let stdin = child.stdin.as_mut().unwrap();
+        let stdin = child.stdin.as_mut().unwrap();  // 8
         
         stdin.write_all(&output.stdout).unwrap();
     }
 
-    let output = child.wait_with_output().unwrap();
+    let output = child.wait_with_output().unwrap(); // 9
     
     println!("{}", String::from_utf8_lossy(&output.stdout));
 }

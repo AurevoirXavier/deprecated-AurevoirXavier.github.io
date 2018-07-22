@@ -46,9 +46,9 @@ fn main() {
 3. 使用 `output()` 执行命令并获取其输出
 4. 新建一个命令 `Command::new("rg")`，这里需要绑定为可变 `mut`
 5. 使用 `stdin()` 获取一个标准输入的句柄
-6. 传入 `Stdio::piped()` 连接父进程和子进程
+6. 向 `child` 对象传入 `Stdio::piped()` 用于连接父进程和子进程
 7. 使用 `spawn()` 执行，与 `output()` 最大的不同就是以子进程形式来执行
-8. 传入输入，特别注意 `as_mut()`，如果不使用的话会获取 `child` 变量的所有权，后面无法再使用，不过本例中无关痛痒
+8. 特别注意 `as_mut()`，如果不使用的话会获取 `child` 变量的所有权，后面无法再使用，不过本例中无关痛痒
 9. 使用 `wait_with_output()`，不然会让子进程一直处于读取状态导致程序假死
 
-如果再深入一点的话，你完全可以用这些知识来构建一个可交互的终端，可以参考这里 [stackoverflow](https://stackoverflow.com/questions/31576555/unable-to-pipe-to-or-from-spawned-child-process-more-than-once)。
+有兴趣继续深入的话，完全可以用这些知识来构建一个可交互的终端，可以参考这里 [stackoverflow](https://stackoverflow.com/questions/31576555/unable-to-pipe-to-or-from-spawned-child-process-more-than-once)。

@@ -2,12 +2,12 @@
 layout: post
 title: "No module named 'RPi.GPIO'"
 date:   2017-08-14
-excerpt: "Archlinux 下安装树莓派的 GPIO 库"
-tags: [Archlinux, raspberryPi]
+excerpt: "ArchLinux 下安装树莓派的 GPIO 库"
+tags: [ArchLinux, raspberryPi]
 comments: true
 ---
 
-<center><h2>在 Archlinux 下安装树莓派的 GPIO 库</h2></center>
+<center><h2>在 ArchLinux 下安装树莓派的 GPIO 库</h2></center>
 
 <!--more-->
 

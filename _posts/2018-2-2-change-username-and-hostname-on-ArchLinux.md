@@ -1,17 +1,17 @@
 ---
 layout: post
-title: "Change username and hostname on Archlinux"
+title: "Change username and hostname on ArchLinux"
 date:   2018-02-02
-excerpt: "更改 Archlinux 中的用户名和主机名"
-tags: [Archlinux, Linux]
+excerpt: "更改 ArchLinux 中的用户名和主机名"
+tags: [ArchLinux, Linux]
 comments: true
 ---
 
-<center><h2>更改 Archlinux 中的用户名和主机名</h2></center>
+<center><h2>更改 ArchLinux 中的用户名和主机名</h2></center>
 
 <!--more-->
 
-一般来说这些是不用改的，而且改了会有一些配置对不上路径。不过我是给 *raspberry pi* 装了一个 *Archlinux ARM*，里面有个默认用户 `alarm` 并且主机名是 `alarmpi`。
+一般来说这些是不用改的，而且改了会有一些配置对不上路径。不过我是给 *raspberry pi* 装了一个 *ArchLinux ARM*，里面有个默认用户 `alarm` 并且主机名是 `alarmpi`。
 
 那么先来说如何更改用户名吧（[参考资料](https://wiki.archlinux.org/index.php/Users_and_groups#Change_a_user.27s_login_name_or_home_directory)）：
 

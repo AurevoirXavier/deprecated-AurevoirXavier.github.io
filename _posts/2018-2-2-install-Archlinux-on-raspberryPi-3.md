@@ -1,13 +1,13 @@
 ---
 layout: post
-title: "Install Archlinux on raspberryPI 3"
+title: "Install ArchLinux on raspberryPI 3"
 date:   2018-02-02
-excerpt: "Raspberry PI 3 安装 Archlinux"
-tags: [Archlinux, raspberryPi]
+excerpt: "Raspberry PI 3 安装 ArchLinux"
+tags: [ArchLinux, raspberryPi]
 comments: true
 ---
 
-<center><h2>Raspberry PI 3 安装 Archlinux</h2></center>
+<center><h2>Raspberry PI 3 安装 ArchLinux</h2></center>
 
 <!--more-->
 
@@ -101,4 +101,4 @@ export LANG=en_US.UTF-8
 export LC_ALL=en_US.UTF-8
 ```
 
-至此基本配置完成。如果不满意 alarm 这个用户名或者 alarmpi 这个主机名，可以参考我的另外一篇[文章](https://uvwvu.xyz/Archlinux/change-username-and-hostname-on-ArchLinux.rs)来做修改。
+至此基本配置完成。如果不满意 alarm 这个用户名或者 alarmpi 这个主机名，可以参考我的另外一篇[文章](https://uvwvu.xyz/ArchLinux/change-username-and-hostname-on-ArchLinux.rs)来做修改。

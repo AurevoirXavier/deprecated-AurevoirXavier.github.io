@@ -49,7 +49,7 @@ $ tar xvzf ArchLinuxARM-rpi-2-latest.tar.gz -C /mnt/root
 
 $ sync
 
-$ mv /mnt/root/boot/* /mnt/boot
+$ cp -r /mnt/root/boot/* /mnt/boot
 
 $ vi /mnt/root/etc/fstab
 # 添加以下内容：

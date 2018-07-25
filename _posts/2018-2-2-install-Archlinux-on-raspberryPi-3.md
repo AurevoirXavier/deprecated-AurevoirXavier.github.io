@@ -22,8 +22,8 @@ $ lsblk
 # 使用 fdisk 分区
 $ sudo fdisk /dev/sdX
 # 清除分区，输入：（o）
-# 新建第一个分区，输入：（n，p，1，enter，+100m，t，c）
-# 新建第二个分区，输入：（n，p，2，enter，enter）
+# 新建第一个分区，输入：（n，p，enter，enter，+100m，t，c）
+# 新建第二个分区，输入：（n，p，enter，enter，enter）
 # 写入更改，输入：（w）
 
 # 设置一号分区格式，可能需要安装 dosfstools

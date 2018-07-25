@@ -80,6 +80,7 @@ $ umount /mnt/boot /mnt/root
 # 多种登录方式，这里我选择 ssh，address 替换为你的 Raspberry PI 地址
 ssh alarm@address
 
+# 切换 root 用户，默认密码为 root
 su
 
 pacman-key --init

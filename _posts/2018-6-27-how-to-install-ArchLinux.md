@@ -203,4 +203,3 @@ $ pacman -S screenfetch
 
 $ screenfetch
 ```
-

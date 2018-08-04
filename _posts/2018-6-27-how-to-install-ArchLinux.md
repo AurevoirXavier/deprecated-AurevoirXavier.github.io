@@ -260,6 +260,5 @@ ifconfig
 
 ```sh
 $ pacman -S screenfetch
-
 $ screenfetch
 ```

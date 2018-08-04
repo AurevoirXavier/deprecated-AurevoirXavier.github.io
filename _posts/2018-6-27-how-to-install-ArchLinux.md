@@ -62,16 +62,19 @@ Last sector (xxx-xxx, default = xxx) or {+-}size{KMGTP}: +1007k
 # 分区类型，ef02 BIOS boot partition，输入 l 可以看到类型表
 Hex code or GUID (L to show codes, Enter = 8300): ef02
 # 接着我们分配引导分区，只有大小类型与启动分区不同
+Command (? for help): n
 Partition number (2-128, default 2):
 First sector (xxx-xxx, default = xxx) or {+-}size{KMGTP}:
 Last sector (xxx-xxx, default = xxx) or {+-}size{KMGTP}: +200m
 Hex code or GUID (L to show codes, Enter = 8300):
 # 一鼓作气，分配交换分区
+Command (? for help): n
 Partition number (3-128, default 3):
 First sector (xxx-xxx, default = xxx) or {+-}size{KMGTP}:
 Last sector (xxx-xxx, default = xxx) or {+-}size{KMGTP}: +2g
 Hex code or GUID (L to show codes, Enter = 8300): 8200
-# 有了上面的基础最后一个根分区，一路回车
+# 有了上面的基础最后一个根分区，输入 n 后一路回车
+Command (? for help): n
 Partition number (4-128, default 4):
 First sector (xxx-xxx, default = xxx) or {+-}size{KMGTP}:
 Last sector (xxx-xxx, default = xxx) or {+-}size{KMGTP}:
@@ -103,7 +106,49 @@ swapon /dev/sda3
 
 ##### EFI 启动方式：
 
-暂留
+```sh
+# 查看驱动器情况
+$ lsblk
+
+# 根据上面结果选择你要安装的分区
+$ gdisk /dev/sda
+
+# 新建分区，n 就是 new 的意思
+Command (? for help): n
+# 分区编号，我这里选择回车默认为 1
+Partition number (1-128, default 1): 
+# 区块起点，我同样直接回车使用默认值
+First sector (xxx, default = xxx) or {+-}size{KMGTP}:
+# 区块终点 +200m 如此一来分配了一个大小 200m 的空间，作为启动引导分区
+Last sector (xxx-xxx, default = xxx) or {+-}size{KMGTP}: +200m
+# 分区类型，ef00 EFI System，输入 l 可以看到类型表
+Hex code or GUID (L to show codes, Enter = 8300): ef00
+# 由于用 EFI 启动方式的都是比较新的机器，性能应该不差。以我自身为例，我就不分交换分区了本身内存足够用，而且我也不想用固态硬盘做交换分区，频繁地擦写会缩短寿命。如果你想分的话，分配方法与 BIOS 启动方式无差异，详见上文。这样以来我们就只剩下一个根分区没有分配了了，输入 n 后全部回车
+Command (? for help): n
+Partition number (4-128, default 2):
+First sector (xxx-xxx, default = xxx) or {+-}size{KMGTP}:
+Last sector (xxx-xxx, default = xxx) or {+-}size{KMGTP}:
+Hex code or GUID (L to show codes, Enter = 8300):
+# 列出分区表检查一下
+Command (? for help): p
+# 确认无误后写入，w 就是 write 的意思
+Command (? for help): w
+# 再三确认，小心丢失数据
+Do you want to proceed? (Y/N): y
+
+# 格式化引导分区和根分区，同样对于高配机器我选择将系统装在固态硬盘上因此采用 btrfs 格式更好，如果不想用 btrfs 格式可以参考 BIOS 启动方式
+$ mkfs.vfat -F32 /dev/sda1
+$ mkfs.btrfs /dev/sda2
+
+# 挂载根分区
+$ mount /dev/sda2 /mnt
+
+# 创建用于挂载引导分区的文件夹
+$ mkdir /mnt/boot
+
+# 挂载引导分区
+$ mount /dev/sda1 /mnt/boot
+```
 
 ### 3. 安装：
 
@@ -166,7 +211,22 @@ reboot
 
 ##### EFI 启动方式：
 
-暂留
+```sh
+# 安装 EFI 启动方式的引导器
+$ pacman -S dosfstools grub efibootmgr
+$ grub-install --target=x86_64-efi --efi-directory=boot/ --bootloader-id=arch_grub --recheck
+$ grub-mkconfig -o /boot/grub/grub.cfg
+$ mkdir /boot/EFI/boot
+$ cp /boot/EFI/arch_grub/grubx64.efi /boot/EFI/boot/bootx64.efi
+
+# 退出当前环境
+exit
+
+# 重启
+reboot
+```
+
+
 
 ### 6. 配置网络：
 

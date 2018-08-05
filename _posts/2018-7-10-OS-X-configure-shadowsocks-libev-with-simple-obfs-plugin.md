@@ -77,7 +77,7 @@ $ vi ~/Library/LaunchAgents/com.github.shadowsocks.plist
 			<string>-m</string>
 			<string>{加密方式}</string>
 			<string>--plugin</string>
-			<string>{这里特别注意，如果你要设置为服务随系统启动这里必须填写 obfs-local 的绝对路径，可以用 which obfs-local 找到，homebrew 安装的话就在 /usr/local/bin/obfs-local}</string>
+			<string>{这里特别注意，必须填写 obfs-local 的绝对路径}</string>
 			<string>--plugin-opts</string>
 			<string>obfs={服务器端混淆方式};obfs-host=www.bing.com</string>
 		</array>

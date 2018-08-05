@@ -42,7 +42,7 @@ $ brew service start shadowsocks-libev
 
 #### With nix:
 
-最近发现 [nix](https://nixos.org/nix/) 这个包管理器的设计理念非常不错，于是乎打算放弃 homebrew。
+最近发现 [nix](https://nixos.org/nix/) 这个包管理器的设计理念非常不错，于是乎打算放弃 homebrew（还不能完全放弃，毕竟里面的包是非常丰富的）。
 
 比如说，编译 librsvg 需要 rust，rust 需要 llvm ，llvm 有一个选项需要 graphviz，graphviz 需要 librsvg，这时候 homebrew 一点办法都没有了，而 nix 选择从源码先编译一次没有 graphviz 选项的 llvm 再完成所有工作。
 

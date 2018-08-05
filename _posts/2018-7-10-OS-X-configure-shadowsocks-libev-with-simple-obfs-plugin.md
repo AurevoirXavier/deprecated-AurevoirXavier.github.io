@@ -3,123 +3,105 @@ layout: post
 title: "OS X configure shadowsocks-libev with simple-obfs plugin"
 date:   2018-7-10
 excerpt: "OS X 下配置 shadowsocks-libev 配合 simple-obfs 插件"
-tags: [shadowsocks]
+tags: [shadowsocks, OS X]
 comments: true
 ---
 
-<center><h2>shadowsocks 服务器搭建</h2></center>
+<center><h2>OS X 下配置 shadowsocks-libev 配合 simple-obfs 插件</h2></center>
 
 <!--more-->
 
-### 服务器选择：
+*最近这墙是越来越高了，运营商根据流量把你的代理给 QoS 了，所谓上有政策下有对策，得给 ***shadowsocks** 加个混淆才行*。
 
-个人推荐 [vultr](https://www.vultr.com/?ref=7243921)，在我这里是能达到百兆光纤速度的上限。
+[ShadowsocksX-NG](https://github.com/shadowsocks/ShadowsocksX-NG) 虽然配置简单，但实在是不能随心所欲，所以我选择 [shadowsocks-libev](https://github.com/shadowsocks/shadowsocks-libev)。
 
-<a href="https://www.vultr.com/?ref=7243921"><img src="https://www.vultr.com/media/banner_1.png" width="728" height="90"></a>
+#### With homebrew：
 
-### 创建用户：
-
-这个没什么好说的吧。
-
-### Server Location 地区:
-
-看个人需求了，一般来说是机房地理位置离你越近越好。我选择的是 `Tokyo Japan` 的机房。
-
-### Server Type & Server Size 服务器配置：
-
-- 操作系统：Debian 7 x64
-- 硬盘空间：25GB SSD
-- 处理器：1 CPU
-- 内存：1024MB
-- 可用流量：1000GB
-
-以上是推荐个人或者两个人共同使用的配置，如有特别需求自行选择。
-
-### Additional Features 附加功能：
-
-- IPv6 `启用 IPv6`：✗
-- Private Network `私有网络`：✗
-- AutoBackups `自动备份`：✓
-- DDos Protection `DDos 保护`：✗
-- Block Storage Compatible `储存区块`：✗
-
-**Tips：**
-
-1. 私有网络其实就是添加内网地址。
-2. 自动备份（这里我开启了没什么用处的话不推荐你们开启）。
-3. DDos 保护就是防御洪水攻击的，如果你只是为了翻墙一般是没用的。
-4. 免费提供的储存区块对于我们翻墙来说没什么用。不过这个功能仅限纽约和新泽西的服务器可以使用。
-
-### Startup Script 启动脚本：
-
-开机时会自动执行的脚本，不过我不在此设置。
-
-### SSH Keys：
-
-和自己执行 `ssh-copy-id` 实现免密登陆有异曲同工之妙。不过需要的注意的是点击 Add Keys 并且把公钥保存之后，需要回到部署页面刷新一下然后才会出现刚添加的项目，然后单击底色变蓝说明勾选。
-
-### Server Hostname & Label 域名与标签：
-
-如果你有域名可以绑上去，远程连接或者使用 shadowsocks 的时候就不用记那一串 ip 地址了。
-
----
-
-### 连接服务器：
-
-使用 `putty` 或者 `ssh`，或者直接使用部署成功后进入服务器网页里面的 `console`。网上过多教程，此处不在赘述。
-
----
-
-### 安装 shadowsocks：
-
-一键脚本（由 teddysun 提供）：[Shadowsocks 一键安装脚本（四合一）](https://teddysun.com/486.html)
-
-### 安装 BBR（可选）：
-
-最近，Google 开源了其 TCP BBR 拥塞控制算法，并提交到了 Linux 内核，从 4.9 开始，Linux 内核已经用上了该算法。根据以往的传统，Google 总是先在自家的生产环境上线运用后，才会将代码开源，此次也不例外。
-根据实地测试，在部署了最新版内核并开启了 TCP BBR 的机器上，网速甚至可以提升好几个数量级。
-一键脚本（由 teddysun 提供）：[一键安装最新内核并开启 BBR 脚本](https://teddysun.com/489.html)
-
-### 关于配置：
-
-编辑 `/etc/shadowsocks-{不同版本此处名称不同}/config.json` ，至于选择什么编辑器自行百度一下，毕竟看这个教程的大部分是新手而 linux 的许多编辑器对新手确实是不太友好例如 vi。
-
-config.json ：
+```sh
+$ brew install shadowsocks-libve simple-obfs
+$ vi /usr/local/etc/shadowsocks-libev.json
+```
 
 ```json
 {
-    "server":"0.0.0.0",
-    "server_port":{ss 服务器开放的端口},
-    "password":"{连接 ss 密码}",
+    "server":"{服务器地址}",
+    "server_port":{服务器端口},
+    "local_port":{本地端口},
+    "password":"{连接密码}",
     "timeout":300,
-    "user":"nobody",
     "method":"{加密方式}",
-    {如果没有安装 simple-obfs 忽略本行并跳过下面两行}
-    "plugin":"obfs-server",
-    "plugin_opts":"obfs={http 或 tls 根据安装时的选择填写}"
-}
+    "plugin": "{这里特别注意，如果你要设置为服务随系统启动这里必须填写 obfs-local 的绝对路径，可以用 which obfs-local 找到，homebrew 安装的话就在 /usr/local/bin/obfs-local}",
+    "plugin_opts": "obfs={服务器端混淆方式};obfs-host=www.bing.com"
+} 
 ```
 
-### 防火墙（可选）：
-
-安装防火墙：
-
-```shell
-apt-get install firewalld
+```sh
+# 如果想要开机启动前面加上 sudo
+$ brew service start shadowsocks-libev
 ```
 
-放行 443 端口：
+#### With nix:
 
-```shell
-firewall-cmd --permanent --zone=public --add-port=443/tcp
+最近发现 [nix](https://nixos.org/nix/) 这个包管理器的设计理念非常不错，于是乎打算放弃 homebrew。
+
+比如说，编译 librsvg 需要 rust，rust 需要 llvm ，llvm 有一个选项需要 graphviz，graphviz 需要 librsvg，这时候 homebrew 一点办法都没有了，而 nix 选择从源码先编译一次没有 graphviz 选项的 llvm 再完成所有工作。
+
+又或者说，homebrew 每次升级 python 带来的一大堆连接丢失问题，然而 nix 可以[这样](https://www.slideshare.net/datakurre/nix-for-python-developers)。
+
+回到正题来谈谈用 nix 安装，并搭配 [launchctl](http://www.launchd.info) 配置开机启动，还可以省去写一个 json 配置文件：
+
+```sh
+$ nix-env -iA nixpkgs.shadowsocks-libev
+$ vi ~/Library/LaunchAgents/com.github.shadowsocks.plist
 ```
 
-重新加载放行列表：
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+	<dict>
+        <key>Label</key>
+        <string>com.github.shadowsocks.plist</string>
 
-```shell
-firewall-cmd --reload
+        <key>ProgramArguments</key>
+        <array>
+			<string>/Users/{你的用户名}/.nix-profile/bin/ss-local</string>
+			<string>-s</string>
+			<string>{服务器地址}</string>
+			<string>-p</string>
+			<string>{服务器端口}</string>
+			<string>-l</string>
+			<string>{本地端口}</string>
+			<string>-k</string>
+			<string>{连接密码}</string>
+			<string>-m</string>
+			<string>{加密方式}</string>
+			<string>--plugin</string>
+			<string>{这里特别注意，如果你要设置为服务随系统启动这里必须填写 obfs-local 的绝对路径，可以用 which obfs-local 找到，homebrew 安装的话就在 /usr/local/bin/obfs-local}</string>
+			<string>--plugin-opts</string>
+			<string>obfs={服务器端混淆方式};obfs-host=www.bing.com</string>
+		</array>
+
+		<key>KeepAlive</key>
+		<true/>
+
+		<key>RunAtLoad</key>
+		<true/>
+	</dict>
+</plist>
 ```
 
----
+```sh
+$ launchctl load ~/Library/LaunchAgents/com.github.shadowsocks.plist
+```
 
-### 至此，世界地图上又重新出现了中国。
+#### 启用代理
+
+光启用服务了还不行，还要：
+
+1.  -> System Preferences…（系统偏好） -> Network（网络）-> Advanced…（高级）-> Proxies（代理）
+2. SOCKS Proxy（SOCKS 代理）打上勾
+3. SOCKS Proxy Server（代理服务器）服务器地址填入 `127.0.0.1` 端口填入上面设置的 `{本地端口}`
+4. 关于 Automatic Proxy Configuration（自动代理配置），各有喜好，我选择白名单模式的 pac 只要不在名单内的均启用代理，当然流量比较少的人可以选用黑名单模式的。如果不起用的话，所有网站都走代理，那么国内网站访问就很慢啦。
+
+最后附上著名的黑名单 pac [gfwlist](https://github.com/gfwlist/gfwlist)，以及白名单 pac [gfw_whitelist](https://github.com/breakwa11/gfw_whitelist)。

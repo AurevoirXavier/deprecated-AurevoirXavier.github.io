@@ -11,7 +11,7 @@ comments: true
 
 <!--more-->
 
-*最近这墙是越来越高了，运营商根据流量把你的代理给 QoS 了，所谓上有政策下有对策，得给 ***shadowsocks** 加个混淆才行*。
+*最近这墙是越来越高了，运营商根据流量把你的代理给 QoS 了，所谓上有政策下有对策，得给 **shadowsocks** 加个混淆才行*。
 
 [ShadowsocksX-NG](https://github.com/shadowsocks/ShadowsocksX-NG) 虽然配置简单，但实在是不能随心所欲，所以我选择 [shadowsocks-libev](https://github.com/shadowsocks/shadowsocks-libev)。
 

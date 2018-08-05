@@ -102,6 +102,6 @@ $ launchctl load ~/Library/LaunchAgents/com.github.shadowsocks.plist
 1.  -> System Preferences…（系统偏好） -> Network（网络）-> Advanced…（高级）-> Proxies（代理）
 2. SOCKS Proxy（SOCKS 代理）打上勾
 3. SOCKS Proxy Server（代理服务器）服务器地址填入 `127.0.0.1` 端口填入上面设置的 `{本地端口}`
-4. 关于 Automatic Proxy Configuration（自动代理配置），各有喜好，我选择白名单模式的 pac 只要不在名单内的均启用代理，当然流量比较少的人可以选用黑名单模式的。如果不起用的话，所有网站都走代理，那么国内网站访问就很慢啦。
+4. 关于 Automatic Proxy Configuration（自动代理配置），各有喜好，我选择白名单模式的 pac 只要不在名单内的均启用代理，当然流量比较少的人可以选用黑名单模式的。如果不启用的话，所有网站都走代理，那么国内网站访问就很慢啦。
 
 最后附上著名的黑名单 pac [gfwlist](https://github.com/gfwlist/gfwlist)，以及白名单 pac [gfw_whitelist](https://github.com/breakwa11/gfw_whitelist)。

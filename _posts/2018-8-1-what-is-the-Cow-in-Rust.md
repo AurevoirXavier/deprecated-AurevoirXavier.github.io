@@ -115,7 +115,7 @@ fn pure_ip_1(address: String) -> String {
     }
 }
 
-fn pure_ip_2(address: String) -> String {
+fn pure_ip_2(address: &str) -> String {
     if address.contains('s') { return address[8..].to_string(); }
 
     match address.chars().next() {

@@ -15,7 +15,7 @@ comments: true
 
 ## 什么是 Cow
 
-今天在写一个 parser 的时候，第一个目标就是可以读写 xml 。那么上 [crates.io](https://crates.io) 搜索了一波现成的轮子，发现比较受好评的有 [xml-rs](https://crates.io/crates/xml-rs) 和 [quick-xml](https://crates.io/crates/quick-xml) 。前者功能更强大，后者则注重高性能。我选择了，因其号称高性能就连名字里也有个 quick，我想这一定很 quick。
+今天在写一个 parser 的时候，第一个目标就是可以读写 xml 。那么上 [crates.io](https://crates.io) 搜索了一波现成的轮子，发现比较受好评的有 [xml-rs](https://crates.io/crates/xml-rs) 和 [quick-xml](https://crates.io/crates/quick-xml) 。前者功能更强大，后者则注重高性能。我选择了后者，因其号称高性能就连名字里也有个 quick，我想这一定很 quick。
 
 
 
@@ -64,7 +64,7 @@ pub enum Cow<'a, B: ?Sized + 'a>
    1. `as` 在此处的用法官方称之为[完全限定语法](https://doc.rust-lang.org/book/second-edition/ch19-03-advanced-traits.html#fully-qualified-syntax-for-disambiguation-calling-methods-with-the-same-name)，用于处理重名问题
    2. 这一整句就是你如何访问 `B` 关于 `ToOwned` 的实现的语法
 
-`Cow<B>` 能直接调用 `B` 的不可变方法，所以它实现了 `Deref` 是一个智能指针。`Borrowed` 只拥有一个不可变的引用，如果你想要可变的话，你必须先克隆然后转换为 `Cow` 为 `Owned`。然而当你翻阅 `to_mut()` 源码后，这正是它所做的事情：
+`Cow<B>` 能直接调用 `B` 的不可变方法，因为它实现了 `Deref` 是一个智能指针。`Borrowed` 只拥有一个不可变的引用，如果你想要可变的话，你必须先克隆然后转换为 `Owned`。然而当你翻阅 `to_mut()` 源码后，发现这正是它所做的事情：
 
 ```rust
 pub fn to_mut(&mut self) -> &mut <B as ToOwned>::Owned {
@@ -103,11 +103,61 @@ pub fn into_owned(self) -> <B as ToOwned>::Owned {
 它的全称是 Clone on write（写时克隆）的缩写，所以对于读多写少的场景非常合适。假如你刚爬了一堆代理 ip，有些开头带 http/https 而有些则是纯 ip，你想把全部都改成纯数字。这有什么难的：
 
 ```rust
-fn pure_ip(address: ?) -> String {
-    match address.first() {
-        Some('h') =>,
-        _ => ,
+let address_1: String = String::from("http://127.0.0.1");
+let address_2: &str = "http://127.0.0.1";
+
+fn pure_ip_1(address: String) -> String {
+    if address.contains('s') { return address[8..].to_string(); }
+    
+    match address.chars().next() {
+        Some('h') =>  address[7..].to_string(),
+        _ => address,
+    }
+}
+
+fn pure_ip_2(address: String) -> String {
+    if address.contains('s') { return address[8..].to_string(); }
+
+    match address.chars().next() {
+        Some('h') =>  address[7..].to_string(),
+        _ => address.to_string(),
     }
 }
 ```
+
+那么问题来了：
+
+1. 传 `address_1` 给 `pure_ip_1` 会被直接消耗掉
+2. 传 `address_2.to_string()` 给 `pure_ip_1` 做了一次克隆
+3. 传 `&address_1` 给 `pure_ip_2` 如果已经是纯 ip，即使不做修改也要克隆再返回
+4. 传 `address_2` 给 `pure_ip_2` 如果已经是纯 ip，即使不做修改也要克隆再返回
+
+此时 `Cow` 便是万全之策，为了避免问题 1 2 传入 `&str`，为了避免问题 3 4 我们返回 `Cow<str>`：
+
+```rust
+use std::borrow::Cow;
+
+fn pure_ip_3<'a>(address: &'a str) -> Cow<'a, str> {
+    if address.contains('s') { return Cow::Owned(address[8..].to_owned()); }
+
+    match address.chars().next() {
+        Some('h') => Cow::Owned(address[7..].to_owned()),
+        _ => Cow::Borrowed(address),
+    }
+}
+
+fn pure_ip_4(address: &str) -> Cow<str> {
+    if address.contains('s') { return Cow::Owned(address[8..].to_string()); }
+
+    match address.chars().next() {
+        Some('h') => Cow::Owned(address[7..].to_string()),
+        _ => Cow::Borrowed(address),
+    }
+}
+```
+
+`pure_ip_3` 是最初版本，与 `pure_ip_4` 有两处不同：
+
+1. 由于现在编译器能推断这种简单的生命周期，所以可以省略生命周期参数 `‘a`
+2. 
 

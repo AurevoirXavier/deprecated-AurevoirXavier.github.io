@@ -81,6 +81,6 @@ pub fn to_mut(&mut self) -> &mut <B as ToOwned>::Owned {
     }
 ```
 
-如果 `Cow` 已经是 `Owned` 那么它简单的饭回一个可变引用。
+如果 `Cow` 已经是 `Owned` 那么返回一个可变引用。
 
 ## 应用场景

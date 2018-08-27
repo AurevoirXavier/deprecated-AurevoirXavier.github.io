@@ -159,5 +159,5 @@ fn pure_ip_4(address: &str) -> Cow<str> {
 `pure_ip_3` 是最初版本，与 `pure_ip_4` 有两处不同：
 
 1. 由于现在编译器能推断这种简单的生命周期，所以可以省略生命周期参数 `‘a`
-2. 
+2. 详见 [to_owned() 与 to_string()](https://uvwvu.xyz/Rust/to_owned-and-to_string.rs)
 

@@ -34,7 +34,7 @@ pub enum Cow<'a, B: ?Sized + 'a>
 }
 ```
 
-*读的懂的可以跳过下面的简单说明*
+*读的懂的可以跳过下面的三个排疑*
 
 1. `where` 是什么？其实它等价于：
 
@@ -47,7 +47,7 @@ pub enum Cow<'a, B: ?Sized + 'a>
 
 2. `?Sized` 是什么？
 
-   - 事实上，所有形参都隐式地添加了一个约束 `Sized` 以此标记这个形参在编译时大小是可知的，而 `?Sized` 等于取消了这个约束。 
+   - 事实上，所有形参都隐式地添加了一个约束 `Sized` 以此标记这个形参在编译时大小是可知的，而 `?Sized` 等于取消了这个约束 
 
 3. `<B as ToOwned>::Owned` 是什么？其实它等价于：
 
@@ -68,19 +68,19 @@ pub enum Cow<'a, B: ?Sized + 'a>
 
 ```rust
 pub fn to_mut(&mut self) -> &mut <B as ToOwned>::Owned {
-        match *self {
-            Borrowed(borrowed) => {
-                *self = Owned(borrowed.to_owned());
-                match *self {
-                    Borrowed(..) => unreachable!(),
-                    Owned(ref mut owned) => owned,
-                }
+    match *self {
+        Borrowed(borrowed) => {
+            *self = Owned(borrowed.to_owned());
+            match *self {
+                Borrowed(..) => unreachable!(),
+                Owned(ref mut owned) => owned,
             }
-            Owned(ref mut owned) => owned,
         }
+        Owned(ref mut owned) => owned,
     }
+}
 ```
 
-如果 `Cow` 已经是 `Owned` 那么返回一个可变引用。
+如果 `Cow` 已经是 `Owned` 那么返回一个可变引用。`B` 必须以某种方式实现 `ToOwned`。对于那些实现了 `Clone` 的类型，会有一个默认的 `ToOwned` 实现。此外，有一个专门实现的例子，通过复制将 `&str` 转变为 `String`。
 
 ## 应用场景

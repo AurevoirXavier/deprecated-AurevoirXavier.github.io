@@ -107,19 +107,17 @@ let address_1: String = String::from("http://127.0.0.1");
 let address_2: &str = "http://127.0.0.1";
 
 fn pure_ip_1(address: String) -> String {
-    if address.contains('s') { return address[8..].to_string(); }
-    
     match address.chars().next() {
-        Some('h') =>  address[7..].to_string(),
+        Some('h') => pure_ip_1(address[7..].to_string()),
+        Some('/') => address[1..].to_string(),
         _ => address,
     }
 }
 
 fn pure_ip_2(address: &str) -> String {
-    if address.contains('s') { return address[8..].to_string(); }
-
     match address.chars().next() {
-        Some('h') =>  address[7..].to_string(),
+        Some('h') => pure_ip_2(&address[7..]),
+        Some('/') => address[1..].to_string(),
         _ => address.to_string(),
     }
 }
@@ -127,8 +125,8 @@ fn pure_ip_2(address: &str) -> String {
 
 那么问题来了：
 
-1. 传 `address_1` 给 `pure_ip_1` 会被直接消耗掉
-2. 传 `address_2.to_string()` 给 `pure_ip_1` 做了一次克隆
+1. 传 `address_1` 给 `pure_ip_1` 会被直接消耗掉，`address_1` 的生命周期到此为止
+2. 传 `address_2.to_string()` 给 `pure_ip_1` 就已经做了一次克隆
 3. 传 `&address_1` 给 `pure_ip_2` 如果已经是纯 ip，即使不做修改也要克隆再返回
 4. 传 `address_2` 给 `pure_ip_2` 如果已经是纯 ip，即使不做修改也要克隆再返回
 
@@ -138,19 +136,17 @@ fn pure_ip_2(address: &str) -> String {
 use std::borrow::Cow;
 
 fn pure_ip_3<'a>(address: &'a str) -> Cow<'a, str> {
-    if address.contains('s') { return Cow::Owned(address[8..].to_owned()); }
-
     match address.chars().next() {
-        Some('h') => Cow::Owned(address[7..].to_owned()),
+        Some('h') => pure_ip_3(&address[7..]),
+        Some('/') => Cow::Owned(address[1..].to_owned()),
         _ => Cow::Borrowed(address),
     }
 }
 
 fn pure_ip_4(address: &str) -> Cow<str> {
-    if address.contains('s') { return Cow::Owned(address[8..].to_string()); }
-
     match address.chars().next() {
-        Some('h') => Cow::Owned(address[7..].to_string()),
+        Some('h') => pure_ip_4(&address[7..]),
+        Some('/') => Cow::Owned(address[1..].to_string()),
         _ => Cow::Borrowed(address),
     }
 }
@@ -158,6 +154,7 @@ fn pure_ip_4(address: &str) -> Cow<str> {
 
 `pure_ip_3` 是最初版本，与 `pure_ip_4` 有两处不同：
 
-1. 由于现在编译器能推断这种简单的生命周期，所以可以省略生命周期参数 `‘a`
-2. 详见 [to_owned() 与 to_string()](https://uvwvu.xyz/Rust/to_owned-and-to_string.rs)
-
+1. 生命周期参数 `’a`
+   - 由于现在编译器能推断这种简单的生命周期，所以可以省略生命周期参数 `‘a`
+2. 方法 `to_owned()`，`to_string()`
+   - 详见 [to_owned() 与 to_string()](https://uvwvu.xyz/Rust/to_owned-and-to_string.rs)

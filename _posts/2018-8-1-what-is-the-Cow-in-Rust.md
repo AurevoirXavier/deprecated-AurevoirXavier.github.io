@@ -64,7 +64,7 @@ pub enum Cow<'a, B: ?Sized + 'a>
    1. `as` 在此处的用法官方称之为[完全限定语法](https://doc.rust-lang.org/book/second-edition/ch19-03-advanced-traits.html#fully-qualified-syntax-for-disambiguation-calling-methods-with-the-same-name)，用于处理重名问题
    2. 这一整句就是你如何访问 `B` 关于 `ToOwned` 的实现的语法
 
-`Cow<B>` 能直接调用 `B` 的不可变方法，因为它实现了 `Deref` 是一个智能指针。`Borrowed` 只拥有一个不可变的引用，如果你想要可变的话，你必须先克隆然后转换为 `Owned`。然而当你翻阅 `to_mut()` 源码后，发现这正是它所做的事情：
+`Cow<B>` 能直接调用 `B` 的不可变方法，因为它实现了 `Deref` 是一个智能指针。`Borrowed` 只拥有一个不可变的引用，如果你想要可变的 **引用**，你必须先克隆然后转换为 `Owned`。然而当你翻阅 `to_mut()` 源码后，发现这正是它所做的事情：
 
 ```rust
 pub fn to_mut(&mut self) -> &mut <B as ToOwned>::Owned {
@@ -85,7 +85,7 @@ pub fn to_mut(&mut self) -> &mut <B as ToOwned>::Owned {
 
 
 
-使用 `into_owned()` 同样可以得到可变的对象，但是稍有不同，我们再翻翻源码：
+使用 `into_owned()` 同样可以得到可变的 **对象**，但是稍有不同，我们再翻翻源码：
 
 ```rust
 pub fn into_owned(self) -> <B as ToOwned>::Owned {

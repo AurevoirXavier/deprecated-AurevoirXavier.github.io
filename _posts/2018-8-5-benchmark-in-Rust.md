@@ -1,7 +1,7 @@
 ---
 layout: post
-title: "what's the Cow in Rust"
-date:   2018-8-1
+title: "benchmark in Rust"
+date:   2018-8-5
 excerpt: "Rust 中的 Cow 是什么"
 tags: [Rust]
 comments: true

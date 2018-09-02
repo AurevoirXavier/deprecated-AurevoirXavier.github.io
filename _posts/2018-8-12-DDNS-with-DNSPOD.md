@@ -62,7 +62,7 @@ comments: true
 - `record_line_id` 线路的ID，通过API记录线路获得，英文字符串，比如：‘10=1’ 【``record_line` 和 `record_line_id` 二者传其一即可，系统优先取 `record_line_id`】
 - `value` IP地址，例如：6.6.6.6，可选
 
-精简一点的话只需这样就可以了，`value` 可以不写，默认直接使用你发起请求的地址：
+精简一点的话只需这样就可以了（`value` 可以不写，默认直接使用你发起请求的地址）：
 
 
 

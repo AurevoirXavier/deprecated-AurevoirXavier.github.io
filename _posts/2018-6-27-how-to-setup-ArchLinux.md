@@ -1,6 +1,6 @@
 ---
 1layout: post
-title: "how to install ArchLinux"
+title: "how to setup ArchLinux"
 date:   2018-06-27
 excerpt: "如何安装 ArchLinux"
 tags: [ArchLinux]

@@ -3,7 +3,7 @@ layout: post
 title: "x file(s) could not be loaded into the NERD tree"
 date:   2018-02-26
 excerpt: "x file(s) could not be loaded into the NERD tree"
-tags: [nerdtree, vim]
+tags: [Note]
 comments: true
 ---
 

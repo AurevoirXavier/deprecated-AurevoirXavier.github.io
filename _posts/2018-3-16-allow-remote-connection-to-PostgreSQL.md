@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Allow remote connection to PostgreSQL"
+title: "allow remote connection to PostgreSQL"
 date:   2018-03-16
 excerpt: "允许远程连接 PostgreSQL 数据库"
 tags: [Linux, PostgreSQL]

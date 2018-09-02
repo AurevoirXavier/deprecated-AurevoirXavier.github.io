@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Call to undefined function utf8_decode()"
+title: "call to undefined function utf8_decode()"
 date:   2018-05-23
 excerpt: "Call to undefined function utf8_decode()"
 tags: [php]

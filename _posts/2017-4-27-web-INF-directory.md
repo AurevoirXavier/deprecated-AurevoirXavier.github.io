@@ -3,7 +3,7 @@ layout: post
 title: "WEB-INF directory"
 date:   2017-04-27
 excerpt: "WEB-INF 目录详解"
-tags: [Java, Web]
+tags: [Java]
 comments: true
 ---
 

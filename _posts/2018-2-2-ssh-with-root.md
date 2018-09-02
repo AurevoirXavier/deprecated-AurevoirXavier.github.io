@@ -3,7 +3,7 @@ layout: post
 title: "ssh with root"
 date:   2018-02-02
 excerpt: "使用 root 账户 ssh 登录"
-tags: [SSH]
+tags: [Note]
 comments: true
 ---
 

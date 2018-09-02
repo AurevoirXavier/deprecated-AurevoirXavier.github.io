@@ -3,7 +3,7 @@ layout: post
 title: "SSH permissions"
 date:   2017-09-15
 excerpt: "ssh 权限"
-tags: [SSH]
+tags: [Note]
 comments: true
 ---
 

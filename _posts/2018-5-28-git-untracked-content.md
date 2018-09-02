@@ -3,7 +3,7 @@ layout: post
 title: "Git untracked content"
 date:   2018-05-28
 excerpt: "modified: xxx(modified content, untracked content)"
-tags: [Git]
+tags: [Note]
 comments: true
 ---
 

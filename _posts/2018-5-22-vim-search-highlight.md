@@ -1,9 +1,9 @@
 ---
 layout: post
-title: "Vim search highlight"
+title: "vim search highlight"
 date:   2018-05-22
 excerpt: "vim 搜索关键词高亮"
-tags: [Linux, vim]
+tags: [Note]
 comments: true
 ---
 

@@ -3,7 +3,7 @@ layout: post
 title: "ssh without password"
 date:   2018-02-02
 excerpt: "ssh 免密登录"
-tags: [SSH]
+tags: [Note]
 comments: true
 ---
 

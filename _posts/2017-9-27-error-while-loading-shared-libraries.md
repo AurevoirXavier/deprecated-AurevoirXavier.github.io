@@ -1,9 +1,9 @@
 ---
 layout: post
-title: "Error while loading shared libraries"
+title: "error while loading shared libraries"
 date:   2017-09-27
 excerpt: "加载共享库出错"
-tags: [Linux]
+tags: [Note]
 comments: true
 ---
 

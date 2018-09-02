@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Difference between Clone and Copy"
+title: "difference between Clone and Copy"
 date:   2018-06-13
 excerpt: "Clone 与 Copy 的区别"
 tags: [Rust]

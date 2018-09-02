@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Atomically of Swift"
+title: "atomically of Swift"
 date:   2017-04-11
 excerpt: "Swift 中的 atomically 详解"
 tags: [Swift]

@@ -1,9 +1,9 @@
 ---
 layout: post
-title: "Expected programs not found in PATH or not executable"
+title: "expected programs not found in PATH or not executable"
 date:   2018-05-21
 excerpt: "dpkg: error: expected program not found in PATH or not"
-tags: [Linux]
+tags: [Note]
 comments: true
 ---
 

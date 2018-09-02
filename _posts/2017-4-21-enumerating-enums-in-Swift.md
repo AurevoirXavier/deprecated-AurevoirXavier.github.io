@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Enumerating enums in Swift"
+title: "enumerating enums in Swift"
 date:   2017-04-21
 excerpt: "遍历 Swift 中的枚举类型"
 tags: [Swift]

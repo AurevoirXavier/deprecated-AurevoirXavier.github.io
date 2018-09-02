@@ -3,7 +3,7 @@ layout: post
 title: "build-in object of Jsp"
 date:   2017-06-18
 excerpt: "Jsp 内置对象"
-tags: [Java, Web]
+tags: [Java]
 comments: true
 ---
 

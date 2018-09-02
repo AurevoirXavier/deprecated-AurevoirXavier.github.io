@@ -1,9 +1,9 @@
 ---
 layout: post
-title: "Configure php-fpm and nginx"
+title: "configure php-fpm and nginx"
 date:   2018-05-23
 excerpt: "php-fpm 与 nginx"
-tags: [php, nginx]
+tags: [php]
 comments: true
 ---
 

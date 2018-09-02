@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Singleton object of Scala"
+title: "singleton object of Scala"
 date:   2017-06-02
 excerpt: "Scala 之单例对象"
 tags: [Scala]

@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Unable to start PostgreSQL"
+title: "unable to start PostgreSQL"
 date:   2018-03-16
 excerpt: "无法启动 PostgreSQL 数据库"
 tags: [Linux, PostgreSQL]

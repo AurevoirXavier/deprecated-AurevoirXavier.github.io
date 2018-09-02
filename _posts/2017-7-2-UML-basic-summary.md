@@ -3,7 +3,7 @@ layout: post
 title: "UML-basic-summary"
 date:   2017-07-2
 excerpt: "UML 基础总结"
-tags: [UML]
+tags: [Note]
 comments: true
 ---
 

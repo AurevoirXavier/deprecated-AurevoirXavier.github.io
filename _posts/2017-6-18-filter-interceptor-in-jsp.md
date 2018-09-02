@@ -1,9 +1,9 @@
 ---
 layout: post
-title: "Filter and interceptor in Jsp"
+title: "filter and interceptor in Jsp"
 date:   2017-06-18
 excerpt: "Jsp 中的过滤器与拦截器"
-tags: [jsp, program]
+tags: [Java]
 comments: true
 ---
 

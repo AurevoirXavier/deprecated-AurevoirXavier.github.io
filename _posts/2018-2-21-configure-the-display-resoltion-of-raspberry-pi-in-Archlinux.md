@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Configure the display resoltion of raspberryPi on ArchLinux"
+title: "configure the display resoltion of raspberryPi on ArchLinux"
 date:   2018-02-21
 excerpt: "ArchLinux 下配置树莓派的输出分辨率"
 tags: [ArchLinux, raspberryPi]

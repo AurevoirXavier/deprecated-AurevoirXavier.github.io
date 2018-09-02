@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Change username and hostname on ArchLinux"
+title: "change username and hostname on ArchLinux"
 date:   2018-02-02
 excerpt: "更改 ArchLinux 中的用户名和主机名"
 tags: [ArchLinux, Linux]

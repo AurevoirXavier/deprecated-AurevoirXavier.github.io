@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Update Ruby with rvm on mac"
+title: "update Ruby with rvm on mac"
 date:   2018-01-28
 excerpt: "在 mac 下通过 rvm 更新 Ruby"
 tags: [OS X, Ruby]

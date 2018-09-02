@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Current transaction is aborted in PostgreSQL"
+title: "current transaction is aborted in PostgreSQL"
 date:   2018-03-17
 excerpt: "ERROR: current transaction is aborted"
 tags: [PostgreSQL, Python]

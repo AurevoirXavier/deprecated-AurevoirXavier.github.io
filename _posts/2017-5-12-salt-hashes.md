@@ -1,9 +1,9 @@
 ---
 layout: post
-title: "Salt your hashes"
+title: "salt your hashes"
 date:   2017-05-12
 excerpt: "盐化你的哈希 (为你的哈希加盐)"
-tags: [Cryotology, Hash]
+tags: [Cryotology]
 comments: true
 ---
 

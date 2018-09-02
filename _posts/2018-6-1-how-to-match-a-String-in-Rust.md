@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "How to match a String in Rust"
+title: "how to match a String in Rust"
 date:   2018-06-01
 excerpt: "Rust 中如何对 String 进行模式匹配"
 tags: [Rust]

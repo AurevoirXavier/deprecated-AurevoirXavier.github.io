@@ -3,7 +3,7 @@ layout: post
 title: "netstat useful command"
 date:   2018-01-05
 excerpt: "netstat 常用命令"
-tags: [Linux, netstat]
+tags: [Note]
 comments: true
 ---
 

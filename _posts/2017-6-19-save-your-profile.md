@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Save your profile"
+title: "save your profile"
 date:   2017-06-19
 excerpt: "拯救你的 profile"
 tags: [Linux, OS X]

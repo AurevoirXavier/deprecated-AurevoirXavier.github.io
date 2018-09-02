@@ -1,9 +1,9 @@
 ---
 layout: post
-title: "Delete file recursively on Linux"
+title: "delete file recursively in Linux"
 date:   2017-09-15
 excerpt: "Linux 下递归删除文件"
-tags: [Linux]
+tags: [Note]
 comments: true
 ---
 

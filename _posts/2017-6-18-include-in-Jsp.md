@@ -1,9 +1,9 @@
 ---
 layout: post
-title: "include of Jsp"
+title: "include in Jsp"
 date:   2017-06-18
 excerpt: "Jsp 中的 include"
-tags: [Java, Web]
+tags: [Java]
 comments: true
 ---
 

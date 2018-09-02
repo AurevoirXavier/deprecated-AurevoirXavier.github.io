@@ -3,7 +3,7 @@ layout: post
 title: "shadowsocks server deploy"
 date:   2017-10-25
 excerpt: "shadowsocks 服务器搭建"
-tags: [shadowsocks]
+tags: [Note]]
 comments: true
 ---
 

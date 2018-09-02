@@ -3,7 +3,7 @@ layout: post
 title: "RESTful tutorial"
 date:   2017-06-05
 excerpt: "RESTful 教程"
-tags: [RESTful, Web]
+tags: [Web]
 comments: true
 ---
 

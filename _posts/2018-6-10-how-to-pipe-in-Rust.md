@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "How to pipe in Rust"
+title: "how to pipe in Rust"
 date:   2018-06-10
 excerpt: "如何在 Rust 中实现管道功能"
 tags: [Rust]

@@ -1,9 +1,9 @@
 ---
 layout: post
-title: "Enable php pathinfo with nginx"
+title: "enable php pathinfo with nginx"
 date:   2018-05-23
 excerpt: "配置 nginx 启用 php pathinfo"
-tags: [php, nginx]
+tags: [php]
 comments: true
 ---
 

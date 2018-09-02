@@ -1,9 +1,9 @@
 ---
 layout: post
-title: "Tomcat directory structure"
+title: "tomcat directory structure"
 date:   2017-04-27
 excerpt: "Tomcat 目录结构"
-tags: [Tomcat, Web]
+tags: [Web]
 comments: true
 ---
 

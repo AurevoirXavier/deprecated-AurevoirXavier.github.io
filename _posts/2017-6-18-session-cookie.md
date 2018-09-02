@@ -3,7 +3,7 @@ layout: post
 title: "Session and Cookie"
 date:   2017-06-18
 excerpt: "Session 与 Cookie"
-tags: [program, web]
+tags: [Web]
 comments: true
 ---
 

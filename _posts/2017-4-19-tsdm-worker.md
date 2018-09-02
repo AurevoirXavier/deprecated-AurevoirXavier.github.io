@@ -4,7 +4,7 @@ title: "Tsdm Worker"
 date:   2017-04-19
 excerpt: "天使动漫签到打工合并版"
 project:    true
-tags: [Project, JavaScript]
+tags: [JavaScript]
 comments: true
 ---
 

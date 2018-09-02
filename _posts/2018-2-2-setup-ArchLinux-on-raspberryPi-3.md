@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Install ArchLinux on raspberryPI 3"
+title: "setup ArchLinux on raspberryPI 3"
 date:   2018-02-02
 excerpt: "Raspberry PI 3 安装 ArchLinux"
 tags: [ArchLinux, raspberryPi]

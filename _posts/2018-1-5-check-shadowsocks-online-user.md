@@ -1,9 +1,9 @@
 ---
 layout: post
-title: "Check shadowsocks online user"
+title: "check shadowsocks online user"
 date:   2018-01-05
 excerpt: "查看 shadowsocks 在线用户"
-tags: [Linux, netstat, shadowsocks]
+tags: [Note]
 comments: true
 ---
 

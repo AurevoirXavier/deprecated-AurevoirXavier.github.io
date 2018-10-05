@@ -23,13 +23,14 @@ comments: true
 #[test]
 fn clone_and_to_owned() {
     use std::mem;
+    
     let s1: &'static str = "s1";
     let s2 = "s2".to_string();
     
     {
-        let c1 = s1.clone();
-        
+        let c1 = s1.clone(); 
         let c2 = s2.clone();
+        
         println!("{}", c1 == s1);
         println!("{}", c2 == s2);
         println!("{}", mem::size_of_val(c1));

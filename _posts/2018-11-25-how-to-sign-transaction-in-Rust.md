@@ -2,7 +2,7 @@
 layout: post
 title: "how to sign transaction in Rust"
 date:   2018-11-26
-excerpt: “如何在 Rust 中签名交易"
+excerpt: "如何在 Rust 中签名交易"
 tags: [BlockChain, Ethereum, Rust, Web3]
 comments: true
 ---

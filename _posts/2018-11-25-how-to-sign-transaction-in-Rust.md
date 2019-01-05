@@ -13,7 +13,7 @@ comments: true
 
 
 
-最近玩了一下~~中国特色~~<font backgroud-color="black">实名制<font/>区块链——[链克](https://www.lianxiangcloud.com/coin/coin/)，其表面上为了不被政府枪毙对外称封闭的，但事实上套现方法总是有滴，就是兑换完物品后将其折现，比如你兑换了一个月迅雷会员然后出手这个兑换码。吐槽就到这里了，下面进入正题。
+最近玩了一下中国特色~~实名制~~区块链——[链克](https://www.lianxiangcloud.com/coin/coin/)，其表面上为了不被政府枪毙对外称封闭的，但事实上套现方法总是有滴，就是兑换完物品后将其折现，比如你兑换了一个月迅雷会员然后出手这个兑换码。吐槽就到这里了，下面进入正题。
 
 
 
@@ -23,7 +23,7 @@ comments: true
 
 那么只好使用 [cpython](https://github.com/dgrunwald/rust-cpython) 曲线救国了:
 
-```
+```rust
 let gil = Python::acquire_gil();
 let py = gil.python();
 let web3 = py.import("web3").unwrap();
@@ -56,3 +56,4 @@ let raw_transaction: String = signed_transaction.getattr(py, "rawTransaction")
 ```
 
 实际上就是使用了 python 的 web3 库，提供了一个变通的方法。
+

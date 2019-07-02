@@ -1,0 +1,414 @@
+"pkg-config --exists libffi"
+package configuration for libffi is not found
+have_header: checking for ffi.h... -------------------- no
+
+"clang -o conftest -I/nix/store/ri2s7z6pm73m07h710041wifnnsix4da-ruby-2.6.3/include/ruby-2.6.0/x86_64-darwin17 -I/nix/store/ri2s7z6pm73m07h710041wifnnsix4da-ruby-2.6.3/include/ruby-2.6.0/ruby/backward -I/nix/store/ri2s7z6pm73m07h710041wifnnsix4da-ruby-2.6.3/include/ruby-2.6.0 -I. -D_XOPEN_SOURCE -D_DARWIN_C_SOURCE -D_DARWIN_UNLIMITED_SELECT -D_REENTRANT   -O3 -ggdb3 -Wall -Wextra -Wdeclaration-after-statement -Wdeprecated-declarations -Wdivision-by-zero -Wimplicit-function-declaration -Wimplicit-int -Wpointer-arith -Wshorten-64-to-32 -Wwrite-strings -Wmissing-noreturn -Wno-constant-logical-operand -Wno-long-long -Wno-missing-field-initializers -Wno-overlength-strings -Wno-parentheses-equality -Wno-self-assign -Wno-tautological-compare -Wno-unused-parameter -Wno-unused-value -Wunused-variable -Wextra-tokens  -fno-common -pipe conftest.c  -L. -L/nix/store/ri2s7z6pm73m07h710041wifnnsix4da-ruby-2.6.3/lib -L. -fstack-protector-strong -L/nix/store/fwhkmj56ccgxx62sslz22h0sdxg2bbw0-gettext-0.19.8.1/lib -L/nix/store/0kn38pv5vqmkq5j4jrpqynjrwv551hjc-libc++-7.1.0/lib -L/nix/store/vw5ffjgiy8ciglvnglad1gga0ygaydrm-libc++abi-7.1.0/lib -L/nix/store/4ggg5hhc26kpv2prvk8askv5xriahgxk-libffi-3.2.1-dev/lib -L/nix/store/0p9xfxlzjkxdnck1qzaybvw2rzp067hw-ncurses-6.1-20190112-dev/lib -L/nix/store/xllycfvg6yh6wgn57z45qcn4n5k495ym-zlib-1.2.11-dev/lib -L/nix/store/gq3f7y4jmclsxiy1lyrzgs0582adqpgk-openssl-1.0.2r-dev/lib -L/nix/store/8iqzm4ys9s8vnhrd5457dsl3l8lmihgz-gdbm-1.18.1/lib -L/nix/store/8idyrn03skcsn4fx70jcd3a0qiy1sff9-libyaml-0.2.1/lib -L/nix/store/qmgr598q5mmw23v9na5bls65swkhqqfa-libiconv-osx-10.12.6/lib -L/nix/store/84vzmndak0nmscf65j3g03aqz6zxv2c0-objc4-osx-10.12.6/lib -L/nix/store/hb1kz8mlrs4gnjdj1bds8isrn8dk0lp2-libunwind-osx-10.12.6/lib -L/nix/store/z96dbzxpz1mcdxajc3k12b65mspqbb21-clang-wrapper-7.1.0/resource-root/lib -L/nix/store/mrrc440cshmc13rqqj4405jbqnklf4ja-Libsystem-osx-10.12.6/lib     -lruby.2.6   "
+checked program was:
+/* begin */
+1: #include "ruby.h"
+2: 
+3: int main(int argc, char **argv)
+4: {
+5:   return 0;
+6: }
+/* end */
+
+"clang -E -I/nix/store/ri2s7z6pm73m07h710041wifnnsix4da-ruby-2.6.3/include/ruby-2.6.0/x86_64-darwin17 -I/nix/store/ri2s7z6pm73m07h710041wifnnsix4da-ruby-2.6.3/include/ruby-2.6.0/ruby/backward -I/nix/store/ri2s7z6pm73m07h710041wifnnsix4da-ruby-2.6.3/include/ruby-2.6.0 -I. -D_XOPEN_SOURCE -D_DARWIN_C_SOURCE -D_DARWIN_UNLIMITED_SELECT -D_REENTRANT   -O3 -ggdb3 -Wall -Wextra -Wdeclaration-after-statement -Wdeprecated-declarations -Wdivision-by-zero -Wimplicit-function-declaration -Wimplicit-int -Wpointer-arith -Wshorten-64-to-32 -Wwrite-strings -Wmissing-noreturn -Wno-constant-logical-operand -Wno-long-long -Wno-missing-field-initializers -Wno-overlength-strings -Wno-parentheses-equality -Wno-self-assign -Wno-tautological-compare -Wno-unused-parameter -Wno-unused-value -Wunused-variable -Wextra-tokens  -fno-common -pipe  conftest.c -o conftest.i"
+conftest.c:3:10: fatal error: 'ffi.h' file not found
+#include <ffi.h>
+         ^~~~~~~
+1 error generated.
+checked program was:
+/* begin */
+1: #include "ruby.h"
+2: 
+3: #include <ffi.h>
+/* end */
+
+--------------------
+
+find_header: checking for ffi.h in /usr/local/include,/usr/include/ffi... -------------------- yes
+
+"clang -E -I/nix/store/ri2s7z6pm73m07h710041wifnnsix4da-ruby-2.6.3/include/ruby-2.6.0/x86_64-darwin17 -I/nix/store/ri2s7z6pm73m07h710041wifnnsix4da-ruby-2.6.3/include/ruby-2.6.0/ruby/backward -I/nix/store/ri2s7z6pm73m07h710041wifnnsix4da-ruby-2.6.3/include/ruby-2.6.0 -I. -D_XOPEN_SOURCE -D_DARWIN_C_SOURCE -D_DARWIN_UNLIMITED_SELECT -D_REENTRANT   -O3 -ggdb3 -Wall -Wextra -Wdeclaration-after-statement -Wdeprecated-declarations -Wdivision-by-zero -Wimplicit-function-declaration -Wimplicit-int -Wpointer-arith -Wshorten-64-to-32 -Wwrite-strings -Wmissing-noreturn -Wno-constant-logical-operand -Wno-long-long -Wno-missing-field-initializers -Wno-overlength-strings -Wno-parentheses-equality -Wno-self-assign -Wno-tautological-compare -Wno-unused-parameter -Wno-unused-value -Wunused-variable -Wextra-tokens  -fno-common -pipe  conftest.c -o conftest.i"
+conftest.c:3:10: fatal error: 'ffi.h' file not found
+#include <ffi.h>
+         ^~~~~~~
+1 error generated.
+checked program was:
+/* begin */
+1: #include "ruby.h"
+2: 
+3: #include <ffi.h>
+/* end */
+
+"clang -E -I/nix/store/ri2s7z6pm73m07h710041wifnnsix4da-ruby-2.6.3/include/ruby-2.6.0/x86_64-darwin17 -I/nix/store/ri2s7z6pm73m07h710041wifnnsix4da-ruby-2.6.3/include/ruby-2.6.0/ruby/backward -I/nix/store/ri2s7z6pm73m07h710041wifnnsix4da-ruby-2.6.3/include/ruby-2.6.0 -I. -D_XOPEN_SOURCE -D_DARWIN_C_SOURCE -D_DARWIN_UNLIMITED_SELECT -D_REENTRANT   -O3 -ggdb3 -Wall -Wextra -Wdeclaration-after-statement -Wdeprecated-declarations -Wdivision-by-zero -Wimplicit-function-declaration -Wimplicit-int -Wpointer-arith -Wshorten-64-to-32 -Wwrite-strings -Wmissing-noreturn -Wno-constant-logical-operand -Wno-long-long -Wno-missing-field-initializers -Wno-overlength-strings -Wno-parentheses-equality -Wno-self-assign -Wno-tautological-compare -Wno-unused-parameter -Wno-unused-value -Wunused-variable -Wextra-tokens  -fno-common -pipe -I/usr/local/include conftest.c -o conftest.i"
+conftest.c:3:10: fatal error: 'ffi.h' file not found
+#include <ffi.h>
+         ^~~~~~~
+1 error generated.
+checked program was:
+/* begin */
+1: #include "ruby.h"
+2: 
+3: #include <ffi.h>
+/* end */
+
+"clang -E -I/nix/store/ri2s7z6pm73m07h710041wifnnsix4da-ruby-2.6.3/include/ruby-2.6.0/x86_64-darwin17 -I/nix/store/ri2s7z6pm73m07h710041wifnnsix4da-ruby-2.6.3/include/ruby-2.6.0/ruby/backward -I/nix/store/ri2s7z6pm73m07h710041wifnnsix4da-ruby-2.6.3/include/ruby-2.6.0 -I. -D_XOPEN_SOURCE -D_DARWIN_C_SOURCE -D_DARWIN_UNLIMITED_SELECT -D_REENTRANT   -O3 -ggdb3 -Wall -Wextra -Wdeclaration-after-statement -Wdeprecated-declarations -Wdivision-by-zero -Wimplicit-function-declaration -Wimplicit-int -Wpointer-arith -Wshorten-64-to-32 -Wwrite-strings -Wmissing-noreturn -Wno-constant-logical-operand -Wno-long-long -Wno-missing-field-initializers -Wno-overlength-strings -Wno-parentheses-equality -Wno-self-assign -Wno-tautological-compare -Wno-unused-parameter -Wno-unused-value -Wunused-variable -Wextra-tokens  -fno-common -pipe -I/usr/include/ffi conftest.c -o conftest.i"
+checked program was:
+/* begin */
+1: #include "ruby.h"
+2: 
+3: #include <ffi.h>
+/* end */
+
+--------------------
+
+have_library: checking for ffi_call() in -lffi... -------------------- yes
+
+"clang -o conftest -I/nix/store/ri2s7z6pm73m07h710041wifnnsix4da-ruby-2.6.3/include/ruby-2.6.0/x86_64-darwin17 -I/nix/store/ri2s7z6pm73m07h710041wifnnsix4da-ruby-2.6.3/include/ruby-2.6.0/ruby/backward -I/nix/store/ri2s7z6pm73m07h710041wifnnsix4da-ruby-2.6.3/include/ruby-2.6.0 -I. -I/usr/include/ffi -D_XOPEN_SOURCE -D_DARWIN_C_SOURCE -D_DARWIN_UNLIMITED_SELECT -D_REENTRANT   -O3 -ggdb3 -Wall -Wextra -Wdeclaration-after-statement -Wdeprecated-declarations -Wdivision-by-zero -Wimplicit-function-declaration -Wimplicit-int -Wpointer-arith -Wshorten-64-to-32 -Wwrite-strings -Wmissing-noreturn -Wno-constant-logical-operand -Wno-long-long -Wno-missing-field-initializers -Wno-overlength-strings -Wno-parentheses-equality -Wno-self-assign -Wno-tautological-compare -Wno-unused-parameter -Wno-unused-value -Wunused-variable -Wextra-tokens  -fno-common -pipe conftest.c  -L. -L/nix/store/ri2s7z6pm73m07h710041wifnnsix4da-ruby-2.6.3/lib -L. -fstack-protector-strong -L/nix/store/fwhkmj56ccgxx62sslz22h0sdxg2bbw0-gettext-0.19.8.1/lib -L/nix/store/0kn38pv5vqmkq5j4jrpqynjrwv551hjc-libc++-7.1.0/lib -L/nix/store/vw5ffjgiy8ciglvnglad1gga0ygaydrm-libc++abi-7.1.0/lib -L/nix/store/4ggg5hhc26kpv2prvk8askv5xriahgxk-libffi-3.2.1-dev/lib -L/nix/store/0p9xfxlzjkxdnck1qzaybvw2rzp067hw-ncurses-6.1-20190112-dev/lib -L/nix/store/xllycfvg6yh6wgn57z45qcn4n5k495ym-zlib-1.2.11-dev/lib -L/nix/store/gq3f7y4jmclsxiy1lyrzgs0582adqpgk-openssl-1.0.2r-dev/lib -L/nix/store/8iqzm4ys9s8vnhrd5457dsl3l8lmihgz-gdbm-1.18.1/lib -L/nix/store/8idyrn03skcsn4fx70jcd3a0qiy1sff9-libyaml-0.2.1/lib -L/nix/store/qmgr598q5mmw23v9na5bls65swkhqqfa-libiconv-osx-10.12.6/lib -L/nix/store/84vzmndak0nmscf65j3g03aqz6zxv2c0-objc4-osx-10.12.6/lib -L/nix/store/hb1kz8mlrs4gnjdj1bds8isrn8dk0lp2-libunwind-osx-10.12.6/lib -L/nix/store/z96dbzxpz1mcdxajc3k12b65mspqbb21-clang-wrapper-7.1.0/resource-root/lib -L/nix/store/mrrc440cshmc13rqqj4405jbqnklf4ja-Libsystem-osx-10.12.6/lib     -lruby.2.6 -lffi   "
+checked program was:
+/* begin */
+ 1: #include "ruby.h"
+ 2: 
+ 3: #include <ffi.h>
+ 4: 
+ 5: /*top*/
+ 6: extern int t(void);
+ 7: int main(int argc, char **argv)
+ 8: {
+ 9:   if (argc > 1000000) {
+10:     int (* volatile tp)(void)=(int (*)(void))&t;
+11:     printf("%d", (*tp)());
+12:   }
+13: 
+14:   return 0;
+15: }
+16: int t(void) { void ((*volatile p)()); p = (void ((*)()))ffi_call; return !p; }
+/* end */
+
+--------------------
+
+have_func: checking for ffi_prep_closure()... -------------------- yes
+
+"clang -o conftest -I/nix/store/ri2s7z6pm73m07h710041wifnnsix4da-ruby-2.6.3/include/ruby-2.6.0/x86_64-darwin17 -I/nix/store/ri2s7z6pm73m07h710041wifnnsix4da-ruby-2.6.3/include/ruby-2.6.0/ruby/backward -I/nix/store/ri2s7z6pm73m07h710041wifnnsix4da-ruby-2.6.3/include/ruby-2.6.0 -I. -I/usr/include/ffi -D_XOPEN_SOURCE -D_DARWIN_C_SOURCE -D_DARWIN_UNLIMITED_SELECT -D_REENTRANT   -O3 -ggdb3 -Wall -Wextra -Wdeclaration-after-statement -Wdeprecated-declarations -Wdivision-by-zero -Wimplicit-function-declaration -Wimplicit-int -Wpointer-arith -Wshorten-64-to-32 -Wwrite-strings -Wmissing-noreturn -Wno-constant-logical-operand -Wno-long-long -Wno-missing-field-initializers -Wno-overlength-strings -Wno-parentheses-equality -Wno-self-assign -Wno-tautological-compare -Wno-unused-parameter -Wno-unused-value -Wunused-variable -Wextra-tokens  -fno-common -pipe conftest.c  -L. -L/nix/store/ri2s7z6pm73m07h710041wifnnsix4da-ruby-2.6.3/lib -L. -fstack-protector-strong -L/nix/store/fwhkmj56ccgxx62sslz22h0sdxg2bbw0-gettext-0.19.8.1/lib -L/nix/store/0kn38pv5vqmkq5j4jrpqynjrwv551hjc-libc++-7.1.0/lib -L/nix/store/vw5ffjgiy8ciglvnglad1gga0ygaydrm-libc++abi-7.1.0/lib -L/nix/store/4ggg5hhc26kpv2prvk8askv5xriahgxk-libffi-3.2.1-dev/lib -L/nix/store/0p9xfxlzjkxdnck1qzaybvw2rzp067hw-ncurses-6.1-20190112-dev/lib -L/nix/store/xllycfvg6yh6wgn57z45qcn4n5k495ym-zlib-1.2.11-dev/lib -L/nix/store/gq3f7y4jmclsxiy1lyrzgs0582adqpgk-openssl-1.0.2r-dev/lib -L/nix/store/8iqzm4ys9s8vnhrd5457dsl3l8lmihgz-gdbm-1.18.1/lib -L/nix/store/8idyrn03skcsn4fx70jcd3a0qiy1sff9-libyaml-0.2.1/lib -L/nix/store/qmgr598q5mmw23v9na5bls65swkhqqfa-libiconv-osx-10.12.6/lib -L/nix/store/84vzmndak0nmscf65j3g03aqz6zxv2c0-objc4-osx-10.12.6/lib -L/nix/store/hb1kz8mlrs4gnjdj1bds8isrn8dk0lp2-libunwind-osx-10.12.6/lib -L/nix/store/z96dbzxpz1mcdxajc3k12b65mspqbb21-clang-wrapper-7.1.0/resource-root/lib -L/nix/store/mrrc440cshmc13rqqj4405jbqnklf4ja-Libsystem-osx-10.12.6/lib    -lffi  -lruby.2.6 -lffi   "
+conftest.c:14:57: error: use of undeclared identifier 'ffi_prep_closure'
+int t(void) { void ((*volatile p)()); p = (void ((*)()))ffi_prep_closure; return !p; }
+                                                        ^
+1 error generated.
+checked program was:
+/* begin */
+ 1: #include "ruby.h"
+ 2: 
+ 3: /*top*/
+ 4: extern int t(void);
+ 5: int main(int argc, char **argv)
+ 6: {
+ 7:   if (argc > 1000000) {
+ 8:     int (* volatile tp)(void)=(int (*)(void))&t;
+ 9:     printf("%d", (*tp)());
+10:   }
+11: 
+12:   return 0;
+13: }
+14: int t(void) { void ((*volatile p)()); p = (void ((*)()))ffi_prep_closure; return !p; }
+/* end */
+
+"clang -o conftest -I/nix/store/ri2s7z6pm73m07h710041wifnnsix4da-ruby-2.6.3/include/ruby-2.6.0/x86_64-darwin17 -I/nix/store/ri2s7z6pm73m07h710041wifnnsix4da-ruby-2.6.3/include/ruby-2.6.0/ruby/backward -I/nix/store/ri2s7z6pm73m07h710041wifnnsix4da-ruby-2.6.3/include/ruby-2.6.0 -I. -I/usr/include/ffi -D_XOPEN_SOURCE -D_DARWIN_C_SOURCE -D_DARWIN_UNLIMITED_SELECT -D_REENTRANT   -O3 -ggdb3 -Wall -Wextra -Wdeclaration-after-statement -Wdeprecated-declarations -Wdivision-by-zero -Wimplicit-function-declaration -Wimplicit-int -Wpointer-arith -Wshorten-64-to-32 -Wwrite-strings -Wmissing-noreturn -Wno-constant-logical-operand -Wno-long-long -Wno-missing-field-initializers -Wno-overlength-strings -Wno-parentheses-equality -Wno-self-assign -Wno-tautological-compare -Wno-unused-parameter -Wno-unused-value -Wunused-variable -Wextra-tokens  -fno-common -pipe conftest.c  -L. -L/nix/store/ri2s7z6pm73m07h710041wifnnsix4da-ruby-2.6.3/lib -L. -fstack-protector-strong -L/nix/store/fwhkmj56ccgxx62sslz22h0sdxg2bbw0-gettext-0.19.8.1/lib -L/nix/store/0kn38pv5vqmkq5j4jrpqynjrwv551hjc-libc++-7.1.0/lib -L/nix/store/vw5ffjgiy8ciglvnglad1gga0ygaydrm-libc++abi-7.1.0/lib -L/nix/store/4ggg5hhc26kpv2prvk8askv5xriahgxk-libffi-3.2.1-dev/lib -L/nix/store/0p9xfxlzjkxdnck1qzaybvw2rzp067hw-ncurses-6.1-20190112-dev/lib -L/nix/store/xllycfvg6yh6wgn57z45qcn4n5k495ym-zlib-1.2.11-dev/lib -L/nix/store/gq3f7y4jmclsxiy1lyrzgs0582adqpgk-openssl-1.0.2r-dev/lib -L/nix/store/8iqzm4ys9s8vnhrd5457dsl3l8lmihgz-gdbm-1.18.1/lib -L/nix/store/8idyrn03skcsn4fx70jcd3a0qiy1sff9-libyaml-0.2.1/lib -L/nix/store/qmgr598q5mmw23v9na5bls65swkhqqfa-libiconv-osx-10.12.6/lib -L/nix/store/84vzmndak0nmscf65j3g03aqz6zxv2c0-objc4-osx-10.12.6/lib -L/nix/store/hb1kz8mlrs4gnjdj1bds8isrn8dk0lp2-libunwind-osx-10.12.6/lib -L/nix/store/z96dbzxpz1mcdxajc3k12b65mspqbb21-clang-wrapper-7.1.0/resource-root/lib -L/nix/store/mrrc440cshmc13rqqj4405jbqnklf4ja-Libsystem-osx-10.12.6/lib    -lffi  -lruby.2.6 -lffi   "
+checked program was:
+/* begin */
+ 1: #include "ruby.h"
+ 2: 
+ 3: /*top*/
+ 4: extern int t(void);
+ 5: int main(int argc, char **argv)
+ 6: {
+ 7:   if (argc > 1000000) {
+ 8:     int (* volatile tp)(void)=(int (*)(void))&t;
+ 9:     printf("%d", (*tp)());
+10:   }
+11: 
+12:   return 0;
+13: }
+14: extern void ffi_prep_closure();
+15: int t(void) { ffi_prep_closure(); return 0; }
+/* end */
+
+--------------------
+
+have_func: checking for ffi_raw_call()... -------------------- no
+
+"clang -o conftest -I/nix/store/ri2s7z6pm73m07h710041wifnnsix4da-ruby-2.6.3/include/ruby-2.6.0/x86_64-darwin17 -I/nix/store/ri2s7z6pm73m07h710041wifnnsix4da-ruby-2.6.3/include/ruby-2.6.0/ruby/backward -I/nix/store/ri2s7z6pm73m07h710041wifnnsix4da-ruby-2.6.3/include/ruby-2.6.0 -I. -I/usr/include/ffi -D_XOPEN_SOURCE -D_DARWIN_C_SOURCE -D_DARWIN_UNLIMITED_SELECT -D_REENTRANT   -O3 -ggdb3 -Wall -Wextra -Wdeclaration-after-statement -Wdeprecated-declarations -Wdivision-by-zero -Wimplicit-function-declaration -Wimplicit-int -Wpointer-arith -Wshorten-64-to-32 -Wwrite-strings -Wmissing-noreturn -Wno-constant-logical-operand -Wno-long-long -Wno-missing-field-initializers -Wno-overlength-strings -Wno-parentheses-equality -Wno-self-assign -Wno-tautological-compare -Wno-unused-parameter -Wno-unused-value -Wunused-variable -Wextra-tokens  -fno-common -pipe conftest.c  -L. -L/nix/store/ri2s7z6pm73m07h710041wifnnsix4da-ruby-2.6.3/lib -L. -fstack-protector-strong -L/nix/store/fwhkmj56ccgxx62sslz22h0sdxg2bbw0-gettext-0.19.8.1/lib -L/nix/store/0kn38pv5vqmkq5j4jrpqynjrwv551hjc-libc++-7.1.0/lib -L/nix/store/vw5ffjgiy8ciglvnglad1gga0ygaydrm-libc++abi-7.1.0/lib -L/nix/store/4ggg5hhc26kpv2prvk8askv5xriahgxk-libffi-3.2.1-dev/lib -L/nix/store/0p9xfxlzjkxdnck1qzaybvw2rzp067hw-ncurses-6.1-20190112-dev/lib -L/nix/store/xllycfvg6yh6wgn57z45qcn4n5k495ym-zlib-1.2.11-dev/lib -L/nix/store/gq3f7y4jmclsxiy1lyrzgs0582adqpgk-openssl-1.0.2r-dev/lib -L/nix/store/8iqzm4ys9s8vnhrd5457dsl3l8lmihgz-gdbm-1.18.1/lib -L/nix/store/8idyrn03skcsn4fx70jcd3a0qiy1sff9-libyaml-0.2.1/lib -L/nix/store/qmgr598q5mmw23v9na5bls65swkhqqfa-libiconv-osx-10.12.6/lib -L/nix/store/84vzmndak0nmscf65j3g03aqz6zxv2c0-objc4-osx-10.12.6/lib -L/nix/store/hb1kz8mlrs4gnjdj1bds8isrn8dk0lp2-libunwind-osx-10.12.6/lib -L/nix/store/z96dbzxpz1mcdxajc3k12b65mspqbb21-clang-wrapper-7.1.0/resource-root/lib -L/nix/store/mrrc440cshmc13rqqj4405jbqnklf4ja-Libsystem-osx-10.12.6/lib    -lffi  -lruby.2.6 -lffi   "
+conftest.c:14:57: error: use of undeclared identifier 'ffi_raw_call'
+int t(void) { void ((*volatile p)()); p = (void ((*)()))ffi_raw_call; return !p; }
+                                                        ^
+1 error generated.
+checked program was:
+/* begin */
+ 1: #include "ruby.h"
+ 2: 
+ 3: /*top*/
+ 4: extern int t(void);
+ 5: int main(int argc, char **argv)
+ 6: {
+ 7:   if (argc > 1000000) {
+ 8:     int (* volatile tp)(void)=(int (*)(void))&t;
+ 9:     printf("%d", (*tp)());
+10:   }
+11: 
+12:   return 0;
+13: }
+14: int t(void) { void ((*volatile p)()); p = (void ((*)()))ffi_raw_call; return !p; }
+/* end */
+
+"clang -o conftest -I/nix/store/ri2s7z6pm73m07h710041wifnnsix4da-ruby-2.6.3/include/ruby-2.6.0/x86_64-darwin17 -I/nix/store/ri2s7z6pm73m07h710041wifnnsix4da-ruby-2.6.3/include/ruby-2.6.0/ruby/backward -I/nix/store/ri2s7z6pm73m07h710041wifnnsix4da-ruby-2.6.3/include/ruby-2.6.0 -I. -I/usr/include/ffi -D_XOPEN_SOURCE -D_DARWIN_C_SOURCE -D_DARWIN_UNLIMITED_SELECT -D_REENTRANT   -O3 -ggdb3 -Wall -Wextra -Wdeclaration-after-statement -Wdeprecated-declarations -Wdivision-by-zero -Wimplicit-function-declaration -Wimplicit-int -Wpointer-arith -Wshorten-64-to-32 -Wwrite-strings -Wmissing-noreturn -Wno-constant-logical-operand -Wno-long-long -Wno-missing-field-initializers -Wno-overlength-strings -Wno-parentheses-equality -Wno-self-assign -Wno-tautological-compare -Wno-unused-parameter -Wno-unused-value -Wunused-variable -Wextra-tokens  -fno-common -pipe conftest.c  -L. -L/nix/store/ri2s7z6pm73m07h710041wifnnsix4da-ruby-2.6.3/lib -L. -fstack-protector-strong -L/nix/store/fwhkmj56ccgxx62sslz22h0sdxg2bbw0-gettext-0.19.8.1/lib -L/nix/store/0kn38pv5vqmkq5j4jrpqynjrwv551hjc-libc++-7.1.0/lib -L/nix/store/vw5ffjgiy8ciglvnglad1gga0ygaydrm-libc++abi-7.1.0/lib -L/nix/store/4ggg5hhc26kpv2prvk8askv5xriahgxk-libffi-3.2.1-dev/lib -L/nix/store/0p9xfxlzjkxdnck1qzaybvw2rzp067hw-ncurses-6.1-20190112-dev/lib -L/nix/store/xllycfvg6yh6wgn57z45qcn4n5k495ym-zlib-1.2.11-dev/lib -L/nix/store/gq3f7y4jmclsxiy1lyrzgs0582adqpgk-openssl-1.0.2r-dev/lib -L/nix/store/8iqzm4ys9s8vnhrd5457dsl3l8lmihgz-gdbm-1.18.1/lib -L/nix/store/8idyrn03skcsn4fx70jcd3a0qiy1sff9-libyaml-0.2.1/lib -L/nix/store/qmgr598q5mmw23v9na5bls65swkhqqfa-libiconv-osx-10.12.6/lib -L/nix/store/84vzmndak0nmscf65j3g03aqz6zxv2c0-objc4-osx-10.12.6/lib -L/nix/store/hb1kz8mlrs4gnjdj1bds8isrn8dk0lp2-libunwind-osx-10.12.6/lib -L/nix/store/z96dbzxpz1mcdxajc3k12b65mspqbb21-clang-wrapper-7.1.0/resource-root/lib -L/nix/store/mrrc440cshmc13rqqj4405jbqnklf4ja-Libsystem-osx-10.12.6/lib    -lffi  -lruby.2.6 -lffi   "
+Undefined symbols for architecture x86_64:
+  "_ffi_raw_call", referenced from:
+      _t in conftest-233cee.o
+ld: symbol(s) not found for architecture x86_64
+clang: error: linker command failed with exit code 1 (use -v to see invocation)
+checked program was:
+/* begin */
+ 1: #include "ruby.h"
+ 2: 
+ 3: /*top*/
+ 4: extern int t(void);
+ 5: int main(int argc, char **argv)
+ 6: {
+ 7:   if (argc > 1000000) {
+ 8:     int (* volatile tp)(void)=(int (*)(void))&t;
+ 9:     printf("%d", (*tp)());
+10:   }
+11: 
+12:   return 0;
+13: }
+14: extern void ffi_raw_call();
+15: int t(void) { ffi_raw_call(); return 0; }
+/* end */
+
+--------------------
+
+have_header: checking for shlwapi.h... -------------------- no
+
+"clang -E -I/nix/store/ri2s7z6pm73m07h710041wifnnsix4da-ruby-2.6.3/include/ruby-2.6.0/x86_64-darwin17 -I/nix/store/ri2s7z6pm73m07h710041wifnnsix4da-ruby-2.6.3/include/ruby-2.6.0/ruby/backward -I/nix/store/ri2s7z6pm73m07h710041wifnnsix4da-ruby-2.6.3/include/ruby-2.6.0 -I. -I/usr/include/ffi -D_XOPEN_SOURCE -D_DARWIN_C_SOURCE -D_DARWIN_UNLIMITED_SELECT -D_REENTRANT   -O3 -ggdb3 -Wall -Wextra -Wdeclaration-after-statement -Wdeprecated-declarations -Wdivision-by-zero -Wimplicit-function-declaration -Wimplicit-int -Wpointer-arith -Wshorten-64-to-32 -Wwrite-strings -Wmissing-noreturn -Wno-constant-logical-operand -Wno-long-long -Wno-missing-field-initializers -Wno-overlength-strings -Wno-parentheses-equality -Wno-self-assign -Wno-tautological-compare -Wno-unused-parameter -Wno-unused-value -Wunused-variable -Wextra-tokens  -fno-common -pipe  conftest.c -o conftest.i"
+conftest.c:3:10: fatal error: 'shlwapi.h' file not found
+#include <shlwapi.h>
+         ^~~~~~~~~~~
+1 error generated.
+checked program was:
+/* begin */
+1: #include "ruby.h"
+2: 
+3: #include <shlwapi.h>
+/* end */
+
+--------------------
+
+have_func: checking for rb_thread_blocking_region()... -------------------- no
+
+"clang -o conftest -I/nix/store/ri2s7z6pm73m07h710041wifnnsix4da-ruby-2.6.3/include/ruby-2.6.0/x86_64-darwin17 -I/nix/store/ri2s7z6pm73m07h710041wifnnsix4da-ruby-2.6.3/include/ruby-2.6.0/ruby/backward -I/nix/store/ri2s7z6pm73m07h710041wifnnsix4da-ruby-2.6.3/include/ruby-2.6.0 -I. -I/usr/include/ffi -D_XOPEN_SOURCE -D_DARWIN_C_SOURCE -D_DARWIN_UNLIMITED_SELECT -D_REENTRANT   -O3 -ggdb3 -Wall -Wextra -Wdeclaration-after-statement -Wdeprecated-declarations -Wdivision-by-zero -Wimplicit-function-declaration -Wimplicit-int -Wpointer-arith -Wshorten-64-to-32 -Wwrite-strings -Wmissing-noreturn -Wno-constant-logical-operand -Wno-long-long -Wno-missing-field-initializers -Wno-overlength-strings -Wno-parentheses-equality -Wno-self-assign -Wno-tautological-compare -Wno-unused-parameter -Wno-unused-value -Wunused-variable -Wextra-tokens  -fno-common -pipe conftest.c  -L. -L/nix/store/ri2s7z6pm73m07h710041wifnnsix4da-ruby-2.6.3/lib -L. -fstack-protector-strong -L/nix/store/fwhkmj56ccgxx62sslz22h0sdxg2bbw0-gettext-0.19.8.1/lib -L/nix/store/0kn38pv5vqmkq5j4jrpqynjrwv551hjc-libc++-7.1.0/lib -L/nix/store/vw5ffjgiy8ciglvnglad1gga0ygaydrm-libc++abi-7.1.0/lib -L/nix/store/4ggg5hhc26kpv2prvk8askv5xriahgxk-libffi-3.2.1-dev/lib -L/nix/store/0p9xfxlzjkxdnck1qzaybvw2rzp067hw-ncurses-6.1-20190112-dev/lib -L/nix/store/xllycfvg6yh6wgn57z45qcn4n5k495ym-zlib-1.2.11-dev/lib -L/nix/store/gq3f7y4jmclsxiy1lyrzgs0582adqpgk-openssl-1.0.2r-dev/lib -L/nix/store/8iqzm4ys9s8vnhrd5457dsl3l8lmihgz-gdbm-1.18.1/lib -L/nix/store/8idyrn03skcsn4fx70jcd3a0qiy1sff9-libyaml-0.2.1/lib -L/nix/store/qmgr598q5mmw23v9na5bls65swkhqqfa-libiconv-osx-10.12.6/lib -L/nix/store/84vzmndak0nmscf65j3g03aqz6zxv2c0-objc4-osx-10.12.6/lib -L/nix/store/hb1kz8mlrs4gnjdj1bds8isrn8dk0lp2-libunwind-osx-10.12.6/lib -L/nix/store/z96dbzxpz1mcdxajc3k12b65mspqbb21-clang-wrapper-7.1.0/resource-root/lib -L/nix/store/mrrc440cshmc13rqqj4405jbqnklf4ja-Libsystem-osx-10.12.6/lib    -lffi  -lruby.2.6 -lffi   "
+conftest.c:14:57: error: use of undeclared identifier 'rb_thread_blocking_region'
+int t(void) { void ((*volatile p)()); p = (void ((*)()))rb_thread_blocking_region; return !p; }
+                                                        ^
+1 error generated.
+checked program was:
+/* begin */
+ 1: #include "ruby.h"
+ 2: 
+ 3: /*top*/
+ 4: extern int t(void);
+ 5: int main(int argc, char **argv)
+ 6: {
+ 7:   if (argc > 1000000) {
+ 8:     int (* volatile tp)(void)=(int (*)(void))&t;
+ 9:     printf("%d", (*tp)());
+10:   }
+11: 
+12:   return 0;
+13: }
+14: int t(void) { void ((*volatile p)()); p = (void ((*)()))rb_thread_blocking_region; return !p; }
+/* end */
+
+"clang -o conftest -I/nix/store/ri2s7z6pm73m07h710041wifnnsix4da-ruby-2.6.3/include/ruby-2.6.0/x86_64-darwin17 -I/nix/store/ri2s7z6pm73m07h710041wifnnsix4da-ruby-2.6.3/include/ruby-2.6.0/ruby/backward -I/nix/store/ri2s7z6pm73m07h710041wifnnsix4da-ruby-2.6.3/include/ruby-2.6.0 -I. -I/usr/include/ffi -D_XOPEN_SOURCE -D_DARWIN_C_SOURCE -D_DARWIN_UNLIMITED_SELECT -D_REENTRANT   -O3 -ggdb3 -Wall -Wextra -Wdeclaration-after-statement -Wdeprecated-declarations -Wdivision-by-zero -Wimplicit-function-declaration -Wimplicit-int -Wpointer-arith -Wshorten-64-to-32 -Wwrite-strings -Wmissing-noreturn -Wno-constant-logical-operand -Wno-long-long -Wno-missing-field-initializers -Wno-overlength-strings -Wno-parentheses-equality -Wno-self-assign -Wno-tautological-compare -Wno-unused-parameter -Wno-unused-value -Wunused-variable -Wextra-tokens  -fno-common -pipe conftest.c  -L. -L/nix/store/ri2s7z6pm73m07h710041wifnnsix4da-ruby-2.6.3/lib -L. -fstack-protector-strong -L/nix/store/fwhkmj56ccgxx62sslz22h0sdxg2bbw0-gettext-0.19.8.1/lib -L/nix/store/0kn38pv5vqmkq5j4jrpqynjrwv551hjc-libc++-7.1.0/lib -L/nix/store/vw5ffjgiy8ciglvnglad1gga0ygaydrm-libc++abi-7.1.0/lib -L/nix/store/4ggg5hhc26kpv2prvk8askv5xriahgxk-libffi-3.2.1-dev/lib -L/nix/store/0p9xfxlzjkxdnck1qzaybvw2rzp067hw-ncurses-6.1-20190112-dev/lib -L/nix/store/xllycfvg6yh6wgn57z45qcn4n5k495ym-zlib-1.2.11-dev/lib -L/nix/store/gq3f7y4jmclsxiy1lyrzgs0582adqpgk-openssl-1.0.2r-dev/lib -L/nix/store/8iqzm4ys9s8vnhrd5457dsl3l8lmihgz-gdbm-1.18.1/lib -L/nix/store/8idyrn03skcsn4fx70jcd3a0qiy1sff9-libyaml-0.2.1/lib -L/nix/store/qmgr598q5mmw23v9na5bls65swkhqqfa-libiconv-osx-10.12.6/lib -L/nix/store/84vzmndak0nmscf65j3g03aqz6zxv2c0-objc4-osx-10.12.6/lib -L/nix/store/hb1kz8mlrs4gnjdj1bds8isrn8dk0lp2-libunwind-osx-10.12.6/lib -L/nix/store/z96dbzxpz1mcdxajc3k12b65mspqbb21-clang-wrapper-7.1.0/resource-root/lib -L/nix/store/mrrc440cshmc13rqqj4405jbqnklf4ja-Libsystem-osx-10.12.6/lib    -lffi  -lruby.2.6 -lffi   "
+Undefined symbols for architecture x86_64:
+  "_rb_thread_blocking_region", referenced from:
+      _t in conftest-ab7043.o
+ld: symbol(s) not found for architecture x86_64
+clang: error: linker command failed with exit code 1 (use -v to see invocation)
+checked program was:
+/* begin */
+ 1: #include "ruby.h"
+ 2: 
+ 3: /*top*/
+ 4: extern int t(void);
+ 5: int main(int argc, char **argv)
+ 6: {
+ 7:   if (argc > 1000000) {
+ 8:     int (* volatile tp)(void)=(int (*)(void))&t;
+ 9:     printf("%d", (*tp)());
+10:   }
+11: 
+12:   return 0;
+13: }
+14: extern void rb_thread_blocking_region();
+15: int t(void) { rb_thread_blocking_region(); return 0; }
+/* end */
+
+--------------------
+
+have_func: checking for rb_thread_call_with_gvl()... -------------------- yes
+
+"clang -o conftest -I/nix/store/ri2s7z6pm73m07h710041wifnnsix4da-ruby-2.6.3/include/ruby-2.6.0/x86_64-darwin17 -I/nix/store/ri2s7z6pm73m07h710041wifnnsix4da-ruby-2.6.3/include/ruby-2.6.0/ruby/backward -I/nix/store/ri2s7z6pm73m07h710041wifnnsix4da-ruby-2.6.3/include/ruby-2.6.0 -I. -I/usr/include/ffi -D_XOPEN_SOURCE -D_DARWIN_C_SOURCE -D_DARWIN_UNLIMITED_SELECT -D_REENTRANT   -O3 -ggdb3 -Wall -Wextra -Wdeclaration-after-statement -Wdeprecated-declarations -Wdivision-by-zero -Wimplicit-function-declaration -Wimplicit-int -Wpointer-arith -Wshorten-64-to-32 -Wwrite-strings -Wmissing-noreturn -Wno-constant-logical-operand -Wno-long-long -Wno-missing-field-initializers -Wno-overlength-strings -Wno-parentheses-equality -Wno-self-assign -Wno-tautological-compare -Wno-unused-parameter -Wno-unused-value -Wunused-variable -Wextra-tokens  -fno-common -pipe conftest.c  -L. -L/nix/store/ri2s7z6pm73m07h710041wifnnsix4da-ruby-2.6.3/lib -L. -fstack-protector-strong -L/nix/store/fwhkmj56ccgxx62sslz22h0sdxg2bbw0-gettext-0.19.8.1/lib -L/nix/store/0kn38pv5vqmkq5j4jrpqynjrwv551hjc-libc++-7.1.0/lib -L/nix/store/vw5ffjgiy8ciglvnglad1gga0ygaydrm-libc++abi-7.1.0/lib -L/nix/store/4ggg5hhc26kpv2prvk8askv5xriahgxk-libffi-3.2.1-dev/lib -L/nix/store/0p9xfxlzjkxdnck1qzaybvw2rzp067hw-ncurses-6.1-20190112-dev/lib -L/nix/store/xllycfvg6yh6wgn57z45qcn4n5k495ym-zlib-1.2.11-dev/lib -L/nix/store/gq3f7y4jmclsxiy1lyrzgs0582adqpgk-openssl-1.0.2r-dev/lib -L/nix/store/8iqzm4ys9s8vnhrd5457dsl3l8lmihgz-gdbm-1.18.1/lib -L/nix/store/8idyrn03skcsn4fx70jcd3a0qiy1sff9-libyaml-0.2.1/lib -L/nix/store/qmgr598q5mmw23v9na5bls65swkhqqfa-libiconv-osx-10.12.6/lib -L/nix/store/84vzmndak0nmscf65j3g03aqz6zxv2c0-objc4-osx-10.12.6/lib -L/nix/store/hb1kz8mlrs4gnjdj1bds8isrn8dk0lp2-libunwind-osx-10.12.6/lib -L/nix/store/z96dbzxpz1mcdxajc3k12b65mspqbb21-clang-wrapper-7.1.0/resource-root/lib -L/nix/store/mrrc440cshmc13rqqj4405jbqnklf4ja-Libsystem-osx-10.12.6/lib    -lffi  -lruby.2.6 -lffi   "
+conftest.c:14:57: error: use of undeclared identifier 'rb_thread_call_with_gvl'
+int t(void) { void ((*volatile p)()); p = (void ((*)()))rb_thread_call_with_gvl; return !p; }
+                                                        ^
+1 error generated.
+checked program was:
+/* begin */
+ 1: #include "ruby.h"
+ 2: 
+ 3: /*top*/
+ 4: extern int t(void);
+ 5: int main(int argc, char **argv)
+ 6: {
+ 7:   if (argc > 1000000) {
+ 8:     int (* volatile tp)(void)=(int (*)(void))&t;
+ 9:     printf("%d", (*tp)());
+10:   }
+11: 
+12:   return 0;
+13: }
+14: int t(void) { void ((*volatile p)()); p = (void ((*)()))rb_thread_call_with_gvl; return !p; }
+/* end */
+
+"clang -o conftest -I/nix/store/ri2s7z6pm73m07h710041wifnnsix4da-ruby-2.6.3/include/ruby-2.6.0/x86_64-darwin17 -I/nix/store/ri2s7z6pm73m07h710041wifnnsix4da-ruby-2.6.3/include/ruby-2.6.0/ruby/backward -I/nix/store/ri2s7z6pm73m07h710041wifnnsix4da-ruby-2.6.3/include/ruby-2.6.0 -I. -I/usr/include/ffi -D_XOPEN_SOURCE -D_DARWIN_C_SOURCE -D_DARWIN_UNLIMITED_SELECT -D_REENTRANT   -O3 -ggdb3 -Wall -Wextra -Wdeclaration-after-statement -Wdeprecated-declarations -Wdivision-by-zero -Wimplicit-function-declaration -Wimplicit-int -Wpointer-arith -Wshorten-64-to-32 -Wwrite-strings -Wmissing-noreturn -Wno-constant-logical-operand -Wno-long-long -Wno-missing-field-initializers -Wno-overlength-strings -Wno-parentheses-equality -Wno-self-assign -Wno-tautological-compare -Wno-unused-parameter -Wno-unused-value -Wunused-variable -Wextra-tokens  -fno-common -pipe conftest.c  -L. -L/nix/store/ri2s7z6pm73m07h710041wifnnsix4da-ruby-2.6.3/lib -L. -fstack-protector-strong -L/nix/store/fwhkmj56ccgxx62sslz22h0sdxg2bbw0-gettext-0.19.8.1/lib -L/nix/store/0kn38pv5vqmkq5j4jrpqynjrwv551hjc-libc++-7.1.0/lib -L/nix/store/vw5ffjgiy8ciglvnglad1gga0ygaydrm-libc++abi-7.1.0/lib -L/nix/store/4ggg5hhc26kpv2prvk8askv5xriahgxk-libffi-3.2.1-dev/lib -L/nix/store/0p9xfxlzjkxdnck1qzaybvw2rzp067hw-ncurses-6.1-20190112-dev/lib -L/nix/store/xllycfvg6yh6wgn57z45qcn4n5k495ym-zlib-1.2.11-dev/lib -L/nix/store/gq3f7y4jmclsxiy1lyrzgs0582adqpgk-openssl-1.0.2r-dev/lib -L/nix/store/8iqzm4ys9s8vnhrd5457dsl3l8lmihgz-gdbm-1.18.1/lib -L/nix/store/8idyrn03skcsn4fx70jcd3a0qiy1sff9-libyaml-0.2.1/lib -L/nix/store/qmgr598q5mmw23v9na5bls65swkhqqfa-libiconv-osx-10.12.6/lib -L/nix/store/84vzmndak0nmscf65j3g03aqz6zxv2c0-objc4-osx-10.12.6/lib -L/nix/store/hb1kz8mlrs4gnjdj1bds8isrn8dk0lp2-libunwind-osx-10.12.6/lib -L/nix/store/z96dbzxpz1mcdxajc3k12b65mspqbb21-clang-wrapper-7.1.0/resource-root/lib -L/nix/store/mrrc440cshmc13rqqj4405jbqnklf4ja-Libsystem-osx-10.12.6/lib    -lffi  -lruby.2.6 -lffi   "
+checked program was:
+/* begin */
+ 1: #include "ruby.h"
+ 2: 
+ 3: /*top*/
+ 4: extern int t(void);
+ 5: int main(int argc, char **argv)
+ 6: {
+ 7:   if (argc > 1000000) {
+ 8:     int (* volatile tp)(void)=(int (*)(void))&t;
+ 9:     printf("%d", (*tp)());
+10:   }
+11: 
+12:   return 0;
+13: }
+14: extern void rb_thread_call_with_gvl();
+15: int t(void) { rb_thread_call_with_gvl(); return 0; }
+/* end */
+
+--------------------
+
+have_func: checking for rb_thread_call_without_gvl()... -------------------- yes
+
+"clang -o conftest -I/nix/store/ri2s7z6pm73m07h710041wifnnsix4da-ruby-2.6.3/include/ruby-2.6.0/x86_64-darwin17 -I/nix/store/ri2s7z6pm73m07h710041wifnnsix4da-ruby-2.6.3/include/ruby-2.6.0/ruby/backward -I/nix/store/ri2s7z6pm73m07h710041wifnnsix4da-ruby-2.6.3/include/ruby-2.6.0 -I. -I/usr/include/ffi -D_XOPEN_SOURCE -D_DARWIN_C_SOURCE -D_DARWIN_UNLIMITED_SELECT -D_REENTRANT   -O3 -ggdb3 -Wall -Wextra -Wdeclaration-after-statement -Wdeprecated-declarations -Wdivision-by-zero -Wimplicit-function-declaration -Wimplicit-int -Wpointer-arith -Wshorten-64-to-32 -Wwrite-strings -Wmissing-noreturn -Wno-constant-logical-operand -Wno-long-long -Wno-missing-field-initializers -Wno-overlength-strings -Wno-parentheses-equality -Wno-self-assign -Wno-tautological-compare -Wno-unused-parameter -Wno-unused-value -Wunused-variable -Wextra-tokens  -fno-common -pipe conftest.c  -L. -L/nix/store/ri2s7z6pm73m07h710041wifnnsix4da-ruby-2.6.3/lib -L. -fstack-protector-strong -L/nix/store/fwhkmj56ccgxx62sslz22h0sdxg2bbw0-gettext-0.19.8.1/lib -L/nix/store/0kn38pv5vqmkq5j4jrpqynjrwv551hjc-libc++-7.1.0/lib -L/nix/store/vw5ffjgiy8ciglvnglad1gga0ygaydrm-libc++abi-7.1.0/lib -L/nix/store/4ggg5hhc26kpv2prvk8askv5xriahgxk-libffi-3.2.1-dev/lib -L/nix/store/0p9xfxlzjkxdnck1qzaybvw2rzp067hw-ncurses-6.1-20190112-dev/lib -L/nix/store/xllycfvg6yh6wgn57z45qcn4n5k495ym-zlib-1.2.11-dev/lib -L/nix/store/gq3f7y4jmclsxiy1lyrzgs0582adqpgk-openssl-1.0.2r-dev/lib -L/nix/store/8iqzm4ys9s8vnhrd5457dsl3l8lmihgz-gdbm-1.18.1/lib -L/nix/store/8idyrn03skcsn4fx70jcd3a0qiy1sff9-libyaml-0.2.1/lib -L/nix/store/qmgr598q5mmw23v9na5bls65swkhqqfa-libiconv-osx-10.12.6/lib -L/nix/store/84vzmndak0nmscf65j3g03aqz6zxv2c0-objc4-osx-10.12.6/lib -L/nix/store/hb1kz8mlrs4gnjdj1bds8isrn8dk0lp2-libunwind-osx-10.12.6/lib -L/nix/store/z96dbzxpz1mcdxajc3k12b65mspqbb21-clang-wrapper-7.1.0/resource-root/lib -L/nix/store/mrrc440cshmc13rqqj4405jbqnklf4ja-Libsystem-osx-10.12.6/lib    -lffi  -lruby.2.6 -lffi   "
+conftest.c:14:57: error: use of undeclared identifier 'rb_thread_call_without_gvl'
+int t(void) { void ((*volatile p)()); p = (void ((*)()))rb_thread_call_without_gvl; return !p; }
+                                                        ^
+1 error generated.
+checked program was:
+/* begin */
+ 1: #include "ruby.h"
+ 2: 
+ 3: /*top*/
+ 4: extern int t(void);
+ 5: int main(int argc, char **argv)
+ 6: {
+ 7:   if (argc > 1000000) {
+ 8:     int (* volatile tp)(void)=(int (*)(void))&t;
+ 9:     printf("%d", (*tp)());
+10:   }
+11: 
+12:   return 0;
+13: }
+14: int t(void) { void ((*volatile p)()); p = (void ((*)()))rb_thread_call_without_gvl; return !p; }
+/* end */
+
+"clang -o conftest -I/nix/store/ri2s7z6pm73m07h710041wifnnsix4da-ruby-2.6.3/include/ruby-2.6.0/x86_64-darwin17 -I/nix/store/ri2s7z6pm73m07h710041wifnnsix4da-ruby-2.6.3/include/ruby-2.6.0/ruby/backward -I/nix/store/ri2s7z6pm73m07h710041wifnnsix4da-ruby-2.6.3/include/ruby-2.6.0 -I. -I/usr/include/ffi -D_XOPEN_SOURCE -D_DARWIN_C_SOURCE -D_DARWIN_UNLIMITED_SELECT -D_REENTRANT   -O3 -ggdb3 -Wall -Wextra -Wdeclaration-after-statement -Wdeprecated-declarations -Wdivision-by-zero -Wimplicit-function-declaration -Wimplicit-int -Wpointer-arith -Wshorten-64-to-32 -Wwrite-strings -Wmissing-noreturn -Wno-constant-logical-operand -Wno-long-long -Wno-missing-field-initializers -Wno-overlength-strings -Wno-parentheses-equality -Wno-self-assign -Wno-tautological-compare -Wno-unused-parameter -Wno-unused-value -Wunused-variable -Wextra-tokens  -fno-common -pipe conftest.c  -L. -L/nix/store/ri2s7z6pm73m07h710041wifnnsix4da-ruby-2.6.3/lib -L. -fstack-protector-strong -L/nix/store/fwhkmj56ccgxx62sslz22h0sdxg2bbw0-gettext-0.19.8.1/lib -L/nix/store/0kn38pv5vqmkq5j4jrpqynjrwv551hjc-libc++-7.1.0/lib -L/nix/store/vw5ffjgiy8ciglvnglad1gga0ygaydrm-libc++abi-7.1.0/lib -L/nix/store/4ggg5hhc26kpv2prvk8askv5xriahgxk-libffi-3.2.1-dev/lib -L/nix/store/0p9xfxlzjkxdnck1qzaybvw2rzp067hw-ncurses-6.1-20190112-dev/lib -L/nix/store/xllycfvg6yh6wgn57z45qcn4n5k495ym-zlib-1.2.11-dev/lib -L/nix/store/gq3f7y4jmclsxiy1lyrzgs0582adqpgk-openssl-1.0.2r-dev/lib -L/nix/store/8iqzm4ys9s8vnhrd5457dsl3l8lmihgz-gdbm-1.18.1/lib -L/nix/store/8idyrn03skcsn4fx70jcd3a0qiy1sff9-libyaml-0.2.1/lib -L/nix/store/qmgr598q5mmw23v9na5bls65swkhqqfa-libiconv-osx-10.12.6/lib -L/nix/store/84vzmndak0nmscf65j3g03aqz6zxv2c0-objc4-osx-10.12.6/lib -L/nix/store/hb1kz8mlrs4gnjdj1bds8isrn8dk0lp2-libunwind-osx-10.12.6/lib -L/nix/store/z96dbzxpz1mcdxajc3k12b65mspqbb21-clang-wrapper-7.1.0/resource-root/lib -L/nix/store/mrrc440cshmc13rqqj4405jbqnklf4ja-Libsystem-osx-10.12.6/lib    -lffi  -lruby.2.6 -lffi   "
+checked program was:
+/* begin */
+ 1: #include "ruby.h"
+ 2: 
+ 3: /*top*/
+ 4: extern int t(void);
+ 5: int main(int argc, char **argv)
+ 6: {
+ 7:   if (argc > 1000000) {
+ 8:     int (* volatile tp)(void)=(int (*)(void))&t;
+ 9:     printf("%d", (*tp)());
+10:   }
+11: 
+12:   return 0;
+13: }
+14: extern void rb_thread_call_without_gvl();
+15: int t(void) { rb_thread_call_without_gvl(); return 0; }
+/* end */
+
+--------------------
+
+have_func: checking for ffi_prep_cif_var()... -------------------- no
+
+"clang -o conftest -I/nix/store/ri2s7z6pm73m07h710041wifnnsix4da-ruby-2.6.3/include/ruby-2.6.0/x86_64-darwin17 -I/nix/store/ri2s7z6pm73m07h710041wifnnsix4da-ruby-2.6.3/include/ruby-2.6.0/ruby/backward -I/nix/store/ri2s7z6pm73m07h710041wifnnsix4da-ruby-2.6.3/include/ruby-2.6.0 -I. -I/usr/include/ffi -D_XOPEN_SOURCE -D_DARWIN_C_SOURCE -D_DARWIN_UNLIMITED_SELECT -D_REENTRANT   -O3 -ggdb3 -Wall -Wextra -Wdeclaration-after-statement -Wdeprecated-declarations -Wdivision-by-zero -Wimplicit-function-declaration -Wimplicit-int -Wpointer-arith -Wshorten-64-to-32 -Wwrite-strings -Wmissing-noreturn -Wno-constant-logical-operand -Wno-long-long -Wno-missing-field-initializers -Wno-overlength-strings -Wno-parentheses-equality -Wno-self-assign -Wno-tautological-compare -Wno-unused-parameter -Wno-unused-value -Wunused-variable -Wextra-tokens  -fno-common -pipe conftest.c  -L. -L/nix/store/ri2s7z6pm73m07h710041wifnnsix4da-ruby-2.6.3/lib -L. -fstack-protector-strong -L/nix/store/fwhkmj56ccgxx62sslz22h0sdxg2bbw0-gettext-0.19.8.1/lib -L/nix/store/0kn38pv5vqmkq5j4jrpqynjrwv551hjc-libc++-7.1.0/lib -L/nix/store/vw5ffjgiy8ciglvnglad1gga0ygaydrm-libc++abi-7.1.0/lib -L/nix/store/4ggg5hhc26kpv2prvk8askv5xriahgxk-libffi-3.2.1-dev/lib -L/nix/store/0p9xfxlzjkxdnck1qzaybvw2rzp067hw-ncurses-6.1-20190112-dev/lib -L/nix/store/xllycfvg6yh6wgn57z45qcn4n5k495ym-zlib-1.2.11-dev/lib -L/nix/store/gq3f7y4jmclsxiy1lyrzgs0582adqpgk-openssl-1.0.2r-dev/lib -L/nix/store/8iqzm4ys9s8vnhrd5457dsl3l8lmihgz-gdbm-1.18.1/lib -L/nix/store/8idyrn03skcsn4fx70jcd3a0qiy1sff9-libyaml-0.2.1/lib -L/nix/store/qmgr598q5mmw23v9na5bls65swkhqqfa-libiconv-osx-10.12.6/lib -L/nix/store/84vzmndak0nmscf65j3g03aqz6zxv2c0-objc4-osx-10.12.6/lib -L/nix/store/hb1kz8mlrs4gnjdj1bds8isrn8dk0lp2-libunwind-osx-10.12.6/lib -L/nix/store/z96dbzxpz1mcdxajc3k12b65mspqbb21-clang-wrapper-7.1.0/resource-root/lib -L/nix/store/mrrc440cshmc13rqqj4405jbqnklf4ja-Libsystem-osx-10.12.6/lib    -lffi  -lruby.2.6 -lffi   "
+conftest.c:14:57: error: use of undeclared identifier 'ffi_prep_cif_var'
+int t(void) { void ((*volatile p)()); p = (void ((*)()))ffi_prep_cif_var; return !p; }
+                                                        ^
+1 error generated.
+checked program was:
+/* begin */
+ 1: #include "ruby.h"
+ 2: 
+ 3: /*top*/
+ 4: extern int t(void);
+ 5: int main(int argc, char **argv)
+ 6: {
+ 7:   if (argc > 1000000) {
+ 8:     int (* volatile tp)(void)=(int (*)(void))&t;
+ 9:     printf("%d", (*tp)());
+10:   }
+11: 
+12:   return 0;
+13: }
+14: int t(void) { void ((*volatile p)()); p = (void ((*)()))ffi_prep_cif_var; return !p; }
+/* end */
+
+"clang -o conftest -I/nix/store/ri2s7z6pm73m07h710041wifnnsix4da-ruby-2.6.3/include/ruby-2.6.0/x86_64-darwin17 -I/nix/store/ri2s7z6pm73m07h710041wifnnsix4da-ruby-2.6.3/include/ruby-2.6.0/ruby/backward -I/nix/store/ri2s7z6pm73m07h710041wifnnsix4da-ruby-2.6.3/include/ruby-2.6.0 -I. -I/usr/include/ffi -D_XOPEN_SOURCE -D_DARWIN_C_SOURCE -D_DARWIN_UNLIMITED_SELECT -D_REENTRANT   -O3 -ggdb3 -Wall -Wextra -Wdeclaration-after-statement -Wdeprecated-declarations -Wdivision-by-zero -Wimplicit-function-declaration -Wimplicit-int -Wpointer-arith -Wshorten-64-to-32 -Wwrite-strings -Wmissing-noreturn -Wno-constant-logical-operand -Wno-long-long -Wno-missing-field-initializers -Wno-overlength-strings -Wno-parentheses-equality -Wno-self-assign -Wno-tautological-compare -Wno-unused-parameter -Wno-unused-value -Wunused-variable -Wextra-tokens  -fno-common -pipe conftest.c  -L. -L/nix/store/ri2s7z6pm73m07h710041wifnnsix4da-ruby-2.6.3/lib -L. -fstack-protector-strong -L/nix/store/fwhkmj56ccgxx62sslz22h0sdxg2bbw0-gettext-0.19.8.1/lib -L/nix/store/0kn38pv5vqmkq5j4jrpqynjrwv551hjc-libc++-7.1.0/lib -L/nix/store/vw5ffjgiy8ciglvnglad1gga0ygaydrm-libc++abi-7.1.0/lib -L/nix/store/4ggg5hhc26kpv2prvk8askv5xriahgxk-libffi-3.2.1-dev/lib -L/nix/store/0p9xfxlzjkxdnck1qzaybvw2rzp067hw-ncurses-6.1-20190112-dev/lib -L/nix/store/xllycfvg6yh6wgn57z45qcn4n5k495ym-zlib-1.2.11-dev/lib -L/nix/store/gq3f7y4jmclsxiy1lyrzgs0582adqpgk-openssl-1.0.2r-dev/lib -L/nix/store/8iqzm4ys9s8vnhrd5457dsl3l8lmihgz-gdbm-1.18.1/lib -L/nix/store/8idyrn03skcsn4fx70jcd3a0qiy1sff9-libyaml-0.2.1/lib -L/nix/store/qmgr598q5mmw23v9na5bls65swkhqqfa-libiconv-osx-10.12.6/lib -L/nix/store/84vzmndak0nmscf65j3g03aqz6zxv2c0-objc4-osx-10.12.6/lib -L/nix/store/hb1kz8mlrs4gnjdj1bds8isrn8dk0lp2-libunwind-osx-10.12.6/lib -L/nix/store/z96dbzxpz1mcdxajc3k12b65mspqbb21-clang-wrapper-7.1.0/resource-root/lib -L/nix/store/mrrc440cshmc13rqqj4405jbqnklf4ja-Libsystem-osx-10.12.6/lib    -lffi  -lruby.2.6 -lffi   "
+Undefined symbols for architecture x86_64:
+  "_ffi_prep_cif_var", referenced from:
+      _t in conftest-b08010.o
+ld: symbol(s) not found for architecture x86_64
+clang: error: linker command failed with exit code 1 (use -v to see invocation)
+checked program was:
+/* begin */
+ 1: #include "ruby.h"
+ 2: 
+ 3: /*top*/
+ 4: extern int t(void);
+ 5: int main(int argc, char **argv)
+ 6: {
+ 7:   if (argc > 1000000) {
+ 8:     int (* volatile tp)(void)=(int (*)(void))&t;
+ 9:     printf("%d", (*tp)());
+10:   }
+11: 
+12:   return 0;
+13: }
+14: extern void ffi_prep_cif_var();
+15: int t(void) { ffi_prep_cif_var(); return 0; }
+/* end */
+
+--------------------
+
+extconf.h is:
+/* begin */
+1: #ifndef EXTCONF_H
+2: #define EXTCONF_H
+3: #define HAVE_FFI_PREP_CLOSURE 1
+4: #define HAVE_RB_THREAD_CALL_WITH_GVL 1
+5: #define HAVE_RB_THREAD_CALL_WITHOUT_GVL 1
+6: #define RUBY_1_9 1
+7: #endif
+/* end */
+

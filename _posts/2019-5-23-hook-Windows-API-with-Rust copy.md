@@ -165,7 +165,7 @@ pub extern "system" fn DllMain(_: winapi::shared::minwindef::HINSTANCE, reason: 
 
 编译后可注入记事本，然后搜索，搜索结果的对话框会被 hook。
 
-![messageboxw-hook](https://raw.githubusercontent.com/AurevoirXavier/hook-in-rust/master/demo.jpg)
+<center>![messageboxw-hook](https://raw.githubusercontent.com/AurevoirXavier/hook-in-rust/master/demo.jpg)</center>
 
 [github](https://github.com/AurevoirXavier/hook-in-rust/blob/master/messagebox-iat-hook)
 
@@ -184,5 +184,27 @@ EAT hook 即为导出表 hook，但是一般用的不多。原理是调用模块
 #### VMT hook
 
 VMT hook 即为虚函数表 hook，原理需要大家复习一下 C 的内容了。这里特别提一点，有类的对象会共用一张虚表但是有的类的对象各自拥有一张虚表，有时候修改自己创建出来的类对象的虚表是没用的。但是尽管虚表不同，虚表里面存的地址一定是一样的，所以不修改这个地址而修改这个地址的内容即可达到 hook 的目的，这样实际上就是 VMT hook 和 inline hook 的结合。接下来这个 D3D11 hook 的例子作为补充，刚好 `ID3D11Device` 就是每个对象单独拥有一张虚表的情况。
+
+前面说到有一个替代储存地址的方案，那就是储存一个裸指针，但是你是无法直接定义这种全局裸指针的，下面提供一个方法，也是我在本例中用到的方法：
+
+```rust
+struct PresentPointers {
+    context: *mut ID3D11DeviceContext,
+    device: *mut ID3D11Device,
+    swap_chain: *mut IDXGISwapChain,
+
+    present: *mut Present,
+}
+
+impl PresentPointers {
+    const INIT: Self = PresentPointers {
+        context: null_mut(),
+        device: null_mut(),
+        swap_chain: null_mut(),
+
+        present: null_mut(),
+    };
+}
+```
 
 [github](https://github.com/AurevoirXavier/dauntless-helper/tree/master/rust-ver)

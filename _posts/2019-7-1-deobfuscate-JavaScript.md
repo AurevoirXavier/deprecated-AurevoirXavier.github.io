@@ -17,7 +17,7 @@ comments: true
 
 一打开这个审查元素就自动断点。
 
-![breakpoint](https://i.imgur.com/hz70glm.png)
+<center>![breakpoint](https://i.imgur.com/hz70glm.png)</center>
 
 直接下载这个 js 文件下来，然后发现光删除 `debugger` 这一行不行，每次会新下载一份 SOURCEsourceXX，其中内容就是 `debugger`。这说明每次都会先进 if 判断里面，尽管看不懂混淆后的这乱七八糟一堆东西，但是知道这部分应该就是下载并下断点，所以直接删除这一整段:
 
@@ -44,7 +44,7 @@ comments: true
 
 关于怎么替换成我们自己修改后的 js，只要用 Charles 的 Map Local 功能就可以了。
 
-![map-local](https://i.imgur.com/ZO38RZf.png)
+<center>![map-local](https://i.imgur.com/ZO38RZf.png)</center>
 
 #### 反爬手段 2
 
@@ -135,9 +135,9 @@ $("#download_div").click(function () {
 });
 ```
 
-可以看到这大概是个点击 `#download_div` 后往页面上 `append` 元素的操作，而 append 的内容就是 atob（base64 解码）后的内容了。后面并没有用到 `vser` 变量，所以先不管它，着手于 `data` 变量。
+可以看到这大概是个点击 `#download_div` 后往页面上 `append` 元素的操作，而 `append` 的内容就是 `atob`（base64 解码）后的内容了。后面并没有用到 `vser` 变量，所以先不管它，着手于 `data` 变量。
 
-我也懒得自己解，直接控制台输入 data 让浏览器打印出来：
+我也懒得自己解，直接控制台输入 `data` 让浏览器打印出来：
 
 ```javascript
 {
@@ -166,7 +166,7 @@ atob('MzEzMDIwMzEzMTMxMzEzMTMxMzEyMDMxMzAzMTMwMzAzMDMwMjAzMTMwMzAzMDMwMzAzMDIwMz
 10 1111111 1010000 1000000 1011110 1100 1110101 1111 1010001 11001 1010100 1010010 1101001 11101 1010100 1000111 1000111 10101 1111011 1101010 1010010 101 1011011 1101 1011 10111 11 110 1010011 1111001 1010010 1000010
 ```
 
-看到这很自然的就会想到补 0 变成 8 位，然后转十进制读成字符串，可惜对不上。这就只好开始寻找是哪一段 js 修改了 data 的内容。接着查看在缓存中的几个 js，首先排除 ajax，bootstrap 这类的。接下来故技重施，把它们一个一个加进 Map Local 里替换成空文件，最后锁定到将 `cado.js` 这个文件替换为空文件的时候在浏览器中点击 `#download_div` 后，得到的是上面看到的 `data`。所以我们下载 `cado.js` 到本地并保持 Map Local 其位空文件。`cado.js`：
+看到这很自然的就会想到补 0 变成 8 位，然后转十进制读成字符串，可惜对不上。这就只好开始寻找是哪一段 js 修改了 `data` 的内容。接着查看在缓存中的几个 js，首先排除 ajax，bootstrap 这类的。接下来故技重施，把它们一个一个加进 Map Local 里替换成空文件，最后锁定到将 `cado.js` 这个文件替换为空文件的时候在浏览器中点击 `#download_div` 后，得到的是上面看到的 `data`。所以我们下载 `cado.js` 到本地并保持 Map Local 其为空文件。`cado.js`：
 
 ```javascript
 [
@@ -991,11 +991,11 @@ function checkIE() {
 
 首先 `_0x173e` 存了一堆不知道什么东西，但是只有两个地方用了它，一是传入匿名函数后当作 `_0x5f5960` 后传入 `_0x3ed10a`，然后该匿名函数结尾会调用 `_0x511f63`，而就是这个 `_0x511f63` 里面调用了 `_0x3ed10a`。而 `_0x511f63` 从头到尾只调用过一次，所以很显然这绕一大圈就是个初始化 `_0x173e` 的函数，特别是 `_0x3ed10a` 往里面 `push` 了些什么东西。那接着看另一个用到 `_0x173e` 的地方，就是 `_0x1f37`，那我们接着找什么地方用到了 `_0x1f37`（这几波操作又想起了在 Windows 下用 x64dbg 看反汇编的日子）。结果搜到了一大堆，显然这个 `_0x1f37` 就是个最终的解码函数了，随便找几个在浏览器运行一下，打印出结果后确定这是个解码函数，然后用 python 正则一下找出所有然后替换成解码后的结果。这几个编码解码函数就可以彻底删掉了，总代码减少两百行左右。
 
-![decode](https://i.imgur.com/ibEv9nu.png)
+<center>![decode](https://i.imgur.com/ibEv9nu.png)</center>
 
 #### _0x5229
 
-就在上一步完成的时候，我发现 `_0x5229` 里面的内容也一同搞定了。`_0x1f37('0x13', 'xwAI')` 解码后为 `#download_div`，而它在 `_0x5229[44]`。接着照上面的一样替换所有用到的 `0x5229` 的地方。这样 `_0x5229` 也可以删掉了。
+就在上一步完成的时候，我发现 `_0x5229` 里面的内容也一同搞定了。`_0x1f37('0x13', 'xwAI')` 解码后为 `#download_div`，而它在 `_0x5229[44]`。接着照上面的一样替换所有用到的 `_0x5229` 的地方。这样 `_0x5229` 也可以删掉了。
 
 #### 删除无关代码
 
